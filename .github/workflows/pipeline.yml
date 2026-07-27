@@ -4,7 +4,7 @@ name: pipeline
 
 on:
   pull_request:
-    branches: [test, main]
+    branches: [test, prod, main]
   push:
     # All four names during the rename: test/prod are the lanes, main/production
     # are the old names. Drop main + production once this repo is renamed.
