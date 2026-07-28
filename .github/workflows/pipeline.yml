@@ -11,6 +11,13 @@ on:
     branches: [test, prod, main, production]
   workflow_dispatch:
 
+# A superseded run is billed for every job it started, rounded up to the minute,
+# whether or not anyone reads the result. PRs and pushes get separate groups so
+# cancelling a stale PR run never kills a publish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
 jobs:
   verify:
     uses: builtbycorelot/.github/.github/workflows/pipeline.yml@main
