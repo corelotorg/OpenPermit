@@ -1,27 +1,14 @@
 # Standalone CI for OpenPermit.
 #
-# This repo does NOT use builtbycorelot/.github/.github/workflows/pipeline.yml,
-# and cannot: OpenPermit is the one PUBLIC repo in the estate, `.github` is
-# private, and GitHub does not permit a public repo to call a private repo's
-# reusable workflow. There is no access setting that changes this. The previous
-# pipeline.yml called it anyway and failed to load on every run:
+# This repo runs its own CI rather than a shared reusable workflow: it is a
+# single static index.html with no dependencies, no test suite, and no
+# container, so only two gates can find anything here — secret scanning and
+# workflow linting. Language CI, SAST, dependency audit, and the image build
+# have nothing to act on.
 #
-#   error parsing called workflow
-#   "builtbycorelot/.github/.github/workflows/pipeline.yml@main"
-#   : workflow was not found
-#
-# That also removed the Dependabot failure this repo would otherwise inherit —
-# Dependabot could not resolve the private repo either.
-#
-# Scope is deliberately small because the repo is: one static index.html, no
-# dependencies, no test suite, no container. Only the gates that can actually
-# find something here are kept — secret scanning and workflow linting — from the
-# standard's BLOCKING set. Language CI, SAST, dependency audit, and the image
-# build have nothing to act on.
-#
-# Binaries are pinned and fetched directly rather than wrapped in marketplace
-# actions, mirroring the shared rough-checks.yml, so there is almost nothing for
-# Dependabot to track and no third-party action in the trust path.
+# Check binaries are version-pinned and fetched directly rather than wrapped in
+# marketplace actions, so there is almost nothing for Dependabot to track and no
+# third-party action in the trust path.
 name: pipeline
 
 on:
