@@ -3,15 +3,25 @@ name: ORI Conformance
 on:
   push:
     branches:
+      - test
       - ori/recovery-inventory-2026-09-01
+      - release/open-regulatory-infrastructure-2026-09-01
     paths:
       - "spec/**"
+      - "profiles/**"
       - "conformance/**"
+      - "reference-node/**"
+      - ".well-known/**"
+      - "llms.txt"
       - ".github/workflows/ori-conformance.yml"
   pull_request:
     paths:
       - "spec/**"
+      - "profiles/**"
       - "conformance/**"
+      - "reference-node/**"
+      - ".well-known/**"
+      - "llms.txt"
       - ".github/workflows/ori-conformance.yml"
   workflow_dispatch:
 
@@ -30,10 +40,35 @@ jobs:
         with:
           python-version: "3.12"
           cache: pip
-          cache-dependency-path: conformance/requirements.txt
+          cache-dependency-path: |
+            conformance/requirements.txt
+            reference-node/requirements.txt
 
-      - name: Install validator
-        run: python -m pip install -r conformance/requirements.txt
+      - name: Install validators and reference node
+        run: |
+          python -m pip install -r conformance/requirements.txt
+          python -m pip install -r reference-node/requirements.txt
 
-      - name: Validate ORI fixtures
+      - name: Validate ORI fixtures and guidance profiles
         run: python conformance/validate.py
+
+      - name: Compile reference node
+        run: python -m py_compile reference-node/server.py reference-node/smoke.py
+
+      - name: Exercise MCP tools in-process
+        run: python reference-node/smoke.py
+
+      - name: Exercise HTTP health route
+        run: |
+          python reference-node/server.py > /tmp/ori-reference-node.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true; cat /tmp/ori-reference-node.log' EXIT
+          for i in $(seq 1 20); do
+            if curl --fail --silent http://127.0.0.1:8000/health > /tmp/health.json; then
+              cat /tmp/health.json
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/ori-reference-node.log
+          exit 1
