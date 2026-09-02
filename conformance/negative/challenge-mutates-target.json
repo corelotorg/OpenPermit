@@ -1,0 +1,36 @@
+{
+  "id": "ori:test:negative:challenge-mutates-target",
+  "rule": "challenge-target-immutable",
+  "expected": "fail",
+  "target_before": {
+    "id": "ori:mapping:example",
+    "type": "MappingAssertion",
+    "version": "1.0.0",
+    "maps_from": "source:term:a",
+    "maps_to": "ori:concept:a",
+    "mapping_type": "closeMatch",
+    "mapped_by": "ori:actor:mapper",
+    "status": "accepted"
+  },
+  "target_after": {
+    "id": "ori:mapping:example",
+    "type": "MappingAssertion",
+    "version": "1.0.0",
+    "maps_from": "source:term:a",
+    "maps_to": "ori:concept:b",
+    "mapping_type": "closeMatch",
+    "mapped_by": "ori:actor:mapper",
+    "status": "rejected"
+  },
+  "challenge": {
+    "id": "ori:challenge:example",
+    "type": "Challenge",
+    "version": "1.0.0",
+    "subject": "ori:mapping:example",
+    "challenged_by": "ori:actor:reviewer",
+    "grounds": "mapping-evidence",
+    "statement": "The mapping is not supported by the cited source.",
+    "status": "open",
+    "created_at": "2026-09-01T00:00:00Z"
+  }
+}
