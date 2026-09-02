@@ -1,0 +1,39 @@
+name: ORI Conformance
+
+on:
+  push:
+    branches:
+      - ori/recovery-inventory-2026-09-01
+    paths:
+      - "spec/**"
+      - "conformance/**"
+      - ".github/workflows/ori-conformance.yml"
+  pull_request:
+    paths:
+      - "spec/**"
+      - "conformance/**"
+      - ".github/workflows/ori-conformance.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: conformance/requirements.txt
+
+      - name: Install validator
+        run: python -m pip install -r conformance/requirements.txt
+
+      - name: Validate ORI fixtures
+        run: python conformance/validate.py
