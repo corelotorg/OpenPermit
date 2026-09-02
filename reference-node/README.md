@@ -2,19 +2,21 @@
 
 A minimal, local-first implementation of the ORI Model Interface using the current MCP Python SDK and Streamable HTTP.
 
-## Run with Python
+## 30-second run
 
 ```bash
-python -m pip install -r reference-node/requirements.txt
+python -m pip install -r conformance/requirements.txt -r reference-node/requirements.txt
+python conformance/validate.py
+python reference-node/smoke.py
 python reference-node/server.py
 ```
 
-Defaults:
+Then inspect:
 
 - MCP: `http://127.0.0.1:8000/mcp`
 - Health: `http://127.0.0.1:8000/health`
 - Discovery: `http://127.0.0.1:8000/.well-known/ori.json`
-- State: append-only challenges at `reference-node/state/challenges.jsonl`
+- State: append-only challenge/disposition events at `reference-node/state/events.jsonl`
 
 ## Run with Docker
 
@@ -23,7 +25,7 @@ docker build -f reference-node/Dockerfile -t openpermit-ori .
 docker run --rm -p 8000:8000 openpermit-ori
 ```
 
-No SaaS account, database, API key, model provider, or external service is required for the reference mode.
+No SaaS account, database, API key, model provider, or external service is required for reference mode.
 
 ## Public hostname
 
@@ -37,17 +39,31 @@ docker run --rm -p 8000:8000 \
 
 Optional browser origins can be supplied as a comma-separated `ORI_ALLOWED_ORIGINS` value.
 
-## Tools
+## Implemented MCP tools
 
-- `ori_capabilities`
-- `ori_get`
-- `ori_traverse`
-- `ori_provenance`
-- `ori_verify`
-- `ori_challenge`
-- `ori_list_profiles`
+The source and smoke test currently enforce this exact tool surface:
 
-The node indexes machine-readable public profiles and conformance fixtures from the repository. It is intentionally small: runtime convenience must not become the ontology.
+- `ori_capabilities` — versions, endpoints, profiles, operations, legal-effect boundary.
+- `ori_get` — retrieve an addressable object plus open challenges/dispositions.
+- `ori_traverse` — cycle-safe traversal of ID-valued relationships.
+- `ori_provenance` — source, jurisdiction, version and lineage context.
+- `ori_verify` — structural schema verification; never legal approval by protocol.
+- `ori_analyze_precedence` — DAG validation, topological order, float and critical path.
+- `ori_challenge` — append a first-class challenge without editing the target.
+- `ori_resolve_challenge` — append a disposition without deleting challenge history.
+- `ori_list_profiles` — list published guidance profiles exposed by the reference node.
+
+The node indexes machine-readable public profiles, jurisdiction inventories and conformance fixtures from the repository for `ori_get`/traversal. `ori_list_profiles` is intentionally narrower today and lists guidance profiles; inventory discovery is also available through the static corpus.
+
+## Tests
+
+```bash
+python conformance/validate.py
+python -m pytest -q reference-node/test_graph.py
+python reference-node/smoke.py
+```
+
+The conformance harness includes positive schema fixtures and negative semantic fixtures proving rejection of mapping-as-fact, guidance promoted to a binding Requirement, challenge mutation of its target, and cyclic graphs declared as `PrecedenceGraph`.
 
 ## Legal and authority boundary
 
