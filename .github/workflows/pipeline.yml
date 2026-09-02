@@ -1,14 +1,8 @@
-# Standalone CI for OpenPermit.
+# Standalone repository hygiene checks for OpenPermit / ORI.
 #
-# This repo runs its own CI rather than a shared reusable workflow: it is a
-# single static index.html with no dependencies, no test suite, and no
-# container, so only two gates can find anything here — secret scanning and
-# workflow linting. Language CI, SAST, dependency audit, and the image build
-# have nothing to act on.
-#
-# Check binaries are version-pinned and fetched directly rather than wrapped in
-# marketplace actions, so there is almost nothing for Dependabot to track and no
-# third-party action in the trust path.
+# ORI's executable conformance and reference-node tests live in
+# .github/workflows/ori-conformance.yml. This workflow provides independent
+# repository-level secret, conflict and workflow-lint gates.
 name: pipeline
 
 on:
@@ -21,9 +15,6 @@ on:
 permissions:
   contents: read
 
-# A superseded run is billed for every job it started, rounded up to the minute,
-# whether or not anyone reads the result. PRs and pushes get separate groups so
-# cancelling a stale PR run never kills a publish.
 concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
@@ -32,14 +23,12 @@ jobs:
   verify:
     name: Rough checks
     runs-on: ubuntu-latest
-    # Without this the default is 360 minutes, so a single hung job costs six
-    # hours off the account quota.
     timeout-minutes: 10
     env:
       GITLEAKS_VERSION: "8.18.4"
       ACTIONLINT_VERSION: "1.7.7"
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
 
       - name: Merge-conflict markers
         run: |
@@ -61,8 +50,13 @@ jobs:
 
       - name: Secret scan (gitleaks)
         run: |
-          curl -fsSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
-            | tar -xz -C /tmp gitleaks
+          asset="gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz"
+          base="https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}"
+          curl -fsSLo "/tmp/${asset}" "${base}/${asset}"
+          curl -fsSLo /tmp/gitleaks_checksums.txt "${base}/gitleaks_${GITLEAKS_VERSION}_checksums.txt"
+          grep "  ${asset}$" /tmp/gitleaks_checksums.txt > /tmp/gitleaks_asset.sha256
+          (cd /tmp && sha256sum -c gitleaks_asset.sha256)
+          tar -xzf "/tmp/${asset}" -C /tmp gitleaks
           chmod +x /tmp/gitleaks
           /tmp/gitleaks detect --no-git --source . --redact -v --no-banner --exit-code 1 \
             || { echo "::error::gitleaks detected secrets. Findings above name file:rule:line (values redacted). False positive -> .gitleaks.toml allowlist."; exit 1; }
@@ -70,7 +64,12 @@ jobs:
 
       - name: Lint workflows (actionlint)
         run: |
-          curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
-            | tar -xz -C /tmp actionlint
+          asset="actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          base="https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}"
+          curl -fsSLo "/tmp/${asset}" "${base}/${asset}"
+          curl -fsSLo /tmp/actionlint_checksums.txt "${base}/actionlint_${ACTIONLINT_VERSION}_checksums.txt"
+          grep "  ${asset}$" /tmp/actionlint_checksums.txt > /tmp/actionlint_asset.sha256
+          (cd /tmp && sha256sum -c actionlint_asset.sha256)
+          tar -xzf "/tmp/${asset}" -C /tmp actionlint
           chmod +x /tmp/actionlint
           /tmp/actionlint -color
