@@ -1,0 +1,165 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-core-0.1.schema.json",
+  "title": "Open Regulatory Infrastructure Core v0.1 Draft",
+  "description": "Recovery-derived draft schema for addressable, provenance-first, jurisdiction-aware and challengeable regulatory graph objects.",
+  "type": "object",
+  "required": ["id", "type", "version"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "minLength": 1},
+    "effective_from": {"type": ["string", "null"], "format": "date-time"},
+    "effective_to": {"type": ["string", "null"], "format": "date-time"},
+    "jurisdiction": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "source": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "derived_from": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "supersedes": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "metadata": {"type": "object", "additionalProperties": true}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"type": {"const": "Assertion"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/assertion"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "MappingAssertion"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/mappingAssertion"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Verification"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/verification"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Decision"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/decision"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Challenge"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/challenge"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Source"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/sourceObject"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Evidence"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/evidence"}
+    },
+    {
+      "if": {"properties": {"type": {"const": "Edge"}}, "required": ["type"]},
+      "then": {"$ref": "#/$defs/edge"}
+    }
+  ],
+  "$defs": {
+    "ref": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Stable ORI object identifier or external canonical identifier."
+    },
+    "evidenceRefs": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/ref"},
+      "uniqueItems": true,
+      "default": []
+    },
+    "assertion": {
+      "required": ["subject", "predicate", "asserted_by"],
+      "properties": {
+        "subject": {"$ref": "#/$defs/ref"},
+        "predicate": {"type": "string", "minLength": 1},
+        "object": {},
+        "asserted_by": {"$ref": "#/$defs/ref"},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    },
+    "mappingAssertion": {
+      "required": ["maps_from", "maps_to", "mapping_type", "mapped_by", "status"],
+      "properties": {
+        "maps_from": {"$ref": "#/$defs/ref"},
+        "maps_to": {"$ref": "#/$defs/ref"},
+        "mapping_type": {"type": "string", "minLength": 1},
+        "mapped_by": {"$ref": "#/$defs/ref"},
+        "status": {"type": "string", "enum": ["proposed", "accepted", "rejected", "superseded", "withdrawn"]},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"},
+        "rationale": {"type": ["string", "null"]}
+      }
+    },
+    "verification": {
+      "required": ["validator", "validator_version", "inputs", "requirements", "outcome", "executed_at"],
+      "properties": {
+        "validator": {"$ref": "#/$defs/ref"},
+        "validator_version": {"type": "string", "minLength": 1},
+        "inputs": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1},
+        "requirements": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1},
+        "outcome": {"type": "string", "enum": ["pass", "fail", "indeterminate", "error", "not-applicable"]},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"},
+        "executed_at": {"type": "string", "format": "date-time"},
+        "determinism": {"type": "string", "enum": ["deterministic", "non-deterministic", "mixed", "unknown"]}
+      }
+    },
+    "decision": {
+      "required": ["subject", "decision_type", "decided_by", "decided_at"],
+      "properties": {
+        "subject": {"$ref": "#/$defs/ref"},
+        "decision_type": {"type": "string", "minLength": 1},
+        "decided_by": {"$ref": "#/$defs/ref"},
+        "decided_at": {"type": "string", "format": "date-time"},
+        "justified_by": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"},
+        "conditions": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true}
+      }
+    },
+    "challenge": {
+      "required": ["subject", "challenged_by", "grounds", "statement", "status", "created_at"],
+      "properties": {
+        "subject": {"$ref": "#/$defs/ref"},
+        "challenged_by": {"$ref": "#/$defs/ref"},
+        "grounds": {"type": "string", "minLength": 1},
+        "statement": {"type": "string", "minLength": 1},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"},
+        "status": {"type": "string", "enum": ["open", "answered", "sustained", "rejected", "withdrawn", "superseded"]},
+        "created_at": {"type": "string", "format": "date-time"},
+        "response_to": {"type": ["string", "null"], "minLength": 1},
+        "resolved_by": {"type": ["string", "null"], "minLength": 1}
+      }
+    },
+    "sourceObject": {
+      "required": ["locator", "authority_class"],
+      "properties": {
+        "locator": {"type": "string", "minLength": 1},
+        "title": {"type": ["string", "null"]},
+        "publisher": {"type": ["string", "null"]},
+        "edition": {"type": ["string", "null"]},
+        "checksum": {"type": ["string", "null"]},
+        "license_status": {"type": ["string", "null"]},
+        "retrieved_at": {"type": ["string", "null"], "format": "date-time"},
+        "authority_class": {"type": "string", "minLength": 1}
+      }
+    },
+    "evidence": {
+      "required": ["evidence_type"],
+      "properties": {
+        "evidence_type": {"type": "string", "minLength": 1},
+        "artifact": {"type": ["string", "null"]},
+        "captured_by": {"type": ["string", "null"]},
+        "captured_at": {"type": ["string", "null"], "format": "date-time"},
+        "spatial_anchor": {"type": ["string", "null"]},
+        "integrity": {"type": "object", "additionalProperties": true}
+      }
+    },
+    "edge": {
+      "required": ["predicate", "from", "to"],
+      "properties": {
+        "predicate": {"type": "string", "minLength": 1},
+        "from": {"$ref": "#/$defs/ref"},
+        "to": {"$ref": "#/$defs/ref"},
+        "attributes": {"type": "object", "additionalProperties": true},
+        "evidence": {"$ref": "#/$defs/evidenceRefs"}
+      }
+    }
+  },
+  "additionalProperties": true
+}
