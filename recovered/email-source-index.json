@@ -1,0 +1,178 @@
+{
+  "schema_version": "0.1.0",
+  "generated": "2026-09-01",
+  "purpose": "OpenPermit/ORI architectural evidence recovered from email without storing recipient PII",
+  "sources": [
+    {
+      "message_id": "197c127358a17369",
+      "date": "2025-06-30",
+      "subject": "CORELOT Security & NFL Implementation",
+      "confidence": "high",
+      "attachments": [
+        "Nfl Open Permit Edge Logic Whitepaper.pdf",
+        "Nfl Roll-out Plan – Corelot.pdf",
+        "Nfl Standards Grounding Plan.pdf",
+        "Corelot Security Policy V1.pdf"
+      ],
+      "concepts": [
+        "near-one-click-container",
+        "standards-as-first-class-nodes",
+        "json-ld",
+        "shacl",
+        "provenance",
+        "conformance",
+        "docker-kubernetes",
+        "wasm",
+        "sbom-slsa",
+        "plugin-extension-model"
+      ]
+    },
+    {
+      "message_id": "19762473c922e3d1",
+      "date": "2025-06-12",
+      "subject": "Open Permit",
+      "confidence": "high",
+      "concepts": [
+        "structured-submission-package",
+        "schema-first-validation",
+        "ifc-verification",
+        "permit-by-rule",
+        "remote-geotagged-inspection",
+        "open-api-interoperability",
+        "container-reference-deployment"
+      ]
+    },
+    {
+      "message_id": "199bf6a5df4a3aa0",
+      "date": "2025-10-07",
+      "subject": "Permit Research",
+      "confidence": "high",
+      "attachments": ["Virginia_Permitting_Deep_Research_2025_fixed.pdf"],
+      "concepts": [
+        "virginia-authority-inventory",
+        "state-federal-local-permitting",
+        "jpa-cross-agency-process",
+        "blds-field-normalization",
+        "ifc-references",
+        "vendor-adapter-inventory"
+      ]
+    },
+    {
+      "message_id": "199f26ce6b508ee9",
+      "date": "2025-10-17",
+      "subject": "Re: CRUX + Open Permit - Formation",
+      "confidence": "high",
+      "concepts": ["serverless-dag-architecture"]
+    },
+    {
+      "message_id": "19a3ba1a0d415558",
+      "date": "2025-10-31",
+      "subject": "Re: Action Items for Discussion",
+      "confidence": "high",
+      "concepts": ["dag", "pluggable-workflow-runtime", "temporal-considered"]
+    },
+    {
+      "message_id": "19aa7ada99c3a4d1",
+      "date": "2025-11-21",
+      "subject": "Fwd: Inspection Communications Memo",
+      "confidence": "high",
+      "attachments": ["Memo_To_Tech_Committee.docx"],
+      "concepts": [
+        "authoritative-inspection-thread",
+        "json-ld-inspection-events",
+        "attestation",
+        "inspection-communication-standard"
+      ]
+    },
+    {
+      "message_id": "19ab81ad239bcc8f",
+      "date": "2025-11-24",
+      "subject": "Re: Inspection Communications Memo",
+      "confidence": "high",
+      "concepts": [
+        "geo-located-evidence",
+        "geo-attested-device",
+        "smart-post",
+        "drone-capture",
+        "on-device-inference"
+      ]
+    },
+    {
+      "message_id": "19b486a48dde097c",
+      "date": "2025-12-22",
+      "subject": "Re: [OpenPermit] Document ontology-first civic runtime and ontology outline",
+      "confidence": "high",
+      "related_git": {
+        "repository": "corelotorg/OpenPermit",
+        "pull_request": 103,
+        "head": "4c91972ba51c126c1ad2f23692bfc3105e55fe78"
+      },
+      "concepts": [
+        "ontology-first-runtime",
+        "authority-jurisdiction",
+        "assertion-event-spatial-anchor",
+        "typed-golden-thread-edges",
+        "anti-lock-in",
+        "dynamic-docs",
+        "json-ld-context",
+        "yaml-ontology"
+      ]
+    },
+    {
+      "message_id": "197c8a30b49dfc11",
+      "date": "2025-07-01",
+      "subject": "Treasury Workflow Language",
+      "confidence": "medium-high",
+      "related_git": {
+        "repository": "SheetPros/OpenTax",
+        "issue": 4
+      },
+      "concepts": [
+        "regulatory-language",
+        "esperanto-approach",
+        "minimal-semantic-primitives",
+        "formal-regulatory-grammar",
+        "crosswalk-lexicon",
+        "ngl-substrate"
+      ]
+    },
+    {
+      "message_id": "19a3f87d2e629f1f",
+      "date": "2025-11-01",
+      "subject": "Fwd: U.S. Digital Response / Taskforce Streamline",
+      "confidence": "medium",
+      "attachments": ["OpenPermit_RoundRobin_Matrix_Full (1).pdf"],
+      "concepts": [
+        "government-modernization-landscape",
+        "nonprofit-policy-landscape",
+        "open-source-landscape",
+        "incumbent-vendor-landscape",
+        "ecosystem-outreach-seed"
+      ]
+    }
+  ],
+  "recovery_state": {
+    "confirmed": [
+      "graph-native-regulatory-model",
+      "typed-edge-provenance-validity",
+      "standards-as-nodes",
+      "executable-conformance",
+      "jurisdiction-aware-extension",
+      "dag-workflow-history",
+      "geo-attested-evidence-requirement",
+      "ontology-first-runtime",
+      "anti-lock-in",
+      "linguistic-semantic-research-track"
+    ],
+    "partial": [
+      "secure-open-hardware-attestation-spec",
+      "third-party-attestation-layer",
+      "challenge-appeal-counterclaim-ontology"
+    ],
+    "missing": [
+      "texas-full-regulatory-inventory",
+      "washington-full-regulatory-inventory",
+      "original-cross-jurisdiction-linguistic-measurements"
+    ]
+  }
+}

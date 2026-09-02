@@ -1,0 +1,76 @@
+# Standalone CI for OpenPermit.
+#
+# This repo runs its own CI rather than a shared reusable workflow: it is a
+# single static index.html with no dependencies, no test suite, and no
+# container, so only two gates can find anything here — secret scanning and
+# workflow linting. Language CI, SAST, dependency audit, and the image build
+# have nothing to act on.
+#
+# Check binaries are version-pinned and fetched directly rather than wrapped in
+# marketplace actions, so there is almost nothing for Dependabot to track and no
+# third-party action in the trust path.
+name: pipeline
+
+on:
+  pull_request:
+    branches: [test, prod]
+  push:
+    branches: [test, prod]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# A superseded run is billed for every job it started, rounded up to the minute,
+# whether or not anyone reads the result. PRs and pushes get separate groups so
+# cancelling a stale PR run never kills a publish.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+jobs:
+  verify:
+    name: Rough checks
+    runs-on: ubuntu-latest
+    # Without this the default is 360 minutes, so a single hung job costs six
+    # hours off the account quota.
+    timeout-minutes: 10
+    env:
+      GITLEAKS_VERSION: "8.18.4"
+      ACTIONLINT_VERSION: "1.7.7"
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Merge-conflict markers
+        run: |
+          if git grep -nE '^(<<<<<<< |>>>>>>> )' -- . ':(exclude)*.md'; then
+            echo "::error::unresolved merge-conflict markers in tracked files"; exit 1
+          fi
+          echo "OK — no conflict markers"
+
+      - name: Forbidden secret-bearing files
+        run: |
+          hits=$(git ls-files \
+            | grep -nE '\.(pem|key|p12|pfx|keystore|jks)$|(^|/)\.env$|(^|/)\.env\.[^/]+$|(^|/)id_rsa$|(^|/)age\.key$' \
+            | grep -vE '\.(example|sample|template)$' || true)
+          if [ -n "$hits" ]; then
+            echo "::error::files that look like plaintext secrets are tracked:"
+            echo "$hits"; exit 1
+          fi
+          echo "OK — no forbidden secret-bearing files"
+
+      - name: Secret scan (gitleaks)
+        run: |
+          curl -fsSL "https://github.com/gitleaks/gitleaks/releases/download/v${GITLEAKS_VERSION}/gitleaks_${GITLEAKS_VERSION}_linux_x64.tar.gz" \
+            | tar -xz -C /tmp gitleaks
+          chmod +x /tmp/gitleaks
+          /tmp/gitleaks detect --no-git --source . --redact -v --no-banner --exit-code 1 \
+            || { echo "::error::gitleaks detected secrets. Findings above name file:rule:line (values redacted). False positive -> .gitleaks.toml allowlist."; exit 1; }
+          echo "OK — gitleaks clean"
+
+      - name: Lint workflows (actionlint)
+        run: |
+          curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
+            | tar -xz -C /tmp actionlint
+          chmod +x /tmp/actionlint
+          /tmp/actionlint -color

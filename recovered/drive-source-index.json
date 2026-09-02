@@ -1,0 +1,85 @@
+{
+  "schema_version": "0.1.0",
+  "generated": "2026-09-01",
+  "sources": [
+    {
+      "id": "1Y7xEEqgN5xoCuYaLhnKTGzz58bilCUQ-gsS3h8fLKms",
+      "title": "NGL_Ontology_Ext_v0.2_Standard_CriticalPath",
+      "kind": "google-doc",
+      "status": "recovered",
+      "concepts": [
+        "ngl-standard",
+        "issued-date",
+        "semver",
+        "provenance",
+        "conformance",
+        "ip-provenance",
+        "adoption",
+        "precedes",
+        "duration",
+        "float",
+        "critical-path",
+        "derived-not-authored"
+      ]
+    },
+    {
+      "id": "13kEGwIfpA6GrfPpK9iQXBNglHDFWDCmKp2EdTiEQnhU",
+      "title": "Esperanto - 2025/05/22 15:14 EDT - Notes by Gemini",
+      "kind": "google-doc",
+      "status": "recovered",
+      "concepts": [
+        "seven-verb-lexicon",
+        "standards-crosswalk",
+        "central-standard-decentralized-operations",
+        "jurisdictional-awareness",
+        "knowledge-packs",
+        "application-layer-independent",
+        "bim-ifc",
+        "minimalism"
+      ]
+    },
+    {
+      "id": "1BxGUjRZIS5XzSezL-oqbiP5MGAAx_oa9",
+      "title": "openpermit_api_research.md",
+      "kind": "markdown",
+      "status": "recovered",
+      "concepts": [
+        "market-endpoint-inventory",
+        "accela",
+        "opengov",
+        "tyler-energov",
+        "trimble",
+        "cloudpermit",
+        "permitflow",
+        "blds",
+        "permit-application-profile"
+      ],
+      "application_verbs": ["SUBMIT", "STATUS", "ATTACH", "RESPOND", "SCHEDULE", "RESULT", "PAY", "ISSUE"]
+    },
+    {
+      "id": "165ukYnIzSH8geyK1n-entSj3xg30Elpe",
+      "title": "OpenPermit_Implementation_Playbook v001.docx",
+      "kind": "docx",
+      "status": "recovered",
+      "concepts": [
+        "vendor-neutral-standard",
+        "national-state-local",
+        "virginia",
+        "texas",
+        "washington",
+        "conformance-harness",
+        "replicable-template"
+      ],
+      "retire_from_core_governance": ["paid-certification", "committee-endorsement-gate"]
+    }
+  ],
+  "still_missing": [
+    "exact-seven-verb-definitions",
+    "washington-full-regulatory-inventory",
+    "texas-full-regulatory-inventory",
+    "cross-jurisdiction-linguistic-study",
+    "secure-geocoded-open-hardware-spec",
+    "third-party-attestation-spec",
+    "challenge-appeal-counterclaim-ontology"
+  ]
+}

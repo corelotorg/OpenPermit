@@ -1,0 +1,269 @@
+version: 0.1.0
+namespaceBase: https://openpermit.dev/ontology/
+domains:
+  core:
+    prefix: core
+    base: https://openpermit.dev/ontology/core#
+  graph:
+    prefix: graph
+    base: https://openpermit.dev/ontology/graph#
+  identity:
+    prefix: id
+    base: https://openpermit.dev/ontology/identity#
+  jurisdiction:
+    prefix: jurisdiction
+    base: https://openpermit.dev/ontology/jurisdiction#
+  built_assets:
+    prefix: asset
+    base: https://openpermit.dev/ontology/asset#
+  permit:
+    prefix: permit
+    base: https://openpermit.dev/ontology/permit#
+  review:
+    prefix: review
+    base: https://openpermit.dev/ontology/review#
+  codes:
+    prefix: code
+    base: https://openpermit.dev/ontology/code#
+  inspection:
+    prefix: inspection
+    base: https://openpermit.dev/ontology/inspection#
+  finance:
+    prefix: finance
+    base: https://openpermit.dev/ontology/finance#
+  artifact:
+    prefix: artifact
+    base: https://openpermit.dev/ontology/artifact#
+  communication:
+    prefix: comms
+    base: https://openpermit.dev/ontology/communication#
+  integration:
+    prefix: integration
+    base: https://openpermit.dev/ontology/integration#
+classes:
+  core:
+    - Node
+    - Identifier
+    - Edge
+    - Event
+    - Assertion
+    - State
+    - Status
+    - Version
+    - TimeInstant
+    - TimeInterval
+    - SpatialAnchor
+    - Confidence
+  identity:
+    - Actor
+    - Person
+    - Organization
+    - Department
+    - Role
+    - Authority
+    - Credential
+  jurisdiction:
+    - Jurisdiction
+    - AuthorityPolicy
+    - ServiceArea
+    - Office
+    - GoverningBody
+    - RegulatoryProgram
+  built_assets:
+    - BuiltAsset
+    - Site
+    - Parcel
+    - Address
+    - Building
+    - Structure
+    - BuildingElement
+    - Space
+    - Zone
+    - System
+    - AssetLocation
+    - GeometryReference
+  permit:
+    - Permit
+    - PermitApplication
+    - PermitType
+    - ScopeOfWork
+    - WorkItem
+    - Project
+    - Applicant
+    - Owner
+    - Contractor
+    - Submission
+    - Revision
+    - Requirement
+    - ConditionOfPermit
+  review:
+    - Review
+    - ReviewPackage
+    - ReviewComment
+    - ReviewFinding
+    - Disposition
+    - Approval
+    - Rejection
+    - RequestForInformation
+    - CorrectionNotice
+    - Condition
+    - Task
+  codes:
+    - Code
+    - CodeEdition
+    - CodeSection
+    - CodeCitation
+    - LocalAmendment
+    - Interpretation
+    - Policy
+    - Standard
+    - ReferenceDocument
+  inspection:
+    - Inspection
+    - InspectionRequest
+    - InspectionType
+    - InspectionResult
+    - Finding
+    - Deficiency
+    - Verification
+    - Reinspection
+  finance:
+    - FeeItem
+    - FeeCode
+    - FeeSchedule
+    - FeeRule
+    - Account
+    - AccountCode
+    - Charge
+    - Payment
+    - Refund
+    - Waiver
+    - LedgerEntry
+  artifact:
+    - Artifact
+    - ArtifactType
+    - Document
+    - Model
+    - PlanSet
+    - Image
+    - Attachment
+    - Record
+    - Receipt
+    - Invoice
+  communication:
+    - CommunicationThread
+    - CommunicationMessage
+    - Channel
+    - Recipient
+    - MessageDelivery
+    - Notification
+  integration:
+    - ExternalSystem
+    - Provider
+    - Adapter
+    - Endpoint
+    - EventEnvelope
+    - Projection
+    - EntitySet
+    - FieldMapping
+crossCuttingProperties:
+  - id
+  - type
+  - label
+  - description
+  - createdAt
+  - updatedAt
+  - effectiveAt
+  - expiresAt
+  - status
+  - state
+  - version
+  - confidence
+  - source
+  - identifier
+  - jurisdiction
+  - tags
+  - language
+properties:
+  spatialAnchor:
+    domain: core
+    fields: [anchorType, globalId, modelRef, position, address, parcel, viewRef, radius]
+  permit:
+    domain: permit
+    fields: [permitNumber, permitType, applicationDate, issuedDate, closedDate, scopeOfWork, appliesTo, applicant, owner, contractor, requirements, conditions, submissions, revisions]
+  review:
+    domain: review
+    fields: [reviewType, reviewer, reviewedArtifact, comments, findings, disposition, decisionDate, conditions, tasks]
+  codeCitation:
+    domain: codes
+    fields: [code, edition, section, citationText, jurisdictionApplicability, effectiveDate]
+  inspection:
+    domain: inspection
+    fields: [inspectionType, requestedBy, scheduledFor, performedAt, performedBy, result, findings, verifications, reinspectionOf]
+  finance:
+    domain: finance
+    fields: [feeCode, feeSchedule, amount, currency, basis, quantity, accountCode, assessedAt, assessedBy, triggeredBy, waivedBy, refundedBy]
+  communication:
+    domain: communication
+    fields: [threadKey, topic, inReplyTo, sentBy, sentTo, channel, subject, body, attachments, deliveryStatus, anchor, targets]
+  integration:
+    domain: integration
+    fields: [systemName, providerName, endpointUrl, entitySetName, fieldMappings, eventSchemaVersion, externalId]
+relationships:
+  provenance: [derivedFrom, supersedes, versionOf, generatedBy, recordedBy]
+  authority: [asserts, authorizedBy, withinJurisdiction, assignedTo]
+  scope: [targets, appliesTo, locatedAt, concerns]
+  review: [reviews, hasComment, hasFinding, resultsIn, requires, satisfies, justifiedBy, conditions]
+  inspection: [requestedFor, performedOn, verifies, finds, reinspectionOf]
+  finance: [assesses, triggeredBy, mapsToAccount, paidBy, pays, waives, refunds]
+  communication: [inThread, repliesTo, sentTo, deliveredVia, references, notifies]
+  integration: [routedTo, exposedAs, mapsFieldTo, hasExternalId]
+normative:
+  classes:
+    - Permit
+    - PermitApplication
+    - Submission
+    - Revision
+    - Jurisdiction
+    - Authority
+    - Actor
+    - Role
+    - BuiltAsset
+    - Parcel
+    - Address
+    - BuildingElement
+    - SpatialAnchor
+    - Review
+    - ReviewComment
+    - Disposition
+    - CodeCitation
+    - InspectionRequest
+    - Inspection
+    - InspectionResult
+    - FeeItem
+    - FeeCode
+    - AccountCode
+    - CommunicationThread
+    - CommunicationMessage
+    - Artifact
+  relationships:
+    - asserts
+    - targets
+    - justifiedBy
+    - resultsIn
+    - appliesTo
+    - withinJurisdiction
+    - verifies
+    - triggeredBy
+    - mapsToAccount
+    - inThread
+    - repliesTo
+    - references
+    - derivedFrom
+    - supersedes
+
+# Recovery provenance:
+# source PR: corelotorg/OpenPermit#103
+# source head: 4c91972ba51c126c1ad2f23692bfc3105e55fe78
+# source path: ontology/index.yaml
+# status: quarantined evidence, not current ORI normative core
