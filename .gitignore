@@ -1,2 +1,6 @@
 # Local development files
 local/
+
+# Python generated files
+__pycache__/
+*.py[cod]
