@@ -1,0 +1,134 @@
+{
+  "id": "ori:profile:federal:hud-home-construction-best-practices:2026",
+  "type": "GuidanceProfile",
+  "version": "0.1.0",
+  "status": "draft",
+  "authority_classification": "federal_guidance",
+  "title": "HUD State and Local Best Practices for Home Construction",
+  "source": [
+    {
+      "id": "source:hud:state-local-best-practices-home-construction:2026",
+      "publisher": "U.S. Department of Housing and Urban Development",
+      "locator": "https://www.hud.gov/hud-partners/state-and-local-best-practices",
+      "document_locator": "https://www.hud.gov/sites/default/files/Main/documents/State-and-Local-Best-Practices-for-Home-Construction.pdf"
+    },
+    {
+      "id": "source:whitehouse:eo-14394:2026-03-13",
+      "publisher": "The White House",
+      "title": "Executive Order 14394 - Removing Regulatory Barriers to Affordable Home Construction",
+      "locator": "https://www.whitehouse.gov/presidential-actions/2026/03/removing-regulatory-barriers-to-affordable-home-construction/",
+      "effective_from": "2026-03-13"
+    }
+  ],
+  "legal_boundary": {
+    "is_binding_local_law": false,
+    "creates_private_right": false,
+    "rule": "Profile alignment is evidence against federal guidance, not a determination of legal compliance or local legal obligation."
+  },
+  "categories": ["Cost", "Land", "Time"],
+  "controls": [
+    {
+      "id": "hud.cost.fee_transparency",
+      "category": "Cost",
+      "practice": "Publish a list of development fees.",
+      "ori_objects": ["FeeItem", "Requirement", "Authority", "Source", "Jurisdiction"],
+      "evidence": ["machine_readable_fee_schedule", "fee_authority", "effective_version"],
+      "measurements": ["fee_coverage_percent", "stale_schedule_count", "estimated_fee_stack"]
+    },
+    {
+      "id": "hud.cost.objective_construction_standards",
+      "category": "Cost",
+      "practice": "Use objective building and safety standards without unnecessary discrimination among construction methods.",
+      "ori_objects": ["Requirement", "MappingAssertion", "Exception", "Challenge", "Decision"],
+      "evidence": ["requirement_source", "method_mapping", "exception_basis"],
+      "measurements": ["method_dependent_delta_count", "exception_rate", "challenge_rate"]
+    },
+    {
+      "id": "hud.land.regulatory_transparency",
+      "category": "Land",
+      "practice": "Publish all required inspections, permits, and approvals.",
+      "ori_objects": ["Jurisdiction", "Requirement", "Action", "Authority", "Source"],
+      "evidence": ["jurisdiction_manifest", "approval_inventory", "authority_mapping"],
+      "measurements": ["published_approval_coverage_percent", "unknown_approval_count", "unmapped_authority_count"]
+    },
+    {
+      "id": "hud.time.fast_lane",
+      "category": "Time",
+      "practice": "Establish permit-review fast lanes for residential and new-building permits.",
+      "ori_objects": ["Action", "Requirement", "Condition", "Event", "Decision"],
+      "evidence": ["eligibility_rule", "routing_rule", "service_target"],
+      "measurements": ["eligible_volume", "cycle_time_p50", "cycle_time_p95", "fallout_rate"]
+    },
+    {
+      "id": "hud.time.no_duplicate_reviews",
+      "category": "Time",
+      "practice": "End unnecessary multiple reviews.",
+      "ori_objects": ["Action", "Requirement", "Authority", "Verification", "PrecedenceGraph"],
+      "evidence": ["review_graph", "reviewer_authority", "requirement_dependencies"],
+      "measurements": ["duplicate_review_candidates", "redundant_evidence_requests", "blocking_branch_count"]
+    },
+    {
+      "id": "hud.time.shot_clock.right_to_build",
+      "category": "Time",
+      "practice": "Use a cumulative right-to-build timeline target under 60 days.",
+      "target": {"operator": "lt", "value": 60, "unit": "day"},
+      "ori_objects": ["Action", "Event", "Condition", "Source", "Challenge"],
+      "evidence": ["start_event", "deadline", "completion_event", "pause_toll_events"],
+      "measurements": ["elapsed_days", "active_days", "target_breach", "p50_days", "p95_days"]
+    },
+    {
+      "id": "hud.time.shot_clock.construction",
+      "category": "Time",
+      "practice": "Use a cumulative construction permitting and inspection timeline target under 30 days.",
+      "target": {"operator": "lt", "value": 30, "unit": "day"},
+      "ori_objects": ["Action", "Inspection", "Event", "Condition", "Source", "Challenge"],
+      "evidence": ["start_event", "deadline", "completion_event", "pause_toll_events"],
+      "measurements": ["elapsed_days", "active_days", "target_breach", "p50_days", "p95_days"]
+    },
+    {
+      "id": "hud.time.unified_development_ordinance",
+      "category": "Time",
+      "practice": "Adopt a unified development ordinance.",
+      "ori_objects": ["RegulatoryInstrument", "Provision", "Requirement", "Jurisdiction", "SpatialAnchor"],
+      "evidence": ["authoritative_requirement_graph", "parcel_address_resolution", "version_lineage"],
+      "measurements": ["source_coverage_percent", "conflict_count", "unmapped_provision_count"]
+    },
+    {
+      "id": "hud.time.technology_acceleration",
+      "category": "Time",
+      "practice": "Use technology, including AI, to expedite permit approval.",
+      "ori_objects": ["Verification", "Assertion", "Decision", "Evidence", "Source"],
+      "evidence": ["validator_version", "input_manifest", "verification_report", "decision_authority"],
+      "measurements": ["automated_check_coverage_percent", "human_override_rate", "review_time_delta"]
+    },
+    {
+      "id": "hud.time.third_party_inspection",
+      "category": "Time",
+      "practice": "Allow third-party inspections by state-certified inspectors.",
+      "ori_objects": ["Authority", "Evidence", "Verification", "SpatialAnchor", "Decision", "Challenge"],
+      "evidence": ["credential", "credential_issuer", "authorized_scope", "inspection_artifacts", "attestation"],
+      "measurements": ["third_party_usage_rate", "acceptance_rate", "reinspection_rate", "challenge_rate"]
+    },
+    {
+      "id": "hud.time.certified_engineer_review",
+      "category": "Time",
+      "practice": "Use state-certified engineers for environmental, site-plan, and plat reviews.",
+      "ori_objects": ["Authority", "Evidence", "Verification", "Decision", "Challenge"],
+      "evidence": ["engineer_credential", "review_scope", "signed_result", "authority_acceptance"],
+      "measurements": ["cycle_time", "acceptance_rate", "challenge_rate"]
+    },
+    {
+      "id": "hud.time.swift_dispute_resolution",
+      "category": "Time",
+      "practice": "Provide swift dispute resolution for construction matters.",
+      "ori_objects": ["Challenge", "Assertion", "Evidence", "Decision", "Event"],
+      "evidence": ["challenge_record", "response", "disposition", "timestamps"],
+      "measurements": ["open_challenge_age", "resolution_time", "sustained_rate", "rejected_rate", "withdrawn_rate"]
+    }
+  ],
+  "derived_alignment_model": {
+    "chain": ["HUDPractice", "ImplementationControl", "Evidence", "Measurement", "AlignmentResult"],
+    "must_preserve_challengeability": true,
+    "must_not_emit_legal_compliance": true
+  }
+}
