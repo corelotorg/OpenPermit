@@ -1,0 +1,18 @@
+{
+  "id": "ori:test:negative:cyclic-precedence-graph",
+  "rule": "precedence-graph-acyclic",
+  "expected": "fail",
+  "graph": {
+    "type": "PrecedenceGraph",
+    "nodes": [
+      {"id": "submit", "duration": 1},
+      {"id": "review", "duration": 1},
+      {"id": "issue", "duration": 1}
+    ],
+    "edges": [
+      {"from": "submit", "to": "review"},
+      {"from": "review", "to": "issue"},
+      {"from": "issue", "to": "submit"}
+    ]
+  }
+}
