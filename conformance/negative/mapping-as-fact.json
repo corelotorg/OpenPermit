@@ -1,0 +1,14 @@
+{
+  "id": "ori:test:negative:mapping-as-fact",
+  "rule": "mapping-requires-assertion",
+  "expected": "fail",
+  "objects": [
+    {
+      "id": "ori:source-term:city-submit",
+      "type": "SourceTerm",
+      "version": "1.0.0",
+      "label": "Submit application",
+      "maps_to": "ori:action:submit"
+    }
+  ]
+}
