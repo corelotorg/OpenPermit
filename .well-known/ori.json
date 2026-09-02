@@ -8,8 +8,14 @@
   "charter": "https://openpermit.io/CHARTER.md",
   "core_spec": "https://openpermit.io/spec/ori-core-0.1-draft.md",
   "schema": "https://openpermit.io/spec/ori-core-0.1.schema.json",
+  "model_interface": "https://openpermit.io/spec/model-interface-0.1-draft.md",
+  "precedence_graph": "https://openpermit.io/spec/precedence-graph-0.1-draft.md",
+  "challenge_protocol": "https://openpermit.io/spec/challenge-protocol-0.1-draft.md",
+  "evidence_attestation": "https://openpermit.io/spec/evidence-attestation-0.1-draft.md",
+  "capability_registry": "https://openpermit.io/spec/capability-registry-0.1-draft.md",
   "guidance_profiles": [
-    "https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json"
+    "https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json",
+    "https://openpermit.io/profiles/federal/regulatory-inventory-2025.json"
   ],
   "conformance": {
     "repository": "https://github.com/corelotorg/OpenPermit/tree/test/conformance",
@@ -20,11 +26,23 @@
       "status": "reference-node-source-published",
       "transport": "streamable-http",
       "path": "/mcp",
-      "source": "https://github.com/corelotorg/OpenPermit/tree/test/reference-node"
+      "source": "https://github.com/corelotorg/OpenPermit/tree/test/reference-node",
+      "operations": [
+        "ori.capabilities",
+        "ori.get",
+        "ori.traverse",
+        "ori.provenance",
+        "ori.verify",
+        "ori.analyze_precedence",
+        "ori.challenge",
+        "ori.resolve_challenge",
+        "ori.list_profiles"
+      ]
     },
     "rest": {
       "status": "reference-node-source-published",
-      "manifest_path": "/health"
+      "health_path": "/health",
+      "discovery_path": "/.well-known/ori.json"
     },
     "json_ld": true,
     "static_http": true
@@ -41,5 +59,5 @@
     "authority-preserving",
     "runnable"
   ],
-  "legal_boundary": "Guidance-profile alignment is not a determination of legal compliance, local legal obligation, or government endorsement."
+  "legal_boundary": "Guidance-profile alignment and model/validator output are not determinations of legal compliance, local legal obligation, professional authority, regulatory approval, or government endorsement."
 }
