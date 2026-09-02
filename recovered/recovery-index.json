@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "generated": "2026-09-01",
   "status": "recovery-inventory",
   "positioning": "open-regulatory-infrastructure",
@@ -99,16 +99,137 @@
       "path": "docs/ui_roles.md",
       "status": "recovered",
       "disposition": "generalize-beyond-permitting"
+    },
+    {
+      "capability": "historical-seven-verb-nfl-lexicon",
+      "source_type": "commit",
+      "repository": "corelotorg/ngl",
+      "sha": "b23c7788d039f07b65ef05b96432ecbc8b7ffd39",
+      "status": "recovered-with-drift",
+      "verbs": ["node", "edge", "trait", "pack", "fn", "impl", "@call"],
+      "disposition": "preserve-history-reconcile-before-language-freeze"
+    },
+    {
+      "capability": "current-nfl-language",
+      "source_type": "repository-files",
+      "repository": "corelotorg/ngl",
+      "ref": "test",
+      "paths": ["README.md", "docs/NFL_Syntax.md"],
+      "status": "recovered-current",
+      "disposition": "distinguish-graph-language-syntax-from-ori-domain-predicates"
+    },
+    {
+      "capability": "nfl-openpermit-edge-logic",
+      "source_type": "email-drive-artifact",
+      "message_id": "197c127358a17369",
+      "drive_file_id": "1ag40mKoWvMr7FrIxSZZ2OaEdXYGnaiF8",
+      "dated": "2025-06-27",
+      "status": "recovered",
+      "canonical_edge_fields": ["id", "type", "from", "to", "attributes", "valid_from", "valid_to", "provenance", "acl"],
+      "edge_categories": ["structural", "regulatory", "workflow", "requirement", "temporal", "financial", "lineage"],
+      "disposition": "direct-predecessor-to-ori-edge-contract"
+    },
+    {
+      "capability": "standards-as-first-class-nodes",
+      "source_type": "email-attachment",
+      "message_id": "197c127358a17369",
+      "attachment": "Nfl Standards Grounding Plan.pdf",
+      "status": "recovered",
+      "relationships": ["supersedes", "extends", "alignsWith", "implements", "references"],
+      "validation": ["JSON-LD", "SHACL", "executable-tests"],
+      "disposition": "promote-concept-after-authority-and-license-model-review"
+    },
+    {
+      "capability": "critical-path-graph-semantics",
+      "source_type": "google-drive",
+      "file_id": "1Y7xEEqgN5xoCuYaLhnKTGzz58bilCUQ-gsS3h8fLKms",
+      "dated": "2026-07-18",
+      "status": "recovered",
+      "predicates": ["precedes", "duration", "float", "isCritical"],
+      "derivation": "criticalPath(Project)=longest-duration path over precedes edges; float is derived by forward/backward pass",
+      "disposition": "use-for-acyclic-precedence-and-approval-subgraphs-only"
+    },
+    {
+      "capability": "dag-runtime-history",
+      "source_type": "email",
+      "message_ids": ["199f26ce6b508ee9", "19a3ba1a0d415558"],
+      "dated": ["2025-10-17", "2025-10-31"],
+      "status": "recovered",
+      "concepts": ["serverless-dag", "pluggable-workflow-engine", "temporal-considered"],
+      "disposition": "keep-dag-semantics-normative-runtime-pluggable"
+    },
+    {
+      "capability": "ontology-first-civic-runtime",
+      "source_type": "unmerged-pr",
+      "repository": "corelotorg/OpenPermit",
+      "pull_request": 103,
+      "head": "4c91972ba51c126c1ad2f23692bfc3105e55fe78",
+      "status": "recovered-quarantined",
+      "recovered_paths": [
+        "recovered/pr-103/ontology-specification.md",
+        "recovered/pr-103/node-relationships.md",
+        "recovered/pr-103/civic-runtime-stack.md",
+        "recovered/pr-103/ontology.jsonld",
+        "recovered/pr-103/ontology-index.yaml"
+      ],
+      "concepts": ["Assertion", "Event", "SpatialAnchor", "Authority", "Jurisdiction", "Requirement", "Verification", "Standard", "CommunicationThread", "Adapter", "anti-lock-in"],
+      "disposition": "primary-comparison-source-for-ori-object-model"
+    },
+    {
+      "capability": "virginia-regulatory-and-system-inventory",
+      "source_type": "email-attachment",
+      "message_id": "199bf6a5df4a3aa0",
+      "attachment": "Virginia_Permitting_Deep_Research_2025_fixed.pdf",
+      "status": "recovered",
+      "concepts": ["authority-inventory", "state-federal-local", "jpa", "blds-normalization", "ifc-references", "vendor-adapters"],
+      "disposition": "use-as-profile-and-corpus-not-core-super-schema"
+    },
+    {
+      "capability": "geo-attested-inspection-evidence",
+      "source_type": "email-and-repository",
+      "message_ids": ["19aa7ada99c3a4d1", "19ab81ad239bcc8f"],
+      "repository": "corelotorg/corelot-field-collector",
+      "status": "recovered-partial-spec",
+      "concepts": ["authoritative-inspection-thread", "geo-attested-device", "geotagged-media", "offline-evidence", "smart-post", "drone", "on-device-inference"],
+      "disposition": "requirements-confirmed-full-hardware-attestation-spec-still-missing"
+    },
+    {
+      "capability": "regulatory-language-research",
+      "source_type": "email-github-drive",
+      "message_id": "197c8a30b49dfc11",
+      "related_issue": "SheetPros/OpenTax#4",
+      "status": "recovered-partial",
+      "concepts": ["esperanto-style-crosswalk", "minimal-semantic-primitives", "formal-regulatory-grammar", "lexicon-crosswalk", "ngl-substrate"],
+      "disposition": "recover-original-openpermit-linguistic-measurements-before-domain-vocabulary-freeze"
+    },
+    {
+      "capability": "ontology-crosswalk-golden-thread",
+      "source_type": "github-issue",
+      "repository": "SheetPros/OpenPermit",
+      "issue": 13,
+      "status": "recovered",
+      "concepts": ["self-defining-nodes", "crosswalk-protocol", "mapping-confidence", "requirement-intent", "validation-method", "golden-thread", "verification-status", "ifc-rdf", "shacl"],
+      "disposition": "mine-into-mapping-evidence-and-conformance-model"
     }
   ],
-  "unproven_prior_work": [
-    "washington-state-regulatory-structure",
-    "texas-regulatory-structure",
-    "cross-jurisdiction-linguistic-verb-study",
-    "formal-approval-dag-critical-path-model",
-    "secure-geocoded-open-hardware-artifact-spec",
-    "third-party-attestation-layer-spec"
-  ],
+  "recovery_gaps": {
+    "missing": [
+      "washington-state-full-regulatory-structure",
+      "texas-full-regulatory-structure",
+      "original-cross-jurisdiction-linguistic-measurements",
+      "complete-challenge-appeal-counterclaim-ontology"
+    ],
+    "partial": [
+      "secure-geocoded-open-hardware-artifact-spec",
+      "third-party-attestation-layer-spec"
+    ],
+    "resolved_from_prior_unproven": [
+      "formal-critical-path-graph-model",
+      "dag-runtime-history",
+      "geo-attested-evidence-requirements",
+      "ontology-first-authority-jurisdiction-model"
+    ]
+  },
   "normative_direction": {
     "core": [
       "canonical-identity",
@@ -124,6 +245,7 @@
       "conformance"
     ],
     "interfaces": ["MCP", "REST", "JSON-LD", "graph-traversal", "crawlable-docs", "conformance-fixtures"],
-    "principles": ["permissionless", "vendor-neutral", "model-native", "challengeable", "governable", "testable", "runnable", "jurisdiction-sovereignty"]
+    "principles": ["permissionless", "vendor-neutral", "model-native", "challengeable", "governable", "testable", "runnable", "jurisdiction-sovereignty", "anti-lock-in"],
+    "execution_rule": "graph-semantics-are-normative-execution-runtime-is-pluggable"
   }
 }
