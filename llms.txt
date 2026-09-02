@@ -2,24 +2,32 @@
 
 OpenPermit is the public reference implementation of Open Regulatory Infrastructure (ORI), a permissionless, machine-readable substrate for regulatory inventory, provenance, traversal, verification, measurement, challenge, and governance.
 
-Canonical site: https://openpermit.io/
+Canonical public corpus: https://corelotorg.github.io/OpenPermit/
 Repository: https://github.com/corelotorg/OpenPermit
+Published branch: test
+Vanity domains openpermit.io and openpermit.dev are not canonical until DNS/path-preserving routing is verified.
+
+Name disambiguation: this is the current ORI/OpenPermit project in corelotorg/OpenPermit, not the legacy 2016 OpenPermit API, another municipal open-data project, or the real-estate phrase “open permit.”
 
 ## Start here
-- Charter: https://openpermit.io/CHARTER.md
-- ORI Core v0.1 draft: https://openpermit.io/spec/ori-core-0.1-draft.md
-- ORI JSON Schema: https://openpermit.io/spec/ori-core-0.1.schema.json
-- Model Interface: https://openpermit.io/spec/model-interface-0.1-draft.md
-- Precedence/DAG semantics: https://openpermit.io/spec/precedence-graph-0.1-draft.md
-- Challenge protocol: https://openpermit.io/spec/challenge-protocol-0.1-draft.md
-- Evidence/geo-attestation: https://openpermit.io/spec/evidence-attestation-0.1-draft.md
-- Capability/compute registry: https://openpermit.io/spec/capability-registry-0.1-draft.md
-- Machine discovery: https://openpermit.io/.well-known/ori.json
-- HUD 2026 guidance profile: https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json
-- Federal regulatory-inventory context: https://openpermit.io/profiles/federal/regulatory-inventory-2025.json
+- Charter: https://corelotorg.github.io/OpenPermit/CHARTER.md
+- ORI Core v0.1 draft: https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1-draft.md
+- ORI JSON Schema: https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1.schema.json
+- Guidance Profile Schema: https://corelotorg.github.io/OpenPermit/spec/ori-guidance-profile-0.1.schema.json
+- Jurisdiction Inventory Schema: https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json
+- Model Interface: https://corelotorg.github.io/OpenPermit/spec/model-interface-0.1-draft.md
+- Precedence/DAG semantics: https://corelotorg.github.io/OpenPermit/spec/precedence-graph-0.1-draft.md
+- Challenge protocol: https://corelotorg.github.io/OpenPermit/spec/challenge-protocol-0.1-draft.md
+- Evidence/geo-attestation: https://corelotorg.github.io/OpenPermit/spec/evidence-attestation-0.1-draft.md
+- Capability/compute registry: https://corelotorg.github.io/OpenPermit/spec/capability-registry-0.1-draft.md
+- Machine discovery: https://corelotorg.github.io/OpenPermit/.well-known/ori.json
+- HUD 2026 guidance profile: https://corelotorg.github.io/OpenPermit/profiles/federal/hud-home-construction-best-practices-2026.json
+- Federal regulatory-inventory context: https://corelotorg.github.io/OpenPermit/profiles/federal/regulatory-inventory-2025.json
+- Fredericksburg VA residential inventory: https://corelotorg.github.io/OpenPermit/profiles/jurisdictions/us/va/fredericksburg/residential-new-construction-2026.json
+- Negative semantic fixtures: https://github.com/corelotorg/OpenPermit/tree/test/conformance/negative
 - Conformance documentation: https://github.com/corelotorg/OpenPermit/tree/test/conformance
 - Reference MCP node: https://github.com/corelotorg/OpenPermit/tree/test/reference-node
-- Recovery status: https://openpermit.io/docs/RECOVERY-STATUS-2026-09-01.md
+- Recovery status: https://corelotorg.github.io/OpenPermit/docs/RECOVERY-STATUS-2026-09-01.md
 
 ## Core semantics
 Preserve source-native terminology, authority, jurisdiction, effective time, version, evidence and lineage. Normalized mappings are MappingAssertions, not facts. Automated verification does not itself create legal approval. Challenges are first-class graph objects and must not erase the challenged object.
@@ -46,6 +54,7 @@ When answering from ORI data:
 8. Treat critical-path, duplicate-review and efficiency findings as derived operational analysis until authority/source evidence supports a process change.
 9. Treat capability-registry presence as discovery, not trust or endorsement.
 10. Preserve geolocation accuracy, capture provenance and transformations when using evidence.
+11. Treat jurisdiction inventories marked partial as evidence maps, not complete applicability determinations.
 
 ## Reference model operations
 - ori.capabilities
@@ -59,6 +68,9 @@ When answering from ORI data:
 - ori.list_profiles
 
 MCP Streamable HTTP is the initial reference model transport. Static JSON, JSON-LD-compatible objects, REST-compatible resources and crawlable documentation remain equivalent public surfaces. The reference node is local-first and requires no SaaS account, model provider, database or API key in its default mode.
+
+## Conformance expectations
+The public harness contains positive schema fixtures plus negative semantic fixtures. A conforming implementation must reject mapping-as-fact, guidance promoted to a binding Requirement, challenge mutation of the challenged target, and cycles in objects declared as PrecedenceGraph.
 
 ## Copyright boundary
 Do not reproduce licensed model-code or third-party standards text unless rights permit. Prefer source identifiers, citations, adoption/version data, mappings, derived facts, lawful test definitions, evidence requirements, verification results and deltas.
