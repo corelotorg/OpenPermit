@@ -1,25 +1,37 @@
 {
-  "id": "https://openpermit.io/",
+  "id": "https://corelotorg.github.io/OpenPermit/",
   "name": "OpenPermit",
   "standard": "Open Regulatory Infrastructure",
   "version": "0.1.0-draft",
   "status": "public-working-draft",
+  "canonical_public_corpus": "https://corelotorg.github.io/OpenPermit/",
+  "vanity_domain_status": {
+    "openpermit.io": "dns-cutover-pending",
+    "openpermit.dev": "redirect-pending"
+  },
   "canonical_repository": "https://github.com/corelotorg/OpenPermit",
-  "charter": "https://openpermit.io/CHARTER.md",
-  "core_spec": "https://openpermit.io/spec/ori-core-0.1-draft.md",
-  "schema": "https://openpermit.io/spec/ori-core-0.1.schema.json",
-  "model_interface": "https://openpermit.io/spec/model-interface-0.1-draft.md",
-  "precedence_graph": "https://openpermit.io/spec/precedence-graph-0.1-draft.md",
-  "challenge_protocol": "https://openpermit.io/spec/challenge-protocol-0.1-draft.md",
-  "evidence_attestation": "https://openpermit.io/spec/evidence-attestation-0.1-draft.md",
-  "capability_registry": "https://openpermit.io/spec/capability-registry-0.1-draft.md",
+  "published_branch": "test",
+  "charter": "https://corelotorg.github.io/OpenPermit/CHARTER.md",
+  "core_spec": "https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1-draft.md",
+  "schema": "https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1.schema.json",
+  "guidance_schema": "https://corelotorg.github.io/OpenPermit/spec/ori-guidance-profile-0.1.schema.json",
+  "jurisdiction_inventory_schema": "https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json",
+  "model_interface": "https://corelotorg.github.io/OpenPermit/spec/model-interface-0.1-draft.md",
+  "precedence_graph": "https://corelotorg.github.io/OpenPermit/spec/precedence-graph-0.1-draft.md",
+  "challenge_protocol": "https://corelotorg.github.io/OpenPermit/spec/challenge-protocol-0.1-draft.md",
+  "evidence_attestation": "https://corelotorg.github.io/OpenPermit/spec/evidence-attestation-0.1-draft.md",
+  "capability_registry": "https://corelotorg.github.io/OpenPermit/spec/capability-registry-0.1-draft.md",
   "guidance_profiles": [
-    "https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json",
-    "https://openpermit.io/profiles/federal/regulatory-inventory-2025.json"
+    "https://corelotorg.github.io/OpenPermit/profiles/federal/hud-home-construction-best-practices-2026.json",
+    "https://corelotorg.github.io/OpenPermit/profiles/federal/regulatory-inventory-2025.json"
+  ],
+  "jurisdiction_inventories": [
+    "https://corelotorg.github.io/OpenPermit/profiles/jurisdictions/us/va/fredericksburg/residential-new-construction-2026.json"
   ],
   "conformance": {
     "repository": "https://github.com/corelotorg/OpenPermit/tree/test/conformance",
-    "command": "python conformance/validate.py"
+    "command": "python conformance/validate.py",
+    "negative_semantic_fixtures": "https://github.com/corelotorg/OpenPermit/tree/test/conformance/negative"
   },
   "interfaces": {
     "mcp": {
