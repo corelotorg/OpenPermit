@@ -1,0 +1,123 @@
+{
+  "id": "ori:profile:federal:regulatory-inventory:2025",
+  "type": "GuidanceProfile",
+  "version": "0.1.0",
+  "status": "draft",
+  "authority_classification": "federal_executive_policy_context",
+  "title": "Federal Regulatory Inventory and Review Context (2025)",
+  "source": [
+    {
+      "id": "source:whitehouse:eo-14219:2025-02-19",
+      "publisher": "The White House",
+      "title": "Executive Order 14219 - Ensuring Lawful Governance and Implementing the President's Department of Government Efficiency Regulatory Initiative",
+      "locator": "https://www.whitehouse.gov/presidential-actions/2025/02/ensuring-lawful-governance-and-implementing-the-presidents-department-of-government-efficiency-regulatory-initiative/",
+      "effective_from": "2025-02-19"
+    },
+    {
+      "id": "source:whitehouse:memorandum:repeal-unlawful-regulations:2025-04-09",
+      "publisher": "The White House",
+      "title": "Directing the Repeal of Unlawful Regulations",
+      "locator": "https://www.whitehouse.gov/presidential-actions/2025/04/directing-the-repeal-of-unlawful-regulations/",
+      "effective_from": "2025-04-09"
+    },
+    {
+      "id": "source:oira:m-25-28:2025-05-07",
+      "publisher": "Office of Information and Regulatory Affairs, Office of Management and Budget",
+      "title": "M-25-28 - Guidance Implementing the President's Memorandum Directing the Repeal of Unlawful Regulations",
+      "locator": "https://www.whitehouse.gov/omb/information-resources/guidance/memoranda/",
+      "document_locator": "https://www.whitehouse.gov/wp-content/uploads/2025/02/M-25-28-Guidance-Implementing-the-Presidents-Memorandum-Directing-the-Repeal-of-Unlawful-Regulations.pdf",
+      "effective_from": "2025-05-07"
+    },
+    {
+      "id": "source:treasury:bessent-aba:2025-04-09",
+      "publisher": "U.S. Department of the Treasury",
+      "title": "Treasury Secretary Scott Bessent Remarks before the American Bankers Association",
+      "locator": "https://home.treasury.gov/news/press-releases/sb0078",
+      "effective_from": "2025-04-09"
+    }
+  ],
+  "legal_boundary": {
+    "is_binding_local_law": false,
+    "creates_private_right": false,
+    "rule": "EO 14219 and related OIRA direction concern federal executive-branch regulatory review; they are not represented by ORI as mandates on state or local governments. Treasury remarks are financial-regulation policy principles, not a general state/local regulatory requirement. This profile is an implementation context for open regulatory inventory, provenance and measurement."
+  },
+  "categories": [
+    "Inventory",
+    "Authority",
+    "Review",
+    "Evidence",
+    "Efficiency",
+    "Fairness"
+  ],
+  "controls": [
+    {
+      "id": "federal.inventory.complete_scope",
+      "category": "Inventory",
+      "practice": "Represent the complete inventory of regulations within the reviewing authority's declared scope, including the authority responsible for each item.",
+      "ori_objects": ["RegulatoryInstrument", "Provision", "Authority", "Jurisdiction", "Source"],
+      "evidence": ["inventory_manifest", "authority_scope", "source_locator", "effective_version"],
+      "measurements": ["inventory_count", "source_coverage_percent", "unmapped_authority_count", "unknown_version_count"]
+    },
+    {
+      "id": "federal.inventory.classify_review_basis",
+      "category": "Review",
+      "practice": "Attach explicit review classifications and reasoned basis to regulatory items rather than silently deleting, rewriting or normalizing them.",
+      "ori_objects": ["Assertion", "RegulatoryInstrument", "Provision", "Evidence", "Decision", "Challenge"],
+      "evidence": ["review_basis", "source_citation", "reviewer", "review_date"],
+      "measurements": ["classified_percent", "unexplained_classification_count", "open_challenge_count"]
+    },
+    {
+      "id": "federal.authority.statutory_basis",
+      "category": "Authority",
+      "practice": "Make the asserted statutory or other authority basis for a regulatory requirement addressable and traversable.",
+      "ori_objects": ["Authority", "RegulatoryInstrument", "Provision", "Requirement", "Source", "MappingAssertion"],
+      "evidence": ["authority_citation", "source_version", "applicability_scope"],
+      "measurements": ["authority_mapping_percent", "missing_authority_count", "disputed_authority_count"]
+    },
+    {
+      "id": "federal.review.cost_benefit_context",
+      "category": "Efficiency",
+      "practice": "Represent asserted regulatory costs and benefits with attributable evidence so they can be inspected, compared and challenged.",
+      "ori_objects": ["Assertion", "Evidence", "Requirement", "Challenge", "Decision"],
+      "evidence": ["cost_evidence", "benefit_evidence", "methodology", "scope", "date"],
+      "measurements": ["cost_evidence_coverage_percent", "benefit_evidence_coverage_percent", "stale_analysis_count", "challenge_rate"]
+    },
+    {
+      "id": "federal.review.innovation_and_burden",
+      "category": "Efficiency",
+      "practice": "Make claims about technological, infrastructure, small-business or private-enterprise burdens explicit, attributable and evidence-bearing.",
+      "ori_objects": ["Assertion", "Evidence", "RegulatoryInstrument", "Requirement", "Challenge"],
+      "evidence": ["impact_claim", "affected_population", "methodology", "supporting_source"],
+      "measurements": ["impact_claim_coverage_percent", "unsubstantiated_claim_count", "challenge_rate"]
+    },
+    {
+      "id": "federal.review.reasoned_disposition",
+      "category": "Evidence",
+      "practice": "Preserve a reasoned disposition for reviewed regulatory items, including items retained, modified, superseded or targeted for repeal.",
+      "ori_objects": ["Decision", "RegulatoryInstrument", "Assertion", "Evidence", "Event", "Challenge"],
+      "evidence": ["decision_record", "rationale", "supporting_sources", "decision_authority", "effective_time"],
+      "measurements": ["disposition_coverage_percent", "missing_rationale_count", "open_challenge_count"]
+    },
+    {
+      "id": "treasury.principle.clear_mandate",
+      "category": "Authority",
+      "practice": "For the Treasury financial-regulation context, expose whether a regulatory assertion identifies a clear statutory mandate.",
+      "ori_objects": ["Authority", "Requirement", "Provision", "Source", "Assertion"],
+      "evidence": ["statutory_citation", "authority_mapping"],
+      "measurements": ["clear_mandate_mapping_percent", "missing_mandate_count"]
+    },
+    {
+      "id": "treasury.principle.clear_consistent_rules",
+      "category": "Fairness",
+      "practice": "For the Treasury financial-regulation context, make rules, applicability and version history sufficiently explicit to test whether stated rules are clear and consistently represented across entities and time.",
+      "ori_objects": ["Requirement", "Jurisdiction", "Authority", "Version", "MappingAssertion", "Challenge"],
+      "evidence": ["applicability_rule", "version_history", "entity_scope"],
+      "measurements": ["applicability_coverage_percent", "conflicting_rule_count", "unmapped_version_count"]
+    }
+  ],
+  "derived_alignment_model": {
+    "chain": ["PolicyContext", "InventoryControl", "Evidence", "Measurement", "AlignmentResult"],
+    "must_preserve_challengeability": true,
+    "must_not_emit_legal_compliance": true
+  }
+}
