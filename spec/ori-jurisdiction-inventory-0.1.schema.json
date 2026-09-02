@@ -1,0 +1,93 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json",
+  "title": "ORI Jurisdiction Inventory v0.1 Draft",
+  "type": "object",
+  "required": ["id", "type", "version", "status", "as_of", "jurisdiction", "scope", "sources", "authorities", "approvals", "known_gaps"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {"const": "JurisdictionInventory"},
+    "version": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["draft", "public-working-draft", "published", "superseded"]},
+    "as_of": {"type": "string", "format": "date"},
+    "jurisdiction": {
+      "type": "object",
+      "required": ["id", "name", "state", "country"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "name": {"type": "string", "minLength": 1},
+        "state": {"type": "string", "minLength": 1},
+        "country": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": true
+    },
+    "scope": {
+      "type": "object",
+      "required": ["domain", "project_type", "completeness"],
+      "properties": {
+        "domain": {"type": "string", "minLength": 1},
+        "project_type": {"type": "string", "minLength": 1},
+        "completeness": {"type": "string", "minLength": 1},
+        "legal_determination": {"const": false}
+      },
+      "additionalProperties": true
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "publisher", "locator", "authority_class"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "publisher": {"type": "string", "minLength": 1},
+          "locator": {"type": "string", "format": "uri"},
+          "authority_class": {"type": "string", "minLength": 1},
+          "effective_from": {"type": ["string", "null"]},
+          "retrieved_at": {"type": ["string", "null"], "format": "date-time"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "authorities": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "role", "source"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "role": {"type": "string", "minLength": 1},
+          "source": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}}
+        },
+        "additionalProperties": true
+      }
+    },
+    "approvals": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "label", "authority", "source"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "label": {"type": "string", "minLength": 1},
+          "authority": {"type": "string", "minLength": 1},
+          "source": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+          "required_inputs": {"type": "array", "items": {"type": "string"}},
+          "system": {"type": ["string", "null"]},
+          "review_time_statement": {"type": ["string", "null"]}
+        },
+        "additionalProperties": true
+      }
+    },
+    "fees": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "inspections": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "appeals": {"type": "array", "items": {"type": "object", "additionalProperties": true}},
+    "process_graph": {"type": ["object", "null"], "additionalProperties": true},
+    "known_gaps": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 1}
+  },
+  "additionalProperties": true
+}
