@@ -1,0 +1,23 @@
+{
+  "id": "urn:ori:challenge:example-001",
+  "type": "Challenge",
+  "version": "1",
+  "effective_from": "2026-09-01T00:00:00Z",
+  "effective_to": null,
+  "jurisdiction": ["urn:ori:jurisdiction:example"],
+  "source": [],
+  "derived_from": [],
+  "supersedes": [],
+  "metadata": {
+    "fixture": true
+  },
+  "subject": "urn:ori:verification:example-001",
+  "challenged_by": "urn:ori:actor:example-reviewer",
+  "grounds": "source-version-mismatch",
+  "statement": "The verification cites a provision version that was not effective on the evaluation date.",
+  "evidence": ["urn:ori:evidence:example-source-version"],
+  "status": "open",
+  "created_at": "2026-09-01T00:00:00Z",
+  "response_to": null,
+  "resolved_by": null
+}
