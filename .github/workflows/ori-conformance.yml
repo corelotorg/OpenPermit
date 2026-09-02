@@ -63,11 +63,13 @@ jobs:
           python reference-node/server.py > /tmp/ori-reference-node.log 2>&1 &
           PID=$!
           trap 'kill $PID || true; cat /tmp/ori-reference-node.log' EXIT
-          for i in $(seq 1 20); do
+          attempts=0
+          while [ "$attempts" -lt 20 ]; do
             if curl --fail --silent http://127.0.0.1:8000/health > /tmp/health.json; then
               cat /tmp/health.json
               exit 0
             fi
+            attempts=$((attempts + 1))
             sleep 1
           done
           cat /tmp/ori-reference-node.log
