@@ -1,0 +1,45 @@
+{
+  "id": "https://openpermit.io/",
+  "name": "OpenPermit",
+  "standard": "Open Regulatory Infrastructure",
+  "version": "0.1.0-draft",
+  "status": "public-working-draft",
+  "canonical_repository": "https://github.com/corelotorg/OpenPermit",
+  "charter": "https://openpermit.io/CHARTER.md",
+  "core_spec": "https://openpermit.io/spec/ori-core-0.1-draft.md",
+  "schema": "https://openpermit.io/spec/ori-core-0.1.schema.json",
+  "guidance_profiles": [
+    "https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json"
+  ],
+  "conformance": {
+    "repository": "https://github.com/corelotorg/OpenPermit/tree/test/conformance",
+    "command": "python conformance/validate.py"
+  },
+  "interfaces": {
+    "mcp": {
+      "status": "reference-node-source-published",
+      "transport": "streamable-http",
+      "path": "/mcp",
+      "source": "https://github.com/corelotorg/OpenPermit/tree/test/reference-node"
+    },
+    "rest": {
+      "status": "reference-node-source-published",
+      "manifest_path": "/health"
+    },
+    "json_ld": true,
+    "static_http": true
+  },
+  "principles": [
+    "permissionless",
+    "source-preserving",
+    "jurisdiction-aware",
+    "graph-native",
+    "challengeable",
+    "testable",
+    "model-native",
+    "vendor-neutral",
+    "authority-preserving",
+    "runnable"
+  ],
+  "legal_boundary": "Guidance-profile alignment is not a determination of legal compliance, local legal obligation, or government endorsement."
+}
