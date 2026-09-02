@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://openpermit.dev/spec/ori-core-0.1.schema.json",
+  "$id": "https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1.schema.json",
   "title": "Open Regulatory Infrastructure Core v0.1 Draft",
   "description": "Recovery-derived draft schema for addressable, provenance-first, jurisdiction-aware and challengeable regulatory graph objects.",
   "type": "object",
