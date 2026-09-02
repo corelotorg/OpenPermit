@@ -1,5 +1,5 @@
 {
-  "schema_version": "0.1.0",
+  "schema_version": "0.2.0",
   "generated": "2026-09-01",
   "sources": [
     {
@@ -7,53 +7,21 @@
       "title": "NGL_Ontology_Ext_v0.2_Standard_CriticalPath",
       "kind": "google-doc",
       "status": "recovered",
-      "concepts": [
-        "ngl-standard",
-        "issued-date",
-        "semver",
-        "provenance",
-        "conformance",
-        "ip-provenance",
-        "adoption",
-        "precedes",
-        "duration",
-        "float",
-        "critical-path",
-        "derived-not-authored"
-      ]
+      "concepts": ["ngl-standard", "issued-date", "semver", "provenance", "conformance", "ip-provenance", "adoption", "precedes", "duration", "float", "critical-path", "derived-not-authored"]
     },
     {
       "id": "13kEGwIfpA6GrfPpK9iQXBNglHDFWDCmKp2EdTiEQnhU",
       "title": "Esperanto - 2025/05/22 15:14 EDT - Notes by Gemini",
       "kind": "google-doc",
       "status": "recovered",
-      "concepts": [
-        "seven-verb-lexicon",
-        "standards-crosswalk",
-        "central-standard-decentralized-operations",
-        "jurisdictional-awareness",
-        "knowledge-packs",
-        "application-layer-independent",
-        "bim-ifc",
-        "minimalism"
-      ]
+      "concepts": ["seven-verb-lexicon", "standards-crosswalk", "central-standard-decentralized-operations", "jurisdictional-awareness", "knowledge-packs", "application-layer-independent", "bim-ifc", "minimalism"]
     },
     {
       "id": "1BxGUjRZIS5XzSezL-oqbiP5MGAAx_oa9",
       "title": "openpermit_api_research.md",
       "kind": "markdown",
       "status": "recovered",
-      "concepts": [
-        "market-endpoint-inventory",
-        "accela",
-        "opengov",
-        "tyler-energov",
-        "trimble",
-        "cloudpermit",
-        "permitflow",
-        "blds",
-        "permit-application-profile"
-      ],
+      "concepts": ["market-endpoint-inventory", "accela", "opengov", "tyler-energov", "trimble", "cloudpermit", "permitflow", "blds", "permit-application-profile"],
       "application_verbs": ["SUBMIT", "STATUS", "ATTACH", "RESPOND", "SCHEDULE", "RESULT", "PAY", "ISSUE"]
     },
     {
@@ -61,25 +29,37 @@
       "title": "OpenPermit_Implementation_Playbook v001.docx",
       "kind": "docx",
       "status": "recovered",
-      "concepts": [
-        "vendor-neutral-standard",
-        "national-state-local",
-        "virginia",
-        "texas",
-        "washington",
-        "conformance-harness",
-        "replicable-template"
-      ],
+      "concepts": ["vendor-neutral-standard", "national-state-local", "virginia", "texas", "washington", "conformance-harness", "replicable-template"],
       "retire_from_core_governance": ["paid-certification", "committee-endorsement-gate"]
+    },
+    {
+      "id": "1uSx3PO7N3z6jI6T-ZqQ7cRQlk8cfb9k0EJ8-3YTYoVM",
+      "title": "Scale structured lexical research.",
+      "kind": "google-doc",
+      "status": "recovered-unverified-research",
+      "concepts": [
+        "washington-lexicon",
+        "texas-lexicon",
+        "virginia-texas-washington-crosswalk",
+        "florida-timeline-comparison",
+        "action-oriented-vocabulary",
+        "semantic-performance-bridge",
+        "source-term-to-functional-action-mapping"
+      ],
+      "recovered_copy": "recovered/drive/three-state-lexical-research.md",
+      "caution": "legal citations mappings performance claims and causal conclusions require primary-source verification before normative use"
     }
   ],
   "still_missing": [
-    "exact-seven-verb-definitions",
-    "washington-full-regulatory-inventory",
-    "texas-full-regulatory-inventory",
-    "cross-jurisdiction-linguistic-study",
+    "complete-washington-regulatory-authority-and-process-inventory",
+    "complete-texas-regulatory-authority-and-process-inventory",
+    "original-quantitative-linguistic-measurements-if-any",
     "secure-geocoded-open-hardware-spec",
     "third-party-attestation-spec",
     "challenge-appeal-counterclaim-ontology"
+  ],
+  "resolved": [
+    "historical-cross-jurisdiction-linguistic-research-existed",
+    "washington-texas-candidate-lexical-crosswalk-existed"
   ]
 }
