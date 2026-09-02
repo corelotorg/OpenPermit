@@ -49,11 +49,14 @@ jobs:
           python -m pip install -r conformance/requirements.txt
           python -m pip install -r reference-node/requirements.txt
 
-      - name: Validate ORI fixtures and guidance profiles
+      - name: Validate schemas, profiles, inventories and negative semantics
         run: python conformance/validate.py
 
-      - name: Compile reference node
-        run: python -m py_compile reference-node/server.py reference-node/smoke.py
+      - name: Compile reference node and semantic harness
+        run: python -m py_compile reference-node/server.py reference-node/graph.py reference-node/smoke.py conformance/semantic.py
+
+      - name: Exercise precedence graph tests
+        run: python -m pytest -q reference-node/test_graph.py
 
       - name: Exercise MCP tools in-process
         run: python reference-node/smoke.py
