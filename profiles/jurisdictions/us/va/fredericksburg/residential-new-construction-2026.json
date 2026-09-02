@@ -1,0 +1,234 @@
+{
+  "id": "ori:inventory:us:va:fredericksburg:residential-new-construction:2026-09-01",
+  "type": "JurisdictionInventory",
+  "version": "0.1.0",
+  "status": "public-working-draft",
+  "as_of": "2026-09-01",
+  "jurisdiction": {
+    "id": "geo:us-va-fredericksburg-city",
+    "name": "City of Fredericksburg",
+    "state": "Virginia",
+    "country": "US"
+  },
+  "scope": {
+    "domain": "residential_construction",
+    "project_type": "new_one_or_two_family_dwelling",
+    "completeness": "partial_verified_inventory",
+    "legal_determination": false,
+    "note": "This profile records currently published process evidence. It is not a complete determination of every approval that may apply to a parcel or project."
+  },
+  "sources": [
+    {
+      "id": "source:fxbg:building-services",
+      "title": "Building Services Division",
+      "publisher": "City of Fredericksburg, Virginia",
+      "locator": "https://www.fredericksburgva.gov/814/Building-Services",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:fxbg:residential-construction",
+      "title": "Residential Construction",
+      "publisher": "City of Fredericksburg, Virginia",
+      "locator": "https://www.fredericksburgva.gov/907/Residential-Construction",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:fxbg:building-permit-process",
+      "title": "Forms - Building Permit Process",
+      "publisher": "City of Fredericksburg, Virginia",
+      "locator": "https://www.fredericksburgva.gov/903/Forms",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:fxbg:new-construction-inspections",
+      "title": "New Construction - Required Inspections",
+      "publisher": "City of Fredericksburg, Virginia",
+      "locator": "https://www.fredericksburgva.gov/898/New-Construction",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:fxbg:residential-fees-2025",
+      "title": "Permit Fee Schedule - Residential I.R.C. R5",
+      "publisher": "City of Fredericksburg, Virginia",
+      "locator": "https://www.fredericksburgva.gov/DocumentCenter/View/8226",
+      "authority_class": "local_official_source",
+      "effective_from": "2025-07-01",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:va:usbc",
+      "title": "Virginia Uniform Statewide Building Code (USBC)",
+      "publisher": "Virginia Department of Housing and Community Development",
+      "locator": "https://www.dhcd.virginia.gov/virginia-uniform-statewide-building-code-usbc",
+      "authority_class": "state_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:va:codes-2021-effective",
+      "title": "Virginia Codes - 2021 codes effective January 18, 2024",
+      "publisher": "Virginia Department of Housing and Community Development",
+      "locator": "https://www.dhcd.virginia.gov/codes",
+      "authority_class": "state_official_source",
+      "effective_from": "2024-01-18",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    },
+    {
+      "id": "source:va:sbctrb",
+      "title": "State Building Code Technical Review Board",
+      "publisher": "Virginia Department of Housing and Community Development",
+      "locator": "https://www.dhcd.virginia.gov/index.php/state-building-code-technical-review-board-sbctrb",
+      "authority_class": "state_official_source",
+      "retrieved_at": "2026-09-02T03:32:00Z"
+    }
+  ],
+  "authorities": [
+    {
+      "id": "authority:fxbg:building-services",
+      "name": "City of Fredericksburg Building Services Division",
+      "role": "local_building_code_enforcement",
+      "source": ["source:fxbg:building-services", "source:va:usbc"]
+    },
+    {
+      "id": "authority:va:bhcd-dhcd",
+      "name": "Virginia Board of Housing and Community Development / Department of Housing and Community Development",
+      "role": "state_building_code_adoption_and_regulation",
+      "source": ["source:va:usbc", "source:va:codes-2021-effective"]
+    },
+    {
+      "id": "authority:va:sbctrb",
+      "name": "Virginia State Building Code Technical Review Board",
+      "role": "state_code_appeal_review",
+      "source": ["source:va:sbctrb"]
+    }
+  ],
+  "approvals": [
+    {
+      "id": "approval:fxbg:residential-building-permit",
+      "label": "Plan examination and residential building permit",
+      "authority": "authority:fxbg:building-services",
+      "system": "Citizen Access Portal (CAP / EnerGov)",
+      "source": ["source:fxbg:residential-construction", "source:fxbg:building-permit-process"],
+      "required_inputs": [
+        "engineered site plan PDF for new homes",
+        "completed soils report form under the City's soils testing policy",
+        "Residential Land Disturbance Permit / Agreement in Lieu of E&S for new single-family construction",
+        "CAP application with contractor and licensing information",
+        "estimated construction value for materials and labor"
+      ],
+      "review_time_statement": "The City states that building permit review typically requires 6-8 weeks for complex projects and that smaller, simpler projects may be reviewed sooner; this inventory does not treat that statement as a binding SLA."
+    },
+    {
+      "id": "approval:fxbg:certificate-of-occupancy",
+      "label": "Certificate of occupancy",
+      "authority": "authority:fxbg:building-services",
+      "source": ["source:fxbg:building-permit-process"],
+      "required_inputs": ["completion of permitted work", "required inspections conducted and approved"]
+    }
+  ],
+  "fees": [
+    {
+      "id": "fee:fxbg:residential:new:permit-initiation",
+      "label": "Permit initiation fee",
+      "amount": 220.0,
+      "currency": "USD",
+      "effective_from": "2025-07-01",
+      "source": "source:fxbg:residential-fees-2025"
+    },
+    {
+      "id": "fee:fxbg:residential:new:admin-deposit",
+      "label": "Administrative deposit",
+      "amount": 200.0,
+      "currency": "USD",
+      "effective_from": "2025-07-01",
+      "source": "source:fxbg:residential-fees-2025"
+    },
+    {
+      "id": "fee:fxbg:residential:new:gross-floor-area",
+      "label": "New construction gross-floor-area fee",
+      "rate": 0.39,
+      "rate_unit": "USD_per_square_foot",
+      "minimum": 365.0,
+      "currency": "USD",
+      "effective_from": "2025-07-01",
+      "source": "source:fxbg:residential-fees-2025"
+    }
+  ],
+  "inspections": [
+    {
+      "id": "inspection:fxbg:footing",
+      "label": "Footing inspection after excavation and before concrete placement",
+      "source": "source:fxbg:new-construction-inspections"
+    },
+    {
+      "id": "inspection:fxbg:under-slab-trades",
+      "label": "Under-slab trade inspection",
+      "source": "source:fxbg:new-construction-inspections"
+    },
+    {
+      "id": "inspection:fxbg:rough-in",
+      "label": "Plumbing, electrical, HVAC and gas rough-in inspections before concealment",
+      "source": "source:fxbg:new-construction-inspections"
+    },
+    {
+      "id": "inspection:fxbg:framing",
+      "label": "Framing inspection before insulation",
+      "source": "source:fxbg:new-construction-inspections"
+    },
+    {
+      "id": "inspection:fxbg:insulation",
+      "label": "Insulation inspection before drywall",
+      "source": "source:fxbg:new-construction-inspections"
+    },
+    {
+      "id": "inspection:fxbg:final",
+      "label": "Final inspection",
+      "source": "source:fxbg:new-construction-inspections"
+    }
+  ],
+  "inspection_scheduling": {
+    "responsible_party": "permit holder or representative",
+    "system": "Citizen Access Portal (CAP)",
+    "source": "source:fxbg:new-construction-inspections"
+  },
+  "appeals": [
+    {
+      "id": "appeal:va:usbc-enforcement",
+      "label": "USBC enforcement appeal path",
+      "path": ["local government appeals board", "Virginia State Building Code Technical Review Board"],
+      "qualification": "DHCD states that appeals generally proceed first to a local government appeals board and then to the SBCTRB if relief is not granted.",
+      "source": "source:va:sbctrb"
+    }
+  ],
+  "process_graph": {
+    "type": "PrecedenceGraph",
+    "nodes": [
+      {"id": "prepare", "label": "Prepare published application materials"},
+      {"id": "submit", "label": "Submit permit application through CAP"},
+      {"id": "review", "label": "Plan review"},
+      {"id": "permit", "label": "Permit issued before work begins"},
+      {"id": "construct", "label": "Construct and request required inspections"},
+      {"id": "final", "label": "Final inspection"},
+      {"id": "occupancy", "label": "Certificate of occupancy"}
+    ],
+    "edges": [
+      {"from": "prepare", "to": "submit"},
+      {"from": "submit", "to": "review"},
+      {"from": "review", "to": "permit"},
+      {"from": "permit", "to": "construct"},
+      {"from": "construct", "to": "final"},
+      {"from": "final", "to": "occupancy"}
+    ],
+    "qualification": "This is a simplified published-process slice, not a complete parcel-specific entitlement, zoning, utility, environmental, or land-development graph."
+  },
+  "known_gaps": [
+    "The City's published new-construction inspection page expressly states that its inspection list is not complete.",
+    "Parcel-specific zoning, historic-district, utility, stormwater, erosion-and-sediment, subdivision, site-plan, right-of-way, fire, and other approvals are not fully inventoried in this first profile.",
+    "The 6-8 week statement is a published typical review duration for complex building permits, not encoded here as a statutory or binding shot clock.",
+    "This profile preserves citations and process evidence but does not redistribute ICC model-code text.",
+    "Applicability must be recomputed for the actual parcel, project scope, code edition, and effective date."
+  ]
+}
