@@ -1,0 +1,20 @@
+{
+  "id": "urn:ori:mapping:example-001",
+  "type": "MappingAssertion",
+  "version": "1",
+  "effective_from": "2026-09-01T00:00:00Z",
+  "effective_to": null,
+  "jurisdiction": ["urn:ori:jurisdiction:example"],
+  "source": ["urn:ori:source:example-form"],
+  "derived_from": [],
+  "supersedes": [],
+  "metadata": {"fixture": true},
+  "maps_from": "urn:ori:term:example-local-term",
+  "maps_to": "urn:ori:action:verify-compliance",
+  "mapping_type": "functional-alignment",
+  "mapped_by": "urn:ori:actor:example-mapper",
+  "status": "proposed",
+  "confidence": 0.8,
+  "evidence": ["urn:ori:evidence:example-mapping-rationale"],
+  "rationale": "Candidate functional mapping retained separately from the source-native term."
+}
