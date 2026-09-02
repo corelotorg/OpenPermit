@@ -1,0 +1,115 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/schema/ori-guidance-profile-0.1.schema.json",
+  "title": "ORI Guidance Profile v0.1",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "version",
+    "status",
+    "authority_classification",
+    "title",
+    "source",
+    "legal_boundary",
+    "controls",
+    "derived_alignment_model"
+  ],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {"const": "GuidanceProfile"},
+    "version": {"type": "string", "minLength": 1},
+    "status": {"type": "string", "enum": ["draft", "published", "superseded"]},
+    "authority_classification": {"type": "string", "minLength": 1},
+    "title": {"type": "string", "minLength": 1},
+    "source": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "publisher", "locator"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "publisher": {"type": "string", "minLength": 1},
+          "title": {"type": "string"},
+          "locator": {"type": "string", "format": "uri"},
+          "document_locator": {"type": "string", "format": "uri"},
+          "effective_from": {"type": "string"}
+        },
+        "additionalProperties": true
+      }
+    },
+    "legal_boundary": {
+      "type": "object",
+      "required": ["is_binding_local_law", "creates_private_right", "rule"],
+      "properties": {
+        "is_binding_local_law": {"const": false},
+        "creates_private_right": {"const": false},
+        "rule": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "categories": {
+      "type": "array",
+      "items": {"type": "string", "minLength": 1},
+      "uniqueItems": true
+    },
+    "controls": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "practice", "ori_objects", "evidence", "measurements"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "category": {"type": "string", "minLength": 1},
+          "practice": {"type": "string", "minLength": 1},
+          "target": {
+            "type": "object",
+            "required": ["operator", "value", "unit"],
+            "properties": {
+              "operator": {"type": "string", "enum": ["lt", "lte", "eq", "gte", "gt"]},
+              "value": {"type": "number"},
+              "unit": {"type": "string", "minLength": 1}
+            },
+            "additionalProperties": false
+          },
+          "ori_objects": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "evidence": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          },
+          "measurements": {
+            "type": "array",
+            "minItems": 1,
+            "items": {"type": "string", "minLength": 1},
+            "uniqueItems": true
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "derived_alignment_model": {
+      "type": "object",
+      "required": ["chain", "must_preserve_challengeability", "must_not_emit_legal_compliance"],
+      "properties": {
+        "chain": {
+          "type": "array",
+          "minItems": 2,
+          "items": {"type": "string", "minLength": 1}
+        },
+        "must_preserve_challengeability": {"const": true},
+        "must_not_emit_legal_compliance": {"const": true}
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
