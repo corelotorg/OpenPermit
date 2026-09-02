@@ -1,0 +1,16 @@
+{
+  "id": "ori:test:negative:guidance-promoted-to-requirement",
+  "rule": "guidance-not-requirement",
+  "expected": "fail",
+  "objects": [
+    {
+      "id": "ori:requirement:hud-shot-clock-as-law",
+      "type": "Requirement",
+      "version": "1.0.0",
+      "metadata": {
+        "authority_classification": "federal_guidance"
+      },
+      "statement": "This county is legally required by HUD guidance to issue the permit within 30 days."
+    }
+  ]
+}
