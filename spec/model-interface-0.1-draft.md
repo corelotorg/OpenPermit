@@ -23,11 +23,17 @@ Return source lineage, authority classification, version/supersession chain, ret
 ### `ori.verify`
 Run or retrieve a declared verification against explicit inputs, requirements/rules and validator version. A verification result MUST NOT be represented as legal approval unless an authorized Decision separately creates that effect.
 
+### `ori.analyze_precedence`
+Analyze a declared precedence-graph slice. A conforming implementation must detect cycles; for acyclic slices it may return topological order, blocking/prerequisite information, parallel branches, and derived critical-path/float values when duration evidence is supplied. Derived schedule analysis does not alter source authority or statutory sequencing.
+
 ### `ori.challenge`
 Create or return a first-class Challenge targeting an Assertion, MappingAssertion, Requirement interpretation, Verification, Evidence item, Decision or other declared challengeable object. Challenge creation must not mutate or erase the challenged object.
 
+### `ori.resolve_challenge`
+Append a response/disposition to a Challenge while preserving the target, original Challenge, evidence and prior responses. Protocol representation does not create legal authority for the actor issuing the disposition.
+
 ### `ori.list_profiles`
-List available jurisdiction, regulatory, guidance, conformance and interoperability profiles with status, source authority and versions.
+List available jurisdiction, regulatory, guidance, conformance and interoperability profiles with status, source authority and versions. Implementations may expose jurisdiction inventories through this operation or through separately discoverable inventory collections, but discovery behavior must be explicit.
 
 ## Response envelope
 
@@ -62,7 +68,9 @@ A conforming model client should:
 5. prefer deterministic verification when an applicable deterministic rule exists;
 6. distinguish verification from authorized Decision;
 7. preserve alternative interpretations and counter-evidence;
-8. state when the graph is incomplete or when a requested fact is not represented.
+8. state when the graph is incomplete or when a requested fact is not represented;
+9. treat GuidanceProfile controls as guidance unless a separate applicable legal source creates a Requirement;
+10. treat jurisdiction inventories marked partial as evidence maps, not complete legal determinations.
 
 ## Discovery
 
@@ -75,24 +83,26 @@ The document should identify:
 - implementation identity and ORI version;
 - model transport endpoints;
 - REST/static surfaces;
-- profiles;
+- guidance profiles and jurisdiction inventories;
 - schema/conformance locations;
 - authorization requirements;
 - capability registry location where supported.
 
 ## MCP reference tool names
 
-The reference node exposes transport-specific names without changing semantic operation names:
+The reference node currently exposes these transport-specific names without changing semantic operation names:
 
 - `ori_capabilities`
 - `ori_get`
 - `ori_traverse`
 - `ori_provenance`
 - `ori_verify`
+- `ori_analyze_precedence`
 - `ori_challenge`
+- `ori_resolve_challenge`
 - `ori_list_profiles`
 
-Tool descriptions and output schemas should be sufficient for models to understand the result shape without relying on hidden prompt instructions.
+The reference-node README and smoke test must stay synchronized with this list. Tool descriptions and output schemas should be sufficient for models to understand the result shape without relying on hidden prompt instructions.
 
 ## Security boundary
 
