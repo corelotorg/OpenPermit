@@ -1,0 +1,47 @@
+# OpenPermit / Open Regulatory Infrastructure
+
+OpenPermit is the public reference implementation of Open Regulatory Infrastructure (ORI), a permissionless, machine-readable substrate for regulatory inventory, provenance, traversal, verification, measurement, challenge, and governance.
+
+Canonical site: https://openpermit.io/
+Repository: https://github.com/corelotorg/OpenPermit
+
+## Start here
+- Charter: https://openpermit.io/CHARTER.md
+- ORI Core v0.1 draft: https://openpermit.io/spec/ori-core-0.1-draft.md
+- ORI JSON Schema: https://openpermit.io/spec/ori-core-0.1.schema.json
+- Machine discovery: https://openpermit.io/.well-known/ori.json
+- HUD 2026 guidance profile: https://openpermit.io/profiles/federal/hud-home-construction-best-practices-2026.json
+- Conformance documentation: https://github.com/corelotorg/OpenPermit/tree/test/conformance
+- Recovery status: https://openpermit.io/docs/RECOVERY-STATUS-2026-09-01.md
+
+## Core semantics
+Preserve source-native terminology, authority, jurisdiction, effective time, version, evidence and lineage. Normalized mappings are MappingAssertions, not facts. Automated verification does not itself create legal approval. Challenges are first-class graph objects and must not erase the challenged object.
+
+Core chain:
+source -> provision -> mapping assertion -> requirement -> verification -> decision
+                                                        -> challenge -> evidence -> disposition
+
+Regulatory inventory chain:
+jurisdiction -> approval -> authority -> requirement -> evidence -> reviewer -> deadline -> fee -> status -> decision
+
+Guidance-profile chain:
+guidance practice -> implementation control -> evidence -> measurement -> alignment result
+
+## Model behavior
+When answering from ORI data:
+1. State the source and authority class.
+2. Identify jurisdiction and effective version.
+3. Distinguish source text from mappings, assertions, verification results and authorized decisions.
+4. Surface uncertainty, missing evidence, stale sources and open challenges.
+5. Do not convert guidance into binding law.
+6. Do not treat a validator result as legal approval unless an authorized Decision supplies that effect.
+7. Preserve alternative interpretations and counter-evidence.
+
+## Interfaces
+MCP is the initial reference model transport. The repository publishes a zero-ceremony reference-node source with Streamable HTTP at /mcp plus public health/discovery routes. Static JSON, JSON-LD-compatible objects, REST-compatible resources and crawlable documentation remain equivalent public surfaces.
+
+## Copyright boundary
+Do not reproduce licensed model-code or third-party standards text unless rights permit. Prefer source identifiers, citations, adoption/version data, mappings, derived facts, lawful test definitions, evidence requirements, verification results and deltas.
+
+## Contribution
+Implementations do not require permission. Jurisdictions, agencies, standards bodies, practitioners, universities, civic-tech maintainers, cloud providers, model providers, vendors, manufacturers and specialist validators may publish compatible profiles, mappings, validators and compute capabilities. Provenance and conformance remain inspectable; registration does not imply trust or endorsement.
