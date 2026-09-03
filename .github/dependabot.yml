@@ -7,3 +7,18 @@ updates:
     groups:
       actions:
         patterns: ["*"]
+
+  # The gap that recurs: a repo adds a Dockerfile and never adds the ecosystem, so
+  # the base image is pinned once and then never moves again.
+  - package-ecosystem: docker
+    directory: "/reference-node"
+    schedule:
+      interval: weekly
+
+  - package-ecosystem: pip
+    directory: "/"
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
