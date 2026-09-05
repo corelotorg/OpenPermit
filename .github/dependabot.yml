@@ -15,8 +15,19 @@ updates:
     schedule:
       interval: weekly
 
+  # directory was "/" and there is no pip manifest there, so this
+  # entry silently did nothing -- dependabot reports no error, it just
+  # never opens a PR.
   - package-ecosystem: pip
-    directory: "/"
+    directory: "/conformance"
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
+
+  - package-ecosystem: pip
+    directory: "/reference-node"
     schedule:
       interval: weekly
     groups:
