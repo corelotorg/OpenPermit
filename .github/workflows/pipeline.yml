@@ -10,7 +10,7 @@ name: pipeline
 # PATH shown where its name should be. Measured here on 2026-09-07, run
 # 34074245061 — the attempt that produced this file.
 #
-# `ubuntu-latest`, not `rig`, for the same reason: self-hosted runners must not
+# `ubuntu-latest`, not `ci`, for the same reason: self-hosted runners must not
 # serve a public repo, where a fork PR would run unreviewed code on the node
 # that builds the rest of the estate.
 #
