@@ -20,6 +20,28 @@ name: pipeline
 # same gates, same pinned versions, same blocking/advisory split. Unifying for
 # real means making the hub public — a decision, not a refactor.
 #
+# Diffing the two will show three differences that are DELIBERATE, not rot:
+#   - temp paths here are fixed (`${RUNNER_TEMP}/gitleaks`), where the hub adds a
+#     `-$$` suffix and a `:-/tmp` fallback. Both exist for the shared self-hosted
+#     host; this file cannot reach one, and GitHub-hosted always sets RUNNER_TEMP.
+#   - actionlint is not wrapped in the hub's "are there any workflows" test. This
+#     file is one.
+#   - the pinned versions are env pairs rather than the hub's `case` mapping. Both
+#     fail closed: bumping VERSION without its SHA256 is a checksum MISMATCH, not
+#     an unverified download.
+# Two more where this file is AHEAD of the hub. Both should be ported upstream;
+# until they are, they are divergences, so they are listed rather than silent:
+#   - the stub scan iterates `git ls-files -z` NUL-delimited. The hub's `for f in
+#     $FILES` word-splits, so a tracked `src/foo bar.py` is split into two names,
+#     neither of which is a file, and the scan skips it reporting nothing. Every
+#     repo on the shared chain has this hole in its advisory scan.
+#   - `persist-credentials: false` on both checkouts. These jobs execute four
+#     third-party binaries (gitleaks, actionlint, semgrep and its PyPI tree), and
+#     the default checkout leaves the job's token in .git/config where any of them
+#     can read it. `contents: read` bounds the damage; not writing it down at all
+#     bounds it better, and costs nothing.
+# Anything ELSE that differs is drift. Record new divergences here or fix them.
+#
 # The executable ORI conformance and reference-node tests are ori-conformance.yml.
 # This file is repository hygiene only.
 
@@ -49,25 +71,38 @@ jobs:
       ACTIONLINT_SHA256: 023070a287cd8cccd71515fedc843f1985bf96c436b7effaecce67290e7e0757
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
 
-      # ADVISORY. Was absent entirely before this file.
+      # Two-branch, like the hub: a repo-local gate BLOCKS, the embedded fleet scan
+      # is ADVISORY. The first inline copy kept only the advisory half, which would
+      # have made scripts/ci/stub-gate.sh here a file that runs never and reports
+      # green — the documented way to enforce, silently doing nothing.
       - name: Stub-propagation gate
         run: |
-          TOKENS='\b(TODO|FIXME|XXX|HACK|STUB|NotImplementedError|NotImplemented)\b|raise[[:space:]]+NotImplemented'
-          PHRASES='not[ _-]?implemented|unimplemented'
-          FILES=$(git ls-files -- '*.ts' '*.tsx' '*.js' '*.jsx' '*.mjs' '*.cjs' '*.py' '*.go' '*.rs' '*.java' '*.rb' '*.sh' '*.sql' \
-            | grep -vE '(^|/)(node_modules|dist|build|vendor|coverage|\.venv|venv|__pycache__)/' \
-            | grep -vE '(^|/)(__tests__|tests|test|__mocks__)/|\.(test|spec)\.' || true)
-          rc=0
-          for f in $FILES; do
-            [ -f "$f" ] || continue
-            if { grep -nE "$TOKENS" "$f"; grep -niE "$PHRASES" "$f"; } 2>/dev/null | sort -u | grep -q .; then
-              echo "::warning file=$f::stub/placeholder marker"
-              rc=1
+          if [ -f scripts/ci/stub-gate.sh ]; then
+            echo "Using repo-local scripts/ci/stub-gate.sh (blocking)"
+            sh scripts/ci/stub-gate.sh
+          else
+            echo "No repo-local stub-gate; running embedded canonical scan (advisory)."
+            TOKENS='\b(TODO|FIXME|XXX|HACK|STUB|NotImplementedError|NotImplemented)\b|raise[[:space:]]+NotImplemented'
+            PHRASES='not[ _-]?implemented|unimplemented'
+            rc=0
+            while IFS= read -r -d '' f; do
+              [ -f "$f" ] || continue
+              if { grep -nE "$TOKENS" "$f"; grep -niE "$PHRASES" "$f"; } 2>/dev/null | sort -u | grep -q .; then
+                echo "::warning file=$f::stub/placeholder marker (add scripts/ci/stub-gate.sh for allowlist support)"
+                rc=1
+              fi
+            done < <(git ls-files -z -- '*.ts' '*.tsx' '*.js' '*.jsx' '*.mjs' '*.cjs' '*.py' '*.go' '*.rs' '*.java' '*.rb' '*.sh' '*.sql' \
+              | grep -zvE '(^|/)(node_modules|dist|build|vendor|coverage|\.venv|venv|__pycache__)/' \
+              | grep -zvE '(^|/)(__tests__|tests|test|__mocks__)/|\.(test|spec)\.' || true)
+            if [ "$rc" -eq 0 ]; then
+              echo "OK — no stub/placeholder markers"
+            else
+              echo "::warning::stub/placeholder markers found (advisory — add scripts/ci/stub-gate.sh with an allowlist to enforce)"
             fi
-          done
-          [ "$rc" -eq 0 ] && echo "OK — no stub/placeholder markers" \
-            || echo "::warning::stub/placeholder markers found (advisory)"
+          fi
 
       - name: Merge-conflict markers
         run: |
@@ -155,6 +190,8 @@ jobs:
       SEMGREP_VERSION: "1.176.0"
     steps:
       - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6.1.0
+        with:
+          persist-credentials: false
       - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6.3.0
         with:
           python-version: "3.12"
