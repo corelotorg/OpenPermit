@@ -29,6 +29,13 @@ Name disambiguation: this is the current ORI/OpenPermit project in corelotorg/Op
 - Reference MCP node: https://github.com/corelotorg/OpenPermit/tree/test/reference-node
 - Recovery status: https://corelotorg.github.io/OpenPermit/docs/RECOVERY-STATUS-2026-09-01.md
 
+## October 2026 reference assembly
+- Synthetic reference wall: https://corelotorg.github.io/OpenPermit/reference-wall.html
+- Assembly fixture: https://corelotorg.github.io/OpenPermit/examples/reference-wall/fixture.json
+- Rules evidence interface: https://corelotorg.github.io/OpenPermit/docs/ASSEMBLY-RULES-0.1.md
+- October 2026 release scope: https://corelotorg.github.io/OpenPermit/docs/RELEASE-SCOPE-2026-10-08.md
+- Note: code applicability remains OPEN; the public fixture contains no validated IFC/GLB/PNG or approval receipt.
+
 ## Core semantics
 Preserve source-native terminology, authority, jurisdiction, effective time, version, evidence and lineage. Normalized mappings are MappingAssertions, not facts. Automated verification does not itself create legal approval. Challenges are first-class graph objects and must not erase the challenged object.
 
