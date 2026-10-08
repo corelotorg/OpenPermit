@@ -1,0 +1,173 @@
+{
+  "id": "ori:test:positive:interpretability-r302-7-interpretation",
+  "rule": "interpretability-is-evidence",
+  "expected": "pass",
+  "description": "The R302.7 under-stair unit with its ORI pre-score and the fetched Review Board Interpretation 1/2021.",
+  "objects": [
+    {
+      "id": "urn:ori:rule-unit:irc2021-va:R302.7",
+      "type": "Requirement",
+      "version": "0.1.0",
+      "effective_from": "2024-01-18T00:00:00-05:00",
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "authority_classification": "state_adopted_code",
+        "status": "DRAFT"
+      },
+      "rule_unit_profile": "ori-rule-unit-0.1",
+      "title": "Gypsum protection under enclosed stairs",
+      "source_section": {
+        "code": "IRC",
+        "edition": "2021",
+        "section": "R302.7",
+        "chapter": 3
+      },
+      "authority_classification": "state_adopted_code",
+      "check_class": "data_check",
+      "classification_basis": "estimate",
+      "single_family_applicability": "applies",
+      "base_model": {
+        "code": "IRC",
+        "edition": "2021",
+        "publisher": "International Code Council",
+        "authority_class": "model_code",
+        "binding": false,
+        "source": "source:icc:irc-2021",
+        "status": "present"
+      },
+      "jurisdiction_layers": [
+        {
+          "layer_id": "us-va:vrc-2021",
+          "jurisdiction": "urn:ori:jurisdiction:us-va",
+          "code": "VRC",
+          "edition": "2021",
+          "effective_from": "2024-01-18",
+          "authority_class": "state_adopted_code",
+          "binding": true,
+          "precedence": 1,
+          "override_mode": "adopts_base",
+          "mode_status": "sourced_primary",
+          "amendment_ref": {
+            "source": "source:va:13vac5-63-210",
+            "item": null,
+            "note": "No amendment to this section is listed in 13VAC5-63-210 section 310.8 (fetched 2026-09-27); the VRC adopts the IRC base."
+          }
+        }
+      ],
+      "required_information": {
+        "ids": null,
+        "items": []
+      },
+      "inputs": [],
+      "result_states": [
+        "pass",
+        "fail",
+        "unknown",
+        "not_applicable"
+      ],
+      "unknown_policy": {
+        "missing_information_result": "unknown",
+        "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+      },
+      "evaluator": {
+        "kind": "not_implemented",
+        "implementation": null,
+        "implementation_version": null
+      },
+      "provenance": {
+        "recorded_by": "ORI automated drafting agent (DRAFT, not yet human-reviewed)",
+        "recorded_at": "2026-09-27",
+        "sources_checked": [
+          "source:va:13vac5-63-210",
+          "source:upcodes:vrc-2021-ch03",
+          "source:va:sbctrb-interpretations-2021"
+        ]
+      },
+      "legal_boundary": {
+        "machine_result_is_approval": false,
+        "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision under the USBC is lawful approval."
+      },
+      "paraphrase": "Where the space under a stair is enclosed and accessible, its walls, underside and soffits need a gypsum board layer on the space side.",
+      "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+      "source_links": [
+        {
+          "label": "2021 VRC Chapter 3, section R302.7 (ICC Digital Codes)",
+          "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+        },
+        {
+          "label": "2021 IRC Chapter 3 model code (ICC Digital Codes; comparison only)",
+          "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+        }
+      ],
+      "interpretability": {
+        "rubric_version": "ori-interpretability-0.1",
+        "score": "ambiguous_term",
+        "scoring_status": "estimate",
+        "rationale": "Q3: the gypsum protection applies to 'enclosed' space under stairs; 'enclosed' is not a defined term, and the Review Board had to answer whether open, uncovered stud framing is enclosed (no).",
+        "ambiguous_terms": [
+          {
+            "term": "enclosed space",
+            "defined_in_code": false,
+            "issue": "Not defined in IRC Chapter 2 (checked on the UpCodes VRC 2021 text)."
+          },
+          {
+            "term": "door or access panel",
+            "defined_in_code": false,
+            "issue": "Unclear whether a space with an open end but a partial wall counts."
+          }
+        ],
+        "determinations": [
+          {
+            "id": "det:va:sbctrb:interp:1-2021",
+            "citation": "SBCTRB Code Interpretation No. 1/2021 (VCC Section R302.7)",
+            "date": "2021-03-19",
+            "body": "Virginia State Building Code Technical Review Board",
+            "body_class": "state_review_board_interpretation",
+            "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/interpretations-booklets/trb-2021-interpretation-booklet.pdf",
+            "binding_effect": "Formal Review Board interpretation, published in the Board's 2021-edition interpretation booklet (September 2026) as still applicable. The Board's interpretations apply statewide to the USBC.",
+            "code_at_issue": "VCC (VRC) 2015 edition, carried into the 2021-edition booklet",
+            "section_at_issue": "R302.7",
+            "edition_carryover": "same_section_verified",
+            "holding_summary": "Question: if open stud framing is installed under a stairway in an unfinished basement with no drywall or other covering, is the space 'enclosed'? Answer: No. So the under-stair gypsum protection does not apply to open, uncovered framing.",
+            "relevance": "direct",
+            "verification": {
+              "status": "fetched_and_read",
+              "fetched_at": "2026-09-28",
+              "method": "pdftotext of text-layer PDF",
+              "sha256": "0dae8f918d6aabe808ac9a5324ffb4752de156f6086a93083ad1ce6b760cffb4",
+              "notes": "Booklet header: 'Containing Interpretations Applicable to the 2021 Editions', dated September 2026. Its preface still says '2018 edition' in one sentence (an internal inconsistency in the booklet)."
+            }
+          }
+        ],
+        "evidence_strength": "direct",
+        "candidate_clarification": {
+          "note": "Consider stating that the space is enclosed when wall and soffit coverings conceal the framing on all sides, consistent with Interpretation 1/2021.",
+          "status": "DRAFT_not_submitted",
+          "venue": "icc_code_development_cycle"
+        },
+        "reviewers": [
+          {
+            "reviewer": "ORI automated drafting agent (pre-score; not a human review)",
+            "score": "ambiguous_term",
+            "date": "2026-09-28",
+            "independent": true,
+            "role": "pre_scorer"
+          }
+        ],
+        "scored_text_source": "source:upcodes:vrc-2021-ch03",
+        "scored_at": "2026-09-28"
+      }
+    }
+  ]
+}

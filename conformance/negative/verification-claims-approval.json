@@ -1,0 +1,107 @@
+{
+  "id": "ori:test:negative:verification-claims-approval",
+  "rule": "machine-verification-not-approval",
+  "expected": "fail",
+  "description": "A passing machine Verification flagged as approval. Machine verification is reviewer evidence, not lawful approval.",
+  "objects": [
+    {
+      "id": "urn:ori:verification:test:claims-approval",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": true,
+        "result_state": "pass",
+        "reason_code": "threshold_met",
+        "message": "Room area 110.00 ft2 >= 70 ft2.",
+        "section": "R304.1",
+        "subsection_part": null,
+        "rule_unit_title": "Minimum habitable room area",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:2C$SRbTLP9Q9Oy5v_Nq8FP",
+          "label": "Bedroom 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2C$SRbTLP9Q9Oy5v_Nq8FP",
+            "ifc_class": "IfcSpace",
+            "name": "Bedroom 1",
+            "model": "ori-ch03-pass.ifc",
+            "centroid_m": [
+              1.6764,
+              1.524,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "floor_area": 110.0,
+          "unit": "ft2"
+        },
+        "required": [
+          {
+            "parameter": "min_habitable_room_area",
+            "comparator": ">=",
+            "value": 70,
+            "unit": "ft2",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "floor_area": {
+            "value": 110.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2C$SRbTLP9Q9Oy5v_Nq8FP",
+              "ifc_class": "IfcSpace",
+              "name": "Bedroom 1",
+              "model": "ori-ch03-pass.ifc",
+              "centroid_m": [
+                1.6764,
+                1.524,
+                1.2192
+              ]
+            },
+            "note": "IfcSpace footprint area"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "ed89078e59516557"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:573fe84353329915e79da6b8cca1d4363d45e45ae20b16b6a624848bde17215a"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:ed89078e59516557:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    }
+  ]
+}

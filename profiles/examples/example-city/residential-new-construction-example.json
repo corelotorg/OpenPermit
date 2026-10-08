@@ -1,0 +1,271 @@
+{
+  "id": "ori:inventory:example:example-city:residential-new-construction:2026-10-03",
+  "type": "JurisdictionInventory",
+  "version": "0.1.0",
+  "status": "draft",
+  "as_of": "2026-10-03",
+  "synthetic": true,
+  "synthetic_notice": "SYNTHETIC EXAMPLE. Example City, its offices, sources, fees and inspections are invented by the ORI project to exercise the inventory schema, the conformance suite and the BLDS adapter. No real jurisdiction is described, and no number here is observed data. Dedicated to the public domain under CC0-1.0.",
+  "license": "CC0-1.0",
+  "jurisdiction": {
+    "id": "geo:example:example-city",
+    "name": "Example City (synthetic)",
+    "state": "Example State (synthetic)",
+    "country": "XX"
+  },
+  "scope": {
+    "domain": "residential_construction",
+    "project_type": "new_single_family_dwelling",
+    "completeness": "synthetic_example",
+    "legal_determination": false,
+    "note": "Synthetic fixture for a detached single-family new home (ORI scope). It is not an inventory of any real place and not a legal determination."
+  },
+  "sources": [
+    {
+      "id": "source:example:building-office",
+      "title": "Example City building office page (synthetic)",
+      "publisher": "Example City (synthetic)",
+      "locator": "https://example.org/ori-example-city/building-office",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    },
+    {
+      "id": "source:example:permit-process",
+      "title": "Example City single-family permit process page (synthetic)",
+      "publisher": "Example City (synthetic)",
+      "locator": "https://example.org/ori-example-city/permit-process",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    },
+    {
+      "id": "source:example:fee-schedule",
+      "title": "Example City residential fee schedule (synthetic)",
+      "publisher": "Example City (synthetic)",
+      "locator": "https://example.org/ori-example-city/fee-schedule",
+      "authority_class": "local_official_source",
+      "effective_from": "2026-07-01",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    },
+    {
+      "id": "source:example:inspections",
+      "title": "Example City new-home inspection list (synthetic)",
+      "publisher": "Example City (synthetic)",
+      "locator": "https://example.org/ori-example-city/inspections",
+      "authority_class": "local_official_source",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    },
+    {
+      "id": "source:example:state-code",
+      "title": "Example State adopted building code notice (synthetic)",
+      "publisher": "Example State (synthetic)",
+      "locator": "https://example.org/ori-example-city/state-code",
+      "authority_class": "state_official_source",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    },
+    {
+      "id": "source:example:appeals",
+      "title": "Example State building code appeals page (synthetic)",
+      "publisher": "Example State (synthetic)",
+      "locator": "https://example.org/ori-example-city/appeals",
+      "authority_class": "state_official_source",
+      "retrieved_at": "2026-10-03T12:00:00Z"
+    }
+  ],
+  "authorities": [
+    {
+      "id": "authority:example:building-office",
+      "name": "Example City Building Office (synthetic)",
+      "role": "local_building_code_enforcement",
+      "source": [
+        "source:example:building-office",
+        "source:example:state-code"
+      ]
+    },
+    {
+      "id": "authority:example:state-code-board",
+      "name": "Example State code board (synthetic)",
+      "role": "state_building_code_adoption_and_regulation",
+      "source": [
+        "source:example:state-code"
+      ]
+    },
+    {
+      "id": "authority:example:appeals-board",
+      "name": "Example State appeals board (synthetic)",
+      "role": "state_code_appeal_review",
+      "source": [
+        "source:example:appeals"
+      ]
+    }
+  ],
+  "approvals": [
+    {
+      "id": "approval:example:single-family-building-permit",
+      "label": "Plan review and single-family building permit (synthetic)",
+      "authority": "authority:example:building-office",
+      "system": "Example online permit portal (synthetic)",
+      "source": [
+        "source:example:permit-process",
+        "source:example:building-office"
+      ],
+      "required_inputs": [
+        "completed application",
+        "construction drawings",
+        "site plan",
+        "energy compliance documentation",
+        "contractor or owner-builder statement"
+      ],
+      "review_time_statement": "Synthetic statement for testing: the example office says review typically takes 10 business days. Not an observed figure."
+    },
+    {
+      "id": "approval:example:certificate-of-occupancy",
+      "label": "Certificate of occupancy (synthetic)",
+      "authority": "authority:example:building-office",
+      "source": [
+        "source:example:permit-process"
+      ],
+      "required_inputs": [
+        "completion of permitted work",
+        "required inspections conducted and approved"
+      ]
+    }
+  ],
+  "fees": [
+    {
+      "id": "fee:example:permit-application",
+      "label": "Permit application fee (synthetic)",
+      "amount": 100.0,
+      "currency": "USD",
+      "effective_from": "2026-07-01",
+      "source": "source:example:fee-schedule"
+    },
+    {
+      "id": "fee:example:plan-review",
+      "label": "Plan review deposit (synthetic)",
+      "amount": 150.0,
+      "currency": "USD",
+      "effective_from": "2026-07-01",
+      "source": "source:example:fee-schedule"
+    },
+    {
+      "id": "fee:example:floor-area",
+      "label": "New home floor-area fee (synthetic)",
+      "rate": 0.25,
+      "rate_unit": "USD_per_square_foot",
+      "minimum": 300.0,
+      "currency": "USD",
+      "effective_from": "2026-07-01",
+      "source": "source:example:fee-schedule"
+    }
+  ],
+  "inspections": [
+    {
+      "id": "inspection:example:footing",
+      "label": "Footing inspection before concrete placement (synthetic)",
+      "source": "source:example:inspections"
+    },
+    {
+      "id": "inspection:example:foundation",
+      "label": "Foundation inspection (synthetic)",
+      "source": "source:example:inspections"
+    },
+    {
+      "id": "inspection:example:framing",
+      "label": "Framing inspection (synthetic)",
+      "source": "source:example:inspections"
+    },
+    {
+      "id": "inspection:example:insulation",
+      "label": "Insulation inspection (synthetic)",
+      "source": "source:example:inspections"
+    },
+    {
+      "id": "inspection:example:final",
+      "label": "Final inspection (synthetic)",
+      "source": "source:example:inspections"
+    }
+  ],
+  "inspection_scheduling": {
+    "responsible_party": "permit holder or representative",
+    "system": "Example online permit portal (synthetic)",
+    "source": "source:example:inspections"
+  },
+  "appeals": [
+    {
+      "id": "appeal:example:code-enforcement",
+      "label": "Code enforcement appeal path (synthetic)",
+      "path": [
+        "local appeals board (synthetic)",
+        "Example State appeals board (synthetic)"
+      ],
+      "qualification": "Synthetic two-step appeal path used to exercise the schema.",
+      "source": "source:example:appeals"
+    }
+  ],
+  "process_graph": {
+    "type": "PrecedenceGraph",
+    "nodes": [
+      {
+        "id": "prepare",
+        "label": "Prepare application materials"
+      },
+      {
+        "id": "submit",
+        "label": "Submit permit application"
+      },
+      {
+        "id": "review",
+        "label": "Plan review"
+      },
+      {
+        "id": "permit",
+        "label": "Permit issued before work begins"
+      },
+      {
+        "id": "construct",
+        "label": "Construct and request inspections"
+      },
+      {
+        "id": "final",
+        "label": "Final inspection"
+      },
+      {
+        "id": "occupancy",
+        "label": "Certificate of occupancy"
+      }
+    ],
+    "edges": [
+      {
+        "from": "prepare",
+        "to": "submit"
+      },
+      {
+        "from": "submit",
+        "to": "review"
+      },
+      {
+        "from": "review",
+        "to": "permit"
+      },
+      {
+        "from": "permit",
+        "to": "construct"
+      },
+      {
+        "from": "construct",
+        "to": "final"
+      },
+      {
+        "from": "final",
+        "to": "occupancy"
+      }
+    ],
+    "qualification": "Synthetic, simplified process slice for testing precedence analysis."
+  },
+  "known_gaps": [
+    "Everything in this file is synthetic; it exists so the public conformance suite and adapter tests run without any real jurisdiction's data.",
+    "Zoning, utility, stormwater and other approvals are deliberately not modeled.",
+    "The review-time statement is a made-up test value, not a shot clock and not an observed duration.",
+    "No model-code text appears here; real inventories cite and link (docs/CITATION-POLICY.md)."
+  ]
+}

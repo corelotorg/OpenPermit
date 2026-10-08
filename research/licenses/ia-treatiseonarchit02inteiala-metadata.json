@@ -1,0 +1,23 @@
+{
+ "source": "https://archive.org/metadata/treatiseonarchit02inteiala/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "treatiseonarchit02inteiala",
+  "title": "A treatise on architecture and building construction, prepared for students of the International Correspondence Schools",
+  "creator": "International Correspondence Schools",
+  "date": "1899",
+  "publisher": "Scranton : Colliery Engineer Co.",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "copyright-evidence": "Evidence reported by alyson-wieczorek for item treatiseonarchit02inteiala on April 25, 2007: no visible notice of copyright; stated date is 1899.",
+  "copyright-region": "US",
+  "collection": [
+   "cdl",
+   "americana"
+  ],
+  "contributor": "University of California Libraries",
+  "sponsor": "MSN",
+  "language": "eng",
+  "publicdate": "2007-04-25 17:24:18"
+ }
+}

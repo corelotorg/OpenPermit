@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 from __future__ import annotations
 
 import asyncio
@@ -46,6 +47,8 @@ async def main() -> None:
         assert not profiles.is_error
         data = profiles.structured_content["data"]
         assert any(p.get("authority_classification") == "federal_guidance" for p in data)
+        target = [p for p in data if p.get("authority_classification") == "project_self_declared_target"]
+        assert target and target[0]["legal_boundary"]["is_binding_local_law"] is False
 
         graph = await client.call_tool(
             "ori_analyze_precedence",
@@ -81,20 +84,14 @@ async def main() -> None:
             },
         )
         assert not challenge.is_error
-        challenge_id = challenge.structured_content["data"]["id"]
-
-        resolution = await client.call_tool(
-            "ori_resolve_challenge",
-            {
-                "challenge_id": challenge_id,
-                "decided_by": "ori:agent:smoke-test",
-                "disposition": "withdrawn",
-                "statement": "Smoke test complete.",
-                "evidence": [],
-            },
-        )
-        assert not resolution.is_error
-        assert resolution.structured_content["data"]["disposition"] == "withdrawn"
+        assert challenge.structured_content["ok"] is False
+        assert challenge.structured_content["error"] == "write_disabled"
+        resolution = await client.call_tool("ori_resolve_challenge", {
+            "challenge_id": "ori:challenge:missing", "decided_by": "ori:agent:smoke-test",
+            "disposition": "withdrawn", "statement": "Spoofed actor must not authorize writes."
+        })
+        assert resolution.structured_content["error"] == "write_disabled"
+        assert not module.STATE_LOG.exists()
 
         retrieved = await client.call_tool("ori_get", {"object_id": profile_id})
         assert not retrieved.is_error

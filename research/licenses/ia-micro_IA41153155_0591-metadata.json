@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/micro_IA41153155_0591/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "micro_IA41153155_0591",
+  "title": "Engineering Aid 1 & C. Rate Training Manual.",
+  "creator": "Naval Education and Training Command, Pensacola, FL.",
+  "date": "1974-00-00",
+  "collection": [
+   "eric-microfiche",
+   "microfiche"
+  ],
+  "contributor": "Internet Archive",
+  "catalog_number": "ED105121",
+  "source": "Microfiche",
+  "language": "English",
+  "publicdate": "2026-03-06 23:36:16"
+ }
+}

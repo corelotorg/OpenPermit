@@ -1,0 +1,101 @@
+{
+  "id": "ori:test:positive:open-corpora-manifest",
+  "rule": "open-corpora-manifest",
+  "expected": "pass",
+  "description": "A two-source subset of the term merger study corpora: a federal public-domain publication and a Virginia locality page (cite-and-link, no license found). Each has a license record, a local license copy under research/licenses/ with matching SHA-256, and a full citation.",
+  "objects": [
+    {
+      "manifest": "ori-cl-open-corpora-conformance-subset",
+      "status": "DRAFT",
+      "legal_note": "Conformance fixture.",
+      "license_rule": "Every source records its license or public-domain basis (license_id, license_basis, license_url), a local copy of the license evidence (license_local_path, license_sha256, license_fetched_at; redistributable copies under research/licenses/, other terms pages under $ORI_CORPORA/licenses/ with URL and SHA-256 only) and a full citation (source_url, source_citation). verification/ori_cl/corpus_license.py enforces this; the corpus tool refuses to ingest a source without it.",
+      "corpora": [
+        {
+          "id": "pd:osha-3124-stairways-ladders-2003",
+          "title": "Stairways and Ladders: A Guide to OSHA Rules (OSHA 3124-12R)",
+          "class": "public_domain",
+          "role": "text_corpus",
+          "source_url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+          "source_citation": {
+            "author": "US Department of Labor, Occupational Safety and Health Administration",
+            "title": "Stairways and Ladders: A Guide to OSHA Rules",
+            "year": "2003 (revised)",
+            "publisher": "US Department of Labor, OSHA",
+            "identifier": "OSHA 3124-12R",
+            "archive_url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+            "accessed": "2026-09-28"
+          },
+          "local_file": "osha3124.txt",
+          "text_source": "pdftotext of the OSHA PDF",
+          "license_id": "PD-statement",
+          "license_basis": "The publication states that it is in the public domain and may be reproduced without permission; also a US federal work (17 U.S.C. 105).",
+          "license_url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+          "license_local_path": "research/licenses/osha-3124-public-domain-notice.txt",
+          "license_sha256": "bfee9ce17911962e6d777b477ec40aa9511fab4ac08b1a52f322dcbf92e32597",
+          "license_fetched_at": "2026-09-28",
+          "license_confirmed": true,
+          "license_evidence": [
+            {
+              "path": "research/licenses/osha-3124-public-domain-notice.txt",
+              "sha256": "bfee9ce17911962e6d777b477ec40aa9511fab4ac08b1a52f322dcbf92e32597",
+              "url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+              "fetched_at": "2026-09-28",
+              "redistributable": true
+            },
+            {
+              "path": "research/licenses/usc-17-105.txt",
+              "sha256": "13375ca48dec1c6d9f730111287715d93edc3591e514afc857d50010d8667673",
+              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+              "fetched_at": "2026-09-28",
+              "redistributable": true,
+              "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+            }
+          ],
+          "sha256": "348257aaf7f3a4945ae77e8ad7ae3c93ea56461e0308a4a709021cc7afc6da6e",
+          "words": 5815,
+          "fetched": "2026-09-28",
+          "strong_evidence": true
+        },
+        {
+          "id": "loc:fredericksburg-residential-construction",
+          "title": "City of Fredericksburg, Residential Construction page",
+          "class": "locality",
+          "role": "text_corpus",
+          "source_url": "https://www.fredericksburgva.gov/907/Residential-Construction",
+          "source_citation": {
+            "author": "City of Fredericksburg, Virginia",
+            "title": "Residential Construction (web page)",
+            "year": "accessed 2026",
+            "publisher": "City of Fredericksburg, Virginia",
+            "identifier": "page 907",
+            "archive_url": "https://www.fredericksburgva.gov/907/Residential-Construction",
+            "accessed": "2026-09-28"
+          },
+          "local_file": "fxbg-residential-construction.txt",
+          "text_source": "HTML to text, fetched 2026-09-28",
+          "license_id": "LicenseRef-no-license-found-cite-and-link",
+          "license_basis": "Virginia locality web page; no license found. Cite-and-link only; not public domain.",
+          "license_url": "https://www.fredericksburgva.gov/copyright",
+          "license_local_path": "research/licenses/va-locality-fredericksburg-no-license-found.md",
+          "license_sha256": "7bda7966632a592a226154d1f5f498dbdf62891db47113192d943f2675de7c81",
+          "license_fetched_at": "2026-09-28",
+          "license_confirmed": false,
+          "license_evidence": [
+            {
+              "path": "research/licenses/va-locality-fredericksburg-no-license-found.md",
+              "sha256": "7bda7966632a592a226154d1f5f498dbdf62891db47113192d943f2675de7c81",
+              "url": "https://www.fredericksburgva.gov/copyright",
+              "fetched_at": "2026-09-28",
+              "redistributable": true
+            }
+          ],
+          "license_note": "No license or copyright notice text found. Cite-and-link only; never strong evidence.",
+          "sha256": "6e99243c3b70c74f8e71939054b91f15ad954ca679689eaba341cbc1f6611e78",
+          "words": 655,
+          "fetched": "2026-09-28",
+          "strong_evidence": false
+        }
+      ]
+    }
+  ]
+}

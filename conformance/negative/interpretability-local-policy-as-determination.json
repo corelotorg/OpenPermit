@@ -1,0 +1,167 @@
+{
+  "id": "ori:test:negative:interpretability-local-policy-as-determination",
+  "rule": "interpretability-is-evidence",
+  "expected": "fail",
+  "description": "Presents one county's policy as a statewide determination.",
+  "objects": [
+    {
+      "id": "urn:ori:rule-unit:irc2021-va:R303.8",
+      "type": "Requirement",
+      "version": "0.1.0",
+      "effective_from": "2024-01-18T00:00:00-05:00",
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "authority_classification": "state_adopted_code",
+        "status": "DRAFT"
+      },
+      "rule_unit_profile": "ori-rule-unit-0.1",
+      "title": "Lighting for exterior stairs",
+      "source_section": {
+        "code": "IRC",
+        "edition": "2021",
+        "section": "R303.8",
+        "chapter": 3
+      },
+      "authority_classification": "state_adopted_code",
+      "check_class": "data_check",
+      "classification_basis": "estimate",
+      "single_family_applicability": "applies",
+      "base_model": {
+        "code": "IRC",
+        "edition": "2021",
+        "publisher": "International Code Council",
+        "authority_class": "model_code",
+        "binding": false,
+        "source": "source:icc:irc-2021",
+        "status": "present"
+      },
+      "jurisdiction_layers": [
+        {
+          "layer_id": "us-va:vrc-2021",
+          "jurisdiction": "urn:ori:jurisdiction:us-va",
+          "code": "VRC",
+          "edition": "2021",
+          "effective_from": "2024-01-18",
+          "authority_class": "state_adopted_code",
+          "binding": true,
+          "precedence": 1,
+          "override_mode": "adopts_base",
+          "mode_status": "sourced_primary",
+          "amendment_ref": {
+            "source": "source:va:13vac5-63-210",
+            "item": null,
+            "note": "No amendment to this section is listed in 13VAC5-63-210 section 310.8 (fetched 2026-09-27); the VRC adopts the IRC base."
+          }
+        }
+      ],
+      "required_information": {
+        "ids": null,
+        "items": []
+      },
+      "inputs": [],
+      "result_states": [
+        "pass",
+        "fail",
+        "unknown",
+        "not_applicable"
+      ],
+      "unknown_policy": {
+        "missing_information_result": "unknown",
+        "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+      },
+      "evaluator": {
+        "kind": "not_implemented",
+        "implementation": null,
+        "implementation_version": null
+      },
+      "provenance": {
+        "recorded_by": "ORI automated drafting agent (DRAFT, not yet human-reviewed)",
+        "recorded_at": "2026-09-27",
+        "sources_checked": [
+          "source:va:13vac5-63-210",
+          "source:upcodes:vrc-2021-ch03",
+          "source:va:pwc-bdd-policies"
+        ]
+      },
+      "legal_boundary": {
+        "machine_result_is_approval": false,
+        "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision under the USBC is lawful approval."
+      },
+      "paraphrase": "Exterior stairs need a light source at or near the top landing, and basement exterior stairs need light at the bottom landing.",
+      "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+      "source_links": [
+        {
+          "label": "2021 VRC Chapter 3, section R303.8 (ICC Digital Codes)",
+          "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+        },
+        {
+          "label": "2021 IRC Chapter 3 model code (ICC Digital Codes; comparison only)",
+          "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+        }
+      ],
+      "interpretability": {
+        "rubric_version": "ori-interpretability-0.1",
+        "score": "ambiguous_term",
+        "scoring_status": "estimate",
+        "rationale": "Q3: exterior stairways need a light source at the top landing, with no light level or location tolerance stated (the interior rule in R303.7 has 1 footcandle). Prince William County lists fixture wattages and distances it will accept, which shows the gap.",
+        "ambiguous_terms": [
+          {
+            "term": "top-landing light location (ORI label)",
+            "defined_in_code": false,
+            "issue": "Location tolerance and light level are not stated."
+          }
+        ],
+        "evidence_strength": "indirect",
+        "candidate_clarification": {
+          "note": "Consider a measurable criterion for exterior stairs like the interior one (a minimum footcandle level at treads and landings) or a stated distance from the top landing.",
+          "status": "DRAFT_not_submitted",
+          "venue": "icc_code_development_cycle"
+        },
+        "reviewers": [
+          {
+            "reviewer": "ORI automated drafting agent (pre-score; not a human review)",
+            "score": "ambiguous_term",
+            "date": "2026-09-28",
+            "independent": true,
+            "role": "pre_scorer"
+          }
+        ],
+        "scored_text_source": "source:upcodes:vrc-2021-ch03",
+        "scored_at": "2026-09-28",
+        "determinations": [
+          {
+            "id": "det:va:pwc:policy:deck-stairway-illumination",
+            "citation": "Prince William County Building Development, Residential Policy 'Deck Stairway Illumination'",
+            "date": "2019-08-22",
+            "body": "Prince William County Building Official",
+            "body_class": "local_building_official_policy",
+            "url": "https://www.pwcva.gov/assets/2024-01/PP-DeckStairwayIllumination.pdf",
+            "binding_effect": "Local policy for Prince William County only; lists methods the county accepts.",
+            "code_at_issue": "IRC as incorporated in the USBC (effective 1997, revised 2019)",
+            "section_at_issue": "Exterior stairway illumination (not cited by number)",
+            "edition_carryover": "not_verified",
+            "holding_summary": "The county accepts, as compliant: a 60 W fixture within 5 ft of the top landing; a 150 W flood within 30 ft; or low-voltage fixtures at each step plus one within 3 ft of the bottom step; other methods by letter to the building official.",
+            "relevance": "indirect",
+            "verification": {
+              "status": "fetched_and_read",
+              "fetched_at": "2026-09-28",
+              "method": "pdftotext",
+              "sha256": "cfb35ae71046a4b87c385e619de9c891b94244cd9209c76c2d15da67c846893e"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}

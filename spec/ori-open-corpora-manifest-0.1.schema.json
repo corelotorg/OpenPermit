@@ -1,0 +1,327 @@
+{
+ "$schema": "https://json-schema.org/draft/2020-12/schema",
+ "$id": "https://openpermit.dev/spec/ori-open-corpora-manifest-0.1.schema.json",
+ "title": "ORI open corpora manifest 0.1 (DRAFT)",
+ "description": "Evidence corpora and lexical resources for the ORI-CL term merger study. Every source records its license or public-domain basis, a local copy of the license evidence with SHA-256, and a full citation of the original source. Texts stay outside the repository. CC0-1.0.",
+ "type": "object",
+ "required": [
+  "manifest",
+  "status",
+  "legal_note",
+  "license_rule",
+  "corpora"
+ ],
+ "properties": {
+  "manifest": {
+   "type": "string",
+   "pattern": "^ori-cl-open-corpora-"
+  },
+  "schema": {
+   "type": "string"
+  },
+  "status": {
+   "type": "string"
+  },
+  "legal_note": {
+   "type": "string"
+  },
+  "rule": {
+   "type": "string"
+  },
+  "license_rule": {
+   "type": "string"
+  },
+  "method_only": {
+   "type": "array"
+  },
+  "next_step": {
+   "type": "string"
+  },
+  "corpora": {
+   "type": "array",
+   "minItems": 1,
+   "items": {
+    "$ref": "#/$defs/source"
+   }
+  },
+  "excluded": {
+   "type": "array",
+   "description": "Sources considered and excluded, with reason; never loaded by the corpus tool.",
+   "items": {
+    "type": "object",
+    "required": [
+     "id",
+     "title",
+     "excluded_reason",
+     "excluded_on"
+    ],
+    "properties": {
+     "id": {
+      "type": "string"
+     },
+     "title": {
+      "type": "string"
+     },
+     "excluded_reason": {
+      "type": "string",
+      "minLength": 1
+     },
+     "excluded_on": {
+      "$ref": "#/$defs/date"
+     },
+     "source_url": {
+      "type": "string"
+     }
+    }
+   }
+  }
+ },
+ "$defs": {
+  "sha256": {
+   "type": "string",
+   "pattern": "^[0-9a-f]{64}$"
+  },
+  "date": {
+   "type": "string",
+   "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$"
+  },
+  "https": {
+   "type": "string",
+   "pattern": "^https://"
+  },
+  "localPath": {
+   "type": "string",
+   "pattern": "^(research/licenses/|\\$ORI_CORPORA/licenses/)"
+  },
+  "citation": {
+   "type": "object",
+   "required": [
+    "author",
+    "title",
+    "year",
+    "publisher",
+    "identifier",
+    "archive_url",
+    "accessed"
+   ],
+   "properties": {
+    "author": {
+     "type": "string",
+     "minLength": 1,
+     "description": "Author or agency."
+    },
+    "title": {
+     "type": "string",
+     "minLength": 1
+    },
+    "year": {
+     "type": "string",
+     "minLength": 1,
+     "description": "Edition or year."
+    },
+    "publisher": {
+     "type": "string",
+     "minLength": 1
+    },
+    "identifier": {
+     "type": "string",
+     "minLength": 1
+    },
+    "archive_url": {
+     "$ref": "#/$defs/https"
+    },
+    "accessed": {
+     "$ref": "#/$defs/date"
+    }
+   }
+  },
+  "evidence": {
+   "type": "object",
+   "required": [
+    "path",
+    "sha256",
+    "url",
+    "fetched_at",
+    "redistributable"
+   ],
+   "properties": {
+    "path": {
+     "$ref": "#/$defs/localPath"
+    },
+    "sha256": {
+     "$ref": "#/$defs/sha256"
+    },
+    "url": {
+     "$ref": "#/$defs/https"
+    },
+    "fetched_at": {
+     "$ref": "#/$defs/date"
+    },
+    "redistributable": {
+     "type": "boolean"
+    },
+    "note": {
+     "type": "string"
+    }
+   }
+  },
+  "source": {
+   "type": "object",
+   "required": [
+    "id",
+    "title",
+    "class",
+    "role",
+    "source_url",
+    "source_citation",
+    "license_id",
+    "license_basis",
+    "license_url",
+    "license_local_path",
+    "license_sha256",
+    "license_fetched_at",
+    "license_confirmed",
+    "strong_evidence"
+   ],
+   "properties": {
+    "id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "title": {
+     "type": "string",
+     "minLength": 1
+    },
+    "class": {
+     "enum": [
+      "public_domain",
+      "open_license",
+      "locality",
+      "candidate_vocabulary"
+     ]
+    },
+    "role": {
+     "enum": [
+      "text_corpus",
+      "lexical_resource",
+      "search_counts",
+      "vocabulary_candidate"
+     ]
+    },
+    "source_url": {
+     "$ref": "#/$defs/https"
+    },
+    "source_citation": {
+     "$ref": "#/$defs/citation"
+    },
+    "license_id": {
+     "type": "string",
+     "minLength": 1
+    },
+    "license_basis": {
+     "type": "string",
+     "minLength": 1
+    },
+    "license_url": {
+     "$ref": "#/$defs/https"
+    },
+    "license_local_path": {
+     "$ref": "#/$defs/localPath"
+    },
+    "license_sha256": {
+     "$ref": "#/$defs/sha256"
+    },
+    "license_fetched_at": {
+     "$ref": "#/$defs/date"
+    },
+    "license_confirmed": {
+     "type": "boolean"
+    },
+    "license_note": {
+     "type": "string"
+    },
+    "license_evidence": {
+     "type": "array",
+     "items": {
+      "$ref": "#/$defs/evidence"
+     }
+    },
+    "strong_evidence": {
+     "type": "boolean"
+    },
+    "local_file": {
+     "type": "string"
+    },
+    "text_source": {
+     "type": "string"
+    },
+    "sha256": {
+     "$ref": "#/$defs/sha256"
+    },
+    "words": {
+     "type": "integer",
+     "minimum": 1
+    },
+    "fetched": {
+     "$ref": "#/$defs/date"
+    },
+    "corpus_group": {
+     "type": "string",
+     "description": "Reporting group for the full build (for example 'Army TM/FM', 'Pre-1931 books (Internet Archive)', 'Virginia localities (cite-and-link)')."
+    },
+    "license_review": {
+     "type": "string",
+     "description": "Human review of an automatic licence flag: what was checked and why the basis is confirmed."
+    }
+   },
+   "allOf": [
+    {
+     "if": {
+      "properties": {
+       "role": {
+        "const": "text_corpus"
+       }
+      }
+     },
+     "then": {
+      "required": [
+       "local_file",
+       "sha256",
+       "words"
+      ]
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "license_confirmed": {
+        "const": false
+       }
+      }
+     },
+     "then": {
+      "required": [
+       "license_note"
+      ]
+     }
+    },
+    {
+     "if": {
+      "properties": {
+       "class": {
+        "const": "locality"
+       }
+      }
+     },
+     "then": {
+      "properties": {
+       "strong_evidence": {
+        "const": false
+       }
+      }
+     }
+    }
+   ]
+  }
+ }
+}

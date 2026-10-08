@@ -1,0 +1,18 @@
+{
+ "source": "https://archive.org/metadata/TM5-704/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "TM5-704",
+  "title": "TM 5-704 Construction Print Reading in the Field",
+  "creator": "United States. Department of the Army and Department of the Air Force",
+  "date": "1969-01-02",
+  "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+  "collection": [
+   "military-manuals",
+   "manuals"
+  ],
+  "language": "eng",
+  "publicdate": "2013-10-04 08:11:06"
+ }
+}

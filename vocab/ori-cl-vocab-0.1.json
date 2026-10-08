@@ -1,0 +1,1986 @@
+{
+ "vocabulary_id": "ori-cl-vocab-0.1",
+ "status": "DRAFT",
+ "license": "CC0-1.0",
+ "verified_at": "2026-09-28",
+ "legal_notice": "License findings are ORI's reading of fetched pages, not legal advice. Items marked legal_review need counsel before release.",
+ "rules": [
+  "Every term records source and license.",
+  "Allowed sources: IFC names (reference with attribution), NIST SI usage, UCUM codes, QUDT quantity kinds, ORI-coined words and ORI property sets.",
+  "Never: ICC headings, ICC section organization, ICC definition text, MasterFormat, UniFormat, UNIFORMAT II, OmniClass (decision csi-classifications-excluded).",
+  "Candidate sources (Uniclass) are recorded with license evidence but supply no terms until adopted.",
+  "Defined terms in law are mapped by citation (defined at IRC R202, as adopted by VRC), never by copying the definition.",
+  "Plain names of physical things are used as is; code expression is re-expressed (decision plain-names-free)."
+ ],
+ "decisions": [
+  {
+   "id": "ifc-names-only",
+   "date": "2026-09-28",
+   "decided_by": "Jeremiah Horstick",
+   "decision": "Keep using IFC 4.3 names: names only, with attribution, no definitions. Legal review before publication stays flagged.",
+   "applies_to": [
+    "sources/src:ifc-4.3"
+   ],
+   "legal_review": true
+  },
+  {
+   "id": "csi-classifications-excluded",
+   "date": "2026-09-28",
+   "decided_by": "Jeremiah Horstick",
+   "decision": "Keep MasterFormat, UniFormat, OmniClass and UNIFORMAT II excluded until the MasterFormat appeal and the CSI contract (EULA) questions are settled.",
+   "applies_to": [
+    "restricted_sources/MasterFormat",
+    "restricted_sources/UniFormat (CSI)",
+    "restricted_sources/OmniClass",
+    "restricted_sources/UNIFORMAT II (ASTM E1557)"
+   ],
+   "revisit_when": "the appeal from the reported 2026-09-01 C.D. Cal. ruling is resolved and CSI's contract terms are reviewed by counsel"
+  },
+  {
+   "id": "uniclass-candidate",
+   "date": "2026-09-28",
+   "decided_by": "Jeremiah Horstick",
+   "decision": "Evaluate Uniclass from its primary license pages; if open, record it as a candidate source with provenance; do not import terms.",
+   "applies_to": [
+    "candidate_sources/src:uniclass"
+   ],
+   "outcome": "Recorded as a candidate (CC BY-ND 4.0, tables only, not the API); zero terms imported; legal review flagged."
+  },
+  {
+   "id": "plain-names-free",
+   "date": "2026-09-28",
+   "decided_by": "Jeremiah Horstick",
+   "decision": "Plain names for physical things (riser height, guard, smoke alarm, sink) are used as is; ORI does not coin substitutes. What ORI must not copy is the code's expression (sentence structure, ordering, selection). See docs/TERM-MERGER-METHOD-DRAFT.md; analysis to inform counsel, not a legal conclusion.",
+   "applies_to": [
+    "all terms"
+   ],
+   "study": "research/data/ori-cl-term-merger-DRAFT.json"
+  }
+ ],
+ "sources": {
+  "src:ifc-4.3": {
+   "name": "Industry Foundation Classes (IFC) 4.3 ADD2, entity, enumeration, property-set and quantity-set names",
+   "publisher": "buildingSMART International Ltd.",
+   "url": "https://technical.buildingsmart.org/standards/ifc/",
+   "license": "CC-BY-ND-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+   "license_evidence": [
+    {
+     "url": "https://technical.buildingsmart.org/standards/ifc/",
+     "fetched": "2026-09-28",
+     "finding": "Page states IFC is licensed under Creative Commons Attribution-NoDerivatives 4.0 International."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/LICENSE.md",
+     "fetched": "2026-09-28",
+     "finding": "CC BY-ND 4.0; also a legacy notice that the documentation may be used in software development with full attribution and that changes to the specification need prior written consent."
+    },
+    {
+     "url": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSpace.htm",
+     "fetched": "2026-09-28",
+     "finding": "IFC 4.3 HTML documentation footer carries CC BY-ND 4.0."
+    },
+    {
+     "url": "https://raw.githubusercontent.com/buildingSMART/IDS/development/LICENSE",
+     "fetched": "2026-09-28",
+     "finding": "IDS (Information Delivery Specification) repository is also CC BY-ND 4.0."
+    }
+   ],
+   "use_position": "ORI-CL uses IFC names as identifiers (references to the published schema) with attribution. It does not copy IFC definitions or documentation text and does not modify or redistribute the specification. Whether identifier use can be an adaptation under the NoDerivatives term is flagged for legal review.",
+   "legal_review": true,
+   "allowed": true
+  },
+  "src:nist-si": {
+   "name": "NIST SP 330 (SI) and SP 811 (Guide for the Use of the SI), unit names and conversion factors",
+   "publisher": "National Institute of Standards and Technology (US Government)",
+   "url": "https://www.nist.gov/pml/special-publication-811",
+   "license": "US-Government-work",
+   "license_url": "https://www.nist.gov/oism/copyrights",
+   "license_evidence": [
+    {
+     "url": "https://www.nist.gov/oism/copyrights",
+     "fetched": "2026-09-28",
+     "finding": "NIST web information, except material marked as copyrighted, is public information that may be distributed or copied; byline credit requested."
+    },
+    {
+     "url": "https://www.nist.gov/pml/special-publication-811",
+     "fetched": "2026-09-28",
+     "finding": "Page reachable (HTTP 200); no separate copyright marking found on the landing page."
+    }
+   ],
+   "use_position": "Unit names, symbols and exact conversion factors (1 in = 0.0254 m) are facts; NIST is cited as the public-domain reference.",
+   "legal_review": false,
+   "allowed": true
+  },
+  "src:ucum": {
+   "name": "Unified Code for Units of Measure (UCUM) unit codes",
+   "publisher": "Regenstrief Institute, Inc.",
+   "url": "https://ucum.org/",
+   "license": "UCUM-License-1.1",
+   "license_url": "https://ucum.org/license",
+   "license_evidence": [
+    {
+     "url": "https://ucum.org/license",
+     "fetched": "2026-09-28",
+     "finding": "UCUM Copyright Notice and License 1.1 (June 2024): worldwide, non-exclusive, no-charge, royalty-free, revocable license to reproduce and distribute and to use the work for software that interoperates; attribution and notice conditions; trademark use not granted."
+    }
+   ],
+   "use_position": "ORI-CL records the matching UCUM code for each unit (e.g. [in_i], [ft_i]) for interoperability only; the ORI-CL unit symbols themselves come from NIST usage. Revocability noted as an open question.",
+   "legal_review": true,
+   "allowed": true
+  },
+  "src:qudt": {
+   "name": "QUDT quantity kinds (Length, Area, Angle, Dimensionless)",
+   "publisher": "QUDT.org",
+   "url": "https://qudt.org/",
+   "license": "CC-BY-4.0",
+   "license_url": "https://creativecommons.org/licenses/by/4.0/",
+   "license_evidence": [
+    {
+     "url": "https://qudt.org/",
+     "fetched": "2026-09-28",
+     "finding": "Page states the work is licensed under Creative Commons Attribution 4.0 International."
+    }
+   ],
+   "use_position": "Quantity-kind names are referenced with attribution.",
+   "legal_review": false,
+   "allowed": true
+  },
+  "src:ori": {
+   "name": "ORI-coined term (this vocabulary)",
+   "publisher": "ORI / OpenPermit contributors",
+   "url": "https://github.com/",
+   "license": "CC0-1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "license_evidence": [
+    {
+     "url": "LICENSE-SPEC.md",
+     "fetched": "2026-09-28",
+     "finding": "Repository specification license (CC0)."
+    }
+   ],
+   "use_position": "Plain English words and ORI identifiers chosen by ORI; not taken from code headings or proprietary classifications.",
+   "legal_review": false,
+   "allowed": true
+  },
+  "src:ori-pset": {
+   "name": "ORI property sets (Pset_ORI_*) used by ORI fixtures and extractors",
+   "publisher": "ORI / OpenPermit contributors",
+   "url": "verification/ori_verify/ifc_fixtures.py",
+   "license": "CC0-1.0",
+   "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+   "license_evidence": [
+    {
+     "url": "LICENSE-SPEC.md",
+     "fetched": "2026-09-28",
+     "finding": "Repository specification license (CC0)."
+    }
+   ],
+   "use_position": "ORI-defined IFC property sets; the Pset_ prefix follows the IFC naming convention, but the sets are ORI's own and not buildingSMART's.",
+   "legal_review": false,
+   "allowed": true
+  },
+  "src:law-citation": {
+   "name": "Defined terms in adopted law, mapped by citation only",
+   "publisher": "International Code Council (model code) as adopted by the Commonwealth of Virginia (VRC)",
+   "url": "https://law.lis.virginia.gov/admincode/title13/agency5/chapter63/section210/",
+   "license": "citation-only",
+   "license_url": null,
+   "license_evidence": [
+    {
+     "url": "https://law.lis.virginia.gov/admincode/title13/agency5/chapter63/section210/",
+     "fetched": "2026-09-27",
+     "finding": "Virginia regulation adopting the IRC with amendments (13VAC5-63-210)."
+    }
+   ],
+   "use_position": "ORI-CL names the defined term and cites where it is defined. The definition text is never copied. Term presence in VRC R202 was checked against a secondary publication (UpCodes VRC 2021 Chapter 2) on 2026-09-28 by name only; ICC Digital Codes returns 403 to automated fetches, so the primary check is UNVERIFIED.",
+   "legal_review": true,
+   "allowed": true
+  }
+ },
+ "restricted_sources": [
+  {
+   "name": "MasterFormat",
+   "owner": "Construction Specifications Institute (CSI)",
+   "status": "not_used",
+   "allowed": false,
+   "findings": [
+    {
+     "url": "https://www.csiresources.org/standards/masterformat/mf-faqs",
+     "fetched": "2026-09-28",
+     "finding": "CSI FAQ: MasterFormat content is protected by copyright; use is under the MasterFormat EULA; commercial use in a derivative product employing MasterFormat numbers or titles requires contacting CSI."
+    },
+    {
+     "url": "https://theconstructionstandard.com/faq",
+     "fetched": "2026-09-28",
+     "finding": "CSI's authorized licensing channel states a license is required when CSI standards are used in revenue-generating services or software; software tools do not sublicense."
+    },
+    {
+     "url": "https://www.buildingenclosureonline.com/articles/95142-federal-judge-rules-masterformat-numbers-titles-and-taxonomy-are-not-copyright-protected",
+     "fetched": "2026-09-28",
+     "finding": "Trade press report: on 2026-09-01 a US District Court (C.D. Cal.) granted summary judgment to ZeroDocs, finding the asserted MasterFormat numbers, titles, divisions and taxonomy not protectable by copyright; the article notes contractual licensing and a possible appeal remain. Court order itself not fetched (UNVERIFIED primary)."
+    }
+   ],
+   "decision": "Excluded from ORI-CL 0.1. Even after the reported 2026-09-01 ruling, CSI asserts copyright, trademark and contract terms, and an appeal is possible. Legal review before any reference.",
+   "decision_ref": "decisions/csi-classifications-excluded"
+  },
+  {
+   "name": "UniFormat (CSI)",
+   "owner": "Construction Specifications Institute (CSI)",
+   "status": "not_used",
+   "allowed": false,
+   "findings": [
+    {
+     "url": "https://www.csiresources.org/standards/uniformat",
+     "fetched": "2026-09-28",
+     "finding": "CSI standards page for UniFormat (registered mark); no open license stated on the page."
+    },
+    {
+     "url": "https://theconstructionstandard.com/do-software-companies-need-a-csi-dynamic-standards-license",
+     "fetched": "2026-09-28",
+     "finding": "Licensing channel states UniFormat elements in digital systems need a CSI Dynamic Standards license."
+    }
+   ],
+   "decision": "Excluded.",
+   "decision_ref": "decisions/csi-classifications-excluded"
+  },
+  {
+   "name": "UNIFORMAT II (ASTM E1557)",
+   "owner": "ASTM International",
+   "status": "not_used",
+   "allowed": false,
+   "findings": [
+    {
+     "url": "https://www.astm.org/e1557-09r20.html",
+     "fetched": "2026-09-28",
+     "finding": "HTTP 403 to automated fetch; ASTM standards are sold under ASTM copyright (UNVERIFIED for this edition)."
+    }
+   ],
+   "decision": "Excluded; license UNVERIFIED.",
+   "decision_ref": "decisions/csi-classifications-excluded"
+  },
+  {
+   "name": "OmniClass",
+   "owner": "Construction Specifications Institute (CSI)",
+   "status": "not_used",
+   "allowed": false,
+   "findings": [
+    {
+     "url": "https://www.csiresources.org/csistore/oc-eula",
+     "fetched": "2026-09-28",
+     "finding": "OmniClass single-user EULA: non-exclusive, non-transferable, terminable at any time; prohibits incorporating any portion into commercial construction software or information products provided to third parties; CSI retains all rights."
+    },
+    {
+     "url": "https://www.omniclass.org/",
+     "fetched": "2026-09-28",
+     "finding": "Connection failed (no HTTP response); not reachable for verification."
+    }
+   ],
+   "decision": "Excluded (restrictive EULA).",
+   "decision_ref": "decisions/csi-classifications-excluded"
+  },
+  {
+   "name": "ICC code headings, section organization and definition text",
+   "owner": "International Code Council",
+   "status": "citation_only",
+   "allowed": false,
+   "findings": [
+    {
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning",
+     "fetched": "search index only",
+     "finding": "ICC copyright; ORI cites section numbers and links (docs/CITATION-POLICY.md)."
+    }
+   ],
+   "decision": "Never used as vocabulary. Section numbers appear only in cite lines; defined terms are mapped by citation."
+  }
+ ],
+ "candidate_sources": {
+  "src:uniclass": {
+   "name": "Uniclass (NBS), classification tables as downloaded",
+   "publisher": "NBS Enterprises Ltd",
+   "url": "https://uniclass.thenbs.com/download",
+   "status": "candidate",
+   "license": "CC-BY-ND-4.0",
+   "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+   "license_evidence": [
+    {
+     "url": "https://uniclass.thenbs.com/download",
+     "fetched": "2026-09-28",
+     "finding": "Download page: Uniclass is licensed under Creative Commons Attribution-NoDerivatives 4.0 International (CC BY-ND 4.0); users and organizations may share and apply the tables on any personal or commercial project; users should not adapt the tables or add their own codes and should contact NBS to suggest changes. Latest tables dated July 2026."
+    },
+    {
+     "url": "https://www.thenbs.com/tools/uniclass",
+     "fetched": "2026-09-28",
+     "finding": "NBS tool page (redirect from /our-tools/uniclass): Uniclass is free; all tables may be downloaded and used free of charge."
+    },
+    {
+     "url": "https://creativecommons.org/licenses/by-nd/4.0/",
+     "fetched": "2026-09-28",
+     "finding": "CC BY-ND 4.0 deed: share for any purpose, even commercially, and the freedoms are not revocable while the terms are followed; attribution requires credit, a link to the license and an indication of changes; a remixed, transformed or built-upon version may not be distributed."
+    },
+    {
+     "url": "https://www.thenbs.com/legal/uniclass-api-terms-and-conditions",
+     "fetched": "2026-09-28",
+     "finding": "The Uniclass API is under a separate licence: non-exclusive, revocable, non-transferable, for a permitted purpose; it bars derivative works and commercial distribution of API data without consent (cl. 3.7.5) and building a competing product (cl. 3.7.13). ORI would not use the API."
+    },
+    {
+     "url": "https://www.thenbs.com/legal/website-terms-and-conditions",
+     "fetched": "2026-09-28",
+     "finding": "NBS website content is all rights reserved and not for commercial use without a licence; this covers site content, not the CC-licensed tables."
+    },
+    {
+     "url": "https://opendefinition.org/licenses/",
+     "fetched": "2026-09-28",
+     "finding": "CC BY-ND is not among the licenses listed as conformant with the Open Definition (CC BY 4.0, CC BY-SA 4.0 and CC0 are). 'Open' here means free of charge and freely shareable, not freely modifiable."
+    }
+   ],
+   "use_position": "Candidate only; no terms imported. If adopted, ORI would reference Uniclass codes and titles verbatim, as unmodified identifiers with attribution to NBS and a link to CC BY-ND 4.0, in a separate mapping field next to ORI's own term (the same position as IFC names). ORI would not edit the tables, add its own codes to them, or use the NBS API. Uniclass content would stay under CC BY-ND 4.0; the repository's CC0 dedication cannot cover it.",
+   "legal_review": true,
+   "legal_questions": [
+    "Is a published ORI-term-to-Uniclass-code mapping an adaptation under the NoDerivatives term, or a reference to unmodified codes?",
+    "Can a CC0 repository carry CC BY-ND identifiers with a per-field license notice, as ORI already does for IFC names?"
+   ],
+   "allowed": false,
+   "terms_imported": 0,
+   "uk_origin_note": "Uniclass is a UK classification (built for UK practice); US residential fit is untested."
+  }
+ },
+ "keywords": [
+  {
+   "word": "rule",
+   "role": "block",
+   "gloss": "starts a rule block",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "end",
+   "role": "block",
+   "gloss": "ends a rule block",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "context",
+   "role": "header",
+   "gloss": "declares the base model or a jurisdiction layer for the file",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "base",
+   "role": "header",
+   "gloss": "the model-code base layer",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "layer",
+   "role": "header",
+   "gloss": "a jurisdiction layer",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "code",
+   "role": "header",
+   "gloss": "code name of a layer",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "for",
+   "role": "header",
+   "gloss": "jurisdiction a layer is for",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "publisher",
+   "role": "header",
+   "gloss": "publisher of the base model",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "from",
+   "role": "both",
+   "gloss": "start date of a layer; start point of a measurement",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "class",
+   "role": "header",
+   "gloss": "authority class of a layer",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "cite",
+   "role": "authority",
+   "gloss": "section citation (number only)",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "part",
+   "role": "authority",
+   "gloss": "names a part of a section",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "adopt",
+   "role": "override",
+   "gloss": "how a jurisdiction layer treats the rule",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "mode",
+   "role": "override",
+   "gloss": "override mode",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "status",
+   "role": "authority",
+   "gloss": "value status of a parameter or mode",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "by",
+   "role": "authority",
+   "gloss": "source that supports a value or layer",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "item",
+   "role": "authority",
+   "gloss": "item locator in the adopting regulation",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "link",
+   "role": "authority",
+   "gloss": "official link to the law text",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "subject",
+   "role": "scope",
+   "gloss": "what the rule is about, mapped to an IFC entity",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "is",
+   "role": "logic",
+   "gloss": "identity or equality",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "measure",
+   "role": "measure",
+   "gloss": "how a quantity is measured",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "to",
+   "role": "measure",
+   "gloss": "end point of a measurement",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "along",
+   "role": "measure",
+   "gloss": "path of a measurement",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "within",
+   "role": "measure",
+   "gloss": "horizontal search band for a measurement",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "param",
+   "role": "quantity",
+   "gloss": "a named, sourced threshold",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "at",
+   "role": "quantity",
+   "gloss": "layer a parameter belongs to",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "source",
+   "role": "quantity",
+   "gloss": "source reference of a parameter",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "locator",
+   "role": "quantity",
+   "gloss": "short locator note for a parameter",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "open",
+   "role": "quantity",
+   "gloss": "value not yet sourced (evaluates to unknown)",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "check",
+   "role": "binding",
+   "gloss": "existing ORI check function this rule compiles to",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "derive",
+   "role": "quantity",
+   "gloss": "compute a quantity from others when it is absent",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "times",
+   "role": "quantity",
+   "gloss": "multiplication in derive",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "when",
+   "role": "scope",
+   "gloss": "applicability condition",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "unless",
+   "role": "scope",
+   "gloss": "exclusion condition (rule does not apply)",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "require",
+   "role": "constraint",
+   "gloss": "the requirement",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "each",
+   "role": "constraint",
+   "gloss": "every value of a list",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "spread",
+   "role": "constraint",
+   "gloss": "largest minus smallest value of a list (uniformity)",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "between",
+   "role": "constraint",
+   "gloss": "inclusive range",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "and",
+   "role": "logic",
+   "gloss": "conjunction",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "or",
+   "role": "logic",
+   "gloss": "disjunction",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "not",
+   "role": "logic",
+   "gloss": "negation",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "in",
+   "role": "logic",
+   "gloss": "membership in a set",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "present",
+   "role": "constraint",
+   "gloss": "the element or property exists and is true",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "empty",
+   "role": "constraint",
+   "gloss": "modifier: an empty measured list",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "absent",
+   "role": "constraint",
+   "gloss": "means the measured element was not found",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "bound",
+   "role": "constraint",
+   "gloss": "a known value on the side where the quantity can only be worse",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "except",
+   "role": "exception",
+   "gloss": "an exception clause",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "allow",
+   "role": "exception",
+   "gloss": "relaxed threshold under a condition",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "use",
+   "role": "exception",
+   "gloss": "alternative threshold under a condition",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "optional",
+   "role": "exception",
+   "gloss": "skip the exception if its parameter is not defined",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "reviewer",
+   "role": "judgment",
+   "gloss": "reviewer determination required",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "terms",
+   "role": "judgment",
+   "gloss": "the ambiguous terms at issue",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "encloses",
+   "role": "relation",
+   "gloss": "subject contains an element (count at least one)",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "adjacent",
+   "role": "relation",
+   "gloss": "subject touches an element",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "above",
+   "role": "relation",
+   "gloss": "subject is above an element",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "distance",
+   "role": "relation",
+   "gloss": "shortest distance from subject to an element",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "true",
+   "role": "literal",
+   "gloss": "boolean true",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "false",
+   "role": "literal",
+   "gloss": "boolean false",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  }
+ ],
+ "units": [
+  {
+   "symbol": "in",
+   "name": "inch",
+   "quantity_kind": "length",
+   "si_factor": 0.0254,
+   "ucum": "[in_i]",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "[in_i]"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Length"
+    }
+   ]
+  },
+  {
+   "symbol": "ft",
+   "name": "foot",
+   "quantity_kind": "length",
+   "si_factor": 0.3048,
+   "ucum": "[ft_i]",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "[ft_i]"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Length"
+    }
+   ]
+  },
+  {
+   "symbol": "mm",
+   "name": "millimetre",
+   "quantity_kind": "length",
+   "si_factor": 0.001,
+   "ucum": "mm",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "mm"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Length"
+    }
+   ]
+  },
+  {
+   "symbol": "m",
+   "name": "metre",
+   "quantity_kind": "length",
+   "si_factor": 1.0,
+   "ucum": "m",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "m"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Length"
+    }
+   ]
+  },
+  {
+   "symbol": "in2",
+   "name": "square inch",
+   "quantity_kind": "area",
+   "si_factor": 0.00064516,
+   "ucum": "[sin_i]",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "[sin_i]"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Area"
+    }
+   ]
+  },
+  {
+   "symbol": "ft2",
+   "name": "square foot",
+   "quantity_kind": "area",
+   "si_factor": 0.09290304,
+   "ucum": "[sft_i]",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "[sft_i]"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Area"
+    }
+   ]
+  },
+  {
+   "symbol": "m2",
+   "name": "square metre",
+   "quantity_kind": "area",
+   "si_factor": 1.0,
+   "ucum": "m2",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "m2"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Area"
+    }
+   ]
+  },
+  {
+   "symbol": "deg",
+   "name": "degree (plane angle)",
+   "quantity_kind": "angle",
+   "si_factor": null,
+   "ucum": "deg",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "deg"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Angle"
+    }
+   ]
+  },
+  {
+   "symbol": "percent",
+   "name": "percent",
+   "quantity_kind": "dimensionless",
+   "si_factor": 0.01,
+   "ucum": "%",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "%"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Dimensionless"
+    }
+   ]
+  },
+  {
+   "symbol": "ratio",
+   "name": "ratio",
+   "quantity_kind": "dimensionless",
+   "si_factor": 1.0,
+   "ucum": "1",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "1"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Dimensionless"
+    }
+   ]
+  },
+  {
+   "symbol": "count",
+   "name": "count",
+   "quantity_kind": "dimensionless",
+   "si_factor": 1.0,
+   "ucum": "1",
+   "source": "src:nist-si",
+   "license": "US-Government-work (public information)",
+   "also": [
+    {
+     "source": "src:ucum",
+     "license": "UCUM-License-1.1 (royalty-free; attribution)",
+     "code": "1"
+    },
+    {
+     "source": "src:qudt",
+     "license": "CC-BY-4.0",
+     "quantity_kind": "Dimensionless"
+    }
+   ]
+  }
+ ],
+ "subjects": [
+  {
+   "kind": "stair_flight",
+   "label": "stair flight",
+   "ifc": {
+    "name": "IfcStairFlight",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcStairFlight.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "space",
+   "label": "space",
+   "ifc": {
+    "name": "IfcSpace",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSpace.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "eero",
+   "label": "escape opening",
+   "ifc": {
+    "name": "IfcWindow",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcWindow.htm",
+    "predefined_type": "WINDOW",
+    "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcWindowTypeEnum.htm",
+    "note": "doors (IfcDoor) may also serve; 0.1 extracts windows"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "walking_surface",
+   "label": "walking surface",
+   "ifc": {
+    "name": "IfcSlab",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSlab.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "guard",
+   "label": "guard",
+   "ifc": {
+    "name": "IfcRailing",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRailing.htm",
+    "predefined_type": "GUARDRAIL",
+    "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRailingTypeEnum.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "building",
+   "label": "building",
+   "ifc": {
+    "name": "IfcBuilding",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcBuilding.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "heat_source_device",
+   "label": "heat-producing device",
+   "ifc": {
+    "name": "IfcLightFixture",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcLightFixture.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "pv_array",
+   "label": "PV array",
+   "ifc": {
+    "name": "IfcSolarDevice",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSolarDevice.htm",
+    "predefined_type": "SOLARPANEL",
+    "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSolarDeviceTypeEnum.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "kind": "garage_floor",
+   "label": "garage floor",
+   "ifc": {
+    "name": "IfcSlab",
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSlab.htm",
+    "predefined_type": "FLOOR",
+    "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSlabTypeEnum.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  }
+ ],
+ "facts": [
+  {
+   "name": "riser_heights",
+   "label": "riser height",
+   "subject": "stair_flight",
+   "datatype": "length_list",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Pset_StairFlightCommon.RiserHeight",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_StairFlightCommon.htm"
+    }
+   ],
+   "note": "ORI measures every riser from the stepped profile; IFC's RiserHeight is one nominal value."
+  },
+  {
+   "name": "tread_depths",
+   "label": "tread depth",
+   "subject": "stair_flight",
+   "datatype": "length_list",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Pset_StairFlightCommon.TreadLength",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_StairFlightCommon.htm"
+    }
+   ]
+  },
+  {
+   "name": "headroom_clearances",
+   "label": "headroom",
+   "subject": "stair_flight",
+   "datatype": "length_list",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Pset_StairFlightCommon.Headroom",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_StairFlightCommon.htm"
+    }
+   ]
+  },
+  {
+   "name": "space_use",
+   "label": "use category",
+   "subject": "space",
+   "datatype": "enum",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_SpaceUse.UseCategory"
+    }
+   ],
+   "ifc_read": {
+    "pset": "Pset_ORI_SpaceUse",
+    "property": "UseCategory"
+   },
+   "values": [
+    {
+     "value": "habitable",
+     "maps_to_defined_term": {
+      "defined_term": "Habitable Space",
+      "citation": "defined at IRC R202, as adopted by VRC (R202)",
+      "source": "src:law-citation",
+      "license": "citation only (no text copied)",
+      "definition_copied": false,
+      "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+     }
+    },
+    {
+     "value": "kitchen",
+     "maps_to_defined_term": {
+      "defined_term": "Kitchen",
+      "citation": "defined at IRC R202, as adopted by VRC (R202)",
+      "source": "src:law-citation",
+      "license": "citation only (no text copied)",
+      "definition_copied": false,
+      "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+     }
+    },
+    {
+     "value": "hallway"
+    },
+    {
+     "value": "bathroom",
+     "maps_to_defined_term": {
+      "defined_term": "Bathroom",
+      "citation": "defined at IRC R202, as adopted by VRC (R202)",
+      "source": "src:law-citation",
+      "license": "citation only (no text copied)",
+      "definition_copied": false,
+      "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+     }
+    },
+    {
+     "value": "toilet"
+    },
+    {
+     "value": "laundry"
+    },
+    {
+     "value": "other"
+    }
+   ]
+  },
+  {
+   "name": "ceiling_height",
+   "label": "ceiling height",
+   "subject": "space",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Qto_SpaceBaseQuantities.FinishCeilingHeight",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Qto_SpaceBaseQuantities.htm"
+    }
+   ]
+  },
+  {
+   "name": "sloped_ceiling",
+   "label": "sloped ceiling",
+   "subject": "space",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_SpaceUse.SlopedCeiling"
+    }
+   ],
+   "ifc_read": {
+    "pset": "Pset_ORI_SpaceUse",
+    "property": "SlopedCeiling"
+   }
+  },
+  {
+   "name": "floor_area",
+   "label": "floor area",
+   "subject": "space",
+   "datatype": "area",
+   "unit": "ft2",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Qto_SpaceBaseQuantities.NetFloorArea",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Qto_SpaceBaseQuantities.htm"
+    }
+   ]
+  },
+  {
+   "name": "sleeping_room",
+   "label": "sleeping room",
+   "subject": "space",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_SpaceUse.SleepingRoom"
+    }
+   ],
+   "ifc_read": {
+    "pset": "Pset_ORI_SpaceUse",
+    "property": "SleepingRoom"
+   }
+  },
+  {
+   "name": "net_clear_area",
+   "label": "net clear area",
+   "subject": "eero",
+   "datatype": "area",
+   "unit": "ft2",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_EscapeOpening.NetClearArea"
+    }
+   ]
+  },
+  {
+   "name": "net_clear_height",
+   "label": "net clear height",
+   "subject": "eero",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_EscapeOpening.NetClearHeight"
+    }
+   ]
+  },
+  {
+   "name": "net_clear_width",
+   "label": "net clear width",
+   "subject": "eero",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_EscapeOpening.NetClearWidth"
+    }
+   ]
+  },
+  {
+   "name": "grade_floor_or_below_grade",
+   "label": "at ground level or below",
+   "subject": "eero",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ori-pset",
+     "license": "CC0-1.0",
+     "name": "Pset_ORI_EscapeOpening.GradeFloorOrBelowGrade"
+    }
+   ],
+   "label_note": "Relabelled 2026-09-28 by the term merger study: the earlier label matched code wording (category c). The field name stays for interchange compatibility (open question in docs/TERM-MERGER-METHOD-DRAFT.md)."
+  },
+  {
+   "name": "sill_height",
+   "label": "sill height",
+   "subject": "eero",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "name": "frame_bottom_height",
+   "label": "frame bottom height",
+   "subject": "eero",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "name": "drop_height",
+   "label": "drop height",
+   "subject": "walking_surface",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "name": "guard_present",
+   "label": "guard present",
+   "subject": "walking_surface",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "IfcRailing",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRailing.htm"
+    }
+   ]
+  },
+  {
+   "name": "guard_height",
+   "label": "guard height",
+   "subject": "guard",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Pset_RailingCommon.Height",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_RailingCommon.htm"
+    }
+   ]
+  },
+  {
+   "name": "on_stair_open_side",
+   "label": "on stair open side",
+   "subject": "guard",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "name": "multiple_smoke_alarms",
+   "label": "multiple smoke alarms",
+   "subject": "building",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "ifc_read": {
+    "pset": "Pset_ORI_LifeSafety",
+    "property": "MultipleSmokeAlarms"
+   }
+  },
+  {
+   "name": "smoke_alarms_interconnected",
+   "label": "smoke alarms interconnected",
+   "subject": "building",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "ifc_read": {
+    "pset": "Pset_ORI_LifeSafety",
+    "property": "SmokeAlarmsInterconnected"
+   }
+  },
+  {
+   "name": "listed_for_insulation_contact",
+   "label": "listed for insulation contact",
+   "subject": "heat_source_device",
+   "datatype": "boolean",
+   "unit": null,
+   "nature": "data",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "maps_to": [
+    {
+     "source": "src:ifc-4.3",
+     "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+     "name": "Pset_ManufacturerTypeInformation.PerformanceCertificate",
+     "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_ManufacturerTypeInformation.htm"
+    },
+    {
+     "defined_term": "Listed",
+     "citation": "defined at IRC R202, as adopted by VRC (R202)",
+     "source": "src:law-citation",
+     "license": "citation only (no text copied)",
+     "definition_copied": false,
+     "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+    }
+   ],
+   "ifc_read": {
+    "pset": "Pset_ORI_ProductListing",
+    "property": "InsulationContactListed"
+   },
+   "note": "Manufacturer data convention: the listing is carried as a product certificate; ORI reads a boolean."
+  },
+  {
+   "name": "ridge_setback",
+   "label": "ridge setback",
+   "subject": "pv_array",
+   "datatype": "length",
+   "unit": "in",
+   "nature": "geometric",
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  }
+ ],
+ "relations": [
+  {
+   "word": "encloses",
+   "fact_pattern": "encloses:<IfcEntity>[:<PREDEFINED>]",
+   "datatype": "count",
+   "ifc_basis": {
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "name": "IfcRelContainedInSpatialStructure",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRelContainedInSpatialStructure.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "adjacent",
+   "fact_pattern": "adjacent:<IfcEntity>[:<PREDEFINED>]",
+   "datatype": "boolean",
+   "ifc_basis": {
+    "source": "src:ifc-4.3",
+    "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+    "name": "IfcRelSpaceBoundary",
+    "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRelSpaceBoundary.htm"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "above",
+   "fact_pattern": "above:<IfcEntity>[:<PREDEFINED>]",
+   "datatype": "boolean",
+   "ifc_basis": {
+    "source": "src:ori",
+    "license": "CC0-1.0",
+    "name": "elevation comparison"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  },
+  {
+   "word": "distance",
+   "fact_pattern": "distance:<IfcEntity>[:<PREDEFINED>]",
+   "datatype": "length",
+   "unit": "in",
+   "ifc_basis": {
+    "source": "src:ori",
+    "license": "CC0-1.0",
+    "name": "shortest distance between bodies"
+   },
+   "source": "src:ori",
+   "license": "CC0-1.0"
+  }
+ ],
+ "ifc_terms": [
+  {
+   "name": "IfcSensor",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSensor.htm",
+   "predefined_type": "SMOKESENSOR",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSensorTypeEnum.htm"
+  },
+  {
+   "name": "IfcSanitaryTerminal",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSanitaryTerminal.htm",
+   "predefined_type": "SINK",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSanitaryTerminalTypeEnum.htm"
+  },
+  {
+   "name": "IfcCovering",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcCovering.htm",
+   "predefined_type": "INSULATION",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcCoveringTypeEnum.htm"
+  },
+  {
+   "name": "IfcLightFixture",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcLightFixture.htm"
+  },
+  {
+   "name": "IfcSolarDevice",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSolarDevice.htm",
+   "predefined_type": "SOLARPANEL",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSolarDeviceTypeEnum.htm"
+  },
+  {
+   "name": "IfcRailing",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRailing.htm",
+   "predefined_type": "GUARDRAIL",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcRailingTypeEnum.htm"
+  },
+  {
+   "name": "IfcStairFlight",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcStairFlight.htm"
+  },
+  {
+   "name": "IfcSpace",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSpace.htm"
+  },
+  {
+   "name": "IfcWindow",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcWindow.htm",
+   "predefined_type": "WINDOW",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcWindowTypeEnum.htm"
+  },
+  {
+   "name": "IfcSlab",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSlab.htm",
+   "predefined_type": "FLOOR",
+   "enum_doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSlabTypeEnum.htm"
+  },
+  {
+   "name": "IfcBuilding",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcBuilding.htm"
+  },
+  {
+   "name": "IfcDoor",
+   "source": "src:ifc-4.3",
+   "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+   "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcDoor.htm"
+  }
+ ],
+ "reference_geometry": [
+  {
+   "name": "nosing_line",
+   "gloss": "line through tread nosings",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "tread_nosing",
+   "gloss": "front edge of a tread",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "riser_face",
+   "gloss": "vertical face of a riser",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "walking_surface_top",
+   "gloss": "top of the surface people walk on",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "finished_floor",
+   "gloss": "top of the finished floor",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "finished_ceiling",
+   "gloss": "underside of the finished ceiling",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "overhead_underside",
+   "gloss": "lowest point of anything above",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "clear_opening_bottom",
+   "gloss": "lowest point of the clear opening",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "clear_opening_top",
+   "gloss": "highest point of the clear opening",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "clear_opening_side",
+   "gloss": "side of the clear opening",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "frame_bottom",
+   "gloss": "bottom of the window frame",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "guard_top",
+   "gloss": "top of the guard",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "lower_surface_top",
+   "gloss": "top of the surface below an open edge",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "open_edge",
+   "gloss": "open side of a walking surface",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "plumb",
+   "gloss": "vertical line",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "horizontal",
+   "gloss": "horizontal line",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "roof_ridge",
+   "gloss": "highest roof line",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "array_top_edge",
+   "gloss": "upper edge of a PV array",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "roof_plane",
+   "gloss": "plane of the roof surface",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  },
+  {
+   "name": "space_footprint",
+   "gloss": "plan outline of a space",
+   "source": "src:ori",
+   "license": "CC0-1.0",
+   "basis": "plain geometry and measurement terms (NIST SP 811 usage for units)"
+  }
+ ],
+ "defined_terms": [
+  {
+   "defined_term": "Habitable Space",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Kitchen",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Bathroom",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Listed",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Labeled",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Story",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Dwelling Unit",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Sleeping Unit",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Emergency Escape and Rescue Opening",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Guard",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Riser",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Nosing",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Stairway",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Flight",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Stair",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Winder",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Handrail",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Noncombustible Material",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Approved",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Attic, Habitable",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Photovoltaic Panel System",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  },
+  {
+   "defined_term": "Ridge",
+   "citation": "defined at IRC R202, as adopted by VRC (R202)",
+   "source": "src:law-citation",
+   "license": "citation only (no text copied)",
+   "definition_copied": false,
+   "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+  }
+ ]
+}

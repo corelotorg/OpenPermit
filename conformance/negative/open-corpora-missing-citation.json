@@ -1,0 +1,56 @@
+{
+  "id": "ori:test:negative:open-corpora-missing-citation",
+  "rule": "open-corpora-manifest",
+  "expected": "fail",
+  "description": "A corpus source without a full bibliographic citation (author or agency, year, publisher, identifier, archive URL, accessed date) must fail.",
+  "objects": [
+    {
+      "manifest": "ori-cl-open-corpora-conformance-subset",
+      "status": "DRAFT",
+      "legal_note": "Conformance fixture.",
+      "license_rule": "Every source records its license or public-domain basis (license_id, license_basis, license_url), a local copy of the license evidence (license_local_path, license_sha256, license_fetched_at; redistributable copies under research/licenses/, other terms pages under $ORI_CORPORA/licenses/ with URL and SHA-256 only) and a full citation (source_url, source_citation). verification/ori_cl/corpus_license.py enforces this; the corpus tool refuses to ingest a source without it.",
+      "corpora": [
+        {
+          "id": "pd:osha-3124-stairways-ladders-2003",
+          "title": "Stairways and Ladders: A Guide to OSHA Rules (OSHA 3124-12R)",
+          "class": "public_domain",
+          "role": "text_corpus",
+          "source_url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+          "source_citation": {
+            "title": "Stairways and Ladders: A Guide to OSHA Rules"
+          },
+          "local_file": "osha3124.txt",
+          "text_source": "pdftotext of the OSHA PDF",
+          "license_id": "PD-statement",
+          "license_basis": "The publication states that it is in the public domain and may be reproduced without permission; also a US federal work (17 U.S.C. 105).",
+          "license_url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+          "license_local_path": "research/licenses/osha-3124-public-domain-notice.txt",
+          "license_sha256": "bfee9ce17911962e6d777b477ec40aa9511fab4ac08b1a52f322dcbf92e32597",
+          "license_fetched_at": "2026-09-28",
+          "license_confirmed": true,
+          "license_evidence": [
+            {
+              "path": "research/licenses/osha-3124-public-domain-notice.txt",
+              "sha256": "bfee9ce17911962e6d777b477ec40aa9511fab4ac08b1a52f322dcbf92e32597",
+              "url": "https://www.osha.gov/sites/default/files/publications/osha3124.pdf",
+              "fetched_at": "2026-09-28",
+              "redistributable": true
+            },
+            {
+              "path": "research/licenses/usc-17-105.txt",
+              "sha256": "13375ca48dec1c6d9f730111287715d93edc3591e514afc857d50010d8667673",
+              "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+              "fetched_at": "2026-09-28",
+              "redistributable": true,
+              "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+            }
+          ],
+          "sha256": "348257aaf7f3a4945ae77e8ad7ae3c93ea56461e0308a4a709021cc7afc6da6e",
+          "words": 5815,
+          "fetched": "2026-09-28",
+          "strong_evidence": true
+        }
+      ]
+    }
+  ]
+}

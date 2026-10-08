@@ -1,0 +1,243 @@
+{
+  "id": "ori:test:negative:ori-cl-vocabulary-restricted-source",
+  "rule": "ori-cl-vocabulary-provenance",
+  "expected": "fail",
+  "description": "A term drawn from a restricted proprietary classification (a MasterFormat-style division) is rejected: its source is not a declared, allowed source.",
+  "objects": [
+    {
+      "vocabulary_id": "ori-cl-vocab-0.1-conformance-subset-masterformat",
+      "status": "DRAFT",
+      "license": "CC0-1.0",
+      "sources": {
+        "src:ori": {
+          "name": "ORI-coined term (this vocabulary)",
+          "publisher": "ORI / OpenPermit contributors",
+          "url": "https://github.com/",
+          "license": "CC0-1.0",
+          "license_url": "https://creativecommons.org/publicdomain/zero/1.0/",
+          "license_evidence": [
+            {
+              "url": "LICENSE-SPEC.md",
+              "fetched": "2026-09-28",
+              "finding": "Repository specification license (CC0)."
+            }
+          ],
+          "use_position": "Plain English words and ORI identifiers chosen by ORI; not taken from code headings or proprietary classifications.",
+          "legal_review": false,
+          "allowed": true
+        },
+        "src:ifc-4.3": {
+          "name": "Industry Foundation Classes (IFC) 4.3 ADD2, entity, enumeration, property-set and quantity-set names",
+          "publisher": "buildingSMART International Ltd.",
+          "url": "https://technical.buildingsmart.org/standards/ifc/",
+          "license": "CC-BY-ND-4.0",
+          "license_url": "https://creativecommons.org/licenses/by-nd/4.0/",
+          "license_evidence": [
+            {
+              "url": "https://technical.buildingsmart.org/standards/ifc/",
+              "fetched": "2026-09-28",
+              "finding": "Page states IFC is licensed under Creative Commons Attribution-NoDerivatives 4.0 International."
+            },
+            {
+              "url": "https://raw.githubusercontent.com/buildingSMART/IFC4.3.x-development/master/LICENSE.md",
+              "fetched": "2026-09-28",
+              "finding": "CC BY-ND 4.0; also a legacy notice that the documentation may be used in software development with full attribution and that changes to the specification need prior written consent."
+            },
+            {
+              "url": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcSpace.htm",
+              "fetched": "2026-09-28",
+              "finding": "IFC 4.3 HTML documentation footer carries CC BY-ND 4.0."
+            },
+            {
+              "url": "https://raw.githubusercontent.com/buildingSMART/IDS/development/LICENSE",
+              "fetched": "2026-09-28",
+              "finding": "IDS (Information Delivery Specification) repository is also CC BY-ND 4.0."
+            }
+          ],
+          "use_position": "ORI-CL uses IFC names as identifiers (references to the published schema) with attribution. It does not copy IFC definitions or documentation text and does not modify or redistribute the specification. Whether identifier use can be an adaptation under the NoDerivatives term is flagged for legal review.",
+          "legal_review": true,
+          "allowed": true
+        },
+        "src:nist-si": {
+          "name": "NIST SP 330 (SI) and SP 811 (Guide for the Use of the SI), unit names and conversion factors",
+          "publisher": "National Institute of Standards and Technology (US Government)",
+          "url": "https://www.nist.gov/pml/special-publication-811",
+          "license": "US-Government-work",
+          "license_url": "https://www.nist.gov/oism/copyrights",
+          "license_evidence": [
+            {
+              "url": "https://www.nist.gov/oism/copyrights",
+              "fetched": "2026-09-28",
+              "finding": "NIST web information, except material marked as copyrighted, is public information that may be distributed or copied; byline credit requested."
+            },
+            {
+              "url": "https://www.nist.gov/pml/special-publication-811",
+              "fetched": "2026-09-28",
+              "finding": "Page reachable (HTTP 200); no separate copyright marking found on the landing page."
+            }
+          ],
+          "use_position": "Unit names, symbols and exact conversion factors (1 in = 0.0254 m) are facts; NIST is cited as the public-domain reference.",
+          "legal_review": false,
+          "allowed": true
+        },
+        "src:law-citation": {
+          "name": "Defined terms in adopted law, mapped by citation only",
+          "publisher": "International Code Council (model code) as adopted by the Commonwealth of Virginia (VRC)",
+          "url": "https://law.lis.virginia.gov/admincode/title13/agency5/chapter63/section210/",
+          "license": "citation-only",
+          "license_url": null,
+          "license_evidence": [
+            {
+              "url": "https://law.lis.virginia.gov/admincode/title13/agency5/chapter63/section210/",
+              "fetched": "2026-09-27",
+              "finding": "Virginia regulation adopting the IRC with amendments (13VAC5-63-210)."
+            }
+          ],
+          "use_position": "ORI-CL names the defined term and cites where it is defined. The definition text is never copied. Term presence in VRC R202 was checked against a secondary publication (UpCodes VRC 2021 Chapter 2) on 2026-09-28 by name only; ICC Digital Codes returns 403 to automated fetches, so the primary check is UNVERIFIED.",
+          "legal_review": true,
+          "allowed": true
+        }
+      },
+      "restricted_sources": [
+        {
+          "name": "MasterFormat",
+          "owner": "Construction Specifications Institute (CSI)",
+          "status": "not_used",
+          "allowed": false,
+          "findings": [
+            {
+              "url": "https://www.csiresources.org/standards/masterformat/mf-faqs",
+              "fetched": "2026-09-28",
+              "finding": "CSI FAQ: MasterFormat content is protected by copyright; use is under the MasterFormat EULA; commercial use in a derivative product employing MasterFormat numbers or titles requires contacting CSI."
+            },
+            {
+              "url": "https://theconstructionstandard.com/faq",
+              "fetched": "2026-09-28",
+              "finding": "CSI's authorized licensing channel states a license is required when CSI standards are used in revenue-generating services or software; software tools do not sublicense."
+            },
+            {
+              "url": "https://www.buildingenclosureonline.com/articles/95142-federal-judge-rules-masterformat-numbers-titles-and-taxonomy-are-not-copyright-protected",
+              "fetched": "2026-09-28",
+              "finding": "Trade press report: on 2026-09-01 a US District Court (C.D. Cal.) granted summary judgment to ZeroDocs, finding the asserted MasterFormat numbers, titles, divisions and taxonomy not protectable by copyright; the article notes contractual licensing and a possible appeal remain. Court order itself not fetched (UNVERIFIED primary)."
+            }
+          ],
+          "decision": "Excluded from ORI-CL 0.1. Even after the reported 2026-09-01 ruling, CSI asserts copyright, trademark and contract terms, and an appeal is possible. Legal review before any reference."
+        },
+        {
+          "name": "OmniClass",
+          "owner": "Construction Specifications Institute (CSI)",
+          "status": "not_used",
+          "allowed": false,
+          "findings": [
+            {
+              "url": "https://www.csiresources.org/csistore/oc-eula",
+              "fetched": "2026-09-28",
+              "finding": "OmniClass single-user EULA: non-exclusive, non-transferable, terminable at any time; prohibits incorporating any portion into commercial construction software or information products provided to third parties; CSI retains all rights."
+            },
+            {
+              "url": "https://www.omniclass.org/",
+              "fetched": "2026-09-28",
+              "finding": "Connection failed (no HTTP response); not reachable for verification."
+            }
+          ],
+          "decision": "Excluded (restrictive EULA)."
+        }
+      ],
+      "keywords": [
+        {
+          "word": "rule",
+          "role": "block",
+          "gloss": "starts a rule block",
+          "source": "src:ori",
+          "license": "CC0-1.0"
+        },
+        {
+          "word": "end",
+          "role": "block",
+          "gloss": "ends a rule block",
+          "source": "src:ori",
+          "license": "CC0-1.0"
+        },
+        {
+          "word": "require",
+          "role": "constraint",
+          "gloss": "the requirement",
+          "source": "src:ori",
+          "license": "CC0-1.0"
+        },
+        {
+          "word": "each",
+          "role": "constraint",
+          "gloss": "every value of a list",
+          "source": "src:ori",
+          "license": "CC0-1.0"
+        }
+      ],
+      "units": [
+        {
+          "symbol": "in",
+          "name": "inch",
+          "quantity_kind": "length",
+          "si_factor": 0.0254,
+          "source": "src:nist-si",
+          "license": "US-Government-work (public information)"
+        }
+      ],
+      "subjects": [
+        {
+          "kind": "stair_flight",
+          "label": "stair flight",
+          "ifc": {
+            "name": "IfcStairFlight",
+            "source": "src:ifc-4.3",
+            "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+            "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/IfcStairFlight.htm"
+          },
+          "source": "src:ori",
+          "license": "CC0-1.0"
+        }
+      ],
+      "facts": [
+        {
+          "name": "riser_heights",
+          "label": "riser height",
+          "subject": "stair_flight",
+          "datatype": "length_list",
+          "unit": "in",
+          "nature": "geometric",
+          "source": "src:ori",
+          "license": "CC0-1.0",
+          "maps_to": [
+            {
+              "source": "src:ifc-4.3",
+              "license": "CC-BY-ND-4.0 (identifier reference with attribution)",
+              "name": "Pset_StairFlightCommon.RiserHeight",
+              "doc": "https://standards.buildingsmart.org/IFC/RELEASE/IFC4_3/HTML/lexical/Pset_StairFlightCommon.htm"
+            }
+          ],
+          "note": "ORI measures every riser from the stepped profile; IFC's RiserHeight is one nominal value."
+        },
+        {
+          "name": "division_09_finishes",
+          "label": "finishes division",
+          "subject": "stair_flight",
+          "datatype": "enum",
+          "unit": null,
+          "nature": "data",
+          "source": "src:csi-masterformat",
+          "license": "CSI EULA"
+        }
+      ],
+      "defined_terms": [
+        {
+          "defined_term": "Riser",
+          "citation": "defined at IRC R202, as adopted by VRC (R202)",
+          "source": "src:law-citation",
+          "license": "citation only (no text copied)",
+          "definition_copied": false,
+          "presence_check": "name found in VRC 2021 Chapter 2 via UpCodes (secondary), 2026-09-28; primary UNVERIFIED"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+ "source": "https://archive.org/metadata/FM_5_420_P_P_1993/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "FM_5_420_P_P_1993",
+  "title": "FM 5-420 Plumbing and Pipef",
+  "date": "1993",
+  "collection": [
+   "field-technical-manuals",
+   "nationalsecurityarchive",
+   "usgovernmentmirrors",
+   "government-documents"
+  ],
+  "language": "english",
+  "publicdate": "2025-11-15 03:08:39"
+ }
+}

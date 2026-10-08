@@ -1,0 +1,18 @@
+{
+ "source": "https://archive.org/metadata/FM_5_233_C_S_1985/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "FM_5_233_C_S_1985",
+  "title": "FM 5-233 Construction Surveying ",
+  "date": "1985",
+  "collection": [
+   "field-technical-manuals",
+   "nationalsecurityarchive",
+   "usgovernmentmirrors",
+   "government-documents"
+  ],
+  "language": "english",
+  "publicdate": "2025-11-15 03:04:28"
+ }
+}

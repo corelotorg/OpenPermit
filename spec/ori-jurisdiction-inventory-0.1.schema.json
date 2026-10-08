@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "$id": "https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json",
+  "$id": "https://openpermit.dev/spec/ori-jurisdiction-inventory-0.1.schema.json",
   "title": "ORI Jurisdiction Inventory v0.1 Draft",
   "type": "object",
   "required": ["id", "type", "version", "status", "as_of", "jurisdiction", "scope", "sources", "authorities", "approvals", "known_gaps"],

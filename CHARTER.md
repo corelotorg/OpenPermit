@@ -18,6 +18,8 @@ The implementation proposition is narrower and testable:
 
 > Provide an open, machine-readable layer in which a state or local government can inventory its residential construction process, publish the evidence for how it operates, measure performance, and calculate a challengeable delta against HUD's stated best practices.
 
+The HUD profile and the method are public. HUD's guidance is not a scoring rubric; any rubric ORI applies is ORI's own instrument derived from it. Per-municipality rubric scores are held securely and released only by decision (`docs/GOVERNANCE-BOUNDARY.md`).
+
 Machine pattern:
 
 ```text
@@ -40,6 +42,17 @@ Therefore OpenPermit reports:
 It does not report:
 
 > HUD requires this county to do X.
+
+## ORI project performance target: 24-hour single-family review
+
+Stated 2026-09-26 by the OpenPermit ORI project (Jeremiah Horstick, project lead):
+
+> **ORI's own target is a 24-hour review for single-family homes.**
+
+- **What it is:** ORI's own design target, a performance level ORI is built to *enable and measure*. It is recorded as a non-binding, self-declared target (`authority_classification: project_self_declared_target`) in `profiles/project/ori-sf-review-target-24h-2026.json`.
+- **Scope:** single-family residential (IRC single-family scope). The clock runs from the recorded complete-submission event to the recorded review-decision event. It uses the same shot-clock events as every other ORI timer (start, completion, pause/toll with authority). Active hours exclude recorded toll intervals; elapsed hours are reported alongside.
+- **What it is not:** it is not a law, not HUD or other government guidance, and not any jurisdiction's rule. It is not a claim that any jurisdiction meets it or must meet it. This charter asserts no evidence that it is achievable.
+- **How it is used:** as a comparison line next to HUD's 60/30-day guidance targets. Measurements against it are comparison output, never compliance findings. Conformance rejects the target if it is serialized as a binding `Requirement` (`conformance/negative/project-target-promoted-to-requirement.json`).
 
 ## Federal regulatory-inventory context
 
@@ -132,7 +145,7 @@ The same core should support additional regulatory domains through namespaced pr
 
 ## Ecosystem
 
-The invitation is to implement a shared substrate, not to build a proprietary OpenPermit product. Jurisdictions, agencies, standards bodies, code officials, builders, engineers, inspectors, universities, civic-tech maintainers, AI/model providers, cloud providers, permitting vendors, manufacturers, suppliers and specialist practitioners can contribute profiles, adapters, mappings, validators, conformance results, evidence formats, open hardware and compute.
+ORI publishes a shared substrate that anyone may implement. It is not a proprietary OpenPermit product. Jurisdictions, agencies, standards bodies, code officials, builders, engineers, inspectors, universities, civic-tech maintainers, AI/model providers, cloud providers, permitting vendors, manufacturers, suppliers and specialist practitioners can contribute profiles, adapters, mappings, validators, conformance results, evidence formats, open hardware and compute.
 
 No participant becomes required infrastructure merely by contributing.
 
@@ -142,7 +155,11 @@ OpenPermit will not counterfeit authority by republishing licensed model-code or
 
 The open layer can store source identifiers, adoption/version data, citations, mappings, derived assertions, lawful test definitions, evidence requirements, verification results, deltas, and challenges while keeping authoritative licensed text at its authorized source.
 
-Software is published under Apache-2.0. Original ORI specifications, schemas, profiles, examples, fixtures and documentation are dedicated for public reuse under the notice in `LICENSE-SPEC.md`, subject to third-party rights.
+Software is published under Apache-2.0. Prose specifications, documentation, the public benchmark cases and attribution material are published under CC BY-SA 4.0, except files previously dedicated to CC0. Machine-readable schemas, the ORI-CL grammar and vocabulary, profiles and fixtures are dedicated under CC0 1.0. `LICENSE-SPEC.md` holds the per-path map. Third-party rights are unaffected.
+
+## Public and secured
+
+ORI mechanics, the testable benchmark, the IFC schema as a public input, licences and attribution are public. Permit data, donor red-line markup, training data, municipal permit data and per-municipality HUD rubric scores are secured and never enter the public repository. The line is drawn in `docs/GOVERNANCE-BOUNDARY.md`.
 
 ## Governance
 

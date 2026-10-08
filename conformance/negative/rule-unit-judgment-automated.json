@@ -1,0 +1,114 @@
+{
+  "id": "ori:test:negative:rule-unit-judgment-automated",
+  "rule": "rule-unit-authority",
+  "expected": "fail",
+  "description": "A judgment-class rule unit given an automated evaluator.",
+  "objects": [
+    {
+      "id": "urn:ori:rule-unit:irc2021-va:R301.1",
+      "type": "Requirement",
+      "version": "0.1.0",
+      "effective_from": "2024-01-18T00:00:00-05:00",
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "authority_classification": "state_adopted_code",
+        "status": "DRAFT"
+      },
+      "rule_unit_profile": "ori-rule-unit-0.1",
+      "title": "Structure must carry all loads to the foundation",
+      "source_section": {
+        "code": "IRC",
+        "edition": "2021",
+        "section": "R301.1",
+        "chapter": 3
+      },
+      "authority_classification": "state_adopted_code",
+      "check_class": "judgment",
+      "classification_basis": "estimate",
+      "single_family_applicability": "applies",
+      "base_model": {
+        "code": "IRC",
+        "edition": "2021",
+        "publisher": "International Code Council",
+        "authority_class": "model_code",
+        "binding": false,
+        "source": "source:icc:irc-2021",
+        "status": "present"
+      },
+      "jurisdiction_layers": [
+        {
+          "layer_id": "us-va:vrc-2021",
+          "jurisdiction": "urn:ori:jurisdiction:us-va",
+          "code": "VRC",
+          "edition": "2021",
+          "effective_from": "2024-01-18",
+          "authority_class": "state_adopted_code",
+          "binding": true,
+          "precedence": 1,
+          "override_mode": "adopts_base",
+          "mode_status": "sourced_primary",
+          "amendment_ref": {
+            "source": "source:va:13vac5-63-210",
+            "item": null,
+            "note": "No amendment to this section is listed in 13VAC5-63-210 section 310.8 (fetched 2026-09-27); the VRC adopts the IRC base."
+          }
+        }
+      ],
+      "required_information": {
+        "ids": null,
+        "items": []
+      },
+      "inputs": [],
+      "result_states": [
+        "pass",
+        "fail",
+        "unknown",
+        "not_applicable"
+      ],
+      "unknown_policy": {
+        "missing_information_result": "unknown",
+        "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+      },
+      "evaluator": {
+        "kind": "deterministic_function",
+        "implementation": "verification/ori_verify/rules.py#auto",
+        "implementation_version": "0.1.0"
+      },
+      "provenance": {
+        "recorded_by": "ORI automated drafting agent (DRAFT, not yet human-reviewed)",
+        "recorded_at": "2026-09-27",
+        "sources_checked": [
+          "source:va:13vac5-63-210",
+          "source:upcodes:vrc-2021-ch03"
+        ]
+      },
+      "legal_boundary": {
+        "machine_result_is_approval": false,
+        "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision under the USBC is lawful approval."
+      },
+      "paraphrase": "The house must be built to carry every load type through an unbroken path down to the foundation; following the prescriptive provisions counts as meeting this, and engineered parts must tie into that path.",
+      "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+      "source_links": [
+        {
+          "label": "2021 VRC Chapter 3, section R301.1 (ICC Digital Codes)",
+          "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+        },
+        {
+          "label": "2021 IRC Chapter 3 model code (ICC Digital Codes; comparison only)",
+          "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+        }
+      ]
+    }
+  ]
+}

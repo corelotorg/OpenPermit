@@ -68,3 +68,7 @@ The conformance harness includes positive schema fixtures and negative semantic 
 ## Legal and authority boundary
 
 The node demonstrates ORI interfaces and conformance behavior. It does not determine legal applicability, create government approval, replace code officials, certify professional credentials, or convert guidance into binding law.
+
+## Release reference mode
+
+This node is read-only. Challenge creation and disposition tools return `write_disabled` even when a caller supplies an actor identifier. Authenticated write authority, durable concurrent writes and final-disposition state rules remain unimplemented. The Python entrypoint defaults to loopback; the container may bind all interfaces but cannot enable writes. Static-site hosting does not deploy this service.

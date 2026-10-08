@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/micro_IA41152924_0610/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "micro_IA41152924_0610",
+  "title": "Carpentry Specialist.",
+  "creator": "Air Force Training Command, Sheppard AFB, TX.",
+  "date": "1986",
+  "collection": [
+   "eric-microfiche",
+   "microfiche"
+  ],
+  "contributor": "Internet Archive",
+  "catalog_number": "ED272751",
+  "source": "Microfiche",
+  "language": "English",
+  "publicdate": "2025-11-25 23:18:19"
+ }
+}

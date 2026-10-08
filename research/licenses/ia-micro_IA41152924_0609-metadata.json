@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/micro_IA41152924_0609/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "micro_IA41152924_0609",
+  "title": "Masonry Specialist.",
+  "creator": "Air Force Training Command, Sheppard AFB, TX.",
+  "date": "1983",
+  "collection": [
+   "eric-microfiche",
+   "microfiche"
+  ],
+  "contributor": "Internet Archive",
+  "catalog_number": "ED272750",
+  "source": "Microfiche",
+  "language": "English",
+  "publicdate": "2025-11-25 23:07:48"
+ }
+}

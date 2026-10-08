@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/buildingconstruc00adam/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "buildingconstruc00adam",
+  "title": "Building construction : comprising notes on materials, processes, principles, and practice, including about 2,300 engravings and twelve plates",
+  "creator": "Adams, Henry, 1846-1935",
+  "date": "1907",
+  "publisher": "London ; New York : Cassell and Co.",
+  "collection": [
+   "getty",
+   "americana"
+  ],
+  "contributor": "Getty Research Institute",
+  "sponsor": "Getty Research Institute",
+  "language": "eng",
+  "publicdate": "2015-12-01 19:10:44"
+ }
+}

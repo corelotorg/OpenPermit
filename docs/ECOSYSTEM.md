@@ -1,35 +1,35 @@
-# ORI Ecosystem Activation
+# ORI Ecosystem
 
-The goal is not to recruit organizations to build a proprietary OpenPermit product. The goal is to make a shared regulatory substrate real enough that independent implementations can interoperate.
+ORI is a shared regulatory substrate, not a proprietary OpenPermit product. It is published so that independent implementations can interoperate. Anyone may implement it; no permission is needed.
 
-## Open calls
+## Who can implement ORI
 
 ### Governments and jurisdictions
-Publish a jurisdiction manifest containing authorities, approvals, requirements, fees, deadlines, review/inspection paths, exceptions, source versions, and dispute mechanisms. Existing portals can remain in place; adapters can project them into ORI.
+Any jurisdiction may publish a jurisdiction manifest containing authorities, approvals, requirements, fees, deadlines, review/inspection paths, exceptions, source versions, and dispute mechanisms. Existing portals can remain in place; adapters can project them into ORI.
 
 ### Standards bodies and public-interest maintainers
-Publish canonical identifiers, version metadata, source mappings, conformance fixtures, and lawful machine-readable interfaces. Where underlying text is licensed, publish identifiers and interfaces without requiring redistribution of the text.
+Standards bodies and maintainers may publish canonical identifiers, version metadata, source mappings, conformance fixtures, and lawful machine-readable interfaces. Where underlying text is licensed, publish identifiers and interfaces without requiring redistribution of the text.
 
 ### Code officials, inspectors, engineers and practitioners
-Contribute challenge cases, alternate methods, evidence requirements, credential/attestation semantics, failure examples, and verification fixtures grounded in actual practice.
+Practitioners may contribute challenge cases, alternate methods, evidence requirements, credential/attestation semantics, failure examples, and verification fixtures grounded in actual practice.
 
 ### Universities and research groups
-Test cross-jurisdiction mapping quality, regulatory graph traversal, critical-path/duplication analysis, provenance preservation, deterministic verification recall, challenge resolution, and human/model interaction.
+Researchers may test cross-jurisdiction mapping quality, regulatory graph traversal, critical-path/duplication analysis, provenance preservation, deterministic verification recall, challenge resolution, and human/model interaction.
 
-### Cloud providers
-AWS, Google Cloud, Microsoft Azure and other infrastructure providers can contribute reference deployment recipes, donated/open compute, reproducible validator environments, supply-chain attestation, observability, and public-data hosting without becoming required infrastructure.
+### Infrastructure operators
+ORI requires no particular cloud. Any infrastructure provider or operator may publish deployment recipes, run validators or host public mirrors under the same open contract, without becoming required infrastructure.
 
-### AI/model providers
-OpenAI, Anthropic, Google, xAI, Meta, open-weight communities and international model providers can independently test model traversal, provenance retrieval, challenge generation, citation discipline, and conformance. No model provider is privileged by the standard.
+### Model providers
+Any model provider or open-weight community may test traversal, provenance retrieval, challenge generation, citation discipline and conformance against the public fixtures. No model provider is privileged by the standard.
 
 ### Permitting and civic software vendors
-Publish adapters and capability projections from existing systems. The goal is coexistence and portability rather than rip-and-replace.
+Vendors may publish adapters and capability projections from existing systems. ORI is built for coexistence and portability, not rip-and-replace.
 
 ### Material, manufacturing and supply-chain participants
-Publish machine-readable product properties, certifications, evaluation reports, provenance and compatibility mappings that can become evidence inputs to regulatory verification without turning vendor claims into authority.
+Manufacturers and suppliers may publish machine-readable product properties, certifications, evaluation reports, provenance and compatibility mappings that can become evidence inputs to regulatory verification without turning vendor claims into authority.
 
 ### Open-hardware contributors
-Develop secure, inspectable capture/attestation patterns for geo-located inspection evidence, measurements, images, model references and sensor data. Hardware must not be trusted merely because it implements the protocol; provenance and verification remain explicit.
+Hardware contributors may develop secure, inspectable capture/attestation patterns for geo-located inspection evidence, measurements, images, model references and sensor data. Hardware must not be trusted merely because it implements the protocol; provenance and verification remain explicit.
 
 ## Compute federation
 

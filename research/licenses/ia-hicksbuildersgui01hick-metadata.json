@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/hicksbuildersgui01hick/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "hicksbuildersgui01hick",
+  "title": "Hicks' Builders' guide, comprising an easy, practical system of estimating material and labor for carpenters, contractors and builders",
+  "creator": "Hicks, I. P. (Isaac Perry), b. 1856",
+  "date": "1907",
+  "publisher": "New York, David Williams company",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2011-06-24 17:21:41"
+ }
+}

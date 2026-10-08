@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1728.00 1296.00" width="1728" height="1296">
+<title>ORI plan overlay p2 A-102: reviewer evidence, not approval</title>
+<path d="M 723.75 963.00 L 783.00 963.00 L 783.00 693.00 L 723.75 693.00 L 723.75 963.00 Z" fill="rgba(60,170,60,0.24)" fill-rule="evenodd" stroke="rgb(60,170,60)" stroke-width="0.8"><title>p2-space-001 IfcSpace BATH [auto_extracted, unreviewed]</title></path>
+<text x="753.4" y="842.0" font-size="7" text-anchor="middle" fill="rgb(20,90,20)">p2-space-001 49.4 ft2</text>
+<path d="M 783.00 686.25 L 783.00 477.00 L 528.75 477.00 L 528.75 686.25 L 783.00 686.25 Z" fill="rgba(60,170,60,0.24)" fill-rule="evenodd" stroke="rgb(60,170,60)" stroke-width="0.8"><title>p2-space-002 IfcSpace BEDROOM 3 [auto_extracted, unreviewed]</title></path>
+<text x="655.9" y="595.6" font-size="7" text-anchor="middle" fill="rgb(20,90,20)">p2-space-002 164.2 ft2</text>
+<path d="M 528.75 963.00 L 717.00 963.00 L 717.00 693.00 L 528.75 693.00 L 528.75 963.00 Z" fill="rgba(60,170,60,0.24)" fill-rule="evenodd" stroke="rgb(60,170,60)" stroke-width="0.8"><title>p2-space-003 IfcSpace HALL [auto_extracted, unreviewed]</title></path>
+<text x="622.9" y="842.0" font-size="7" text-anchor="middle" fill="rgb(20,90,20)">p2-space-003 156.9 ft2</text>
+<path d="M 225.00 477.00 L 225.00 785.25 L 522.00 785.25 L 522.00 477.00 L 225.00 477.00 Z" fill="rgba(60,170,60,0.24)" fill-rule="evenodd" stroke="rgb(60,170,60)" stroke-width="0.8"><title>p2-space-004 IfcSpace BEDROOM 1 [auto_extracted, unreviewed]</title></path>
+<text x="373.5" y="645.1" font-size="7" text-anchor="middle" fill="rgb(20,90,20)">p2-space-004 282.6 ft2</text>
+<path d="M 522.00 963.00 L 522.00 792.00 L 225.00 792.00 L 225.00 963.00 L 522.00 963.00 Z" fill="rgba(60,170,60,0.24)" fill-rule="evenodd" stroke="rgb(60,170,60)" stroke-width="0.8"><title>p2-space-005 IfcSpace BEDROOM 2 [auto_extracted, unreviewed]</title></path>
+<text x="373.5" y="891.5" font-size="7" text-anchor="middle" fill="rgb(20,90,20)">p2-space-005 156.8 ft2</text>
+<path d="M 216.00 972.00 L 792.00 972.00 L 792.00 963.00 L 216.00 963.00 L 216.00 972.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-001 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 225.00 792.00 L 522.00 792.00 L 522.00 785.25 L 225.00 785.25 L 225.00 792.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-002 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 528.75 693.00 L 783.00 693.00 L 783.00 686.25 L 528.75 686.25 L 528.75 693.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-003 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 216.00 477.00 L 792.00 477.00 L 792.00 468.00 L 216.00 468.00 L 216.00 477.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-004 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 792.00 972.00 L 792.00 468.00 L 783.00 468.00 L 783.00 972.00 L 792.00 972.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-005 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 723.75 963.00 L 723.75 693.00 L 717.00 693.00 L 717.00 963.00 L 723.75 963.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-006 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 528.75 963.00 L 528.75 477.00 L 522.00 477.00 L 522.00 963.00 L 528.75 963.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-007 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 225.00 972.00 L 225.00 468.00 L 216.00 468.00 L 216.00 972.00 L 225.00 972.00 Z" fill="rgba(200,30,30,0.43)" fill-rule="evenodd" stroke="rgb(200,30,30)" stroke-width="0.8"><title>p2-wall-008 IfcWall  [auto_extracted, unreviewed]</title></path>
+<path d="M 321.00 972.00 L 411.00 972.00 L 411.00 963.00 L 321.00 963.00 L 321.00 972.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-001 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 576.00 972.00 L 630.00 972.00 L 630.00 963.00 L 576.00 963.00 L 576.00 972.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-002 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 306.00 477.00 L 396.00 477.00 L 396.00 468.00 L 306.00 468.00 L 306.00 477.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-003 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 606.00 477.00 L 696.00 477.00 L 696.00 468.00 L 606.00 468.00 L 606.00 477.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-004 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 792.00 852.00 L 792.00 816.00 L 783.00 816.00 L 783.00 852.00 L 792.00 852.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-005 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 792.00 627.00 L 792.00 555.00 L 783.00 555.00 L 783.00 627.00 L 792.00 627.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-006 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 225.00 912.00 L 225.00 852.00 L 216.00 852.00 L 216.00 912.00 L 225.00 912.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-007 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 225.00 672.00 L 225.00 600.00 L 216.00 600.00 L 216.00 672.00 L 225.00 672.00 Z" fill="rgba(0,170,170,0.27)" fill-rule="evenodd" stroke="rgb(0,170,170)" stroke-width="0.8"><title>p2-window-008 IfcWindow  [auto_extracted, unreviewed]</title></path>
+<path d="M 546.00 693.00 L 594.00 693.00 L 594.00 686.25 L 546.00 686.25 L 546.00 693.00 Z" fill="rgba(20,120,220,0.27)" fill-rule="evenodd" stroke="rgb(20,120,220)" stroke-width="0.8"><title>p2-door-001 IfcDoor  [auto_extracted, unreviewed]</title></path>
+<path d="M 723.75 747.00 L 723.75 705.00 L 717.00 705.00 L 717.00 747.00 L 723.75 747.00 Z" fill="rgba(20,120,220,0.27)" fill-rule="evenodd" stroke="rgb(20,120,220)" stroke-width="0.8"><title>p2-door-002 IfcDoor  [auto_extracted, unreviewed]</title></path>
+<path d="M 528.75 882.00 L 528.75 834.00 L 522.00 834.00 L 522.00 882.00 L 528.75 882.00 Z" fill="rgba(20,120,220,0.27)" fill-rule="evenodd" stroke="rgb(20,120,220)" stroke-width="0.8"><title>p2-door-003 IfcDoor  [auto_extracted, unreviewed]</title></path>
+<path d="M 528.75 747.00 L 528.75 699.00 L 522.00 699.00 L 522.00 747.00 L 528.75 747.00 Z" fill="rgba(20,120,220,0.27)" fill-rule="evenodd" stroke="rgb(20,120,220)" stroke-width="0.8"><title>p2-door-004 IfcDoor  [auto_extracted, unreviewed]</title></path>
+<path d="M 663.00 951.00 L 663.00 756.00 L 717.00 756.00 L 717.00 951.00 L 663.00 951.00 Z" fill="rgba(150,60,200,0.35)" fill-rule="evenodd" stroke="rgb(150,60,200)" stroke-width="0.8"><title>p2-stair-001 IfcStair  [auto_extracted, unreviewed]</title></path>
+<circle cx="1386.35" cy="1245.90" r="1.5" fill="rgb(110,110,110)"><title>p2-text-026</title></circle>
+<circle cx="1505.26" cy="1209.36" r="1.5" fill="rgb(110,110,110)"><title>p2-text-027</title></circle>
+<circle cx="1391.01" cy="1173.36" r="1.5" fill="rgb(110,110,110)"><title>p2-text-028</title></circle>
+<circle cx="313.08" cy="1162.36" r="1.5" fill="rgb(110,110,110)"><title>p2-text-029</title></circle>
+<circle cx="255.20" cy="1148.36" r="1.5" fill="rgb(110,110,110)"><title>p2-text-030</title></circle>
+<circle cx="282.34" cy="1133.48" r="1.5" fill="rgb(110,110,110)"><title>p2-text-031</title></circle>
+<circle cx="1441.62" cy="1136.78" r="1.5" fill="rgb(110,110,110)"><title>p2-text-032</title></circle>
+<circle cx="693.45" cy="959.45" r="1.5" fill="rgb(110,110,110)"><title>p2-text-033</title></circle>
+<circle cx="373.50" cy="881.60" r="1.5" fill="rgb(110,110,110)"><title>p2-text-034</title></circle>
+<circle cx="591.00" cy="796.10" r="1.5" fill="rgb(110,110,110)"><title>p2-text-035</title></circle>
+<circle cx="753.38" cy="781.10" r="1.5" fill="rgb(110,110,110)"><title>p2-text-036</title></circle>
+<circle cx="373.50" cy="635.22" r="1.5" fill="rgb(110,110,110)"><title>p2-text-037</title></circle>
+<circle cx="655.88" cy="585.72" r="1.5" fill="rgb(110,110,110)"><title>p2-text-038</title></circle>
+<path d="M 216.00 1062.00 L 792.00 1062.00" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-001 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+<path d="M 216.00 396.00 L 525.38 396.00" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-002 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+<path d="M 525.38 396.00 L 792.00 396.00" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-003 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+<path d="M 864.00 972.00 L 864.00 689.62" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-004 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+<path d="M 864.00 689.62 L 864.00 468.00" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-005 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+<path d="M 126.00 972.00 L 126.00 468.00" fill="none" fill-rule="evenodd" stroke="rgb(110,110,110)" stroke-width="0.8"><title>p2-dim-006 IfcAnnotation  [auto_extracted, unreviewed]</title></path>
+</svg>

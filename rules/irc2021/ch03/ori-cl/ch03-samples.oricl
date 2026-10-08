@@ -1,0 +1,86 @@
+# ORI-CL 0.1 (DRAFT). A sample of Chapter 3 data checks, a Virginia value override and
+# judgment units, restated in ORI-CL. ORI's own interpretation; no code text.
+# SPDX-License-Identifier: CC0-1.0
+# Only numbers already recorded in va-vrc-2021-ch03.units.json are used. Values not yet
+# sourced are written 'open' and evaluate to unknown / parameter_missing.
+
+context base IRC 2021 by source:icc:irc-2021 publisher "International Code Council"
+context layer us-va:vrc-2021 for urn:ori:jurisdiction:us-va code VRC 2021 from 2024-01-18 class state_adopted_code
+
+# Data check: a smoke alarm inside every sleeping room (relationship: encloses).
+rule R314.3:smoke-alarm-in-sleeping-room
+  cite IRC 2021 R314.3 part "sleeping rooms"
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject space is IfcSpace
+  when sleeping_room is true
+  require encloses IfcSensor SMOKESENSOR
+end
+
+# Data check: alarms interconnected where more than one is present.
+rule R314.4:smoke-alarms-interconnected
+  cite IRC 2021 R314.4
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject building is IfcBuilding
+  when multiple_smoke_alarms is true
+  require smoke_alarms_interconnected present
+end
+
+# Data check: the kitchen contains a sink.
+rule R306.2:kitchen-sink
+  cite IRC 2021 R306.2
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject space is IfcSpace
+  when space_use is kitchen
+  require encloses IfcSanitaryTerminal SINK
+end
+
+# Data check with an unsourced clearance: structure only, value open (evaluates to unknown).
+rule R302.14:insulation-clearance
+  cite IRC 2021 R302.14
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject heat_source_device is IfcLightFixture
+  param insulation_clearance >= open in at base status estimate source source:upcodes:vrc-2021-ch03 locator "value not yet recorded by ORI"
+  unless listed_for_insulation_contact is true
+  require distance IfcCovering INSULATION >= insulation_clearance
+end
+
+# Virginia override: the VRC sets the PV ridge setback; the IRC base value is not yet sourced.
+rule R324.6.2:pv-ridge-setback
+  cite IRC 2021 R324.6.2
+  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item "310.8 item 39"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject pv_array is IfcSolarDevice SOLARPANEL
+  measure ridge_setback from array_top_edge to roof_ridge along roof_plane
+  param min_pv_ridge_setback >= open in at base status estimate source source:icc:irc-2021 locator "base value not yet sourced"
+  param min_pv_ridge_setback >= 18 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 39"
+  require ridge_setback >= min_pv_ridge_setback
+end
+
+# Judgment: reviewer determination required; the ambiguous terms are named, not quoted from text.
+rule R302.7:under-stair-protection
+  cite IRC 2021 R302.7
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  reviewer terms "enclosed space" "door or access panel"
+end
+
+rule R311.1:egress-path
+  cite IRC 2021 R311.1
+  adopt us-va:vrc-2021 mode modifies_text status sourced_primary by source:va:13vac5-63-210 item "310.8 item 17"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject building is IfcBuilding
+  reviewer terms "continuous and unobstructed"
+end
+
+rule R309.1:garage-floor
+  cite IRC 2021 R309.1
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  subject garage_floor is IfcSlab FLOOR
+  reviewer terms "floor slope for liquids" "approved noncombustible material"
+end

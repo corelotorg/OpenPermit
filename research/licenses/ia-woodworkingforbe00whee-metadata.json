@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/woodworkingforbe00whee/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "woodworkingforbe00whee",
+  "title": "Woodworking for beginners; a manual for amateurs",
+  "creator": "Wheeler, Charles G. (Charles Gardner), 1855-1946",
+  "date": "1900",
+  "publisher": "New York and London, G. P. Putnam's sons",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2011-08-30 17:07:06"
+ }
+}

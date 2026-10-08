@@ -1,0 +1,12 @@
+{
+  "id": "ori:test:negative:ori-cl-statement-unofficial-link",
+  "rule": "ori-cl-statement",
+  "expected": "fail",
+  "description": "An ORI-CL rule must link to the official text; a link to an unofficial copy is rejected.",
+  "objects": [
+    {
+      "id": "ori-cl:unofficial-link",
+      "ori_cl_source": "context base IRC 2021 by source:icc:irc-2021 publisher \"International Code Council\"\ncontext layer us-va:vrc-2021 for urn:ori:jurisdiction:us-va code VRC 2021 from 2024-01-18 class state_adopted_code\nrule R311.7.5.1:riser-height-max\n  cite IRC 2021 R311.7.5.1 part \"maximum riser\"\n  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item \"310.8 item 20\"\n  link https://example.org/copied-code-text/chapter-3\n  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning\n  subject stair_flight is IfcStairFlight\n  measure riser_heights from tread_nosing to tread_nosing along plumb\n  param max_riser_height <= 7.75 in at base status sourced_secondary source source:secondary:sma-2021-irc-visual\n  param max_riser_height <= 8.25 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator \"310.8 item 20\"\n  require each riser_heights <= max_riser_height\n  check riser_height_max\nend\n"
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- ORI plan overlay markup editor (DRAFT 0.1). Static HTML + plain JavaScript, no dependencies, no network.
+     Open this file in a browser, load an ori-plan-overlay-0.1 JSON and (optionally) a full-page image of the
+     same page, review elements, correct or trace, and download the corrected overlay. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ORI plan overlay editor (DRAFT)</title>
+<style>
+ body{font:13px system-ui,sans-serif;margin:0;display:flex;height:100vh}
+ #side{width:330px;padding:8px;overflow:auto;border-right:1px solid #ccc}
+ #main{flex:1;overflow:auto;background:#eee}
+ svg{background:#fff}
+ .sel{stroke:#000!important;stroke-width:3!important}
+ button{margin:2px} label{display:block;margin-top:6px}
+ #list div{cursor:pointer;padding:1px 3px} #list div:hover{background:#def}
+ .warn{color:#a00}
+</style>
+</head>
+<body>
+<div id="side">
+ <b>ORI plan overlay editor</b> <span class="warn">DRAFT. Labels are reviewer evidence and training data, not approval.</span>
+ <label>Overlay JSON <input type="file" id="fOverlay" accept=".json"></label>
+ <label>Page image (full page render, optional) <input type="file" id="fImg" accept="image/*"></label>
+ <label>Page <select id="page"></select></label>
+ <label>Reviewer id <input id="who" value="reviewer:unnamed"></label>
+ <div id="info"></div>
+ <div id="edit" hidden>
+  <label>Class <select id="cls"></select></label>
+  <label>Name <input id="nm"></label>
+  <button id="bConfirm">Confirm</button><button id="bApply">Apply correction</button><button id="bReject">Reject</button>
+ </div>
+ <hr>
+ <label>Trace new element: class <select id="newCls"></select></label>
+ <button id="bTrace">Start tracing</button> <small>click vertices, double-click to finish</small>
+ <hr>
+ <button id="bSave">Download corrected overlay</button>
+ <div id="list"></div>
+</div>
+<div id="main"><svg id="svg"></svg></div>
+<script>
+"use strict";
+const CLASSES = ["IfcWall","IfcDoor","IfcWindow","IfcOpeningElement","IfcSpace","IfcStair","IfcAnnotation"];
+const COL = {IfcWall:"#c81e1e",IfcDoor:"#1478dc",IfcWindow:"#00aaaa",IfcOpeningElement:"#f08c00",IfcSpace:"#3caa3c",IfcStair:"#963cc8",IfcAnnotation:"#6e6e6e"};
+let doc = null, pg = null, sel = null, img = null, tracing = null;
+const $ = id => document.getElementById(id);
+for (const s of ["cls","newCls"]) CLASSES.forEach(c => $(s).add(new Option(c, c)));
+const now = () => new Date().toISOString().replace(/\.\d+Z$/, "Z");
+$("fOverlay").onchange = e => e.target.files[0].text().then(t => { doc = JSON.parse(t);
+  $("page").innerHTML = ""; doc.pages.forEach((p, i) => $("page").add(new Option(`${p.page} ${p.page_label||""} (${p.status})`, i)));
+  pg = doc.pages[0]; draw(); });
+$("fImg").onchange = e => { const r = new FileReader(); r.onload = () => { img = r.result; draw(); }; r.readAsDataURL(e.target.files[0]); };
+$("page").onchange = () => { pg = doc.pages[+$("page").value]; sel = null; draw(); };
+function size() { const s = pg.size_page_units; if (s && s[0]) return s;
+  let xs = [], ys = []; pg.elements.forEach(e => flat(e.geometry_page).forEach(([x, y]) => { xs.push(x); ys.push(y); }));
+  return [Math.max(...xs) + 24, Math.max(...ys) + 24]; }
+function flat(g) { return g.type === "Point" ? [g.coordinates] : g.type === "LineString" ? g.coordinates : g.coordinates[0]; }
+function draw() {
+  if (!pg) return; const [W, H] = size(), z = 1.2, svg = $("svg");
+  svg.setAttribute("width", W * z); svg.setAttribute("height", H * z); svg.setAttribute("viewBox", `0 0 ${W} ${H}`);
+  let h = img ? `<image href="${img}" x="0" y="0" width="${W}" height="${H}" opacity="0.6"/>` : "";
+  const fy = y => H - y;
+  for (const e of pg.elements) {
+    const pts = flat(e.geometry_page).map(([x, y]) => `${x},${fy(y)}`).join(" "), c = COL[e.ifc_class];
+    const rej = e.provenance.review_status === "rejected", dash = e.provenance.review_status === "unreviewed" ? "3,2" : "";
+    if (e.geometry_page.type === "Point") { const [x, y] = e.geometry_page.coordinates;
+      h += `<circle data-id="${e.id}" cx="${x}" cy="${fy(y)}" r="2" fill="${c}" opacity="${rej ? 0.2 : 1}"/>`; continue; }
+    const tag = e.geometry_page.type === "Polygon" ? "polygon" : "polyline";
+    h += `<${tag} data-id="${e.id}" points="${pts}" fill="${tag === "polygon" ? c : "none"}" fill-opacity="${rej ? 0.05 : 0.25}" stroke="${c}" stroke-dasharray="${dash}" stroke-width="1" ${sel && sel.id === e.id ? 'class="sel"' : ""}/>`;
+  }
+  if (tracing) h += `<polyline points="${tracing.map(([x, y]) => `${x},${fy(y)}`).join(" ")}" fill="none" stroke="#000"/>`;
+  svg.innerHTML = h;
+  $("list").innerHTML = pg.elements.map(e => `<div data-id="${e.id}" style="color:${COL[e.ifc_class]}">${e.id} ${e.ifc_class.slice(3)} ${e.name||""} [${e.provenance.method}/${e.provenance.review_status}]</div>`).join("");
+  $("list").querySelectorAll("div").forEach(d => d.onclick = () => pick(d.dataset.id));
+}
+function pick(id) { sel = pg.elements.find(e => e.id === id); $("edit").hidden = !sel;
+  if (sel) { $("cls").value = sel.ifc_class; $("nm").value = sel.name || "";
+    $("info").textContent = `${sel.id}: ${JSON.stringify(sel.properties).slice(0, 300)}`; } draw(); }
+function svgPt(ev) { const svg = $("svg"), p = svg.createSVGPoint(); p.x = ev.clientX; p.y = ev.clientY;
+  const q = p.matrixTransform(svg.getScreenCTM().inverse()); return [q.x, size()[1] - q.y]; }
+$("svg").onclick = ev => { if (tracing) { tracing.push(svgPt(ev)); draw(); return; }
+  const id = ev.target.dataset && ev.target.dataset.id; if (id) pick(id); };
+$("svg").ondblclick = () => { if (!tracing || tracing.length < 2) return; const cls = $("newCls").value;
+  const k = pg.scale.real_in_per_page_unit, poly = cls !== "IfcAnnotation" && tracing.length >= 3;
+  const ring = poly ? [...tracing, tracing[0]] : tracing;
+  const g = poly ? {type: "Polygon", coordinates: [ring]} : {type: "LineString", coordinates: ring};
+  const sc = gg => k == null ? null : {type: gg.type, coordinates: poly ? [ring.map(([x, y]) => [x * k, y * k])] : ring.map(([x, y]) => [x * k, y * k])};
+  const e = {id: `p${pg.page}-traced-${Date.now()}`, ifc_class: cls, predefined_type: null, name: null, geometry_page: g, geometry_real: sc(g),
+    properties: {}, relations: {}, provenance: {method: "human_traced", tool: "ori_takeoff editor (static HTML)", tool_version: "0.1.0",
+    confidence: null, rule: null, by: $("who").value, at: now(), review_status: "confirmed", derived_from: null}};
+  if (cls === "IfcAnnotation") e.annotation_type = "text_label";
+  if (["IfcDoor","IfcWindow","IfcOpeningElement"].includes(cls)) e.relations.host_wall = prompt("Host wall id") || "unknown";
+  if (cls === "IfcSpace" && k != null) { let a = 0; for (let i = 0; i < ring.length - 1; i++) a += ring[i][0] * ring[i + 1][1] - ring[i + 1][0] * ring[i][1];
+    e.properties.area_ft2 = Math.round(Math.abs(a) / 2 * k * k / 144 * 1000) / 1000; }
+  pg.elements.push(e); tracing = null; if (pg.status === "needs_tracing") pg.status = "traced"; draw(); };
+$("bTrace").onclick = () => { tracing = []; };
+function review(status) { if (!sel) return; Object.assign(sel.provenance, {review_status: status, by: $("who").value, at: now()}); draw(); }
+$("bConfirm").onclick = () => review("confirmed");
+$("bReject").onclick = () => review("rejected");
+$("bApply").onclick = () => { if (!sel) return; const changed = sel.ifc_class !== $("cls").value || (sel.name || "") !== $("nm").value;
+  if (!changed) return review("confirmed");
+  sel.provenance = {method: "human_corrected", tool: "ori_takeoff editor (static HTML)", tool_version: "0.1.0", confidence: null,
+    rule: sel.provenance.rule, by: $("who").value, at: now(), review_status: "corrected", derived_from: sel.id};
+  sel.ifc_class = $("cls").value; sel.name = $("nm").value || null;
+  if (["IfcDoor","IfcWindow","IfcOpeningElement"].includes(sel.ifc_class) && !sel.relations.host_wall) sel.relations.host_wall = prompt("Host wall id") || "unknown";
+  if (sel.ifc_class === "IfcAnnotation" && !sel.annotation_type) sel.annotation_type = "text_label";
+  if (pg.status === "extracted") pg.status = "corrected"; draw(); };
+$("bSave").onclick = () => { const b = new Blob([JSON.stringify(doc, null, 1)], {type: "application/json"});
+  const a = document.createElement("a"); a.href = URL.createObjectURL(b); a.download = "corrected.overlay.json"; a.click(); };
+</script>
+</body>
+</html>

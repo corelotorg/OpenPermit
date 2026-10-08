@@ -1,0 +1,73 @@
+{
+ "source": "https://en.wikipedia.org/w/api.php?action=query&prop=revisions&rvprop=ids|timestamp&revids=...",
+ "fetched": "2026-09-28",
+ "note": "Revision ids and timestamps (UTC) of the Wikipedia articles counted in the term merger study; facts only.",
+ "revisions": [
+  {
+   "title": "Attic",
+   "pageid": 3023194,
+   "revid": 1358515878,
+   "timestamp_utc": "2026-06-09T04:51:26Z"
+  },
+  {
+   "title": "Building insulation",
+   "pageid": 6900318,
+   "revid": 1375683714,
+   "timestamp_utc": "2026-09-19T09:41:49Z"
+  },
+  {
+   "title": "Ceiling",
+   "pageid": 844811,
+   "revid": 1341938317,
+   "timestamp_utc": "2026-03-06T00:58:18Z"
+  },
+  {
+   "title": "Garage (residential)",
+   "pageid": 3022392,
+   "revid": 1373136840,
+   "timestamp_utc": "2026-09-04T06:09:55Z"
+  },
+  {
+   "title": "Guard rail",
+   "pageid": 2588079,
+   "revid": 1366107633,
+   "timestamp_utc": "2026-07-26T08:55:21Z"
+  },
+  {
+   "title": "Handrail",
+   "pageid": 2588077,
+   "revid": 1375862066,
+   "timestamp_utc": "2026-09-20T15:04:37Z"
+  },
+  {
+   "title": "Kitchen",
+   "pageid": 49404,
+   "revid": 1368172602,
+   "timestamp_utc": "2026-08-07T12:46:12Z"
+  },
+  {
+   "title": "Photovoltaic system",
+   "pageid": 15677755,
+   "revid": 1372535688,
+   "timestamp_utc": "2026-09-01T03:55:13Z"
+  },
+  {
+   "title": "Smoke detector",
+   "pageid": 341287,
+   "revid": 1367374859,
+   "timestamp_utc": "2026-08-02T18:43:27Z"
+  },
+  {
+   "title": "Stairs",
+   "pageid": 256015,
+   "revid": 1372969588,
+   "timestamp_utc": "2026-09-03T06:45:02Z"
+  },
+  {
+   "title": "Window",
+   "pageid": 49400,
+   "revid": 1375813406,
+   "timestamp_utc": "2026-09-20T05:36:44Z"
+  }
+ ]
+}

@@ -1,0 +1,946 @@
+{
+  "report_type": "ori-verification-run",
+  "report_version": "0.1-draft",
+  "label": "Reviewer evidence, not approval",
+  "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+  "is_approval": false,
+  "run_id": "5cd6bdd3bb3657d6",
+  "jurisdiction": "urn:ori:jurisdiction:us-va",
+  "validator": "urn:ori:validator:ori-verify",
+  "validator_version": "0.1.0",
+  "executed_at": "2026-09-27T12:00:00Z",
+  "artifact": {
+    "artifact_id": "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9",
+    "media_type": "application/json",
+    "profile": "ori-declared-values-0.1",
+    "filename": null,
+    "sha256": "571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9",
+    "hash_basis": "sha256 of canonical JSON (sorted keys, no whitespace)",
+    "plan_set": {
+      "plan_set_id": "synthetic-demo-plans",
+      "version": 1,
+      "artifact_ids": [
+        "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+      ]
+    }
+  },
+  "counts": {
+    "pass": 0,
+    "fail": 0,
+    "unknown": 12,
+    "not_applicable": 0
+  },
+  "evidence": [
+    {
+      "id": "urn:ori:evidence:5cd6bdd3bb3657d6:input",
+      "type": "Evidence",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [],
+      "source": [],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "artifact": {
+          "artifact_id": "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9",
+          "media_type": "application/json",
+          "profile": "ori-declared-values-0.1",
+          "filename": null,
+          "sha256": "571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9",
+          "hash_basis": "sha256 of canonical JSON (sorted keys, no whitespace)",
+          "plan_set": {
+            "plan_set_id": "synthetic-demo-plans",
+            "version": 1,
+            "artifact_ids": [
+              "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+            ]
+          }
+        }
+      },
+      "evidence_type": "declared_values",
+      "artifact": "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9",
+      "captured_by": "extractor:ori-vector-text-0.1",
+      "captured_at": "2026-09-27T12:00:00Z",
+      "spatial_anchor": null,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      }
+    },
+    {
+      "id": "urn:ori:evidence:plan-set:synthetic-demo-plans:v1:07be940d10333e1f",
+      "type": "Evidence",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [],
+      "source": [],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "filename": "synthetic-plans-v1.pdf",
+        "page_count": 2,
+        "pdfa": {
+          "claimed": true,
+          "part": 2,
+          "conformance": "B",
+          "note": "Read from XMP metadata; a claim is not validation (use a PDF/A validator such as veraPDF)."
+        },
+        "plan_set_id": "synthetic-demo-plans"
+      },
+      "evidence_type": "pdf_plan_set",
+      "artifact": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+      "captured_by": "applicant:synthetic-demo",
+      "captured_at": "2026-09-27T12:00:00Z",
+      "spatial_anchor": null,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0001",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: space_use.",
+        "section": "R304.1",
+        "subsection_part": null,
+        "rule_unit_title": "Minimum floor area of habitable rooms",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "declared:synthetic-demo-1-extracted:spaces:space-extracted",
+          "label": "Extracted candidate (spaces)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0002",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: space_use.",
+        "section": "R305.1",
+        "subsection_part": "habitable",
+        "rule_unit_title": "Ceiling height in living spaces and halls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "declared:synthetic-demo-1-extracted:spaces:space-extracted",
+          "label": "Extracted candidate (spaces)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0003",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: space_use.",
+        "section": "R305.1",
+        "subsection_part": "bath-toilet-laundry",
+        "rule_unit_title": "Ceiling height in bathrooms and laundries",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "declared:synthetic-demo-1-extracted:spaces:space-extracted",
+          "label": "Extracted candidate (spaces)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0004",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: net_clear_height, net_clear_width.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear area",
+        "rule_unit_title": "Escape opening: minimum clear area",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "declared:synthetic-demo-1-extracted:eeros:eero-extracted",
+          "label": "Extracted candidate (eeros)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-area"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0005",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: net_clear_height.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear height",
+        "rule_unit_title": "Escape opening: minimum clear height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "declared:synthetic-demo-1-extracted:eeros:eero-extracted",
+          "label": "Extracted candidate (eeros)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-height"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0006",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "missing_information",
+        "message": "Required information not available: net_clear_width.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear width",
+        "rule_unit_title": "Escape opening: minimum clear width",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "declared:synthetic-demo-1-extracted:eeros:eero-extracted",
+          "label": "Extracted candidate (eeros)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-width"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0007",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for sill_height are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R310.2.3",
+        "subsection_part": null,
+        "rule_unit_title": "Escape opening: maximum sill height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "declared:synthetic-demo-1-extracted:eeros:eero-extracted",
+          "label": "Extracted candidate (eeros)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 1,
+            "sheet": "A-101",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "sill_height": {
+            "value": 42.0,
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 1,
+              "sheet": "A-101",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: SILL HT 42\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.3:eero-sill-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0008",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for headroom_clearances are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R311.7.2",
+        "subsection_part": null,
+        "rule_unit_title": "Stair headroom",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "declared:synthetic-demo-1-extracted:stairs:stair-extracted",
+          "label": "Extracted candidate (stairs)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 2,
+            "sheet": "A-301",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "headroom_clearances": {
+            "value": [
+              82.0
+            ],
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 2,
+              "sheet": "A-301",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: HEADROOM 6'-10\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.2:stair-headroom-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0009",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for riser_heights are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R311.7.5.1",
+        "subsection_part": "maximum riser",
+        "rule_unit_title": "Stair riser height maximum",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "declared:synthetic-demo-1-extracted:stairs:stair-extracted",
+          "label": "Extracted candidate (stairs)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 2,
+            "sheet": "A-301",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "riser_heights": {
+            "value": [
+              8.0
+            ],
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 2,
+              "sheet": "A-301",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: RISER 8\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0010",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for riser_heights are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R311.7.5.1",
+        "subsection_part": "riser uniformity",
+        "rule_unit_title": "Stair riser height uniformity within a flight",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "declared:synthetic-demo-1-extracted:stairs:stair-extracted",
+          "label": "Extracted candidate (stairs)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 2,
+            "sheet": "A-301",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "riser_heights": {
+            "value": [
+              8.0
+            ],
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 2,
+              "sheet": "A-301",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: RISER 8\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-uniformity"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0011",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for tread_depths are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R311.7.5.2",
+        "subsection_part": "minimum tread",
+        "rule_unit_title": "Stair tread depth minimum",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "declared:synthetic-demo-1-extracted:stairs:stair-extracted",
+          "label": "Extracted candidate (stairs)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 2,
+            "sheet": "A-301",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "tread_depths": {
+            "value": [
+              9.5
+            ],
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 2,
+              "sheet": "A-301",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: TREAD 9 1/2\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-depth-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:5cd6bdd3bb3657d6:0012",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "unconfirmed_extraction",
+        "message": "Values for tread_depths are extracted but not confirmed by applicant or reviewer; they are not used for pass/fail.",
+        "section": "R311.7.5.2",
+        "subsection_part": "tread uniformity",
+        "rule_unit_title": "Stair tread depth uniformity within a flight",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "declared:synthetic-demo-1-extracted:stairs:stair-extracted",
+          "label": "Extracted candidate (stairs)",
+          "anchor": {
+            "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+            "page": 2,
+            "sheet": "A-301",
+            "type": "pdf_page"
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {
+          "tread_depths": {
+            "value": [
+              9.5
+            ],
+            "origin": "vector_extracted_unconfirmed",
+            "anchor": {
+              "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+              "page": 2,
+              "sheet": "A-301",
+              "type": "pdf_page"
+            },
+            "note": "extracted text: TREAD 9 1/2\""
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "5cd6bdd3bb3657d6"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:571dc7f5b5b7b6fff17d83eb4189b433834b82ae22c84962819e9c19cbb328b9"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-uniformity"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:5cd6bdd3bb3657d6:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    }
+  ],
+  "anchor_problems": []
+}

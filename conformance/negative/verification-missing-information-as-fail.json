@@ -1,0 +1,76 @@
+{
+  "id": "ori:test:negative:verification-missing-information-as-fail",
+  "rule": "missing-information-not-fail",
+  "expected": "fail",
+  "description": "A Verification whose reason is missing information is serialized as fail. Missing information must yield indeterminate (ORI unknown).",
+  "objects": [
+    {
+      "id": "urn:ori:verification:test:missing-as-fail",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "missing_information",
+        "message": "Required information not available: space_use.",
+        "section": "R304.1",
+        "subsection_part": null,
+        "rule_unit_title": "Minimum habitable room area",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:3$0bYPqhDEKg7UgqFhcqw0",
+          "label": "Room without use",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3$0bYPqhDEKg7UgqFhcqw0",
+            "ifc_class": "IfcSpace",
+            "name": "Room without use",
+            "model": "ori-ch03-incomplete.ifc",
+            "centroid_m": [
+              1.2192,
+              1.2192,
+              1.016
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "b867af8fe93e9eaa"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:121422bfbe5940e549faa0276b0c0ac7e327d25d4b95a13401d1fdaec544611e"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:b867af8fe93e9eaa:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    }
+  ]
+}

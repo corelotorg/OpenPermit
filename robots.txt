@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://openpermit.io/sitemap.xml
+Sitemap: https://openpermit.dev/sitemap.xml

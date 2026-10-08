@@ -1,0 +1,167 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-plan-overlay-0.1.schema.json",
+  "title": "ORI Plan Overlay v0.1 Draft",
+  "description": "Per-page vector overlay of a building plan (walls, doors, windows, openings, spaces, stairs, dimensions, labels) in page and real-world coordinates, with element classes named after IFC entities, provenance per element, the source plan's citation and license record, and takeoff quantities. Used as reviewer evidence, as labeled training data (only through the licensing gate) and as input to a 2D-to-IFC step. Not approval. See docs/PLAN-TAKEOFF-0.1-DRAFT.md.",
+  "type": "object",
+  "required": ["overlay_profile", "label", "overlay_id", "status", "created_at", "tool", "source", "license_record", "dataset_role", "pages", "legal_boundary"],
+  "properties": {
+    "overlay_profile": {"const": "ori-plan-overlay-0.1"},
+    "label": {"const": "Reviewer evidence, not approval"},
+    "overlay_id": {"type": "string", "pattern": "^urn:ori:overlay:"},
+    "status": {"enum": ["DRAFT"]},
+    "created_at": {"type": "string", "format": "date-time"},
+    "tool": {
+      "type": "object",
+      "required": ["name", "version"],
+      "properties": {"name": {"type": "string"}, "version": {"type": "string"}, "dependencies": {"type": "array", "items": {"type": "string"}}}
+    },
+    "source": {
+      "type": "object",
+      "required": ["artifact_id", "filename", "media_type", "sha256", "size_bytes", "page_count"],
+      "properties": {
+        "artifact_id": {"type": "string", "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"},
+        "filename": {"type": "string"},
+        "media_type": {"enum": ["application/pdf", "image/vnd.dxf", "image/png", "image/tiff", "image/jpeg"]},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "size_bytes": {"type": "integer", "minimum": 1},
+        "page_count": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "license_record": {"$ref": "#/$defs/licenseRecord"},
+    "dataset_role": {"enum": ["candidate", "ground_truth", "training", "evaluation", "reviewer_only"]},
+    "pages": {"type": "array", "items": {"$ref": "#/$defs/page"}},
+    "legal_boundary": {"type": "string", "minLength": 1}
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {"if": {"properties": {"dataset_role": {"enum": ["training", "ground_truth", "evaluation"]}}},
+     "then": {"properties": {"license_record": {"properties": {"training_use": {"const": "allowed"}, "license_confirmed": {"const": true}}}}}}
+  ],
+  "$defs": {
+    "licenseRecord": {
+      "description": "The corpus license rule applied to plans: no plan enters the training set without a license basis, a local copy of the license evidence (path and SHA-256) and a full citation. An unknown license is recorded as such (license_id UNKNOWN, training_use not_allowed).",
+      "type": "object",
+      "required": ["license_id", "license_basis", "license_url", "license_local_path", "license_sha256", "license_fetched_at", "license_confirmed", "source_url", "source_citation", "training_use"],
+      "properties": {
+        "license_id": {"type": "string", "minLength": 1},
+        "license_basis": {"type": "string"},
+        "license_url": {"type": ["string", "null"]},
+        "license_local_path": {"type": ["string", "null"]},
+        "license_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"},
+        "license_fetched_at": {"type": ["string", "null"]},
+        "license_confirmed": {"type": "boolean"},
+        "source_url": {"type": ["string", "null"]},
+        "source_citation": {
+          "type": ["object", "null"],
+          "properties": {"author": {"type": "string"}, "title": {"type": "string"}, "year": {"type": "string"}, "publisher": {"type": "string"},
+                         "identifier": {"type": "string"}, "archive_url": {"type": "string"}, "accessed": {"type": "string"}}
+        },
+        "training_use": {"enum": ["allowed", "not_allowed", "pending"]},
+        "license_note": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "geometry": {
+      "description": "GeoJSON geometry object. Page geometry: PDF points, origin bottom-left of the media box (or DXF drawing units). Real geometry: inches on the drawing plane from the page origin.",
+      "type": "object",
+      "required": ["type", "coordinates"],
+      "properties": {
+        "type": {"enum": ["Point", "LineString", "Polygon"]},
+        "coordinates": {"type": "array"}
+      },
+      "additionalProperties": false
+    },
+    "nullableGeometry": {"oneOf": [{"$ref": "#/$defs/geometry"}, {"type": "null"}]},
+    "provenance": {
+      "type": "object",
+      "required": ["method", "tool", "tool_version", "confidence", "review_status"],
+      "properties": {
+        "method": {"enum": ["authored_ground_truth", "auto_extracted", "human_traced", "human_corrected"]},
+        "tool": {"type": "string"},
+        "tool_version": {"type": "string"},
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1, "description": "Heuristic score, uncalibrated; not a probability."},
+        "rule": {"type": ["string", "null"]},
+        "by": {"type": ["string", "null"]},
+        "at": {"type": ["string", "null"]},
+        "review_status": {"enum": ["unreviewed", "confirmed", "corrected", "rejected"]},
+        "derived_from": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "element": {
+      "type": "object",
+      "required": ["id", "ifc_class", "geometry_page", "geometry_real", "properties", "relations", "provenance"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "ifc_class": {"enum": ["IfcWall", "IfcDoor", "IfcWindow", "IfcOpeningElement", "IfcSpace", "IfcStair", "IfcAnnotation"]},
+        "predefined_type": {"type": ["string", "null"]},
+        "name": {"type": ["string", "null"]},
+        "annotation_type": {"enum": ["dimension", "text_label", "room_label", "scale_note", "sheet_title"]},
+        "geometry_page": {"$ref": "#/$defs/geometry"},
+        "geometry_real": {"$ref": "#/$defs/nullableGeometry"},
+        "axis_page": {"$ref": "#/$defs/geometry"},
+        "axis_real": {"$ref": "#/$defs/nullableGeometry"},
+        "properties": {"type": "object"},
+        "relations": {"type": "object", "properties": {"host_wall": {"type": "string"}}},
+        "provenance": {"$ref": "#/$defs/provenance"}
+      },
+      "allOf": [
+        {"if": {"properties": {"ifc_class": {"const": "IfcAnnotation"}}}, "then": {"required": ["annotation_type"]}},
+        {"if": {"properties": {"ifc_class": {"enum": ["IfcDoor", "IfcWindow", "IfcOpeningElement"]}}}, "then": {"properties": {"relations": {"required": ["host_wall"]}}}}
+      ],
+      "additionalProperties": false
+    },
+    "scale": {
+      "type": "object",
+      "required": ["status", "real_in_per_page_unit"],
+      "properties": {
+        "status": {"enum": ["stated", "calibrated", "stated_confirmed", "drawing_units", "conflict", "not_to_scale", "unknown"]},
+        "real_in_per_page_unit": {"type": ["number", "null"], "exclusiveMinimum": 0},
+        "stated": {"type": ["object", "null"]},
+        "calibration": {"type": ["object", "null"]},
+        "note": {"type": "string"}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"enum": ["conflict", "not_to_scale", "unknown"]}}}, "then": {"properties": {"real_in_per_page_unit": {"type": "null"}}}}
+      ],
+      "additionalProperties": false
+    },
+    "page": {
+      "type": "object",
+      "required": ["page", "page_label", "kind", "status", "size_page_units", "page_units", "scale", "storey", "elements"],
+      "properties": {
+        "page": {"type": "integer", "minimum": 1},
+        "page_label": {"type": ["string", "null"]},
+        "sheet_title": {"type": ["string", "null"]},
+        "kind": {"enum": ["vector", "raster", "mixed", "empty", "dxf"]},
+        "status": {"enum": ["extracted", "needs_tracing", "traced", "corrected", "ground_truth"]},
+        "size_page_units": {"type": "array", "items": {"type": "number"}, "minItems": 2, "maxItems": 2},
+        "page_units": {"type": "string"},
+        "scale": {"$ref": "#/$defs/scale"},
+        "storey": {
+          "type": "object",
+          "properties": {
+            "name": {"type": ["string", "null"]},
+            "elevation_in": {"type": ["number", "null"]},
+            "elevation_origin": {"type": "string"},
+            "floor_to_floor_in": {"type": ["number", "null"]},
+            "ceiling_height_in": {"type": ["number", "null"]},
+            "noted_floor_to_floor_in": {"type": ["number", "null"]},
+            "noted_floor_to_floor_source": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "elements": {"type": "array", "items": {"$ref": "#/$defs/element"}},
+        "takeoff": {"type": ["object", "null"]},
+        "detection": {"type": "object"},
+        "notes": {"type": "array", "items": {"type": "string"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"status": {"const": "needs_tracing"}}}, "then": {"properties": {"elements": {"maxItems": 0}}}}
+      ],
+      "additionalProperties": false
+    }
+  }
+}

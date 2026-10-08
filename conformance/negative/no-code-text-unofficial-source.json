@@ -1,0 +1,172 @@
+{
+  "id": "ori:test:negative:no-code-text-unofficial-source",
+  "rule": "no-code-text",
+  "expected": "fail",
+  "description": "A source_url that points at an unofficial mirror of code text. Link-outs go to official sources only (ICC Digital Codes, law.lis.virginia.gov, DHCD).",
+  "objects": [
+    {
+      "id": "urn:ori:rule-unit:irc2021-va:R311.3",
+      "type": "Requirement",
+      "version": "0.1.0",
+      "effective_from": "2024-01-18T00:00:00-05:00",
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "authority_classification": "state_adopted_code",
+        "status": "DRAFT"
+      },
+      "rule_unit_profile": "ori-rule-unit-0.1",
+      "title": "Exterior door landings: size and slope",
+      "source_section": {
+        "code": "IRC",
+        "edition": "2021",
+        "section": "R311.3",
+        "chapter": 3
+      },
+      "authority_classification": "state_adopted_code",
+      "check_class": "geometric_deterministic",
+      "classification_basis": "estimate",
+      "single_family_applicability": "applies",
+      "base_model": {
+        "code": "IRC",
+        "edition": "2021",
+        "publisher": "International Code Council",
+        "authority_class": "model_code",
+        "binding": false,
+        "source": "source:icc:irc-2021",
+        "status": "present"
+      },
+      "jurisdiction_layers": [
+        {
+          "layer_id": "us-va:vrc-2021",
+          "jurisdiction": "urn:ori:jurisdiction:us-va",
+          "code": "VRC",
+          "edition": "2021",
+          "effective_from": "2024-01-18",
+          "authority_class": "state_adopted_code",
+          "binding": true,
+          "precedence": 1,
+          "override_mode": "adopts_base",
+          "mode_status": "sourced_primary",
+          "amendment_ref": {
+            "source": "source:va:13vac5-63-210",
+            "item": null,
+            "note": "No amendment to this section is listed in 13VAC5-63-210 section 310.8 (fetched 2026-09-27); the VRC adopts the IRC base."
+          }
+        }
+      ],
+      "required_information": {
+        "ids": null,
+        "items": []
+      },
+      "inputs": [],
+      "result_states": [
+        "pass",
+        "fail",
+        "unknown",
+        "not_applicable"
+      ],
+      "unknown_policy": {
+        "missing_information_result": "unknown",
+        "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+      },
+      "evaluator": {
+        "kind": "not_implemented",
+        "implementation": null,
+        "implementation_version": null
+      },
+      "provenance": {
+        "recorded_by": "ORI automated drafting agent (DRAFT, not yet human-reviewed)",
+        "recorded_at": "2026-09-27",
+        "sources_checked": [
+          "source:va:13vac5-63-210",
+          "source:upcodes:vrc-2021-ch03",
+          "source:va:sbctrb-decisions"
+        ]
+      },
+      "legal_boundary": {
+        "machine_result_is_approval": false,
+        "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision under the USBC is lawful approval."
+      },
+      "paraphrase": "Every exterior door needs a landing or floor on both sides, at least as wide as the door and of minimum depth, with a maximum slope.",
+      "source_url": "https://example-code-mirror.test/irc-2021/chapter-3",
+      "source_links": [
+        {
+          "label": "2021 VRC Chapter 3, section R311.3 (ICC Digital Codes)",
+          "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+        },
+        {
+          "label": "2021 IRC Chapter 3 model code (ICC Digital Codes; comparison only)",
+          "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+        }
+      ],
+      "interpretability": {
+        "rubric_version": "ori-interpretability-0.1",
+        "score": "ambiguous_term",
+        "scoring_status": "estimate",
+        "rationale": "Q3: the landing slope limit (2 percent) sets magnitude but not direction, and 'landing or floor' does not say what surfaces make up the landing. Appeal 20-03 turned on both.",
+        "ambiguous_terms": [
+          {
+            "term": "slope at exterior landings",
+            "defined_in_code": false,
+            "issue": "Maximum only; direction (toward the door or house) is not addressed."
+          },
+          {
+            "term": "landing or floor",
+            "defined_in_code": false,
+            "issue": "Undefined; unclear whether a sidewalk plus regraded soil can form the landing."
+          }
+        ],
+        "determinations": [
+          {
+            "id": "det:va:sbctrb:appeal:20-03",
+            "citation": "SBCTRB Appeal No. 20-03 (Monica and Michael Davis)",
+            "date": "2021-03-19",
+            "body": "Virginia State Building Code Technical Review Board",
+            "body_class": "state_review_board_appeal_decision",
+            "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-20-03-monica-and-michael-davis.pdf",
+            "binding_effect": "Case-specific appeal decision (final order). Shows how the Board applied the text to one dwelling; not a general interpretation.",
+            "code_at_issue": "2012 VCC (VRC), Augusta County",
+            "section_at_issue": "R311.3, R311.7.6, R309.1, R302.5.2, R317.1",
+            "edition_carryover": "not_verified",
+            "holding_summary": "Overturned the local findings of no violation for the exterior-door landing and stair landings (owner argued: top landing sloped toward the house, bottom landing sloped toward the handrail and was narrower than the stair; County argued slopes were within 2 percent with normal concrete variation). The decision does not say which argument decided it. Found a garage floor slope violation (R309.1) although the County said the floor sloped toward the door. Upheld no violation of R302.5.2 and of R317.1 (garage door framing not treated as wall framing).",
+            "relevance": "direct",
+            "verification": {
+              "status": "fetched_and_read",
+              "fetched_at": "2026-09-28",
+              "method": "pdftotext of text-layer PDF",
+              "sha256": "1bbd1a6a9801851102fa473198397b887898f4c51de50c70ba49b65a2e7d11d8"
+            }
+          }
+        ],
+        "evidence_strength": "direct",
+        "candidate_clarification": {
+          "note": "Consider stating that exterior landings must slope away from the door (within the 2 percent maximum) and that the landing is a single stable surface.",
+          "status": "DRAFT_not_submitted",
+          "venue": "icc_code_development_cycle"
+        },
+        "reviewers": [
+          {
+            "reviewer": "ORI automated drafting agent (pre-score; not a human review)",
+            "score": "ambiguous_term",
+            "date": "2026-09-28",
+            "independent": true,
+            "role": "pre_scorer"
+          }
+        ],
+        "scored_text_source": "source:upcodes:vrc-2021-ch03",
+        "scored_at": "2026-09-28"
+      }
+    }
+  ]
+}

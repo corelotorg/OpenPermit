@@ -1,0 +1,14 @@
+{
+ "source": "https://archive.org/metadata/wood-handbook/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "wood-handbook",
+  "title": "Wood  Handbook—Wood as an Engineering Material",
+  "creator": "Forest Products Laboratory, USDA Forest Service",
+  "date": "2010-04",
+  "collection": "opensource",
+  "language": "eng",
+  "publicdate": "2024-08-20 00:41:04"
+ }
+}

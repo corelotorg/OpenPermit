@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0. ORI information-requirement specification (DRAFT).
+     IDS 1.0 expresses the non-geometric information a rule unit needs.
+     IDS cannot express geometric conditions; ORI's evaluator does that part (verification/). -->
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>ORI Chapter 3: guards</ids:title>
+    <ids:version>0.1.0-draft</ids:version>
+    <ids:author>ori@example.org</ids:author>
+    <ids:date>2026-09-27</ids:date>
+    <ids:purpose>Reviewer evidence for 2021 IRC / 2021 VRC Chapter 3 rule units. Not approval.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Walking surfaces and guards are modeled" ifcVersion="IFC4" identifier="ORI-CH03-GUARD-01" description="Guards are modeled as IfcRailing with predefined type GUARDRAIL and a body representation so the guard height can be measured (R312.1.2)." instructions="Use IfcRailing.PredefinedType = GUARDRAIL for guards; model the deck and the surfaces below it as IfcSlab.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCRAILING</ids:simpleValue></ids:name><ids:predefinedType><ids:simpleValue>GUARDRAIL</ids:simpleValue></ids:predefinedType></ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:attribute cardinality="required"><ids:name><ids:simpleValue>Representation</ids:simpleValue></ids:name></ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

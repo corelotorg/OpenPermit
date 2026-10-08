@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/hollowtilehouse00squi/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "hollowtilehouse00squi",
+  "title": "The hollow-tile house:",
+  "creator": "Squires, Frederick, b. 1879",
+  "date": "1913",
+  "publisher": "New York : The William T. Comstock co.",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "collection": [
+   "cdl",
+   "americana"
+  ],
+  "contributor": "University of California Libraries",
+  "sponsor": "Internet Archive",
+  "language": "eng",
+  "publicdate": "2008-11-04 15:57:47"
+ }
+}

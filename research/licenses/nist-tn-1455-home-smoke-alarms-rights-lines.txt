@@ -1,0 +1,6 @@
+Source: https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1455.pdf
+Fetched: 2026-10-03
+PDF SHA-256: d5f302bfdbb82150098760fd4957695982a1432d6d14d66f07097de085e40850
+Lines mentioning public domain, reproduction, preparer, contract or copyright (first 12, verbatim agency statements for license evidence):
+
+scenarios could be reproduced in the FE/DE. Reproduction of perfect time histories of smoke

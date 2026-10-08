@@ -1,0 +1,18 @@
+{
+ "source": "https://archive.org/metadata/TM5-810-5/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "TM5-810-5",
+  "title": "TM 5-810-5 Plumbing",
+  "creator": "United States. Department of the Army and Department of the Air Force",
+  "date": "1990-01-12",
+  "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+  "collection": [
+   "military-manuals",
+   "manuals"
+  ],
+  "language": "eng",
+  "publicdate": "2013-10-02 18:07:53"
+ }
+}

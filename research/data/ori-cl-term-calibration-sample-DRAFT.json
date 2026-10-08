@@ -1,0 +1,1868 @@
+{
+ "status": "DRAFT template: no reviewer labels yet. Labels are left empty on purpose; none are invented.",
+ "study_results": "research/data/ori-cl-term-merger-DRAFT.json",
+ "code_inputs_sha256": [
+  "76dae10e7c966ba9ba74f9d0d76cc49851075a876b8efc3c1dd523736adfc6f8",
+  "3f5b2d5f348d295d2dfb0cb4a012527b79389db5a20f0bcd15c84d4a4c357c33"
+ ],
+ "seed": 20260928,
+ "target": 100,
+ "min_per_stratum": 5,
+ "strata": {
+  "defined_term/a": 6,
+  "defined_term/b": 4,
+  "fact_label/a": 7,
+  "fact_label/c": 3,
+  "fact_value/a": 5,
+  "geometry_gloss/a": 4,
+  "geometry_gloss/b": 1,
+  "geometry_gloss/c": 5,
+  "geometry_name/a": 7,
+  "ifc_identifier/b": 7,
+  "keyword/a": 21,
+  "param_name/a": 5,
+  "param_name/b": 1,
+  "param_name/c": 2,
+  "paraphrase_clause/a": 5,
+  "paraphrase_clause/b": 1,
+  "paraphrase_clause/c": 18,
+  "relation/a": 4,
+  "reviewer_term/a": 2,
+  "reviewer_term/b": 2,
+  "reviewer_term/c": 1,
+  "subject_label/a": 5,
+  "unit/a": 5
+ },
+ "instructions": [
+  "Two reviewers label every item independently, without discussing it and without opening study_key.",
+  "Label each item a, b or c using the definitions in label_set (docs/TERM-MERGER-METHOD-DRAFT.md section 2). Use the code copies you are licensed to read; do not paste code text into the notes.",
+  "A note is optional; keep it to your own words (no quoted code text of 6 or more words).",
+  "When both are done, run `python -m ori_cl.calibration agreement` for Cohen's kappa (reviewer vs reviewer, each reviewer vs study).",
+  "Disagreements are adjudicated by a third person or by discussion; record the result in adjudicated_label.",
+  "Thresholds (0.72 similarity, 2 alternatives, 25 Wikipedia hits) are reviewed only after agreement is measured."
+ ],
+ "label_set": {
+  "a": "free name: an ordinary name for a physical thing or its property, a unit, or a plain English word.",
+  "b": "cite: a technical term with essentially one practical expression, including terms defined in law and IFC identifiers.",
+  "c": "many expressions: a phrasing with many plausible alternatives, or a clause rather than a name."
+ },
+ "items": [
+  {
+   "item_id": "term-036",
+   "kind": "subject_label",
+   "text": "PV array",
+   "ref": "subjects/pv_array",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-063",
+   "kind": "paraphrase_clause",
+   "text": "floor slope for liquids",
+   "ref": "urn:ori:rule-unit:irc2021-va:R309.1:garage-floor",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-206",
+   "kind": "param_name",
+   "text": "min guard height stair open side",
+   "ref": "param/min_guard_height_stair_open_side",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-064",
+   "kind": "paraphrase_clause",
+   "text": "approved noncombustible material",
+   "ref": "urn:ori:rule-unit:irc2021-va:R309.1:garage-floor",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-055",
+   "kind": "paraphrase_clause",
+   "text": "ridge setback is at least min pv ridge setback",
+   "ref": "urn:ori:rule-unit:irc2021-va:R324.6.2:pv-ridge-setback",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-019",
+   "kind": "fact_label",
+   "text": "sill height",
+   "ref": "facts/sill_height",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-069",
+   "kind": "geometry_gloss",
+   "text": "top of the finished floor",
+   "ref": "reference_geometry/finished_floor#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-053",
+   "kind": "paraphrase_clause",
+   "text": "insulation clearance not yet sourced (base model)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R302.14:insulation-clearance",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-060",
+   "kind": "geometry_name",
+   "text": "nosing line",
+   "ref": "reference_geometry/nosing_line",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-169",
+   "kind": "relation",
+   "text": "encloses",
+   "ref": "relations/encloses",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-049",
+   "kind": "paraphrase_clause",
+   "text": "it contains at least one IfcSanitaryTerminal SINK",
+   "ref": "urn:ori:rule-unit:irc2021-va:R306.2:kitchen-sink",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-115",
+   "kind": "keyword",
+   "text": "layer",
+   "ref": "keywords/layer",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-157",
+   "kind": "keyword",
+   "text": "except",
+   "ref": "keywords/except",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-194",
+   "kind": "reviewer_term",
+   "text": "continuous and unobstructed",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.1:egress-path",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-001",
+   "kind": "fact_label",
+   "text": "tread depth",
+   "ref": "facts/tread_depths",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-097",
+   "kind": "geometry_gloss",
+   "text": "plane of the roof surface",
+   "ref": "reference_geometry/roof_plane#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-091",
+   "kind": "geometry_gloss",
+   "text": "horizontal line",
+   "ref": "reference_geometry/horizontal#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-103",
+   "kind": "unit",
+   "text": "metre",
+   "ref": "units/m",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-126",
+   "kind": "keyword",
+   "text": "by",
+   "ref": "keywords/by",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-065",
+   "kind": "geometry_gloss",
+   "text": "vertical face of a riser",
+   "ref": "reference_geometry/riser_face#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-203",
+   "kind": "param_name",
+   "text": "max tread variation",
+   "ref": "param/max_tread_variation",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-174",
+   "kind": "ifc_identifier",
+   "text": "IfcCovering",
+   "ref": "ifc/IfcCovering",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-134",
+   "kind": "keyword",
+   "text": "within",
+   "ref": "keywords/within",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-041",
+   "kind": "defined_term",
+   "text": "Listed",
+   "ref": "defined_terms/Listed",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-025",
+   "kind": "paraphrase_clause",
+   "text": "min net clear area 5.7 ft2 (base model), 5.7 ft2 (us-va:vrc-2021)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-area",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-042",
+   "kind": "paraphrase_clause",
+   "text": "min guard height stair open side 34 in (base model), 34 in (us-va:vrc-2021)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R312.1.2:guard-height-min",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-083",
+   "kind": "geometry_gloss",
+   "text": "top of the guard",
+   "ref": "reference_geometry/guard_top#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-000",
+   "kind": "fact_label",
+   "text": "riser height",
+   "ref": "facts/riser_heights",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-163",
+   "kind": "keyword",
+   "text": "encloses",
+   "ref": "keywords/encloses",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-138",
+   "kind": "keyword",
+   "text": "locator",
+   "ref": "keywords/locator",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-116",
+   "kind": "keyword",
+   "text": "code",
+   "ref": "keywords/code",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-171",
+   "kind": "relation",
+   "text": "above",
+   "ref": "relations/above",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-025",
+   "kind": "fact_label",
+   "text": "multiple smoke alarms",
+   "ref": "facts/multiple_smoke_alarms",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-110",
+   "kind": "unit",
+   "text": "count",
+   "ref": "units/count",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-107",
+   "kind": "unit",
+   "text": "degree",
+   "ref": "units/deg",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-192",
+   "kind": "reviewer_term",
+   "text": "enclosed space",
+   "ref": "urn:ori:rule-unit:irc2021-va:R302.7:under-stair-protection",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-029",
+   "kind": "subject_label",
+   "text": "stair flight",
+   "ref": "subjects/stair_flight",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-055",
+   "kind": "defined_term",
+   "text": "Noncombustible Material",
+   "ref": "defined_terms/Noncombustible Material",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-119",
+   "kind": "keyword",
+   "text": "from",
+   "ref": "keywords/from",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-007",
+   "kind": "paraphrase_clause",
+   "text": "the largest minus the smallest tread depth is at most max tread variation",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-uniformity",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-005",
+   "kind": "fact_value",
+   "text": "kitchen",
+   "ref": "facts/space_use=kitchen",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-070",
+   "kind": "geometry_name",
+   "text": "finished ceiling",
+   "ref": "reference_geometry/finished_ceiling",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-084",
+   "kind": "geometry_name",
+   "text": "lower surface top",
+   "ref": "reference_geometry/lower_surface_top",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-034",
+   "kind": "paraphrase_clause",
+   "text": "drop height is more than guard trigger drop",
+   "ref": "urn:ori:rule-unit:irc2021-va:R312.1.1:guard-required",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-040",
+   "kind": "paraphrase_clause",
+   "text": "if on stair open side is yes, min guard height stair open side applies instead",
+   "ref": "urn:ori:rule-unit:irc2021-va:R312.1.2:guard-height-min",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-093",
+   "kind": "geometry_gloss",
+   "text": "highest roof line",
+   "ref": "reference_geometry/roof_ridge#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-022",
+   "kind": "fact_label",
+   "text": "guard present",
+   "ref": "facts/guard_present",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-184",
+   "kind": "ifc_identifier",
+   "text": "IfcWindow",
+   "ref": "ifc/IfcWindow",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-007",
+   "kind": "fact_value",
+   "text": "bathroom",
+   "ref": "facts/space_use=bathroom",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-006",
+   "kind": "paraphrase_clause",
+   "text": "min tread depth 10 in (base model), 9 in (us-va:vrc-2021)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-depth-min",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-112",
+   "kind": "keyword",
+   "text": "end",
+   "ref": "keywords/end",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-052",
+   "kind": "defined_term",
+   "text": "Stair",
+   "ref": "defined_terms/Stair",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-149",
+   "kind": "keyword",
+   "text": "and",
+   "ref": "keywords/and",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-209",
+   "kind": "param_name",
+   "text": "min net clear area",
+   "ref": "param/min_net_clear_area",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-173",
+   "kind": "ifc_identifier",
+   "text": "IfcBuilding",
+   "ref": "ifc/IfcBuilding",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-057",
+   "kind": "defined_term",
+   "text": "Attic, Habitable",
+   "ref": "defined_terms/Attic, Habitable",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-131",
+   "kind": "keyword",
+   "text": "measure",
+   "ref": "keywords/measure",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-058",
+   "kind": "defined_term",
+   "text": "Photovoltaic Panel System",
+   "ref": "defined_terms/Photovoltaic Panel System",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-210",
+   "kind": "param_name",
+   "text": "min net clear area grade floor",
+   "ref": "param/min_net_clear_area_grade_floor",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-006",
+   "kind": "fact_value",
+   "text": "hallway",
+   "ref": "facts/space_use=hallway",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-195",
+   "kind": "reviewer_term",
+   "text": "floor slope for liquids",
+   "ref": "urn:ori:rule-unit:irc2021-va:R309.1:garage-floor",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-051",
+   "kind": "paraphrase_clause",
+   "text": "the distance to IfcCovering INSULATION is at least insulation clearance",
+   "ref": "urn:ori:rule-unit:irc2021-va:R302.14:insulation-clearance",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-189",
+   "kind": "ifc_identifier",
+   "text": "Pset_StairFlightCommon.TreadLength",
+   "ref": "ifc/Pset_StairFlightCommon.TreadLength",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-193",
+   "kind": "reviewer_term",
+   "text": "door or access panel",
+   "ref": "urn:ori:rule-unit:irc2021-va:R302.7:under-stair-protection",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-061",
+   "kind": "geometry_gloss",
+   "text": "line through tread nosings",
+   "ref": "reference_geometry/nosing_line#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-155",
+   "kind": "keyword",
+   "text": "absent",
+   "ref": "keywords/absent",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-033",
+   "kind": "paraphrase_clause",
+   "text": "For a walking surface",
+   "ref": "urn:ori:rule-unit:irc2021-va:R312.1.1:guard-required",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-024",
+   "kind": "fact_label",
+   "text": "on stair open side",
+   "ref": "facts/on_stair_open_side",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-030",
+   "kind": "subject_label",
+   "text": "space",
+   "ref": "subjects/space",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-050",
+   "kind": "paraphrase_clause",
+   "text": "For a heat-producing device",
+   "ref": "urn:ori:rule-unit:irc2021-va:R302.14:insulation-clearance",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-067",
+   "kind": "geometry_gloss",
+   "text": "top of the surface people walk on",
+   "ref": "reference_geometry/walking_surface_top#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-004",
+   "kind": "fact_value",
+   "text": "habitable",
+   "ref": "facts/space_use=habitable",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-089",
+   "kind": "geometry_gloss",
+   "text": "vertical line",
+   "ref": "reference_geometry/plumb#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-211",
+   "kind": "param_name",
+   "text": "min net clear height",
+   "ref": "param/min_net_clear_height",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-018",
+   "kind": "paraphrase_clause",
+   "text": "use category is habitable",
+   "ref": "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-147",
+   "kind": "keyword",
+   "text": "spread",
+   "ref": "keywords/spread",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-026",
+   "kind": "fact_label",
+   "text": "smoke alarms interconnected",
+   "ref": "facts/smoke_alarms_interconnected",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-056",
+   "kind": "paraphrase_clause",
+   "text": "min pv ridge setback not yet sourced (base model), 18 in (us-va:vrc-2021)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R324.6.2:pv-ridge-setback",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-059",
+   "kind": "defined_term",
+   "text": "Ridge",
+   "ref": "defined_terms/Ridge",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-039",
+   "kind": "defined_term",
+   "text": "Kitchen",
+   "ref": "defined_terms/Kitchen",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-003",
+   "kind": "paraphrase_clause",
+   "text": "the largest minus the smallest riser height is at most max riser variation",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-uniformity",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-041",
+   "kind": "paraphrase_clause",
+   "text": "min guard height 36 in (base model), 36 in (us-va:vrc-2021)",
+   "ref": "urn:ori:rule-unit:irc2021-va:R312.1.2:guard-height-min",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-176",
+   "kind": "ifc_identifier",
+   "text": "IfcLightFixture",
+   "ref": "ifc/IfcLightFixture",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-121",
+   "kind": "keyword",
+   "text": "cite",
+   "ref": "keywords/cite",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-017",
+   "kind": "fact_label",
+   "text": "net clear width",
+   "ref": "facts/net_clear_width",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-046",
+   "kind": "defined_term",
+   "text": "Emergency Escape and Rescue Opening",
+   "ref": "defined_terms/Emergency Escape and Rescue Opening",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-081",
+   "kind": "geometry_gloss",
+   "text": "bottom of the window frame",
+   "ref": "reference_geometry/frame_bottom#gloss",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-076",
+   "kind": "geometry_name",
+   "text": "clear opening top",
+   "ref": "reference_geometry/clear_opening_top",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-199",
+   "kind": "param_name",
+   "text": "insulation clearance",
+   "ref": "param/insulation_clearance",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-172",
+   "kind": "relation",
+   "text": "distance",
+   "ref": "relations/distance",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-043",
+   "kind": "paraphrase_clause",
+   "text": "sleeping room is yes",
+   "ref": "urn:ori:rule-unit:irc2021-va:R314.3:smoke-alarm-in-sleeping-room",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-074",
+   "kind": "geometry_name",
+   "text": "clear opening bottom",
+   "ref": "reference_geometry/clear_opening_bottom",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-101",
+   "kind": "unit",
+   "text": "foot",
+   "ref": "units/ft",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-106",
+   "kind": "unit",
+   "text": "square metre",
+   "ref": "units/m2",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-168",
+   "kind": "keyword",
+   "text": "false",
+   "ref": "keywords/false",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-008",
+   "kind": "fact_value",
+   "text": "toilet",
+   "ref": "facts/space_use=toilet",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-046",
+   "kind": "paraphrase_clause",
+   "text": "multiple smoke alarms is yes",
+   "ref": "urn:ori:rule-unit:irc2021-va:R314.4:smoke-alarms-interconnected",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-032",
+   "kind": "subject_label",
+   "text": "walking surface",
+   "ref": "subjects/walking_surface",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-185",
+   "kind": "ifc_identifier",
+   "text": "Pset_ManufacturerTypeInformation.PerformanceCertificate",
+   "ref": "ifc/Pset_ManufacturerTypeInformation.PerformanceCertificate",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-011",
+   "kind": "fact_label",
+   "text": "ceiling height",
+   "ref": "facts/ceiling_height",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-156",
+   "kind": "keyword",
+   "text": "bound",
+   "ref": "keywords/bound",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-196",
+   "kind": "reviewer_term",
+   "text": "approved noncombustible material",
+   "ref": "urn:ori:rule-unit:irc2021-va:R309.1:garage-floor",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-159",
+   "kind": "keyword",
+   "text": "use",
+   "ref": "keywords/use",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-013",
+   "kind": "paraphrase_clause",
+   "text": "ceiling height is at least min ceiling height",
+   "ref": "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-111",
+   "kind": "keyword",
+   "text": "rule",
+   "ref": "keywords/rule",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-150",
+   "kind": "keyword",
+   "text": "or",
+   "ref": "keywords/or",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-061",
+   "kind": "paraphrase_clause",
+   "text": "continuous and unobstructed",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.1:egress-path",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-000",
+   "kind": "paraphrase_clause",
+   "text": "For a stair flight",
+   "ref": "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-height-max",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "clause-012",
+   "kind": "paraphrase_clause",
+   "text": "use category is one of habitable, kitchen, hallway",
+   "ref": "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-213",
+   "kind": "param_name",
+   "text": "min pv ridge setback",
+   "ref": "param/min_pv_ridge_setback",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-141",
+   "kind": "keyword",
+   "text": "derive",
+   "ref": "keywords/derive",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-151",
+   "kind": "keyword",
+   "text": "not",
+   "ref": "keywords/not",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-018",
+   "kind": "fact_label",
+   "text": "at ground level or below",
+   "ref": "facts/grade_floor_or_below_grade",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-048",
+   "kind": "defined_term",
+   "text": "Riser",
+   "ref": "defined_terms/Riser",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-207",
+   "kind": "param_name",
+   "text": "min habitable room area",
+   "ref": "param/min_habitable_room_area",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-033",
+   "kind": "subject_label",
+   "text": "guard",
+   "ref": "subjects/guard",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-082",
+   "kind": "geometry_name",
+   "text": "guard top",
+   "ref": "reference_geometry/guard_top",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-086",
+   "kind": "geometry_name",
+   "text": "open edge",
+   "ref": "reference_geometry/open_edge",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-045",
+   "kind": "defined_term",
+   "text": "Sleeping Unit",
+   "ref": "defined_terms/Sleeping Unit",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-170",
+   "kind": "relation",
+   "text": "adjacent",
+   "ref": "relations/adjacent",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  },
+  {
+   "item_id": "term-182",
+   "kind": "ifc_identifier",
+   "text": "IfcSpace",
+   "ref": "ifc/IfcSpace",
+   "reviewer_1_label": "",
+   "reviewer_1_note": "",
+   "reviewer_2_label": "",
+   "reviewer_2_note": "",
+   "adjudicated_label": ""
+  }
+ ],
+ "study_key": {
+  "term-036": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-063": {
+   "category": "a",
+   "flag": null
+  },
+  "term-206": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-064": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-055": {
+   "category": "c",
+   "flag": null
+  },
+  "term-019": {
+   "category": "a",
+   "flag": null
+  },
+  "term-069": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-053": {
+   "category": "c",
+   "flag": null
+  },
+  "term-060": {
+   "category": "a",
+   "flag": null
+  },
+  "term-169": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-049": {
+   "category": "c",
+   "flag": null
+  },
+  "term-115": {
+   "category": "a",
+   "flag": null
+  },
+  "term-157": {
+   "category": "a",
+   "flag": null
+  },
+  "term-194": {
+   "category": "b",
+   "flag": "cite"
+  },
+  "term-001": {
+   "category": "a",
+   "flag": null
+  },
+  "term-097": {
+   "category": "c",
+   "flag": null
+  },
+  "term-091": {
+   "category": "a",
+   "flag": null
+  },
+  "term-103": {
+   "category": "a",
+   "flag": null
+  },
+  "term-126": {
+   "category": "a",
+   "flag": null
+  },
+  "term-065": {
+   "category": "c",
+   "flag": null
+  },
+  "term-203": {
+   "category": "a",
+   "flag": null
+  },
+  "term-174": {
+   "category": "b",
+   "flag": null
+  },
+  "term-134": {
+   "category": "a",
+   "flag": null
+  },
+  "term-041": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-025": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-042": {
+   "category": "c",
+   "flag": null
+  },
+  "term-083": {
+   "category": "b",
+   "flag": "cite"
+  },
+  "term-000": {
+   "category": "a",
+   "flag": null
+  },
+  "term-163": {
+   "category": "a",
+   "flag": null
+  },
+  "term-138": {
+   "category": "a",
+   "flag": null
+  },
+  "term-116": {
+   "category": "a",
+   "flag": null
+  },
+  "term-171": {
+   "category": "a",
+   "flag": null
+  },
+  "term-025": {
+   "category": "c",
+   "flag": null
+  },
+  "term-110": {
+   "category": "a",
+   "flag": null
+  },
+  "term-107": {
+   "category": "a",
+   "flag": null
+  },
+  "term-192": {
+   "category": "a",
+   "flag": null
+  },
+  "term-029": {
+   "category": "a",
+   "flag": null
+  },
+  "term-055": {
+   "category": "a",
+   "flag": null
+  },
+  "term-119": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-007": {
+   "category": "c",
+   "flag": null
+  },
+  "term-005": {
+   "category": "a",
+   "flag": null
+  },
+  "term-070": {
+   "category": "a",
+   "flag": null
+  },
+  "term-084": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-034": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-040": {
+   "category": "c",
+   "flag": null
+  },
+  "term-093": {
+   "category": "a",
+   "flag": null
+  },
+  "term-022": {
+   "category": "a",
+   "flag": null
+  },
+  "term-184": {
+   "category": "b",
+   "flag": null
+  },
+  "term-007": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-006": {
+   "category": "c",
+   "flag": null
+  },
+  "term-112": {
+   "category": "a",
+   "flag": null
+  },
+  "term-052": {
+   "category": "a",
+   "flag": null
+  },
+  "term-149": {
+   "category": "a",
+   "flag": null
+  },
+  "term-209": {
+   "category": "a",
+   "flag": null
+  },
+  "term-173": {
+   "category": "b",
+   "flag": null
+  },
+  "term-057": {
+   "category": "b",
+   "flag": null
+  },
+  "term-131": {
+   "category": "a",
+   "flag": null
+  },
+  "term-058": {
+   "category": "b",
+   "flag": null
+  },
+  "term-210": {
+   "category": "c",
+   "flag": null
+  },
+  "term-006": {
+   "category": "a",
+   "flag": null
+  },
+  "term-195": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-051": {
+   "category": "c",
+   "flag": null
+  },
+  "term-189": {
+   "category": "b",
+   "flag": null
+  },
+  "term-193": {
+   "category": "c",
+   "flag": "term-at-issue"
+  },
+  "term-061": {
+   "category": "a",
+   "flag": null
+  },
+  "term-155": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-033": {
+   "category": "a",
+   "flag": null
+  },
+  "term-024": {
+   "category": "a",
+   "flag": null
+  },
+  "term-030": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-050": {
+   "category": "a",
+   "flag": null
+  },
+  "term-067": {
+   "category": "c",
+   "flag": null
+  },
+  "term-004": {
+   "category": "a",
+   "flag": null
+  },
+  "term-089": {
+   "category": "a",
+   "flag": null
+  },
+  "term-211": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-018": {
+   "category": "a",
+   "flag": null
+  },
+  "term-147": {
+   "category": "a",
+   "flag": null
+  },
+  "term-026": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-056": {
+   "category": "c",
+   "flag": null
+  },
+  "term-059": {
+   "category": "a",
+   "flag": null
+  },
+  "term-039": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-003": {
+   "category": "c",
+   "flag": null
+  },
+  "clause-041": {
+   "category": "c",
+   "flag": null
+  },
+  "term-176": {
+   "category": "b",
+   "flag": null
+  },
+  "term-121": {
+   "category": "a",
+   "flag": null
+  },
+  "term-017": {
+   "category": "a",
+   "flag": null
+  },
+  "term-046": {
+   "category": "b",
+   "flag": null
+  },
+  "term-081": {
+   "category": "c",
+   "flag": null
+  },
+  "term-076": {
+   "category": "a",
+   "flag": null
+  },
+  "term-199": {
+   "category": "b",
+   "flag": "cite"
+  },
+  "term-172": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-043": {
+   "category": "c",
+   "flag": null
+  },
+  "term-074": {
+   "category": "a",
+   "flag": null
+  },
+  "term-101": {
+   "category": "a",
+   "flag": null
+  },
+  "term-106": {
+   "category": "a",
+   "flag": null
+  },
+  "term-168": {
+   "category": "a",
+   "flag": null
+  },
+  "term-008": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-046": {
+   "category": "c",
+   "flag": null
+  },
+  "term-032": {
+   "category": "a",
+   "flag": null
+  },
+  "term-185": {
+   "category": "b",
+   "flag": null
+  },
+  "term-011": {
+   "category": "a",
+   "flag": null
+  },
+  "term-156": {
+   "category": "a",
+   "flag": null
+  },
+  "term-196": {
+   "category": "b",
+   "flag": "cite"
+  },
+  "term-159": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-013": {
+   "category": "c",
+   "flag": null
+  },
+  "term-111": {
+   "category": "a",
+   "flag": null
+  },
+  "term-150": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-061": {
+   "category": "b",
+   "flag": null
+  },
+  "clause-000": {
+   "category": "a",
+   "flag": null
+  },
+  "clause-012": {
+   "category": "c",
+   "flag": null
+  },
+  "term-213": {
+   "category": "a",
+   "flag": null
+  },
+  "term-141": {
+   "category": "a",
+   "flag": null
+  },
+  "term-151": {
+   "category": "a",
+   "flag": null
+  },
+  "term-018": {
+   "category": "c",
+   "flag": null
+  },
+  "term-048": {
+   "category": "a",
+   "flag": null
+  },
+  "term-207": {
+   "category": "a",
+   "flag": null
+  },
+  "term-033": {
+   "category": "a",
+   "flag": null
+  },
+  "term-082": {
+   "category": "a",
+   "flag": null
+  },
+  "term-086": {
+   "category": "a",
+   "flag": null
+  },
+  "term-045": {
+   "category": "b",
+   "flag": null
+  },
+  "term-170": {
+   "category": "a",
+   "flag": null
+  },
+  "term-182": {
+   "category": "b",
+   "flag": null
+  }
+ }
+}

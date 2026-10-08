@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-declared-values-0.1.schema.json",
+  "title": "ORI Declared Values v0.1 Draft",
+  "description": "Values an applicant declares for rule-unit inputs, each tied to a page of a hashed PDF plan-set artifact. The same rule units that run on IFC geometry run on these values. Extracted values carry unconfirmed origins and give unknown until confirmed. Declared values are applicant evidence, not verified facts and not approval.",
+  "type": "object",
+  "required": ["declared_values_profile", "submission_id", "jurisdiction", "declared_by", "declared_at", "plan_set"],
+  "properties": {
+    "declared_values_profile": {"const": "ori-declared-values-0.1"},
+    "submission_id": {"type": "string", "minLength": 1},
+    "jurisdiction": {"type": "string", "pattern": "^urn:ori:jurisdiction:"},
+    "declared_by": {"type": "string", "minLength": 1},
+    "declared_at": {"type": "string", "format": "date-time"},
+    "plan_set": {
+      "type": "object",
+      "required": ["plan_set_id", "version", "artifact_ids"],
+      "properties": {
+        "plan_set_id": {"type": "string"},
+        "version": {"type": "integer", "minimum": 1},
+        "artifact_ids": {"type": "array", "items": {"type": "string", "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"}, "minItems": 1}
+      }
+    },
+    "stairs": {"type": "array", "items": {"$ref": "#/$defs/stair"}},
+    "spaces": {"type": "array", "items": {"$ref": "#/$defs/space"}},
+    "eeros": {"type": "array", "items": {"$ref": "#/$defs/eero"}},
+    "walking_surfaces": {"type": "array", "items": {"$ref": "#/$defs/walkingSurface"}},
+    "guards": {"type": "array", "items": {"$ref": "#/$defs/guard"}},
+    "legal_boundary": {"type": "string"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "anchor": {
+      "type": "object",
+      "required": ["artifact_id", "page"],
+      "properties": {
+        "artifact_id": {"type": "string", "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"},
+        "page": {"type": "integer", "minimum": 1},
+        "sheet": {"type": ["string", "null"], "description": "Sheet id as printed (e.g. A-301)."},
+        "region_pt": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4, "description": "Optional [x0, y0, x1, y1] in PDF points, origin bottom-left of the media box."},
+        "detail": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "origin": {"enum": ["applicant_declared", "applicant_confirmed", "reviewer_confirmed", "vector_extracted_unconfirmed", "ai_extracted_unverified"]},
+    "numberValue": {"type": "object", "required": ["value", "anchor"], "properties": {"value": {"type": ["number", "null"]}, "origin": {"$ref": "#/$defs/origin"}, "anchor": {"$ref": "#/$defs/anchor"}, "note": {"type": "string"}}, "additionalProperties": false},
+    "listValue": {"type": "object", "required": ["value", "anchor"], "properties": {"value": {"type": ["array", "null"], "items": {"type": "number"}}, "origin": {"$ref": "#/$defs/origin"}, "anchor": {"$ref": "#/$defs/anchor"}, "note": {"type": "string"}}, "additionalProperties": false},
+    "boolValue": {"type": "object", "required": ["value", "anchor"], "properties": {"value": {"type": ["boolean", "null"]}, "origin": {"$ref": "#/$defs/origin"}, "anchor": {"$ref": "#/$defs/anchor"}, "note": {"type": "string"}}, "additionalProperties": false},
+    "useValue": {"type": "object", "required": ["value", "anchor"], "properties": {"value": {"enum": ["habitable", "bathroom", "toilet", "laundry", "kitchen", "hallway", "other", null]}, "origin": {"$ref": "#/$defs/origin"}, "anchor": {"$ref": "#/$defs/anchor"}, "note": {"type": "string"}}, "additionalProperties": false},
+    "stair": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "riser_heights_in": {"$ref": "#/$defs/listValue"}, "tread_depths_in": {"$ref": "#/$defs/listValue"}, "min_headroom_in": {"$ref": "#/$defs/numberValue"}}, "additionalProperties": false},
+    "space": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "use": {"$ref": "#/$defs/useValue"}, "ceiling_height_in": {"$ref": "#/$defs/numberValue"}, "floor_area_ft2": {"$ref": "#/$defs/numberValue"}, "sloped_ceiling": {"$ref": "#/$defs/boolValue"}}, "additionalProperties": false},
+    "eero": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "net_clear_height_in": {"$ref": "#/$defs/numberValue"}, "net_clear_width_in": {"$ref": "#/$defs/numberValue"}, "net_clear_area_ft2": {"$ref": "#/$defs/numberValue"}, "grade_floor_or_below_grade": {"$ref": "#/$defs/boolValue"}, "sill_height_in": {"$ref": "#/$defs/numberValue"}}, "additionalProperties": false},
+    "walkingSurface": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "drop_height_in": {"$ref": "#/$defs/numberValue"}, "guard_present": {"$ref": "#/$defs/boolValue"}}, "additionalProperties": false},
+    "guard": {"type": "object", "required": ["id"], "properties": {"id": {"type": "string"}, "label": {"type": "string"}, "height_in": {"$ref": "#/$defs/numberValue"}, "on_stair_open_side": {"$ref": "#/$defs/boolValue"}}, "additionalProperties": false}
+  }
+}

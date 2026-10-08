@@ -1,0 +1,6 @@
+Source: https://www.energy.gov/sites/default/files/2022-08/energy-saver-guide-2022.pdf
+Fetched: 2026-10-03
+PDF SHA-256: 416398e39c65d91687a287c6f82a8f63723a5f4e5027702f5d144ccbf1d1f504
+Lines mentioning public domain, reproduction, preparer, contract or copyright (first 12, verbatim agency statements for license evidence):
+
+NOTICE: This guide was prepared by an agency of

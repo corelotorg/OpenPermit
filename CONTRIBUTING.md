@@ -1,6 +1,8 @@
 # Contributing to OpenPermit / ORI
 
-OpenPermit is built as an open regulatory substrate, not a closed permitting product. Contributions are welcome from public agencies, jurisdictions, standards bodies, maintainers, practitioners, universities, civic-tech groups, AI/model providers, cloud providers, permitting vendors, manufacturers, inspectors, engineers, builders, and specialist validators.
+OpenPermit is built as an open regulatory substrate, not a closed permitting product. Anyone may read, fork, implement and challenge ORI; no permission is needed. Pull requests from anyone are reviewed on evidence, testability and provenance, not affiliation.
+
+ORI's scope is single-family new homes. Machine output is evidence for a human reviewer, never approval, and missing information yields `unknown`, never `fail`.
 
 ## High-value contributions
 
@@ -32,20 +34,41 @@ OpenPermit is built as an open regulatory substrate, not a closed permitting pro
 - Add or update a machine-readable object/profile.
 - Add conformance fixtures or validation tests.
 - Explain compatibility and provenance.
-- Invite challenge from affected domain experts.
+- Name who is affected, so domain experts can challenge the change.
+- Fill in the pull request template (`.github/PULL_REQUEST_TEMPLATE.md`).
 
-## Ecosystem activation
+## Independent work
 
-Organizations do not need to build “our product.” The goal is to implement a shared substrate. Useful independent work includes:
+No one needs to build "our product". ORI is a shared substrate, and independent work interoperates through it:
 
-- publish an ORI-compatible jurisdiction manifest;
-- publish an adapter from an existing permitting or regulatory system;
-- contribute a standards/vocabulary mapping;
-- publish an open validator with declared capabilities;
-- contribute compute to an interoperable validator network;
-- publish conformance results;
-- teach models to inspect provenance, traverse dependencies, verify evidence, and create challenge records.
+- an ORI-compatible jurisdiction manifest;
+- an adapter from an existing permitting or regulatory system;
+- a standards or vocabulary mapping;
+- an open validator with declared capabilities;
+- published conformance results;
+- model tooling that inspects provenance, traverses dependencies, verifies evidence and creates challenge records.
+
+## Provenance rules
+
+1. **No building-code text.** Cite the section, link the official source, and write an original paraphrase. CI runs the no-code-text lint (`conformance/validate.py`). Before each release the maintainers also run the strict check against local licensed copies kept outside the repository: no run of six or more consecutive words shared with the code (`docs/CITATION-POLICY.md`, `verification/tests/test_strict_safeguard.py`).
+2. **Every external source carries a provenance record:** licence or public-domain basis, URL, date fetched and SHA-256, and a local copy of the licence evidence when it is redistributable (`research/licenses/`).
+3. **Cite only what you fetched.** A claim you could not check against a fetched source is marked UNVERIFIED.
+4. **No secured material.** Permit data, donor red-line markup, training data (including overlay labels from donor or third-party plans), municipal permit data and per-municipality HUD rubric scores never enter this repository, an issue or a pull request (`docs/GOVERNANCE-BOUNDARY.md`).
+5. **Public-source examples are labeled.** A jurisdiction example built from published material says so and does not describe the jurisdiction as a pilot, partner or participant.
+6. **Synthetic first.** Benchmark cases and fixtures are ORI-authored and synthetic unless a third-party source passes the licence gate.
+7. **No `.docx`.** Documentation is Markdown.
 
 ## Licensing
 
-By contributing, you agree that software contributions are provided under the repository's Apache-2.0 license unless otherwise marked, and original specification/schema/profile/documentation contributions are provided under the public-use notice in `LICENSE-SPEC.md`. Third-party material remains subject to its own terms.
+| What you contribute | Licence |
+|---|---|
+| Code (Python, shell, workflows, HTML/JS tools) | Apache-2.0 (`LICENSE`); add an `SPDX-License-Identifier: Apache-2.0` header to new source files |
+| Prose specifications, documentation, public benchmark cases, attribution material | CC BY-SA 4.0 |
+| Machine-readable schemas, the ORI-CL grammar and vocabulary, rule data, profiles, fixtures | CC0 1.0 |
+| Edits to a file previously dedicated to CC0 | CC0 1.0 (the file stays CC0) |
+
+The per-path map is in `LICENSE-SPEC.md`; full texts are in `LICENSES/`. Third-party material keeps its own terms.
+
+### Developer Certificate of Origin
+
+Sign off each commit (`git commit -s`), certifying the [Developer Certificate of Origin 1.1](https://developercertificate.org/): you wrote the contribution or otherwise have the right to submit it under the licence that applies to its path.

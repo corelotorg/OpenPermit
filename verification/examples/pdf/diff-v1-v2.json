@@ -1,0 +1,13 @@
+{
+  "from_version": 1,
+  "to_version": 2,
+  "changed": [
+    "A-301"
+  ],
+  "added": [],
+  "removed": [],
+  "unchanged": [
+    "A-101"
+  ],
+  "note": "Content-stream hash comparison. Unchanged pages are not re-verified findings; a reviewer decides re-review scope."
+}

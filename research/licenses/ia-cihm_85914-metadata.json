@@ -1,0 +1,22 @@
+{
+ "source": "https://archive.org/metadata/cihm_85914/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "cihm_85914",
+  "title": "A practical treatise on the steel square and its application to everyday use [microform] : being an exhaustive collection of steel square problems and solutions, \"old and new\", with many original and useful additions, forming a complete encyclopedia of steel square knowledge, together with a brief history of the square, and description of tables, keys and other aids and attachments",
+  "creator": "Hodgson, Frederick T. (Frederick Thomas), 1836-1919",
+  "date": "1909",
+  "publisher": "Chicago : F.J. Drake",
+  "collection": [
+   "university_of_alberta_libraries_microfilm",
+   "university_of_alberta_libraries",
+   "toronto",
+   "microfilm"
+  ],
+  "contributor": "Canadiana.org",
+  "sponsor": "University of Alberta Libraries",
+  "language": "eng",
+  "publicdate": "2013-05-22 17:50:06"
+ }
+}

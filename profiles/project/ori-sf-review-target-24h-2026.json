@@ -1,0 +1,59 @@
+{
+  "id": "ori:profile:project:openpermit-ori:sf-review-target-24h:2026-09-26",
+  "type": "GuidanceProfile",
+  "version": "0.1.0",
+  "status": "draft",
+  "authority_classification": "project_self_declared_target",
+  "title": "OpenPermit ORI project target: 24-hour review for single-family homes (non-binding design target)",
+  "scope": {
+    "domain": "residential_construction",
+    "project_type": "single_family_residential_irc",
+    "applies_to": "Review of a complete single-family residential (IRC single-family scope) building-permit submission.",
+    "clock_start": "complete_submission_event: the recorded event at which the submission is determined complete by the reviewing authority",
+    "clock_stop": "review_decision_event: the recorded review decision (approve, approve with conditions, or return with corrections)",
+    "tolling": "Intervals bounded by recorded pause/toll events (each carrying its authority) are excluded from active hours; elapsed hours are reported alongside, unadjusted.",
+    "jurisdiction": "none — this target is not tied to, adopted by, or claimed for any jurisdiction"
+  },
+  "source": [
+    {
+      "id": "source:openpermit-ori:sf-review-target-24h:2026-09-26",
+      "publisher": "OpenPermit ORI project (Jeremiah Horstick, project lead)",
+      "title": "ORI project target: 24-hour review for single-family homes (this profile)",
+      "locator": "https://github.com/corelotorg/OpenPermit/blob/test/profiles/project/ori-sf-review-target-24h-2026.json",
+      "effective_from": "2026-09-26",
+      "statement_date": "2026-09-26",
+      "authority": "OpenPermit ORI project (Jeremiah Horstick, project lead)",
+      "authority_class": "project_self_declared_target"
+    },
+    {
+      "id": "source:openpermit-ori:charter",
+      "publisher": "OpenPermit ORI project (Jeremiah Horstick, project lead)",
+      "title": "OpenPermit / Open Regulatory Infrastructure charter — ORI project performance target section",
+      "locator": "https://github.com/corelotorg/OpenPermit/blob/test/CHARTER.md",
+      "statement_date": "2026-09-26",
+      "authority_class": "project_self_declared_target"
+    }
+  ],
+  "legal_boundary": {
+    "is_binding_local_law": false,
+    "creates_private_right": false,
+    "rule": "This is the OpenPermit ORI project's own design target: a performance level ORI is built to enable and measure. It is not a law, not HUD or other government guidance, and not any jurisdiction's rule. It is not a claim that any jurisdiction meets it or must meet it, and no evidence that it is achievable is asserted here. Measurements against it are comparison output, never compliance findings."
+  },
+  "categories": ["Time"],
+  "controls": [
+    {
+      "id": "ori.time.sf_review_24h",
+      "category": "Time",
+      "practice": "ORI project design target (self-declared, non-binding): review of a complete single-family residential submission reaches a review decision within 24 hours, measured from the complete-submission event to the review-decision event using recorded start, completion, and pause/toll events.",
+      "target": {"operator": "lte", "value": 24, "unit": "hour"},
+      "ori_objects": ["Action", "Event", "Condition", "Decision", "Source", "Challenge"],
+      "evidence": ["complete_submission_event", "review_decision_event", "pause_toll_events", "toll_authority", "reviewing_authority"],
+      "measurements": ["elapsed_hours", "active_hours", "target_breach", "p50_active_hours", "p95_active_hours"]
+    }
+  ],
+  "derived_alignment_model": {
+    "chain": ["ProjectTarget", "Event", "Measurement", "ComparisonResult"],
+    "must_preserve_challengeability": true,
+    "must_not_emit_legal_compliance": true
+  }
+}

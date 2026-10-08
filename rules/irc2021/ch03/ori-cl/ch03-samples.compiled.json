@@ -1,0 +1,1259 @@
+[
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R314.3:smoke-alarm-in-sleeping-room",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "It contains at least one IfcSensor SMOKESENSOR",
+   "paraphrase": "For a space, where sleeping room is yes: it contains at least one IfcSensor SMOKESENSOR.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R314.3",
+    "chapter": 3,
+    "subsection_part": "sleeping rooms"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "data_check",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "space.sleeping_room",
+      "description": "sleeping room",
+      "ifc_path": "Pset_ORI_SpaceUse.SleepingRoom"
+     },
+     {
+      "key": "space.encloses_ifcsensor_smokesensor",
+      "description": "encloses IfcSensor SMOKESENSOR"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "sleeping_room",
+     "datatype": "boolean",
+     "required": true
+    },
+    {
+     "name": "encloses_ifcsensor_smokesensor",
+     "datatype": "count",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_cl/evaluator.py#evaluate_plan",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R314.3:smoke-alarm-in-sleeping-room",
+    "statement_sha256": "9022fef6bd66e881244a18a51075ac0d931a6632534cdd94f58aa5de17cf3f2d",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R314.3:smoke-alarm-in-sleeping-room",
+   "subject": "space",
+   "ifc": {
+    "entity": "IfcSpace",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "sleeping_room",
+       "value": true,
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "relation",
+    "relation": "encloses",
+    "entity": "IfcSensor",
+    "predef": "SMOKESENSOR",
+    "fact": "encloses:IfcSensor:SMOKESENSOR"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R314.4:smoke-alarms-interconnected",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Smoke alarms interconnected is required",
+   "paraphrase": "For a building, where multiple smoke alarms is yes: smoke alarms interconnected is required.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R314.4",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "data_check",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "building.multiple_smoke_alarms",
+      "description": "multiple smoke alarms"
+     },
+     {
+      "key": "building.smoke_alarms_interconnected",
+      "description": "smoke alarms interconnected"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "multiple_smoke_alarms",
+     "datatype": "boolean",
+     "required": true
+    },
+    {
+     "name": "smoke_alarms_interconnected",
+     "datatype": "boolean",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_cl/evaluator.py#evaluate_plan",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R314.4:smoke-alarms-interconnected",
+    "statement_sha256": "fdea58eea957b813427d4f38ded878dcd9da45721a8c981c1075dbf64a432934",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R314.4:smoke-alarms-interconnected",
+   "subject": "building",
+   "ifc": {
+    "entity": "IfcBuilding",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "multiple_smoke_alarms",
+       "value": true,
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "present",
+    "fact": "smoke_alarms_interconnected"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R306.2:kitchen-sink",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "It contains at least one IfcSanitaryTerminal SINK",
+   "paraphrase": "For a space, where use category is kitchen: it contains at least one IfcSanitaryTerminal SINK.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R306.2",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "data_check",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "space.space_use",
+      "description": "use category",
+      "ifc_path": "Pset_ORI_SpaceUse.UseCategory"
+     },
+     {
+      "key": "space.encloses_ifcsanitaryterminal_sink",
+      "description": "encloses IfcSanitaryTerminal SINK"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "space_use",
+     "datatype": "enum",
+     "required": true
+    },
+    {
+     "name": "encloses_ifcsanitaryterminal_sink",
+     "datatype": "count",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_cl/evaluator.py#evaluate_plan",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R306.2:kitchen-sink",
+    "statement_sha256": "10240623e2afded958fb71404dc65460b7593f1a0b56e0d9b16b52308f9dc603",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R306.2:kitchen-sink",
+   "subject": "space",
+   "ifc": {
+    "entity": "IfcSpace",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "space_use",
+       "value": "kitchen",
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "relation",
+    "relation": "encloses",
+    "entity": "IfcSanitaryTerminal",
+    "predef": "SINK",
+    "fact": "encloses:IfcSanitaryTerminal:SINK"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R302.14:insulation-clearance",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "The distance to IfcCovering INSULATION is at least insulation clearance",
+   "paraphrase": "For a heat-producing device: the distance to IfcCovering INSULATION is at least insulation clearance; not applied when listed for insulation contact is yes. Values: insulation clearance not yet sourced (base model).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R302.14",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "heat_source_device.listed_for_insulation_contact",
+      "description": "listed for insulation contact",
+      "ifc_path": "Pset_ManufacturerTypeInformation.PerformanceCertificate"
+     },
+     {
+      "key": "heat_source_device.distance_ifccovering_insulation",
+      "description": "distance IfcCovering INSULATION"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "listed_for_insulation_contact",
+     "datatype": "boolean",
+     "required": true
+    },
+    {
+     "name": "distance_ifccovering_insulation",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_cl/evaluator.py#evaluate_plan",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R302.14:insulation-clearance",
+    "statement_sha256": "f943a37dd5b7b9c931dc5fa599086da3843c0b72437094fb45f9824c0d88bd1b",
+    "open_parameters": [
+     {
+      "name": "insulation_clearance",
+      "layer": "base",
+      "comparator": ">=",
+      "unit": "in",
+      "value_status": "estimate",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R302.14:insulation-clearance",
+   "subject": "heat_source_device",
+   "ifc": {
+    "entity": "IfcLightFixture",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "listed_for_insulation_contact",
+       "value": true,
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "when": [],
+   "require": {
+    "form": "relation",
+    "cmp": ">=",
+    "param": "insulation_clearance",
+    "relation": "distance",
+    "entity": "IfcCovering",
+    "predef": "INSULATION",
+    "fact": "distance:IfcCovering:INSULATION"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [],
+   "params_required": [
+    "insulation_clearance"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R324.6.2:pv-ridge-setback",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Ridge setback is at least min pv ridge setback",
+   "paraphrase": "For a PV array: ridge setback is at least min pv ridge setback. Values: min pv ridge setback not yet sourced (base model), 18 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R324.6.2",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_value",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 39"
+     },
+     "parameters": [
+      {
+       "name": "min_pv_ridge_setback",
+       "comparator": ">=",
+       "quantity": {
+        "value": 18,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 39"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "pv_array.ridge_setback",
+      "description": "ridge setback"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "ridge_setback",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_cl/evaluator.py#evaluate_plan",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:icc:irc-2021"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R324.6.2:pv-ridge-setback",
+    "statement_sha256": "fd535ff1045b94d350ffe6d425e534ded3ebe4a877c91150574a197c3a2f9e85",
+    "open_parameters": [
+     {
+      "name": "min_pv_ridge_setback",
+      "layer": "base",
+      "comparator": ">=",
+      "unit": "in",
+      "value_status": "estimate",
+      "source": "source:icc:irc-2021"
+     }
+    ],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R324.6.2:pv-ridge-setback",
+   "subject": "pv_array",
+   "ifc": {
+    "entity": "IfcSolarDevice",
+    "predefined_type": "SOLARPANEL"
+   },
+   "check": null,
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "ridge_setback",
+    "cmp": ">=",
+    "param": "min_pv_ridge_setback"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "ridge_setback",
+     "start": "array_top_edge",
+     "end": "roof_ridge",
+     "along": "roof_plane",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_pv_ridge_setback"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R302.7:under-stair-protection",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "A reviewer decides whether it complies",
+   "paraphrase": "For a stair flight: a reviewer decides whether it complies; terms at issue: enclosed space; door or access panel.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R302.7",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "judgment",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": []
+   },
+   "inputs": [],
+   "result_states": [
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "human_reviewer",
+    "implementation": null,
+    "implementation_version": null
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R302.7:under-stair-protection",
+    "statement_sha256": "d70f9147631ac450c100dca950f93afb4ee00f0abe25b9fd4b9ef60ace79dc11",
+    "open_parameters": [],
+    "reviewer_terms": [
+     "enclosed space",
+     "door or access panel"
+    ]
+   },
+   "interpretability_link": {
+    "ambiguous_terms": [
+     "enclosed space",
+     "door or access panel"
+    ],
+    "result": "reviewer_determination_required"
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R302.7:under-stair-protection",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [],
+   "when": [],
+   "require": null,
+   "excepts": [],
+   "reviewer_terms": [
+    "enclosed space",
+    "door or access panel"
+   ],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.1:egress-path",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "A reviewer decides whether it complies",
+   "paraphrase": "For a building: a reviewer decides whether it complies; terms at issue: continuous and unobstructed.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.1",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "judgment",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "modifies_text",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 17"
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": []
+   },
+   "inputs": [],
+   "result_states": [
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "human_reviewer",
+    "implementation": null,
+    "implementation_version": null
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.1:egress-path",
+    "statement_sha256": "6f7a44ae13d37ac3e659a599f3825d41c1b4ed7d2c1ce96d1ba277239f033cd3",
+    "open_parameters": [],
+    "reviewer_terms": [
+     "continuous and unobstructed"
+    ]
+   },
+   "interpretability_link": {
+    "ambiguous_terms": [
+     "continuous and unobstructed"
+    ],
+    "result": "reviewer_determination_required"
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.1:egress-path",
+   "subject": "building",
+   "ifc": {
+    "entity": "IfcBuilding",
+    "predefined_type": null
+   },
+   "check": null,
+   "unless": [],
+   "when": [],
+   "require": null,
+   "excepts": [],
+   "reviewer_terms": [
+    "continuous and unobstructed"
+   ],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R309.1:garage-floor",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "A reviewer decides whether it complies",
+   "paraphrase": "For a garage floor: a reviewer decides whether it complies; terms at issue: floor slope for liquids; approved noncombustible material.",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R309.1",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "judgment",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": []
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     }
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": []
+   },
+   "inputs": [],
+   "result_states": [
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "human_reviewer",
+    "implementation": null,
+    "implementation_version": null
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R309.1:garage-floor",
+    "statement_sha256": "dec63b33cc2479de19c04966605bb701ce233386146ac8b939c03f74babca16e",
+    "open_parameters": [],
+    "reviewer_terms": [
+     "floor slope for liquids",
+     "approved noncombustible material"
+    ]
+   },
+   "interpretability_link": {
+    "ambiguous_terms": [
+     "floor slope for liquids",
+     "approved noncombustible material"
+    ],
+    "result": "reviewer_determination_required"
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R309.1:garage-floor",
+   "subject": "garage_floor",
+   "ifc": {
+    "entity": "IfcSlab",
+    "predefined_type": "FLOOR"
+   },
+   "check": null,
+   "unless": [],
+   "when": [],
+   "require": null,
+   "excepts": [],
+   "reviewer_terms": [
+    "floor slope for liquids",
+    "approved noncombustible material"
+   ],
+   "derive": null,
+   "measures": [],
+   "params_required": [],
+   "params_optional": [],
+   "params_reported": []
+  }
+ }
+]
