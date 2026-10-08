@@ -34,6 +34,20 @@ docker run --rm -p 8000:8000 openpermit-ori
 
 Reference mode requires no SaaS account, database, API key or model provider.
 
+## Reference assembly and October 2026 release reconciliation
+
+- [Reference wall public route](reference-wall.html) — standalone explanation of the synthetic geometry, rule-applicability and evidence boundaries.
+- [Synthetic 48 × 96 in assembly](examples/reference-wall/fixture.json) with a deterministic [validator](examples/reference-wall/validate.py) and [negative tests](examples/reference-wall/test_fixture.py).
+- [Assembly rules interface](docs/ASSEMBLY-RULES-0.1.md) — explicit source, applicability and independent checking.
+- [October release scope / evidence ledger](docs/RELEASE-SCOPE-2026-10-08.md) — what is public, what remains internal, and the independent promotion gates.
+
+```bash
+python examples/reference-wall/validate.py
+python -m unittest discover -s examples/reference-wall -p 'test_*.py' -v
+```
+
+The synthetic fixture is **not** a code-compliant stud-wall assembly, an independently accepted IFC model, or an authorized permit. Advanced geometry prototypes and research do not become normative merely because they are cited in this release ledger.
+
 ## Public v0.1 working corpus
 
 - `CHARTER.md` — mission, legal/governance boundaries, federal implementation targets and release principles.
