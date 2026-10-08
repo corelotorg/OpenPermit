@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference Wall · OpenPermit ORI</title>
+<meta name="description" content="Reproducible synthetic wall geometry and fail-closed rule, IFC and evidence boundaries for OpenPermit. Not a certified building assembly.">
+<style>
+:root{color-scheme:light}*{box-sizing:border-box}body{font-family:system-ui,-apple-system,Segoe UI,sans-serif;color:#182230;background:#fff;margin:0;line-height:1.65}
+header{border-bottom:1px solid #d0d5dd}header a{color:#175cd3}nav,main,footer{max-width:950px;margin:auto;padding:20px 24px}
+nav{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}h1{font-size:clamp(2.3rem,6vw,3.6rem);letter-spacing:-.04em;line-height:1.1}
+h2{font-size:1.45rem;margin-top:2.5rem}p{max-width:77ch}.lead{font-size:1.15rem;color:#475467}.eyebrow{font-weight:700;color:#175cd3}
+code,pre{font-family:ui-monospace,SFMono-Regular,Consolas,monospace}pre{overflow:auto;padding:1rem;background:#f2f4f7;border-radius:8px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}.item{border:1px solid #d0d5dd;border-radius:12px;padding:20px}.item p{margin-bottom:0}
+a{color:#175cd3}.open{font-weight:700;color:#b54708}.rule{border-left:4px solid #b54708;padding-left:16px;background:#fffaeb;padding-top:8px;padding-bottom:8px}
+footer{border-top:1px solid #d0d5dd;color:#667085;font-size:.9rem;margin-top:3rem}
+</style></head>
+<body><header><nav><a href="./"><strong>OpenPermit / ORI</strong></a><div><a href="./CHARTER.md">Charter</a> · <a href="./docs/RELEASE-SCOPE-2026-10-08.md">Release evidence</a> · <a href="https://github.com/corelotorg/OpenPermit">Source</a></div></nav></header>
+<main><p class="eyebrow">REFERENCE ASSEMBLIES · PUBLIC WORKING DRAFT</p>
+<h1>From a wall to a verifiable permit claim.</h1>
+<p class="lead">One small synthetic stud-wall fixture demonstrates the difference between geometry verification, regulatory applicability, IFC interoperability and an authorized decision.</p>
+<p class="rule"><strong>Scope:</strong> geometry-contract example only. <span class="open">Code applicability OPEN · approval OPEN · IFC exchange NOT INCLUDED</span>. No construction or professional certification is claimed.</p>
+<h2>What the public example includes</h2>
+<div class="grid">
+<section class="item"><strong>Parametric specimen</strong><p>48 × 96 in model, nominal 2×4 members at 16 in centers, 7/16 in OSB and stable point identifiers.</p></section>
+<section class="item"><strong>Deterministic rejection</strong><p>52 synthetic fastener-location candidates; validator rejects identity shifts, missing points and fabricated PASS gates.</p></section>
+<section class="item"><strong>Typed evidence boundary</strong><p>Sources, jurisdiction, geometry, IFC and human authority are distinct attestations.</p></section>
+</div>
+<h2>Reproduce the fixture</h2><pre>python examples/reference-wall/validate.py
+python -m unittest discover -s examples/reference-wall -p 'test_*.py' -v</pre>
+<p><a href="./examples/reference-wall/fixture.json">View fixture JSON</a> · <a href="./examples/reference-wall/validate.py">View validator</a> · <a href="./docs/REFERENCE-WALL-EVIDENCE-0.1.md">Read the evidence contract</a> · <a href="./docs/ASSEMBLY-RULES-0.1.md">Read the rule interface</a></p>
+<h2>Interoperability and next promotion gates</h2>
+<p>IFC4X3, STEP, OpenCascade and GLB are useful in different roles: semantic building exchange, geometry interchange, exact geometry kernel and visual runtime projection. No standard is a proxy for code compliance.</p>
+<p>Prior internal experimentation covered more complex wall openings, connections, IFC identity round-trips and evidence plates. That work has not been released here. Publishing those implementations requires a source-rights review, independent parser check, complete manifest, negative tests and an external checker receipt.</p>
+<h2>Research and Fast Footing</h2><p>Virginia permitting vocabulary, source provenance and minimal single-footing approval are research/pilot workstreams. They require jurisdiction-specific authority and a lawful publication determination before any standard or claim is promoted.</p>
+</main><footer>OpenPermit · Open Regulatory Infrastructure · Working draft. Automated verification is not legal approval.</footer></body></html>
