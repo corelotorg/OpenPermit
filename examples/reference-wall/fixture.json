@@ -1,0 +1,361 @@
+{
+  "schema_version": "openpermit.reference-wall/0.1",
+  "description": "synthetic geometry verification exercise; NOT code-compliant construction design",
+  "units": "in",
+  "wall": {
+    "width": 48,
+    "height": 96,
+    "stud_centers": [
+      0,
+      16,
+      32,
+      48
+    ],
+    "stud_spacing_oc": 16,
+    "nominal_lumber": "2x4",
+    "bottom_plate": {
+      "z": 0,
+      "height": 1.5
+    },
+    "top_plate": {
+      "z": 94.5,
+      "height": 1.5
+    },
+    "sheathing": {
+      "material": "OSB",
+      "thickness": 0.4375,
+      "width": 48,
+      "height": 96
+    }
+  },
+  "fastener_candidates": {
+    "verified_as_installable": false,
+    "expected_count": 52,
+    "points": [
+      {
+        "id": "wsp-edge-0-0",
+        "x": 0,
+        "z": 0,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-6",
+        "x": 0,
+        "z": 6,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-12",
+        "x": 0,
+        "z": 12,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-18",
+        "x": 0,
+        "z": 18,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-24",
+        "x": 0,
+        "z": 24,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-30",
+        "x": 0,
+        "z": 30,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-36",
+        "x": 0,
+        "z": 36,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-42",
+        "x": 0,
+        "z": 42,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-48",
+        "x": 0,
+        "z": 48,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-54",
+        "x": 0,
+        "z": 54,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-60",
+        "x": 0,
+        "z": 60,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-66",
+        "x": 0,
+        "z": 66,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-72",
+        "x": 0,
+        "z": 72,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-78",
+        "x": 0,
+        "z": 78,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-84",
+        "x": 0,
+        "z": 84,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-90",
+        "x": 0,
+        "z": 90,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-0-96",
+        "x": 0,
+        "z": 96,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-0",
+        "x": 48,
+        "z": 0,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-6",
+        "x": 48,
+        "z": 6,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-12",
+        "x": 48,
+        "z": 12,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-18",
+        "x": 48,
+        "z": 18,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-24",
+        "x": 48,
+        "z": 24,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-30",
+        "x": 48,
+        "z": 30,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-36",
+        "x": 48,
+        "z": 36,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-42",
+        "x": 48,
+        "z": 42,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-48",
+        "x": 48,
+        "z": 48,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-54",
+        "x": 48,
+        "z": 54,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-60",
+        "x": 48,
+        "z": 60,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-66",
+        "x": 48,
+        "z": 66,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-72",
+        "x": 48,
+        "z": 72,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-78",
+        "x": 48,
+        "z": 78,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-84",
+        "x": 48,
+        "z": 84,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-90",
+        "x": 48,
+        "z": 90,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-edge-48-96",
+        "x": 48,
+        "z": 96,
+        "role": "edge"
+      },
+      {
+        "id": "wsp-field-16-0",
+        "x": 16,
+        "z": 0,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-12",
+        "x": 16,
+        "z": 12,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-24",
+        "x": 16,
+        "z": 24,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-36",
+        "x": 16,
+        "z": 36,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-48",
+        "x": 16,
+        "z": 48,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-60",
+        "x": 16,
+        "z": 60,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-72",
+        "x": 16,
+        "z": 72,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-84",
+        "x": 16,
+        "z": 84,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-16-96",
+        "x": 16,
+        "z": 96,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-0",
+        "x": 32,
+        "z": 0,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-12",
+        "x": 32,
+        "z": 12,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-24",
+        "x": 32,
+        "z": 24,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-36",
+        "x": 32,
+        "z": 36,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-48",
+        "x": 32,
+        "z": 48,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-60",
+        "x": 32,
+        "z": 60,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-72",
+        "x": 32,
+        "z": 72,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-84",
+        "x": 32,
+        "z": 84,
+        "role": "field"
+      },
+      {
+        "id": "wsp-field-32-96",
+        "x": 32,
+        "z": 96,
+        "role": "field"
+      }
+    ]
+  },
+  "gates": {
+    "geometry": "TESTABLE",
+    "code_applicability": "OPEN",
+    "connection_fastening": "OPEN",
+    "regulatory_approval": "OPEN"
+  },
+  "deliverables": {
+    "ifc": "NOT_INCLUDED",
+    "glb": "NOT_INCLUDED",
+    "png": "NOT_INCLUDED",
+    "independent_ifc_receipt": "NOT_INCLUDED"
+  }
+}
