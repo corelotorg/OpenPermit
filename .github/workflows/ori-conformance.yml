@@ -10,6 +10,9 @@ on:
       - "spec/**"
       - "profiles/**"
       - "conformance/**"
+      - "examples/reference-wall/**"
+      - "docs/REFERENCE-WALL-EVIDENCE-0.1.md"
+      - "docs/ASSEMBLY-RULES-0.1.md"
       - "reference-node/**"
       - ".well-known/**"
       - "llms.txt"
@@ -19,6 +22,9 @@ on:
       - "spec/**"
       - "profiles/**"
       - "conformance/**"
+      - "examples/reference-wall/**"
+      - "docs/REFERENCE-WALL-EVIDENCE-0.1.md"
+      - "docs/ASSEMBLY-RULES-0.1.md"
       - "reference-node/**"
       - ".well-known/**"
       - "llms.txt"
@@ -54,6 +60,11 @@ jobs:
 
       - name: Compile reference node and semantic harness
         run: python -m py_compile reference-node/server.py reference-node/graph.py reference-node/smoke.py conformance/semantic.py
+
+      - name: Validate synthetic reference wall and fail-closed negative cases
+        run: |
+          python examples/reference-wall/validate.py
+          python -m unittest discover -s examples/reference-wall -p 'test_*.py' -v
 
       - name: Exercise precedence graph tests
         run: python -m pytest -q reference-node/test_graph.py
