@@ -2488,7 +2488,2256 @@
    "license_local_path": "research/licenses/va-locality-stafford-county-no-license-found.md",
    "license_sha256": "9c5af9b0f41ff6534b40f4ec626967cdcde61e90ba5d162ce9011b8d09fd50a6",
    "license_fetched_at": "2026-10-03",
- …31867 tokens truncated…_id": "US-PD-pre-1931",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/va-locality-stafford-county-no-license-found.md",
+     "sha256": "9c5af9b0f41ff6534b40f4ec626967cdcde61e90ba5d162ce9011b8d09fd50a6",
+     "url": "https://staffordcountyva.gov/quick_links/copyright_notices.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/vs-https_staffordcountyva_gov_quick_links_copyright_notices_php.html",
+     "sha256": "d735abaa5169a48d6f4f938887cbb7dc7de3b2238edc8ba86ec26b6af4a8b676",
+     "url": "https://staffordcountyva.gov/quick_links/copyright_notices.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "Site terms or copyright page as fetched by the verb study."
+    }
+   ],
+   "license_note": "No license grant found. Cite-and-link only; never strong evidence.",
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "sha256": "ec2a972ad40e9a966831c7efc478cec86d9c384cc7496ee47dd0c8b5b8a7e4a7",
+   "words": 344
+  },
+  {
+   "id": "loc:pwc-planreq-vs",
+   "title": "Prince William County: PWC Residential Plan Review Requirements (minimum requirements for residential construction drawings)",
+   "class": "locality",
+   "role": "text_corpus",
+   "corpus_group": "Virginia localities (cite-and-link)",
+   "source_url": "https://www.pwcva.gov/assets/2021-04/005526.pdf",
+   "source_citation": {
+    "author": "Prince William County, Virginia",
+    "title": "PWC Residential Plan Review Requirements (minimum requirements for residential construction drawings)",
+    "year": "2025",
+    "publisher": "Prince William County",
+    "identifier": "ORI verb study doc va-pwc-planreq",
+    "archive_url": "https://www.pwcva.gov/assets/2021-04/005526.pdf",
+    "accessed": "2026-09-28"
+   },
+   "local_file": "vs-va-pwc-planreq.txt",
+   "text_source": "Verb-study text extraction (box copy, read-only reuse)",
+   "license_id": "LicenseRef-no-license-found-cite-and-link",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only.",
+   "license_url": "https://www.pwcva.gov/disclaimer",
+   "license_local_path": "research/licenses/va-locality-pwc-no-license-found.md",
+   "license_sha256": "5320b6a2e8fd9c804c754de5b46a774b1291152a667ca0032e4c7470cc0b9a54",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/va-locality-pwc-no-license-found.md",
+     "sha256": "5320b6a2e8fd9c804c754de5b46a774b1291152a667ca0032e4c7470cc0b9a54",
+     "url": "https://www.pwcva.gov/disclaimer",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/vs-https_www_pwcva_gov_disclaimer.html",
+     "sha256": "891ef3ae64d252c26c272555af35a047714499ffb35b367cca4c15eff10e9c0f",
+     "url": "https://www.pwcva.gov/disclaimer",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "Site terms or copyright page as fetched by the verb study."
+    }
+   ],
+   "license_note": "No license grant found. Cite-and-link only; never strong evidence.",
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "sha256": "bc3e0f3ef50db329c4e124ac6e519b768194fd57da11e20cd936a40e7b8f2f85",
+   "words": 1010
+  },
+  {
+   "id": "loc:spotsy-nsfguide-vs",
+   "title": "Spotsylvania County: Spotsylvania New Single Family Inspection Guide (public-source example; not a partner)",
+   "class": "locality",
+   "role": "text_corpus",
+   "corpus_group": "Virginia localities (cite-and-link)",
+   "source_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34637/New-Single-Family-Inspection-Guide",
+   "source_citation": {
+    "author": "Spotsylvania County, Virginia",
+    "title": "Spotsylvania New Single Family Inspection Guide (public-source example; not a partner)",
+    "year": "2025",
+    "publisher": "Spotsylvania County",
+    "identifier": "ORI verb study doc va-spotsy-nsfguide",
+    "archive_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34637/New-Single-Family-Inspection-Guide",
+    "accessed": "2026-09-28"
+   },
+   "local_file": "vs-va-spotsy-nsfguide.txt",
+   "text_source": "Verb-study text extraction (box copy, read-only reuse)",
+   "license_id": "LicenseRef-no-license-found-cite-and-link",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only. Public-source example only; Spotsylvania County is not a pilot, partner or participant.",
+   "license_url": "https://www.spotsylvania.va.us/copyright",
+   "license_local_path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
+   "license_sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
+     "sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+     "url": "https://www.spotsylvania.va.us/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/vs-https_www_spotsylvania_va_us_copyright.html",
+     "sha256": "841db1a81e3d70c161e03b1b4da31786a15ded39a212d94a62820f006ebd6e07",
+     "url": "https://www.spotsylvania.va.us/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "Site terms or copyright page as fetched by the verb study."
+    }
+   ],
+   "license_note": "No license grant found. Cite-and-link only; never strong evidence.",
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "sha256": "8dc5808351f50854c9333ab9cb42a730ce2a5533815e28bf4c81982bbfc1ad36",
+   "words": 1006
+  },
+  {
+   "id": "loc:spotsy-scheduling-vs",
+   "title": "Spotsylvania County: Spotsylvania Residential Scheduling Instructions (public-source example; not a partner)",
+   "class": "locality",
+   "role": "text_corpus",
+   "corpus_group": "Virginia localities (cite-and-link)",
+   "source_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34328/Residential-Scheduling-Instructions",
+   "source_citation": {
+    "author": "Spotsylvania County, Virginia",
+    "title": "Spotsylvania Residential Scheduling Instructions (public-source example; not a partner)",
+    "year": "2026",
+    "publisher": "Spotsylvania County",
+    "identifier": "ORI verb study doc va-spotsy-scheduling",
+    "archive_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34328/Residential-Scheduling-Instructions",
+    "accessed": "2026-09-28"
+   },
+   "local_file": "vs-va-spotsy-scheduling.txt",
+   "text_source": "Verb-study text extraction (box copy, read-only reuse)",
+   "license_id": "LicenseRef-no-license-found-cite-and-link",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only. Public-source example only; Spotsylvania County is not a pilot, partner or participant.",
+   "license_url": "https://www.spotsylvania.va.us/copyright",
+   "license_local_path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
+   "license_sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
+     "sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+     "url": "https://www.spotsylvania.va.us/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/vs-https_www_spotsylvania_va_us_copyright.html",
+     "sha256": "841db1a81e3d70c161e03b1b4da31786a15ded39a212d94a62820f006ebd6e07",
+     "url": "https://www.spotsylvania.va.us/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "Site terms or copyright page as fetched by the verb study."
+    }
+   ],
+   "license_note": "No license grant found. Cite-and-link only; never strong evidence.",
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "sha256": "9c7c15dee534ab536ab1115c17fcd8491b72601a80fb50cf70b23c1a9bb8cf8f",
+   "words": 4269
+  },
+  {
+   "id": "loc:norfolk-checklist-vs",
+   "title": "Norfolk: Norfolk New Single-Family Checklist",
+   "class": "locality",
+   "role": "text_corpus",
+   "corpus_group": "Virginia localities (cite-and-link)",
+   "source_url": "https://www.norfolk.gov/DocumentCenter/View/64755/Single-Family-Checklist---022221",
+   "source_citation": {
+    "author": "Norfolk, Virginia",
+    "title": "Norfolk New Single-Family Checklist",
+    "year": "2021",
+    "publisher": "City of Norfolk",
+    "identifier": "ORI verb study doc va-norfolk-checklist",
+    "archive_url": "https://www.norfolk.gov/DocumentCenter/View/64755/Single-Family-Checklist---022221",
+    "accessed": "2026-09-28"
+   },
+   "local_file": "vs-va-norfolk-checklist.txt",
+   "text_source": "Verb-study text extraction (box copy, read-only reuse)",
+   "license_id": "LicenseRef-no-license-found-cite-and-link",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only.",
+   "license_url": "https://www.norfolk.gov/copyright",
+   "license_local_path": "research/licenses/va-locality-norfolk-no-license-found.md",
+   "license_sha256": "904cf02198d859485a29c65ae068e133c556aae380bdcdfcf2a8bf6de198aed9",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/va-locality-norfolk-no-license-found.md",
+     "sha256": "904cf02198d859485a29c65ae068e133c556aae380bdcdfcf2a8bf6de198aed9",
+     "url": "https://www.norfolk.gov/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/vs-https_www_norfolk_gov_copyright.html",
+     "sha256": "839888bfa5aaf370bcbad27be496a4f80b203ec21f29d140c77b9c3b48695ebb",
+     "url": "https://www.norfolk.gov/copyright",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "Site terms or copyright page as fetched by the verb study."
+    }
+   ],
+   "license_note": "No license grant found. Cite-and-link only; never strong evidence.",
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "sha256": "0713cb2f562b8d3af50818386ce69e9ea1c4c48fd7fec17128d3f3d1cd30818d",
+   "words": 2919
+  },
+  {
+   "id": "pd:fema-p-348-building-utility-systems-flood",
+   "title": "Protecting Building Utility Systems from Flood Damage (FEMA P-348)",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Federal residential guidance (OSHA/FEMA/DOE/NIST/HUD)",
+   "source_url": "https://agents.floodsmart.gov/sites/default/files/media/document/2025-07/fema_nfip-p-348-protecting-building-utility-systems-from-flood-damage-2017.pdf",
+   "source_citation": {
+    "author": "Federal Emergency Management Agency",
+    "title": "Protecting Building Utility Systems from Flood Damage",
+    "year": "2017",
+    "publisher": "FEMA",
+    "identifier": "FEMA P-348",
+    "archive_url": "https://agents.floodsmart.gov/sites/default/files/media/document/2025-07/fema_nfip-p-348-protecting-building-utility-systems-from-flood-damage-2017.pdf",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "fema-p-348-building-utility-systems-flood.txt",
+   "text_source": "pdftotext of the agency PDF",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government publication; works of the US Government are not subject to copyright (17 U.S.C. 105).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/fema-p-348-building-utility-systems-flood-rights-lines.txt",
+     "sha256": "a790467b98381541f84e6be050ec3b8b751bd2c17eb542a0434bc942abad9193",
+     "url": "https://agents.floodsmart.gov/sites/default/files/media/document/2025-07/fema_nfip-p-348-protecting-building-utility-systems-from-flood-damage-2017.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Rights-related lines from the publication."
+    },
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "license_note": "The publication states that its illustrations and comments were created by FEMA or a FEMA contractor, and that some photographs are credited to others. Contractor-authored text is not automatically a US Government work under 17 U.S.C. 105, so the basis is not confirmed; held as weak evidence until reviewed.",
+   "sha256": "17432c5d9a56c1c82d68c3f18b3411638bd42c3e3a6483362a5bdc3626490f5c",
+   "words": 57305
+  },
+  {
+   "id": "pd:doe-energy-saver-guide-2022",
+   "title": "Energy Saver Guide: Tips on Saving Money and Energy at Home (DOE Energy Saver Guide 2022)",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Federal residential guidance (OSHA/FEMA/DOE/NIST/HUD)",
+   "source_url": "https://www.energy.gov/sites/default/files/2022-08/energy-saver-guide-2022.pdf",
+   "source_citation": {
+    "author": "US Department of Energy",
+    "title": "Energy Saver Guide: Tips on Saving Money and Energy at Home",
+    "year": "2022",
+    "publisher": "US Department of Energy",
+    "identifier": "DOE Energy Saver Guide 2022",
+    "archive_url": "https://www.energy.gov/sites/default/files/2022-08/energy-saver-guide-2022.pdf",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "doe-energy-saver-guide-2022.txt",
+   "text_source": "pdftotext of the agency PDF",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government publication; works of the US Government are not subject to copyright (17 U.S.C. 105).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/doe-energy-saver-guide-2022-rights-lines.txt",
+     "sha256": "09e840f7e1ea6c2783b0823f8cbbeb58af52dbee5a793d2cf3b44a631b9ee8de",
+     "url": "https://www.energy.gov/sites/default/files/2022-08/energy-saver-guide-2022.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Rights-related lines from the publication."
+    },
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "3f561c603bdbb2af88879af89cbfd894265b95cc3ba52d45a5fd4abd7983067e",
+   "words": 16343
+  },
+  {
+   "id": "pd:nist-tn-1455-home-smoke-alarms",
+   "title": "Performance of Home Smoke Alarms (NIST Technical Note 1455)",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Federal residential guidance (OSHA/FEMA/DOE/NIST/HUD)",
+   "source_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1455.pdf",
+   "source_citation": {
+    "author": "Bukowski, R. et al., National Institute of Standards and Technology",
+    "title": "Performance of Home Smoke Alarms",
+    "year": "2007",
+    "publisher": "NIST",
+    "identifier": "NIST Technical Note 1455",
+    "archive_url": "https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1455.pdf",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "nist-tn-1455-home-smoke-alarms.txt",
+   "text_source": "pdftotext of the agency PDF",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government publication; works of the US Government are not subject to copyright (17 U.S.C. 105).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/nist-tn-1455-home-smoke-alarms-rights-lines.txt",
+     "sha256": "eefda271f6dd91ceb46b9fc0bede973493e7d9d157e2fdddb8061f0d05a0f43c",
+     "url": "https://nvlpubs.nist.gov/nistpubs/Legacy/TN/nbstechnicalnote1455.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Rights-related lines from the publication."
+    },
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "7376ccaa7419d721d71d65a7f1eafba08f189f94d8ee74a4d58aad753e607141",
+   "words": 108524
+  },
+  {
+   "id": "pd:ia-fm-5-134-pile-construction-1985",
+   "title": "FM 5-134 Pile Construction 1985",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/fm-5-134-pile-construction-1985",
+   "source_citation": {
+    "author": "united states, department of the army",
+    "title": "FM 5-134 Pile Construction 1985",
+    "year": "1985-04",
+    "publisher": "united states, department of the army",
+    "identifier": "Internet Archive identifier fm-5-134-pile-construction-1985",
+    "archive_url": "https://archive.org/details/fm-5-134-pile-construction-1985",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-fm-5-134-pile-construction-1985.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'department of the army' found in item metadata (creator/publisher/title). The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-fm-5-134-pile-construction-1985-metadata.json",
+     "sha256": "e5dec95d9e40b21bebc105651dcf8f32d763dbd0013a8ba08b515a79ae12c373",
+     "url": "https://archive.org/metadata/fm-5-134-pile-construction-1985/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1985-04; creator united states, department of the army; licenseurl https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "9bd5772b700a86f1738ddc4c6b0b8ff0b0e8bdbbe73cd1a17312d2d062f2c5ce",
+   "words": 41401
+  },
+  {
+   "id": "pd:ia-fm-5-424-theater-of-operations-electrical-systems-1997",
+   "title": "FM 5-424 Theater Of Operations Electrical Systems 1997",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/fm-5-424-theater-of-operations-electrical-systems-1997",
+   "source_citation": {
+    "author": "united states, department of the army",
+    "title": "FM 5-424 Theater Of Operations Electrical Systems 1997",
+    "year": "1997-06",
+    "publisher": "united states, department of the army",
+    "identifier": "Internet Archive identifier fm-5-424-theater-of-operations-electrical-systems-1997",
+    "archive_url": "https://archive.org/details/fm-5-424-theater-of-operations-electrical-systems-1997",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-fm-5-424-theater-of-operations-electrical-systems-1997.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'department of the army' found in item metadata (creator/publisher/title). The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-fm-5-424-theater-of-operations-electrical-systems-1997-metadata.json",
+     "sha256": "461e66258afb7046031006efcc98f56eb864ea9b26ae86c7f35f80b396cd11e2",
+     "url": "https://archive.org/metadata/fm-5-424-theater-of-operations-electrical-systems-1997/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1997-06; creator united states, department of the army; licenseurl https://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "b6411e8bad996aa3729183c44d8166b26b5f2b82107a37451deaa0fe412bb40a",
+   "words": 83658,
+   "license_review": "Reviewed 2026-10-03: the automatic flag was an OCR artefact (a stray '©' glyph for a figure or list mark); no copyright notice found."
+  },
+  {
+   "id": "pd:ia-armyfm5428concreteandmasonry",
+   "title": "Army Fm 5 428 Concrete And Masonry",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/armyfm5428concreteandmasonry",
+   "source_citation": {
+    "author": "United States government",
+    "title": "Army Fm 5 428 Concrete And Masonry",
+    "year": "1998",
+    "publisher": "United States government",
+    "identifier": "Internet Archive identifier armyfm5428concreteandmasonry",
+    "archive_url": "https://archive.org/details/armyfm5428concreteandmasonry",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-armyfm5428concreteandmasonry.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'HEADQUARTERS, DEPARTMENT OF THE ARMY' found in OCR text, first 5,000 words.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-armyfm5428concreteandmasonry-metadata.json",
+     "sha256": "6c6bf73e43522083ef3e6cd9e416320034abbcd54436054ac93a3f7ffba11a32",
+     "url": "https://archive.org/metadata/armyfm5428concreteandmasonry/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1998; creator n/a; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "c99c2d8a695d134fd08dbf0360179860abf4b6249c48f21b7d41249905fd05e0",
+   "words": 77466
+  },
+  {
+   "id": "pd:ia-fm_5_420_p_p_1993",
+   "title": "FM 5-420 Plumbing and Pipef",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/FM_5_420_P_P_1993",
+   "source_citation": {
+    "author": "United States government",
+    "title": "FM 5-420 Plumbing and Pipef",
+    "year": "1993",
+    "publisher": "United States government",
+    "identifier": "Internet Archive identifier FM_5_420_P_P_1993",
+    "archive_url": "https://archive.org/details/FM_5_420_P_P_1993",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-FM_5_420_P_P_1993.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'U.S. Government' found in OCR text, first 5,000 words.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-FM_5_420_P_P_1993-metadata.json",
+     "sha256": "42a11ea2df2d03f7766aa9e143a58b8b02fdd1b165ed1c53dca27ca2bd605334",
+     "url": "https://archive.org/metadata/FM_5_420_P_P_1993/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1993; creator n/a; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "5c105c2de285a42bb0f039e4897fd5806b89e028f8f6596c06f3cf650f43aaae",
+   "words": 56216,
+   "license_review": "Reviewed 2026-10-03: the automatic flag was an OCR artefact (a stray '©' glyph for a figure or list mark); no copyright notice found."
+  },
+  {
+   "id": "pd:ia-fm5-10",
+   "title": "FM 5-10 Engineer Field Manual, Communications, Construction, and Utilities, 1940",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/FM5-10",
+   "source_citation": {
+    "author": "United States. War Department",
+    "title": "FM 5-10 Engineer Field Manual, Communications, Construction, and Utilities, 1940",
+    "year": "1940-09-09",
+    "publisher": "Washington, D.C. : G.P.O.",
+    "identifier": "Internet Archive identifier FM5-10",
+    "archive_url": "https://archive.org/details/FM5-10",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-FM5-10.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Field Manual' found in item metadata (creator/publisher/title). The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-FM5-10-metadata.json",
+     "sha256": "e0ae3f229a6fe192e7c62117c8d6937e9736ea0f51e86c4b6ec0d72f0c674ec1",
+     "url": "https://archive.org/metadata/FM5-10/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1940-09-09; creator United States. War Department; licenseurl http://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "e727ccdc54faead66f2754403dc593fcb2b6c789174c0b4b1f3f3f7eaa942123",
+   "words": 116940
+  },
+  {
+   "id": "pd:ia-tm5-226",
+   "title": "TM 5-226 Carpentry, 1943",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/TM5-226",
+   "source_citation": {
+    "author": "United States. War Department",
+    "title": "TM 5-226 Carpentry, 1943",
+    "year": "1943-05-06",
+    "publisher": "Washington, D.C. : War Dept. : U.S. G.P.O.",
+    "identifier": "Internet Archive identifier TM5-226",
+    "archive_url": "https://archive.org/details/TM5-226",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-TM5-226.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'TECHNICAL MANUAL' found in OCR text, first 5,000 words. The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-TM5-226-metadata.json",
+     "sha256": "62b1526cf7b08b92d50abb6955f055e623f1f28ed34ea6bcb33a5c70220cbf15",
+     "url": "https://archive.org/metadata/TM5-226/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1943-05-06; creator United States. War Department; licenseurl http://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "cb81b1edef2dcb404c139eaa9f9f1e5d0b73643cb4282e6de59276a8c6981180",
+   "words": 65211,
+   "license_review": "Reviewed 2026-10-03: the automatic flag was an OCR artefact (a stray '©' glyph for a figure or list mark); no copyright notice found."
+  },
+  {
+   "id": "pd:ia-tm5-704",
+   "title": "TM 5-704 Construction Print Reading in the Field",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/TM5-704",
+   "source_citation": {
+    "author": "United States. Department of the Army and Department of the Air Force",
+    "title": "TM 5-704 Construction Print Reading in the Field",
+    "year": "1969-01-02",
+    "publisher": "United States. Department of the Army and Department of the Air Force",
+    "identifier": "Internet Archive identifier TM5-704",
+    "archive_url": "https://archive.org/details/TM5-704",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-TM5-704.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Department of the Army' found in item metadata (creator/publisher/title). The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-TM5-704-metadata.json",
+     "sha256": "03e4b93afbcae922909c5407656ea325559ec489f16d6b7fb18ab1d2f5e928ec",
+     "url": "https://archive.org/metadata/TM5-704/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1969-01-02; creator United States. Department of the Army and Department of the Air Force; licenseurl http://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "eb12d8b339654d57442ba785dbab4d627eef5e8ba7748787ab71c1e4b5b67432",
+   "words": 64431,
+   "license_review": "Reviewed 2026-10-03: the automatic flag was an OCR artefact (a stray '©' glyph for a figure or list mark); no copyright notice found."
+  },
+  {
+   "id": "pd:ia-tm5-681",
+   "title": "TM 5-681 Inspections And Preventive Maintenance For Electrical Facilities, 1945",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/TM5-681",
+   "source_citation": {
+    "author": "United States. War Department",
+    "title": "TM 5-681 Inspections And Preventive Maintenance For Electrical Facilities, 1945",
+    "year": "1945-08-31",
+    "publisher": "Washington D.C. : U.S. Govt. Print. Office",
+    "identifier": "Internet Archive identifier TM5-681",
+    "archive_url": "https://archive.org/details/TM5-681",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-TM5-681.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'TECHNICAL MANUAL' found in OCR text, first 5,000 words. The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-TM5-681-metadata.json",
+     "sha256": "d31b5c2f856590aae665b64118ccc27f4d202fd42cecb8bcfaa5afe49ac1fe92",
+     "url": "https://archive.org/metadata/TM5-681/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1945-08-31; creator United States. War Department; licenseurl http://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "c23ad088a3ede54da35753ac1c6583e394c7bffdc6477e57cf64c0c08e80bba3",
+   "words": 15495
+  },
+  {
+   "id": "pd:ia-tm5-810-5",
+   "title": "TM 5-810-5 Plumbing",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/TM5-810-5",
+   "source_citation": {
+    "author": "United States. Department of the Army and Department of the Air Force",
+    "title": "TM 5-810-5 Plumbing",
+    "year": "1990-01-12",
+    "publisher": "United States. Department of the Army and Department of the Air Force",
+    "identifier": "Internet Archive identifier TM5-810-5",
+    "archive_url": "https://archive.org/details/TM5-810-5",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-TM5-810-5.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Department of the Army' found in item metadata (creator/publisher/title). The Internet Archive item carries the Public Domain Mark 1.0.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-TM5-810-5-metadata.json",
+     "sha256": "5dd8915bed9db0ffb9193badb4411dd52f44e7c31697ec1bf763df87108ee730",
+     "url": "https://archive.org/metadata/TM5-810-5/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1990-01-12; creator United States. Department of the Army and Department of the Air Force; licenseurl http://creativecommons.org/publicdomain/mark/1.0/."
+    },
+    {
+     "path": "research/licenses/cc-pdm-1.0-deed.txt",
+     "sha256": "e1b984201345bc44e68c977921c4df3c7af5ff19787cf9febcaf8f340061d206",
+     "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+     "fetched_at": "2026-10-03",
+     "redistributable": true
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "23bfa4c83169dc27e250a2ce05a85d1a3b699b4e98f564aced642e3a25a2add0",
+   "words": 7822
+  },
+  {
+   "id": "pd:ia-fm_5_233_c_s_1985",
+   "title": "FM 5-233 Construction Surveying",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Army TM/FM",
+   "source_url": "https://archive.org/details/FM_5_233_C_S_1985",
+   "source_citation": {
+    "author": "United States government",
+    "title": "FM 5-233 Construction Surveying",
+    "year": "1985",
+    "publisher": "United States government",
+    "identifier": "Internet Archive identifier FM_5_233_C_S_1985",
+    "archive_url": "https://archive.org/details/FM_5_233_C_S_1985",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-FM_5_233_C_S_1985.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'DEPARTMENT OF THE ARMY' found in OCR text, first 5,000 words.",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-FM_5_233_C_S_1985-metadata.json",
+     "sha256": "48138e7f2ec6315ab1df08f62e77d89b40bb8675e158e889b4c4567b6e637b9b",
+     "url": "https://archive.org/metadata/FM_5_233_C_S_1985/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1985; creator n/a; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "license_note": "Reviewed 2026-10-03: the manual reprints tables credited to the American Railway Engineering Association and to Harry Rubey (copyright, reprinted by permission). The Army text is a federal work, but these reprinted parts are not, so the source is held as weak evidence.",
+   "sha256": "5253f25f78c66d72c500d130fcb53058ca1e821ce3eb4eda17b53ba198baee1c",
+   "words": 66286
+  },
+  {
+   "id": "pd:ia-ost-military-engineering-tm5_683",
+   "title": "FACILITIES ENGINEERING ELECTRICAL INTERIOR FACILITIES",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Joint Army/Navy/Air Force TM",
+   "source_url": "https://archive.org/details/ost-military-engineering-tm5_683",
+   "source_citation": {
+    "author": "DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE",
+    "title": "FACILITIES ENGINEERING ELECTRICAL INTERIOR FACILITIES",
+    "year": "1995",
+    "publisher": "Department of the Army",
+    "identifier": "Internet Archive identifier ost-military-engineering-tm5_683",
+    "archive_url": "https://archive.org/details/ost-military-engineering-tm5_683",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-ost-military-engineering-tm5_683.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'AIR FORCE' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-ost-military-engineering-tm5_683-metadata.json",
+     "sha256": "b7c9d05df9591acb73cbcccfbd39e1306b885d1a8b00c0e7d840c4ff0c3aaa18",
+     "url": "https://archive.org/metadata/ost-military-engineering-tm5_683/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1995; creator DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "6b6ee83ffd9fcce7846ccfca45f6c50d5b832f71c06522734719b4f8e95b3a35",
+   "words": 68898
+  },
+  {
+   "id": "pd:ia-ost-military-engineering-tm5_684",
+   "title": "FACILITIES ENGINEERING ELECTRICAL EXTERIOR FACILITIES",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Joint Army/Navy/Air Force TM",
+   "source_url": "https://archive.org/details/ost-military-engineering-tm5_684",
+   "source_citation": {
+    "author": "DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE",
+    "title": "FACILITIES ENGINEERING ELECTRICAL EXTERIOR FACILITIES",
+    "year": "1996",
+    "publisher": "Department of the Army",
+    "identifier": "Internet Archive identifier ost-military-engineering-tm5_684",
+    "archive_url": "https://archive.org/details/ost-military-engineering-tm5_684",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-ost-military-engineering-tm5_684.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'AIR FORCE' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": false,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-ost-military-engineering-tm5_684-metadata.json",
+     "sha256": "8b9c4b2b0a84296fc9332a8a01716e8acd1ad482d73cb3b35f8c153fd6c71473",
+     "url": "https://archive.org/metadata/ost-military-engineering-tm5_684/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1996; creator DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": false,
+   "license_note": "Reviewed 2026-10-03: the manual reprints tables from IEEE standards under an IEEE copyright notice. The government text is a federal work, but the reprinted parts are not, so the source is held as weak evidence.",
+   "sha256": "d258d65a2c3b3ee0a1fdc5748132939d2b2a19733f1ea4b6d70a36be3593b8ef",
+   "words": 122360
+  },
+  {
+   "id": "pd:ia-ost-military-engineering-tm5_809_3",
+   "title": "MASONRY STRUCTURAL DESIGN FOR BUILDINGS",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Joint Army/Navy/Air Force TM",
+   "source_url": "https://archive.org/details/ost-military-engineering-tm5_809_3",
+   "source_citation": {
+    "author": "DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE",
+    "title": "MASONRY STRUCTURAL DESIGN FOR BUILDINGS",
+    "year": "1992",
+    "publisher": "Department of the Army",
+    "identifier": "Internet Archive identifier ost-military-engineering-tm5_809_3",
+    "archive_url": "https://archive.org/details/ost-military-engineering-tm5_809_3",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-ost-military-engineering-tm5_809_3.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'AIR FORCE' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-ost-military-engineering-tm5_809_3-metadata.json",
+     "sha256": "1546f3c4815e8e151eaba67a2fd470fc6d98714ecaf8485d6cb712258559378e",
+     "url": "https://archive.org/metadata/ost-military-engineering-tm5_809_3/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1992; creator DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "578e41d51832097a3004980973e2e107bff4b9dea887f6cf3813f44587a31634",
+   "words": 68291
+  },
+  {
+   "id": "pd:ia-ost-military-engineering-tm5_811_1",
+   "title": "ELECTRICAL POWER SUPPLY AND DISTRIBUTION",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Joint Army/Navy/Air Force TM",
+   "source_url": "https://archive.org/details/ost-military-engineering-tm5_811_1",
+   "source_citation": {
+    "author": "DEPARTMENTS OF THE ARMY, AND THE AIR FORCE",
+    "title": "ELECTRICAL POWER SUPPLY AND DISTRIBUTION",
+    "year": "1995",
+    "publisher": "Department of the Army",
+    "identifier": "Internet Archive identifier ost-military-engineering-tm5_811_1",
+    "archive_url": "https://archive.org/details/ost-military-engineering-tm5_811_1",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-ost-military-engineering-tm5_811_1.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'AIR FORCE' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-ost-military-engineering-tm5_811_1-metadata.json",
+     "sha256": "cd676d94db988b1088a1d5b3a4049d6f3fbc7f241c13cf90be0f5d45ae9dcb91",
+     "url": "https://archive.org/metadata/ost-military-engineering-tm5_811_1/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1995; creator DEPARTMENTS OF THE ARMY, AND THE AIR FORCE; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "30307fbf0845a67d5fc909ef5b085860dd329e8e6d1dcb061026070bd97b2810",
+   "words": 56992
+  },
+  {
+   "id": "pd:ia-micro_ia41153156_0252",
+   "title": "Construction Electrician 3 & 2. Rate Training Manual and Nonresident Career Course.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41153156_0252",
+   "source_citation": {
+    "author": "Naval Education and Training Command, Pensacola, FL.",
+    "title": "Construction Electrician 3 & 2. Rate Training Manual and Nonresident Career Course.",
+    "year": "1976-00-00",
+    "publisher": "Naval Education and Training Command, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41153156_0252; ERIC ED132306",
+    "archive_url": "https://archive.org/details/micro_IA41153156_0252",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41153156_0252.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Education' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41153156_0252-metadata.json",
+     "sha256": "f5d13bd969877bda4bd0b790b1cb2e652fca09fb65bbd94ab5bbed0939bf7d62",
+     "url": "https://archive.org/metadata/micro_IA41153156_0252/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1976-00-00; creator Naval Education and Training Command, Pensacola, FL.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "01ffe00fc8d8281e3bda2ca0d81dcf5970952f06dc1672b63b53b6ab5451fed9",
+   "words": 256535,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work."
+  },
+  {
+   "id": "pd:ia-micro_ia41152920_0020",
+   "title": "Utilitiesman 3 and 2. Rate Training Manual. Revised 1973.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41152920_0020",
+   "source_citation": {
+    "author": "Naval Training Command, Pensacola, FL.",
+    "title": "Utilitiesman 3 and 2. Rate Training Manual. Revised 1973.",
+    "year": "1973",
+    "publisher": "Naval Training Command, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41152920_0020; ERIC ED097442",
+    "archive_url": "https://archive.org/details/micro_IA41152920_0020",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41152920_0020.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Training' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41152920_0020-metadata.json",
+     "sha256": "c7262afa12745349ac5083d478b66a3658885d69d799ae528f878e978810af07",
+     "url": "https://archive.org/metadata/micro_IA41152920_0020/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1973; creator Naval Training Command, Pensacola, FL.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "564798d10f1e8ab3519e5a4ae1145dfa00ac39d8a5b9f4ce0b9e3e8650706233",
+   "words": 300293,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work."
+  },
+  {
+   "id": "pd:ia-micro_ia41153050_0702",
+   "title": "Builder 1 & C: Naval Training Command Rate Training Manual. Revised 1973.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41153050_0702",
+   "source_citation": {
+    "author": "Naval Training Command, Pensacola, FL.",
+    "title": "Builder 1 & C: Naval Training Command Rate Training Manual. Revised 1973.",
+    "year": "1973-00-00",
+    "publisher": "Naval Training Command, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41153050_0702; ERIC ED102360",
+    "archive_url": "https://archive.org/details/micro_IA41153050_0702",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41153050_0702.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Training' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41153050_0702-metadata.json",
+     "sha256": "f3b86abc13b22dcf97ace9b4653e5454b6f92f8dd7a3a5fd0a53aafc316a3aa2",
+     "url": "https://archive.org/metadata/micro_IA41153050_0702/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1973-00-00; creator Naval Training Command, Pensacola, FL.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "aaa0c0cb59c48a1d6aab68deefd580077018e0f52f7f727c6be17ae2ba541a36",
+   "words": 163998,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work. The '©' hit is an OCR artefact in the ERIC form."
+  },
+  {
+   "id": "pd:ia-micro_ia41153518_0178",
+   "title": "Steelworker 1 & C. Rate Training Manual and Nonresident Career Course. Revised Edition.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41153518_0178",
+   "source_citation": {
+    "author": "Essinger, Patrick J.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "title": "Steelworker 1 & C. Rate Training Manual and Nonresident Career Course. Revised Edition.",
+    "year": "1981-00-00",
+    "publisher": "Essinger, Patrick J.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41153518_0178; ERIC ED211839",
+    "archive_url": "https://archive.org/details/micro_IA41153518_0178",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41153518_0178.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Education' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41153518_0178-metadata.json",
+     "sha256": "71309a359309af98b95341a437e83fa6c64f2f677e5cd3a32f444ef3bb0479b2",
+     "url": "https://archive.org/metadata/micro_IA41153518_0178/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1981-00-00; creator Essinger, Patrick J.; Naval Education and Training Program Development Center, Pensacola, FL.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "52ca50198dcdb00dbe9b9664f2388fa8004cf5d7ef2cb3e49f85105c504d4f24",
+   "words": 100250,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work."
+  },
+  {
+   "id": "pd:ia-micro_ia41155138_0886",
+   "title": "Engineering Aid 3 & 2, Vol. 1. Rate Training Manual and Nonresident Career Course.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41155138_0886",
+   "source_citation": {
+    "author": "Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "title": "Engineering Aid 3 & 2, Vol. 1. Rate Training Manual and Nonresident Career Course.",
+    "year": "1980",
+    "publisher": "Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41155138_0886; ERIC ED249090",
+    "archive_url": "https://archive.org/details/micro_IA41155138_0886",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41155138_0886.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Education' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41155138_0886-metadata.json",
+     "sha256": "333e8dbb2da6bd3915dd98504449de1ea6d73c283f6ccf2211d340c312fdf52a",
+     "url": "https://archive.org/metadata/micro_IA41155138_0886/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1980; creator Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Development Center, Pensacol; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "7603f2d5479b94212ac9e1d311a99fccc09b028f3c3481029209001a3323befe",
+   "words": 128817,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work."
+  },
+  {
+   "id": "pd:ia-micro_ia41155138_0887",
+   "title": "Engineering Aid 3 & 2, Vol. 2. Rate Training Manual.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41155138_0887",
+   "source_citation": {
+    "author": "Bernal, Benito C., Jr.; Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "title": "Engineering Aid 3 & 2, Vol. 2. Rate Training Manual.",
+    "year": "1982",
+    "publisher": "Bernal, Benito C., Jr.; Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Development Center, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41155138_0887; ERIC ED249091",
+    "archive_url": "https://archive.org/details/micro_IA41155138_0887",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41155138_0887.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Education' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41155138_0887-metadata.json",
+     "sha256": "a95db19d4242f848eae0a62415f2328dec9858c7ebea12de0c69f9f3b83003ca",
+     "url": "https://archive.org/metadata/micro_IA41155138_0887/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1982; creator Bernal, Benito C., Jr.; Naval Education and Training Command, Washington, DC.; Naval Education and Training Program Deve; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "7eb043516cca404fb0c343ca87a75ff27dba3a272820f374defb8664c86e775f",
+   "words": 71461,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work. The '©' hit is an OCR artefact."
+  },
+  {
+   "id": "pd:ia-micro_ia41153155_0591",
+   "title": "Engineering Aid 1 & C. Rate Training Manual.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Navy rate training manuals",
+   "source_url": "https://archive.org/details/micro_IA41153155_0591",
+   "source_citation": {
+    "author": "Naval Education and Training Command, Pensacola, FL.",
+    "title": "Engineering Aid 1 & C. Rate Training Manual.",
+    "year": "1974-00-00",
+    "publisher": "Naval Education and Training Command, Pensacola, FL.",
+    "identifier": "Internet Archive identifier micro_IA41153155_0591; ERIC ED105121",
+    "archive_url": "https://archive.org/details/micro_IA41153155_0591",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41153155_0591.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Naval Education' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41153155_0591-metadata.json",
+     "sha256": "50b0646fc53ff3a2088267bf628dbe1b8eec28610165f347fd8a7252d53bb1ec",
+     "url": "https://archive.org/metadata/micro_IA41153155_0591/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1974-00-00; creator Naval Education and Training Command, Pensacola, FL.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "9d17083174cb7d85c5903e3e8ef9dea405d95c521de1e9b85db63538e2d9d8d9",
+   "words": 231541,
+   "license_review": "Reviewed 2026-10-03: the preparer named in the text is a US Navy activity (Naval Education and Training or Naval Training Publications command), so the work is a federal work. The '©' hits are OCR artefacts."
+  },
+  {
+   "id": "pd:ia-micro_ia41152924_0610",
+   "title": "Carpentry Specialist.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Air Force training",
+   "source_url": "https://archive.org/details/micro_IA41152924_0610",
+   "source_citation": {
+    "author": "Air Force Training Command, Sheppard AFB, TX.",
+    "title": "Carpentry Specialist.",
+    "year": "1986",
+    "publisher": "Air Force Training Command, Sheppard AFB, TX.",
+    "identifier": "Internet Archive identifier micro_IA41152924_0610; ERIC ED272751",
+    "archive_url": "https://archive.org/details/micro_IA41152924_0610",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41152924_0610.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Air Force' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41152924_0610-metadata.json",
+     "sha256": "f6b8478abcead45392ede049ae4504ef99b73bdfa69c652b8cf5abef19d9eb6c",
+     "url": "https://archive.org/metadata/micro_IA41152924_0610/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1986; creator Air Force Training Command, Sheppard AFB, TX.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "f49430a75e2cd4b3b7ee5f6ed77a76454f5a6be67a073fbc598285c3c52de8b8",
+   "words": 133048,
+   "license_review": "Reviewed 2026-10-03: the automatic flag was an OCR artefact (a stray '©' glyph for a figure or list mark); no copyright notice found."
+  },
+  {
+   "id": "pd:ia-micro_ia41152924_0609",
+   "title": "Masonry Specialist.",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Air Force training",
+   "source_url": "https://archive.org/details/micro_IA41152924_0609",
+   "source_citation": {
+    "author": "Air Force Training Command, Sheppard AFB, TX.",
+    "title": "Masonry Specialist.",
+    "year": "1983",
+    "publisher": "Air Force Training Command, Sheppard AFB, TX.",
+    "identifier": "Internet Archive identifier micro_IA41152924_0609; ERIC ED272750",
+    "archive_url": "https://archive.org/details/micro_IA41152924_0609",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-micro_IA41152924_0609.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Air Force' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-micro_IA41152924_0609-metadata.json",
+     "sha256": "6282d126d121959055de702fbae3e535d26eab913d572db2eb3952c50a8ec105",
+     "url": "https://archive.org/metadata/micro_IA41152924_0609/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1983; creator Air Force Training Command, Sheppard AFB, TX.; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "cfd297a169c7206fc9b4cda52057de46be28450ec30ba47e40ef5789832f7d50",
+   "words": 72447,
+   "license_review": "Reviewed 2026-10-03: the copyright hit is a reading-list reference to a commercial masonry textbook (not reproduced in the course); the course itself is US Air Force training material."
+  },
+  {
+   "id": "pd:ia-cat72351181",
+   "title": "Construction guides for exposed wood decks",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "USDA FPL / NBS",
+   "source_url": "https://archive.org/details/CAT72351181",
+   "source_citation": {
+    "author": "Anderson, L. O; Heebink, T. B; Oviatt, A. E; Pacific Northwest Forest and Range Experiment Station (Portland, Or.)",
+    "title": "Construction guides for exposed wood decks",
+    "year": "1971",
+    "publisher": "Portland, Or., U.S. Pacific Northwest Forest and Range Ex Periment Station",
+    "identifier": "Internet Archive identifier CAT72351181",
+    "archive_url": "https://archive.org/details/CAT72351181",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-CAT72351181.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Department of Agriculture' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-CAT72351181-metadata.json",
+     "sha256": "31606e07e5ad8e784337d08e888318703f83e591274d785b8db55a63d9965dd4",
+     "url": "https://archive.org/metadata/CAT72351181/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1971; creator Anderson, L. O; Heebink, T. B; Oviatt, A. E; Pacific Northwest Forest and Range Experiment Station (Portland, Or.); licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "f229807216a7a41a07313403c000ee3c98427d2f394d89acb26338cfaa698e1a",
+   "words": 16705
+  },
+  {
+   "id": "pd:ia-cat10503121",
+   "title": "Wood handbook; basic information on wood as a material of construction with data for its use in design and specifications..",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "USDA FPL / NBS",
+   "source_url": "https://archive.org/details/CAT10503121",
+   "source_citation": {
+    "author": "Forest Products Laboratory (U.S.)",
+    "title": "Wood handbook; basic information on wood as a material of construction with data for its use in design and specifications..",
+    "year": "1940",
+    "publisher": "Washington, D.C. : [U.S. Govt. Print. Off.]",
+    "identifier": "Internet Archive identifier CAT10503121",
+    "archive_url": "https://archive.org/details/CAT10503121",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-CAT10503121.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Forest Products Laboratory' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-CAT10503121-metadata.json",
+     "sha256": "c5b888116fa448154812c7670785ce0f236eef3ff6fb6d7f86f54a3081008e84",
+     "url": "https://archive.org/metadata/CAT10503121/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1940; creator Forest Products Laboratory (U.S.); licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "a7bae4d6c6b67ee0c9bde23bf3873e408414c7bc61d9122dc6a56f4ad6149162",
+   "words": 146853
+  },
+  {
+   "id": "pd:ia-wood-handbook",
+   "title": "Wood  Handbook—Wood as an Engineering Material",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "USDA FPL / NBS",
+   "source_url": "https://archive.org/details/wood-handbook",
+   "source_citation": {
+    "author": "Forest Products Laboratory, USDA Forest Service",
+    "title": "Wood  Handbook—Wood as an Engineering Material",
+    "year": "2010-04",
+    "publisher": "Forest Products Laboratory, USDA Forest Service",
+    "identifier": "Internet Archive identifier wood-handbook",
+    "archive_url": "https://archive.org/details/wood-handbook",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-wood-handbook.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'Forest Products Laboratory' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-wood-handbook-metadata.json",
+     "sha256": "2456ba6f231f930f9f75934a432792e6c2ffcab4791a141529a09ff3e350181b",
+     "url": "https://archive.org/metadata/wood-handbook/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 2010-04; creator Forest Products Laboratory, USDA Forest Service; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "c089017b45a328b9431e73add84df1fdea849b7999a3e2df5b655e8c631eb2ac",
+   "words": 338537,
+   "license_review": "Reviewed 2026-10-03: prepared by the USDA Forest Service Forest Products Laboratory; the '©' hit is a trademark symbol after a certification body's name."
+  },
+  {
+   "id": "pd:ia-howtoownyourhome00unit",
+   "title": "How to own your home [microform]: a handbook for prospective home owners",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "USDA FPL / NBS",
+   "source_url": "https://archive.org/details/howtoownyourhome00unit",
+   "source_citation": {
+    "author": "United States. National Bureau of Standards; Taylor, James S. (James Spear), 1896-1979; Gries, John M. (John Matthew), 1877-",
+    "title": "How to own your home [microform]: a handbook for prospective home owners",
+    "year": "1923",
+    "publisher": "Washington, Govt. Print. Off.",
+    "identifier": "Internet Archive identifier howtoownyourhome00unit",
+    "archive_url": "https://archive.org/details/howtoownyourhome00unit",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-howtoownyourhome00unit.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-federal-work",
+   "license_basis": "US federal government work, not subject to copyright (17 U.S.C. 105). Federal authorship marker 'National Bureau of Standards' found in item metadata (creator/publisher/title).",
+   "license_url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+   "license_local_path": "research/licenses/usc-17-105.txt",
+   "license_sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-105.txt",
+     "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 105: copyright protection is not available for any work of the United States Government."
+    },
+    {
+     "path": "research/licenses/ia-howtoownyourhome00unit-metadata.json",
+     "sha256": "e7c2354da6b46b565816e2d5ad5a458cc8ba1f35e1b6fa144810da6c7b94f911",
+     "url": "https://archive.org/metadata/howtoownyourhome00unit/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1923; creator United States. National Bureau of Standards; Taylor, James S. (James Spear), 1896-1979; Gries, John M. (John Matthew), 1; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "sha256": "5cf8a0599f4ade18df69cc8d15efb0e021f25dda6cdeba030384bfd622e43fa1",
+   "words": 16563,
+   "license_review": "Reviewed 2026-10-03: prepared by US Department of Commerce staff (Gries and Taylor) and printed by the Government Printing Office; the '©' hit is OCR noise in a table."
+  },
+  {
+   "id": "pd:ia-americanstairbui01goul",
+   "title": "The American stair-builders' guide",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Pre-1931 books (Internet Archive)",
+   "source_url": "https://archive.org/details/americanstairbui01goul",
+   "source_citation": {
+    "author": "Gould, Lucius D., b. 1814. [from old catalog]",
+    "title": "The American stair-builders' guide",
+    "year": "1875",
+    "publisher": "New York, A.J. Bicknell & co.",
+    "identifier": "Internet Archive identifier americanstairbui01goul",
+    "archive_url": "https://archive.org/details/americanstairbui01goul",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-americanstairbui01goul.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-pre-1931",
+   "license_basis": "Published in 1875, before January 1, 1931: the US copyright term has expired (17 U.S.C. 304; US Copyright Office Circular 15A; Cornell public-domain chart). Works first published abroad before 1931 are also in the US public domain.",
+   "license_url": "https://www.copyright.gov/circs/circ15a.pdf",
+   "license_local_path": "research/licenses/usc-17-304.txt",
+   "license_sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-304.txt",
+     "sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section304&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 304: duration of copyright in works subsisting on January 1, 1978 (maximum 95 years from publication)."
+    },
+    {
+     "path": "research/licenses/us-copyright-office-circular-15a.txt",
+     "sha256": "c1cc56e4f473c961103ae7bb1bf7d131f7fa9a37027ee0b7849e6cb9b36b49da",
+     "url": "https://www.copyright.gov/circs/circ15a.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "US Copyright Office Circular 15A: works published in the United States before January 1, 1931 are in the public domain."
+    },
+    {
+     "path": "research/licenses/cornell-public-domain-chart-2026.txt",
+     "sha256": "5a512b7a600320132cd657bdb87da4ef21fe61039f9f842f3f78d58f5acaf141",
+     "url": "https://guides.library.cornell.edu/copyright/publicdomain",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Hirtle, Cornell University Library chart (CC BY 4.0): published before 1931, in the public domain."
+    },
+    {
+     "path": "research/licenses/ia-americanstairbui01goul-metadata.json",
+     "sha256": "4a83f5224c963c08efe388db5e67b7d4e96d526a0f04f1f7dc5e9a946d76ef71",
+     "url": "https://archive.org/metadata/americanstairbui01goul/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1875; creator Gould, Lucius D., b. 1814. [from old catalog]; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "license_note": "Basis is the publication date in the Internet Archive item metadata; place of publication not separately verified.",
+   "sha256": "ec2d58f0ff91833a3807a5ace002a48a7b6d6b929a78bfee1154ea91b1e51c51",
+   "words": 14619
+  },
+  {
+   "id": "pd:ia-commonsensesta00hodg",
+   "title": "Common-sense stair building and handrailing",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Pre-1931 books (Internet Archive)",
+   "source_url": "https://archive.org/details/commonsensesta00hodg",
+   "source_citation": {
+    "author": "Hodgson, Frederick Thomas, 1836-1919",
+    "title": "Common-sense stair building and handrailing",
+    "year": "1903",
+    "publisher": "Chicago, F. J. Drake & Co",
+    "identifier": "Internet Archive identifier commonsensesta00hodg",
+    "archive_url": "https://archive.org/details/commonsensesta00hodg",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-commonsensesta00hodg.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-pre-1931",
+   "license_basis": "Published in 1903, before January 1, 1931: the US copyright term has expired (17 U.S.C. 304; US Copyright Office Circular 15A; Cornell public-domain chart). Works first published abroad before 1931 are also in the US public domain.",
+   "license_url": "https://www.copyright.gov/circs/circ15a.pdf",
+   "license_local_path": "research/licenses/usc-17-304.txt",
+   "license_sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-304.txt",
+     "sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section304&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 304: duration of copyright in works subsisting on January 1, 1978 (maximum 95 years from publication)."
+    },
+    {
+     "path": "research/licenses/us-copyright-office-circular-15a.txt",
+     "sha256": "c1cc56e4f473c961103ae7bb1bf7d131f7fa9a37027ee0b7849e6cb9b36b49da",
+     "url": "https://www.copyright.gov/circs/circ15a.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "US Copyright Office Circular 15A: works published in the United States before January 1, 1931 are in the public domain."
+    },
+    {
+     "path": "research/licenses/cornell-public-domain-chart-2026.txt",
+     "sha256": "5a512b7a600320132cd657bdb87da4ef21fe61039f9f842f3f78d58f5acaf141",
+     "url": "https://guides.library.cornell.edu/copyright/publicdomain",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Hirtle, Cornell University Library chart (CC BY 4.0): published before 1931, in the public domain."
+    },
+    {
+     "path": "research/licenses/ia-commonsensesta00hodg-metadata.json",
+     "sha256": "3fea5f02d1a06e40ee9e31899e4b8dd1b528034f8a4c3632a7440c22355e781c",
+     "url": "https://archive.org/metadata/commonsensesta00hodg/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1903; creator Hodgson, Frederick Thomas, 1836-1919; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "license_note": "Basis is the publication date in the Internet Archive item metadata; place of publication not separately verified.",
+   "sha256": "880d28a27990f452f5cb355584bac1e6e7198ee96f8f4f017a2d5523a13ca230",
+   "words": 41687
+  },
+  {
+   "id": "pd:ia-cu31924003626698",
+   "title": "Framing : a practical manual of approved up-to-date methods of house framing and construction, together with tested methods of heavy timber and plank framing as used in the construction of barns, factories, stores, and public buildings, strength of timbers, and principles of roof and bridge trusses",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Pre-1931 books (Internet Archive)",
+   "source_url": "https://archive.org/details/cu31924003626698",
+   "source_citation": {
+    "author": "Radford, William A., 1865- ed; Johnson, Alfred S. (Alfred Sidney), b. 1860; Johnson, Bernard L",
+    "title": "Framing : a practical manual of approved up-to-date methods of house framing and construction, together with tested methods of heavy timber and plank framing as used in the construction of barns, factories, stores, and public buildings, strength of timbers, and principles of roof and bridge trusses",
+    "year": "1909",
+    "publisher": "Chicago, Ill. : Radford Architectural Company",
+    "identifier": "Internet Archive identifier cu31924003626698",
+    "archive_url": "https://archive.org/details/cu31924003626698",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-cu31924003626698.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-pre-1931",
+   "license_basis": "Published in 1909, before January 1, 1931: the US copyright term has expired (17 U.S.C. 304; US Copyright Office Circular 15A; Cornell public-domain chart). Works first published abroad before 1931 are also in the US public domain.",
+   "license_url": "https://www.copyright.gov/circs/circ15a.pdf",
+   "license_local_path": "research/licenses/usc-17-304.txt",
+   "license_sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-304.txt",
+     "sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section304&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 304: duration of copyright in works subsisting on January 1, 1978 (maximum 95 years from publication)."
+    },
+    {
+     "path": "research/licenses/us-copyright-office-circular-15a.txt",
+     "sha256": "c1cc56e4f473c961103ae7bb1bf7d131f7fa9a37027ee0b7849e6cb9b36b49da",
+     "url": "https://www.copyright.gov/circs/circ15a.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "US Copyright Office Circular 15A: works published in the United States before January 1, 1931 are in the public domain."
+    },
+    {
+     "path": "research/licenses/cornell-public-domain-chart-2026.txt",
+     "sha256": "5a512b7a600320132cd657bdb87da4ef21fe61039f9f842f3f78d58f5acaf141",
+     "url": "https://guides.library.cornell.edu/copyright/publicdomain",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Hirtle, Cornell University Library chart (CC BY 4.0): published before 1931, in the public domain."
+    },
+    {
+     "path": "research/licenses/ia-cu31924003626698-metadata.json",
+     "sha256": "1a5b10eb53254e999c82fe3e85ebf925e07f7b2e16adbb5e9f3969423bc162ac",
+     "url": "https://archive.org/metadata/cu31924003626698/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1909; creator Radford, William A., 1865- ed; Johnson, Alfred S. (Alfred Sidney), b. 1860; Johnson, Bernard L; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "license_note": "Basis is the publication date in the Internet Archive item metadata; place of publication not separately verified.",
+   "sha256": "e6f5349831673c4dc6bee45cba5a8447908fcd3b47ec7014cfba30b83b72b6f8",
+   "words": 67151
+  },
+  {
+   "id": "pd:ia-cu31924015332889",
+   "title": "Radford's portfolio of details of building construction; a remarkable and unique collection of full-page plates, accurately drawn and reproduced to exact scale. Complete details for every style of interior trim, including special built-in features",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Pre-1931 books (Internet Archive)",
+   "source_url": "https://archive.org/details/cu31924015332889",
+   "source_citation": {
+    "author": "Radford, William A., 1865- ed; Johnson, Bernard L., joint ed; Rawson, Charles P., joint ed",
+    "title": "Radford's portfolio of details of building construction; a remarkable and unique collection of full-page plates, accurately drawn and reproduced to exact scale. Complete details for every style of interior trim, including special built-in features",
+    "year": "1911",
+    "publisher": "Chicago, Ill., The Radford Architectural Company",
+    "identifier": "Internet Archive identifier cu31924015332889",
+    "archive_url": "https://archive.org/details/cu31924015332889",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-cu31924015332889.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-pre-1931",
+   "license_basis": "Published in 1911, before January 1, 1931: the US copyright term has expired (17 U.S.C. 304; US Copyright Office Circular 15A; Cornell public-domain chart). Works first published abroad before 1931 are also in the US public domain.",
+   "license_url": "https://www.copyright.gov/circs/circ15a.pdf",
+   "license_local_path": "research/licenses/usc-17-304.txt",
+   "license_sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+   "license_fetched_at": "2026-10-03",
+   "license_confirmed": true,
+   "license_evidence": [
+    {
+     "path": "research/licenses/usc-17-304.txt",
+     "sha256": "0d0c7e95c8a5422e81918d08312989b1c49f0de02d0076aac970ab04a8a56eef",
+     "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section304&num=0&edition=prelim",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "17 U.S.C. 304: duration of copyright in works subsisting on January 1, 1978 (maximum 95 years from publication)."
+    },
+    {
+     "path": "research/licenses/us-copyright-office-circular-15a.txt",
+     "sha256": "c1cc56e4f473c961103ae7bb1bf7d131f7fa9a37027ee0b7849e6cb9b36b49da",
+     "url": "https://www.copyright.gov/circs/circ15a.pdf",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "US Copyright Office Circular 15A: works published in the United States before January 1, 1931 are in the public domain."
+    },
+    {
+     "path": "research/licenses/cornell-public-domain-chart-2026.txt",
+     "sha256": "5a512b7a600320132cd657bdb87da4ef21fe61039f9f842f3f78d58f5acaf141",
+     "url": "https://guides.library.cornell.edu/copyright/publicdomain",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Hirtle, Cornell University Library chart (CC BY 4.0): published before 1931, in the public domain."
+    },
+    {
+     "path": "research/licenses/ia-cu31924015332889-metadata.json",
+     "sha256": "86eda392514686ed299e3351e1d5c36e2a1acb9909ceb9f856ae23a51becc299",
+     "url": "https://archive.org/metadata/cu31924015332889/metadata",
+     "fetched_at": "2026-10-03",
+     "redistributable": true,
+     "note": "Item metadata: date 1911; creator Radford, William A., 1865- ed; Johnson, Bernard L., joint ed; Rawson, Charles P., joint ed; licenseurl none."
+    },
+    {
+     "path": "$ORI_CORPORA/licenses/ia-terms-of-use.html",
+     "sha256": "89bef33b2310511643405efb3c9b77661758cbe7c6302d68cf64f91fee6088da",
+     "url": "https://archive.org/about/terms.php",
+     "fetched_at": "2026-10-03",
+     "redistributable": false,
+     "note": "JavaScript shell only; Internet Archive terms text not captured (see research/licenses/internet-archive-terms-not-captured.md)."
+    }
+   ],
+   "fetched": "2026-10-03",
+   "strong_evidence": true,
+   "license_note": "Basis is the publication date in the Internet Archive item metadata; place of publication not separately verified.",
+   "sha256": "8ecc141bea0c2ff91686df20f550490aae97133d30adbd9d8f87e285e96b7870",
+   "words": 31241
+  },
+  {
+   "id": "pd:ia-cu31924003613597",
+   "title": "How to wire buildings; a manual of the art of interior wiring",
+   "class": "public_domain",
+   "role": "text_corpus",
+   "corpus_group": "Pre-1931 books (Internet Archive)",
+   "source_url": "https://archive.org/details/cu31924003613597",
+   "source_citation": {
+    "author": "Noll, Augustus",
+    "title": "How to wire buildings; a manual of the art of interior wiring",
+    "year": "1906",
+    "publisher": "New York, C. C. Shelley",
+    "identifier": "Internet Archive identifier cu31924003613597",
+    "archive_url": "https://archive.org/details/cu31924003613597",
+    "accessed": "2026-10-03"
+   },
+   "local_file": "ia-cu31924003613597.txt",
+   "text_source": "Internet Archive OCR (djvu.txt)",
+   "license_id": "US-PD-pre-1931",
    "license_basis": "Published in 1906, before January 1, 1931: the US copyright term has expired (17 U.S.C. 304; US Copyright Office Circular 15A; Cornell public-domain chart). Works first published abroad before 1931 are also in the US public domain.",
    "license_url": "https://www.copyright.gov/circs/circ15a.pdf",
    "license_local_path": "research/licenses/usc-17-304.txt",
