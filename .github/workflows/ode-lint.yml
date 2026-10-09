@@ -1,0 +1,16 @@
+# Copy to each repo as .github/workflows/ode-lint.yml
+# Lints every opened/edited issue against the ODE work-item form and labels it
+# `ode:record` or `ode:nonconforming`; every run also labels any open issue that
+# carries neither. Nothing else in the repo changes.
+name: ode-lint
+on:
+  issues:
+    types: [opened, edited, reopened]
+  workflow_dispatch:
+  schedule:
+    - cron: "17 6 * * 1"
+permissions:
+  issues: write
+jobs:
+  ode-lint:
+    uses: corelotorg/.github/.github/workflows/ode-lint.yml@v1
