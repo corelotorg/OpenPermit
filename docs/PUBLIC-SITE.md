@@ -23,6 +23,6 @@ python site/check.py _site
 python -m unittest discover -s site -p 'test_*.py'
 ```
 
-The site workflow uploads a checked artifact for review. It does not switch Pages settings, custom domains or DNS, and does not deploy a reference node. `/mcp` and `/health` are runtime routes, not static-site endpoints. Domain ownership, DNS, TLS, deployed site revision, and runtime authentication each require separate live receipts before cutover.
+The existing Pages deployment publishes the repository root. Generated route index pages, robots.txt and sitemap.xml are therefore committed at that root. Run `python site/publish_routes.py` after changing route sources; CI runs `python site/publish_routes.py --check` and rejects stale or missing copies. The site workflow also uploads a checked artifact for review. It does not switch Pages settings, custom domains or DNS, and does not deploy a reference node. `/mcp` and `/health` are runtime routes, not static-site endpoints. Domain ownership, DNS, TLS, deployed site revision, and runtime authentication each require separate live receipts before cutover.
 
 For a custom-domain deployment, rebuild with that verified domain as `--base-url` so sitemap and robots URLs match. Schema `$id` values remain stable identifiers and do not prove hosted availability.
