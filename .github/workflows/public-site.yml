@@ -1,10 +1,10 @@
 name: Public site release artifact
 on:
   pull_request:
-    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
+    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
   push:
     branches: [test, "release/**"]
-    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
+    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
   workflow_dispatch:
 permissions:
   contents: read
@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: "3.12"
       - run: python -m unittest discover -s site -p 'test_*.py'
+      - run: python site/publish_routes.py --check
       - run: python site/build.py --out _site
       - run: python site/check.py _site
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2

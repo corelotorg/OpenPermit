@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://openpermit.dev/sitemap.xml
+Sitemap: https://corelotorg.github.io/OpenPermit/sitemap.xml
