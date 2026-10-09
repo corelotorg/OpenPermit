@@ -1,0 +1,11 @@
+# Lints every opened/edited issue against the ODE work-item form and labels it
+# `ode:record` or `ode:nonconforming`. Nothing else in the repo changes.
+name: ode-lint
+on:
+  issues:
+    types: [opened, edited, reopened]
+permissions:
+  issues: write
+jobs:
+  ode-lint:
+    uses: corelotorg/.github/.github/workflows/ode-lint.yml@v1
