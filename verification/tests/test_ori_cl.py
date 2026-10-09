@@ -441,7 +441,7 @@ def test_ori_cl_sources_hold_no_code_text():
 
 
 FICTION = """R901 Lanterns
-R901.1 General. Every lantern post shall stand upright and shall be approved by the harbor warden. See Section R901.2.
+R901.1 General. Each lantern post shall stand upright; its permit shall be marked approved by the harbor warden. See Section R901.2.
 R901.2 Height. Lantern posts shall not exceed 9 feet where required by Table R901.2, and adequate spacing is permitted.
 R902 Moorings
 R902.1 Ropes. Mooring ropes must be sufficient for the vessel and meet ASTM D1234 or other approved standards.
