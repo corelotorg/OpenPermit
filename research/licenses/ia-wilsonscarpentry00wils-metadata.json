@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/wilsonscarpentry00wils/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "wilsonscarpentry00wils",
+  "title": "Wilson’s Carpentry and joinery / by John Wilson",
+  "creator": "Wilson, John",
+  "date": "1891",
+  "publisher": "Manchester [England] : Percy Bros.",
+  "collection": [
+   "university_maryland_cp",
+   "americana"
+  ],
+  "contributor": "University of Maryland, College Park",
+  "sponsor": "LYRASIS members and Sloan Foundation",
+  "language": "eng",
+  "publicdate": "2011-11-29 20:27:17"
+ }
+}

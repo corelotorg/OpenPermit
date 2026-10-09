@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-pdf-artifact-manifest-0.1.schema.json",
+  "title": "ORI PDF Plan-Set Artifact Manifest v0.1 Draft",
+  "description": "Records the exact PDF bytes received for one plan-set version: sha256-derived artifact ids, page anchors with per-page content hashes, the PDF/A claim as read from XMP (a claim, not validation), and explicit supersession of earlier versions. Reviewer evidence, not approval.",
+  "type": "object",
+  "required": ["manifest_profile", "label", "plan_set_id", "version", "supersedes", "submitted_by", "submitted_at", "artifacts"],
+  "properties": {
+    "manifest_profile": {"const": "ori-pdf-artifact-manifest-0.1"},
+    "label": {"const": "Reviewer evidence, not approval"},
+    "plan_set_id": {"type": "string", "minLength": 1},
+    "version": {"type": "integer", "minimum": 1},
+    "supersedes": {"type": "array", "items": {"$ref": "#/$defs/artifactId"}, "uniqueItems": true},
+    "submitted_by": {"type": "string", "minLength": 1},
+    "submitted_at": {"type": "string", "format": "date-time"},
+    "artifacts": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/artifact"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"version": {"minimum": 2}}}, "then": {"properties": {"supersedes": {"minItems": 1}}}}
+  ],
+  "additionalProperties": false,
+  "$defs": {
+    "artifactId": {"type": "string", "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"},
+    "artifact": {
+      "type": "object",
+      "required": ["artifact_id", "filename", "media_type", "sha256", "size_bytes", "page_count", "pdfa", "pages"],
+      "properties": {
+        "artifact_id": {"$ref": "#/$defs/artifactId"},
+        "filename": {"type": "string"},
+        "media_type": {"const": "application/pdf"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "size_bytes": {"type": "integer", "minimum": 1},
+        "pdf_version": {"type": ["string", "null"]},
+        "page_count": {"type": "integer", "minimum": 1},
+        "pdfa": {
+          "type": "object",
+          "required": ["claimed", "part", "conformance", "note"],
+          "properties": {
+            "claimed": {"type": "boolean"},
+            "part": {"type": ["integer", "null"]},
+            "conformance": {"type": ["string", "null"]},
+            "note": {"type": "string"}
+          }
+        },
+        "pages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["page", "page_label", "mediabox_pt", "content_sha256"],
+            "properties": {
+              "page": {"type": "integer", "minimum": 1},
+              "page_label": {"type": "string"},
+              "mediabox_pt": {"type": "array", "items": {"type": "number"}, "minItems": 4, "maxItems": 4},
+              "content_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

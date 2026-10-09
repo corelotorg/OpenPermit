@@ -1,32 +1,45 @@
 {
-  "id": "https://corelotorg.github.io/OpenPermit/",
+  "id": "https://openpermit.dev/",
   "name": "OpenPermit",
   "standard": "Open Regulatory Infrastructure",
   "version": "0.1.0-draft",
   "status": "public-working-draft",
-  "canonical_public_corpus": "https://corelotorg.github.io/OpenPermit/",
-  "vanity_domain_status": {
-    "openpermit.io": "dns-cutover-pending",
-    "openpermit.dev": "redirect-pending"
+  "site_hosting": {
+    "status": "release-prepared",
+    "note": "Public-site routes are built from site/routes.json; domain cutover and deployment require separate receipts.",
+    "route_manifest": "site/routes.json"
+  },
+  "domains": {
+    "openpermit.io": {
+      "role": "project",
+      "status": "pending"
+    },
+    "openpermit.dev": {
+      "role": "developers-spec-benchmark; schema $id host",
+      "status": "pending"
+    }
   },
   "canonical_repository": "https://github.com/corelotorg/OpenPermit",
   "published_branch": "test",
-  "charter": "https://corelotorg.github.io/OpenPermit/CHARTER.md",
-  "core_spec": "https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1-draft.md",
-  "schema": "https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1.schema.json",
-  "guidance_schema": "https://corelotorg.github.io/OpenPermit/spec/ori-guidance-profile-0.1.schema.json",
-  "jurisdiction_inventory_schema": "https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json",
-  "model_interface": "https://corelotorg.github.io/OpenPermit/spec/model-interface-0.1-draft.md",
-  "precedence_graph": "https://corelotorg.github.io/OpenPermit/spec/precedence-graph-0.1-draft.md",
-  "challenge_protocol": "https://corelotorg.github.io/OpenPermit/spec/challenge-protocol-0.1-draft.md",
-  "evidence_attestation": "https://corelotorg.github.io/OpenPermit/spec/evidence-attestation-0.1-draft.md",
-  "capability_registry": "https://corelotorg.github.io/OpenPermit/spec/capability-registry-0.1-draft.md",
+  "charter": "https://github.com/corelotorg/OpenPermit/blob/test/CHARTER.md",
+  "core_spec": "https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-core-0.1-draft.md",
+  "schema": "https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-core-0.1.schema.json",
+  "guidance_schema": "https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-guidance-profile-0.1.schema.json",
+  "jurisdiction_inventory_schema": "https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-jurisdiction-inventory-0.1.schema.json",
+  "model_interface": "https://github.com/corelotorg/OpenPermit/blob/test/spec/model-interface-0.1-draft.md",
+  "precedence_graph": "https://github.com/corelotorg/OpenPermit/blob/test/spec/precedence-graph-0.1-draft.md",
+  "challenge_protocol": "https://github.com/corelotorg/OpenPermit/blob/test/spec/challenge-protocol-0.1-draft.md",
+  "evidence_attestation": "https://github.com/corelotorg/OpenPermit/blob/test/spec/evidence-attestation-0.1-draft.md",
+  "capability_registry": "https://github.com/corelotorg/OpenPermit/blob/test/spec/capability-registry-0.1-draft.md",
   "guidance_profiles": [
-    "https://corelotorg.github.io/OpenPermit/profiles/federal/hud-home-construction-best-practices-2026.json",
-    "https://corelotorg.github.io/OpenPermit/profiles/federal/regulatory-inventory-2025.json"
+    "https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/hud-home-construction-best-practices-2026.json",
+    "https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/regulatory-inventory-2025.json"
   ],
-  "jurisdiction_inventories": [
-    "https://corelotorg.github.io/OpenPermit/profiles/jurisdictions/us/va/fredericksburg/residential-new-construction-2026.json"
+  "project_target_profiles": [
+    "https://github.com/corelotorg/OpenPermit/blob/test/profiles/project/ori-sf-review-target-24h-2026.json"
+  ],
+  "example_jurisdiction_inventories": [
+    "https://github.com/corelotorg/OpenPermit/blob/test/profiles/examples/example-city/residential-new-construction-example.json"
   ],
   "conformance": {
     "repository": "https://github.com/corelotorg/OpenPermit/tree/test/conformance",
@@ -71,5 +84,24 @@
     "authority-preserving",
     "runnable"
   ],
-  "legal_boundary": "Guidance-profile alignment and model/validator output are not determinations of legal compliance, local legal obligation, professional authority, regulatory approval, or government endorsement."
+  "legal_boundary": "Guidance-profile alignment and model/validator output are not determinations of legal compliance, local legal obligation, professional authority, regulatory approval, or government endorsement.",
+  "scope": "Detached single-family new homes; 2021 IRC base with the 2021 Virginia Residential Code as the first override layer.",
+  "guardrails": [
+    "A machine check is never approval.",
+    "Unknown is not fail.",
+    "Building-code text is cited and linked, never reproduced.",
+    "Guidance is not law."
+  ],
+  "licenses": {
+    "code": "Apache-2.0",
+    "prose": "CC-BY-SA-4.0 (files previously dedicated CC0 stay CC0)",
+    "schemas_vocab_data_fixtures": "CC0-1.0",
+    "map": "https://github.com/corelotorg/OpenPermit/blob/test/LICENSE-SPEC.md"
+  },
+  "governance_boundary": "https://github.com/corelotorg/OpenPermit/blob/test/docs/GOVERNANCE-BOUNDARY.md",
+  "model_verification": {
+    "name": "OpenPermit Model Verification",
+    "status": "research-and-reference-assemblies",
+    "route": "model-verification/"
+  }
 }

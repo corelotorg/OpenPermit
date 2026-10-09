@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/howtoownyourhome00unit/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "howtoownyourhome00unit",
+  "title": "How to own your home [microform]: a handbook for prospective home owners",
+  "creator": "United States. National Bureau of Standards; Taylor, James S. (James Spear), 1896-1979; Gries, John M. (John Matthew), 1877-",
+  "date": "1923",
+  "publisher": "Washington, Govt. Print. Off.",
+  "collection": [
+   "transcluding",
+   "microfilm"
+  ],
+  "contributor": "Columbia University Libraries",
+  "sponsor": "Columbia University Libraries",
+  "language": "eng",
+  "publicdate": "2015-03-30 14:36:59"
+ }
+}

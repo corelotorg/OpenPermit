@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/FM5-10/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "FM5-10",
+  "title": "FM 5-10 Engineer Field Manual, Communications, Construction, and Utilities, 1940",
+  "creator": "United States. War Department",
+  "date": "1940-09-09",
+  "publisher": "Washington, D.C. : G.P.O.",
+  "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+  "collection": [
+   "wwIIarchive",
+   "folkscanomy_history",
+   "folkscanomy"
+  ],
+  "language": "eng",
+  "publicdate": "2014-02-10 12:46:45"
+ }
+}

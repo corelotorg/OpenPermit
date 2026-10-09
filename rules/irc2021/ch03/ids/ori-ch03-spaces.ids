@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0. ORI information-requirement specification (DRAFT).
+     IDS 1.0 expresses the non-geometric information a rule unit needs.
+     IDS cannot express geometric conditions; ORI's evaluator does that part (verification/). -->
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>ORI Chapter 3: spaces</ids:title>
+    <ids:version>0.1.0-draft</ids:version>
+    <ids:author>ori@example.org</ids:author>
+    <ids:date>2026-09-27</ids:date>
+    <ids:purpose>Reviewer evidence for 2021 IRC / 2021 VRC Chapter 3 rule units. Not approval.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Spaces declare ORI use category" ifcVersion="IFC4" identifier="ORI-CH03-SPACE-01" description="Each space declares a use category so the correct ceiling-height and room-area thresholds can be chosen (R304.1, R305.1)." instructions="Set Pset_ORI_SpaceUse.UseCategory to habitable, bathroom, toilet, laundry, kitchen, hallway or other.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCSPACE</ids:simpleValue></ids:name></ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCLABEL" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_SpaceUse</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>UseCategory</ids:simpleValue></ids:baseName>
+          <ids:value><xs:restriction base="xs:string"><xs:enumeration value="habitable"/><xs:enumeration value="bathroom"/><xs:enumeration value="toilet"/><xs:enumeration value="laundry"/><xs:enumeration value="kitchen"/><xs:enumeration value="hallway"/><xs:enumeration value="other"/></xs:restriction></ids:value>
+        </ids:property>
+        <ids:attribute cardinality="required"><ids:name><ids:simpleValue>Representation</ids:simpleValue></ids:name></ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

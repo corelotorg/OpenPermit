@@ -1,0 +1,1371 @@
+{
+ "type": "FeatureCollection",
+ "name": "ori-sample-house.pdf p1 (real)",
+ "ori_overlay_id": "urn:ori:overlay:groundtruth:ori-sample-house.pdf",
+ "units": "in",
+ "license_id": "CC0-1.0",
+ "features": [
+  {
+   "type": "Feature",
+   "id": "p1-WS",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       144.0,
+       216.0
+      ],
+      [
+       528.0,
+       216.0
+      ],
+      [
+       528.0,
+       222.0
+      ],
+      [
+       144.0,
+       222.0
+      ],
+      [
+       144.0,
+       216.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-WS",
+    "ifc_class": "IfcWall",
+    "name": "WS",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 6.0,
+    "p_length_in": 378.0,
+    "p_exterior": true
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-WN",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       144.0,
+       546.0
+      ],
+      [
+       528.0,
+       546.0
+      ],
+      [
+       528.0,
+       552.0
+      ],
+      [
+       144.0,
+       552.0
+      ],
+      [
+       144.0,
+       546.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-WN",
+    "ifc_class": "IfcWall",
+    "name": "WN",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 6.0,
+    "p_length_in": 378.0,
+    "p_exterior": true
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-WW",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       144.0,
+       216.0
+      ],
+      [
+       150.0,
+       216.0
+      ],
+      [
+       150.0,
+       552.0
+      ],
+      [
+       144.0,
+       552.0
+      ],
+      [
+       144.0,
+       216.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-WW",
+    "ifc_class": "IfcWall",
+    "name": "WW",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 6.0,
+    "p_length_in": 330.0,
+    "p_exterior": true
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-WE",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       522.0,
+       216.0
+      ],
+      [
+       528.0,
+       216.0
+      ],
+      [
+       528.0,
+       552.0
+      ],
+      [
+       522.0,
+       552.0
+      ],
+      [
+       522.0,
+       216.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-WE",
+    "ifc_class": "IfcWall",
+    "name": "WE",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 6.0,
+    "p_length_in": 330.0,
+    "p_exterior": true
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-V1",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       348.0,
+       222.0
+      ],
+      [
+       352.5,
+       222.0
+      ],
+      [
+       352.5,
+       546.0
+      ],
+      [
+       348.0,
+       546.0
+      ],
+      [
+       348.0,
+       222.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-V1",
+    "ifc_class": "IfcWall",
+    "name": "V1",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 4.5,
+    "p_length_in": 324.0,
+    "p_exterior": false
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-HL",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       150.0,
+       420.0
+      ],
+      [
+       348.0,
+       420.0
+      ],
+      [
+       348.0,
+       424.5
+      ],
+      [
+       150.0,
+       424.5
+      ],
+      [
+       150.0,
+       420.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-HL",
+    "ifc_class": "IfcWall",
+    "name": "HL",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 4.5,
+    "p_length_in": 198.0,
+    "p_exterior": false
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-H1",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       352.5,
+       361.5
+      ],
+      [
+       522.0,
+       361.5
+      ],
+      [
+       522.0,
+       366.0
+      ],
+      [
+       352.5,
+       366.0
+      ],
+      [
+       352.5,
+       361.5
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-H1",
+    "ifc_class": "IfcWall",
+    "name": "H1",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 4.5,
+    "p_length_in": 169.5,
+    "p_exterior": false
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-V2",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       478.0,
+       222.0
+      ],
+      [
+       482.5,
+       222.0
+      ],
+      [
+       482.5,
+       361.5
+      ],
+      [
+       478.0,
+       361.5
+      ],
+      [
+       478.0,
+       222.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-V2",
+    "ifc_class": "IfcWall",
+    "name": "V2",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_thickness_in": 4.5,
+    "p_length_in": 139.5,
+    "p_exterior": false
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D101",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       374.0,
+       216.0
+      ],
+      [
+       410.0,
+       216.0
+      ],
+      [
+       410.0,
+       222.0
+      ],
+      [
+       374.0,
+       222.0
+      ],
+      [
+       374.0,
+       216.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D101",
+    "ifc_class": "IfcDoor",
+    "name": "D101",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 36,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D102",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       348.0,
+       256.0
+      ],
+      [
+       352.5,
+       256.0
+      ],
+      [
+       352.5,
+       288.0
+      ],
+      [
+       348.0,
+       288.0
+      ],
+      [
+       348.0,
+       256.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D102",
+    "ifc_class": "IfcDoor",
+    "name": "D102",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 32,
+    "p_host_thickness_in": 4.5
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D103",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       304.0,
+       420.0
+      ],
+      [
+       336.0,
+       420.0
+      ],
+      [
+       336.0,
+       424.5
+      ],
+      [
+       304.0,
+       424.5
+      ],
+      [
+       304.0,
+       420.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D103",
+    "ifc_class": "IfcDoor",
+    "name": "D103",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 32,
+    "p_host_thickness_in": 4.5
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D104",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       348.0,
+       476.0
+      ],
+      [
+       352.5,
+       476.0
+      ],
+      [
+       352.5,
+       508.0
+      ],
+      [
+       348.0,
+       508.0
+      ],
+      [
+       348.0,
+       476.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D104",
+    "ifc_class": "IfcDoor",
+    "name": "D104",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 32,
+    "p_host_thickness_in": 4.5
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D105",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       364.0,
+       361.5
+      ],
+      [
+       396.0,
+       361.5
+      ],
+      [
+       396.0,
+       366.0
+      ],
+      [
+       364.0,
+       366.0
+      ],
+      [
+       364.0,
+       361.5
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D105",
+    "ifc_class": "IfcDoor",
+    "name": "D105",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 32,
+    "p_host_thickness_in": 4.5
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D106",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       488.0,
+       361.5
+      ],
+      [
+       516.0,
+       361.5
+      ],
+      [
+       516.0,
+       366.0
+      ],
+      [
+       488.0,
+       366.0
+      ],
+      [
+       488.0,
+       361.5
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D106",
+    "ifc_class": "IfcDoor",
+    "name": "D106",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 28,
+    "p_host_thickness_in": 4.5
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-D107",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       444.0,
+       546.0
+      ],
+      [
+       480.0,
+       546.0
+      ],
+      [
+       480.0,
+       552.0
+      ],
+      [
+       444.0,
+       552.0
+      ],
+      [
+       444.0,
+       546.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-D107",
+    "ifc_class": "IfcDoor",
+    "name": "D107",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 36,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W101",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       204.0,
+       216.0
+      ],
+      [
+       264.0,
+       216.0
+      ],
+      [
+       264.0,
+       222.0
+      ],
+      [
+       204.0,
+       222.0
+      ],
+      [
+       204.0,
+       216.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W101",
+    "ifc_class": "IfcWindow",
+    "name": "W101",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 60,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W102",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       144.0,
+       296.0
+      ],
+      [
+       150.0,
+       296.0
+      ],
+      [
+       150.0,
+       344.0
+      ],
+      [
+       144.0,
+       344.0
+      ],
+      [
+       144.0,
+       296.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W102",
+    "ifc_class": "IfcWindow",
+    "name": "W102",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 48,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W103",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       144.0,
+       456.0
+      ],
+      [
+       150.0,
+       456.0
+      ],
+      [
+       150.0,
+       504.0
+      ],
+      [
+       144.0,
+       504.0
+      ],
+      [
+       144.0,
+       456.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W103",
+    "ifc_class": "IfcWindow",
+    "name": "W103",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 48,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W104",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       214.0,
+       546.0
+      ],
+      [
+       274.0,
+       546.0
+      ],
+      [
+       274.0,
+       552.0
+      ],
+      [
+       214.0,
+       552.0
+      ],
+      [
+       214.0,
+       546.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W104",
+    "ifc_class": "IfcWindow",
+    "name": "W104",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 60,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W105",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       364.0,
+       546.0
+      ],
+      [
+       412.0,
+       546.0
+      ],
+      [
+       412.0,
+       552.0
+      ],
+      [
+       364.0,
+       552.0
+      ],
+      [
+       364.0,
+       546.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W105",
+    "ifc_class": "IfcWindow",
+    "name": "W105",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 48,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W106",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       522.0,
+       436.0
+      ],
+      [
+       528.0,
+       436.0
+      ],
+      [
+       528.0,
+       496.0
+      ],
+      [
+       522.0,
+       496.0
+      ],
+      [
+       522.0,
+       436.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W106",
+    "ifc_class": "IfcWindow",
+    "name": "W106",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 60,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-W107",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       522.0,
+       306.0
+      ],
+      [
+       528.0,
+       306.0
+      ],
+      [
+       528.0,
+       330.0
+      ],
+      [
+       522.0,
+       330.0
+      ],
+      [
+       522.0,
+       306.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-W107",
+    "ifc_class": "IfcWindow",
+    "name": "W107",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_width_in": 24,
+    "p_host_thickness_in": 6.0
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-S101",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       150.0,
+       222.0
+      ],
+      [
+       348.0,
+       222.0
+      ],
+      [
+       348.0,
+       420.0
+      ],
+      [
+       150.0,
+       420.0
+      ],
+      [
+       150.0,
+       222.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-S101",
+    "ifc_class": "IfcSpace",
+    "name": "LIVING",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_area_ft2": 272.25,
+    "p_use": "habitable",
+    "p_label": "LIVING"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-S102",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       150.0,
+       424.5
+      ],
+      [
+       348.0,
+       424.5
+      ],
+      [
+       348.0,
+       546.0
+      ],
+      [
+       150.0,
+       546.0
+      ],
+      [
+       150.0,
+       424.5
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-S102",
+    "ifc_class": "IfcSpace",
+    "name": "DEN",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_area_ft2": 167.062,
+    "p_use": "habitable",
+    "p_label": "DEN"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-S103",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       352.5,
+       222.0
+      ],
+      [
+       478.0,
+       222.0
+      ],
+      [
+       478.0,
+       361.5
+      ],
+      [
+       352.5,
+       361.5
+      ],
+      [
+       352.5,
+       222.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-S103",
+    "ifc_class": "IfcSpace",
+    "name": "FOYER",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_area_ft2": 121.578,
+    "p_use": "hallway",
+    "p_label": "FOYER"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-S104",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       482.5,
+       222.0
+      ],
+      [
+       522.0,
+       222.0
+      ],
+      [
+       522.0,
+       361.5
+      ],
+      [
+       482.5,
+       361.5
+      ],
+      [
+       482.5,
+       222.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-S104",
+    "ifc_class": "IfcSpace",
+    "name": "POWDER / LAUNDRY",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_area_ft2": 38.266,
+    "p_use": "bathroom",
+    "p_label": "POWDER / LAUNDRY"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-S105",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       352.5,
+       366.0
+      ],
+      [
+       522.0,
+       366.0
+      ],
+      [
+       522.0,
+       546.0
+      ],
+      [
+       352.5,
+       546.0
+      ],
+      [
+       352.5,
+       366.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-S105",
+    "ifc_class": "IfcSpace",
+    "name": "KITCHEN / DINING",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_area_ft2": 211.875,
+    "p_use": "kitchen",
+    "p_label": "KITCHEN / DINING"
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-ST1",
+   "geometry": {
+    "type": "Polygon",
+    "coordinates": [
+     [
+      [
+       442.0,
+       230.0
+      ],
+      [
+       478.0,
+       230.0
+      ],
+      [
+       478.0,
+       360.0
+      ],
+      [
+       442.0,
+       360.0
+      ],
+      [
+       442.0,
+       230.0
+      ]
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-ST1",
+    "ifc_class": "IfcStair",
+    "name": "ST1",
+    "annotation_type": null,
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_riser_count": 14,
+    "p_tread_count": 13,
+    "p_tread_depth_in": 10.0,
+    "p_width_in": 36,
+    "p_direction": "UP",
+    "p_riser_height_in": null,
+    "p_riser_height_note": "Not drawn in plan; the sheet note gives 7 1/2 in, which is text, not geometry."
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM1",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      144.0,
+      156.0
+     ],
+     [
+      528.0,
+      156.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM1",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "32'-0\"",
+    "p_value_in": 384
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM2",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      84.0,
+      216.0
+     ],
+     [
+      84.0,
+      552.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM2",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "28'-0\"",
+    "p_value_in": 336
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM3",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      144.0,
+      600.0
+     ],
+     [
+      350.25,
+      600.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM3",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "17'-2 1/4\"",
+    "p_value_in": 206.25
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM4",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      350.25,
+      600.0
+     ],
+     [
+      528.0,
+      600.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM4",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "14'-9 3/4\"",
+    "p_value_in": 177.75
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM5",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      576.0,
+      216.0
+     ],
+     [
+      576.0,
+      363.75
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM5",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "12'-3 3/4\"",
+    "p_value_in": 147.75
+   }
+  },
+  {
+   "type": "Feature",
+   "id": "p1-DIM6",
+   "geometry": {
+    "type": "LineString",
+    "coordinates": [
+     [
+      576.0,
+      363.75
+     ],
+     [
+      576.0,
+      552.0
+     ]
+    ]
+   },
+   "properties": {
+    "id": "p1-DIM6",
+    "ifc_class": "IfcAnnotation",
+    "name": null,
+    "annotation_type": "dimension",
+    "method": "authored_ground_truth",
+    "review_status": "confirmed",
+    "confidence": 1.0,
+    "p_text": "15'-8 1/4\"",
+    "p_value_in": 188.25
+   }
+  }
+ ]
+}

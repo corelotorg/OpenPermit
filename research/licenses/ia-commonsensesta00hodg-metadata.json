@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/commonsensesta00hodg/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "commonsensesta00hodg",
+  "title": "Common-sense stair building and handrailing",
+  "creator": "Hodgson, Frederick Thomas, 1836-1919",
+  "date": "1903",
+  "publisher": "Chicago, F. J. Drake & Co",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2011-06-20 14:53:07"
+ }
+}

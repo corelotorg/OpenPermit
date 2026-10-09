@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/gri_33125001410881/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "gri_33125001410881",
+  "title": "Masonry : a short text-book on masonry construction, including descriptions of the materials used, their preparation and arrangement in structures",
+  "creator": "Howe, Malverd A. (Malverd Abijah), 1863-",
+  "date": "1915",
+  "publisher": "New York : J. Wiley & Sons ; London : Chapman & Hall",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "collection": [
+   "getty",
+   "americana"
+  ],
+  "contributor": "Getty Research Institute",
+  "sponsor": "Getty Research Institute",
+  "language": "eng",
+  "publicdate": "2015-01-26 21:54:43"
+ }
+}

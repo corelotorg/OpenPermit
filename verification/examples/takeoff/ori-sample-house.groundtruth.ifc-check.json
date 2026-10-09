@@ -1,0 +1,2812 @@
+{
+ "report_type": "ori-verification-run",
+ "report_version": "0.1-draft",
+ "label": "Reviewer evidence, not approval",
+ "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+ "is_approval": false,
+ "run_id": "60d3c11cf08fcc4c",
+ "jurisdiction": "urn:ori:jurisdiction:us-va",
+ "validator": "urn:ori:validator:ori-verify",
+ "validator_version": "0.1.0",
+ "executed_at": "2026-10-03T00:00:00Z",
+ "artifact": {
+  "artifact_id": "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50",
+  "media_type": "application/x-step",
+  "schema": "IFC4X3",
+  "filename": "ori-sample-house.groundtruth.ifc",
+  "sha256": "238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50",
+  "size_bytes": 143569
+ },
+ "counts": {
+  "pass": 15,
+  "fail": 0,
+  "unknown": 0,
+  "not_applicable": 15
+ },
+ "evidence": [
+  {
+   "id": "urn:ori:evidence:60d3c11cf08fcc4c:input",
+   "type": "Evidence",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [],
+   "source": [],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "artifact": {
+     "artifact_id": "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50",
+     "media_type": "application/x-step",
+     "schema": "IFC4X3",
+     "filename": "ori-sample-house.groundtruth.ifc",
+     "sha256": "238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50",
+     "size_bytes": 143569
+    }
+   },
+   "evidence_type": "ifc_model",
+   "artifact": "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50",
+   "captured_by": "urn:ori:validator:ori-verify",
+   "captured_at": "2026-10-03T00:00:00Z",
+   "spatial_anchor": null,
+   "integrity": {
+    "algorithm": "sha256",
+    "digest": "238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   }
+  }
+ ],
+ "records": [
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0001",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Room area 272.25 ft2 >= 70 ft2.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:2_S5_jm4T4IhIvigDVPa78",
+     "label": "LIVING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+      "ifc_class": "IfcSpace",
+      "name": "LIVING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       2.667,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "floor_area": 272.25,
+     "unit": "ft2"
+    },
+    "required": [
+     {
+      "parameter": "min_habitable_room_area",
+      "comparator": ">=",
+      "value": 70,
+      "unit": "ft2",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "floor_area": {
+      "value": 272.25,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+       "ifc_class": "IfcSpace",
+       "name": "LIVING",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        2.667,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace footprint area"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0002",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Room area 167.06 ft2 >= 70 ft2.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:03LCBvpB92ieharDot4ehZ",
+     "label": "DEN",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+      "ifc_class": "IfcSpace",
+      "name": "DEN",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       6.83895,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "floor_area": 167.0625,
+     "unit": "ft2"
+    },
+    "required": [
+     {
+      "parameter": "min_habitable_room_area",
+      "comparator": ">=",
+      "value": 70,
+      "unit": "ft2",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "floor_area": {
+      "value": 167.0625,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+       "ifc_class": "IfcSpace",
+       "name": "DEN",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        6.83895,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace footprint area"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0003",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'hallway' is not a habitable room.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0KgtltABr6ke3voSKFmyuS",
+     "label": "FOYER",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0KgtltABr6ke3voSKFmyuS",
+      "ifc_class": "IfcSpace",
+      "name": "FOYER",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0004",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'bathroom' is not a habitable room.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1G9cdMr519vePUXfe2sCf5",
+     "label": "POWDER / LAUNDRY",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1G9cdMr519vePUXfe2sCf5",
+      "ifc_class": "IfcSpace",
+      "name": "POWDER / LAUNDRY",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0005",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "exception_applies",
+    "message": "Kitchens are excepted from the minimum room area.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0UHp5L54bE3xIdX9cE9qcU",
+     "label": "KITCHEN / DINING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0UHp5L54bE3xIdX9cE9qcU",
+      "ifc_class": "IfcSpace",
+      "name": "KITCHEN / DINING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.096,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0006",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Room area 156.75 ft2 >= 70 ft2.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0hYUil83b3Hv_eRMXiGKnV",
+     "label": "BEDROOM 2",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 2",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       1.6002,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "floor_area": 156.75,
+     "unit": "ft2"
+    },
+    "required": [
+     {
+      "parameter": "min_habitable_room_area",
+      "comparator": ">=",
+      "value": 70,
+      "unit": "ft2",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "floor_area": {
+      "value": 156.75,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 2",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        1.6002,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace footprint area"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0007",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Room area 282.56 ft2 >= 70 ft2.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1f6dublFj1bePGZ0bYSFfS",
+     "label": "BEDROOM 1",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 1",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       5.77215,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "floor_area": 282.5625,
+     "unit": "ft2"
+    },
+    "required": [
+     {
+      "parameter": "min_habitable_room_area",
+      "comparator": ">=",
+      "value": 70,
+      "unit": "ft2",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "floor_area": {
+      "value": 282.5625,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 1",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        5.77215,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace footprint area"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0008",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'hallway' is not a habitable room.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ovDPKDif5_PmQ22i48Cbo",
+     "label": "HALL",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ovDPKDif5_PmQ22i48Cbo",
+      "ifc_class": "IfcSpace",
+      "name": "HALL",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0009",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'bathroom' is not a habitable room.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ihM6DwJT5HwQfjmN5bqt9",
+     "label": "BATH",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ihM6DwJT5HwQfjmN5bqt9",
+      "ifc_class": "IfcSpace",
+      "name": "BATH",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0010",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Room area 164.20 ft2 >= 70 ft2.",
+    "section": "R304.1",
+    "subsection_part": null,
+    "rule_unit_title": "Minimum floor area of habitable rooms",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1iltq2vOLFugjsdGk28GiS",
+     "label": "BEDROOM 3",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 3",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.61035,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "floor_area": 164.203125,
+     "unit": "ft2"
+    },
+    "required": [
+     {
+      "parameter": "min_habitable_room_area",
+      "comparator": ">=",
+      "value": 70,
+      "unit": "ft2",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "floor_area": {
+      "value": 164.203125,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 3",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        7.44855,
+        6.61035,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace footprint area"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0011",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:2_S5_jm4T4IhIvigDVPa78",
+     "label": "LIVING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+      "ifc_class": "IfcSpace",
+      "name": "LIVING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       2.667,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "habitable"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+       "ifc_class": "IfcSpace",
+       "name": "LIVING",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        2.667,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "habitable",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+       "ifc_class": "IfcSpace",
+       "name": "LIVING",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        2.667,
+        1.2192
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0012",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:03LCBvpB92ieharDot4ehZ",
+     "label": "DEN",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+      "ifc_class": "IfcSpace",
+      "name": "DEN",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       6.83895,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "habitable"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+       "ifc_class": "IfcSpace",
+       "name": "DEN",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        6.83895,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "habitable",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+       "ifc_class": "IfcSpace",
+       "name": "DEN",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        6.83895,
+        1.2192
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0013",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0KgtltABr6ke3voSKFmyuS",
+     "label": "FOYER",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0KgtltABr6ke3voSKFmyuS",
+      "ifc_class": "IfcSpace",
+      "name": "FOYER",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "hallway"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0KgtltABr6ke3voSKFmyuS",
+       "ifc_class": "IfcSpace",
+       "name": "FOYER",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        6.88975,
+        1.92405,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "hallway",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0KgtltABr6ke3voSKFmyuS",
+       "ifc_class": "IfcSpace",
+       "name": "FOYER",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        6.88975,
+        1.92405,
+        1.2192
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0014",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'bathroom' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1G9cdMr519vePUXfe2sCf5",
+     "label": "POWDER / LAUNDRY",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1G9cdMr519vePUXfe2sCf5",
+      "ifc_class": "IfcSpace",
+      "name": "POWDER / LAUNDRY",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0015",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0UHp5L54bE3xIdX9cE9qcU",
+     "label": "KITCHEN / DINING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0UHp5L54bE3xIdX9cE9qcU",
+      "ifc_class": "IfcSpace",
+      "name": "KITCHEN / DINING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.096,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "kitchen"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0UHp5L54bE3xIdX9cE9qcU",
+       "ifc_class": "IfcSpace",
+       "name": "KITCHEN / DINING",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        7.44855,
+        6.096,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "kitchen",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0UHp5L54bE3xIdX9cE9qcU",
+       "ifc_class": "IfcSpace",
+       "name": "KITCHEN / DINING",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        7.44855,
+        6.096,
+        1.2192
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0016",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0hYUil83b3Hv_eRMXiGKnV",
+     "label": "BEDROOM 2",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 2",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       1.6002,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "habitable"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 2",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        1.6002,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "habitable",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 2",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        1.6002,
+        3.8862
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0017",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1f6dublFj1bePGZ0bYSFfS",
+     "label": "BEDROOM 1",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 1",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       5.77215,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "habitable"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 1",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        5.77215,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "habitable",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 1",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        2.667,
+        5.77215,
+        3.8862
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0018",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ovDPKDif5_PmQ22i48Cbo",
+     "label": "HALL",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ovDPKDif5_PmQ22i48Cbo",
+      "ifc_class": "IfcSpace",
+      "name": "HALL",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "hallway"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "3ovDPKDif5_PmQ22i48Cbo",
+       "ifc_class": "IfcSpace",
+       "name": "HALL",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        6.88975,
+        2.4384,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "hallway",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "3ovDPKDif5_PmQ22i48Cbo",
+       "ifc_class": "IfcSpace",
+       "name": "HALL",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        6.88975,
+        2.4384,
+        3.8862
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0019",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'bathroom' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ihM6DwJT5HwQfjmN5bqt9",
+     "label": "BATH",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ihM6DwJT5HwQfjmN5bqt9",
+      "ifc_class": "IfcSpace",
+      "name": "BATH",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0020",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 84 in.",
+    "section": "R305.1",
+    "subsection_part": "habitable",
+    "rule_unit_title": "Ceiling height in living spaces and halls",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1iltq2vOLFugjsdGk28GiS",
+     "label": "BEDROOM 3",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 3",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.61035,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "habitable"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 84,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 3",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        7.44855,
+        6.61035,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "habitable",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+       "ifc_class": "IfcSpace",
+       "name": "BEDROOM 3",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        7.44855,
+        6.61035,
+        3.8862
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0021",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'habitable' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:2_S5_jm4T4IhIvigDVPa78",
+     "label": "LIVING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "2_S5_jm4T4IhIvigDVPa78",
+      "ifc_class": "IfcSpace",
+      "name": "LIVING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       2.667,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0022",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'habitable' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:03LCBvpB92ieharDot4ehZ",
+     "label": "DEN",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "03LCBvpB92ieharDot4ehZ",
+      "ifc_class": "IfcSpace",
+      "name": "DEN",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       6.83895,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0023",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'hallway' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0KgtltABr6ke3voSKFmyuS",
+     "label": "FOYER",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0KgtltABr6ke3voSKFmyuS",
+      "ifc_class": "IfcSpace",
+      "name": "FOYER",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0024",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 80 in.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1G9cdMr519vePUXfe2sCf5",
+     "label": "POWDER / LAUNDRY",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1G9cdMr519vePUXfe2sCf5",
+      "ifc_class": "IfcSpace",
+      "name": "POWDER / LAUNDRY",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       1.92405,
+       1.2192
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "bathroom"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 80,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1G9cdMr519vePUXfe2sCf5",
+       "ifc_class": "IfcSpace",
+       "name": "POWDER / LAUNDRY",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        9.09955,
+        1.92405,
+        1.2192
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "bathroom",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "1G9cdMr519vePUXfe2sCf5",
+       "ifc_class": "IfcSpace",
+       "name": "POWDER / LAUNDRY",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        9.09955,
+        1.92405,
+        1.2192
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0025",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'kitchen' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0UHp5L54bE3xIdX9cE9qcU",
+     "label": "KITCHEN / DINING",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0UHp5L54bE3xIdX9cE9qcU",
+      "ifc_class": "IfcSpace",
+      "name": "KITCHEN / DINING",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.096,
+       1.2192
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0026",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'habitable' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:0hYUil83b3Hv_eRMXiGKnV",
+     "label": "BEDROOM 2",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "0hYUil83b3Hv_eRMXiGKnV",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 2",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       1.6002,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0027",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'habitable' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1f6dublFj1bePGZ0bYSFfS",
+     "label": "BEDROOM 1",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1f6dublFj1bePGZ0bYSFfS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 1",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       2.667,
+       5.77215,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0028",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'hallway' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ovDPKDif5_PmQ22i48Cbo",
+     "label": "HALL",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ovDPKDif5_PmQ22i48Cbo",
+      "ifc_class": "IfcSpace",
+      "name": "HALL",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       6.88975,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0029",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "pass",
+    "reason_code": "threshold_met",
+    "message": "Ceiling height 96.00 in >= 80 in.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:3ihM6DwJT5HwQfjmN5bqt9",
+     "label": "BATH",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "3ihM6DwJT5HwQfjmN5bqt9",
+      "ifc_class": "IfcSpace",
+      "name": "BATH",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       9.09955,
+       2.4384,
+       3.8862
+      ]
+     }
+    },
+    "measured": {
+     "ceiling_height": 96.0,
+     "unit": "in",
+     "space_use": "bathroom"
+    },
+    "required": [
+     {
+      "parameter": "min_ceiling_height",
+      "comparator": ">=",
+      "value": 80,
+      "unit": "in",
+      "layer": "us-va:vrc-2021",
+      "value_status": "sourced_secondary",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ],
+    "facts_used": {
+     "ceiling_height": {
+      "value": 96.0,
+      "origin": "ifc_geometry",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "3ihM6DwJT5HwQfjmN5bqt9",
+       "ifc_class": "IfcSpace",
+       "name": "BATH",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        9.09955,
+        2.4384,
+        3.8862
+       ]
+      },
+      "note": "IfcSpace body top minus bottom"
+     },
+     "space_use": {
+      "value": "bathroom",
+      "origin": "ifc_property",
+      "anchor": {
+       "type": "ifc_element",
+       "ifc_guid": "3ihM6DwJT5HwQfjmN5bqt9",
+       "ifc_class": "IfcSpace",
+       "name": "BATH",
+       "model": "ori-sample-house.groundtruth.ifc",
+       "centroid_m": [
+        9.09955,
+        2.4384,
+        3.8862
+       ]
+      },
+      "note": "Pset_ORI_SpaceUse.UseCategory"
+     }
+    },
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "pass",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  },
+  {
+   "id": "urn:ori:verification:60d3c11cf08fcc4c:0030",
+   "type": "Verification",
+   "version": "1",
+   "effective_from": null,
+   "effective_to": null,
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:vrc-2021",
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:va:codes-2021-effective"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "label": "Reviewer evidence, not approval",
+    "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+    "is_approval": false,
+    "result_state": "not_applicable",
+    "reason_code": "use_not_covered",
+    "message": "Space use 'habitable' is not covered by this unit.",
+    "section": "R305.1",
+    "subsection_part": "bath-toilet-laundry",
+    "rule_unit_title": "Ceiling height in bathrooms and laundries",
+    "check_class": "geometric_deterministic",
+    "subject": {
+     "kind": "space",
+     "id": "ifc:1iltq2vOLFugjsdGk28GiS",
+     "label": "BEDROOM 3",
+     "anchor": {
+      "type": "ifc_element",
+      "ifc_guid": "1iltq2vOLFugjsdGk28GiS",
+      "ifc_class": "IfcSpace",
+      "name": "BEDROOM 3",
+      "model": "ori-sample-house.groundtruth.ifc",
+      "centroid_m": [
+       7.44855,
+       6.61035,
+       3.8862
+      ]
+     }
+    },
+    "measured": {},
+    "required": [],
+    "facts_used": {},
+    "layers_applied": [
+     "base:irc-2021",
+     "us-va:vrc-2021"
+    ],
+    "run_id": "60d3c11cf08fcc4c"
+   },
+   "validator": "urn:ori:validator:ori-verify",
+   "validator_version": "0.1.0",
+   "inputs": [
+    "urn:ori:artifact:sha256:238c56769517729fd517f0a7e60a679b9d646aebda78b9228ecb5c7e582c3c50"
+   ],
+   "requirements": [
+    "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+   ],
+   "outcome": "not-applicable",
+   "evidence": [
+    "urn:ori:evidence:60d3c11cf08fcc4c:input"
+   ],
+   "executed_at": "2026-10-03T00:00:00Z",
+   "determinism": "deterministic"
+  }
+ ],
+ "takeoff_adjustments": [],
+ "schema_validation": {
+  "tool": "ifcopenshell.validate 0.8.5",
+  "issues": 0,
+  "first_issues": []
+ },
+ "subjects_found": {
+  "space": 10
+ },
+ "export_summary": {
+  "ifc_schema": "IFC4X3",
+  "storeys": [
+   {
+    "name": "Level 1",
+    "page": 1,
+    "elevation_in": 0.0,
+    "elevation_known": true
+   },
+   {
+    "name": "Level 2",
+    "page": 2,
+    "elevation_in": 105.0,
+    "elevation_known": true
+   }
+  ],
+  "skipped_pages": [],
+  "counts": {
+   "IfcWall": 16,
+   "IfcOpeningElement": 26,
+   "IfcDoor": 11,
+   "IfcWindow": 15,
+   "IfcSpace": 10,
+   "IfcStair": 2
+  },
+  "placeholders": []
+ }
+}

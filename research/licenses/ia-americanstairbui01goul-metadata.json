@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/americanstairbui01goul/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "americanstairbui01goul",
+  "title": "The American stair-builders' guide",
+  "creator": "Gould, Lucius D., b. 1814. [from old catalog]",
+  "date": "1875",
+  "publisher": "New York, A.J. Bicknell & co.",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2011-07-26 17:17:03"
+ }
+}

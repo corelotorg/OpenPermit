@@ -1,0 +1,22 @@
+{
+  "id": "ori:test:positive:project-target-non-binding",
+  "rule": "guidance-not-requirement",
+  "expected": "pass",
+  "objects": [
+    {
+      "id": "ori:assertion:openpermit-ori:sf-review-target-24h",
+      "type": "Assertion",
+      "version": "0.1.0",
+      "source": ["source:openpermit-ori:sf-review-target-24h:2026-09-26"],
+      "metadata": {
+        "authority_classification": "project_self_declared_target",
+        "binding": false,
+        "profile": "ori:profile:project:openpermit-ori:sf-review-target-24h:2026-09-26"
+      },
+      "subject": "ori:profile:project:openpermit-ori:sf-review-target-24h:2026-09-26",
+      "predicate": "declares_design_target",
+      "object": {"control": "ori.time.sf_review_24h", "operator": "lte", "value": 24, "unit": "hour"},
+      "asserted_by": "OpenPermit ORI project (Jeremiah Horstick, project lead)"
+    }
+  ]
+}

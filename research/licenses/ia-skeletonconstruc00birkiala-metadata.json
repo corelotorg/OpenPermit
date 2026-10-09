@@ -1,0 +1,23 @@
+{
+ "source": "https://archive.org/metadata/skeletonconstruc00birkiala/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "skeletonconstruc00birkiala",
+  "title": "Skeleton construction in buildings",
+  "creator": "Birkmire, Wm. H. (William Harvey), 1860-1924",
+  "date": "1905, c1893",
+  "publisher": "New York : Wiley",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "copyright-evidence": "Evidence reported by alyson-wieczorek for item skeletonconstruc00birkiala on November 20, 2006: visible notice of copyright; stated date is 1893.",
+  "copyright-region": "US",
+  "collection": [
+   "cdl",
+   "americana"
+  ],
+  "contributor": "University of California Libraries",
+  "sponsor": "MSN",
+  "language": "eng",
+  "publicdate": "2006-11-20 12:09:06"
+ }
+}

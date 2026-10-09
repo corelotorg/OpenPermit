@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/TM5-226/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "TM5-226",
+  "title": "TM 5-226 Carpentry, 1943",
+  "creator": "United States. War Department",
+  "date": "1943-05-06",
+  "publisher": "Washington, D.C. : War Dept. : U.S. G.P.O.",
+  "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+  "collection": [
+   "wwIIarchive",
+   "folkscanomy_history",
+   "folkscanomy"
+  ],
+  "language": "eng",
+  "publicdate": "2016-08-11 03:20:46"
+ }
+}

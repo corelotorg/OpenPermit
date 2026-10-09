@@ -1,0 +1,11 @@
+{
+  "repository": "https://github.com/corelotorg/OpenPermit",
+  "branch": "test",
+  "routes": [
+    {"path": "docs/", "title": "Documentation", "description": "Project scope, governance, evidence boundaries, and implementation guides.", "links": ["README.md", "CHARTER.md", "GOVERNANCE.md", "docs/GOVERNANCE-BOUNDARY.md", "docs/PUBLIC-SITE.md", "docs/MODEL-VERIFICATION.md"]},
+    {"path": "spec/", "title": "Specifications and schemas", "description": "Versioned ORI contracts and machine-readable schemas.", "links": ["spec/ori-core-0.1-draft.md", "spec/ori-core-0.1.schema.json", "spec/model-interface-0.1-draft.md", "spec/ori-cl-0.1-draft.md", "spec/evidence-attestation-0.1-draft.md", ".well-known/ori.json"]},
+    {"path": "benchmark/", "title": "Synthetic benchmark", "description": "Reproduce pass, fail, and incomplete cases. These results are evidence, never permit approval.", "links": ["verification/README.md", "verification/examples/ifc/ori-ch03-pass.ifc", "verification/examples/ifc/ori-ch03-fail.ifc", "verification/examples/ifc/ori-ch03-incomplete.ifc", "verification/examples/reports/ifc-pass.report.json", "verification/examples/reports/ifc-fail.report.json", "verification/examples/reports/ifc-incomplete.report.json", "conformance/README.md"]},
+    {"path": "contribute/", "title": "Contribute and challenge", "description": "Contribute reproducible cases, cited requirements, and implementation feedback.", "links": ["CONTRIBUTING.md", "GOVERNANCE.md", "CREDITS.md", "LICENSE-SPEC.md"]},
+    {"path": "model-verification/", "title": "OpenPermit Model Verification", "description": "One versioned assembly supplies geometry, quantities, views, exchange files, and evidence. Each claim has its own acceptance gate.", "links": ["docs/MODEL-VERIFICATION.md", "spec/model-interface-0.1-draft.md", "spec/evidence-attestation-0.1-draft.md", "CREDITS.md"]}
+  ]
+}

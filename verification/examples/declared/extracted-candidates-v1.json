@@ -1,0 +1,87 @@
+{
+  "declared_values_profile": "ori-declared-values-0.1",
+  "submission_id": "synthetic-demo-1-extracted",
+  "jurisdiction": "urn:ori:jurisdiction:us-va",
+  "declared_by": "extractor:ori-vector-text-0.1",
+  "declared_at": "2026-09-27T12:00:00Z",
+  "plan_set": {
+    "plan_set_id": "synthetic-demo-plans",
+    "version": 1,
+    "artifact_ids": [
+      "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+    ]
+  },
+  "legal_boundary": "Extracted candidates are unverified evidence. They need applicant or reviewer confirmation and are not approval.",
+  "spaces": [
+    {
+      "id": "space-extracted",
+      "label": "Extracted candidate (spaces)",
+      "ceiling_height_in": {
+        "value": 96.0,
+        "origin": "vector_extracted_unconfirmed",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        },
+        "note": "extracted text: CLG HT 8'-0\""
+      }
+    }
+  ],
+  "eeros": [
+    {
+      "id": "eero-extracted",
+      "label": "Extracted candidate (eeros)",
+      "sill_height_in": {
+        "value": 42.0,
+        "origin": "vector_extracted_unconfirmed",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        },
+        "note": "extracted text: SILL HT 42\""
+      }
+    }
+  ],
+  "stairs": [
+    {
+      "id": "stair-extracted",
+      "label": "Extracted candidate (stairs)",
+      "riser_heights_in": {
+        "value": [
+          8.0
+        ],
+        "origin": "vector_extracted_unconfirmed",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301"
+        },
+        "note": "extracted text: RISER 8\""
+      },
+      "tread_depths_in": {
+        "value": [
+          9.5
+        ],
+        "origin": "vector_extracted_unconfirmed",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301"
+        },
+        "note": "extracted text: TREAD 9 1/2\""
+      },
+      "min_headroom_in": {
+        "value": 82.0,
+        "origin": "vector_extracted_unconfirmed",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301"
+        },
+        "note": "extracted text: HEADROOM 6'-10\""
+      }
+    }
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ori:test:negative:policy-context-promoted-to-requirement",
+  "rule": "guidance-not-requirement",
+  "expected": "fail",
+  "objects": [
+    {
+      "id": "ori:requirement:federal-regulatory-inventory-as-local-law",
+      "type": "Requirement",
+      "version": "1.0.0",
+      "source": ["source:whitehouse:eo-14219:2025-02-19"],
+      "metadata": {
+        "authority_classification": "federal_executive_policy_context",
+        "profile": "ori:profile:federal:regulatory-inventory:2025"
+      },
+      "statement": "This county is legally required by Executive Order 14219 to inventory and repeal its residential permitting regulations."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/standardamerican01clow/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "standardamerican01clow",
+  "title": "Standard American plumbing : hot air and hot water heating, steam and gas fitting",
+  "creator": "Clow, George B; Donaldson, William; Sears, Roebuck and Company",
+  "date": "1911",
+  "publisher": "Chicago : printed by F.J. Drake & Co. expressly for Sears, Roebuck & Company",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2011-06-20 15:02:39"
+ }
+}

@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/ost-military-engineering-tm5_683/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "ost-military-engineering-tm5_683",
+  "title": "FACILITIES ENGINEERING ELECTRICAL INTERIOR FACILITIES",
+  "creator": "DEPARTMENTS OF THE ARMY, THE NAVY, AND THE AIR FORCE",
+  "date": "1995",
+  "publisher": "Department of the Army",
+  "rights": "Public Domain",
+  "collection": [
+   "opentextbooklibrary",
+   "patron-library-collection"
+  ],
+  "contributor": "hst",
+  "language": "eng",
+  "publicdate": "2012-11-13 20:22:48"
+ }
+}

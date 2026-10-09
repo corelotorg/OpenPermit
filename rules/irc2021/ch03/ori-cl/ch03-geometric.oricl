@@ -1,0 +1,204 @@
+# ORI-CL 0.1 (DRAFT). The 14 implemented Chapter 3 geometric checks, restated in ORI-CL.
+# ORI's own interpretation: section numbers, bare numbers and official links only; no code text.
+# SPDX-License-Identifier: CC0-1.0
+# Values and value statuses are the ones already recorded in va-vrc-2021-ch03.units.json.
+
+context base IRC 2021 by source:icc:irc-2021 publisher "International Code Council"
+context layer us-va:vrc-2021 for urn:ori:jurisdiction:us-va code VRC 2021 from 2024-01-18 class state_adopted_code
+
+rule R311.7.5.1:riser-height-max
+  cite IRC 2021 R311.7.5.1 part "maximum riser"
+  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item "310.8 item 20"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  measure riser_heights from tread_nosing to tread_nosing along plumb
+  param max_riser_height <= 7.75 in at base status sourced_secondary source source:secondary:sma-2021-irc-visual
+  param max_riser_height <= 8.25 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 20"
+  require each riser_heights <= max_riser_height
+  check riser_height_max
+end
+
+rule R311.7.5.1:riser-uniformity
+  cite IRC 2021 R311.7.5.1 part "riser uniformity"
+  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item "310.8 item 20"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  measure riser_heights from tread_nosing to tread_nosing along plumb
+  param max_riser_variation <= 0.375 in at base status sourced_secondary source source:secondary:sma-2021-irc-visual
+  param max_riser_variation <= 0.375 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 20"
+  require spread riser_heights <= max_riser_variation
+  check riser_uniformity
+end
+
+rule R311.7.5.2:tread-depth-min
+  cite IRC 2021 R311.7.5.2 part "minimum tread"
+  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item "310.8 item 21"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  measure tread_depths from tread_nosing to tread_nosing along horizontal
+  param min_tread_depth >= 10 in at base status sourced_secondary source source:secondary:sma-2021-irc-visual
+  param min_tread_depth >= 9 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 21"
+  require each tread_depths >= min_tread_depth
+  check tread_depth_min
+end
+
+rule R311.7.5.2:tread-uniformity
+  cite IRC 2021 R311.7.5.2 part "tread uniformity"
+  adopt us-va:vrc-2021 mode replaces_value status sourced_primary by source:va:13vac5-63-210 item "310.8 item 21"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  measure tread_depths from tread_nosing to tread_nosing along horizontal
+  param max_tread_variation <= 0.375 in at base status sourced_secondary source source:secondary:sma-2021-irc-visual
+  param max_tread_variation <= 0.375 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 21"
+  require spread tread_depths <= max_tread_variation
+  check tread_uniformity
+end
+
+rule R311.7.2:stair-headroom-min
+  cite IRC 2021 R311.7.2
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject stair_flight is IfcStairFlight
+  measure headroom_clearances from nosing_line to overhead_underside along plumb
+  param min_headroom >= 80 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "6 ft 8 in; VRC text unamended, so equal to the IRC base"
+  param min_headroom >= 80 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "6 ft 8 in; VRC text unamended, so equal to the IRC base"
+  require each headroom_clearances >= min_headroom empty absent
+  check stair_headroom_min
+end
+
+rule R305.1:ceiling-height-habitable
+  cite IRC 2021 R305.1 part "habitable"
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject space is IfcSpace
+  measure ceiling_height from finished_floor to finished_ceiling along plumb
+  param min_ceiling_height >= 84 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "7 ft; VRC text unamended"
+  param min_ceiling_height >= 84 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "7 ft; VRC text unamended"
+  when space_use in [habitable kitchen hallway]
+  require ceiling_height >= min_ceiling_height
+  except when sloped_ceiling is true reviewer
+  check ceiling_height_min
+end
+
+rule R305.1:ceiling-height-bath-toilet-laundry
+  cite IRC 2021 R305.1 part "bath-toilet-laundry"
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject space is IfcSpace
+  measure ceiling_height from finished_floor to finished_ceiling along plumb
+  param min_ceiling_height >= 80 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "6 ft 8 in; VRC text unamended"
+  param min_ceiling_height >= 80 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "6 ft 8 in; VRC text unamended"
+  when space_use in [bathroom toilet laundry]
+  require ceiling_height >= min_ceiling_height
+  except when sloped_ceiling is true reviewer
+  check ceiling_height_min
+end
+
+rule R304.1:room-area-min
+  cite IRC 2021 R304.1
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject space is IfcSpace
+  measure floor_area from space_footprint to space_footprint
+  param min_habitable_room_area >= 70 ft2 at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "VRC text unamended; kitchens excepted"
+  param min_habitable_room_area >= 70 ft2 at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "VRC text unamended; kitchens excepted"
+  unless space_use is kitchen
+  when space_use is habitable
+  require floor_area >= min_habitable_room_area
+  check room_area_min
+end
+
+rule R310.2.1:eero-net-clear-area
+  cite IRC 2021 R310.2.1 part "net clear area"
+  adopt us-va:vrc-2021 mode replaces_section status sourced_primary by source:va:13vac5-63-210 item "310.8 item 16"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject eero is IfcWindow WINDOW
+  param min_net_clear_area >= 5.7 ft2 at base status sourced_secondary source source:secondary:roy-city-egress-2021
+  param min_net_clear_area_grade_floor >= 5.0 ft2 at base status sourced_secondary source source:secondary:roy-city-egress-2021 when grade_floor_or_below_grade is true
+  param min_net_clear_area >= 5.7 ft2 at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 16"
+  param min_net_clear_area_grade_floor >= 5.0 ft2 at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 16" when grade_floor_or_below_grade is true
+  derive net_clear_area is net_clear_height times net_clear_width
+  require net_clear_area >= min_net_clear_area
+  except when grade_floor_or_below_grade is true allow min_net_clear_area_grade_floor
+  check eero_net_clear_area
+end
+
+rule R310.2.1:eero-net-clear-height
+  cite IRC 2021 R310.2.1 part "net clear height"
+  adopt us-va:vrc-2021 mode replaces_section status sourced_primary by source:va:13vac5-63-210 item "310.8 item 16"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject eero is IfcWindow WINDOW
+  measure net_clear_height from clear_opening_bottom to clear_opening_top along plumb
+  param min_net_clear_height >= 24 in at base status sourced_secondary source source:secondary:roy-city-egress-2021 locator "base model carries this in R310.2.2"
+  param min_net_clear_height >= 24 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 16 (moved into R310.2.1)"
+  require net_clear_height >= min_net_clear_height
+  check eero_net_clear_height
+end
+
+rule R310.2.1:eero-net-clear-width
+  cite IRC 2021 R310.2.1 part "net clear width"
+  adopt us-va:vrc-2021 mode replaces_section status sourced_primary by source:va:13vac5-63-210 item "310.8 item 16"
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject eero is IfcWindow WINDOW
+  measure net_clear_width from clear_opening_side to clear_opening_side along horizontal
+  param min_net_clear_width >= 20 in at base status sourced_secondary source source:secondary:roy-city-egress-2021 locator "base model carries this in R310.2.2"
+  param min_net_clear_width >= 20 in at us-va:vrc-2021 status sourced_primary source source:va:13vac5-63-210 locator "310.8 item 16 (moved into R310.2.1)"
+  require net_clear_width >= min_net_clear_width
+  check eero_net_clear_width
+end
+
+rule R310.2.3:eero-sill-height-max
+  cite IRC 2021 R310.2.3
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject eero is IfcWindow WINDOW
+  measure sill_height from finished_floor to clear_opening_bottom along plumb
+  param max_sill_height <= 44 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "VRC text unamended"
+  param max_sill_height <= 44 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "VRC text unamended"
+  require sill_height <= max_sill_height bound frame_bottom_height
+  check eero_sill_height_max
+end
+
+rule R312.1.1:guard-required
+  cite IRC 2021 R312.1.1
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject walking_surface is IfcSlab
+  measure drop_height from walking_surface_top to lower_surface_top along plumb within guard_trigger_horizontal_band
+  param guard_trigger_drop > 30 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "drop measured within 36 in horizontally of the open edge; VRC text unamended"
+  param guard_trigger_horizontal_band <= 36 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03
+  param guard_trigger_drop > 30 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "drop measured within 36 in horizontally of the open edge; VRC text unamended"
+  param guard_trigger_horizontal_band <= 36 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03
+  when drop_height > guard_trigger_drop
+  require guard_present present
+  check guard_required
+end
+
+rule R312.1.2:guard-height-min
+  cite IRC 2021 R312.1.2 part "general"
+  adopt us-va:vrc-2021 mode adopts_base status sourced_primary by source:va:13vac5-63-210
+  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning
+  link https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning
+  subject guard is IfcRailing GUARDRAIL
+  measure guard_height from walking_surface_top to guard_top along plumb
+  param min_guard_height >= 36 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "VRC text unamended"
+  param min_guard_height_stair_open_side >= 34 in at base status inferred_unamended source source:upcodes:vrc-2021-ch03 locator "exception, measured from nosing line" when on_stair_open_side is true
+  param min_guard_height >= 36 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "VRC text unamended"
+  param min_guard_height_stair_open_side >= 34 in at us-va:vrc-2021 status sourced_secondary source source:upcodes:vrc-2021-ch03 locator "exception, measured from nosing line" when on_stair_open_side is true
+  require guard_height >= min_guard_height
+  except when on_stair_open_side is true use min_guard_height_stair_open_side optional
+  check guard_height_min
+end

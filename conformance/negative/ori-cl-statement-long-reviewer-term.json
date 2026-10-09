@@ -1,0 +1,12 @@
+{
+  "id": "ori:test:negative:ori-cl-statement-long-reviewer-term",
+  "rule": "ori-cl-statement",
+  "expected": "fail",
+  "description": "Reviewer terms name the ambiguous term (4 words or fewer); a sentence-length term (made-up text) is rejected so judgment units cannot carry quoted code text.",
+  "objects": [
+    {
+      "id": "ori-cl:long-term",
+      "ori_cl_source": "context base IRC 2021 by source:icc:irc-2021 publisher \"International Code Council\"\ncontext layer us-va:vrc-2021 for urn:ori:jurisdiction:us-va code VRC 2021 from 2024-01-18 class state_adopted_code\nrule R311.1:egress-path\n  cite IRC 2021 R311.1\n  adopt us-va:vrc-2021 mode modifies_text status sourced_primary by source:va:13vac5-63-210 item \"310.8 item 17\"\n  link https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning\n  subject building is IfcBuilding\n  reviewer terms \"every lantern post near the harbor stands upright\"\nend\n"
+    }
+  ]
+}

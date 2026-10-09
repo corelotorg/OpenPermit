@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/radfordscycloped01unse/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "radfordscycloped01unse",
+  "title": "Radford's cyclopedia of construction;carpentry, building and architecture … Vol. 1",
+  "date": "1915",
+  "publisher": "Chicago, Ill., The Radford architectural company",
+  "possible-copyright-status": "The Library of Congress is unaware of any copyright restrictions for this item.",
+  "collection": [
+   "library_of_congress",
+   "fedlink",
+   "americana"
+  ],
+  "contributor": "The Library of Congress",
+  "sponsor": "The Library of Congress",
+  "language": "eng",
+  "publicdate": "2019-12-19 17:36:41"
+ }
+}

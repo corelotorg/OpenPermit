@@ -1,0 +1,1891 @@
+{
+  "report_type": "ori-verification-run",
+  "report_version": "0.1-draft",
+  "label": "Reviewer evidence, not approval",
+  "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+  "is_approval": false,
+  "run_id": "8734734aa48fefd8",
+  "jurisdiction": "urn:ori:jurisdiction:us-va",
+  "validator": "urn:ori:validator:ori-verify",
+  "validator_version": "0.1.0",
+  "executed_at": "2026-09-27T12:00:00Z",
+  "artifact": {
+    "artifact_id": "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4",
+    "media_type": "application/x-step",
+    "schema": "IFC4",
+    "filename": "ori-ch03-fail.ifc",
+    "sha256": "b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4",
+    "size_bytes": 11120
+  },
+  "counts": {
+    "pass": 1,
+    "fail": 13,
+    "unknown": 0,
+    "not_applicable": 3
+  },
+  "evidence": [
+    {
+      "id": "urn:ori:evidence:8734734aa48fefd8:input",
+      "type": "Evidence",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [],
+      "source": [],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "artifact": {
+          "artifact_id": "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4",
+          "media_type": "application/x-step",
+          "schema": "IFC4",
+          "filename": "ori-ch03-fail.ifc",
+          "sha256": "b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4",
+          "size_bytes": 11120
+        }
+      },
+      "evidence_type": "ifc_model",
+      "artifact": "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4",
+      "captured_by": "urn:ori:validator:ori-verify",
+      "captured_at": "2026-09-27T12:00:00Z",
+      "spatial_anchor": null,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0001",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Room area 64.00 ft2 < 70 ft2.",
+        "section": "R304.1",
+        "subsection_part": null,
+        "rule_unit_title": "Minimum floor area of habitable rooms",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:3v1CUb00L8DhVcfH282jAN",
+          "label": "Bedroom 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+            "ifc_class": "IfcSpace",
+            "name": "Bedroom 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.2192,
+              1.2192,
+              1.016
+            ]
+          }
+        },
+        "measured": {
+          "floor_area": 64.0,
+          "unit": "ft2"
+        },
+        "required": [
+          {
+            "parameter": "min_habitable_room_area",
+            "comparator": ">=",
+            "value": 70,
+            "unit": "ft2",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "floor_area": {
+            "value": 64.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+              "ifc_class": "IfcSpace",
+              "name": "Bedroom 2",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.2192,
+                1.2192,
+                1.016
+              ]
+            },
+            "note": "IfcSpace footprint area"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0002",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "use_not_covered",
+        "message": "Space use 'bathroom' is not a habitable room.",
+        "section": "R304.1",
+        "subsection_part": null,
+        "rule_unit_title": "Minimum floor area of habitable rooms",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:0M8Rye$hv9iuzXwTqnQb7a",
+          "label": "Bath 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0M8Rye$hv9iuzXwTqnQb7a",
+            "ifc_class": "IfcSpace",
+            "name": "Bath 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              10.922,
+              1.2192,
+              0.9906
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0003",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Ceiling height 80.00 in < 84 in (flat ceiling declared).",
+        "section": "R305.1",
+        "subsection_part": "habitable",
+        "rule_unit_title": "Ceiling height in living spaces and halls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:3v1CUb00L8DhVcfH282jAN",
+          "label": "Bedroom 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+            "ifc_class": "IfcSpace",
+            "name": "Bedroom 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.2192,
+              1.2192,
+              1.016
+            ]
+          }
+        },
+        "measured": {
+          "ceiling_height": 80.0,
+          "unit": "in",
+          "space_use": "habitable"
+        },
+        "required": [
+          {
+            "parameter": "min_ceiling_height",
+            "comparator": ">=",
+            "value": 84,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "ceiling_height": {
+            "value": 80.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+              "ifc_class": "IfcSpace",
+              "name": "Bedroom 2",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.2192,
+                1.2192,
+                1.016
+              ]
+            },
+            "note": "IfcSpace body top minus bottom"
+          },
+          "space_use": {
+            "value": "habitable",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+              "ifc_class": "IfcSpace",
+              "name": "Bedroom 2",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.2192,
+                1.2192,
+                1.016
+              ]
+            },
+            "note": "Pset_ORI_SpaceUse.UseCategory"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0004",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "use_not_covered",
+        "message": "Space use 'bathroom' is not covered by this unit.",
+        "section": "R305.1",
+        "subsection_part": "habitable",
+        "rule_unit_title": "Ceiling height in living spaces and halls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:0M8Rye$hv9iuzXwTqnQb7a",
+          "label": "Bath 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0M8Rye$hv9iuzXwTqnQb7a",
+            "ifc_class": "IfcSpace",
+            "name": "Bath 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              10.922,
+              1.2192,
+              0.9906
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0005",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "use_not_covered",
+        "message": "Space use 'habitable' is not covered by this unit.",
+        "section": "R305.1",
+        "subsection_part": "bath-toilet-laundry",
+        "rule_unit_title": "Ceiling height in bathrooms and laundries",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:3v1CUb00L8DhVcfH282jAN",
+          "label": "Bedroom 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3v1CUb00L8DhVcfH282jAN",
+            "ifc_class": "IfcSpace",
+            "name": "Bedroom 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.2192,
+              1.2192,
+              1.016
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0006",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Ceiling height 78.00 in < 80 in (flat ceiling declared).",
+        "section": "R305.1",
+        "subsection_part": "bath-toilet-laundry",
+        "rule_unit_title": "Ceiling height in bathrooms and laundries",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "space",
+          "id": "ifc:0M8Rye$hv9iuzXwTqnQb7a",
+          "label": "Bath 2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0M8Rye$hv9iuzXwTqnQb7a",
+            "ifc_class": "IfcSpace",
+            "name": "Bath 2",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              10.922,
+              1.2192,
+              0.9906
+            ]
+          }
+        },
+        "measured": {
+          "ceiling_height": 78.0,
+          "unit": "in",
+          "space_use": "bathroom"
+        },
+        "required": [
+          {
+            "parameter": "min_ceiling_height",
+            "comparator": ">=",
+            "value": 80,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "ceiling_height": {
+            "value": 78.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0M8Rye$hv9iuzXwTqnQb7a",
+              "ifc_class": "IfcSpace",
+              "name": "Bath 2",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                10.922,
+                1.2192,
+                0.9906
+              ]
+            },
+            "note": "IfcSpace body top minus bottom"
+          },
+          "space_use": {
+            "value": "bathroom",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0M8Rye$hv9iuzXwTqnQb7a",
+              "ifc_class": "IfcSpace",
+              "name": "Bath 2",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                10.922,
+                1.2192,
+                0.9906
+              ]
+            },
+            "note": "Pset_ORI_SpaceUse.UseCategory"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0007",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Net clear area 2.75 ft2 is below both 5.7 and 5.0 ft2.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear area",
+        "rule_unit_title": "Escape opening: minimum clear area",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "ifc:1dmD9Dh499yOBprJZhd93G",
+          "label": "Bedroom 2 EERO",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+            "ifc_class": "IfcWindow",
+            "name": "Bedroom 2 EERO",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              0.45,
+              -0.95,
+              1.7684
+            ]
+          }
+        },
+        "measured": {
+          "net_clear_area": 2.75,
+          "unit": "ft2",
+          "note": "Area computed as net clear height x net clear width (rectangular clear opening assumed)."
+        },
+        "required": [
+          {
+            "parameter": "min_net_clear_area",
+            "comparator": ">=",
+            "value": 5.7,
+            "unit": "ft2",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          },
+          {
+            "parameter": "min_net_clear_area_grade_floor",
+            "comparator": ">=",
+            "value": 5.0,
+            "unit": "ft2",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "grade_floor_or_below_grade == true"
+          }
+        ],
+        "facts_used": {
+          "net_clear_height": {
+            "value": 22.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+              "ifc_class": "IfcWindow",
+              "name": "Bedroom 2 EERO",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                0.45,
+                -0.95,
+                1.7684
+              ]
+            },
+            "note": "Pset_ORI_EscapeOpening.NetClearHeight"
+          },
+          "net_clear_width": {
+            "value": 18.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+              "ifc_class": "IfcWindow",
+              "name": "Bedroom 2 EERO",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                0.45,
+                -0.95,
+                1.7684
+              ]
+            },
+            "note": "Pset_ORI_EscapeOpening.NetClearWidth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-area"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0008",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Net clear height 22.00 in does not satisfy >= 24 in.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear height",
+        "rule_unit_title": "Escape opening: minimum clear height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "ifc:1dmD9Dh499yOBprJZhd93G",
+          "label": "Bedroom 2 EERO",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+            "ifc_class": "IfcWindow",
+            "name": "Bedroom 2 EERO",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              0.45,
+              -0.95,
+              1.7684
+            ]
+          }
+        },
+        "measured": {
+          "net_clear_height": 22.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "min_net_clear_height",
+            "comparator": ">=",
+            "value": 24,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "net_clear_height": {
+            "value": 22.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+              "ifc_class": "IfcWindow",
+              "name": "Bedroom 2 EERO",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                0.45,
+                -0.95,
+                1.7684
+              ]
+            },
+            "note": "Pset_ORI_EscapeOpening.NetClearHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-height"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0009",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Net clear width 18.00 in does not satisfy >= 20 in.",
+        "section": "R310.2.1",
+        "subsection_part": "net clear width",
+        "rule_unit_title": "Escape opening: minimum clear width",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "ifc:1dmD9Dh499yOBprJZhd93G",
+          "label": "Bedroom 2 EERO",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+            "ifc_class": "IfcWindow",
+            "name": "Bedroom 2 EERO",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              0.45,
+              -0.95,
+              1.7684
+            ]
+          }
+        },
+        "measured": {
+          "net_clear_width": 18.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "min_net_clear_width",
+            "comparator": ">=",
+            "value": 20,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "net_clear_width": {
+            "value": 18.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+              "ifc_class": "IfcWindow",
+              "name": "Bedroom 2 EERO",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                0.45,
+                -0.95,
+                1.7684
+              ]
+            },
+            "note": "Pset_ORI_EscapeOpening.NetClearWidth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-width"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0010",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Sill height 48.00 in does not satisfy <= 44 in.",
+        "section": "R310.2.3",
+        "subsection_part": null,
+        "rule_unit_title": "Escape opening: maximum sill height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "eero",
+          "id": "ifc:1dmD9Dh499yOBprJZhd93G",
+          "label": "Bedroom 2 EERO",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+            "ifc_class": "IfcWindow",
+            "name": "Bedroom 2 EERO",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              0.45,
+              -0.95,
+              1.7684
+            ]
+          }
+        },
+        "measured": {
+          "sill_height": 48.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_sill_height",
+            "comparator": "<=",
+            "value": 44,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "sill_height": {
+            "value": 48.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1dmD9Dh499yOBprJZhd93G",
+              "ifc_class": "IfcWindow",
+              "name": "Bedroom 2 EERO",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                0.45,
+                -0.95,
+                1.7684
+              ]
+            },
+            "note": "window placement above storey plus declared frame-to-clear-opening offset"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R310.2.3:eero-sill-height-max"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0011",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Headroom: minimum 65.47 in < 80 in.",
+        "section": "R311.7.2",
+        "subsection_part": null,
+        "rule_unit_title": "Stair headroom",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "ifc:1NFCX6Vub5$hCOAZKr6d3t",
+          "label": "Stair 1 flight 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+            "ifc_class": "IfcStairFlight",
+            "name": "Stair 1 flight 1",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.318805,
+              -0.4572,
+              1.1176
+            ]
+          }
+        },
+        "measured": {
+          "headroom_clearances": [
+            99.157895,
+            65.473684,
+            92.0,
+            84.0,
+            76.0,
+            68.0
+          ],
+          "governing": 65.473684,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "min_headroom",
+            "comparator": ">=",
+            "value": 80,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "headroom_clearances": {
+            "value": [
+              99.157895,
+              65.473684,
+              92.0,
+              84.0,
+              76.0,
+              68.0
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+              "ifc_class": "IfcStairFlight",
+              "name": "Stair 1 flight 1",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.318805,
+                -0.4572,
+                1.1176
+              ]
+            },
+            "note": "vertical clearance from nosing line to underside of overlapping overhead elements"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.2:stair-headroom-min"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0012",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Riser height: 1 of 13 values outside <= 8.25 in (governing 8.500 in).",
+        "section": "R311.7.5.1",
+        "subsection_part": "maximum riser",
+        "rule_unit_title": "Stair riser height maximum",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "ifc:1NFCX6Vub5$hCOAZKr6d3t",
+          "label": "Stair 1 flight 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+            "ifc_class": "IfcStairFlight",
+            "name": "Stair 1 flight 1",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.318805,
+              -0.4572,
+              1.1176
+            ]
+          }
+        },
+        "measured": {
+          "riser_heights": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.5
+          ],
+          "governing": 8.5,
+          "unit": "in",
+          "offending_indices": [
+            12
+          ]
+        },
+        "required": [
+          {
+            "parameter": "max_riser_height",
+            "comparator": "<=",
+            "value": 8.25,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "riser_heights": {
+            "value": [
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.5
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+              "ifc_class": "IfcStairFlight",
+              "name": "Stair 1 flight 1",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.318805,
+                -0.4572,
+                1.1176
+              ]
+            },
+            "note": "measured from stepped profile"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-height-max"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0013",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Riser uniformity: variation 0.500 in exceeds 0.375 in.",
+        "section": "R311.7.5.1",
+        "subsection_part": "riser uniformity",
+        "rule_unit_title": "Stair riser height uniformity within a flight",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "ifc:1NFCX6Vub5$hCOAZKr6d3t",
+          "label": "Stair 1 flight 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+            "ifc_class": "IfcStairFlight",
+            "name": "Stair 1 flight 1",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.318805,
+              -0.4572,
+              1.1176
+            ]
+          }
+        },
+        "measured": {
+          "riser_heights": [
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.0,
+            8.5
+          ],
+          "variation": 0.5,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_riser_variation",
+            "comparator": "<=",
+            "value": 0.375,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "riser_heights": {
+            "value": [
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.0,
+              8.5
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+              "ifc_class": "IfcStairFlight",
+              "name": "Stair 1 flight 1",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.318805,
+                -0.4572,
+                1.1176
+              ]
+            },
+            "note": "measured from stepped profile"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-uniformity"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0014",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Tread depth: 1 of 12 values outside >= 9 in (governing 8.750 in).",
+        "section": "R311.7.5.2",
+        "subsection_part": "minimum tread",
+        "rule_unit_title": "Stair tread depth minimum",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "ifc:1NFCX6Vub5$hCOAZKr6d3t",
+          "label": "Stair 1 flight 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+            "ifc_class": "IfcStairFlight",
+            "name": "Stair 1 flight 1",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.318805,
+              -0.4572,
+              1.1176
+            ]
+          }
+        },
+        "measured": {
+          "tread_depths": [
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            8.75
+          ],
+          "governing": 8.75,
+          "unit": "in",
+          "offending_indices": [
+            11
+          ]
+        },
+        "required": [
+          {
+            "parameter": "min_tread_depth",
+            "comparator": ">=",
+            "value": 9,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "tread_depths": {
+            "value": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              8.75
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+              "ifc_class": "IfcStairFlight",
+              "name": "Stair 1 flight 1",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.318805,
+                -0.4572,
+                1.1176
+              ]
+            },
+            "note": "measured from stepped profile"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-depth-min"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0015",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Tread uniformity: variation 0.750 in exceeds 0.375 in.",
+        "section": "R311.7.5.2",
+        "subsection_part": "tread uniformity",
+        "rule_unit_title": "Stair tread depth uniformity within a flight",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "stair_flight",
+          "id": "ifc:1NFCX6Vub5$hCOAZKr6d3t",
+          "label": "Stair 1 flight 1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+            "ifc_class": "IfcStairFlight",
+            "name": "Stair 1 flight 1",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              1.318805,
+              -0.4572,
+              1.1176
+            ]
+          }
+        },
+        "measured": {
+          "tread_depths": [
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            8.75
+          ],
+          "variation": 0.75,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_tread_variation",
+            "comparator": "<=",
+            "value": 0.375,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "tread_depths": {
+            "value": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              8.75
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1NFCX6Vub5$hCOAZKr6d3t",
+              "ifc_class": "IfcStairFlight",
+              "name": "Stair 1 flight 1",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                1.318805,
+                -0.4572,
+                1.1176
+              ]
+            },
+            "note": "measured from stepped profile"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-uniformity"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0016",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "pass",
+        "reason_code": "requirement_met",
+        "message": "Drop 48.00 in exceeds 30 in and a guard is present (height checked by R312.1.2).",
+        "section": "R312.1.1",
+        "subsection_part": null,
+        "rule_unit_title": "When a guard is required",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "walking_surface",
+          "id": "ifc:1y_eZ1WvX2whKu0qOQgrP4",
+          "label": "Deck 0",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1y_eZ1WvX2whKu0qOQgrP4",
+            "ifc_class": "IfcSlab",
+            "name": "Deck 0",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              11.524,
+              1.2192,
+              1.1442
+            ]
+          }
+        },
+        "measured": {
+          "drop_height": 48.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "guard_trigger_drop",
+            "comparator": ">",
+            "value": 30,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          },
+          {
+            "parameter": "guard_trigger_horizontal_band",
+            "comparator": "<=",
+            "value": 36,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "drop_height": {
+            "value": 48.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1y_eZ1WvX2whKu0qOQgrP4",
+              "ifc_class": "IfcSlab",
+              "name": "Deck 0",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                11.524,
+                1.2192,
+                1.1442
+              ]
+            },
+            "note": "deck top minus lowest slab top within 36 in band"
+          },
+          "guard_present": {
+            "value": true,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1y_eZ1WvX2whKu0qOQgrP4",
+              "ifc_class": "IfcSlab",
+              "name": "Deck 0",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                11.524,
+                1.2192,
+                1.1442
+              ]
+            },
+            "note": "IfcRailing GUARDRAIL found at deck edge"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R312.1.1:guard-required"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:8734734aa48fefd8:0017",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Guard height 30.00 in < 36 in.",
+        "section": "R312.1.2",
+        "subsection_part": "general",
+        "rule_unit_title": "Guard minimum height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "guard",
+          "id": "ifc:1Hz0VB$_b2P9_q$7Y5gCx6",
+          "label": "Deck 0 guard",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "1Hz0VB$_b2P9_q$7Y5gCx6",
+            "ifc_class": "IfcRailing",
+            "name": "Deck 0 guard",
+            "model": "ori-ch03-fail.ifc",
+            "centroid_m": [
+              11.524,
+              0.025,
+              1.6002
+            ]
+          }
+        },
+        "measured": {
+          "guard_height": 30.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "min_guard_height",
+            "comparator": ">=",
+            "value": 36,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_secondary",
+            "source": "source:upcodes:vrc-2021-ch03"
+          }
+        ],
+        "facts_used": {
+          "guard_height": {
+            "value": 30.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "1Hz0VB$_b2P9_q$7Y5gCx6",
+              "ifc_class": "IfcRailing",
+              "name": "Deck 0 guard",
+              "model": "ori-ch03-fail.ifc",
+              "centroid_m": [
+                11.524,
+                0.025,
+                1.6002
+              ]
+            },
+            "note": "railing top minus walking-surface top"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "8734734aa48fefd8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b3da4d487a35cb9b766e0ca5b79019588921247a65260ef93383bb8c3c13d9d4"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R312.1.2:guard-height-min"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:8734734aa48fefd8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    }
+  ]
+}

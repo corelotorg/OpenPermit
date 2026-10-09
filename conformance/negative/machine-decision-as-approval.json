@@ -1,0 +1,20 @@
+{
+  "id": "ori:test:negative:machine-decision-as-approval",
+  "rule": "machine-verification-not-approval",
+  "expected": "fail",
+  "description": "A validator issues a permit-approval Decision. Only an accountable official can approve.",
+  "objects": [
+    {
+      "id": "urn:ori:decision:test:machine-approval",
+      "type": "Decision",
+      "version": "1",
+      "subject": "urn:ori:permit-application:synthetic-demo-1",
+      "decision_type": "permit_approval",
+      "decided_by": "urn:ori:validator:ori-verify",
+      "decided_at": "2026-09-27T12:00:00Z",
+      "justified_by": [
+        "urn:ori:verification:ed89078e59516557:0001"
+      ]
+    }
+  ]
+}

@@ -4,3 +4,11 @@ local/
 # Python generated files
 __pycache__/
 *.py[cod]
+
+# Never commit Word documents (Markdown only)
+*.docx
+.pytest_cache/
+
+# Reproducible public-site output
+_site/
+.venv/

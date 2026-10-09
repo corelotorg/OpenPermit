@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: Apache-2.0
 """OpenPermit / ORI zero-ceremony reference node.
 
 Public semantics, local-first runtime. MCP is served over Streamable HTTP at /mcp.
@@ -114,10 +115,14 @@ def _build_index() -> dict[str, dict[str, Any]]:
             if isinstance(object_id, str):
                 enriched = dict(obj)
                 enriched.setdefault("_source_path", str(path.relative_to(ROOT)))
+                if object_id in index:
+                    raise ValueError(f"duplicate_id {object_id}: {index[object_id].get('_source_path')} and {enriched['_source_path']}")
                 index[object_id] = enriched
     for record in _read_state():
         record_id = record.get("id")
         if isinstance(record_id, str):
+            if record_id in index:
+                raise ValueError(f"duplicate_id {record_id}: repository/state collision")
             index[record_id] = record
     return index
 
@@ -128,6 +133,8 @@ def _warnings_for(obj: dict[str, Any]) -> list[str]:
         warnings.append("Object is not a final normative release.")
     if obj.get("authority_classification") == "federal_guidance":
         warnings.append("Federal guidance is not silently promoted to binding local law.")
+    if obj.get("authority_classification") == "project_self_declared_target":
+        warnings.append("OpenPermit ORI project self-declared design target: not law, not government guidance, not any jurisdiction's rule, and not a claim that any jurisdiction meets it.")
     if obj.get("confidence") is not None and isinstance(obj.get("confidence"), (int, float)) and obj["confidence"] < 0.8:
         warnings.append("Object carries low confidence and should be independently checked.")
     return warnings
@@ -184,7 +191,8 @@ def ori_capabilities() -> dict[str, Any]:
                 "ori.list_profiles",
             ],
             "profiles": profiles,
-            "challenge_log": "append-only-local-jsonl",
+            "challenge_log": "read-only; write authority not implemented",
+            "writes_enabled": False,
             "legal_effect": "none-by-protocol",
         },
     )
@@ -291,6 +299,10 @@ def ori_verify(object_id: str) -> dict[str, Any]:
 
     if obj.get("type") == "GuidanceProfile":
         schema_path = ROOT / "spec" / "ori-guidance-profile-0.1.schema.json"
+    elif obj.get("type") == "JurisdictionInventory":
+        schema_path = ROOT / "spec" / "ori-jurisdiction-inventory-0.1.schema.json"
+    elif obj.get("type") not in {"Assertion", "MappingAssertion", "Verification", "Decision", "Challenge", "Source", "Evidence", "Edge", "Authority", "Approval", "Requirement", "PrecedenceGraph", "ChallengeDisposition", "Jurisdiction"}:
+        return {"ok": False, "operation": "ori.verify", "error": "unsupported_type", "type": obj.get("type")}
     else:
         schema_path = ROOT / "spec" / "ori-core-0.1.schema.json"
 
@@ -327,33 +339,11 @@ def ori_analyze_precedence(graph: dict[str, Any]) -> dict[str, Any]:
 
 @mcp.tool()
 def ori_challenge(subject_id: str, challenged_by: str, grounds: str, statement: str, evidence: list[str] | None = None) -> dict[str, Any]:
-    """Append a first-class challenge without mutating the challenged object."""
-    index = _build_index()
-    if subject_id not in index:
-        return {"ok": False, "operation": "ori.challenge", "error": "subject_not_found", "subject_id": subject_id}
-    now = datetime.now(timezone.utc)
-    sequence = len(_read_state()) + 1
-    challenge = {
-        "id": f"ori:challenge:{now.strftime('%Y%m%dT%H%M%SZ')}:{sequence}",
-        "type": "Challenge",
-        "version": "1.0.0",
-        "effective_from": now.isoformat(),
-        "effective_to": None,
-        "jurisdiction": [],
-        "source": [],
-        "derived_from": [],
-        "supersedes": [],
-        "metadata": {"reference_node": True},
-        "subject": subject_id,
-        "challenged_by": challenged_by,
-        "grounds": grounds,
-        "statement": statement,
-        "evidence": evidence or [],
-        "status": "open",
-        "created_at": now.isoformat(),
-    }
-    _append_state(challenge)
-    return _envelope("ori.challenge", challenge)
+    """Return write_disabled: public reference mode has no authenticated write authority."""
+    # No authenticated write authority exists in the public reference node yet.
+    # A caller-supplied actor string must never turn a public request into a write.
+    return {"ok": False, "operation": "ori.challenge", "error": "write_disabled",
+            "message": "Reference mode is read-only; authenticated writes are not implemented."}
 
 
 @mcp.tool()
@@ -364,36 +354,9 @@ def ori_resolve_challenge(
     statement: str,
     evidence: list[str] | None = None,
 ) -> dict[str, Any]:
-    """Append a challenge disposition without deleting or mutating prior challenge history."""
-    challenge = next((c for c in _read_challenges() if c.get("id") == challenge_id), None)
-    if challenge is None:
-        return {"ok": False, "operation": "ori.resolve_challenge", "error": "challenge_not_found", "challenge_id": challenge_id}
-    now = datetime.now(timezone.utc)
-    sequence = len(_read_state()) + 1
-    record = {
-        "id": f"ori:challenge-disposition:{now.strftime('%Y%m%dT%H%M%SZ')}:{sequence}",
-        "type": "ChallengeDisposition",
-        "version": "1.0.0",
-        "effective_from": now.isoformat(),
-        "effective_to": None,
-        "jurisdiction": challenge.get("jurisdiction", []),
-        "source": [],
-        "derived_from": [challenge_id],
-        "supersedes": [],
-        "metadata": {"reference_node": True},
-        "challenge": challenge_id,
-        "decided_by": decided_by,
-        "disposition": disposition,
-        "statement": statement,
-        "evidence": evidence or [],
-        "created_at": now.isoformat(),
-    }
-    _append_state(record)
-    return _envelope(
-        "ori.resolve_challenge",
-        record,
-        warnings=["A disposition has only the authority carried by the actor/process that issued it; protocol representation does not create legal authority."],
-    )
+    """Return write_disabled: dispositions require an authenticated authority not implemented here."""
+    return {"ok": False, "operation": "ori.resolve_challenge", "error": "write_disabled",
+            "message": "Reference mode is read-only; authenticated writes are not implemented."}
 
 
 @mcp.custom_route("/health", methods=["GET"])
@@ -422,14 +385,14 @@ app = mcp.streamable_http_app(
     json_response=True,
     stateless_http=True,
     transport_security=_security(),
-    host=os.getenv("ORI_BIND_HOST", "0.0.0.0"),
+    host=os.getenv("ORI_BIND_HOST", "127.0.0.1"),
 )
 
 
 if __name__ == "__main__":
     mcp.run(
         transport="streamable-http",
-        host=os.getenv("ORI_BIND_HOST", "0.0.0.0"),
+        host=os.getenv("ORI_BIND_HOST", "127.0.0.1"),
         port=int(os.getenv("PORT", "8000")),
         json_response=True,
         stateless_http=True,

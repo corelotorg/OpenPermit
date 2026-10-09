@@ -13,7 +13,7 @@ artifact: artifact id or content-addressed locator
 captured_at: datetime
 captured_by: actor/device/system id
 spatial_anchor:
-  type: parcel | address | world_point | ifc_element | model_object | region | route | view
+  type: parcel | address | world_point | ifc_element | model_object | document_page | region | route | view
   value: profile-defined value
 integrity:
   algorithm: sha256 | profile-defined

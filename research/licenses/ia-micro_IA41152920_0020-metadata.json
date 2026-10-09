@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/micro_IA41152920_0020/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "micro_IA41152920_0020",
+  "title": "Utilitiesman 3 and 2. Rate Training Manual. Revised 1973.",
+  "creator": "Naval Training Command, Pensacola, FL.",
+  "date": "1973",
+  "collection": [
+   "eric-microfiche",
+   "microfiche"
+  ],
+  "contributor": "Internet Archive",
+  "catalog_number": "ED097442",
+  "source": "Microfiche",
+  "language": "English",
+  "publicdate": "2025-11-21 19:49:34"
+ }
+}

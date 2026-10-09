@@ -1,0 +1,52 @@
+{
+  "manifest_profile": "ori-pdf-artifact-manifest-0.1",
+  "label": "Reviewer evidence, not approval",
+  "plan_set_id": "synthetic-demo-plans",
+  "version": 2,
+  "supersedes": [
+    "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+  ],
+  "submitted_by": "applicant:synthetic-demo",
+  "submitted_at": "2026-09-27T12:00:00Z",
+  "artifacts": [
+    {
+      "artifact_id": "urn:ori:artifact:sha256:be75ae7a69c6cdfca8b57979a74efc50fc2d1c489b7b2fe8e4ec6c9b7c17dc0a",
+      "filename": "synthetic-plans-v2.pdf",
+      "media_type": "application/pdf",
+      "sha256": "be75ae7a69c6cdfca8b57979a74efc50fc2d1c489b7b2fe8e4ec6c9b7c17dc0a",
+      "size_bytes": 1229,
+      "pdf_version": "1.7",
+      "page_count": 2,
+      "pdfa": {
+        "claimed": false,
+        "part": null,
+        "conformance": null,
+        "note": "Read from XMP metadata; a claim is not validation (use a PDF/A validator such as veraPDF)."
+      },
+      "pages": [
+        {
+          "page": 1,
+          "page_label": "A-101",
+          "mediabox_pt": [
+            0.0,
+            0.0,
+            1224.0,
+            792.0
+          ],
+          "content_sha256": "531e90f1d532f9c476bfc38c5cf320310cc73d66e97b3055beb75e846709e2b6"
+        },
+        {
+          "page": 2,
+          "page_label": "A-301",
+          "mediabox_pt": [
+            0.0,
+            0.0,
+            1224.0,
+            792.0
+          ],
+          "content_sha256": "e89c2b11737dbc21405e40a11be2d55c4934527e178f242a140f745f278cb025"
+        }
+      ]
+    }
+  ]
+}

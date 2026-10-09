@@ -14,6 +14,8 @@ Open Regulatory Infrastructure (ORI) is governed as a public technical commons. 
 8. **Runtime neutrality.** No cloud, model, database, portal, workflow engine, or proprietary client is required to inspect or implement the standard.
 9. **Copyright boundaries are respected.** Third-party standards and model codes retain their own legal status and licenses.
 10. **Security and provenance are part of interoperability.** Outside validators and compute providers are not trusted by default.
+11. **The benchmark is public; donor data is secured.** ORI publishes its mechanics and its benchmark (the public, testable checks that identify code failures from plans) and uses the public IFC schema as an input. ORI secures only permit data, donor red-line markup, training data, municipal permit data and per-municipality HUD rubric scores. The line is drawn in [`docs/GOVERNANCE-BOUNDARY.md`](docs/GOVERNANCE-BOUNDARY.md); changing it is a normative core change.
+12. **Machine output is evidence, never approval; unknown is never fail.** An automated result supports a human reviewer. Missing information yields `unknown`, not `fail`.
 
 ## Change classes
 

@@ -70,7 +70,7 @@
     {
       "id": "hud.time.shot_clock.right_to_build",
       "category": "Time",
-      "practice": "Use a cumulative right-to-build timeline target under 60 days.",
+      "practice": "HUD guidance (policy comparison, not a binding rule or observed result): use a cumulative right-to-build timeline target under 60 days.",
       "target": {"operator": "lt", "value": 60, "unit": "day"},
       "ori_objects": ["Action", "Event", "Condition", "Source", "Challenge"],
       "evidence": ["start_event", "deadline", "completion_event", "pause_toll_events"],
@@ -79,7 +79,7 @@
     {
       "id": "hud.time.shot_clock.construction",
       "category": "Time",
-      "practice": "Use a cumulative construction permitting and inspection timeline target under 30 days.",
+      "practice": "HUD guidance (policy comparison, not a binding rule or observed result): use a cumulative construction permitting and inspection timeline target under 30 days.",
       "target": {"operator": "lt", "value": 30, "unit": "day"},
       "ori_objects": ["Action", "Inspection", "Event", "Condition", "Source", "Challenge"],
       "evidence": ["start_event", "deadline", "completion_event", "pause_toll_events"],

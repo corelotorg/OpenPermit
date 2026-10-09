@@ -2,32 +2,39 @@
 
 OpenPermit is the public reference implementation of Open Regulatory Infrastructure (ORI), a permissionless, machine-readable substrate for regulatory inventory, provenance, traversal, verification, measurement, challenge, and governance.
 
-Canonical public corpus: https://corelotorg.github.io/OpenPermit/
-Repository: https://github.com/corelotorg/OpenPermit
-Published branch: test
-Vanity domains openpermit.io and openpermit.dev are not canonical until DNS/path-preserving routing is verified.
+Repository: https://github.com/corelotorg/OpenPermit (branch test)
+Project site: https://openpermit.io · Developers, specification and benchmark: https://openpermit.dev
+The public site is moving to this repository. Until the domains serve it with path-preserving HTTPS, read files from the repository; openpermit.dev schema $id values are identifiers, not yet live URLs.
+
+Scope: detached single-family new homes; 2021 IRC base with the 2021 Virginia Residential Code (13VAC5-63) as the first override layer.
+Guardrails: a machine check is never approval; unknown is not fail; building-code text is cited and linked, never reproduced; guidance is not law.
+Licences: code Apache-2.0; prose specifications and docs CC BY-SA 4.0 (files previously dedicated CC0 stay CC0); schemas, ORI-CL grammar and vocabulary, rule data, profiles and fixtures CC0 1.0. Map: LICENSE-SPEC.md. Credits: CREDITS.md, NOTICE.md.
 
 Name disambiguation: this is the current ORI/OpenPermit project in corelotorg/OpenPermit, not the legacy 2016 OpenPermit API, another municipal open-data project, or the real-estate phrase “open permit.”
 
 ## Start here
-- Charter: https://corelotorg.github.io/OpenPermit/CHARTER.md
-- ORI Core v0.1 draft: https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1-draft.md
-- ORI JSON Schema: https://corelotorg.github.io/OpenPermit/spec/ori-core-0.1.schema.json
-- Guidance Profile Schema: https://corelotorg.github.io/OpenPermit/spec/ori-guidance-profile-0.1.schema.json
-- Jurisdiction Inventory Schema: https://corelotorg.github.io/OpenPermit/spec/ori-jurisdiction-inventory-0.1.schema.json
-- Model Interface: https://corelotorg.github.io/OpenPermit/spec/model-interface-0.1-draft.md
-- Precedence/DAG semantics: https://corelotorg.github.io/OpenPermit/spec/precedence-graph-0.1-draft.md
-- Challenge protocol: https://corelotorg.github.io/OpenPermit/spec/challenge-protocol-0.1-draft.md
-- Evidence/geo-attestation: https://corelotorg.github.io/OpenPermit/spec/evidence-attestation-0.1-draft.md
-- Capability/compute registry: https://corelotorg.github.io/OpenPermit/spec/capability-registry-0.1-draft.md
-- Machine discovery: https://corelotorg.github.io/OpenPermit/.well-known/ori.json
-- HUD 2026 guidance profile: https://corelotorg.github.io/OpenPermit/profiles/federal/hud-home-construction-best-practices-2026.json
-- Federal regulatory-inventory context: https://corelotorg.github.io/OpenPermit/profiles/federal/regulatory-inventory-2025.json
-- Fredericksburg VA residential inventory: https://corelotorg.github.io/OpenPermit/profiles/jurisdictions/us/va/fredericksburg/residential-new-construction-2026.json
+- Charter: https://github.com/corelotorg/OpenPermit/blob/test/CHARTER.md
+- ORI Core v0.1 draft: https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-core-0.1-draft.md
+- ORI JSON Schema: https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-core-0.1.schema.json
+- Guidance Profile Schema: https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-guidance-profile-0.1.schema.json
+- Jurisdiction Inventory Schema: https://github.com/corelotorg/OpenPermit/blob/test/spec/ori-jurisdiction-inventory-0.1.schema.json
+- Model Interface: https://github.com/corelotorg/OpenPermit/blob/test/spec/model-interface-0.1-draft.md
+- Precedence/DAG semantics: https://github.com/corelotorg/OpenPermit/blob/test/spec/precedence-graph-0.1-draft.md
+- Challenge protocol: https://github.com/corelotorg/OpenPermit/blob/test/spec/challenge-protocol-0.1-draft.md
+- Evidence/geo-attestation: https://github.com/corelotorg/OpenPermit/blob/test/spec/evidence-attestation-0.1-draft.md
+- Capability/compute registry: https://github.com/corelotorg/OpenPermit/blob/test/spec/capability-registry-0.1-draft.md
+- Machine discovery: https://github.com/corelotorg/OpenPermit/blob/test/.well-known/ori.json
+- HUD 2026 guidance profile: https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/hud-home-construction-best-practices-2026.json
+- Federal regulatory-inventory context: https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/regulatory-inventory-2025.json
+- ORI project target (self-declared, non-binding; 24-hour single-family review): https://github.com/corelotorg/OpenPermit/blob/test/profiles/project/ori-sf-review-target-24h-2026.json
+- Synthetic example jurisdiction inventory: https://github.com/corelotorg/OpenPermit/blob/test/profiles/examples/example-city/residential-new-construction-example.json
 - Negative semantic fixtures: https://github.com/corelotorg/OpenPermit/tree/test/conformance/negative
 - Conformance documentation: https://github.com/corelotorg/OpenPermit/tree/test/conformance
 - Reference MCP node: https://github.com/corelotorg/OpenPermit/tree/test/reference-node
-- Recovery status: https://corelotorg.github.io/OpenPermit/docs/RECOVERY-STATUS-2026-09-01.md
+- Rule units (IRC 2021 Chapter 3, Virginia layer): https://github.com/corelotorg/OpenPermit/tree/test/rules
+- Verification and public benchmark: https://github.com/corelotorg/OpenPermit/tree/test/verification
+- Governance boundary (public vs secured): https://github.com/corelotorg/OpenPermit/blob/test/docs/GOVERNANCE-BOUNDARY.md
+- Citation policy (no code text): https://github.com/corelotorg/OpenPermit/blob/test/docs/CITATION-POLICY.md
 
 ## Core semantics
 Preserve source-native terminology, authority, jurisdiction, effective time, version, evidence and lineage. Normalized mappings are MappingAssertions, not facts. Automated verification does not itself create legal approval. Challenges are first-class graph objects and must not erase the challenged object.
@@ -76,4 +83,4 @@ The public harness contains positive schema fixtures plus negative semantic fixt
 Do not reproduce licensed model-code or third-party standards text unless rights permit. Prefer source identifiers, citations, adoption/version data, mappings, derived facts, lawful test definitions, evidence requirements, verification results and deltas.
 
 ## Contribution
-Implementations do not require permission. Jurisdictions, agencies, standards bodies, practitioners, universities, civic-tech maintainers, cloud providers, model providers, vendors, manufacturers and specialist validators may publish compatible profiles, mappings, validators and compute capabilities. Provenance and conformance remain inspectable; registration does not imply trust or endorsement.
+Implementations do not require permission. Anyone may publish compatible profiles, mappings, validators and compute capabilities. Provenance and conformance remain inspectable; registration does not imply trust or endorsement.

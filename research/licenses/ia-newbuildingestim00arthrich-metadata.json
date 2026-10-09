@@ -1,0 +1,23 @@
+{
+ "source": "https://archive.org/metadata/newbuildingestim00arthrich/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "newbuildingestim00arthrich",
+  "title": "The new Building estimator; a practical guide to estimating the cost of labor and material in building construction ..",
+  "creator": "Arthur, William, b. 1860",
+  "date": "1914, c1909-1913",
+  "publisher": "New York : Williams",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "copyright-evidence": "Evidence reported by scanner-ian-white for item newbuildingestim00arthrich on January 26, 2007: visible notice of copyright; stated date is 1913.",
+  "copyright-region": "US",
+  "collection": [
+   "cdl",
+   "americana"
+  ],
+  "contributor": "University of California Libraries",
+  "sponsor": "MSN",
+  "language": "eng",
+  "publicdate": "2007-01-25 16:58:36"
+ }
+}

@@ -1,0 +1,151 @@
+{
+  "declared_values_profile": "ori-declared-values-0.1",
+  "submission_id": "synthetic-demo-1",
+  "jurisdiction": "urn:ori:jurisdiction:us-va",
+  "declared_by": "applicant:synthetic-demo",
+  "declared_at": "2026-09-27T12:00:00Z",
+  "plan_set": {
+    "plan_set_id": "synthetic-demo-plans",
+    "version": 1,
+    "artifact_ids": [
+      "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff"
+    ]
+  },
+  "legal_boundary": "Applicant-declared values are evidence for review. They are not verified facts and not approval.",
+  "stairs": [
+    {
+      "id": "s1",
+      "label": "Main stair flight 1",
+      "riser_heights_in": {
+        "value": [
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0,
+          8.0
+        ],
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301",
+          "detail": "stair section riser callout"
+        }
+      },
+      "tread_depths_in": {
+        "value": [
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5,
+          9.5
+        ],
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301",
+          "detail": "stair section tread callout"
+        }
+      },
+      "min_headroom_in": {
+        "value": 82.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 2,
+          "sheet": "A-301",
+          "detail": "headroom dimension"
+        }
+      }
+    }
+  ],
+  "spaces": [
+    {
+      "id": "b1",
+      "label": "Bedroom 1",
+      "use": {
+        "value": "habitable",
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "ceiling_height_in": {
+        "value": 96.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "floor_area_ft2": {
+        "value": 110.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "sloped_ceiling": {
+        "value": false,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      }
+    }
+  ],
+  "eeros": [
+    {
+      "id": "w1",
+      "label": "Bedroom 1 EERO",
+      "net_clear_height_in": {
+        "value": 36.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "net_clear_width_in": {
+        "value": 24.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "grade_floor_or_below_grade": {
+        "value": false,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      },
+      "sill_height_in": {
+        "value": 42.0,
+        "anchor": {
+          "artifact_id": "urn:ori:artifact:sha256:07be940d10333e1f0ccb577cd956b90a362b2af4763b6783fb7250ede8d231ff",
+          "page": 1,
+          "sheet": "A-101"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,27 @@
+{
+ "source": "https://archive.org/metadata/carpentersbuilde00plumuoft/metadata",
+ "fetched": "2026-09-28",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "carpentersbuilde00plumuoft",
+  "title": "The carpenters' and builders' guide, being a hand-book for workmen, also a manual of reference for contractors, builders, etc",
+  "creator": "Plummer, Peter W",
+  "date": "1891",
+  "publisher": "New York, Comstock",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "copyright-evidence": "Evidence reported by lajolla for item carpentersbuilde00plumuoft on February 16, 2007: no visible notice of copyright; stated date is 1891.",
+  "copyright-evidence-operator": "lajolla",
+  "copyright-evidence-date": "20070216030740",
+  "copyright-region": "US",
+  "collection": [
+   "robarts",
+   "toronto",
+   "university_of_toronto"
+  ],
+  "contributor": "Robarts - University of Toronto",
+  "sponsor": "MSN",
+  "language": "eng",
+  "publicdate": "2007-02-15 19:07:52",
+  "description": "26"
+ }
+}

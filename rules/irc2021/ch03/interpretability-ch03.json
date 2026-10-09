@@ -1,0 +1,762 @@
+{
+  "rubric_version": "ori-interpretability-0.1",
+  "scored_at": "2026-09-28",
+  "scoring_status_default": "estimate",
+  "pre_scorer": "ORI automated drafting agent (pre-score; not a human review)",
+  "scored_text_source": "source:upcodes:vrc-2021-ch03",
+  "search_scope": "research/va-code-interpretations-sources-2026-09-28.md",
+  "determinations": {
+    "det:va:sbctrb:interp:1-2021": {
+      "citation": "SBCTRB Code Interpretation No. 1/2021 (VCC Section R302.7)",
+      "date": "2021-03-19",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_interpretation",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/interpretations-booklets/trb-2021-interpretation-booklet.pdf",
+      "binding_effect": "Formal Review Board interpretation, published in the Board's 2021-edition interpretation booklet (September 2026) as still applicable. The Board's interpretations apply statewide to the USBC.",
+      "code_at_issue": "VCC (VRC) 2015 edition, carried into the 2021-edition booklet",
+      "section_at_issue": "R302.7",
+      "edition_carryover": "same_section_verified",
+      "holding_summary": "Question: if open stud framing is installed under a stairway in an unfinished basement with no drywall or other covering, is the space 'enclosed'? Answer: No. So the under-stair gypsum protection does not apply to open, uncovered framing.",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext of text-layer PDF",
+        "sha256": "0dae8f918d6aabe808ac9a5324ffb4752de156f6086a93083ad1ce6b760cffb4",
+        "notes": "Booklet header: 'Containing Interpretations Applicable to the 2021 Editions', dated September 2026. Its preface still says '2018 edition' in one sentence (an internal inconsistency in the booklet)."
+      }
+    },
+    "det:va:sbctrb:interp:1-2025": {
+      "citation": "SBCTRB Code Interpretation No. 1/2025 (VCC Section R322.3.6)",
+      "date": "2025-04-18",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_interpretation",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/interpretations-booklets/trb-2021-interpretation-booklet.pdf",
+      "binding_effect": "Formal Review Board interpretation of Virginia-amended text (13VAC5-63-210, 310.8 item 38).",
+      "code_at_issue": "VCC (VRC) 2021 edition",
+      "section_at_issue": "R322.3.6 (Virginia amendment)",
+      "edition_carryover": "same_section_verified",
+      "holding_summary": "Q1: does the section bar elevator shaft enclosures in Coastal A Zones and in coastal high-hazard areas? Yes. Q2: are walls built below the required flood elevation on three sides of a structure 'enclosed' for this section? No.",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext of text-layer PDF",
+        "sha256": "0dae8f918d6aabe808ac9a5324ffb4752de156f6086a93083ad1ce6b760cffb4"
+      }
+    },
+    "det:va:sbctrb:appeal:20-03": {
+      "citation": "SBCTRB Appeal No. 20-03 (Monica and Michael Davis)",
+      "date": "2021-03-19",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-20-03-monica-and-michael-davis.pdf",
+      "binding_effect": "Case-specific appeal decision (final order). Shows how the Board applied the text to one dwelling; not a general interpretation.",
+      "code_at_issue": "2012 VCC (VRC), Augusta County",
+      "section_at_issue": "R311.3, R311.7.6, R309.1, R302.5.2, R317.1",
+      "edition_carryover": "not_verified",
+      "holding_summary": "Overturned the local findings of no violation for the exterior-door landing and stair landings (owner argued: top landing sloped toward the house, bottom landing sloped toward the handrail and was narrower than the stair; County argued slopes were within 2 percent with normal concrete variation). The decision does not say which argument decided it. Found a garage floor slope violation (R309.1) although the County said the floor sloped toward the door. Upheld no violation of R302.5.2 and of R317.1 (garage door framing not treated as wall framing).",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext of text-layer PDF",
+        "sha256": "1bbd1a6a9801851102fa473198397b887898f4c51de50c70ba49b65a2e7d11d8"
+      }
+    },
+    "det:va:sbctrb:appeal:24-09": {
+      "citation": "SBCTRB Appeal No. 24-09 (George Karsadi, GLK Construction Services Inc.)",
+      "date": "2025-05-16",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-24-09-george-karsadi.pdf",
+      "binding_effect": "Case-specific appeal decision (final order).",
+      "code_at_issue": "2015 VUSBC Part I as stated in the decision, Fairfax County deck",
+      "section_at_issue": "R312.1, R312.1.1, R301.5 and Table R301.5",
+      "edition_carryover": "not_verified",
+      "holding_summary": "Upheld a guard violation at the landing at the foot of deck stairs because the landing height exceeded 30 inches above grade (County measured more than 30 in at 36 in from the landing). Upheld a guard-post connection violation under R312.1 and Table R301.5 on the County's testimony that connections were not properly installed.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext of text-layer PDF",
+        "sha256": "36971ff3b7fc9519e77fad9bb6110c9dd7d7e483e81a2c0041b9fc0093840e51"
+      }
+    },
+    "det:va:sbctrb:appeal:19-05-19-07": {
+      "citation": "SBCTRB Appeal Nos. 19-05, 19-06 and 19-07 (Kristie Sours Atwood; Buracker Construction)",
+      "date": "2020-09-18",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-19-05-19-06-19-07-kristie-sours-atwood-and-buracker-construction.pdf",
+      "binding_effect": "Case-specific appeal decision (final order).",
+      "code_at_issue": "2009 VCC (VRC), Warren County",
+      "section_at_issue": "Table R301.5; R302.12",
+      "edition_carryover": "not_verified",
+      "holding_summary": "Found a Table R301.5 violation for a porch guard system that did not meet the 200 lb guard load, although the builder argued the deck was under 30 in so guards were not required. Found no R302.12 violation for an attic access installed in the garage ceiling.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext of text-layer PDF",
+        "sha256": "0e5aafa5ee191cf7e5f41cbfc2fa4d4083ca03c1982c2fd55b20a1c7f71c5667"
+      }
+    },
+    "det:va:sbctrb:appeal:13-2": {
+      "citation": "SBCTRB Appeal No. 13-2 (Keith Kurtz)",
+      "date": "2013-09-20",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-13-2-keith-kurtz.pdf",
+      "binding_effect": "Case-specific appeal decision (final order).",
+      "code_at_issue": "2006 IRC as incorporated in the USBC, Arlington County",
+      "section_at_issue": "R319.1 item 6 (2006 IRC)",
+      "edition_carryover": "renumbered_verified",
+      "holding_summary": "LVL members supporting a tongue-and-groove wood floor on a roofed, open-sided porch had to be decay-resistant: wind-driven rain reached them through the floor and there was no impervious barrier. The Board overturned the local finding of compliance.",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "OCR (tesseract 200 dpi) of image-only PDF",
+        "sha256": "c2a782c370546b4f1534b49d026a2a01a8937da33e5f82f30f1b045a6dc53c39",
+        "notes": "Date is the hearing date; the date-entered line is illegible in the OCR. The 2006 item text quoted in the decision matches the 2021 R317.1 item on moisture-permeable floors or roofs exposed to the weather (compared against the UpCodes VRC 2021 text on 2026-09-28)."
+      }
+    },
+    "det:va:sbctrb:appeal:12-7": {
+      "citation": "SBCTRB Appeal No. 12-7 (Fairfax County; Aminrazavi house)",
+      "date": "2013-09-20",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-12-7-fairfax-co.pdf",
+      "binding_effect": "Case-specific appeal decision (final order).",
+      "code_at_issue": "2006 VCC with the 2006 IRC",
+      "section_at_issue": "R602.8 (fireblocking), R311.5.6 and R311.5.6.2 (handrails), R319.3 (fasteners) of the 2006 IRC",
+      "edition_carryover": "not_verified",
+      "holding_summary": "Upheld ten cited violations including a large vertical chase built for a future dumbwaiter as a concealed draft opening between stories (fireblocking), an interior handrail that did not extend above the top riser, and a missing handrail on exterior entrance stairs.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "OCR (tesseract 200 dpi) of image-only PDF",
+        "sha256": "3b00fd439b514a59ff9ef3ec877fbc4972436c880f87f121b9d864adeda0ec39"
+      }
+    },
+    "det:va:sbctrb:appeal:04-6": {
+      "citation": "SBCTRB Appeal No. 04-6 (Leonard J. Ballback)",
+      "date": "2004-11-19",
+      "body": "Virginia State Building Code Technical Review Board",
+      "body_class": "state_review_board_appeal_decision",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/sbctrb/appeal-decisions/TRB%20VCC/trb-vcc-04-6-ballback.pdf",
+      "binding_effect": "Case-specific appeal decision (final order) granting a modification under USBC 109.2.",
+      "code_at_issue": "USBC in effect in 2004 with the IRC edition it incorporated (edition not stated in the OCR text read)",
+      "section_at_issue": "R302 / R302.1 (location on lot)",
+      "edition_carryover": "not_verified",
+      "holding_summary": "The Board said R302 has no explicit words barring a house from extending across a lot line, but treated the bar as implicit from the exterior-wall and projection rules and the ICC commentary's idea of a 'lot'. It then granted a modification for an addition across a lot line between two parcels with the same owner, on functional-intent grounds.",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "OCR (tesseract 200 dpi) of image-only PDF",
+        "sha256": "9097b77ab3b25431745da89779f793a2ed8b0e76b61c12c10f0045cdb22e90b0",
+        "notes": "Decided September 17, 2004; date entered 11-19-2004."
+      }
+    },
+    "det:va:sbco:memo:2018-habitable-attics": {
+      "citation": "DHCD State Building Codes Office memo 'Habitable Attics' (with attached ICC staff opinion of 2018-08-21)",
+      "date": "2018-09-18",
+      "body": "Virginia DHCD State Building Codes Office",
+      "body_class": "state_agency_staff_opinion",
+      "url": "https://www.dhcd.virginia.gov/sites/default/files/DocX/technical-memos-bulletins/2018-habitable-attics.pdf",
+      "binding_effect": "Informal staff opinion (listed by DHCD as a 'DHCD Code Opinion'); not binding. Attached ICC staff opinion is advisory.",
+      "code_at_issue": "2012 and 2018 IRC",
+      "section_at_issue": "R202 'Attic, habitable'; R311.4 vertical egress",
+      "edition_carryover": "not_verified",
+      "holding_summary": "An attic big enough to meet the habitable-attic dimensions is not a habitable attic unless it contains habitable space, so no egress stairway is needed for storage-only attics. The memo notes the 2018 IRC clarified the definition. The 2021 IRC definition in R202 (checked on UpCodes 2026-09-28) ties a habitable attic to the presence of habitable space, so the point is settled in the current text.",
+      "relevance": "direct",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "OCR (tesseract 200 dpi) of image-only PDF",
+        "sha256": "6299cdde6fdd9c4a78b719e9b34f18b1922505bb4e5075dd7b33db7638605f67"
+      }
+    },
+    "det:va:pwc:policy:deck-stairway-illumination": {
+      "citation": "Prince William County Building Development, Residential Policy 'Deck Stairway Illumination'",
+      "date": "2019-08-22",
+      "body": "Prince William County Building Official",
+      "body_class": "local_building_official_policy",
+      "url": "https://www.pwcva.gov/assets/2024-01/PP-DeckStairwayIllumination.pdf",
+      "binding_effect": "Local policy for Prince William County only; lists methods the county accepts.",
+      "code_at_issue": "IRC as incorporated in the USBC (effective 1997, revised 2019)",
+      "section_at_issue": "Exterior stairway illumination (not cited by number)",
+      "edition_carryover": "not_verified",
+      "holding_summary": "The county accepts, as compliant: a 60 W fixture within 5 ft of the top landing; a 150 W flood within 30 ft; or low-voltage fixtures at each step plus one within 3 ft of the bottom step; other methods by letter to the building official.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext",
+        "sha256": "cfb35ae71046a4b87c385e619de9c891b94244cd9209c76c2d15da67c846893e"
+      }
+    },
+    "det:va:pwc:policy:areaway-drains": {
+      "citation": "Prince William County Building Development, Residential Policy 'Areaway Drains'",
+      "date": "2003-10-10",
+      "body": "Prince William County Building Official",
+      "body_class": "local_building_official_policy",
+      "url": "https://www.pwcva.gov/assets/2024-01/PP-AreawayDrains.pdf",
+      "binding_effect": "Local policy for Prince William County only.",
+      "code_at_issue": "USBC in effect 2003 (policy not revised since, per the document)",
+      "section_at_issue": "Area well (areaway) drainage (not cited by number)",
+      "edition_carryover": "not_verified",
+      "holding_summary": "No traps in areaway drains unless the trap is below the 24 in frost line (frozen traps were blocking drainage); the drain must be in place at the plumbing groundwork inspection.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext",
+        "sha256": "38d67f366461b1506ab1909d797d00c841a6cdc632098db20a0fe902d4f862e0"
+      }
+    },
+    "det:va:pwc:policy:retaining-wall-safety-devices": {
+      "citation": "Prince William County Building Development, Policy 'Retaining Wall Safety Devices'",
+      "date": "2019-07-19",
+      "body": "Prince William County Building Official",
+      "body_class": "local_building_official_policy",
+      "url": "https://www.pwcva.gov/assets/2024-02/PP-RetainingWallSafetyDevices.pdf",
+      "binding_effect": "Local policy issued under the county Design and Construction Standards Manual 710.06 D, not under the IRC.",
+      "code_at_issue": "County DCSM with IBC guard provisions",
+      "section_at_issue": "Safety devices at retaining walls",
+      "edition_carryover": "not_verified",
+      "holding_summary": "Safety devices are required atop retaining walls with more than 30 in grade difference that are closer than 2 ft to a walk, path, yard, common area, parking lot or driveway; built to IBC guard strength, opening and height rules.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext",
+        "sha256": "85d18cd865868ca1f0da4bc868caf096ba7ace5c9be91c8059246337b33e02d0"
+      }
+    },
+    "det:va:pwc:policy:property-line-encroachment": {
+      "citation": "Prince William County Building Development, Residential Policy 'Property Line Encroachment'",
+      "date": "2019-07-19",
+      "body": "Prince William County Building Official",
+      "body_class": "local_building_official_policy",
+      "url": "https://www.pwcva.gov/assets/2024-02/PP-PropertyLineEncroachment.pdf",
+      "binding_effect": "Local policy for Prince William County only. Written about townhouse roof overhangs (townhouses are outside ORI's single-family scope).",
+      "code_at_issue": "IRC R302.1 as incorporated in the USBC (revised 2019, before the 2021 Virginia change to the Table R302.1(1) projections row)",
+      "section_at_issue": "R302.1",
+      "edition_carryover": "not_verified",
+      "holding_summary": "The USBC does not let a townhouse roof overhang encroach on the adjacent property; the policy concludes projections must be at least 2 ft from the property line.",
+      "relevance": "indirect",
+      "verification": {
+        "status": "fetched_and_read",
+        "fetched_at": "2026-09-28",
+        "method": "pdftotext",
+        "sha256": "585a3764fb4f0a980bd46e88e395bdf367aeccde4252fd3aa634252677855b65"
+      }
+    }
+  },
+  "scores": {
+    "urn:ori:rule-unit:irc2021-va:R301.1": {
+      "score": "intent_dependent",
+      "rationale": "Q2: compliance is stated as a performance outcome (safely support all loads; complete load path). Whether a plan achieves it is an engineering judgment; the prescriptive provisions are deemed to comply.",
+      "intent_questions": [
+        "When a design mixes prescriptive and engineered parts, what must the plan show to demonstrate a complete load path across the interface?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider a short list, in the section or commentary, of what a reviewer should see on plans to show a continuous load path where prescriptive and engineered elements meet.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R301.1.3": {
+      "score": "intent_dependent",
+      "rationale": "Q2: 'accepted engineering practice' and the undefined test of whether the engineered part is compatible with the surrounding prescriptive framing leave the scope and standard of the engineered part to judgment.",
+      "ambiguous_terms": [
+        {
+          "term": "accepted engineering practice",
+          "defined_in_code": false,
+          "issue": "Not defined; no reference standard named for the partial-engineering case."
+        },
+        {
+          "term": "compatible with the performance",
+          "defined_in_code": false,
+          "issue": "No test for compatibility between engineered and prescriptive parts."
+        }
+      ],
+      "intent_questions": [
+        "How much of the surrounding conventional framing must an engineer evaluate when only one element exceeds prescriptive limits?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider stating the minimum scope of a partial engineered design (the element, its supports and connections to the load path) so reviewers apply it the same way.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R301.2.1.4": {
+      "score": "intent_dependent",
+      "rationale": "Q2: exposure category is chosen per site and wind direction by judging ground roughness, transition zones and future development; the text gives criteria, not a determinate rule.",
+      "intent_questions": [
+        "Which exposure applies to a lot in a subdivision that is partly built out, and who records the choice?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider having the locality record a default exposure category in its Table R301.2 climatic data (Prince William County's published table has wind speed but no exposure column) so the choice is visible on permits.",
+        "status": "DRAFT_not_submitted",
+        "venue": "virginia_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R301.4": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. The rule (use actual material weights, including fixed service equipment) has one reading; it is a judgment-class unit only because a calculation is needed.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R301.7": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. Deflection limits are numeric (Table R301.7); the judgment is the structural calculation, not the reading.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.5.3": {
+      "score": "intent_dependent",
+      "rationale": "Q2: the protection required is by cross-reference to fireblocking Item 4 of R302.11, which relies on an 'approved material' (a defined term that leaves acceptance to the building official, R202).",
+      "ambiguous_terms": [
+        {
+          "term": "approved material",
+          "defined_in_code": true,
+          "issue": "The R202 definition leaves acceptance to the building official, so the acceptable product is a local decision."
+        }
+      ],
+      "intent_questions": [
+        "Is a penetration in a gypsum dwelling-garage separation adequately protected by any fireblocking material, or must it match the separation's performance?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider pointing garage-separation penetrations to a stated performance (fill the annular space with a named material class) rather than to a fireblocking list item.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.11": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: 'concealed draft openings' and 'effective fire barrier' are undefined, and whether a large open chase or future-use shaft counts changes the outcome.",
+      "ambiguous_terms": [
+        {
+          "term": "concealed draft openings",
+          "defined_in_code": false,
+          "issue": "Undefined; Appeal 12-7 had to treat a chase built for a future dumbwaiter as one."
+        },
+        {
+          "term": "effective fire barrier",
+          "defined_in_code": false,
+          "issue": "Undefined performance phrase."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:12-7"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider stating whether shafts or chases intended for future equipment are concealed spaces needing fireblocking until the equipment is installed.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R308.5": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. The provision refers site-built windows to IBC Section 2404; the judgment is the glass design, not the reading.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R310.4.3": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: 'proper drainage' is undefined; the method (connection to the foundation drain) is given, but not what makes it proper. Prince William County fills the gap locally (no traps above the frost line).",
+      "ambiguous_terms": [
+        {
+          "term": "proper drainage",
+          "defined_in_code": false,
+          "issue": "No performance criterion; local policy adds a frost-line rule for traps."
+        },
+        {
+          "term": "well-drained soil",
+          "defined_in_code": false,
+          "issue": "Exception relies on soil group classification that plans rarely document."
+        }
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [
+        "det:va:pwc:policy:areaway-drains"
+      ],
+      "candidate_clarification": {
+        "note": "Consider a performance statement (the area well must drain to the foundation drain or daylight without traps exposed to freezing) and state what document shows the soil-group exception applies.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R311.1": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: 'continuous and unobstructed path' is undefined; whether furniture, interior doors with locks, or level changes are obstructions is left to reading. Virginia modifies this section (item 17).",
+      "ambiguous_terms": [
+        {
+          "term": "continuous and unobstructed",
+          "defined_in_code": false,
+          "issue": "Undefined; unclear whether locking hardware or interior level changes interrupt the path."
+        }
+      ],
+      "intent_questions": [
+        "Does an interior door with a keyed lock on the egress side interrupt the required path?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider a sentence on what counts as an obstruction (permanent construction versus movable items and hardware).",
+        "status": "DRAFT_not_submitted",
+        "venue": "virginia_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R311.5": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: 'positively anchored' and 'self-supporting' are undefined; what connections satisfy them is set by local typical details in practice.",
+      "ambiguous_terms": [
+        {
+          "term": "positively anchored",
+          "defined_in_code": false,
+          "issue": "Undefined; acceptable connections are usually shown in local deck details."
+        },
+        {
+          "term": "self-supporting",
+          "defined_in_code": false,
+          "issue": "Undefined; unclear how much lateral bracing a freestanding deck needs."
+        }
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider cross-referencing the prescriptive deck ledger and lateral connection provisions (R507) as one acceptable way to show positive anchorage.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R316.6": {
+      "score": "intent_dependent",
+      "rationale": "Q2: the undefined basis for fire testing of 'actual end-use configurations' and the specific-approval route leave the adequacy of a test to the building official.",
+      "ambiguous_terms": [
+        {
+          "term": "actual end-use configurations",
+          "defined_in_code": false,
+          "issue": "Undefined; no criteria for when a test assembly represents the installed assembly."
+        }
+      ],
+      "intent_questions": [
+        "What evidence shows that a tested assembly represents the installed configuration?"
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider listing the minimum facts an evaluation report must state for end-use equivalence.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R322.3": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: the Virginia text (item 38) bars 'enclosed areas' below the design flood elevation in Coastal A Zones and in coastal high-hazard areas without defining 'enclosed'. The Review Board had to rule that walls on three sides are not enclosed and that elevator shaft enclosures are barred.",
+      "ambiguous_terms": [
+        {
+          "term": "enclosed areas",
+          "defined_in_code": false,
+          "issue": "Not defined in IRC Chapter 2 (checked on the UpCodes VRC 2021 text); Interpretation 1/2025 answered two questions about it."
+        }
+      ],
+      "intent_questions": [
+        "Is a three-sided space with a breakaway fourth wall enclosed?",
+        "How does the bar interact with the Virginia R322.1.5 wording that excludes limited flood-resistant enclosures from the lowest floor? (ORI reviewer question; no record found.)"
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:interp:1-2025"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider adding the Review Board's answers to the Virginia text: define an enclosed area for R322.3.6 by the number of sides with walls (and state how breakaway walls and elevator shafts are treated).",
+        "status": "DRAFT_not_submitted",
+        "venue": "virginia_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R323.1": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. Storm shelters are referred to ICC 500 where built; the judgment is the design review.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R324.4": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. Structural support of rooftop PV is referred to Chapter 3 and Chapter 8 loads; the judgment is the calculation.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R332": {
+      "score": "clear",
+      "rationale": "No rubric question triggers. Virginia adds R332.1: patio covers comply with Appendix AH.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R336": {
+      "score": "clear",
+      "rationale": "No rubric question triggers at the Chapter 3 level. Virginia adds R336.1, which lets dwellings of 400 sq ft or less follow Appendix AQ instead. Appendix AQ itself was not scored.",
+      "determination_ids": [],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.7": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: the gypsum protection applies to 'enclosed' space under stairs; 'enclosed' is not a defined term, and the Review Board had to answer whether open, uncovered stud framing is enclosed (no).",
+      "ambiguous_terms": [
+        {
+          "term": "enclosed space",
+          "defined_in_code": false,
+          "issue": "Not defined in IRC Chapter 2 (checked on the UpCodes VRC 2021 text)."
+        },
+        {
+          "term": "door or access panel",
+          "defined_in_code": false,
+          "issue": "Unclear whether a space with an open end but a partial wall counts."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:interp:1-2021"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider stating that the space is enclosed when wall and soffit coverings conceal the framing on all sides, consistent with Interpretation 1/2021.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R309.1": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: the garage floor must slope so liquids drain, but the section gives no minimum slope or measuring method, and 'approved noncombustible material' defers to the building official. In Appeal 20-03 the County and the Review Board reached opposite conclusions on the same floor.",
+      "ambiguous_terms": [
+        {
+          "term": "floor slope for liquids (ORI label)",
+          "defined_in_code": false,
+          "issue": "No minimum slope or method; outcome depends on how slope is judged."
+        },
+        {
+          "term": "approved noncombustible material",
+          "defined_in_code": true,
+          "issue": "'Approved' is defined in R202 by reference to the building official's acceptance."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:20-03"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider a minimum measurable slope (or an explicit field test) toward a drain or the main vehicle door so the requirement becomes a geometric check.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R311.3": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: the landing slope limit (2 percent) sets magnitude but not direction, and 'landing or floor' does not say what surfaces make up the landing. Appeal 20-03 turned on both.",
+      "ambiguous_terms": [
+        {
+          "term": "slope at exterior landings",
+          "defined_in_code": false,
+          "issue": "Maximum only; direction (toward the door or house) is not addressed."
+        },
+        {
+          "term": "landing or floor",
+          "defined_in_code": false,
+          "issue": "Undefined; unclear whether a sidewalk plus regraded soil can form the landing."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:20-03"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider stating that exterior landings must slope away from the door (within the 2 percent maximum) and that the landing is a single stable surface.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R311.7.6": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: 'floor or landing' is undefined; Appeal 20-03 had to deal with a landing formed partly by a sidewalk and regraded soil, and with slope toward the handrail.",
+      "ambiguous_terms": [
+        {
+          "term": "floor or landing",
+          "defined_in_code": false,
+          "issue": "Undefined; composition of the landing surface is not addressed."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:20-03"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider clarifying that the landing is one continuous stable surface at least the width of the stair, with the same slope rule as R311.3.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R312.1.1:guard-required": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: the 30 in / 36 in geometry is determinate (ORI evaluates it), but which surfaces are 'open-sided walking surfaces' is not defined; landscape walls, patios and stair-bottom landings raise the question. Prince William County regulates retaining-wall guards through its site manual instead.",
+      "ambiguous_terms": [
+        {
+          "term": "open-sided walking surfaces",
+          "defined_in_code": false,
+          "issue": "Not defined in IRC Chapter 2; applicability to site features is unclear."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:24-09"
+      ],
+      "local_operationalization_ids": [
+        "det:va:pwc:policy:retaining-wall-safety-devices"
+      ],
+      "candidate_clarification": {
+        "note": "Consider stating whether site features next to a dwelling (patios, walks, retaining walls) are walking surfaces for guard purposes.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R301.5": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: Table R301.5 sets guard loads for 'guards' without saying whether a guard installed where none is required must meet them. In Appeals 19-05 to 19-07 the Board applied the 200 lb load to a porch guard the builder said was not required.",
+      "ambiguous_terms": [
+        {
+          "term": "Guards (Table R301.5 row)",
+          "defined_in_code": true,
+          "issue": "'Guard' is defined, but the table does not say whether optional guards are covered."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:19-05-19-07",
+        "det:va:sbctrb:appeal:24-09"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider a footnote stating that guard loads apply to any guard installed, whether or not R312.1 requires it (or the opposite, if that is the intent).",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R317.1": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: items that depend on 'exposed to the weather', 'moisture-permeable floors' and 'adequate protection' are undefined; Appeal 13-2 had to decide whether wind-driven rain through a roofed porch floor made the supports exposed. The clearance items are numeric.",
+      "ambiguous_terms": [
+        {
+          "term": "exposed to the weather",
+          "defined_in_code": false,
+          "issue": "Undefined; a roofed, open-sided porch was disputed."
+        },
+        {
+          "term": "adequate protection",
+          "defined_in_code": false,
+          "issue": "Undefined; which roof or overhang is adequate is left open."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:13-2",
+        "det:va:sbctrb:appeal:20-03"
+      ],
+      "local_operationalization_ids": [],
+      "relevance_overrides": {
+        "det:va:sbctrb:appeal:20-03": "indirect"
+      },
+      "candidate_clarification": {
+        "note": "Consider defining weather exposure for framing under roofed porches and decks (for example by whether rain can reach the member through the walking surface).",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.1": {
+      "score": "intent_dependent",
+      "rationale": "Q2: the text bars projections over the lot line (exception list) but does not say in words that a dwelling may not cross a lot line; Appeal 04-6 treated that bar as implicit and then modified it on functional-intent grounds. Virginia changes this section (items 4 and 5).",
+      "intent_questions": [
+        "Is building across an interior lot line between parcels under one owner a code question at all, or only a zoning and platting one?"
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:04-6"
+      ],
+      "local_operationalization_ids": [
+        "det:va:pwc:policy:property-line-encroachment"
+      ],
+      "candidate_clarification": {
+        "note": "Consider an explicit sentence on buildings that would straddle a lot line (prohibited, or permitted where the lots are under common ownership with a recorded agreement).",
+        "status": "DRAFT_not_submitted",
+        "venue": "virginia_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R303.8": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: exterior stairways need a light source at the top landing, with no light level or location tolerance stated (the interior rule in R303.7 has 1 footcandle). Prince William County lists fixture wattages and distances it will accept, which shows the gap.",
+      "ambiguous_terms": [
+        {
+          "term": "top-landing light location (ORI label)",
+          "defined_in_code": false,
+          "issue": "Location tolerance and light level are not stated."
+        }
+      ],
+      "determination_ids": [],
+      "local_operationalization_ids": [
+        "det:va:pwc:policy:deck-stairway-illumination"
+      ],
+      "candidate_clarification": {
+        "note": "Consider a measurable criterion for exterior stairs like the interior one (a minimum footcandle level at treads and landings) or a stated distance from the top landing.",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R311.4": {
+      "score": "clear",
+      "rationale": "Scored clear for the 2021 text. The earlier ambiguity (whether a large storage attic is a 'habitable attic' needing a stair) was answered by a 2018 SBCO staff opinion and fixed in the 2018 IRC definition; the 2021 definition in R202 (checked on UpCodes) ties a habitable attic to the presence of habitable space. Kept as a worked example of the clarity loop.",
+      "determination_ids": [
+        "det:va:sbco:memo:2018-habitable-attics"
+      ],
+      "local_operationalization_ids": []
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.12": {
+      "score": "ambiguous_term",
+      "rationale": "Q3: draftstopping applies where there is 'usable space' above and below a floor-ceiling assembly; 'usable space' is not defined.",
+      "ambiguous_terms": [
+        {
+          "term": "usable space",
+          "defined_in_code": false,
+          "issue": "Not defined in IRC Chapter 2 (checked on the UpCodes VRC 2021 text)."
+        }
+      ],
+      "determination_ids": [
+        "det:va:sbctrb:appeal:19-05-19-07"
+      ],
+      "local_operationalization_ids": [],
+      "candidate_clarification": {
+        "note": "Consider defining usable space for R302.12 (for example, any space that is habitable, storage or accessible for occupancy).",
+        "status": "DRAFT_not_submitted",
+        "venue": "icc_code_development_cycle"
+      }
+    },
+    "urn:ori:rule-unit:irc2021-va:R302.5.2": {
+      "score": "clear",
+      "rationale": "No rubric question triggers for the duct rule itself. Appeal 20-03 confirmed the section does not make a door smoke- or vapor-tight; the door question belongs to R302.5.1.",
+      "determination_ids": [
+        "det:va:sbctrb:appeal:20-03"
+      ],
+      "local_operationalization_ids": [],
+      "relevance_overrides": {
+        "det:va:sbctrb:appeal:20-03": "indirect"
+      }
+    }
+  }
+}

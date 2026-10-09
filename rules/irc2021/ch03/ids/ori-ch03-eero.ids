@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0. ORI information-requirement specification (DRAFT).
+     IDS 1.0 expresses the non-geometric information a rule unit needs.
+     IDS cannot express geometric conditions; ORI's evaluator does that part (verification/). -->
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>ORI Chapter 3: emergency escape and rescue openings</ids:title>
+    <ids:version>0.1.0-draft</ids:version>
+    <ids:author>ori@example.org</ids:author>
+    <ids:date>2026-09-27</ids:date>
+    <ids:purpose>Reviewer evidence for 2021 IRC / 2021 VRC Chapter 3 rule units. Not approval.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Escape openings declare net clear dimensions" ifcVersion="IFC4" identifier="ORI-CH03-EERO-01" description="Windows flagged as emergency escape and rescue openings declare net clear opening height and width in normal operation, and whether they are at grade floor or below grade (R310.2.1). Overall or rough-opening size is not a substitute." instructions="Populate Pset_ORI_EscapeOpening from manufacturer net-clear data.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCWINDOW</ids:simpleValue></ids:name></ids:entity>
+        <ids:property dataType="IFCBOOLEAN">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_EscapeOpening</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>IsEmergencyEscapeOpening</ids:simpleValue></ids:baseName>
+          <ids:value><ids:simpleValue>TRUE</ids:simpleValue></ids:value>
+        </ids:property>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_EscapeOpening</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>NetClearHeight</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_EscapeOpening</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>NetClearWidth</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCBOOLEAN" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_EscapeOpening</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>GradeFloorOrBelowGrade</ids:simpleValue></ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

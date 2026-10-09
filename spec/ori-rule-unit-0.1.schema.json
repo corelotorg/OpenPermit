@@ -1,0 +1,708 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-rule-unit-0.1.schema.json",
+  "title": "ORI Rule Unit v0.1 Draft",
+  "description": "A rule unit is an ORI core Requirement (type=Requirement) carrying the ori-rule-unit-0.1 profile. It identifies one checkable obligation by code section and edition, records the model-code base value and each jurisdiction override layer with its own authority and provenance, declares a check class (data_check, geometric_deterministic, judgment), the information it needs (IDS reference and declared-value keys), and the result states an evaluator may emit. It never contains long third-party code text: sections are cited and paraphrased; only short numeric values are recorded. Every rule unit is also a valid ORI core object (spec/ori-core-0.1.schema.json).",
+  "type": "object",
+  "required": [
+    "id",
+    "type",
+    "version",
+    "rule_unit_profile",
+    "title",
+    "source_section",
+    "authority_classification",
+    "check_class",
+    "base_model",
+    "jurisdiction_layers",
+    "required_information",
+    "inputs",
+    "result_states",
+    "evaluator",
+    "provenance",
+    "legal_boundary"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^urn:ori:rule-unit:"},
+    "type": {"const": "Requirement"},
+    "version": {"type": "string", "minLength": 1},
+    "effective_from": {"type": ["string", "null"], "format": "date-time"},
+    "effective_to": {"type": ["string", "null"], "format": "date-time"},
+    "jurisdiction": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "source": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1, "uniqueItems": true},
+    "derived_from": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "supersedes": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "uniqueItems": true},
+    "metadata": {"type": "object", "additionalProperties": true},
+    "rule_unit_profile": {"const": "ori-rule-unit-0.1"},
+    "title": {"type": "string", "minLength": 1, "maxLength": 160, "description": "Short descriptive title written by ORI (not the code's heading text verbatim unless it is a short heading)."},
+    "paraphrase": {"type": "string", "minLength": 20, "maxLength": 400, "description": "ORI's own plain-language paraphrase of the requirement's effect. Must not reproduce or closely track code text; bare numeric thresholds and short defined-term names only (docs/CITATION-POLICY.md). Required for collection units by conformance rule no-code-text."},
+    "source_url": {"type": "string", "pattern": "^https://", "description": "Official link-out for the provision (ICC Digital Codes for ICC-based text, law.lis.virginia.gov for Virginia regulation text). Required for collection units by conformance rule no-code-text."},
+    "source_links": {
+      "type": "array",
+      "description": "Additional official links (adopting regulation, model code for comparison). Links only; never cached text.",
+      "items": {
+        "type": "object",
+        "required": ["label", "url"],
+        "properties": {"label": {"type": "string", "maxLength": 160}, "url": {"type": "string", "pattern": "^https://"}},
+        "additionalProperties": false
+      }
+    },
+    "source_section": {"$ref": "#/$defs/sectionCitation"},
+    "authority_classification": {
+      "type": "string",
+      "description": "Authority class of the rule unit as served for a jurisdiction. It is the class of the highest-precedence binding layer, or model_code_not_adopted if no binding layer exists.",
+      "enum": ["state_adopted_code", "local_adopted_amendment", "model_code_not_adopted"]
+    },
+    "check_class": {"$ref": "#/$defs/checkClass"},
+    "classification_basis": {"$ref": "#/$defs/valueStatus", "description": "How the check_class tag was assigned. Class tags are ORI analytic judgments; 'estimate' is expected until reviewed."},
+    "single_family_applicability": {
+      "type": "string",
+      "enum": ["applies", "conditional", "out_of_scope"],
+      "description": "Whether the unit can apply to a detached single-family dwelling. out_of_scope marks townhouse/two-family provisions retained only for completeness."
+    },
+    "base_model": {"$ref": "#/$defs/baseModel"},
+    "jurisdiction_layers": {"type": "array", "items": {"$ref": "#/$defs/jurisdictionLayer"}},
+    "required_information": {"$ref": "#/$defs/requiredInformation"},
+    "inputs": {"type": "array", "items": {"$ref": "#/$defs/input"}},
+    "result_states": {
+      "type": "array",
+      "description": "Result states the evaluator may emit. ORI names map onto core Verification.outcome: pass->pass, fail->fail, unknown->indeterminate, not_applicable->not-applicable.",
+      "items": {"enum": ["pass", "fail", "unknown", "not_applicable"]},
+      "uniqueItems": true,
+      "minItems": 1
+    },
+    "unknown_policy": {
+      "type": "object",
+      "required": ["missing_information_result"],
+      "properties": {
+        "missing_information_result": {"const": "unknown"},
+        "statement": {"type": "string"}
+      },
+      "description": "Missing or unreadable information yields unknown (core: indeterminate), never fail."
+    },
+    "evaluator": {"$ref": "#/$defs/evaluator"},
+    "interpretability": {"$ref": "#/$defs/interpretability", "description": "Optional (backward compatible). How clearly the provision can be read and applied, scored with the rubric in spec/interpretability-0.1-draft.md, with the evidence behind the score. An interpretability record is analysis for code development and review; it never changes the unit's legal effect and is not an official interpretation."},
+    "provenance": {"$ref": "#/$defs/provenance"},
+    "legal_boundary": {
+      "type": "object",
+      "required": ["machine_result_is_approval", "statement"],
+      "properties": {
+        "machine_result_is_approval": {"const": false},
+        "statement": {"type": "string", "minLength": 1}
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"check_class": {"const": "judgment"}}, "required": ["check_class"]},
+      "then": {"properties": {"evaluator": {"properties": {"kind": {"enum": ["human_reviewer", "human_reviewer_with_machine_assist"]}}}}}
+    },
+    {
+      "if": {"properties": {"authority_classification": {"const": "model_code_not_adopted"}}, "required": ["authority_classification"]},
+      "then": {"properties": {"jurisdiction_layers": {"not": {"contains": {"properties": {"binding": {"const": true}}, "required": ["binding"]}}}}}
+    }
+  ],
+  "additionalProperties": true,
+  "$defs": {
+    "ref": {"type": "string", "minLength": 1},
+    "checkClass": {"type": "string", "enum": ["data_check", "geometric_deterministic", "judgment"]},
+    "valueStatus": {
+      "type": "string",
+      "description": "sourced_primary: read from the adopting authority's own publication or regulation. sourced_secondary: read from a third-party publication of the text or a jurisdiction handout. inferred_unamended: base value inferred to equal an adopted-code value because the adopting regulation lists no amendment to that section. estimate: ORI analyst judgment not yet verified against a source.",
+      "enum": ["sourced_primary", "sourced_secondary", "inferred_unamended", "estimate"]
+    },
+    "sectionCitation": {
+      "type": "object",
+      "required": ["code", "edition", "section"],
+      "properties": {
+        "code": {"type": "string", "minLength": 1, "description": "e.g. IRC, VRC"},
+        "edition": {"type": "string", "minLength": 4},
+        "section": {"type": "string", "pattern": "^R[0-9]{3}(\\.[0-9]+)*$"},
+        "subsection_part": {"type": "string", "description": "Optional qualifier such as 'Exception 1' or 'Table R302.1(1) Projections row'."},
+        "chapter": {"type": "integer", "minimum": 1}
+      },
+      "additionalProperties": false
+    },
+    "quantity": {
+      "type": "object",
+      "required": ["value", "unit"],
+      "properties": {
+        "value": {"type": "number"},
+        "unit": {"type": "string", "enum": ["in", "ft", "ft2", "in2", "percent", "ratio", "count", "mm", "m2", "deg"]},
+        "si_informational": {"type": "string", "description": "SI equivalent as printed in the code, informational only; US customary governs comparisons."}
+      },
+      "additionalProperties": false
+    },
+    "parameter": {
+      "type": "object",
+      "required": ["name", "comparator", "quantity", "value_status", "source"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "comparator": {"type": "string", "enum": ["<=", "<", ">=", ">", "==", "range"]},
+        "quantity": {"$ref": "#/$defs/quantity"},
+        "upper": {"$ref": "#/$defs/quantity"},
+        "applies_when": {"type": "string", "description": "Condition under which this parameter replaces the default (e.g. grade_floor_or_below_grade == true)."},
+        "value_status": {"$ref": "#/$defs/valueStatus"},
+        "source": {"$ref": "#/$defs/ref"},
+        "locator_detail": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "baseModel": {
+      "type": "object",
+      "required": ["code", "edition", "publisher", "authority_class", "binding", "source"],
+      "properties": {
+        "code": {"const": "IRC"},
+        "edition": {"const": "2021"},
+        "publisher": {"type": "string"},
+        "authority_class": {"const": "model_code"},
+        "binding": {"const": false, "description": "A model code is not law until adopted; binding force comes only from a jurisdiction layer."},
+        "source": {"$ref": "#/$defs/ref"},
+        "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}},
+        "status": {"type": "string", "enum": ["present", "not_in_base"], "default": "present", "description": "not_in_base marks a unit that exists only because a jurisdiction layer added it."}
+      },
+      "additionalProperties": false
+    },
+    "jurisdictionLayer": {
+      "type": "object",
+      "required": ["layer_id", "jurisdiction", "code", "edition", "effective_from", "authority_class", "binding", "precedence", "override_mode", "amendment_ref", "mode_status"],
+      "properties": {
+        "layer_id": {"type": "string", "minLength": 1},
+        "jurisdiction": {"$ref": "#/$defs/ref"},
+        "code": {"type": "string"},
+        "edition": {"type": "string"},
+        "effective_from": {"type": "string", "format": "date"},
+        "authority_class": {"type": "string", "enum": ["state_adopted_code", "local_adopted_amendment"]},
+        "binding": {"type": "boolean"},
+        "precedence": {"type": "integer", "minimum": 1, "description": "Higher number wins over lower; the base model is precedence 0."},
+        "override_mode": {
+          "type": "string",
+          "enum": ["adopts_base", "replaces_value", "modifies_text", "adds_exception", "deletes", "adds_section", "replaces_section"]
+        },
+        "mode_status": {"$ref": "#/$defs/valueStatus", "description": "How the override_mode itself is known (e.g. adopts_base inferred from absence in the amendment list is sourced_primary as to the list)."},
+        "amendment_ref": {
+          "type": "object",
+          "required": ["source"],
+          "properties": {
+            "source": {"$ref": "#/$defs/ref"},
+            "item": {"type": ["string", "null"]},
+            "note": {"type": "string"}
+          },
+          "additionalProperties": false
+        },
+        "parameters": {"type": "array", "items": {"$ref": "#/$defs/parameter"}}
+      },
+      "additionalProperties": false
+    },
+    "requiredInformation": {
+      "type": "object",
+      "required": ["items"],
+      "properties": {
+        "ids": {
+          "type": ["object", "null"],
+          "required": ["ids_version", "specification_ref"],
+          "properties": {
+            "ids_version": {"const": "1.0"},
+            "specification_ref": {"type": "string", "description": "Path#name of an IDS specification describing the non-geometric information requirement. IDS cannot express geometric conditions; geometry is handled by the evaluator."},
+            "applicability_entity": {"type": "string", "pattern": "^Ifc[A-Za-z]+$"}
+          },
+          "additionalProperties": false
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["key", "description"],
+            "properties": {
+              "key": {"type": "string", "pattern": "^[a-z][a-z0-9_.]*$"},
+              "description": {"type": "string"},
+              "ifc_path": {"type": "string"},
+              "declared_value_key": {"type": "string"},
+              "pdf_evidence": {"type": "string", "description": "What a PDF plan set must show (sheet/page reference) for a declared value to be reviewable."}
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "input": {
+      "type": "object",
+      "required": ["name", "datatype", "required"],
+      "properties": {
+        "name": {"type": "string", "pattern": "^[a-z][a-z0-9_]*$"},
+        "datatype": {"type": "string", "enum": ["length", "length_list", "area", "boolean", "enum", "string", "count", "ratio"]},
+        "unit": {"type": "string"},
+        "required": {"type": "boolean"}
+      },
+      "additionalProperties": false
+    },
+    "evaluator": {
+      "type": "object",
+      "required": ["kind"],
+      "properties": {
+        "kind": {"type": "string", "enum": ["deterministic_function", "data_lookup", "human_reviewer", "human_reviewer_with_machine_assist", "not_implemented"]},
+        "implementation": {"type": ["string", "null"]},
+        "implementation_version": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["recorded_by", "recorded_at", "sources_checked"],
+      "properties": {
+        "recorded_by": {"type": "string"},
+        "recorded_at": {"type": "string", "format": "date"},
+        "sources_checked": {"type": "array", "items": {"$ref": "#/$defs/ref"}, "minItems": 1},
+        "notes": {"type": "string"}
+      },
+      "additionalProperties": false
+    },
+    "interpretabilityScore": {
+      "type": "string",
+      "enum": [
+        "clear",
+        "ambiguous_term",
+        "intent_dependent",
+        "conflicting"
+      ],
+      "description": "Rubric categories, least to most interpretive effort: clear (one reading for realistic cases), ambiguous_term (an undefined or loosely defined term changes the outcome in realistic cases), intent_dependent (compliance turns on purpose, adequacy, or official judgment the text leaves open), conflicting (two applicable provisions, or a state amendment and the base text it modifies, point to incompatible outcomes)."
+    },
+    "scoringStatus": {
+      "type": "string",
+      "enum": [
+        "estimate",
+        "single_reviewer",
+        "two_reviewer_agreed",
+        "adjudicated"
+      ],
+      "description": "estimate: ORI pre-score (agent or analyst) not yet reviewed. single_reviewer: one human reviewer scored it. two_reviewer_agreed: two independent human reviewers gave the same score. adjudicated: two reviewers disagreed and a third resolved it (record both original scores)."
+    },
+    "determination": {
+      "type": "object",
+      "description": "A published decision or interpretation that bears on how this provision is read. Only verified, fetched public records are allowed; nothing is cited from memory.",
+      "required": [
+        "citation",
+        "date",
+        "body",
+        "body_class",
+        "url",
+        "binding_effect",
+        "code_at_issue",
+        "section_at_issue",
+        "holding_summary",
+        "relevance",
+        "verification"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^det:[a-z0-9:._-]+$"
+        },
+        "citation": {
+          "type": "string",
+          "minLength": 1,
+          "description": "e.g. 'SBCTRB Code Interpretation No. 1/2021' or 'SBCTRB Appeal No. 20-03'."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date issued or entered, as printed on the record."
+        },
+        "body": {
+          "type": "string",
+          "minLength": 1
+        },
+        "body_class": {
+          "type": "string",
+          "enum": [
+            "state_review_board_interpretation",
+            "state_review_board_appeal_decision",
+            "state_agency_staff_opinion",
+            "local_building_official_policy",
+            "local_board_of_appeals_decision",
+            "model_code_publisher_staff_opinion",
+            "model_code_committee_interpretation",
+            "court_decision"
+          ]
+        },
+        "url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "binding_effect": {
+          "type": "string",
+          "minLength": 1,
+          "description": "What legal weight the record has, stated plainly (e.g. formal Review Board interpretation; case-specific appeal decision; informal staff opinion, not binding; local policy for one jurisdiction)."
+        },
+        "code_at_issue": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Code and edition the record applied, as printed (e.g. '2012 VCC (VRC)'). May differ from the unit's edition."
+        },
+        "section_at_issue": {
+          "type": "string",
+          "minLength": 1
+        },
+        "edition_carryover": {
+          "type": "string",
+          "enum": [
+            "same_section_verified",
+            "renumbered_verified",
+            "not_verified"
+          ],
+          "description": "Whether the provision the record applied corresponds to this unit's 2021 section. not_verified is the honest default when the older edition text was not compared."
+        },
+        "holding_summary": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 600,
+          "description": "ORI's own short summary of the question and answer or holding."
+        },
+        "relevance": {
+          "type": "string",
+          "enum": [
+            "direct",
+            "indirect"
+          ],
+          "description": "direct: the record resolves a question about this provision's wording. indirect: the record applies the provision without resolving a wording question, or bears on a neighbouring provision."
+        },
+        "verification": {
+          "type": "object",
+          "required": [
+            "status",
+            "fetched_at"
+          ],
+          "properties": {
+            "status": {
+              "const": "fetched_and_read",
+              "description": "Only records ORI fetched and read may be linked."
+            },
+            "fetched_at": {
+              "type": "string",
+              "format": "date"
+            },
+            "method": {
+              "type": "string",
+              "description": "e.g. 'pdftotext' or 'OCR (tesseract) of image-only PDF'."
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[0-9a-f]{64}$"
+            },
+            "notes": {
+              "type": "string"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "interpretability": {
+      "type": "object",
+      "required": [
+        "rubric_version",
+        "score",
+        "scoring_status",
+        "rationale"
+      ],
+      "properties": {
+        "rubric_version": {
+          "const": "ori-interpretability-0.1"
+        },
+        "score": {
+          "$ref": "#/$defs/interpretabilityScore"
+        },
+        "scoring_status": {
+          "$ref": "#/$defs/scoringStatus"
+        },
+        "rationale": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 800,
+          "description": "Which rubric question decided the score and why, in ORI's own words."
+        },
+        "ambiguous_terms": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "term",
+              "issue"
+            ],
+            "properties": {
+              "term": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 60,
+                "description": "The short term or phrase at issue (a few words; never a long quotation)."
+              },
+              "defined_in_code": {
+                "type": [
+                  "boolean",
+                  "null"
+                ],
+                "description": "Whether the term is a defined term (IRC Chapter 2 or VCC Chapter 2). null when not checked."
+              },
+              "issue": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 400
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "intent_questions": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 300
+          },
+          "description": "Questions a reviewer must answer that the text does not."
+        },
+        "conflicts_with": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": "Sections or documents that point to a different outcome."
+        },
+        "determinations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/determination"
+          }
+        },
+        "local_operationalizations": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/determination"
+          },
+          "description": "Local policies that turn an open provision into a fixed local method. Evidence of interpretive load; binding only in the issuing jurisdiction."
+        },
+        "evidence_strength": {
+          "type": "string",
+          "enum": [
+            "none_found",
+            "indirect",
+            "direct"
+          ],
+          "description": "Strongest relevance among linked records. none_found means ORI searched the sources listed in research/va-code-interpretations-sources-2026-09-28.md and found nothing; it does not mean none exist."
+        },
+        "candidate_clarification": {
+          "type": "object",
+          "required": [
+            "note",
+            "status",
+            "venue"
+          ],
+          "properties": {
+            "note": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 800,
+              "description": "ORI's suggested direction for clearer wording, in ORI's own words. Not proposed code text."
+            },
+            "status": {
+              "type": "string",
+              "enum": [
+                "DRAFT_not_submitted"
+              ],
+              "description": "Nothing is submitted to any code body without the owner's explicit decision."
+            },
+            "venue": {
+              "type": "string",
+              "enum": [
+                "virginia_code_development_cycle",
+                "icc_code_development_cycle",
+                "local_policy",
+                "none"
+              ],
+              "description": "Where a clarification would be raised: the Virginia cycle for Virginia-written text, the ICC cycle for unamended model-code text."
+            }
+          },
+          "additionalProperties": false
+        },
+        "reviewers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": [
+              "reviewer",
+              "score",
+              "date",
+              "independent"
+            ],
+            "properties": {
+              "reviewer": {
+                "type": "string",
+                "minLength": 1
+              },
+              "score": {
+                "$ref": "#/$defs/interpretabilityScore"
+              },
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "independent": {
+                "type": "boolean",
+                "description": "Scored without seeing the other reviewer's score or the ORI pre-score."
+              },
+              "role": {
+                "type": "string",
+                "enum": [
+                  "pre_scorer",
+                  "reviewer",
+                  "adjudicator"
+                ]
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "scored_text_source": {
+          "type": "string",
+          "description": "Source id of the text that was read to score (e.g. source:upcodes:vrc-2021-ch03)."
+        },
+        "scored_at": {
+          "type": "string",
+          "format": "date"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "scoring_status": {
+                "const": "two_reviewer_agreed"
+              }
+            },
+            "required": [
+              "scoring_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "reviewers"
+            ],
+            "properties": {
+              "reviewers": {
+                "minItems": 2
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "scoring_status": {
+                "const": "adjudicated"
+              }
+            },
+            "required": [
+              "scoring_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "reviewers"
+            ],
+            "properties": {
+              "reviewers": {
+                "minItems": 3
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "enum": [
+                  "ambiguous_term"
+                ]
+              }
+            },
+            "required": [
+              "score"
+            ]
+          },
+          "then": {
+            "required": [
+              "ambiguous_terms"
+            ],
+            "properties": {
+              "ambiguous_terms": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "const": "intent_dependent"
+              }
+            },
+            "required": [
+              "score"
+            ]
+          },
+          "then": {
+            "required": [
+              "intent_questions"
+            ],
+            "properties": {
+              "intent_questions": {
+                "minItems": 1
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "score": {
+                "const": "conflicting"
+              }
+            },
+            "required": [
+              "score"
+            ]
+          },
+          "then": {
+            "required": [
+              "conflicts_with"
+            ],
+            "properties": {
+              "conflicts_with": {
+                "minItems": 1
+              }
+            }
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "collectionHeader": {
+      "type": "object",
+      "required": ["collection_id", "rule_unit_profile", "title", "scope", "sources", "units", "legal_boundary", "status"],
+      "properties": {
+        "collection_id": {"type": "string", "pattern": "^urn:ori:rule-unit-collection:"},
+        "rule_unit_profile": {"const": "ori-rule-unit-0.1"},
+        "title": {"type": "string"},
+        "status": {"type": "string", "enum": ["DRAFT", "reviewed"]},
+        "scope": {"type": "object"},
+        "sources": {"type": "array", "minItems": 1},
+        "units": {"type": "array", "minItems": 1},
+        "legal_boundary": {"type": "object", "required": ["machine_result_is_approval"], "properties": {"machine_result_is_approval": {"const": false}}}
+      }
+    }
+  }
+}

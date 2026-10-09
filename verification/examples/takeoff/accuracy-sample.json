@@ -1,0 +1,1334 @@
+{
+ "report": "ori-plan-overlay-accuracy-0.1",
+ "label": "Measured on ORI's own synthetic sample only; not a general accuracy claim.",
+ "runs": {
+  "pdf_clean": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house.pdf",
+   "extracted": "urn:ori:overlay:daf60c852e85f8d0:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2247.0,
+      "centreline_length_extracted_in": 2247.0,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 14,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 1.0,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0002,
+       "max_abs": 0.001
+      },
+      "area_rel_error_max": 6e-06,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2247.0,
+       "extracted": 2247.0,
+       "abs_error": 0.0
+      },
+      "net_space_area_ft2": {
+       "gt": 811.031,
+       "extracted": 811.032,
+       "abs_error": 0.001
+      },
+      "doors": {
+       "gt": 7,
+       "extracted": 7
+      },
+      "windows": {
+       "gt": 7,
+       "extracted": 7
+      }
+     }
+    },
+    {
+     "page": 2,
+     "page_label": "A-102",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2287.5,
+      "centreline_length_extracted_in": 2287.5,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 4,
+       "gt": 4,
+       "extracted": 4,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 8,
+       "gt": 8,
+       "extracted": 8,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 12,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 1.0,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0002,
+       "max_abs": 0.001
+      },
+      "area_rel_error_max": 4e-06,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2287.5,
+       "extracted": 2287.5,
+       "abs_error": 0.0
+      },
+      "net_space_area_ft2": {
+       "gt": 809.765,
+       "extracted": 809.766,
+       "abs_error": 0.001
+      },
+      "doors": {
+       "gt": 4,
+       "extracted": 4
+      },
+      "windows": {
+       "gt": 8,
+       "extracted": 8
+      }
+     }
+    }
+   ]
+  },
+  "pdf_clean_geometry_only": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house.pdf",
+   "extracted": "urn:ori:overlay:daf60c852e85f8d0:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 38,
+      "matched": 8,
+      "centreline_length_gt_in": 2247.0,
+      "centreline_length_extracted_in": 4262.75,
+      "length_precision": 0.8314,
+      "length_recall": 0.9943,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 20,
+       "precision": 0.7,
+       "recall": 1.0,
+       "f1": 0.8235
+      },
+      "located_and_class_correct": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 20,
+       "precision": 0.7,
+       "recall": 1.0,
+       "f1": 0.8235
+      },
+      "doors": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 14,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 3,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6,
+      "mean_iou": 0.99194,
+      "area_error_ft2": {
+       "n": 3,
+       "mean_abs": 1.7087,
+       "max_abs": 5.125
+      },
+      "area_rel_error_max": 0.024189,
+      "label_correct": 3,
+      "use_correct": 3
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2247.0,
+       "extracted": 4262.75,
+       "abs_error": 2015.75
+      },
+      "net_space_area_ft2": {
+       "gt": 811.031,
+       "extracted": 766.927,
+       "abs_error": 44.104
+      },
+      "doors": {
+       "gt": 7,
+       "extracted": 7
+      },
+      "windows": {
+       "gt": 7,
+       "extracted": 7
+      }
+     }
+    },
+    {
+     "page": 2,
+     "page_label": "A-102",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 42,
+      "matched": 8,
+      "centreline_length_gt_in": 2287.5,
+      "centreline_length_extracted_in": 4010.25,
+      "length_precision": 0.8114,
+      "length_recall": 0.9975,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 14,
+       "precision": 0.8571,
+       "recall": 1.0,
+       "f1": 0.9231
+      },
+      "located_and_class_correct": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 14,
+       "precision": 0.8571,
+       "recall": 1.0,
+       "f1": 0.9231
+      },
+      "doors": {
+       "tp": 4,
+       "gt": 4,
+       "extracted": 4,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 8,
+       "gt": 8,
+       "extracted": 8,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 12,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 3,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6,
+      "mean_iou": 0.99481,
+      "area_error_ft2": {
+       "n": 3,
+       "mean_abs": 0.852,
+       "max_abs": 2.555
+      },
+      "area_rel_error_max": 0.01556,
+      "label_correct": 3,
+      "use_correct": 3
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2287.5,
+       "extracted": 4010.25,
+       "abs_error": 1722.75
+      },
+      "net_space_area_ft2": {
+       "gt": 809.765,
+       "extracted": 755.704,
+       "abs_error": 54.061
+      },
+      "doors": {
+       "gt": 4,
+       "extracted": 4
+      },
+      "windows": {
+       "gt": 8,
+       "extracted": 8
+      }
+     }
+    }
+   ]
+  },
+  "pdf_noisy": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house-noisy.pdf",
+   "extracted": "urn:ori:overlay:6f381f2d13c2bb28:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2247.0,
+      "centreline_length_extracted_in": 2244.869,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 14,
+       "mean_abs": 0.5064,
+       "max_abs": 0.733
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 0.99999,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0002,
+       "max_abs": 0.001
+      },
+      "area_rel_error_max": 6e-06,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2247.0,
+       "extracted": 2244.869,
+       "abs_error": 2.131
+      },
+      "net_space_area_ft2": {
+       "gt": 811.031,
+       "extracted": 811.032,
+       "abs_error": 0.001
+      },
+      "doors": {
+       "gt": 7,
+       "extracted": 7
+      },
+      "windows": {
+       "gt": 7,
+       "extracted": 7
+      }
+     }
+    },
+    {
+     "page": 2,
+     "page_label": "A-102",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2287.501,
+      "centreline_length_extracted_in": 2285.426,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 4,
+       "gt": 4,
+       "extracted": 4,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 8,
+       "gt": 8,
+       "extracted": 8,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 12,
+       "mean_abs": 0.4772,
+       "max_abs": 0.722
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 0.99999,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0002,
+       "max_abs": 0.001
+      },
+      "area_rel_error_max": 4e-06,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2287.501,
+       "extracted": 2285.426,
+       "abs_error": 2.075
+      },
+      "net_space_area_ft2": {
+       "gt": 809.765,
+       "extracted": 809.766,
+       "abs_error": 0.001
+      },
+      "doors": {
+       "gt": 4,
+       "extracted": 4
+      },
+      "windows": {
+       "gt": 8,
+       "extracted": 8
+      }
+     }
+    }
+   ]
+  },
+  "pdf_noisy_geometry_only": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house-noisy.pdf",
+   "extracted": "urn:ori:overlay:6f381f2d13c2bb28:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 40,
+      "matched": 8,
+      "centreline_length_gt_in": 2247.0,
+      "centreline_length_extracted_in": 4330.935,
+      "length_precision": 0.8161,
+      "length_recall": 0.9904,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 20,
+       "precision": 0.7,
+       "recall": 1.0,
+       "f1": 0.8235
+      },
+      "located_and_class_correct": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 20,
+       "precision": 0.7,
+       "recall": 1.0,
+       "f1": 0.8235
+      },
+      "doors": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 14,
+       "mean_abs": 0.5064,
+       "max_abs": 0.733
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 3,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6,
+      "mean_iou": 0.98539,
+      "area_error_ft2": {
+       "n": 3,
+       "mean_abs": 3.2917,
+       "max_abs": 7.208
+      },
+      "area_rel_error_max": 0.03402,
+      "label_correct": 3,
+      "use_correct": 3
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2247.0,
+       "extracted": 4330.935,
+       "abs_error": 2083.935
+      },
+      "net_space_area_ft2": {
+       "gt": 811.031,
+       "extracted": 762.178,
+       "abs_error": 48.853
+      },
+      "doors": {
+       "gt": 7,
+       "extracted": 7
+      },
+      "windows": {
+       "gt": 7,
+       "extracted": 7
+      }
+     }
+    },
+    {
+     "page": 2,
+     "page_label": "A-102",
+     "scale_status": "stated_confirmed",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 43,
+      "matched": 8,
+      "centreline_length_gt_in": 2287.501,
+      "centreline_length_extracted_in": 4050.556,
+      "length_precision": 0.8029,
+      "length_recall": 0.9975,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 14,
+       "precision": 0.8571,
+       "recall": 1.0,
+       "f1": 0.9231
+      },
+      "located_and_class_correct": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 14,
+       "precision": 0.8571,
+       "recall": 1.0,
+       "f1": 0.9231
+      },
+      "doors": {
+       "tp": 4,
+       "gt": 4,
+       "extracted": 4,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 8,
+       "gt": 8,
+       "extracted": 8,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 12,
+       "mean_abs": 0.4772,
+       "max_abs": 0.722
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 3,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 0.6,
+      "recall": 0.6,
+      "f1": 0.6,
+      "mean_iou": 0.9948,
+      "area_error_ft2": {
+       "n": 3,
+       "mean_abs": 0.852,
+       "max_abs": 2.555
+      },
+      "area_rel_error_max": 0.01556,
+      "label_correct": 3,
+      "use_correct": 3
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2287.501,
+       "extracted": 4050.556,
+       "abs_error": 1763.055
+      },
+      "net_space_area_ft2": {
+       "gt": 809.765,
+       "extracted": 755.704,
+       "abs_error": 54.061
+      },
+      "doors": {
+       "gt": 4,
+       "extracted": 4
+      },
+      "windows": {
+       "gt": 8,
+       "extracted": 8
+      }
+     }
+    }
+   ]
+  },
+  "dxf_A-101": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house-A-101.dxf",
+   "extracted": "urn:ori:overlay:7256f8f70546ccbf:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "scale_status": "drawing_units",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2247.0,
+      "centreline_length_extracted_in": 2247.0,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 14,
+       "gt": 14,
+       "extracted": 14,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 7,
+       "gt": 7,
+       "extracted": 7,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 14,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 1.0,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "area_rel_error_max": 0.0,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2247.0,
+       "extracted": 2247.0,
+       "abs_error": 0.0
+      },
+      "net_space_area_ft2": {
+       "gt": 811.031,
+       "extracted": 811.031,
+       "abs_error": 0.0
+      },
+      "doors": {
+       "gt": 7,
+       "extracted": 7
+      },
+      "windows": {
+       "gt": 7,
+       "extracted": 7
+      }
+     }
+    }
+   ]
+  },
+  "dxf_A-102": {
+   "report": "ori-plan-overlay-accuracy-0.1",
+   "label": "Measured on this file pair only; not a general accuracy claim.",
+   "ground_truth": "urn:ori:overlay:groundtruth:ori-sample-house-A-102.dxf",
+   "extracted": "urn:ori:overlay:0c568e176df199d9:ori_takeoff:0.1.0",
+   "extractor": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-102",
+     "scale_status": "drawing_units",
+     "scale_rel_error": 0.0,
+     "walls": {
+      "gt_count": 8,
+      "extracted_count": 8,
+      "matched": 8,
+      "centreline_length_gt_in": 2287.5,
+      "centreline_length_extracted_in": 2287.5,
+      "length_precision": 1.0,
+      "length_recall": 1.0,
+      "thickness_error_in": {
+       "n": 8,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 2.0
+     },
+     "openings": {
+      "located": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "located_and_class_correct": {
+       "tp": 12,
+       "gt": 12,
+       "extracted": 12,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "doors": {
+       "tp": 4,
+       "gt": 4,
+       "extracted": 4,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "windows": {
+       "tp": 8,
+       "gt": 8,
+       "extracted": 8,
+       "precision": 1.0,
+       "recall": 1.0,
+       "f1": 1.0
+      },
+      "width_error_in": {
+       "n": 12,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "tolerance_in": 6.0
+     },
+     "spaces": {
+      "tp": 5,
+      "gt": 5,
+      "extracted": 5,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "mean_iou": 1.0,
+      "area_error_ft2": {
+       "n": 5,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      },
+      "area_rel_error_max": 0.0,
+      "label_correct": 5,
+      "use_correct": 5
+     },
+     "stairs": {
+      "tp": 1,
+      "gt": 1,
+      "extracted": 1,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "riser_count_correct": 1,
+      "tread_count_correct": 1,
+      "tread_depth_error_in": {
+       "n": 1,
+       "mean_abs": 0.0,
+       "max_abs": 0.0
+      }
+     },
+     "dimensions": {
+      "tp": 6,
+      "gt": 6,
+      "extracted": 6,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "value_correct": 6
+     },
+     "takeoff_totals": {
+      "wall_length_in": {
+       "gt": 2287.5,
+       "extracted": 2287.5,
+       "abs_error": 0.0
+      },
+      "net_space_area_ft2": {
+       "gt": 809.765,
+       "extracted": 809.765,
+       "abs_error": 0.0
+      },
+      "doors": {
+       "gt": 4,
+       "extracted": 4
+      },
+      "windows": {
+       "gt": 8,
+       "extracted": 8
+      }
+     }
+    }
+   ]
+  }
+ }
+}

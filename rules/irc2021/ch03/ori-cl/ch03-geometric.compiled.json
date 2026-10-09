@@ -1,0 +1,2910 @@
+[
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-height-max",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:sma-2021-irc-visual"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Every riser height is at most max riser height",
+   "paraphrase": "For a stair flight: every riser height is at most max riser height. Values: max riser height 7.75 in (base model), 8.25 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.7.5.1",
+    "chapter": 3,
+    "subsection_part": "maximum riser"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "max_riser_height",
+      "comparator": "<=",
+      "quantity": {
+       "value": 7.75,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:sma-2021-irc-visual"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_value",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 20"
+     },
+     "parameters": [
+      {
+       "name": "max_riser_height",
+       "comparator": "<=",
+       "quantity": {
+        "value": 8.25,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 20"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "stair_flight.riser_heights",
+      "description": "riser height",
+      "ifc_path": "Pset_StairFlightCommon.RiserHeight"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "riser_heights",
+     "datatype": "length_list",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#riser_height_max",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:sma-2021-irc-visual"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.7.5.1:riser-height-max",
+    "statement_sha256": "fdb26882b6057948c3a32a17999767220d2e90134ae1e5538374b512c814216f",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.7.5.1:riser-height-max",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": "riser_height_max",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "each",
+    "fact": "riser_heights",
+    "cmp": "<=",
+    "param": "max_riser_height"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "riser_heights",
+     "start": "tread_nosing",
+     "end": "tread_nosing",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "max_riser_height"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.7.5.1:riser-uniformity",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:sma-2021-irc-visual"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "The largest minus the smallest riser height is at most max riser variation",
+   "paraphrase": "For a stair flight: the largest minus the smallest riser height is at most max riser variation. Values: max riser variation 0.375 in (base model), 0.375 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.7.5.1",
+    "chapter": 3,
+    "subsection_part": "riser uniformity"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "max_riser_variation",
+      "comparator": "<=",
+      "quantity": {
+       "value": 0.375,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:sma-2021-irc-visual"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_value",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 20"
+     },
+     "parameters": [
+      {
+       "name": "max_riser_variation",
+       "comparator": "<=",
+       "quantity": {
+        "value": 0.375,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 20"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "stair_flight.riser_heights",
+      "description": "riser height",
+      "ifc_path": "Pset_StairFlightCommon.RiserHeight"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "riser_heights",
+     "datatype": "length_list",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#riser_uniformity",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:sma-2021-irc-visual"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.7.5.1:riser-uniformity",
+    "statement_sha256": "c69535cefebdac81bb8e79b9435fc9d5fc783487ee2266c50c5bb03b02dcd909",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.7.5.1:riser-uniformity",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": "riser_uniformity",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "spread",
+    "fact": "riser_heights",
+    "cmp": "<=",
+    "param": "max_riser_variation"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "riser_heights",
+     "start": "tread_nosing",
+     "end": "tread_nosing",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "max_riser_variation"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-depth-min",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:sma-2021-irc-visual"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Every tread depth is at least min tread depth",
+   "paraphrase": "For a stair flight: every tread depth is at least min tread depth. Values: min tread depth 10 in (base model), 9 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.7.5.2",
+    "chapter": 3,
+    "subsection_part": "minimum tread"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_tread_depth",
+      "comparator": ">=",
+      "quantity": {
+       "value": 10,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:sma-2021-irc-visual"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_value",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 21"
+     },
+     "parameters": [
+      {
+       "name": "min_tread_depth",
+       "comparator": ">=",
+       "quantity": {
+        "value": 9,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 21"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "stair_flight.tread_depths",
+      "description": "tread depth",
+      "ifc_path": "Pset_StairFlightCommon.TreadLength"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "tread_depths",
+     "datatype": "length_list",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#tread_depth_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:sma-2021-irc-visual"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.7.5.2:tread-depth-min",
+    "statement_sha256": "bbe3cf4a9f00f5ad7e3fb5af77b8637abc211c63d9102e9f81f05e6e3fc1a2ec",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.7.5.2:tread-depth-min",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": "tread_depth_min",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "each",
+    "fact": "tread_depths",
+    "cmp": ">=",
+    "param": "min_tread_depth"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "tread_depths",
+     "start": "tread_nosing",
+     "end": "tread_nosing",
+     "along": "horizontal",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_tread_depth"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.7.5.2:tread-uniformity",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:sma-2021-irc-visual"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "The largest minus the smallest tread depth is at most max tread variation",
+   "paraphrase": "For a stair flight: the largest minus the smallest tread depth is at most max tread variation. Values: max tread variation 0.375 in (base model), 0.375 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.7.5.2",
+    "chapter": 3,
+    "subsection_part": "tread uniformity"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "max_tread_variation",
+      "comparator": "<=",
+      "quantity": {
+       "value": 0.375,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:sma-2021-irc-visual"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_value",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 21"
+     },
+     "parameters": [
+      {
+       "name": "max_tread_variation",
+       "comparator": "<=",
+       "quantity": {
+        "value": 0.375,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 21"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "stair_flight.tread_depths",
+      "description": "tread depth",
+      "ifc_path": "Pset_StairFlightCommon.TreadLength"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "tread_depths",
+     "datatype": "length_list",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#tread_uniformity",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:sma-2021-irc-visual"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.7.5.2:tread-uniformity",
+    "statement_sha256": "bd44417ff548410421bdfd90a340a0c76943da2ab2aa5fcc64d758f2035bb070",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.7.5.2:tread-uniformity",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": "tread_uniformity",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "spread",
+    "fact": "tread_depths",
+    "cmp": "<=",
+    "param": "max_tread_variation"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "tread_depths",
+     "start": "tread_nosing",
+     "end": "tread_nosing",
+     "along": "horizontal",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "max_tread_variation"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R311.7.2:stair-headroom-min",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Every headroom is at least min headroom",
+   "paraphrase": "For a stair flight: every headroom is at least min headroom. Values: min headroom 80 in (base model), 80 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R311.7.2",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_headroom",
+      "comparator": ">=",
+      "quantity": {
+       "value": 80,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "6 ft 8 in; VRC text unamended, so equal to the IRC base"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "min_headroom",
+       "comparator": ">=",
+       "quantity": {
+        "value": 80,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "6 ft 8 in; VRC text unamended, so equal to the IRC base"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "stair_flight.headroom_clearances",
+      "description": "headroom",
+      "ifc_path": "Pset_StairFlightCommon.Headroom"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "headroom_clearances",
+     "datatype": "length_list",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#stair_headroom_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R311.7.2:stair-headroom-min",
+    "statement_sha256": "bfcb1a07c3ba23267f39edf68f0c63240edd59ad95341781032e294090976ed7",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R311.7.2:stair-headroom-min",
+   "subject": "stair_flight",
+   "ifc": {
+    "entity": "IfcStairFlight",
+    "predefined_type": null
+   },
+   "check": "stair_headroom_min",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "each",
+    "fact": "headroom_clearances",
+    "cmp": ">=",
+    "param": "min_headroom",
+    "empty_absent": true
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "headroom_clearances",
+     "start": "nosing_line",
+     "end": "overhead_underside",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_headroom"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-habitable",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Ceiling height is at least min ceiling height",
+   "paraphrase": "For a space, where use category is one of habitable, kitchen, hallway: ceiling height is at least min ceiling height; if not met and sloped ceiling is yes, a reviewer decides. Values: min ceiling height 84 in (base model), 84 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R305.1",
+    "chapter": 3,
+    "subsection_part": "habitable"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_ceiling_height",
+      "comparator": ">=",
+      "quantity": {
+       "value": 84,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "7 ft; VRC text unamended"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "min_ceiling_height",
+       "comparator": ">=",
+       "quantity": {
+        "value": 84,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "7 ft; VRC text unamended"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "space.space_use",
+      "description": "use category",
+      "ifc_path": "Pset_ORI_SpaceUse.UseCategory"
+     },
+     {
+      "key": "space.ceiling_height",
+      "description": "ceiling height",
+      "ifc_path": "Qto_SpaceBaseQuantities.FinishCeilingHeight"
+     },
+     {
+      "key": "space.sloped_ceiling",
+      "description": "sloped ceiling",
+      "ifc_path": "Pset_ORI_SpaceUse.SlopedCeiling"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "space_use",
+     "datatype": "enum",
+     "required": true
+    },
+    {
+     "name": "ceiling_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    },
+    {
+     "name": "sloped_ceiling",
+     "datatype": "boolean",
+     "required": false
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#ceiling_height_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R305.1:ceiling-height-habitable",
+    "statement_sha256": "dbdfe48ddfc0fa3183334c97cff7c63a4e341c2d4358b6cfdca87e2557b804ae",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R305.1:ceiling-height-habitable",
+   "subject": "space",
+   "ifc": {
+    "entity": "IfcSpace",
+    "predefined_type": null
+   },
+   "check": "ceiling_height_min",
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "in",
+       "fact": "space_use",
+       "values": [
+        "habitable",
+        "kitchen",
+        "hallway"
+       ]
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "compare",
+    "fact": "ceiling_height",
+    "cmp": ">=",
+    "param": "min_ceiling_height"
+   },
+   "excepts": [
+    {
+     "when": {
+      "op": "and",
+      "atoms": [
+       {
+        "kind": "is",
+        "fact": "sloped_ceiling",
+        "value": true,
+        "negated": false
+       }
+      ]
+     },
+     "mode": "reviewer",
+     "param": null,
+     "optional": false
+    }
+   ],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "ceiling_height",
+     "start": "finished_floor",
+     "end": "finished_ceiling",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_ceiling_height"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R305.1:ceiling-height-bath-toilet-laundry",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Ceiling height is at least min ceiling height",
+   "paraphrase": "For a space, where use category is one of bathroom, toilet, laundry: ceiling height is at least min ceiling height; if not met and sloped ceiling is yes, a reviewer decides. Values: min ceiling height 80 in (base model), 80 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R305.1",
+    "chapter": 3,
+    "subsection_part": "bath-toilet-laundry"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_ceiling_height",
+      "comparator": ">=",
+      "quantity": {
+       "value": 80,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "6 ft 8 in; VRC text unamended"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "min_ceiling_height",
+       "comparator": ">=",
+       "quantity": {
+        "value": 80,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "6 ft 8 in; VRC text unamended"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "space.space_use",
+      "description": "use category",
+      "ifc_path": "Pset_ORI_SpaceUse.UseCategory"
+     },
+     {
+      "key": "space.ceiling_height",
+      "description": "ceiling height",
+      "ifc_path": "Qto_SpaceBaseQuantities.FinishCeilingHeight"
+     },
+     {
+      "key": "space.sloped_ceiling",
+      "description": "sloped ceiling",
+      "ifc_path": "Pset_ORI_SpaceUse.SlopedCeiling"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "space_use",
+     "datatype": "enum",
+     "required": true
+    },
+    {
+     "name": "ceiling_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    },
+    {
+     "name": "sloped_ceiling",
+     "datatype": "boolean",
+     "required": false
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#ceiling_height_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R305.1:ceiling-height-bath-toilet-laundry",
+    "statement_sha256": "68cd6a3f9e9468715b11a31517476d4d281ef065443ade7101ad2b3a0796d4a5",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R305.1:ceiling-height-bath-toilet-laundry",
+   "subject": "space",
+   "ifc": {
+    "entity": "IfcSpace",
+    "predefined_type": null
+   },
+   "check": "ceiling_height_min",
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "in",
+       "fact": "space_use",
+       "values": [
+        "bathroom",
+        "toilet",
+        "laundry"
+       ]
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "compare",
+    "fact": "ceiling_height",
+    "cmp": ">=",
+    "param": "min_ceiling_height"
+   },
+   "excepts": [
+    {
+     "when": {
+      "op": "and",
+      "atoms": [
+       {
+        "kind": "is",
+        "fact": "sloped_ceiling",
+        "value": true,
+        "negated": false
+       }
+      ]
+     },
+     "mode": "reviewer",
+     "param": null,
+     "optional": false
+    }
+   ],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "ceiling_height",
+     "start": "finished_floor",
+     "end": "finished_ceiling",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_ceiling_height"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R304.1:room-area-min",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Floor area is at least min habitable room area",
+   "paraphrase": "For a space, where use category is habitable: floor area is at least min habitable room area; not applied when use category is kitchen. Values: min habitable room area 70 ft2 (base model), 70 ft2 (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R304.1",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_habitable_room_area",
+      "comparator": ">=",
+      "quantity": {
+       "value": 70,
+       "unit": "ft2"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "VRC text unamended; kitchens excepted"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "min_habitable_room_area",
+       "comparator": ">=",
+       "quantity": {
+        "value": 70,
+        "unit": "ft2"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "VRC text unamended; kitchens excepted"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "space.space_use",
+      "description": "use category",
+      "ifc_path": "Pset_ORI_SpaceUse.UseCategory"
+     },
+     {
+      "key": "space.floor_area",
+      "description": "floor area",
+      "ifc_path": "Qto_SpaceBaseQuantities.NetFloorArea"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "space_use",
+     "datatype": "enum",
+     "required": true
+    },
+    {
+     "name": "floor_area",
+     "datatype": "area",
+     "unit": "ft2",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#room_area_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R304.1:room-area-min",
+    "statement_sha256": "dd631db8cee63eb0fc33e07ced570c2b9935d20936c2ad6384988db9f1ca4fda",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R304.1:room-area-min",
+   "subject": "space",
+   "ifc": {
+    "entity": "IfcSpace",
+    "predefined_type": null
+   },
+   "check": "room_area_min",
+   "unless": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "space_use",
+       "value": "kitchen",
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "is",
+       "fact": "space_use",
+       "value": "habitable",
+       "negated": false
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "compare",
+    "fact": "floor_area",
+    "cmp": ">=",
+    "param": "min_habitable_room_area"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "floor_area",
+     "start": "space_footprint",
+     "end": "space_footprint",
+     "along": null,
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_habitable_room_area"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-area",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:roy-city-egress-2021"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Net clear area is at least min net clear area",
+   "paraphrase": "For an escape opening: net clear area is at least min net clear area; if at ground level or below is yes, min net clear area grade floor is accepted instead. Values: min net clear area 5.7 ft2 (base model), 5.7 ft2 (us-va:vrc-2021); min net clear area grade floor 5.0 ft2 (base model), 5.0 ft2 (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R310.2.1",
+    "chapter": 3,
+    "subsection_part": "net clear area"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_net_clear_area",
+      "comparator": ">=",
+      "quantity": {
+       "value": 5.7,
+       "unit": "ft2"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:roy-city-egress-2021"
+     },
+     {
+      "name": "min_net_clear_area_grade_floor",
+      "comparator": ">=",
+      "quantity": {
+       "value": 5.0,
+       "unit": "ft2"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:roy-city-egress-2021",
+      "applies_when": "grade_floor_or_below_grade == true"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_section",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 16"
+     },
+     "parameters": [
+      {
+       "name": "min_net_clear_area",
+       "comparator": ">=",
+       "quantity": {
+        "value": 5.7,
+        "unit": "ft2"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 16"
+      },
+      {
+       "name": "min_net_clear_area_grade_floor",
+       "comparator": ">=",
+       "quantity": {
+        "value": 5.0,
+        "unit": "ft2"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "applies_when": "grade_floor_or_below_grade == true",
+       "locator_detail": "310.8 item 16"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "eero.net_clear_area",
+      "description": "net clear area",
+      "ifc_path": "Pset_ORI_EscapeOpening.NetClearArea"
+     },
+     {
+      "key": "eero.net_clear_height",
+      "description": "net clear height",
+      "ifc_path": "Pset_ORI_EscapeOpening.NetClearHeight"
+     },
+     {
+      "key": "eero.net_clear_width",
+      "description": "net clear width",
+      "ifc_path": "Pset_ORI_EscapeOpening.NetClearWidth"
+     },
+     {
+      "key": "eero.grade_floor_or_below_grade",
+      "description": "at ground level or below",
+      "ifc_path": "Pset_ORI_EscapeOpening.GradeFloorOrBelowGrade"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "net_clear_area",
+     "datatype": "area",
+     "unit": "ft2",
+     "required": false
+    },
+    {
+     "name": "net_clear_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": false
+    },
+    {
+     "name": "net_clear_width",
+     "datatype": "length",
+     "unit": "in",
+     "required": false
+    },
+    {
+     "name": "grade_floor_or_below_grade",
+     "datatype": "boolean",
+     "required": false
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#eero_net_clear_area",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:roy-city-egress-2021"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R310.2.1:eero-net-clear-area",
+    "statement_sha256": "3f3d6e000d434ddae079040373c3543fee8db594938253e778941791a17f6d2c",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R310.2.1:eero-net-clear-area",
+   "subject": "eero",
+   "ifc": {
+    "entity": "IfcWindow",
+    "predefined_type": "WINDOW"
+   },
+   "check": "eero_net_clear_area",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "net_clear_area",
+    "cmp": ">=",
+    "param": "min_net_clear_area"
+   },
+   "excepts": [
+    {
+     "when": {
+      "op": "and",
+      "atoms": [
+       {
+        "kind": "is",
+        "fact": "grade_floor_or_below_grade",
+        "value": true,
+        "negated": false
+       }
+      ]
+     },
+     "mode": "allow",
+     "param": "min_net_clear_area_grade_floor",
+     "optional": false
+    }
+   ],
+   "reviewer_terms": [],
+   "derive": {
+    "target": "net_clear_area",
+    "a": "net_clear_height",
+    "b": "net_clear_width",
+    "num": 1,
+    "den": 144
+   },
+   "measures": [],
+   "params_required": [
+    "min_net_clear_area",
+    "min_net_clear_area_grade_floor"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-height",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:roy-city-egress-2021"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Net clear height is at least min net clear height",
+   "paraphrase": "For an escape opening: net clear height is at least min net clear height. Values: min net clear height 24 in (base model), 24 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R310.2.1",
+    "chapter": 3,
+    "subsection_part": "net clear height"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_net_clear_height",
+      "comparator": ">=",
+      "quantity": {
+       "value": 24,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:roy-city-egress-2021",
+      "locator_detail": "base model carries this in R310.2.2"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_section",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 16"
+     },
+     "parameters": [
+      {
+       "name": "min_net_clear_height",
+       "comparator": ">=",
+       "quantity": {
+        "value": 24,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 16 (moved into R310.2.1)"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "eero.net_clear_height",
+      "description": "net clear height",
+      "ifc_path": "Pset_ORI_EscapeOpening.NetClearHeight"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "net_clear_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#eero_net_clear_height",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:roy-city-egress-2021"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R310.2.1:eero-net-clear-height",
+    "statement_sha256": "5dfe8095e5cf1fb9fb666059b10bd20081c67d4b5bf892ed35dcabbd6c47a2b5",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R310.2.1:eero-net-clear-height",
+   "subject": "eero",
+   "ifc": {
+    "entity": "IfcWindow",
+    "predefined_type": "WINDOW"
+   },
+   "check": "eero_net_clear_height",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "net_clear_height",
+    "cmp": ">=",
+    "param": "min_net_clear_height"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "net_clear_height",
+     "start": "clear_opening_bottom",
+     "end": "clear_opening_top",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_net_clear_height"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R310.2.1:eero-net-clear-width",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:secondary:roy-city-egress-2021"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Net clear width is at least min net clear width",
+   "paraphrase": "For an escape opening: net clear width is at least min net clear width. Values: min net clear width 20 in (base model), 20 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R310.2.1",
+    "chapter": 3,
+    "subsection_part": "net clear width"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_net_clear_width",
+      "comparator": ">=",
+      "quantity": {
+       "value": 20,
+       "unit": "in"
+      },
+      "value_status": "sourced_secondary",
+      "source": "source:secondary:roy-city-egress-2021",
+      "locator_detail": "base model carries this in R310.2.2"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "replaces_section",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": "310.8 item 16"
+     },
+     "parameters": [
+      {
+       "name": "min_net_clear_width",
+       "comparator": ">=",
+       "quantity": {
+        "value": 20,
+        "unit": "in"
+       },
+       "value_status": "sourced_primary",
+       "source": "source:va:13vac5-63-210",
+       "locator_detail": "310.8 item 16 (moved into R310.2.1)"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "eero.net_clear_width",
+      "description": "net clear width",
+      "ifc_path": "Pset_ORI_EscapeOpening.NetClearWidth"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "net_clear_width",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#eero_net_clear_width",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:secondary:roy-city-egress-2021"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R310.2.1:eero-net-clear-width",
+    "statement_sha256": "c641fd8844be7dee1f7046f23726b1388a45b5c51afa5cdc923eba7982c2f4df",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R310.2.1:eero-net-clear-width",
+   "subject": "eero",
+   "ifc": {
+    "entity": "IfcWindow",
+    "predefined_type": "WINDOW"
+   },
+   "check": "eero_net_clear_width",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "net_clear_width",
+    "cmp": ">=",
+    "param": "min_net_clear_width"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "net_clear_width",
+     "start": "clear_opening_side",
+     "end": "clear_opening_side",
+     "along": "horizontal",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_net_clear_width"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R310.2.3:eero-sill-height-max",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Sill height is at most max sill height",
+   "paraphrase": "For an escape opening: sill height is at most max sill height. Values: max sill height 44 in (base model), 44 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R310.2.3",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "max_sill_height",
+      "comparator": "<=",
+      "quantity": {
+       "value": 44,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "VRC text unamended"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "max_sill_height",
+       "comparator": "<=",
+       "quantity": {
+        "value": 44,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "VRC text unamended"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "eero.sill_height",
+      "description": "sill height"
+     },
+     {
+      "key": "eero.frame_bottom_height",
+      "description": "frame bottom height"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "sill_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": false
+    },
+    {
+     "name": "frame_bottom_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": false
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#eero_sill_height_max",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R310.2.3:eero-sill-height-max",
+    "statement_sha256": "60e553ec3b66134097334eec4829a2c86cb387f152310c3867ef53ec858ba63b",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R310.2.3:eero-sill-height-max",
+   "subject": "eero",
+   "ifc": {
+    "entity": "IfcWindow",
+    "predefined_type": "WINDOW"
+   },
+   "check": "eero_sill_height_max",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "sill_height",
+    "cmp": "<=",
+    "param": "max_sill_height",
+    "bound": "frame_bottom_height"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "sill_height",
+     "start": "finished_floor",
+     "end": "clear_opening_bottom",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "max_sill_height"
+   ],
+   "params_optional": [],
+   "params_reported": []
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R312.1.1:guard-required",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Guard present is required",
+   "paraphrase": "For a walking surface, where drop height is more than guard trigger drop: guard present is required. Values: guard trigger drop 30 in (base model), 30 in (us-va:vrc-2021); guard trigger horizontal band 36 in (base model), 36 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R312.1.1",
+    "chapter": 3
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "guard_trigger_drop",
+      "comparator": ">",
+      "quantity": {
+       "value": 30,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "drop measured within 36 in horizontally of the open edge; VRC text unamended"
+     },
+     {
+      "name": "guard_trigger_horizontal_band",
+      "comparator": "<=",
+      "quantity": {
+       "value": 36,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "guard_trigger_drop",
+       "comparator": ">",
+       "quantity": {
+        "value": 30,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "drop measured within 36 in horizontally of the open edge; VRC text unamended"
+      },
+      {
+       "name": "guard_trigger_horizontal_band",
+       "comparator": "<=",
+       "quantity": {
+        "value": 36,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "walking_surface.drop_height",
+      "description": "drop height"
+     },
+     {
+      "key": "walking_surface.guard_present",
+      "description": "guard present",
+      "ifc_path": "IfcRailing"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "drop_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    },
+    {
+     "name": "guard_present",
+     "datatype": "boolean",
+     "required": true
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#guard_required",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R312.1.1:guard-required",
+    "statement_sha256": "1f5704f5d6d31980f0dd1c740b2fcea7dbce0b9f5402e15b91f8941ce9baa29d",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R312.1.1:guard-required",
+   "subject": "walking_surface",
+   "ifc": {
+    "entity": "IfcSlab",
+    "predefined_type": null
+   },
+   "check": "guard_required",
+   "unless": [],
+   "when": [
+    {
+     "op": "and",
+     "atoms": [
+      {
+       "kind": "cmp",
+       "fact": "drop_height",
+       "cmp": ">",
+       "param": "guard_trigger_drop"
+      }
+     ]
+    }
+   ],
+   "require": {
+    "form": "present",
+    "fact": "guard_present"
+   },
+   "excepts": [],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "drop_height",
+     "start": "walking_surface_top",
+     "end": "lower_surface_top",
+     "along": "plumb",
+     "within": "guard_trigger_horizontal_band"
+    }
+   ],
+   "params_required": [
+    "guard_trigger_drop"
+   ],
+   "params_optional": [],
+   "params_reported": [
+    "guard_trigger_horizontal_band"
+   ]
+  }
+ },
+ {
+  "unit": {
+   "id": "urn:ori:rule-unit:irc2021-va:R312.1.2:guard-height-min",
+   "type": "Requirement",
+   "version": "0.1.0",
+   "jurisdiction": [
+    "urn:ori:jurisdiction:us-va"
+   ],
+   "source": [
+    "source:icc:irc-2021",
+    "source:va:13vac5-63-210",
+    "source:upcodes:vrc-2021-ch03"
+   ],
+   "derived_from": [],
+   "supersedes": [],
+   "metadata": {
+    "authority_classification": "state_adopted_code",
+    "status": "DRAFT",
+    "generated_by": "ori-cl-0.1"
+   },
+   "rule_unit_profile": "ori-rule-unit-0.1",
+   "title": "Guard height is at least min guard height",
+   "paraphrase": "For a guard: guard height is at least min guard height; if on stair open side is yes, min guard height stair open side applies instead. Values: min guard height 36 in (base model), 36 in (us-va:vrc-2021); min guard height stair open side 34 in (base model), 34 in (us-va:vrc-2021).",
+   "source_url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning",
+   "source_links": [
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/VARC2021P1/chapter-3-building-planning"
+    },
+    {
+     "label": "Official text (codes.iccsafe.org)",
+     "url": "https://codes.iccsafe.org/content/IRC2021P1/chapter-3-building-planning"
+    }
+   ],
+   "source_section": {
+    "code": "IRC",
+    "edition": "2021",
+    "section": "R312.1.2",
+    "chapter": 3,
+    "subsection_part": "general"
+   },
+   "authority_classification": "state_adopted_code",
+   "check_class": "geometric_deterministic",
+   "classification_basis": "estimate",
+   "base_model": {
+    "code": "IRC",
+    "edition": "2021",
+    "publisher": "International Code Council",
+    "authority_class": "model_code",
+    "binding": false,
+    "source": "source:icc:irc-2021",
+    "status": "present",
+    "parameters": [
+     {
+      "name": "min_guard_height",
+      "comparator": ">=",
+      "quantity": {
+       "value": 36,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "locator_detail": "VRC text unamended"
+     },
+     {
+      "name": "min_guard_height_stair_open_side",
+      "comparator": ">=",
+      "quantity": {
+       "value": 34,
+       "unit": "in"
+      },
+      "value_status": "inferred_unamended",
+      "source": "source:upcodes:vrc-2021-ch03",
+      "applies_when": "on_stair_open_side == true",
+      "locator_detail": "exception, measured from nosing line"
+     }
+    ]
+   },
+   "jurisdiction_layers": [
+    {
+     "layer_id": "us-va:vrc-2021",
+     "jurisdiction": "urn:ori:jurisdiction:us-va",
+     "code": "VRC",
+     "edition": "2021",
+     "effective_from": "2024-01-18",
+     "authority_class": "state_adopted_code",
+     "binding": true,
+     "precedence": 1,
+     "override_mode": "adopts_base",
+     "mode_status": "sourced_primary",
+     "amendment_ref": {
+      "source": "source:va:13vac5-63-210",
+      "item": null
+     },
+     "parameters": [
+      {
+       "name": "min_guard_height",
+       "comparator": ">=",
+       "quantity": {
+        "value": 36,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "locator_detail": "VRC text unamended"
+      },
+      {
+       "name": "min_guard_height_stair_open_side",
+       "comparator": ">=",
+       "quantity": {
+        "value": 34,
+        "unit": "in"
+       },
+       "value_status": "sourced_secondary",
+       "source": "source:upcodes:vrc-2021-ch03",
+       "applies_when": "on_stair_open_side == true",
+       "locator_detail": "exception, measured from nosing line"
+      }
+     ]
+    }
+   ],
+   "required_information": {
+    "ids": null,
+    "items": [
+     {
+      "key": "guard.guard_height",
+      "description": "guard height",
+      "ifc_path": "Pset_RailingCommon.Height"
+     },
+     {
+      "key": "guard.on_stair_open_side",
+      "description": "on stair open side"
+     }
+    ]
+   },
+   "inputs": [
+    {
+     "name": "guard_height",
+     "datatype": "length",
+     "unit": "in",
+     "required": true
+    },
+    {
+     "name": "on_stair_open_side",
+     "datatype": "boolean",
+     "required": false
+    }
+   ],
+   "result_states": [
+    "pass",
+    "fail",
+    "unknown",
+    "not_applicable"
+   ],
+   "unknown_policy": {
+    "missing_information_result": "unknown",
+    "statement": "Missing, unreadable or unconfirmed information yields unknown, never fail."
+   },
+   "evaluator": {
+    "kind": "deterministic_function",
+    "implementation": "verification/ori_verify/rules.py#guard_height_min",
+    "implementation_version": "0.1.0"
+   },
+   "provenance": {
+    "recorded_by": "ORI-CL compiler 0.1 (DRAFT; generated from ORI-CL source, not human-reviewed)",
+    "recorded_at": "2026-09-28",
+    "sources_checked": [
+     "source:va:13vac5-63-210",
+     "source:upcodes:vrc-2021-ch03"
+    ]
+   },
+   "legal_boundary": {
+    "machine_result_is_approval": false,
+    "statement": "Any machine result for this unit is reviewer evidence, not approval. Only the building official's decision is lawful approval."
+   },
+   "ori_cl": {
+    "version": "0.1",
+    "rule_id": "R312.1.2:guard-height-min",
+    "statement_sha256": "ba7f05ce9fa95bed9b408811e4e84999837f70346cf3da6c0f3a844d58366906",
+    "open_parameters": [],
+    "reviewer_terms": []
+   }
+  },
+  "plan": {
+   "ori_cl": "0.1",
+   "rule_id": "R312.1.2:guard-height-min",
+   "subject": "guard",
+   "ifc": {
+    "entity": "IfcRailing",
+    "predefined_type": "GUARDRAIL"
+   },
+   "check": "guard_height_min",
+   "unless": [],
+   "when": [],
+   "require": {
+    "form": "compare",
+    "fact": "guard_height",
+    "cmp": ">=",
+    "param": "min_guard_height"
+   },
+   "excepts": [
+    {
+     "when": {
+      "op": "and",
+      "atoms": [
+       {
+        "kind": "is",
+        "fact": "on_stair_open_side",
+        "value": true,
+        "negated": false
+       }
+      ]
+     },
+     "mode": "use",
+     "param": "min_guard_height_stair_open_side",
+     "optional": true
+    }
+   ],
+   "reviewer_terms": [],
+   "derive": null,
+   "measures": [
+    {
+     "fact": "guard_height",
+     "start": "walking_surface_top",
+     "end": "guard_top",
+     "along": "plumb",
+     "within": null
+    }
+   ],
+   "params_required": [
+    "min_guard_height"
+   ],
+   "params_optional": [
+    "min_guard_height_stair_open_side"
+   ],
+   "params_reported": []
+  }
+ }
+]

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0. ORI information-requirement specification (DRAFT).
+     IDS 1.0 expresses the non-geometric information a rule unit needs.
+     IDS cannot express geometric conditions; ORI's evaluator does that part (verification/). -->
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>ORI Chapter 3: stairs</ids:title>
+    <ids:version>0.1.0-draft</ids:version>
+    <ids:author>ori@example.org</ids:author>
+    <ids:date>2026-09-27</ids:date>
+    <ids:purpose>Reviewer evidence for 2021 IRC / 2021 VRC Chapter 3 rule units. Not approval.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Stair flights carry measurable geometry" ifcVersion="IFC4" identifier="ORI-CH03-STAIR-01" description="Each stair flight has a body representation so risers, treads and headroom can be measured (R311.7.2, R311.7.5.1, R311.7.5.2)." instructions="Model each flight with a Body representation; ORI measures the stepped profile.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCSTAIRFLIGHT</ids:simpleValue></ids:name></ids:entity>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:attribute cardinality="required"><ids:name><ids:simpleValue>Representation</ids:simpleValue></ids:name></ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>

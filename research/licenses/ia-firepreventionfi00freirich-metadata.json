@@ -1,0 +1,23 @@
+{
+ "source": "https://archive.org/metadata/firepreventionfi00freirich/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "firepreventionfi00freirich",
+  "title": "Fire prevention and fire protection as applied to building construction; a handbook of theory and practice",
+  "creator": "Freitag, Joseph Kendall, 1869-1931",
+  "date": "1912",
+  "publisher": "New York : J. Wiley & sons; [etc., etc.]",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "copyright-evidence": "Evidence reported by ian white for item firepreventionfi00freirich on March 22, 2007: no visible notice of copyright; exact publication date unknown.",
+  "copyright-region": "US",
+  "collection": [
+   "cdl",
+   "americana"
+  ],
+  "contributor": "University of California Libraries",
+  "sponsor": "MSN",
+  "language": "eng",
+  "publicdate": "2007-03-22 14:11:40"
+ }
+}

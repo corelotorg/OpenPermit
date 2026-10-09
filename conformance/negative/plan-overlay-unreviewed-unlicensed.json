@@ -1,0 +1,716 @@
+{
+ "id": "ori:test:negative:plan-overlay-unreviewed-unlicensed",
+ "rule": "plan-overlay-training-gate",
+ "expected": "fail",
+ "description": "A plan with no license basis and unreviewed auto-extracted labels, marked as training data, must be refused (and the schema forbids training_use other than allowed for this role).",
+ "objects": [
+  {
+   "overlay_profile": "ori-plan-overlay-0.1",
+   "label": "Reviewer evidence, not approval",
+   "overlay_id": "urn:ori:overlay:conformance:sample-subset",
+   "status": "DRAFT",
+   "created_at": "2026-10-03T00:00:00Z",
+   "tool": {
+    "name": "ori_takeoff",
+    "version": "0.1.0",
+    "dependencies": [
+     "pdfplumber (MIT)",
+     "ezdxf (MIT)",
+     "shapely (BSD-3-Clause)",
+     "ifcopenshell (LGPL-3.0-or-later)"
+    ]
+   },
+   "source": {
+    "artifact_id": "urn:ori:artifact:sha256:daf60c852e85f8d0b77f4cac80c215558a8f376dd040ee0f5ec258cd1b8ea059",
+    "filename": "ori-sample-house.pdf",
+    "media_type": "application/pdf",
+    "sha256": "daf60c852e85f8d0b77f4cac80c215558a8f376dd040ee0f5ec258cd1b8ea059",
+    "size_bytes": 14198,
+    "page_count": 2
+   },
+   "license_record": {
+    "license_id": "UNKNOWN",
+    "license_basis": "none recorded",
+    "license_url": null,
+    "license_local_path": null,
+    "license_sha256": null,
+    "license_fetched_at": null,
+    "license_confirmed": false,
+    "source_url": null,
+    "source_citation": null,
+    "training_use": "not_allowed",
+    "license_note": "Conformance fixture: plan downloaded without terms."
+   },
+   "dataset_role": "training",
+   "pages": [
+    {
+     "page": 1,
+     "page_label": "A-101",
+     "sheet_title": "FIRST FLOOR PLAN",
+     "kind": "vector",
+     "status": "ground_truth",
+     "size_page_units": [
+      1728.0,
+      1296.0
+     ],
+     "page_units": "pt",
+     "scale": {
+      "status": "stated_confirmed",
+      "real_in_per_page_unit": 0.666666667,
+      "stated": {
+       "text": "SCALE: 1/4\" = 1'-0\"",
+       "real_in_per_paper_in": 48.0
+      },
+      "calibration": null,
+      "note": "Authored scale."
+     },
+     "storey": {
+      "name": "Level 1",
+      "elevation_in": 0.0,
+      "elevation_origin": "sample design data",
+      "floor_to_floor_in": 105.0,
+      "ceiling_height_in": 96.0
+     },
+     "elements": [
+      {
+       "id": "p1-WS",
+       "ifc_class": "IfcWall",
+       "predefined_type": "SOLIDWALL",
+       "name": "WS",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           216.0,
+           324.0
+          ],
+          [
+           792.0,
+           324.0
+          ],
+          [
+           792.0,
+           333.0
+          ],
+          [
+           216.0,
+           333.0
+          ],
+          [
+           216.0,
+           324.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           144.0,
+           216.0
+          ],
+          [
+           528.0,
+           216.0
+          ],
+          [
+           528.0,
+           222.0
+          ],
+          [
+           144.0,
+           222.0
+          ],
+          [
+           144.0,
+           216.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "thickness_in": 6.0,
+        "length_in": 378.0,
+        "exterior": true
+       },
+       "relations": {},
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       },
+       "axis_page": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          220.5,
+          328.5
+         ],
+         [
+          787.5,
+          328.5
+         ]
+        ]
+       },
+       "axis_real": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          147.0,
+          219.0
+         ],
+         [
+          525.0,
+          219.0
+         ]
+        ]
+       }
+      },
+      {
+       "id": "p1-V1",
+       "ifc_class": "IfcWall",
+       "predefined_type": "SOLIDWALL",
+       "name": "V1",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           522.0,
+           333.0
+          ],
+          [
+           528.75,
+           333.0
+          ],
+          [
+           528.75,
+           819.0
+          ],
+          [
+           522.0,
+           819.0
+          ],
+          [
+           522.0,
+           333.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           348.0,
+           222.0
+          ],
+          [
+           352.5,
+           222.0
+          ],
+          [
+           352.5,
+           546.0
+          ],
+          [
+           348.0,
+           546.0
+          ],
+          [
+           348.0,
+           222.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "thickness_in": 4.5,
+        "length_in": 324.0,
+        "exterior": false
+       },
+       "relations": {},
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       },
+       "axis_page": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          525.375,
+          333.0
+         ],
+         [
+          525.375,
+          819.0
+         ]
+        ]
+       },
+       "axis_real": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          350.25,
+          222.0
+         ],
+         [
+          350.25,
+          546.0
+         ]
+        ]
+       }
+      },
+      {
+       "id": "p1-D101",
+       "ifc_class": "IfcDoor",
+       "predefined_type": "DOOR",
+       "name": "D101",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           561.0,
+           324.0
+          ],
+          [
+           615.0,
+           324.0
+          ],
+          [
+           615.0,
+           333.0
+          ],
+          [
+           561.0,
+           333.0
+          ],
+          [
+           561.0,
+           324.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           374.0,
+           216.0
+          ],
+          [
+           410.0,
+           216.0
+          ],
+          [
+           410.0,
+           222.0
+          ],
+          [
+           374.0,
+           222.0
+          ],
+          [
+           374.0,
+           216.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "width_in": 36,
+        "host_thickness_in": 6.0,
+        "swing": {
+         "hinge_page": [
+          561.0,
+          333.0
+         ],
+         "leaf_end_page": [
+          561.0,
+          387.0
+         ],
+         "radius_in": 36,
+         "direction": "ccw"
+        }
+       },
+       "relations": {
+        "host_wall": "p1-WS"
+       },
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       },
+       "axis_page": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          561.0,
+          328.5
+         ],
+         [
+          615.0,
+          328.5
+         ]
+        ]
+       },
+       "axis_real": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          374.0,
+          219.0
+         ],
+         [
+          410.0,
+          219.0
+         ]
+        ]
+       }
+      },
+      {
+       "id": "p1-W101",
+       "ifc_class": "IfcWindow",
+       "predefined_type": "WINDOW",
+       "name": "W101",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           306.0,
+           324.0
+          ],
+          [
+           396.0,
+           324.0
+          ],
+          [
+           396.0,
+           333.0
+          ],
+          [
+           306.0,
+           333.0
+          ],
+          [
+           306.0,
+           324.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           204.0,
+           216.0
+          ],
+          [
+           264.0,
+           216.0
+          ],
+          [
+           264.0,
+           222.0
+          ],
+          [
+           204.0,
+           222.0
+          ],
+          [
+           204.0,
+           216.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "width_in": 60,
+        "host_thickness_in": 6.0
+       },
+       "relations": {
+        "host_wall": "p1-WS"
+       },
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       },
+       "axis_page": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          306.0,
+          328.5
+         ],
+         [
+          396.0,
+          328.5
+         ]
+        ]
+       },
+       "axis_real": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          204.0,
+          219.0
+         ],
+         [
+          264.0,
+          219.0
+         ]
+        ]
+       }
+      },
+      {
+       "id": "p1-S101",
+       "ifc_class": "IfcSpace",
+       "predefined_type": "SPACE",
+       "name": "LIVING",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           225.0,
+           333.0
+          ],
+          [
+           522.0,
+           333.0
+          ],
+          [
+           522.0,
+           630.0
+          ],
+          [
+           225.0,
+           630.0
+          ],
+          [
+           225.0,
+           333.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           150.0,
+           222.0
+          ],
+          [
+           348.0,
+           222.0
+          ],
+          [
+           348.0,
+           420.0
+          ],
+          [
+           150.0,
+           420.0
+          ],
+          [
+           150.0,
+           222.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "area_ft2": 272.25,
+        "use": "habitable",
+        "label": "LIVING"
+       },
+       "relations": {},
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       }
+      },
+      {
+       "id": "p1-ST1",
+       "ifc_class": "IfcStair",
+       "predefined_type": "STRAIGHT_RUN_STAIR",
+       "name": "ST1",
+       "geometry_page": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           663.0,
+           345.0
+          ],
+          [
+           717.0,
+           345.0
+          ],
+          [
+           717.0,
+           540.0
+          ],
+          [
+           663.0,
+           540.0
+          ],
+          [
+           663.0,
+           345.0
+          ]
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "Polygon",
+        "coordinates": [
+         [
+          [
+           442.0,
+           230.0
+          ],
+          [
+           478.0,
+           230.0
+          ],
+          [
+           478.0,
+           360.0
+          ],
+          [
+           442.0,
+           360.0
+          ],
+          [
+           442.0,
+           230.0
+          ]
+         ]
+        ]
+       },
+       "properties": {
+        "riser_count": 14,
+        "tread_count": 13,
+        "tread_depth_in": 10.0,
+        "width_in": 36,
+        "direction": "UP",
+        "riser_height_in": null,
+        "riser_height_note": "Not drawn in plan; the sheet note gives 7 1/2 in, which is text, not geometry."
+       },
+       "relations": {},
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       }
+      },
+      {
+       "id": "p1-DIM1",
+       "ifc_class": "IfcAnnotation",
+       "predefined_type": null,
+       "name": null,
+       "geometry_page": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          216.0,
+          234.0
+         ],
+         [
+          792.0,
+          234.0
+         ]
+        ]
+       },
+       "geometry_real": {
+        "type": "LineString",
+        "coordinates": [
+         [
+          144.0,
+          156.0
+         ],
+         [
+          528.0,
+          156.0
+         ]
+        ]
+       },
+       "properties": {
+        "text": "32'-0\"",
+        "value_in": 384
+       },
+       "relations": {},
+       "provenance": {
+        "method": "auto_extracted",
+        "tool": "ori_takeoff 0.1.0 (editor/authoring)",
+        "tool_version": "0.1.0",
+        "confidence": 0.9,
+        "rule": "sample_plan design data",
+        "by": null,
+        "at": null,
+        "review_status": "unreviewed",
+        "derived_from": null
+       },
+       "annotation_type": "dimension"
+      }
+     ],
+     "takeoff": null,
+     "notes": []
+    }
+   ],
+   "legal_boundary": "Overlay elements are proposals for reviewer use and training labels. They are not measurements certified by anyone and not approval; the building official decides under the adopted code."
+  }
+ ]
+}

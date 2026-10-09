@@ -1,0 +1,17 @@
+{
+  "id": "ori:test:negative:project-target-promoted-to-requirement",
+  "rule": "guidance-not-requirement",
+  "expected": "fail",
+  "objects": [
+    {
+      "id": "ori:requirement:ori-24h-sf-review-as-law",
+      "type": "Requirement",
+      "version": "1.0.0",
+      "source": ["source:openpermit-ori:sf-review-target-24h:2026-09-26"],
+      "metadata": {
+        "authority_classification": "project_self_declared_target"
+      },
+      "statement": "This county is required to issue a review decision on a complete single-family submission within 24 hours."
+    }
+  ]
+}

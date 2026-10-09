@@ -1,0 +1,177 @@
+{
+ "label": "Takeoff from auto-extracted, unreviewed elements (clean PDF).",
+ "pages": {
+  "A-101": {
+   "units": {
+    "length": "in",
+    "area": "ft2"
+   },
+   "scale_status": "stated_confirmed",
+   "walls": {
+    "count": 8,
+    "total_length_in": 2247.0,
+    "exterior_length_in": 1416.0,
+    "interior_length_in": 831.0,
+    "length_convention": "centreline; exterior walls meet at centreline corners, interior walls end at the face they meet"
+   },
+   "doors": {
+    "count": 7,
+    "widths_in": [
+     28.0,
+     32.0,
+     32.0,
+     32.0,
+     32.0,
+     36.0,
+     36.0
+    ]
+   },
+   "windows": {
+    "count": 7,
+    "widths_in": [
+     24.0,
+     48.0,
+     48.0,
+     48.0,
+     60.0,
+     60.0,
+     60.0
+    ]
+   },
+   "unclassified_openings": {
+    "count": 0
+   },
+   "spaces": {
+    "count": 5,
+    "total_net_area_ft2": 811.032,
+    "items": [
+     {
+      "id": "p1-space-001",
+      "label": "KITCHEN / DINING",
+      "area_ft2": 211.875
+     },
+     {
+      "id": "p1-space-002",
+      "label": "POWDER LAUNDRY",
+      "area_ft2": 38.266
+     },
+     {
+      "id": "p1-space-003",
+      "label": "FOYER",
+      "area_ft2": 121.578
+     },
+     {
+      "id": "p1-space-004",
+      "label": "LIVING",
+      "area_ft2": 272.25
+     },
+     {
+      "id": "p1-space-005",
+      "label": "DEN",
+      "area_ft2": 167.063
+     }
+    ]
+   },
+   "gross_footprint_ft2": 896.0,
+   "stairs": [
+    {
+     "id": "p1-stair-001",
+     "riser_count": 14,
+     "tread_count": 13,
+     "tread_depth_in": 10.0,
+     "riser_height_in": null
+    }
+   ],
+   "dimensions": {
+    "count": 6,
+    "agreeing_with_geometry": 6
+   },
+   "label": "Takeoff from auto-extracted, unreviewed elements. Not a measurement certified by anyone."
+  },
+  "A-102": {
+   "units": {
+    "length": "in",
+    "area": "ft2"
+   },
+   "scale_status": "stated_confirmed",
+   "walls": {
+    "count": 8,
+    "total_length_in": 2287.5,
+    "exterior_length_in": 1416.0,
+    "interior_length_in": 871.5,
+    "length_convention": "centreline; exterior walls meet at centreline corners, interior walls end at the face they meet"
+   },
+   "doors": {
+    "count": 4,
+    "widths_in": [
+     28.0,
+     32.0,
+     32.0,
+     32.0
+    ]
+   },
+   "windows": {
+    "count": 8,
+    "widths_in": [
+     24.0,
+     36.0,
+     40.0,
+     48.0,
+     48.0,
+     60.0,
+     60.0,
+     60.0
+    ]
+   },
+   "unclassified_openings": {
+    "count": 0
+   },
+   "spaces": {
+    "count": 5,
+    "total_net_area_ft2": 809.766,
+    "items": [
+     {
+      "id": "p2-space-001",
+      "label": "BATH",
+      "area_ft2": 49.375
+     },
+     {
+      "id": "p2-space-002",
+      "label": "BEDROOM 3",
+      "area_ft2": 164.203
+     },
+     {
+      "id": "p2-space-003",
+      "label": "HALL",
+      "area_ft2": 156.875
+     },
+     {
+      "id": "p2-space-004",
+      "label": "BEDROOM 1",
+      "area_ft2": 282.563
+     },
+     {
+      "id": "p2-space-005",
+      "label": "BEDROOM 2",
+      "area_ft2": 156.75
+     }
+    ]
+   },
+   "gross_footprint_ft2": 896.0,
+   "stairs": [
+    {
+     "id": "p2-stair-001",
+     "riser_count": 14,
+     "tread_count": 13,
+     "tread_depth_in": 10.0,
+     "riser_height_in": null
+    }
+   ],
+   "dimensions": {
+    "count": 6,
+    "agreeing_with_geometry": 6
+   },
+   "label": "Takeoff from auto-extracted, unreviewed elements. Not a measurement certified by anyone."
+  }
+ }
+}

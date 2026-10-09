@@ -1,16 +1,19 @@
+# SPDX-License-Identifier: Apache-2.0
 name: ORI Conformance
 
 on:
   push:
     branches:
       - test
-      - ori/recovery-inventory-2026-09-01
-      - release/open-regulatory-infrastructure-2026-09-01
+      - release/**
     paths:
       - "spec/**"
       - "profiles/**"
       - "conformance/**"
       - "reference-node/**"
+      - "adapters/**"
+      - "rules/**"
+      - "verification/**"
       - ".well-known/**"
       - "llms.txt"
       - ".github/workflows/ori-conformance.yml"
@@ -20,6 +23,9 @@ on:
       - "profiles/**"
       - "conformance/**"
       - "reference-node/**"
+      - "adapters/**"
+      - "rules/**"
+      - "verification/**"
       - ".well-known/**"
       - "llms.txt"
       - ".github/workflows/ori-conformance.yml"
@@ -43,11 +49,13 @@ jobs:
           cache-dependency-path: |
             conformance/requirements.txt
             reference-node/requirements.txt
+            verification/requirements.txt
 
       - name: Install validators and reference node
         run: |
           python -m pip install -r conformance/requirements.txt
           python -m pip install -r reference-node/requirements.txt
+          python -m pip install -r verification/requirements.txt
 
       - name: Validate schemas, profiles, inventories and negative semantics
         run: python conformance/validate.py
@@ -55,8 +63,17 @@ jobs:
       - name: Compile reference node and semantic harness
         run: python -m py_compile reference-node/server.py reference-node/graph.py reference-node/smoke.py conformance/semantic.py
 
-      - name: Exercise precedence graph tests
-        run: python -m pytest -q reference-node/test_graph.py
+      - name: Exercise reference-node acceptance
+        run: python -m pytest -q reference-node
+
+      - name: Exercise BLDS interchange adapter
+        run: python -m pytest -q adapters/blds
+
+      - name: Exercise rule-unit data (Chapter 3 worked example)
+        run: python -m pytest -q rules
+
+      - name: Exercise geometric verification layer and PDF path
+        run: python -m pytest -q verification/tests
 
       - name: Exercise MCP tools in-process
         run: python reference-node/smoke.py

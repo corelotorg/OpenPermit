@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/gri_33125000021739/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "gri_33125000021739",
+  "title": "Building construction and superintendence",
+  "creator": "Kidder, Frank E. (Frank Eugene), 1859-1905",
+  "date": "1897",
+  "publisher": "New York : W.T. Comstock",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "collection": [
+   "getty",
+   "americana"
+  ],
+  "contributor": "Getty Research Institute",
+  "sponsor": "Getty Research Institute",
+  "language": "eng",
+  "publicdate": "2015-04-23 23:41:47"
+ }
+}

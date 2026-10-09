@@ -1,0 +1,101 @@
+(* ORI-CL 0.1 DRAFT grammar (ISO/IEC 14977 EBNF style).                              *)
+(* SPDX-License-Identifier: CC0-1.0                                                    *)
+(* Line oriented: every line is one clause, and its first word fixes the clause form, *)
+(* so a line has exactly one parse (LL(1)). Tokens are separated by spaces.           *)
+(* Comments run from "#" (outside a string) to the end of the line.                   *)
+(* Reference implementation: verification/ori_cl/syntax.py                            *)
+
+document      = { blank_line | context_line } , { blank_line | rule_block } ;
+
+(* ---- file header: base model and jurisdiction layers ---- *)
+context_line  = "context" , ( base_context | layer_context ) , NL ;
+base_context  = "base" , code_name , edition , "by" , source_ref , "publisher" , string ;
+layer_context = "layer" , layer_id , "for" , jurisdiction_ref , "code" , code_name , edition ,
+                "from" , date , "class" , authority_class ;
+authority_class = "state_adopted_code" | "local_adopted_amendment" ;
+
+(* ---- rule block: one rule unit, one requirement ---- *)
+rule_block    = "rule" , rule_id , NL , { clause , NL } , "end" , NL ;
+clause        = cite | adopt | link | subject | measure | param | check | derive
+              | when | unless | require | except | reviewer ;
+
+(* authority and citation: numbers and links only, never code text *)
+cite          = "cite" , code_name , edition , section_id , [ "part" , string ] ;
+link          = "link" , https_url ;                        (* official host only *)
+
+(* jurisdiction override: how a layer treats this rule *)
+adopt         = "adopt" , layer_id , "mode" , mode , "status" , value_status , "by" , source_ref ,
+                [ "item" , string ] ;
+mode          = "adopts_base" | "replaces_value" | "modifies_text" | "adds_exception"
+              | "deletes" | "adds_section" | "replaces_section" ;
+value_status  = "sourced_primary" | "sourced_secondary" | "inferred_unamended" | "estimate" ;
+
+(* applicability *)
+subject       = "subject" , subject_kind , "is" , ifc_entity , [ predefined_type ] ;
+when          = "when" , condition ;                        (* all when lines must hold *)
+unless        = "unless" , condition ;                      (* any unless line excludes *)
+condition     = atom , { "and" , atom } | atom , { "or" , atom } ;   (* never mixed *)
+atom          = fact , "is" , [ "not" ] , literal
+              | fact , "in" , "[" , literal , { literal } , "]"
+              | fact , comparator , param_name
+              | relation ;
+relation      = ( "encloses" | "adjacent" | "above" ) , ifc_entity , [ predefined_type ]
+              | "distance" , ifc_entity , [ predefined_type ] , comparator , param_name ;
+
+(* measurement method: reference geometry from the vocabulary *)
+measure       = "measure" , fact , "from" , geometry , "to" , geometry , [ "along" , geometry ] ,
+                [ "within" , param_name ] ;
+
+(* quantity: a named, sourced threshold per layer; "open" = not yet sourced *)
+param         = "param" , param_name , comparator , ( number | "open" ) , unit , "at" , layer_ref ,
+                "status" , value_status , "source" , source_ref , [ "locator" , string ] ,
+                [ "when" , fact , "is" , literal ] ;
+layer_ref     = "base" | layer_id ;
+derive        = "derive" , fact , "is" , fact , "times" , fact ;     (* length x length -> area *)
+
+(* quantity constraints *)
+require       = "require" , requirement ;
+requirement   = "each" , fact , comparator , param_name , [ "empty" , "absent" ]   (* every value *)
+              | "spread" , fact , comparator , param_name                          (* uniformity *)
+              | fact , "between" , param_name , "and" , param_name                 (* range *)
+              | fact , comparator , param_name , [ "bound" , fact ]                (* single value *)
+              | fact , "present"                                                   (* element exists *)
+              | relation ;
+
+(* exceptions *)
+except        = "except" , "when" , condition ,
+                ( "allow" , param_name                 (* relaxed threshold *)
+                | "use" , param_name , [ "optional" ]  (* alternative threshold *)
+                | "reviewer" ) ;                       (* reviewer judgment if main fails *)
+
+(* judgment: reviewer determination required, ambiguous terms named (4 words or fewer) *)
+reviewer      = "reviewer" , "terms" , string , { string } ;
+
+(* binding to an existing ORI check function (verification/ori_verify/rules.py) *)
+check         = "check" , ident ;
+
+(* ---- lexical ---- *)
+comparator    = "<=" | ">=" | "<" | ">" | "=" ;
+literal       = "true" | "false" | number | ident ;
+fact          = ident ;              (* vocabulary facts[].name *)
+subject_kind  = ident ;              (* vocabulary subjects[].kind *)
+geometry      = ident ;              (* vocabulary reference_geometry[].name *)
+param_name    = ident ;
+unit          = ident ;              (* vocabulary units[].symbol *)
+ident         = lower , { lower | digit | "_" } ;
+rule_id       = section_id , ":" , slug ;
+section_id    = "R" , digit , digit , digit , { "." , digit , { digit } } ;
+slug          = ( lower | digit ) , { lower | digit | "-" } ;
+ifc_entity    = "Ifc" , upper , { letter } ;            (* vocabulary ifc_terms / subjects *)
+predefined_type = upper , upper , { upper | "_" } ;
+number        = [ "-" ] , digit , { digit } , [ "." , digit , { digit } ] ;
+string        = '"' , { character - '"' - newline } , '"' ;
+date          = digit , digit , digit , digit , "-" , digit , digit , "-" , digit , digit ;
+code_name     = upper , { upper | digit } ;
+edition       = digit , digit , digit , digit ;
+layer_id      = token ; jurisdiction_ref = token ; source_ref = token ;
+https_url     = "https://" , token ;
+token         = visible , { visible } ;                 (* no space, quote, bracket, < > = *)
+NL            = newline ;
+blank_line    = [ comment ] , NL ;
+comment       = "#" , { character - newline } ;

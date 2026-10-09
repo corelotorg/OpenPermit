@@ -1,0 +1,21 @@
+{
+ "source": "https://archive.org/metadata/suggestionsforpo00unit/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "suggestionsforpo00unit",
+  "title": "Suggestions for possible repairs and improvements in the house and its equipment [microform]",
+  "creator": "United States. National Bureau of Standards. Division of Building and Housing; United States. President's Emergency Committee for Employment",
+  "date": "1931",
+  "publisher": "Washington, U.S. Govt. Print. Off.",
+  "collection": [
+   "transcluding",
+   "microfilm",
+   "americana"
+  ],
+  "contributor": "Columbia University Libraries",
+  "sponsor": "Columbia University Libraries",
+  "language": "eng",
+  "publicdate": "2015-04-06 18:52:51"
+ }
+}

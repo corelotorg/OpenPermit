@@ -1,0 +1,20 @@
+{
+ "source": "https://archive.org/metadata/TM5-681/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "TM5-681",
+  "title": "TM 5-681 Inspections And Preventive Maintenance For Electrical Facilities, 1945",
+  "creator": "United States. War Department",
+  "date": "1945-08-31",
+  "publisher": "Washington D.C. : U.S. Govt. Print. Office",
+  "licenseurl": "http://creativecommons.org/publicdomain/mark/1.0/",
+  "collection": [
+   "wwIIarchive",
+   "folkscanomy_history",
+   "folkscanomy"
+  ],
+  "language": "eng",
+  "publicdate": "2016-08-11 06:35:54"
+ }
+}

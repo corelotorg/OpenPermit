@@ -1,0 +1,22 @@
+{
+ "source": "https://archive.org/metadata/specificationspr00boweuoft/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "specificationspr00boweuoft",
+  "title": "Specifications; a practical system for writing specifications for buildings",
+  "creator": "Bower, W. Frank",
+  "date": "1896",
+  "publisher": "New York E.A. Maclean",
+  "possible-copyright-status": "NOT_IN_COPYRIGHT",
+  "collection": [
+   "gerstein",
+   "toronto",
+   "university_of_toronto"
+  ],
+  "contributor": "Gerstein - University of Toronto",
+  "sponsor": "University of Toronto",
+  "language": "eng",
+  "publicdate": "2009-03-09 17:20:56"
+ }
+}

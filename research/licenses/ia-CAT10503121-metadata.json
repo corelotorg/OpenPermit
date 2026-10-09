@@ -1,0 +1,22 @@
+{
+ "source": "https://archive.org/metadata/CAT10503121/metadata",
+ "fetched": "2026-10-03",
+ "note": "Internet Archive item metadata (bibliographic and rights facts), trimmed to rights and citation fields.",
+ "metadata": {
+  "identifier": "CAT10503121",
+  "title": "Wood handbook; basic information on wood as a material of construction with data for its use in design and specifications..",
+  "creator": "Forest Products Laboratory (U.S.)",
+  "date": "1940",
+  "publisher": "Washington, D.C. : [U.S. Govt. Print. Off.]",
+  "rights": "The contributing institution believes that this item is not in copyright",
+  "collection": [
+   "usdanationalagriculturallibrary",
+   "fedlink",
+   "americana"
+  ],
+  "contributor": "U.S. Department of Agriculture, National Agricultural Library",
+  "sponsor": "U.S. Department of Agriculture, National Agricultural Library",
+  "language": "eng",
+  "publicdate": "2020-10-02 13:19:07"
+ }
+}
