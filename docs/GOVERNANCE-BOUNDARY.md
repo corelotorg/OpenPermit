@@ -116,9 +116,8 @@ only to the extent the law allows.
 
 - ORI's scope is single-family new homes under the 2021 IRC, with the 2021 Virginia USBC and VRC
   (13VAC5-63) as an override layer.
-- Fredericksburg, Virginia appears only as a **public-source example; not a pilot or partner**.
-- Spotsylvania County, Virginia appears, where it appears at all, only as a labeled public-source
-  example. It is not a pilot, partner or participant.
+- No municipality is a pilot, partner, participant or reviewer. Virginia locality pages appear only
+  as cite-and-link research sources.
 - The public conformance suite runs on a **synthetic** example jurisdiction (`profiles/examples/`),
   so it needs no real jurisdiction's data.
 

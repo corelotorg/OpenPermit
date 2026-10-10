@@ -99,11 +99,8 @@ The public conformance suite runs on a **synthetic** jurisdiction,
 jurisdiction's data. All IFC models and PDF plan sets in `verification/examples/` are ORI-authored
 and synthetic.
 
-Fredericksburg, Virginia is ORI's worked real-jurisdiction inventory: a **public-source example; not
-a pilot or partner**. It is built only from official City and Virginia publications, and the City has
-not reviewed or endorsed it. No licence grant was found for the City's pages
-([`research/licenses/va-locality-fredericksburg-no-license-found.md`](research/licenses/va-locality-fredericksburg-no-license-found.md)),
-so that inventory is kept out of this release and its sources stay cite-and-link only.
+No municipality is a pilot, partner or reviewer of ORI, and no real jurisdiction's inventory is
+published. Public locality pages appear only as cite-and-link research sources.
 
 ## Core model
 
