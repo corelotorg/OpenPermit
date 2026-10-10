@@ -1,7 +1,7 @@
 # Spotsylvania County, Virginia: no license found (cite-and-link only)
 
 Checked 2026-09-28 for the term merger study corpora (research/data/ori-cl-open-corpora-DRAFT.json).
-Spotsylvania County appears only as a public-source example; it is not a pilot, partner or participant.
+Spotsylvania County appears only as a cite-and-link research source; it is not a pilot, partner or participant.
 
 | URL checked | Result |
 |---|---|

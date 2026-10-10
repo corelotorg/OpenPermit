@@ -30,7 +30,7 @@ stable identifiers, not yet live URLs.
 4. **Guidance is not law.** HUD's 2026 best-practices guidance and ORI's own 24-hour review target
    are context and comparison lines, never binding requirements.
 5. **No endorsement implied.** No government, standards body or company has endorsed ORI. Named
-   jurisdictions appear only as labeled public-source examples.
+   jurisdictions appear only as cite-and-link research sources.
 
 ## Scope
 
