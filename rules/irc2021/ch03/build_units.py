@@ -112,7 +112,7 @@ SOURCES = [
         "authority_class": "state_official_source",
         "license_status": "public information",
         "retrieved_at": None,
-        "metadata": {"reused_from": "ORI Fredericksburg public-source inventory (kept outside the public release)"},
+        "metadata": {"reused_from": "ORI Virginia public-source research (kept outside the public release)"},
     },
     {
         "id": "source:upcodes:vrc-2021-ch03",
