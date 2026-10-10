@@ -791,16 +791,16 @@
    "local_file": "spotsy-unified-fee-schedule-2025-07-01.txt",
    "text_source": "pdftotext (box copy)",
    "license_id": "LicenseRef-no-license-found-cite-and-link",
-   "license_basis": "Virginia locality document; no license found. Cite-and-link only. Public-source example only; Spotsylvania County is not a pilot, partner or participant.",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only; Spotsylvania County is not a pilot, partner or participant.",
    "license_url": "https://www.spotsylvania.va.us/copyright",
    "license_local_path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-   "license_sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+   "license_sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
    "license_fetched_at": "2026-09-28",
    "license_confirmed": false,
    "license_evidence": [
     {
      "path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-     "sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+     "sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
      "url": "https://www.spotsylvania.va.us/copyright",
      "fetched_at": "2026-09-28",
      "redistributable": true
@@ -2562,14 +2562,14 @@
   },
   {
    "id": "loc:spotsy-nsfguide-vs",
-   "title": "Spotsylvania County: Spotsylvania New Single Family Inspection Guide (public-source example; not a partner)",
+   "title": "Spotsylvania County: Spotsylvania New Single Family Inspection Guide (cite-and-link research source; not a partner)",
    "class": "locality",
    "role": "text_corpus",
    "corpus_group": "Virginia localities (cite-and-link)",
    "source_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34637/New-Single-Family-Inspection-Guide",
    "source_citation": {
     "author": "Spotsylvania County, Virginia",
-    "title": "Spotsylvania New Single Family Inspection Guide (public-source example; not a partner)",
+    "title": "Spotsylvania New Single Family Inspection Guide (cite-and-link research source; not a partner)",
     "year": "2025",
     "publisher": "Spotsylvania County",
     "identifier": "ORI verb study doc va-spotsy-nsfguide",
@@ -2579,16 +2579,16 @@
    "local_file": "vs-va-spotsy-nsfguide.txt",
    "text_source": "Verb-study text extraction (box copy, read-only reuse)",
    "license_id": "LicenseRef-no-license-found-cite-and-link",
-   "license_basis": "Virginia locality document; no license found. Cite-and-link only. Public-source example only; Spotsylvania County is not a pilot, partner or participant.",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only; Spotsylvania County is not a pilot, partner or participant.",
    "license_url": "https://www.spotsylvania.va.us/copyright",
    "license_local_path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-   "license_sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+   "license_sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
    "license_fetched_at": "2026-10-03",
    "license_confirmed": false,
    "license_evidence": [
     {
      "path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-     "sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+     "sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
      "url": "https://www.spotsylvania.va.us/copyright",
      "fetched_at": "2026-10-03",
      "redistributable": true
@@ -2610,14 +2610,14 @@
   },
   {
    "id": "loc:spotsy-scheduling-vs",
-   "title": "Spotsylvania County: Spotsylvania Residential Scheduling Instructions (public-source example; not a partner)",
+   "title": "Spotsylvania County: Spotsylvania Residential Scheduling Instructions (cite-and-link research source; not a partner)",
    "class": "locality",
    "role": "text_corpus",
    "corpus_group": "Virginia localities (cite-and-link)",
    "source_url": "https://www.spotsylvania.va.us/DocumentCenter/View/34328/Residential-Scheduling-Instructions",
    "source_citation": {
     "author": "Spotsylvania County, Virginia",
-    "title": "Spotsylvania Residential Scheduling Instructions (public-source example; not a partner)",
+    "title": "Spotsylvania Residential Scheduling Instructions (cite-and-link research source; not a partner)",
     "year": "2026",
     "publisher": "Spotsylvania County",
     "identifier": "ORI verb study doc va-spotsy-scheduling",
@@ -2627,16 +2627,16 @@
    "local_file": "vs-va-spotsy-scheduling.txt",
    "text_source": "Verb-study text extraction (box copy, read-only reuse)",
    "license_id": "LicenseRef-no-license-found-cite-and-link",
-   "license_basis": "Virginia locality document; no license found. Cite-and-link only. Public-source example only; Spotsylvania County is not a pilot, partner or participant.",
+   "license_basis": "Virginia locality document; no license found. Cite-and-link only; Spotsylvania County is not a pilot, partner or participant.",
    "license_url": "https://www.spotsylvania.va.us/copyright",
    "license_local_path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-   "license_sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+   "license_sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
    "license_fetched_at": "2026-10-03",
    "license_confirmed": false,
    "license_evidence": [
     {
      "path": "research/licenses/va-locality-spotsylvania-no-license-found.md",
-     "sha256": "ff853bdd36217dcb04d0bbf84c45db387193462277653f263e96e6335abd40c4",
+     "sha256": "f4b4a42146540bc2e17e18fc05d390de886b937c6c99ba9f56bb4b2e78265e50",
      "url": "https://www.spotsylvania.va.us/copyright",
      "fetched_at": "2026-10-03",
      "redistributable": true
