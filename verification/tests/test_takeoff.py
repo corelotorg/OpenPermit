@@ -132,7 +132,7 @@ def test_pdf_extraction_against_ground_truth(sample, pdf, gt):
     assert len(rep["pages"]) == 2
     for page in rep["pages"]:
         assert page["scale_status"] == "stated_confirmed"
-        # export noise trims outline ends by up to 0.4 in on each side of an opening
+        # Exported outlines may lose 0.4 in at either opening edge.
         _check_perfect(page, width_tol=0.01 if pdf == "pdf" else 0.8)
 
 

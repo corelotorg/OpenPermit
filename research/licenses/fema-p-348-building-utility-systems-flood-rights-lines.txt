@@ -1,7 +1,6 @@
 Source: https://agents.floodsmart.gov/sites/default/files/media/document/2025-07/fema_nfip-p-348-protecting-building-utility-systems-from-flood-damage-2017.pdf
 Fetched: 2026-10-03
 PDF SHA-256: 3e4aaffd2024243b90c8ef3fc2c157f57a4a8f3a595702b0b330072ec994597e
-Lines mentioning public domain, reproduction, preparer, contract or copyright (first 12, verbatim agency statements for license evidence):
+Public-domain photograph statement, verbatim agency evidence; unrelated design guidance omitted:
 
 All other photographs in this document are public domain or taken by FEMA or a FEMA contractor.
-to be prepared by a registered design professional (licensed engineer or architect) unless specifically required by
