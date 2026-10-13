@@ -40,6 +40,9 @@ Patterns use `*` for one path segment and `**` for any depth. The first matching
 | `profiles/**` | CC0-1.0 | machine-readable profiles (federal guidance profiles previously published under CC0; the synthetic example inventory) |
 | `rules/irc2021/ch03/paraphrases-ch03.json`, `rules/irc2021/ch03/ids/**`, `rules/irc2021/ch03/ori-cl/**` | CC0-1.0 | carry their own CC0 dedication |
 | `rules/irc2021/ch03/va-vrc-2021-ch03.units.json`, `rules/irc2021/ch03/CHAPTER-3-TABLE.md`, `rules/irc2021/ch03/interpretability-ch03.json` | CC0-1.0 | machine-readable rule data generated from the CC0 paraphrases |
+| `rules/irc2021/ch06/paraphrases-ch06.json`, `rules/irc2021/ch06/ids/**` | CC0-1.0 | carry their own CC0 dedication |
+| `rules/irc2021/ch06/va-vrc-2021-ch06.units.json`, `rules/irc2021/ch06/CHAPTER-6-TABLE.md`, `rules/irc2021/ch06/interpretability-ch06.json` | CC0-1.0 | machine-readable rule data generated from the CC0 paraphrases |
+| `verification/examples/ch06/**` | CC0-1.0 | ORI-authored synthetic Chapter 6 framing and bracing IFC fixtures |
 | `verification/examples/takeoff/**` | CC0-1.0 | ORI-authored synthetic sample plan, dedicated CC0 in each file |
 | `verification/examples/ifc/**`, `verification/examples/pdf/**`, `verification/examples/declared/**`, `verification/examples/reports/**` | CC BY-SA 4.0 | public benchmark cases: synthetic inputs and expected outcomes |
 | `research/data/*.json` | CC0-1.0 | machine-readable research records (licence and citation facts, counts) |

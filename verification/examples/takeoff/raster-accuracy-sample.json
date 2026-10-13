@@ -1,0 +1,412 @@
+{
+ "report": "ori-scan-accuracy-0.1",
+ "license": "CC0-1.0",
+ "tool": "ori_takeoff.raster 0.1.0",
+ "label": "Measured on ORI's own synthetic CC0 sample, rasterised and degraded by ORI; not a general accuracy claim and not tested on any real scanned plan.",
+ "engines": {
+  "tesseract": "5.5.0",
+  "opencv": "5.0.0"
+ },
+ "sample": "ori-sample-house.pdf",
+ "runs": {
+  "clean_300dpi": {
+   "degradation": {
+    "name": "clean_300dpi",
+    "dpi": 300,
+    "skew_deg": 0.0,
+    "noise_sigma": 0.0,
+    "blur_px": 0.0,
+    "jpeg_quality": null,
+    "seed": 0
+   },
+   "pages": [
+    {
+     "walls": {
+      "gt_centreline_pt": 2533.2,
+      "length_recall": 0.997,
+      "length_precision": 1.0,
+      "detected_segments": 21,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 21,
+       "mean": 1.38,
+       "max": 1.42
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 4,
+      "recall": 0.8
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 6,
+      "value_exact": 6,
+      "value_recall": 1.0
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": -0.0,
+      "true": 0.0
+     },
+     "page": 1
+    },
+    {
+     "walls": {
+      "gt_centreline_pt": 2703.8,
+      "length_recall": 0.996,
+      "length_precision": 1.0,
+      "detected_segments": 19,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 19,
+       "mean": 1.38,
+       "max": 1.42
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 5,
+      "recall": 1.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 6,
+      "value_exact": 6,
+      "value_recall": 1.0
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": -0.0,
+      "true": 0.0
+     },
+     "page": 2
+    }
+   ]
+  },
+  "scan_200dpi": {
+   "degradation": {
+    "name": "scan_200dpi",
+    "dpi": 200,
+    "skew_deg": 1.2,
+    "noise_sigma": 6,
+    "blur_px": 0.8,
+    "jpeg_quality": null,
+    "seed": 1
+   },
+   "pages": [
+    {
+     "walls": {
+      "gt_centreline_pt": 2533.2,
+      "length_recall": 0.997,
+      "length_precision": 0.998,
+      "detected_segments": 21,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 21,
+       "mean": 1.63,
+       "max": 1.74
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 4,
+      "recall": 0.8
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 3,
+      "value_exact": 3,
+      "value_recall": 0.5
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": 1.171,
+      "true": 1.2
+     },
+     "page": 1
+    },
+    {
+     "walls": {
+      "gt_centreline_pt": 2703.8,
+      "length_recall": 0.996,
+      "length_precision": 0.998,
+      "detected_segments": 19,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 19,
+       "mean": 1.58,
+       "max": 1.74
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 5,
+      "recall": 1.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 2,
+      "value_exact": 2,
+      "value_recall": 0.333
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": 1.185,
+      "true": 1.2
+     },
+     "page": 2
+    }
+   ]
+  },
+  "scan_150dpi_skew3": {
+   "degradation": {
+    "name": "scan_150dpi_skew3",
+    "dpi": 150,
+    "skew_deg": -3.0,
+    "noise_sigma": 12,
+    "blur_px": 1.0,
+    "jpeg_quality": 60,
+    "seed": 2
+   },
+   "pages": [
+    {
+     "walls": {
+      "gt_centreline_pt": 2533.2,
+      "length_recall": 0.997,
+      "length_precision": 0.956,
+      "detected_segments": 26,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 21,
+       "mean": 1.95,
+       "max": 2.0
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 4,
+      "recall": 0.8
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": -2.952,
+      "true": -3.0
+     },
+     "page": 1
+    },
+    {
+     "walls": {
+      "gt_centreline_pt": 2703.8,
+      "length_recall": 0.996,
+      "length_precision": 0.983,
+      "detected_segments": 21,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": {
+       "n": 19,
+       "mean": 2.03,
+       "max": 3.6
+      }
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 4,
+      "recall": 0.8
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "ocr_scale_note_unconfirmed",
+      "rel_error": 0.0
+     },
+     "skew_deg": {
+      "estimated": -2.951,
+      "true": -3.0
+     },
+     "page": 2
+    }
+   ]
+  },
+  "fax_100dpi": {
+   "degradation": {
+    "name": "fax_100dpi",
+    "dpi": 100,
+    "skew_deg": 2.0,
+    "noise_sigma": 18,
+    "blur_px": 1.2,
+    "jpeg_quality": 40,
+    "seed": 3
+   },
+   "pages": [
+    {
+     "walls": {
+      "gt_centreline_pt": 2533.2,
+      "length_recall": 0.997,
+      "length_precision": 0.767,
+      "detected_segments": 47,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": null
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 0,
+      "recall": 0.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "unknown",
+      "rel_error": null
+     },
+     "skew_deg": {
+      "estimated": 1.948,
+      "true": 2.0
+     },
+     "page": 1
+    },
+    {
+     "walls": {
+      "gt_centreline_pt": 2703.8,
+      "length_recall": 0.997,
+      "length_precision": 0.797,
+      "detected_segments": 39,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": null
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 0,
+      "recall": 0.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "unknown",
+      "rel_error": null
+     },
+     "skew_deg": {
+      "estimated": 1.881,
+      "true": 2.0
+     },
+     "page": 2
+    }
+   ]
+  },
+  "poor_72dpi": {
+   "degradation": {
+    "name": "poor_72dpi",
+    "dpi": 72,
+    "skew_deg": -1.5,
+    "noise_sigma": 22,
+    "blur_px": 1.5,
+    "jpeg_quality": 30,
+    "seed": 4
+   },
+   "pages": [
+    {
+     "walls": {
+      "gt_centreline_pt": 2533.2,
+      "length_recall": 0.991,
+      "length_precision": 0.747,
+      "detected_segments": 44,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": null
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 0,
+      "recall": 0.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "unknown",
+      "rel_error": null
+     },
+     "skew_deg": {
+      "estimated": -1.386,
+      "true": -1.5
+     },
+     "page": 1
+    },
+    {
+     "walls": {
+      "gt_centreline_pt": 2703.8,
+      "length_recall": 0.997,
+      "length_precision": 0.741,
+      "detected_segments": 43,
+      "gt_walls": 8,
+      "tolerance_pt": 6.0,
+      "thickness_abs_err_in": null
+     },
+     "room_labels": {
+      "gt": 5,
+      "found": 0,
+      "recall": 0.0
+     },
+     "dimensions": {
+      "gt": 6,
+      "string_found": 0,
+      "value_exact": 0,
+      "value_recall": 0.0
+     },
+     "scale": {
+      "status": "unknown",
+      "rel_error": null
+     },
+     "skew_deg": {
+      "estimated": -1.388,
+      "true": -1.5
+     },
+     "page": 2
+    }
+   ]
+  }
+ }
+}

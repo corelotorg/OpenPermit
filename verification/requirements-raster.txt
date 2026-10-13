@@ -1,0 +1,6 @@
+# Optional: ori_takeoff.raster (scanned-plan track, DRAFT). Local engines only, no cloud OCR.
+# opencv-python-headless Apache-2.0; pytesseract Apache-2.0; numpy BSD-3-Clause.
+# Also needs the Tesseract binary (Apache-2.0), e.g. `apt-get install tesseract-ocr`.
+# tests/test_raster.py skips cleanly when any of these is missing.
+opencv-python-headless>=4.8
+pytesseract>=0.3.10

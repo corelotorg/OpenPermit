@@ -201,6 +201,12 @@ def detect_page(pp: PagePrimitives, params: D.Params | None = None) -> dict:
         if m:
             page["storey"]["noted_floor_to_floor_in"] = U.parse_ft_in(m.group(1))
             page["storey"]["noted_floor_to_floor_source"] = "sheet note text (unconfirmed)"
+        c = _CEILING_RE.search(U.normalize(t.text).upper())
+        if c and page["storey"].get("noted_ceiling_height_in") is None:
+            v = U.parse_ft_in((c.group(1) or c.group(2)).strip())
+            if v is not None:
+                page["storey"]["noted_ceiling_height_in"] = v
+                page["storey"]["noted_ceiling_height_source"] = "sheet note text (unconfirmed)"
     title = (page["sheet_title"] or "").upper()
     for word, n in (("FIRST", 1), ("SECOND", 2), ("THIRD", 3), ("BASEMENT", 0)):
         if word in title:
@@ -209,6 +215,11 @@ def detect_page(pp: PagePrimitives, params: D.Params | None = None) -> dict:
     from .takeoff import page_takeoff
     page["takeoff"] = page_takeoff(page, footprint, k)
     return page
+
+
+# A typical-ceiling note, either "CEILING HEIGHT 8'-0\"" / "CLG HT 8'-0\"" or "8'-0\" CLG".
+_FTIN = r"(\d+'\s*-?\s*[\d /]*\")"
+_CEILING_RE = re.compile(r"(?:CEILING(?:\s+HEIGHT)?|CLG\.?(?:\s*HT\.?)?)\s*[:=]?\s*" + _FTIN + r"|" + _FTIN + r"\s*(?:CLG|CEILING)\b")
 
 
 def _real(v, k):

@@ -104,7 +104,7 @@ def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict
         if not known:
             elev = z_next
         ftf = st.get("floor_to_floor_in") or st.get("noted_floor_to_floor_in")
-        ceil = st.get("ceiling_height_in")
+        ceil = st.get("ceiling_height_in") or st.get("noted_ceiling_height_in")
         storey = api.run("root.create_entity", b.f, ifc_class="IfcBuildingStorey", name=st.get("name") or f"Page {p['page']} {p.get('page_label')}")
         storey.Elevation = float(elev * MM)
         storey.ObjectPlacement = b.placement(0, 0, elev * MM)
@@ -116,7 +116,7 @@ def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict
         wall_h = ftf or PLACEHOLDER_STOREY_IN
         wall_src = ("sheet_note_unconfirmed" if st.get("noted_floor_to_floor_in") and not st.get("floor_to_floor_in") else "overlay") if ftf else "placeholder_not_from_plan"
         space_h = ceil or PLACEHOLDER_STOREY_IN
-        space_src = "overlay" if ceil else "placeholder_not_from_plan"
+        space_src = ("sheet_note_unconfirmed" if st.get("noted_ceiling_height_in") and not st.get("ceiling_height_in") else "overlay") if ceil else "placeholder_not_from_plan"
         if wall_src == "placeholder_not_from_plan":
             summary["placeholders"].append(f"page {p['page']}: wall height")
         if space_src == "placeholder_not_from_plan":
@@ -193,12 +193,12 @@ def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict
 def check_ifc(path: str | Path, jurisdiction: str | None = None) -> dict:
     """Run IfcOpenShell schema validation and the ORI rule units on the exported model.
 
-    Facts from placeholder heights are removed (missing -> unknown); facts from auto-extracted,
-    unreviewed elements are re-labelled ``vector_extracted_unconfirmed`` (-> unknown)."""
+    The provenance policy lives in ``ori_verify.ifc_extract.IfcFacts._takeoff_policy`` so this check and
+    ``ori_verify.cli ifc`` give the same results: placeholder heights are removed (missing -> unknown) and
+    unreviewed auto-extracted facts are re-labelled ``vector_extracted_unconfirmed`` (-> unknown)."""
     import ifcopenshell.validate as iv
 
     from ori_verify import ifc_extract, records, rules, units
-    from ori_verify.facts import Fact
 
     model = ifcopenshell.open(str(path))
     logger = iv.json_logger()
@@ -207,20 +207,8 @@ def check_ifc(path: str | Path, jurisdiction: str | None = None) -> dict:
     jur = jurisdiction or units.VA
     eff = units.implemented_units(jur)
     fx = ifc_extract.IfcFacts(model, source_path=Path(path).name)
-    subjects = fx.subjects()
-    adjust = []
-    for s in subjects:
-        guid = s.subject_id.split(":", 1)[1]
-        el = model.by_guid(guid)
-        tp = uel.get_pset(el, "Pset_ORI_Takeoff") or {}
-        if tp.get("HeightSource") == "placeholder_not_from_plan":
-            for k in ("ceiling_height", "headroom_clearances", "sill_height", "frame_bottom_height"):
-                if k in s.facts:
-                    del s.facts[k]
-                    adjust.append(f"{s.label}: {k} removed (placeholder height, not from plan)")
-        if tp.get("Method") == "auto_extracted" and tp.get("ReviewStatus") in ("unreviewed", "rejected"):
-            for k, f in list(s.facts.items()):
-                s.facts[k] = Fact(f.value, "vector_extracted_unconfirmed", f.anchor, (f.note or "") + " (auto-extracted from plan, unreviewed)")
+    subjects = fx.subjects()  # provenance policy (placeholder / unreviewed) is applied inside the extractor
+    adjust = list(fx.adjustments)
     results = rules.evaluate(subjects, eff)
     artifact = {"artifact_id": f"urn:ori:artifact:sha256:{ifc_extract.sha256_file(Path(path))}", "media_type": "application/x-step",
                 "schema": model.schema, "filename": Path(path).name, "sha256": ifc_extract.sha256_file(Path(path)),

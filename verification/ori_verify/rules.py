@@ -38,6 +38,8 @@ MISSING_INFORMATION_REASONS = frozenset(
         "exception_requires_reviewer",
         "geometry_not_measurable",
         "parameter_missing",
+        "threshold_unverified",   # governing value not verified against an official source
+        "threshold_not_encoded",  # table cell not encoded (owner decision pending)
     }
 )
 
@@ -464,6 +466,15 @@ SUBJECT_KINDS = {
     "eero_net_clear_width": "eero", "eero_sill_height_max": "eero", "guard_required": "walking_surface",
     "guard_height_min": "guard",
 }
+
+
+def _register_chapter_modules() -> None:
+    from . import rules_ch06
+    RULES.update(rules_ch06.RULES)
+    SUBJECT_KINDS.update(rules_ch06.SUBJECT_KINDS)
+
+
+_register_chapter_modules()
 
 
 def evaluate(subjects: list[Subject], units: list[EffectiveUnit]) -> list[Result]:

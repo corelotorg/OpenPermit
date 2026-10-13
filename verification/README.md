@@ -171,3 +171,12 @@ doors, windows, rooms, stairs, dimensions, labels) with takeoff quantities, prev
 a simple IFC 4.3 model checked by `ori_verify`. Auto-extracted elements stay unconfirmed and give `unknown`.
 Training use goes through a licensing gate. See `docs/PLAN-TAKEOFF-0.1-DRAFT.md` and
 `docs/PLAN-TRAINING-SET-WORKFLOW-DRAFT.md`; examples in `examples/takeoff/` (ORI-authored CC0 sample plan).
+
+**Provenance policy lives in the extractor (2026-10-12).** `ori_verify.ifc_extract.IfcFacts._takeoff_policy`
+reads `Pset_ORI_Takeoff` on every subject: placeholder heights (`HeightSource=placeholder_not_from_plan`)
+are removed, so height rules give `unknown`; elements whose `ReviewStatus` is not reviewed/accepted/
+corrected/confirmed (missing or unrecognised values included, fail closed) have their facts relabelled
+`vector_extracted_unconfirmed`, so rules give `unknown`. Authored ground-truth IFCs stay usable.
+`ori_verify.cli ifc` and `ori_takeoff ifc --check` now give the same counts. `ori_verify.cli ifc` exits 2
+(strict, default; `--no-strict` to disable) if a pass ever rests on unconfirmed takeoff facts.
+`ori_takeoff gate` (training-set admission) already exits 1 on unreviewed labels and is unchanged.
