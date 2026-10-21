@@ -33,3 +33,12 @@ updates:
     groups:
       minor-and-patch:
         update-types: ["minor", "patch"]
+
+  # ori-conformance.yml installs verification/requirements.txt.
+  - package-ecosystem: pip
+    directory: "/verification"
+    schedule:
+      interval: weekly
+    groups:
+      minor-and-patch:
+        update-types: ["minor", "patch"]
