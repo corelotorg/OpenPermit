@@ -44,7 +44,7 @@
             },
             {
               "path": "research/licenses/usc-17-105.txt",
-              "sha256": "13375ca48dec1c6d9f730111287715d93edc3591e514afc857d50010d8667673",
+              "sha256": "2fd1cbb6cb1139de6e5171ee57b119c30f2edba163f1c3f2fef4bfdd80a35c4b",
               "url": "https://uscode.house.gov/view.xhtml?req=granuleid:USC-prelim-title17-section105&num=0&edition=prelim",
               "fetched_at": "2026-09-28",
               "redistributable": true,
