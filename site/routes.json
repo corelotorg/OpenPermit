@@ -63,7 +63,8 @@
         "spec/model-interface-0.1-draft.md",
         "spec/evidence-attestation-0.1-draft.md",
         "CREDITS.md",
-        "model-verification/stud-wall.html"
+        "model-verification/stud-wall.html",
+        "model-verification/review/index.html"
       ]
     }
   ]
