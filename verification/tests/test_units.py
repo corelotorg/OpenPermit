@@ -34,8 +34,9 @@ def test_va_deletion_makes_unit_not_applicable():
 
 
 def test_every_implemented_unit_has_a_rule_function():
-    eff = units.implemented_units()
+    eff = units.implemented_units(path=units.CH03_COLLECTION)
     assert len(eff) == 14  # R305.1 has two units (habitable; bath-toilet-laundry)
+    assert len(units.implemented_units()) == 14 + 13  # plus Chapter 6
     for u in eff:
         assert u.function in rules.RULES, u.id
         assert u.unit["check_class"] == "geometric_deterministic"

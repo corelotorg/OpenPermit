@@ -44,6 +44,7 @@ KINDS = {"riser_height_max": "stair_flight", "riser_uniformity": "stair_flight",
          "room_area_min": "space", "eero_net_clear_area": "eero", "eero_net_clear_height": "eero",
          "eero_net_clear_width": "eero", "eero_sill_height_max": "eero", "guard_required": "walking_surface",
          "guard_height_min": "guard"}
+KINDS.update(rules.SUBJECT_KINDS)  # Chapter 6 functions register their subject kinds
 
 
 @pytest.mark.parametrize("key", sorted(VA))

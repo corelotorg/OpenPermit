@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SPDX-License-Identifier: CC0-1.0. ORI information-requirement specification (DRAFT).
+     IDS 1.0 expresses the non-geometric information the Chapter 6 framing and practical-bracing
+     rule units need. Panel lengths and positions are measured from geometry by ORI's evaluator. -->
+<ids:ids xmlns:ids="http://standards.buildingsmart.org/IDS" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd">
+  <ids:info>
+    <ids:title>ORI Chapter 6: wall framing and practical bracing</ids:title>
+    <ids:version>0.1.0-draft</ids:version>
+    <ids:author>ori@example.org</ids:author>
+    <ids:date>2026-10-12</ids:date>
+    <ids:purpose>Reviewer evidence for 2021 IRC / 2021 VRC Chapter 6 rule units. Not approval.</ids:purpose>
+  </ids:info>
+  <ids:specifications>
+    <ids:specification name="Framed walls declare stud size and spacing" ifcVersion="IFC4" identifier="ORI-CH06-WALL-01" description="Framed walls declare nominal stud size, spacing and the floors they carry (R602.3.1), plus hole and notch extremes (R602.6)." instructions="Set Pset_ORI_Framing.StudNominalSize (for example 2x6), StudSpacing, FloorsSupported (0 = roof and ceiling only), and Pset_WallCommon.LoadBearing.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCWALL</ids:simpleValue></ids:name></ids:entity>
+        <ids:property><ids:propertySet><ids:simpleValue>Pset_ORI_Framing</ids:simpleValue></ids:propertySet><ids:baseName><ids:simpleValue>StudNominalSize</ids:simpleValue></ids:baseName></ids:property>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_Framing</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>StudSpacing</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCINTEGER" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_Framing</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>FloorsSupported</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCBOOLEAN" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_WallCommon</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>LoadBearing</ids:simpleValue></ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    <ids:specification name="Framed walls declare plates" ifcVersion="IFC4" identifier="ORI-CH06-WALL-02" description="Framed walls declare top plate count and splice offset (R602.3.2)." instructions="Set Pset_ORI_Framing.TopPlateCount and TopPlateSpliceOffset.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCWALL</ids:simpleValue></ids:name></ids:entity>
+        <ids:property><ids:propertySet><ids:simpleValue>Pset_ORI_Framing</ids:simpleValue></ids:propertySet><ids:baseName><ids:simpleValue>StudNominalSize</ids:simpleValue></ids:baseName></ids:property>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCINTEGER" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_Framing</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>TopPlateCount</ids:simpleValue></ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+    <ids:specification name="Braced wall panels declare method and sheathing" ifcVersion="IFC4" identifier="ORI-CH06-PANEL-01" description="Braced wall panels declare the bracing method, location and sheathing (Virginia R602.12.1, R602.12.2)." instructions="Model each panel as IfcPlate (SHEET) with body geometry and set Pset_ORI_BracedWallPanel.Method (VA-R602.12), Location, SheathingMaterial, SheathingThickness and, for exterior panels, AdjacentOpeningClearHeight.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCPLATE</ids:simpleValue></ids:name></ids:entity>
+        <ids:property><ids:propertySet><ids:simpleValue>Pset_ORI_BracedWallPanel</ids:simpleValue></ids:propertySet><ids:baseName><ids:simpleValue>Location</ids:simpleValue></ids:baseName></ids:property>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCLABEL" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracedWallPanel</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>Method</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCLABEL" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracedWallPanel</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>SheathingMaterial</ids:simpleValue></ids:baseName>
+          <ids:value><xs:restriction base="xs:string"><xs:enumeration value="wood_structural_panel"/><xs:enumeration value="structural_fiberboard"/><xs:enumeration value="gypsum_board"/></xs:restriction></ids:value>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracedWallPanel</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>SheathingThickness</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:attribute cardinality="required"><ids:name><ids:simpleValue>Representation</ids:simpleValue></ids:name></ids:attribute>
+      </ids:requirements>
+    </ids:specification>
+    <ids:specification name="Bracing rectangles declare extent and required length" ifcVersion="IFC4" identifier="ORI-CH06-RECT-01" description="Each circumscribed bracing rectangle declares its extent and the required bracing length per side as computed by the applicant (Virginia R602.12.3, R602.12.4)." instructions="Model each rectangle as IfcAnnotation with Pset_ORI_BracingRectangle OriginX, OriginY, LengthX, LengthY, RequiredBracingAlongX, RequiredBracingAlongY, BuildingMatchesRectangle and BracingPlanComplete.">
+      <ids:applicability minOccurs="0" maxOccurs="unbounded">
+        <ids:entity><ids:name><ids:simpleValue>IFCANNOTATION</ids:simpleValue></ids:name></ids:entity>
+        <ids:property><ids:propertySet><ids:simpleValue>Pset_ORI_BracingRectangle</ids:simpleValue></ids:propertySet><ids:baseName><ids:simpleValue>OriginX</ids:simpleValue></ids:baseName></ids:property>
+      </ids:applicability>
+      <ids:requirements>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracingRectangle</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>LengthX</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracingRectangle</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>LengthY</ids:simpleValue></ids:baseName>
+        </ids:property>
+        <ids:property dataType="IFCLENGTHMEASURE" cardinality="required">
+          <ids:propertySet><ids:simpleValue>Pset_ORI_BracingRectangle</ids:simpleValue></ids:propertySet>
+          <ids:baseName><ids:simpleValue>RequiredBracingAlongX</ids:simpleValue></ids:baseName>
+        </ids:property>
+      </ids:requirements>
+    </ids:specification>
+  </ids:specifications>
+</ids:ids>
