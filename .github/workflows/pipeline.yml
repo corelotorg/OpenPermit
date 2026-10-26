@@ -47,6 +47,9 @@ name: pipeline
 
 on:
   pull_request:
+    # ready_for_review: drafts skip CI and run once marked ready. closed: starts no job;
+    # it joins the PR's concurrency group, so closing or merging cancels its in-flight run.
+    types: [opened, synchronize, reopened, ready_for_review, closed]
     branches: [test, prod]
   push:
     branches: [test, prod]
@@ -56,13 +59,14 @@ permissions:
   contents: read
 
 concurrency:
-  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
 jobs:
   verify:
+    if: github.event.action != 'closed' && !github.event.pull_request.draft
     name: Rough checks
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # hosted-by-design: public repo; fork PRs must not run on the cluster pools
     timeout-minutes: 15
     env:
       GITLEAKS_VERSION: "8.18.4"
@@ -183,8 +187,9 @@ jobs:
   # install means a different SAST engine can arrive on any run, so a clean
   # baseline today says nothing about tomorrow's.
   sast:
+    if: github.event.action != 'closed' && !github.event.pull_request.draft
     name: SAST (semgrep)
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # hosted-by-design: public repo; fork PRs must not run on the cluster pools
     timeout-minutes: 25
     env:
       SEMGREP_VERSION: "1.176.0"
