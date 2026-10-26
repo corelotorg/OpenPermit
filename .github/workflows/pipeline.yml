@@ -66,7 +66,7 @@ jobs:
   verify:
     if: github.event.action != 'closed' && !github.event.pull_request.draft
     name: Rough checks
-    runs-on: ${{ vars.CI_RUNNER_MODE == 'hosted' && 'ubuntu-latest' || 'ci' }}
+    runs-on: ubuntu-latest # hosted-by-design: public repo; fork PRs must not run on the cluster pools
     timeout-minutes: 15
     env:
       GITLEAKS_VERSION: "8.18.4"
@@ -189,7 +189,7 @@ jobs:
   sast:
     if: github.event.action != 'closed' && !github.event.pull_request.draft
     name: SAST (semgrep)
-    runs-on: ${{ vars.CI_RUNNER_MODE == 'hosted' && 'ubuntu-latest' || 'ci' }}
+    runs-on: ubuntu-latest # hosted-by-design: public repo; fork PRs must not run on the cluster pools
     timeout-minutes: 25
     env:
       SEMGREP_VERSION: "1.176.0"

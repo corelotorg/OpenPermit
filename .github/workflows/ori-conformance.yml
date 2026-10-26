@@ -36,7 +36,7 @@ permissions:
 
 jobs:
   validate:
-    runs-on: ${{ vars.CI_RUNNER_MODE == 'hosted' && 'ubuntu-latest' || 'ci' }}
+    runs-on: ubuntu-latest # hosted-by-design: public repo; fork PRs must not run on the cluster pools
     steps:
       - name: Checkout
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
