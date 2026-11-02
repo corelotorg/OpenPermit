@@ -22,11 +22,14 @@ give unknown until a person confirms them.
 from __future__ import annotations
 
 import math
+import copy
+import hashlib
+import json
+import uuid
 from pathlib import Path
 
 import ifcopenshell
 import ifcopenshell.api as api
-import ifcopenshell.util.element as uel
 
 from . import TOOL_ID
 
@@ -81,9 +84,43 @@ def _ring_mm(geom, ox, oy):
 
 def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict:
     """Write an IFC 4.3 file; returns a summary with what was skipped and why."""
+    # Work on a copy: review exclusions never rewrite original evidence.
+    doc = copy.deepcopy(doc)
+    overlay_sha = hashlib.sha256(json.dumps(doc, sort_keys=True, separators=(",", ":"), allow_nan=False).encode()).hexdigest()
+    seen = set()
+    page_numbers = set()
+    for page in doc["pages"]:
+        if page["page"] in page_numbers:
+            raise ValueError("duplicate overlay page")
+        page_numbers.add(page["page"])
+        scale = page["scale"]
+        factor = scale["real_in_per_page_unit"]
+        if factor is not None and (isinstance(factor, bool) or not isinstance(factor, (float, int)) or factor <= 0):
+            raise ValueError("invalid page scale")
+        for element in page["elements"]:
+            key = (page["page"], element["id"])
+            if key in seen:
+                raise ValueError(f"duplicate overlay element: {key}")
+            seen.add(key)
+    excluded = []
+    for page in doc["pages"]:
+        accepted = []
+        live_walls = {e["id"] for e in page["elements"] if e["ifc_class"] == "IfcWall" and e.get("geometry_real") and e["provenance"]["review_status"] != "rejected"}
+        for e in page["elements"]:
+            reason = "review_rejected" if e["provenance"]["review_status"] == "rejected" else None
+            if not reason and e["ifc_class"] in OPENING_PLACEHOLDER_IN and e.get("relations", {}).get("host_wall") not in live_walls:
+                reason = "host_wall_not_exported"
+            if reason:
+                excluded.append({"page": page["page"], "element_id": e["id"], "reason": reason})
+            else:
+                accepted.append(e)
+        page["elements"] = accepted
     b = _B(name or f"ORI plan takeoff: {doc['source']['filename']}")
     summary = {"ifc_schema": "IFC4X3", "storeys": [], "skipped_pages": [], "counts": {}, "placeholders": []}
-    pages = [p for p in doc["pages"] if p["scale"]["real_in_per_page_unit"] is not None and p["status"] != "needs_tracing"]
+    summary.update({"handoff_profile": "ori-ifc-handoff-0.1", "overlay_id": doc["overlay_id"],
+                    "overlay_sha256": overlay_sha, "source_artifact_id": doc["source"]["artifact_id"],
+                    "excluded_elements": excluded, "elements": [], "coordinate_transforms": []})
+    pages = [p for p in doc["pages"] if p["scale"]["real_in_per_page_unit"] is not None and p["scale"]["status"] in ("stated_confirmed", "stated", "calibrated", "drawing_units") and p["status"] != "needs_tracing"]
     summary["skipped_pages"] = [{"page": p["page"], "reason": f"scale {p['scale']['status']} or {p['status']}"}
                                 for p in doc["pages"] if p not in pages]
     # common origin: lower-left of all walls across pages (real inches), so floors stack
@@ -121,13 +158,33 @@ def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict
             summary["placeholders"].append(f"page {p['page']}: wall height")
         if space_src == "placeholder_not_from_plan":
             summary["placeholders"].append(f"page {p['page']}: space height")
+        summary["coordinate_transforms"].append({
+            "page": p["page"], "sheet": p.get("page_label"), "page_units": p.get("page_units"),
+            "page_axis_convention": "pdf_media_box_bottom_left_xy" if p.get("page_units") == "pt" else "source_drawing_xy",
+            "real_in_per_page_unit": p["scale"]["real_in_per_page_unit"], "scale_status": p["scale"]["status"],
+            "origin_real_in": [ox, oy], "storey_elevation_in": elev, "elevation_known": known,
+            "page_xy_to_ifc_world_mm": [[p["scale"]["real_in_per_page_unit"]*MM, 0, -ox*MM],
+                                         [0, p["scale"]["real_in_per_page_unit"]*MM, -oy*MM],
+                                         [0, 0, elev*MM]],
+            "ifc_units": "millimetres", "ifc_up_axis": "Z", "viewer_metres_per_ifc_unit": 0.001,
+            "cross_page_registration": "unverified", "georeferenced": False})
         walls = {}
 
         def tag(prod, e, height_src=None):
             pr = e["provenance"]
+            role = "void" if prod.is_a() == "IfcOpeningElement" else "primary"
+            identity = json.dumps([doc["source"]["artifact_id"], doc["overlay_id"], p["page"], e["id"], prod.is_a(), role], separators=(",", ":"))
+            prod.GlobalId = ifcopenshell.guid.compress(uuid.uuid5(uuid.NAMESPACE_URL, "ori-ifc-element:" + identity).hex)
+            summary["elements"].append({"page": p["page"], "sheet": p.get("page_label"), "overlay_element_id": e["id"],
+                                        "ifc_guid": prod.GlobalId, "ifc_class": prod.is_a(), "role": role,
+                                        "review_status": pr["review_status"], "method": pr["method"],
+                                        "height_source": height_src, "derived_from": pr.get("derived_from")})
             b.pset(prod, "Pset_ORI_Takeoff", {"Method": pr["method"], "ReviewStatus": pr["review_status"],
                                                "Confidence": pr.get("confidence"), "OverlayElementId": e["id"], "Tool": TOOL_ID,
-                                               "HeightSource": height_src, "SourcePage": int(p["page"])})
+                                               "HeightSource": height_src, "SourcePage": int(p["page"]),
+                                               "SourceSheet": p.get("page_label"), "SourceArtifactId": doc["source"]["artifact_id"],
+                                               "OverlayId": doc["overlay_id"], "OverlaySha256": overlay_sha,
+                                               "DerivedFrom": pr.get("derived_from")})
             counts[prod.is_a()] = counts.get(prod.is_a(), 0) + 1
 
         for e in p["elements"]:
@@ -187,6 +244,7 @@ def overlay_to_ifc(doc: dict, path: str | Path, name: str | None = None) -> dict
     summary["counts"] = counts
     path = Path(path)
     b.f.write(str(path))
+    summary["ifc_sha256"] = hashlib.sha256(path.read_bytes()).hexdigest()
     return summary
 
 
