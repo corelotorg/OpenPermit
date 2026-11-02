@@ -295,3 +295,49 @@ corrected/confirmed (missing or unrecognised values included, fail closed) have 
 `ori_verify.cli ifc` and `ori_takeoff ifc --check` now give the same counts. `ori_verify.cli ifc` exits 2
 (strict, default; `--no-strict` to disable) if a pass ever rests on unconfirmed takeoff facts.
 `ori_takeoff gate` (training-set admission) already exits 1 on unreviewed labels and is unchanged.
+
+
+## Revision-bound IFC review handoff
+
+`overlay_to_ifc` excludes rejected elements and reports them in `excluded_elements`.
+Openings whose host wall is not exported are excluded with `host_wall_not_exported`;
+the exporter does not create an orphan void or filled opening. The input overlay is
+unchanged. Duplicate page/element identities and non-positive/non-finite scale factors
+are refused. Unknown, conflicting and NTS scales never produce a storey, including
+when stale numeric scale data remains in the document.
+
+The returned summary extends the existing export receipt with `handoff_profile:
+ori-ifc-handoff-0.1`, the exact source artifact ID, overlay ID, canonical overlay SHA-256,
+output IFC SHA-256, `elements` and `coordinate_transforms`. The overlay digest uses
+UTF-8 JSON with sorted keys, compact separators and no NaN/Infinity. This is a local
+serialization contract, not a claim of RFC 8785 canonicalization.
+
+Each element entry binds page/sheet and overlay element ID to IFC GlobalId and class,
+role (`primary` or opening `void`), review status, method, height source and correction
+lineage. The UUIDv5 identity binds source artifact ID, overlay ID, page, element ID,
+IFC class and role, encoded as compact JSON under the `ori-ifc-element:` URL namespace.
+This stabilizes identity on repeated exports of the same source/overlay. Geometry or
+review edits change the overlay digest even when identity remains stable. A changed
+source or identity is a different binding; cross-revision comment migration must be
+explicit, never inferred from a GUID alone. Match the source, overlay digest and output
+hash before reopening a review. IDs establish correspondence, not acceptance.
+
+IFC `Pset_ORI_Takeoff` retains source artifact, overlay ID/digest, source sheet and
+`DerivedFrom` alongside the existing review and placeholder fields. The summary's
+`page_xy_to_ifc_world_mm` is a 3×3 affine lift: multiply `[page_x,page_y,1]` to obtain
+world `[X,Y,Z]` in millimetres at the storey plane. It records page units/axis convention,
+scale status, shared origin in inches, storey elevation and whether that elevation is
+known. Viewer conversion is 0.001 metres per IFC millimetre, with IFC Z up. A downstream
+GLB converter must record any additional axis/origin transform and carry these identities
+and qualifications into its own revision/hash-bound manifest. This change does not
+implement or verify GLB conversion, a viewer adapter, or cross-page registration.
+
+Placeholder heights remain viewing aids. Unreviewed plan-derived values, including
+human traces not yet confirmed, cannot produce a pass. Cross-page registration remains
+`unverified`, and the export is not georeferenced. Preserve these qualifications in any
+2D↔3D presentation; camera transitions cannot establish measurement or engineering proof.
+
+Regression tests: `verification/tests/test_takeoff_handoff.py`. Continue the existing
+Model Verification concern [#132](https://github.com/corelotorg/OpenPermit/issues/132);
+the separate wall-proof [PR #134](https://github.com/corelotorg/OpenPermit/pull/134)
+retains its own review scope.
