@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-review-comment-event-0.2.schema.json",
+  "title": "ORI Review Comment Event v0.2 Draft",
+  "description": "DRAFT (issue #140, item A2). CloudEvents 1.0 structured-mode JSON envelope whose data is one ORI review comment. Required CloudEvents attributes: id, source, specversion, type. Attribute names are lower-case letters and digits only, per CloudEvents 1.0.2.",
+  "type": "object",
+  "required": [
+    "specversion",
+    "id",
+    "source",
+    "type",
+    "time",
+    "datacontenttype",
+    "dataschema",
+    "subject",
+    "data"
+  ],
+  "properties": {
+    "specversion": {
+      "const": "1.0"
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "format": "uri-reference"
+    },
+    "type": {
+      "enum": [
+        "dev.openpermit.review.comment.created",
+        "dev.openpermit.review.comment.updated",
+        "dev.openpermit.review.comment.statuschanged"
+      ]
+    },
+    "time": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "datacontenttype": {
+      "const": "application/json"
+    },
+    "dataschema": {
+      "const": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json"
+    },
+    "subject": {
+      "type": "string",
+      "pattern": "^urn:ori:comment:"
+    },
+    "oriapplication": {
+      "type": "string",
+      "pattern": "^urn:ori:application:"
+    },
+    "orikind": {
+      "type": "string"
+    },
+    "data": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json"
+    }
+  },
+  "propertyNames": {
+    "pattern": "^[a-z0-9]{1,20}$"
+  },
+  "additionalProperties": true
+}
