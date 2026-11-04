@@ -1,0 +1,33 @@
+{
+  "profile": "ori-inspection-request-0.1",
+  "kind": "InspectionRequest",
+  "label": "Request, not approval",
+  "request_id": "urn:ori:inspection-request:example-city:2026-000123:footing:1",
+  "idempotency_key": "example-city-2026-000123-footing-1",
+  "created_at": "2026-11-04T14:05:00Z",
+  "jurisdiction": {"id": "urn:ori:jurisdiction:example-city"},
+  "permit": {"authority_permit_number": "BLD-2026-000123"},
+  "inspection_type": {
+    "native": {"code": "101", "label": "Footing"},
+    "requirement_ref": {"id": "urn:ori:requirement:example-city:residential-new-construction:inspection:footing"}
+  },
+  "site": {"address": "100 Example Street, Example City", "parcel_id": "EX-0001"},
+  "requested_window": {"earliest_date": "2026-11-06", "latest_date": "2026-11-07", "time_of_day": "am"},
+  "modality": "in_person",
+  "requester": {
+    "role": "contractor",
+    "contact": {"name": "Example Builder", "phone": "+1-555-0100", "email": "permits@example.com"},
+    "license_number": "EX-CLASS-A-0000"
+  },
+  "site_access": {
+    "on_site_contact": {"name": "Site Lead", "phone": "+1-555-0101"},
+    "instructions": "Enter from the rear lane; trenches are marked.",
+    "access_secret_ref": {"id": "urn:ori:secured-channel:example-builder:lockbox"}
+  },
+  "readiness": {
+    "statement": "Footing trenches excavated, forms and rebar placed, ready for inspection.",
+    "attested_by": {"id": "urn:ori:actor:example-builder"},
+    "attested_at": "2026-11-04T14:00:00Z",
+    "evidence": [{"id": "urn:ori:artifact:sha256:0000000000000000000000000000000000000000000000000000000000000000"}]
+  }
+}
