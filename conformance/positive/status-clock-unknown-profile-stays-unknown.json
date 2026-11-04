@@ -1,0 +1,49 @@
+{
+  "id": "ori:test:positive:status-clock-unknown-profile-stays-unknown",
+  "rule": "status-clock-record",
+  "expected": "pass",
+  "description": "No jurisdiction profile: clock parameters stay unknown and the clock is never deemed. Synthetic test data (#140 draft).",
+  "objects": [
+    {
+      "record_profile": "ori-status-clock-0.1",
+      "id": "urn:ori:status:test-a",
+      "type": "StatusRecord",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "application_ref": "urn:ori:application:test-house-1",
+      "events": [
+        {
+          "seq": 1,
+          "type": "Event",
+          "event_type": "submitted",
+          "at": "2026-03-01T09:00:00-05:00",
+          "actor_role": "applicant"
+        },
+        {
+          "seq": 2,
+          "type": "Event",
+          "event_type": "accepted_complete",
+          "at": "2026-03-02T09:00:00-05:00",
+          "actor_role": "intake"
+        },
+        {
+          "seq": 3,
+          "type": "Event",
+          "event_type": "clock_started",
+          "at": "2026-03-02T09:00:00-05:00",
+          "actor_role": "system"
+        }
+      ],
+      "clock": {
+        "type": "StatutoryClock",
+        "parameters_source": {
+          "profile_ref": "unknown"
+        },
+        "duration_days": "unknown",
+        "day_basis": "unknown",
+        "deemed_outcome": "unknown",
+        "state": "running"
+      }
+    }
+  ]
+}

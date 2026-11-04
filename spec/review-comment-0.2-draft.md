@@ -38,7 +38,7 @@ An element, spatial or view anchor requires the comment's `model_version`.
 
 ## Status changes as events
 
-Each comment travels as the data of a CloudEvents 1.0 structured JSON event. Event types are `dev.openpermit.review.comment.created`, `.updated` and `.statuschanged`. The event `subject` is the comment id, and the extension attributes `oriapplication` and `orikind` repeat the application and kind. Where an application also has a status record (a separate draft, proposed separately), issued corrections are also listed on its core `comments_issued` events through `comment_refs`. Naming CloudEvents is attribution only; no affiliation with the CNCF or the CloudEvents project is implied. Source: CloudEvents specification v1.0.2, https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md (fetched 2026-10-30).
+Each comment travels as the data of a CloudEvents 1.0 structured JSON event. Event types are `dev.openpermit.review.comment.created`, `.updated` and `.statuschanged`. The event `subject` is the comment id, and the extension attributes `oriapplication` and `orikind` repeat the application and kind. Where an application has a status record (`spec/status-clock-0.1-draft.md`), issued corrections are also listed on its core `comments_issued` events through `comment_refs`. Naming CloudEvents is attribution only; no affiliation with the CNCF or the CloudEvents project is implied. Source: CloudEvents specification v1.0.2, https://raw.githubusercontent.com/cloudevents/spec/v1.0.2/cloudevents/spec.md (fetched 2026-10-30).
 
 ## Rules checked
 
