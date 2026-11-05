@@ -17,6 +17,8 @@ from typing import Any
 
 REPO_ROOT = Path(__file__).resolve().parents[2]
 CH03_COLLECTION = REPO_ROOT / "rules" / "irc2021" / "ch03" / "va-vrc-2021-ch03.units.json"
+CH06_COLLECTION = REPO_ROOT / "rules" / "irc2021" / "ch06" / "va-vrc-2021-ch06.units.json"
+ALL_COLLECTIONS = (CH03_COLLECTION, CH06_COLLECTION)
 VA = "urn:ori:jurisdiction:us-va"
 BASE = "base:irc-2021"
 
@@ -77,10 +79,11 @@ def resolve(unit: dict[str, Any], jurisdiction: str | None) -> EffectiveUnit:
     return eff
 
 
-def implemented_units(jurisdiction: str | None = VA, path: Path = CH03_COLLECTION) -> list[EffectiveUnit]:
-    col = load_collection(path)
+def implemented_units(jurisdiction: str | None = VA, path: Path | None = None) -> list[EffectiveUnit]:
+    """Implemented units from one collection (``path``) or, by default, every chapter collection."""
     out = []
-    for u in all_units(col):
-        if u["evaluator"]["kind"] == "deterministic_function":
-            out.append(resolve(u, jurisdiction))
+    for p in ([path] if path is not None else ALL_COLLECTIONS):
+        for u in all_units(load_collection(p)):
+            if u["evaluator"]["kind"] == "deterministic_function":
+                out.append(resolve(u, jurisdiction))
     return out

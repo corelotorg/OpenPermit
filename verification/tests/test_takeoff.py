@@ -302,3 +302,26 @@ def test_editor_is_static_and_dependency_free():
     html = (Path(__file__).resolve().parents[1] / "ori_takeoff" / "editor" / "index.html").read_text()
     assert "<script src" not in html and "http://" not in html.replace("http://www.w3.org", "")
     assert "human_corrected" in html and "human_traced" in html and "derived_from" in html
+
+
+@pytest.mark.parametrize("note,inches", [("CEILING HEIGHT 8'-0\"", 96.0), ("CLG HT: 9'-1 1/2\"", 109.5),
+                                         ("8'-0\" CLG", 96.0), ("FLOOR TO FLOOR 8'-9\"", None)])
+def test_ceiling_note_pattern(note, inches):
+    m = X._CEILING_RE.search(note)
+    assert (U.parse_ft_in((m.group(1) or m.group(2)).strip()) if m else None) == inches
+
+
+def test_noted_ceiling_height_is_used_but_stays_unconfirmed(sample, tmp_path):
+    import ifcopenshell
+    import ifcopenshell.util.element as ue
+
+    doc = X.extract_pdf(sample["pdf"])
+    for p in doc["pages"]:
+        p["storey"]["noted_ceiling_height_in"] = 96.0
+    summ = T.overlay_to_ifc(doc, tmp_path / "ceil.ifc")
+    assert not any("space height" in s for s in summ["placeholders"])
+    f = ifcopenshell.open(str(tmp_path / "ceil.ifc"))
+    srcs = {ue.get_pset(s, "Pset_ORI_Takeoff").get("HeightSource") for s in f.by_type("IfcSpace")}
+    assert srcs == {"sheet_note_unconfirmed"}
+    rep = T.check_ifc(tmp_path / "ceil.ifc")
+    assert rep["counts"]["pass"] == 0 and rep["counts"]["fail"] == 0

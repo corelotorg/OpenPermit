@@ -34,7 +34,14 @@ import ifcopenshell.util.placement as upl
 import ifcopenshell.util.shape as ushape
 import ifcopenshell.util.unit as uunit
 
-from .facts import Fact, Subject
+from .facts import USABLE_ORIGINS, Fact, Subject
+
+# Pset_ORI_Takeoff.ReviewStatus values after which a person has looked at the element.
+REVIEWED_STATUSES = frozenset({"reviewed", "accepted", "corrected", "confirmed"})
+GROUND_TRUTH_METHODS = frozenset({"authored_ground_truth", "ground_truth_synthetic"})
+HEIGHT_FACTS = frozenset({"ceiling_height", "headroom_clearances", "sill_height", "frame_bottom_height", "riser_heights",
+                          "stud_height", "wall_height"})
+ELEVATION_FACTS = frozenset({"sill_height", "frame_bottom_height", "drop_height", "guard_height"})
 
 M_PER_IN = 0.0254
 
@@ -61,6 +68,8 @@ class IfcFacts:
         self.settings.set("use-world-coords", True)
         self.guard_band_in = guard_band_in
         self._shape_cache: dict[int, Any] = {}
+        self.adjustments: list[str] = []
+        self.takeoff_elements = 0
 
     # -- helpers ---------------------------------------------------------------
     def anchor(self, el) -> dict[str, Any]:
@@ -295,8 +304,58 @@ class IfcFacts:
                 out.append(g)
         return out
 
+    # -- takeoff provenance policy ----------------------------------------------
+    def _takeoff_policy(self, subject: Subject) -> Subject:
+        """Apply Pset_ORI_Takeoff provenance to a subject's facts (fail closed).
+
+        * HeightSource == placeholder_not_from_plan: height-derived facts are removed
+          (missing -> unknown).
+        * Any Pset_ORI_Takeoff with Method not in GROUND_TRUTH_METHODS and a
+          ReviewStatus not in REVIEWED_STATUSES (missing or unrecognised included):
+          every fact is relabelled vector_extracted_unconfirmed (-> unknown).
+        * Containing storey with ElevationKnown false: elevation-derived facts removed.
+        """
+        if not subject.subject_id.startswith("ifc:"):
+            return subject
+        try:
+            el = self.f.by_guid(subject.subject_id.split(":", 1)[1].split("#", 1)[0])
+        except RuntimeError:
+            return subject
+        tp = uel.get_pset(el, "Pset_ORI_Takeoff") or {}
+        container = uel.get_container(el)
+        if container is None:
+            agg = uel.get_aggregate(el)
+            container = agg if agg is not None and agg.is_a("IfcBuildingStorey") else None
+        stp = (uel.get_pset(container, "Pset_ORI_Takeoff") or {}) if container is not None else {}
+        if not tp and not stp:
+            return subject
+        self.takeoff_elements += 1
+        subject.notes.append("Element carries Pset_ORI_Takeoff provenance (plan takeoff, not a design model).")
+        drop: dict[str, str] = {}
+        if stp and stp.get("ElevationKnown") is False:
+            drop.update({k: "storey elevation not known from plan" for k in ELEVATION_FACTS})
+        if tp.get("HeightSource") == "placeholder_not_from_plan":
+            drop.update({k: "placeholder height, not from plan" for k in HEIGHT_FACTS})
+        for k, why in sorted(drop.items()):
+            if k in subject.facts:
+                del subject.facts[k]
+                self.adjustments.append(f"{subject.label}: {k} removed ({why})")
+        if tp and tp.get("Method") not in GROUND_TRUTH_METHODS and tp.get("ReviewStatus") not in REVIEWED_STATUSES:
+            for k, f in list(subject.facts.items()):
+                if f.origin in USABLE_ORIGINS:
+                    subject.facts[k] = Fact(f.value, "vector_extracted_unconfirmed", f.anchor,
+                                            (f.note or "") + f" (takeoff Method={tp.get('Method')}, ReviewStatus={tp.get('ReviewStatus')}: not reviewed)")
+                    self.adjustments.append(f"{subject.label}: {k} relabelled unconfirmed (not reviewed)")
+        return subject
+
+    def framing_subjects(self) -> list[Subject]:
+        from .framing_extract import framing_subjects
+        return framing_subjects(self)
+
     def subjects(self) -> list[Subject]:
-        return self.stair_subjects() + self.space_subjects() + self.eero_subjects() + self.deck_and_guard_subjects()
+        subs = self.stair_subjects() + self.space_subjects() + self.eero_subjects() + self.deck_and_guard_subjects()
+        subs += self.framing_subjects()
+        return [self._takeoff_policy(s) for s in subs]
 
 
 def extract(path: str | Path, guard_band_in: float = 36.0) -> tuple[list[Subject], dict[str, Any]]:
@@ -311,4 +370,8 @@ def extract(path: str | Path, guard_band_in: float = 36.0) -> tuple[list[Subject
         "sha256": sha256_file(path),
         "size_bytes": path.stat().st_size,
     }
-    return fx.subjects(), artifact
+    subs = fx.subjects()
+    if fx.takeoff_elements:
+        artifact["takeoff_adjustments"] = list(fx.adjustments)
+        artifact["takeoff_elements"] = fx.takeoff_elements
+    return subs, artifact
