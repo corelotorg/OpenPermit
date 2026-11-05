@@ -5,10 +5,13 @@ import argparse
 import html
 import json
 import shutil
+import sys
 from pathlib import Path
 from urllib.parse import quote
 
 ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT / "site"))
+from reference_wall_check import generate as generate_wall_evidence
 
 
 def build(out, base_url):
@@ -16,7 +19,7 @@ def build(out, base_url):
     # Refuse a destination that can overwrite sources or recursively copy itself.
     if out == ROOT or ROOT.is_relative_to(out):
         raise ValueError("output must not contain the repository")
-    routes = json.loads((ROOT / "site/routes.json").read_text())
+    routes = json.loads((ROOT / "site/routes.json").read_text(encoding="utf-8"))
     out.mkdir(parents=True, exist_ok=True)
     for name in ["index.html", "README.md", "CHARTER.md", "GOVERNANCE.md", "CONTRIBUTING.md", "CREDITS.md", "NOTICE.md", "LICENSE", "LICENSE-SPEC.md", "SECURITY.md", "llms.txt", ".nojekyll"]:
         src = ROOT / name
@@ -32,6 +35,7 @@ def build(out, base_url):
     # Benchmark documentation lives outside examples.
     (out / "verification").mkdir(exist_ok=True)
     shutil.copy2(ROOT / "verification/README.md", out / "verification/README.md")
+    generate_wall_evidence(out / "model-verification/review")
     for route in routes["routes"]:
         path = Path(route["path"])
         if path.is_absolute() or ".." in path.parts:
@@ -50,11 +54,11 @@ def build(out, base_url):
             f'<title>{title} · OpenPermit</title><style>body{{background:#10151b;color:#e8edf2;font:18px/1.6 system-ui;max-width:960px;margin:5vh auto;padding:24px}}a{{color:#8dccff}}li{{margin:12px 0}}</style>'
             f'<nav><a href="{prefix}">OpenPermit</a> · <a href="{html.escape(routes["repository"])}">Repository</a></nav>'
             f'<main><h1>{title}</h1><p>{html.escape(route["description"])}</p><ul>{"".join(links)}</ul>'
-            f'<p><a href="{html.escape(routes["repository"])}/issues">Report an issue</a></p></main></html>\n')
+            f'<p><a href="{html.escape(routes["repository"])}/issues">Report an issue</a></p></main></html>\n', encoding="utf-8", newline="\n")
     base = base_url.rstrip("/") + "/"
     urls = [base] + [base + r["path"] for r in routes["routes"]]
-    (out / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{html.escape(u)}</loc></url>' for u in urls) + '</urlset>\n')
-    (out / "robots.txt").write_text(f'User-agent: *\nAllow: /\n\nSitemap: {base}sitemap.xml\n')
+    (out / "sitemap.xml").write_text('<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + ''.join(f'<url><loc>{html.escape(u)}</loc></url>' for u in urls) + '</urlset>\n', encoding="utf-8", newline="\n")
+    (out / "robots.txt").write_text(f'User-agent: *\nAllow: /\n\nSitemap: {base}sitemap.xml\n', encoding="utf-8", newline="\n")
     return len(routes["routes"])
 
 

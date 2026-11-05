@@ -34,7 +34,7 @@ h1,h2,h3,p{margin-top:0}h1{font-size:1.3rem;margin:0}h2{font-size:1.04rem}h3{fon
 </style>
 </head>
 <body>
-<header><div><a href="../">OpenPermit</a> / Model Verification <small>· synthetic reference wall v0.1</small></div><strong>ONE MODEL · MULTIPLE VIEWS</strong></header>
+<header><div><a href="../">OpenPermit</a> / Model Verification <small id="revision">· synthetic reference wall v0.1</small></div><strong>ONE MODEL · MULTIPLE VIEWS</strong></header>
 <main>
 <div class="panel">
 <div class="toolbar">
@@ -56,7 +56,7 @@ h1,h2,h3,p{margin-top:0}h1{font-size:1.3rem;margin:0}h2{font-size:1.04rem}h3{fon
 </div>
 <aside class="panel side">
   <h1>Reference wall</h1>
-  <p class="note">Synthetic benchmark concept · 8 ft × 8 ft. No external viewer library, source geometry, or textures.</p>
+  <p class="note" id="summary">Synthetic benchmark concept · 8 ft × 8 ft. No external viewer library, source geometry, or textures.</p>
   <div id="counts" aria-live="polite"></div>
   <section><h2>Elements</h2><p class="note">Select a part here or in the illustration.</p><div id="parts"></div></section>
   <section><h2>Selected element</h2><pre id="detail" aria-live="polite">Select an element.</pre></section>
@@ -88,6 +88,8 @@ h1,h2,h3,p{margin-top:0}h1{font-size:1.3rem;margin:0}h2{font-size:1.04rem}h3{fon
 const model = JSON.parse(document.getElementById("assembly").textContent);
 const revision = model.revision;
 const w = model.wall.width, h = model.wall.height, d = model.wall.depth;
+document.getElementById("revision").textContent="· "+revision;
+document.getElementById("summary").textContent="Synthetic benchmark concept · "+w+" in × "+h+" in. No external viewer library, source geometry, or textures.";
 const fw = model.framing.stud_width, bh = model.framing.bottom_plate_height;
 const th = model.framing.top_plate_height, nTop = model.framing.top_plate_count;
 const studs = model.framing.stud_centers;
@@ -164,8 +166,8 @@ function paint(){
   const text=document.createElementNS(ns,"text");
   const mark=project(w/2,-9,0);text.setAttribute("x",mark[0]);text.setAttribute("y",mark[1]);
   text.setAttribute("text-anchor","middle");text.setAttribute("font-size","3.7");
-  text.setAttribute("fill","#abc6d2");text.textContent="96 in modeled width";svg.append(text);
-  document.getElementById("viewname").textContent=transition<.01?"FRONT ELEVATION · 96 in × 96 in":transition>.99?"ISOMETRIC · SYNTHETIC":"MODEL TRANSITION · "+Math.round(transition*100)+"%";
+  text.setAttribute("fill","#abc6d2");text.textContent=w+" in modeled width";svg.append(text);
+  document.getElementById("viewname").textContent=transition<.01?"FRONT ELEVATION · "+w+" in × "+h+" in":transition>.99?"ISOMETRIC · SYNTHETIC":"MODEL TRANSITION · "+Math.round(transition*100)+"%";
   document.getElementById("percentage").textContent=Math.round(transition*100)+"%";
 }
 function select(id){
