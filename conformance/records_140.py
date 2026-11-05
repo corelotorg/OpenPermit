@@ -1,11 +1,12 @@
-"""Draft semantic checks for the review-comment and status-and-clock records (issue #140; review comment v0.2,
-status clock v0.1). Each check validates the record schema, then the invariants the schema alone cannot express.
-Both records are reviewer evidence; neither is an approval."""
+"""Draft semantic checks for the review-comment, status-and-clock and pre-reviewed-design records
+(issue #140; review comment v0.2, status clock v0.1, pre-reviewed design v0.1). Each check validates
+the record schema, then the invariants the schema alone cannot express. All three records are
+reviewer evidence; none is an approval."""
 from __future__ import annotations
 
 import json
 import re
-from datetime import datetime
+from datetime import date, datetime
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +18,7 @@ _SCHEMAS = {
     "ori-review-comment-0.2": ROOT / "spec" / "ori-review-comment-0.2.schema.json",
     "ori-review-comment-event-0.2": ROOT / "spec" / "ori-review-comment-event-0.2.schema.json",
     "ori-status-clock-0.1": ROOT / "spec" / "ori-status-clock-0.1.schema.json",
+    "ori-pre-reviewed-design-0.1": ROOT / "spec" / "ori-pre-reviewed-design-0.1.schema.json",
 }
 _validators: dict[str, Draft202012Validator] = {}
 
@@ -177,3 +179,41 @@ def status_clock_record(case: dict[str, Any]) -> list[str]:
             errors.append(f"{rid}: clock.state {clock['state']!r} does not match event history ({state!r})")
     return errors
 
+
+def _d(s: Any) -> date | None:
+    try:
+        return date.fromisoformat(s)
+    except (TypeError, ValueError):
+        return None
+
+
+def pre_reviewed_design_record(case: dict[str, Any]) -> list[str]:
+    recs = _of(case, "ori-pre-reviewed-design-0.1")
+    if not recs:
+        return ["no ori-pre-reviewed-design-0.1 objects in case"]
+    decisions = {o.get("id"): o for o in case.get("objects", []) if isinstance(o, dict) and o.get("type") == "Decision"}
+    errors: list[str] = []
+    for r in recs:
+        schema = _schema_errors(r, "ori-pre-reviewed-design-0.1")
+        errors += schema
+        if schema:
+            continue
+        rid = r["id"]
+        start, end, as_of = _d(r["validity"]["valid_from"]), _d(r["validity"]["valid_until"]), _d(r["as_of"])
+        if end and start and end <= start:
+            errors.append(f"{rid}: valid_until must be after valid_from")
+        if r["status"] == "current":
+            if end is None:
+                errors.append(f"{rid}: validity end unknown; status must be 'unknown', not 'current'")
+            elif as_of and not (start <= as_of <= end):
+                errors.append(f"{rid}: status 'current' but as_of is outside the validity term")
+        if "unknown" in r["site_specific_review_remaining"] and len(r["site_specific_review_remaining"]) > 1:
+            errors.append(f"{rid}: 'unknown' remaining review cannot be mixed with listed items")
+        sha = r["design"]["model_version"]["sha256"]
+        for use in r.get("uses", []):
+            if use["model_version"]["sha256"] != sha:
+                errors.append(f"{rid}: use in {use['application_ref']} cites a different model version; pre-review does not carry over")
+        dec = decisions.get(r["decision_ref"])
+        if dec is not None and dec.get("authority") != r["reviewed_by_authority"]:
+            errors.append(f"{rid}: linked Decision is by a different authority than reviewed_by_authority")
+    return errors

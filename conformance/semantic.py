@@ -437,6 +437,10 @@ def _status_clock_record(case: dict[str, Any]) -> list[str]:
     return _records_140().status_clock_record(case)
 
 
+def _pre_reviewed_design_record(case: dict[str, Any]) -> list[str]:
+    return _records_140().pre_reviewed_design_record(case)
+
+
 RULES = {
     "plan-overlay-training-gate": _plan_overlay_training_gate,
     "open-corpora-manifest": _open_corpora_manifest,
@@ -453,6 +457,7 @@ RULES = {
     "precedence-graph-acyclic": _precedence_graph_acyclic,
     "review-comment-record": _review_comment_record,
     "status-clock-record": _status_clock_record,
+    "pre-reviewed-design-record": _pre_reviewed_design_record,
 }
 
 
