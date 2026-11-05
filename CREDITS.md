@@ -61,6 +61,9 @@ licence records and citations, in `research/data/ori-cl-open-corpora-DRAFT.json`
 | International Code Council, 2021 IRC; Virginia 2021 USBC and VRC (13VAC5-63) | Copyrighted model code; state regulation | Cited, interpreted and linked, never reproduced ([`docs/CITATION-POLICY.md`](docs/CITATION-POLICY.md)). |
 | [HUD, State and Local Best Practices for Home Construction (2026)](https://www.hud.gov/hud-partners/state-and-local-best-practices) | U.S. federal work; guidance, not law | Criteria source for ORI's HUD guidance profile (`profiles/federal/`). Per-municipality scores are secured, not published. |
 | [Census TIGER/Line](https://www.census.gov/geographies/mapping-files/time-series/geo/tiger-line-file.html) | U.S. federal work | The planned public base layer for jurisdiction boundaries. |
+| [Census Cartographic Boundary File cb_2024_us_state_500k](https://www.census.gov/geographies/mapping-files/time-series/geo/cartographic-boundary.html) | U.S. federal work (public domain) | Source of the state outlines in the US state code-book map (`research/maps/us-state-codebooks-DRAFT.html`), projected and simplified by ORI; attribution only. |
+| State code-adoption agencies (50 states, DC and Puerto Rico), each linked per state in [`docs/US-STATE-CODEBOOKS-DRAFT.md`](docs/US-STATE-CODEBOOKS-DRAFT.md) | State works; copyright notices vary and are recorded per state in the CSV; ORI makes no determination of copyright status | Source of adoption facts (edition, effective date, citation, URL), read by ORI from public pages; attribution only. Facts and links only; no code text is reproduced. |
+| [U.S. DOE Building Energy Codes Program](https://www.energycodes.gov) | U.S. federal work | Source for the 'None Statewide' status of AZ, KS, MO and CO, read from public state pages; attribution only. |
 
 ## Adjacent projects whose ideas shaped ORI
 
