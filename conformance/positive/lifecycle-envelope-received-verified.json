@@ -1,0 +1,290 @@
+{
+  "id": "ori:test:positive:lifecycle-envelope-received-verified",
+  "rule": "transmission-envelope-record",
+  "expected": "pass",
+  "description": "Initial submission received; every available artifact hash-verified. Receipt is delivery evidence only. Synthetic test data (lifecycle records v0.1 draft); fictional identities, not a real review or disposition.",
+  "objects": [
+    {
+      "@context": {
+        "@version": 1.1,
+        "@vocab": "https://openpermit.dev/ns/",
+        "dev.openpermit": "https://openpermit.dev/ns/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "title": "dcterms:title",
+        "description": "dcterms:description",
+        "license": "dcterms:license",
+        "created_at": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "wasGeneratedBy": {
+          "@id": "prov:wasGeneratedBy",
+          "@type": "@id"
+        },
+        "wasDerivedFrom": {
+          "@id": "prov:wasDerivedFrom",
+          "@type": "@id"
+        },
+        "wasAttributedTo": {
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "used": {
+          "@id": "prov:used",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "wasAssociatedWith": {
+          "@id": "prov:wasAssociatedWith",
+          "@type": "@id"
+        },
+        "touched_elements": {
+          "@id": "dev.openpermit:touched_elements",
+          "@container": "@index"
+        },
+        "application_ref": {
+          "@id": "dev.openpermit:application_ref",
+          "@type": "@id"
+        },
+        "envelope_ref": {
+          "@id": "dev.openpermit:envelope_ref",
+          "@type": "@id"
+        },
+        "change_record_ref": {
+          "@id": "dev.openpermit:change_record_ref",
+          "@type": "@id"
+        },
+        "pre_reviewed_design_ref": {
+          "@id": "dev.openpermit:pre_reviewed_design_ref",
+          "@type": "@id"
+        },
+        "authority": {
+          "@id": "dev.openpermit:authority",
+          "@type": "@id"
+        },
+        "subject": {
+          "@id": "dev.openpermit:subject",
+          "@type": "@id"
+        },
+        "decided_by": {
+          "@id": "dev.openpermit:decided_by",
+          "@type": "@id"
+        },
+        "agent_ref": {
+          "@id": "dev.openpermit:agent_ref",
+          "@type": "@id"
+        },
+        "requirement_set_ref": {
+          "@id": "dev.openpermit:requirement_set_ref",
+          "@type": "@id"
+        },
+        "requirement_ref": {
+          "@id": "dev.openpermit:requirement_ref",
+          "@type": "@id"
+        },
+        "comment_refs": {
+          "@id": "dev.openpermit:comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "answers_comment_refs": {
+          "@id": "dev.openpermit:answers_comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "parent_revision_ref": {
+          "@id": "dev.openpermit:parent_revision_ref",
+          "@type": "@id"
+        },
+        "child_revision_ref": {
+          "@id": "dev.openpermit:child_revision_ref",
+          "@type": "@id"
+        },
+        "revision_ref": {
+          "@id": "dev.openpermit:revision_ref",
+          "@type": "@id"
+        },
+        "source_ifc_ref": {
+          "@id": "dev.openpermit:source_ifc_ref",
+          "@type": "@id"
+        },
+        "geometry_map_ref": {
+          "@id": "dev.openpermit:geometry_map_ref",
+          "@type": "@id"
+        },
+        "artifact_ref": {
+          "@id": "dev.openpermit:artifact_ref",
+          "@type": "@id"
+        },
+        "status_record_ref": {
+          "@id": "dev.openpermit:status_record_ref",
+          "@type": "@id"
+        },
+        "evidence_refs": {
+          "@id": "dev.openpermit:evidence_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supersedes": {
+          "@id": "dev.openpermit:supersedes",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "manifest": {
+          "@id": "dev.openpermit:manifest",
+          "@container": "@set"
+        },
+        "requirement_sets": {
+          "@id": "dev.openpermit:requirement_sets",
+          "@container": "@set"
+        },
+        "items": {
+          "@id": "dev.openpermit:items",
+          "@container": "@set"
+        },
+        "blocking_items": {
+          "@id": "dev.openpermit:blocking_items",
+          "@container": "@set"
+        },
+        "advisory_items": {
+          "@id": "dev.openpermit:advisory_items",
+          "@container": "@set"
+        },
+        "anchors": {
+          "@id": "dev.openpermit:anchors",
+          "@container": "@set"
+        },
+        "before_anchors": {
+          "@id": "dev.openpermit:before_anchors",
+          "@container": "@set"
+        },
+        "after_anchors": {
+          "@id": "dev.openpermit:after_anchors",
+          "@container": "@set"
+        },
+        "conditions": {
+          "@id": "dev.openpermit:conditions",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supported_media_types": {
+          "@id": "dev.openpermit:supported_media_types",
+          "@container": "@set"
+        },
+        "basis_revision_ref": {
+          "@id": "dev.openpermit:basis_revision_ref",
+          "@type": "@id"
+        },
+        "child_views": {
+          "@id": "dev.openpermit:child_views",
+          "@container": "@set"
+        },
+        "condition_records": {
+          "@id": "dev.openpermit:condition_records",
+          "@container": "@set"
+        },
+        "verified_scope": {
+          "@id": "dev.openpermit:verified_scope",
+          "@container": "@set"
+        },
+        "classifications": {
+          "@id": "dev.openpermit:classifications",
+          "@container": "@set"
+        }
+      },
+      "draft_status": "DRAFT",
+      "license": "CC0-1.0",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "simulation": true,
+      "description": "DRAFT fictional design example only; unwired; not a real permit review or disposition.",
+      "application_ref": "urn:ori:application:sim-synthetic-county:sh2-reve-2026-11-05",
+      "created_at": "2026-11-05T18:42:00-05:00",
+      "@id": "urn:ori:submission:draft-design:sh2-r1",
+      "@type": "TransmissionEnvelope",
+      "record_profile": "ori-transmission-envelope-0.1",
+      "sender": {
+        "agent_ref": "urn:ori:agent:draft-design:applicant-placeholder",
+        "role": "applicant",
+        "classifications": [
+          {
+            "scheme": "naics",
+            "version": "2022",
+            "code": "236115",
+            "source_url": "https://www.census.gov/naics/",
+            "status": "declared"
+          }
+        ]
+      },
+      "receiver": {
+        "agent_ref": "urn:ori:agent:draft-design:intake-placeholder",
+        "role": "intake"
+      },
+      "correlation_id": "urn:ori:correlation:draft-design:sh2",
+      "idempotency_key": "draft-design-sh2-r1-001",
+      "purpose": "initial_submission",
+      "submitted_at": "2026-11-05T18:42:00-05:00",
+      "representation": {
+        "media_type": "application/ld+json",
+        "profile": "ori-transmission-envelope-0.1"
+      },
+      "supported_media_types": [
+        "application/x-step",
+        "model/gltf-binary"
+      ],
+      "manifest": [
+        {
+          "artifact_ref": "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+          "path": "model/SH2.ifc",
+          "media_type": "application/x-step",
+          "representation": "IFC STEP physical file",
+          "schema_identifier": "IFC4X3_ADD2",
+          "schema_identifier_verification": "unknown",
+          "sha256": "8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+          "hash_status": "verified",
+          "artifact_state": "available",
+          "bytes": 47801820,
+          "role": "source_model",
+          "revision_ref": "urn:ori:model-revision:draft-design:A"
+        },
+        {
+          "artifact_ref": "urn:ori:artifact:sha256:4bd6d5f45b648218ff1d6e6fe6f18d6847a262b22a2e4a717c84d186506a35e7",
+          "path": "fixtures/intake-requirements.json",
+          "media_type": "application/json",
+          "representation": "ORI synthetic IDS-style requirement identifiers; not IDS XML",
+          "sha256": "4bd6d5f45b648218ff1d6e6fe6f18d6847a262b22a2e4a717c84d186506a35e7",
+          "hash_status": "verified",
+          "artifact_state": "available",
+          "bytes": 427,
+          "role": "requirement_set"
+        }
+      ],
+      "privacy": {
+        "classification": "unknown",
+        "handling": "restricted_pending_classification",
+        "access_scope": "named_receiver_only",
+        "retention_ref": "unknown",
+        "redaction_status": "unknown"
+      },
+      "receipt": {
+        "state": "received",
+        "received_at": "2026-11-05T18:50:00-05:00",
+        "manifest_verification": "verified",
+        "application_intake_status": "pending",
+        "is_approval": false
+      },
+      "wasAttributedTo": "urn:ori:agent:draft-design:applicant-placeholder",
+      "wasGeneratedBy": {
+        "@id": "urn:ori:activity:draft-design:transmit-r1",
+        "@type": "prov:Activity",
+        "used": [
+          "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+          "urn:ori:artifact:sha256:4bd6d5f45b648218ff1d6e6fe6f18d6847a262b22a2e4a717c84d186506a35e7"
+        ],
+        "wasAssociatedWith": "urn:ori:agent:draft-design:applicant-placeholder"
+      }
+    }
+  ]
+}

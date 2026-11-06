@@ -1,0 +1,257 @@
+{
+  "id": "ori:test:positive:lifecycle-decision-establishes-pre-review",
+  "rule": "decision-record",
+  "expected": "pass",
+  "description": "Pre-review disposition with verified (fictional) attestation and a known term; may report pre-review status current. Synthetic test data (lifecycle records v0.1 draft); fictional identities, not a real review or disposition.",
+  "objects": [
+    {
+      "@context": {
+        "@version": 1.1,
+        "@vocab": "https://openpermit.dev/ns/",
+        "dev.openpermit": "https://openpermit.dev/ns/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "title": "dcterms:title",
+        "description": "dcterms:description",
+        "license": "dcterms:license",
+        "created_at": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "wasGeneratedBy": {
+          "@id": "prov:wasGeneratedBy",
+          "@type": "@id"
+        },
+        "wasDerivedFrom": {
+          "@id": "prov:wasDerivedFrom",
+          "@type": "@id"
+        },
+        "wasAttributedTo": {
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "used": {
+          "@id": "prov:used",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "wasAssociatedWith": {
+          "@id": "prov:wasAssociatedWith",
+          "@type": "@id"
+        },
+        "touched_elements": {
+          "@id": "dev.openpermit:touched_elements",
+          "@container": "@index"
+        },
+        "application_ref": {
+          "@id": "dev.openpermit:application_ref",
+          "@type": "@id"
+        },
+        "envelope_ref": {
+          "@id": "dev.openpermit:envelope_ref",
+          "@type": "@id"
+        },
+        "change_record_ref": {
+          "@id": "dev.openpermit:change_record_ref",
+          "@type": "@id"
+        },
+        "pre_reviewed_design_ref": {
+          "@id": "dev.openpermit:pre_reviewed_design_ref",
+          "@type": "@id"
+        },
+        "authority": {
+          "@id": "dev.openpermit:authority",
+          "@type": "@id"
+        },
+        "subject": {
+          "@id": "dev.openpermit:subject",
+          "@type": "@id"
+        },
+        "decided_by": {
+          "@id": "dev.openpermit:decided_by",
+          "@type": "@id"
+        },
+        "agent_ref": {
+          "@id": "dev.openpermit:agent_ref",
+          "@type": "@id"
+        },
+        "requirement_set_ref": {
+          "@id": "dev.openpermit:requirement_set_ref",
+          "@type": "@id"
+        },
+        "requirement_ref": {
+          "@id": "dev.openpermit:requirement_ref",
+          "@type": "@id"
+        },
+        "comment_refs": {
+          "@id": "dev.openpermit:comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "answers_comment_refs": {
+          "@id": "dev.openpermit:answers_comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "parent_revision_ref": {
+          "@id": "dev.openpermit:parent_revision_ref",
+          "@type": "@id"
+        },
+        "child_revision_ref": {
+          "@id": "dev.openpermit:child_revision_ref",
+          "@type": "@id"
+        },
+        "revision_ref": {
+          "@id": "dev.openpermit:revision_ref",
+          "@type": "@id"
+        },
+        "source_ifc_ref": {
+          "@id": "dev.openpermit:source_ifc_ref",
+          "@type": "@id"
+        },
+        "geometry_map_ref": {
+          "@id": "dev.openpermit:geometry_map_ref",
+          "@type": "@id"
+        },
+        "artifact_ref": {
+          "@id": "dev.openpermit:artifact_ref",
+          "@type": "@id"
+        },
+        "status_record_ref": {
+          "@id": "dev.openpermit:status_record_ref",
+          "@type": "@id"
+        },
+        "evidence_refs": {
+          "@id": "dev.openpermit:evidence_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supersedes": {
+          "@id": "dev.openpermit:supersedes",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "manifest": {
+          "@id": "dev.openpermit:manifest",
+          "@container": "@set"
+        },
+        "requirement_sets": {
+          "@id": "dev.openpermit:requirement_sets",
+          "@container": "@set"
+        },
+        "items": {
+          "@id": "dev.openpermit:items",
+          "@container": "@set"
+        },
+        "blocking_items": {
+          "@id": "dev.openpermit:blocking_items",
+          "@container": "@set"
+        },
+        "advisory_items": {
+          "@id": "dev.openpermit:advisory_items",
+          "@container": "@set"
+        },
+        "anchors": {
+          "@id": "dev.openpermit:anchors",
+          "@container": "@set"
+        },
+        "before_anchors": {
+          "@id": "dev.openpermit:before_anchors",
+          "@container": "@set"
+        },
+        "after_anchors": {
+          "@id": "dev.openpermit:after_anchors",
+          "@container": "@set"
+        },
+        "conditions": {
+          "@id": "dev.openpermit:conditions",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supported_media_types": {
+          "@id": "dev.openpermit:supported_media_types",
+          "@container": "@set"
+        },
+        "basis_revision_ref": {
+          "@id": "dev.openpermit:basis_revision_ref",
+          "@type": "@id"
+        },
+        "child_views": {
+          "@id": "dev.openpermit:child_views",
+          "@container": "@set"
+        },
+        "condition_records": {
+          "@id": "dev.openpermit:condition_records",
+          "@container": "@set"
+        },
+        "verified_scope": {
+          "@id": "dev.openpermit:verified_scope",
+          "@container": "@set"
+        },
+        "classifications": {
+          "@id": "dev.openpermit:classifications",
+          "@container": "@set"
+        }
+      },
+      "draft_status": "DRAFT",
+      "license": "CC0-1.0",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "simulation": true,
+      "description": "DRAFT fictional design example only; unwired; not a real permit review or disposition.",
+      "application_ref": "urn:ori:application:sim-synthetic-county:sh2-reve-2026-11-05",
+      "created_at": "2026-11-05T18:42:00-05:00",
+      "@id": "urn:ori:decision:draft-design:prd-1",
+      "@type": "Decision",
+      "record_profile": "ori-decision-record-0.1",
+      "subject": "urn:ori:prereviewed:sim-synthetic-county:sh2-reve",
+      "decision_type": "pre_review_disposition",
+      "outcome": "approve",
+      "is_machine": false,
+      "authority": "urn:ori:authority:sim-synthetic-county:building-office",
+      "decided_by": "urn:ori:agent:draft-design:official-placeholder",
+      "decided_by_role": "building_official",
+      "decided_at": "2026-11-05T18:42:00-05:00",
+      "model_version": {
+        "sha256": "8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+        "artifact_id": "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+        "label": "Synthetic model A"
+      },
+      "attestation": {
+        "signer_ref": "urn:ori:agent:draft-design:official-placeholder",
+        "identity_status": "verified",
+        "signature_status": "verified",
+        "signed_artifact_ref": "urn:ori:artifact:draft-design:decision-body",
+        "signature_ref": "urn:ori:signature:draft-design:prd-1",
+        "statement": "Fictional fixture: statuses set to verified to exercise the checks; no real signer or signature exists."
+      },
+      "validity": {
+        "valid_from": "2026-01-01T00:00:00-05:00",
+        "valid_until": "2027-01-01T00:00:00-05:00"
+      },
+      "validity_status": "verified",
+      "notice": "Not lawful approval by machine; this DRAFT fictional record grants no lawful approval.",
+      "conditions": [],
+      "condition_records": [],
+      "pre_reviewed_design_ref": "urn:ori:prereviewed:sim-synthetic-county:sh2-reve",
+      "pre_review_link_role": "establishes_pre_review",
+      "pre_review_status": "current",
+      "evidence_refs": [
+        "urn:ori:completeness:draft-design:sh2-r1",
+        "urn:ori:change:draft-design:sh2-r1",
+        "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0"
+      ],
+      "supersedes": [],
+      "wasGeneratedBy": {
+        "@id": "urn:ori:activity:draft-design:record-disposition",
+        "@type": "prov:Activity",
+        "used": [
+          "urn:ori:completeness:draft-design:sh2-r1",
+          "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0"
+        ],
+        "wasAssociatedWith": "urn:ori:agent:draft-design:official-placeholder"
+      }
+    }
+  ]
+}

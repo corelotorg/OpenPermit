@@ -4,6 +4,8 @@ ifcopenshell==0.8.5
 ifctester==0.8.5
 pypdf>=6,<7
 jsonschema>=4.23,<5
+# PyLD BSD-3-Clause: JSON-LD expansion/compaction round-trip tests for the lifecycle records.
+PyLD>=2.0.4,<3
 pytest>=8,<9
 # ori_takeoff (plan takeoff DRAFT): pdfplumber MIT (pdfminer.six MIT, pypdfium2 Apache-2.0/BSD-3-Clause),
 # ezdxf MIT, reportlab BSD-3-Clause (sample plan writer), shapely BSD-3-Clause, Pillow MIT-CMU (PNG preview).

@@ -1,0 +1,535 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-decision-record-0.1.schema.json",
+  "title": "ORI Decision Record v0.1 Draft",
+  "description": "A human building official's recorded disposition on a subject, with authority, attestation, validity, referenced conditions and evidence. is_machine is always false and is_approval stays false: the record is evidence of a human act, never a machine approval. See spec/decision-record-0.1-draft.md.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "record_profile",
+    "draft_status",
+    "is_approval",
+    "label",
+    "application_ref",
+    "created_at",
+    "license",
+    "description",
+    "subject",
+    "decision_type",
+    "outcome",
+    "is_machine",
+    "authority",
+    "decided_by",
+    "decided_by_role",
+    "decided_at",
+    "attestation",
+    "validity",
+    "validity_status",
+    "conditions",
+    "condition_records",
+    "evidence_refs",
+    "pre_reviewed_design_ref",
+    "pre_review_link_role",
+    "pre_review_status",
+    "supersedes",
+    "notice"
+  ],
+  "properties": {
+    "@context": {
+      "type": "object",
+      "description": "Must equal the pinned context vocab/ori-lifecycle-records-0.1.context.json (checked semantically)."
+    },
+    "@id": {
+      "type": "string",
+      "pattern": "^urn:ori:decision:\\S+$"
+    },
+    "@type": {
+      "const": "Decision"
+    },
+    "record_profile": {
+      "const": "ori-decision-record-0.1"
+    },
+    "draft_status": {
+      "const": "DRAFT"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "application_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:application:\\S+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "simulation": {
+      "type": "boolean"
+    },
+    "wasGeneratedBy": {
+      "$ref": "#/$defs/activity"
+    },
+    "wasDerivedFrom": {
+      "$ref": "#/$defs/iri"
+    },
+    "wasAttributedTo": {
+      "$ref": "#/$defs/iri"
+    },
+    "subject": {
+      "$ref": "#/$defs/iri"
+    },
+    "decision_type": {
+      "enum": [
+        "permit_disposition",
+        "pre_review_disposition"
+      ]
+    },
+    "outcome": {
+      "enum": [
+        "approve",
+        "approve_with_conditions",
+        "deny",
+        "withdraw"
+      ]
+    },
+    "is_machine": {
+      "const": false
+    },
+    "authority": {
+      "type": "string",
+      "pattern": "^urn:ori:authority:\\S+$"
+    },
+    "decided_by": {
+      "type": "string",
+      "pattern": "^urn:ori:agent:\\S+$"
+    },
+    "decided_by_role": {
+      "const": "building_official"
+    },
+    "decided_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "model_version": {
+      "$ref": "#/$defs/modelVersion"
+    },
+    "attestation": {
+      "type": "object",
+      "required": [
+        "signer_ref",
+        "identity_status",
+        "signature_status",
+        "signed_artifact_ref",
+        "signature_ref",
+        "statement"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "signer_ref": {
+          "$ref": "#/$defs/iriOrUnknown"
+        },
+        "identity_status": {
+          "enum": [
+            "verified",
+            "unknown"
+          ]
+        },
+        "signature_status": {
+          "enum": [
+            "verified",
+            "unsigned",
+            "unknown"
+          ]
+        },
+        "signed_artifact_ref": {
+          "$ref": "#/$defs/iriOrUnknown"
+        },
+        "signature_ref": {
+          "$ref": "#/$defs/iriOrUnknown"
+        },
+        "statement": {
+          "type": "string",
+          "maxLength": 300
+        }
+      }
+    },
+    "validity": {
+      "type": "object",
+      "required": [
+        "valid_from",
+        "valid_until"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "valid_from": {
+          "$ref": "#/$defs/dateTimeOrUnknown"
+        },
+        "valid_until": {
+          "$ref": "#/$defs/dateTimeOrUnknown"
+        }
+      }
+    },
+    "validity_status": {
+      "enum": [
+        "verified",
+        "unknown"
+      ]
+    },
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ori:condition:\\S+$"
+      },
+      "uniqueItems": true
+    },
+    "condition_records": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/conditionRecord"
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/iri"
+      },
+      "uniqueItems": true
+    },
+    "pre_reviewed_design_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:prereviewed:\\S+$"
+    },
+    "pre_review_link_role": {
+      "enum": [
+        "reuse_evidence",
+        "establishes_pre_review"
+      ]
+    },
+    "pre_review_status": {
+      "enum": [
+        "current",
+        "expired",
+        "withdrawn",
+        "superseded",
+        "unknown"
+      ]
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ori:decision:\\S+$"
+      },
+      "uniqueItems": true
+    },
+    "notice": {
+      "type": "string",
+      "pattern": "[Nn]ot lawful approval by machine",
+      "maxLength": 200
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "iri": {
+      "type": "string",
+      "pattern": "^(urn:[a-z0-9-]+:|https?://)\\S+$"
+    },
+    "iriOrUnknown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/iri"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "sha256OrUnknown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "dateTimeOrUnknown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "globalId": {
+      "type": "string",
+      "pattern": "^[0-9A-Za-z_$]{22}$"
+    },
+    "modelVersion": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+    },
+    "anchor": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/anchor"
+    },
+    "activity": {
+      "type": "object",
+      "required": [
+        "@id",
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "@type": {
+          "const": "prov:Activity"
+        },
+        "used": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/iri"
+          },
+          "uniqueItems": true
+        },
+        "wasAssociatedWith": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "version",
+        "code",
+        "source_url",
+        "status"
+      ],
+      "additionalProperties": false,
+      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure.",
+      "properties": {
+        "scheme": {
+          "enum": [
+            "naics"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]{4}$"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[0-9]{2,6}$"
+        },
+        "source_url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "verified",
+            "unknown"
+          ]
+        }
+      }
+    },
+    "hashRef": {
+      "type": "object",
+      "required": [
+        "artifact_ref",
+        "media_type",
+        "sha256",
+        "artifact_state",
+        "hash_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256OrUnknown"
+        },
+        "artifact_state": {
+          "enum": [
+            "available",
+            "unrebuilt",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "hash_status": {
+          "enum": [
+            "verified",
+            "declared",
+            "unknown"
+          ]
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]{1,200}$"
+        }
+      },
+      "description": "Hash reference to complete saved file bytes. Unrebuilt means no bytes yet: hash unknown, never a content-addressed ID (checked semantically)."
+    },
+    "viewHashRef": {
+      "type": "object",
+      "required": [
+        "artifact_ref",
+        "media_type",
+        "sha256",
+        "artifact_state",
+        "hash_status",
+        "source_ifc_ref",
+        "geometry_map_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256OrUnknown"
+        },
+        "artifact_state": {
+          "enum": [
+            "available",
+            "unrebuilt",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "hash_status": {
+          "enum": [
+            "verified",
+            "declared",
+            "unknown"
+          ]
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]{1,200}$"
+        },
+        "source_ifc_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "geometry_map_status": {
+          "enum": [
+            "bound",
+            "unknown"
+          ]
+        },
+        "geometry_map_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "wasDerivedFrom": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    },
+    "conditionRecord": {
+      "type": "object",
+      "required": [
+        "@id",
+        "@type",
+        "description",
+        "anchors",
+        "status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "type": "string",
+          "pattern": "^urn:ori:condition:\\S+$"
+        },
+        "@type": {
+          "const": "Condition"
+        },
+        "description": {
+          "type": "string",
+          "maxLength": 300
+        },
+        "anchors": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/anchor"
+          }
+        },
+        "model_version": {
+          "$ref": "#/$defs/modelVersion"
+        },
+        "comment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ori:comment:\\S+$"
+          },
+          "uniqueItems": true
+        },
+        "status": {
+          "enum": [
+            "open",
+            "met",
+            "unknown"
+          ]
+        }
+      }
+    }
+  }
+}
