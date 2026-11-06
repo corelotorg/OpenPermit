@@ -1,0 +1,53 @@
+{
+  "id": "ori:test:negative:review-comment-element-anchor-no-model-version",
+  "rule": "review-comment-record",
+  "expected": "fail",
+  "description": "A model-anchored comment without a model version. Synthetic test data (#140 draft, review comment v0.2).",
+  "objects": [
+    {
+      "record_profile": "ori-review-comment-0.2",
+      "id": "urn:ori:comment:sh2-0003",
+      "type": "ReviewComment",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "kind": "navigation",
+      "formal": false,
+      "application_ref": "urn:ori:application:sh2-example",
+      "anchors": [
+        {
+          "anchor_type": "view",
+          "camera": {
+            "position": [
+              12.0,
+              -8.0,
+              4.5
+            ],
+            "direction": [
+              -0.6,
+              0.7,
+              -0.3
+            ],
+            "up": [
+              0,
+              0,
+              1
+            ],
+            "projection": "perspective",
+            "field_of_view_deg": 60
+          },
+          "isolate": [
+            {
+              "anchor_type": "element",
+              "element_key": "sh2.beam.garage.01"
+            }
+          ]
+        }
+      ],
+      "author_role": "design_professional",
+      "status": "open",
+      "resubmittal_round": 0,
+      "note": "Here is the garage beam bearing detail we discussed.",
+      "created_at": "2026-10-30T15:10:00Z"
+    }
+  ]
+}
