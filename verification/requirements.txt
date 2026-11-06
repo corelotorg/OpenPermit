@@ -2,15 +2,20 @@
 # ifcopenshell and ifctester: LGPL-3.0-or-later. pypdf: BSD-3-Clause. jsonschema: MIT.
 ifcopenshell==0.8.5
 ifctester==0.8.5
-pypdf>=6,<7
+pypdf>=6.21.4,<7
 jsonschema>=4.23,<5
 # PyLD BSD-3-Clause: JSON-LD expansion/compaction round-trip tests for the lifecycle records.
 PyLD>=2.0.4,<3
-pytest>=8,<9
+# CVE-2025-71176 fixed in pytest>=9.0.3 (tmpdir handling on UNIX).
+pytest>=9.0.3,<10
 # ori_takeoff (plan takeoff DRAFT): pdfplumber MIT (pdfminer.six MIT, pypdfium2 Apache-2.0/BSD-3-Clause),
 # ezdxf MIT, reportlab BSD-3-Clause (sample plan writer), shapely BSD-3-Clause, Pillow MIT-CMU (PNG preview).
 pdfplumber>=0.11,<0.12
 ezdxf>=1.4,<2
 reportlab>=4,<5
 shapely>=2,<3
-Pillow>=10
+# Pillow 13.0.0 clears 41 advisories reported against 12.3.0 (heap overflows / Ghostscript injection).
+Pillow>=13.0.0
+# Transitive security pins (pulled by ifctester/bcf-client/requests stack; named so upgrades stick).
+certifi>=2026.10.18
+Werkzeug>=3.1.9
