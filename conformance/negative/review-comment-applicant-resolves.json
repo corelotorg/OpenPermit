@@ -1,0 +1,50 @@
+{
+  "id": "ori:test:negative:review-comment-applicant-resolves",
+  "rule": "review-comment-record",
+  "expected": "fail",
+  "description": "The applicant resolves a correction; only a reviewer role resolves. Synthetic test data (#140 draft, review comment v0.2).",
+  "objects": [
+    {
+      "record_profile": "ori-review-comment-0.2",
+      "id": "urn:ori:comment:sh2-0001",
+      "type": "ReviewComment",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "kind": "correction",
+      "formal": true,
+      "application_ref": "urn:ori:application:sh2-example",
+      "model_version": {
+        "sha256": "0123456789abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+        "label": "SH-2 REV E (example)"
+      },
+      "anchors": [
+        {
+          "anchor_type": "element",
+          "element_key": "sh2.wall.ext.north.01"
+        },
+        {
+          "anchor_type": "code_section",
+          "edition": "va-vrc-2021",
+          "section": "R602.10"
+        },
+        {
+          "anchor_type": "discipline",
+          "discipline": "structural"
+        }
+      ],
+      "rule_unit_ref": "urn:ori:rule-unit:example:wall-bracing",
+      "author_role": "plan_reviewer",
+      "status": "resolved",
+      "resubmittal_round": 0,
+      "note": "Bracing length for this wall line is not shown.",
+      "created_at": "2026-10-30T15:00:00Z",
+      "resolution": {
+        "by_role": "applicant",
+        "at": "2026-11-20T10:00:00Z",
+        "model_version": {
+          "sha256": "1548fbc442ca111a6cfabf0fd4bf16b4827681a379167aaa72c1fedd92734f50"
+        }
+      }
+    }
+  ]
+}
