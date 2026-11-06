@@ -1,0 +1,245 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-status-clock-0.1.schema.json",
+  "title": "ORI Status and Clock Record v0.1 Draft",
+  "description": "Append-only status history of one application, built from core Event objects (ori-core \u00a73.18), plus a statutory-clock object whose parameters come from a jurisdiction profile. Unknown parameters stay unknown. A clock state is never an approval. See spec/status-clock-0.1-draft.md.",
+  "type": "object",
+  "required": [
+    "record_profile",
+    "id",
+    "type",
+    "label",
+    "is_approval",
+    "application_ref",
+    "events",
+    "clock"
+  ],
+  "properties": {
+    "record_profile": {
+      "const": "ori-status-clock-0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ori:status:"
+    },
+    "type": {
+      "const": "StatusRecord"
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "application_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:application:"
+    },
+    "events": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/event"
+      }
+    },
+    "clock": {
+      "$ref": "#/$defs/clock"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "modelVersion": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "additionalProperties": false
+    },
+    "event": {
+      "type": "object",
+      "required": [
+        "seq",
+        "type",
+        "event_type",
+        "at",
+        "actor_role"
+      ],
+      "properties": {
+        "seq": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "type": {
+          "const": "Event"
+        },
+        "event_type": {
+          "enum": [
+            "submitted",
+            "accepted_complete",
+            "incomplete_notice",
+            "review_started",
+            "comments_issued",
+            "resubmitted",
+            "decision_recorded",
+            "withdrawn",
+            "clock_started",
+            "clock_paused",
+            "clock_resumed",
+            "clock_stopped",
+            "clock_deemed"
+          ]
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "actor_role": {
+          "enum": [
+            "applicant",
+            "intake",
+            "plan_reviewer",
+            "building_official",
+            "authority",
+            "system",
+            "third_party_reviewer"
+          ]
+        },
+        "reason": {
+          "enum": [
+            "waiting_on_applicant",
+            "incomplete_submission",
+            "applicant_request",
+            "other_agency_hold",
+            "none",
+            "unknown"
+          ]
+        },
+        "decision_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "pattern": "^urn:ori:decision:"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "comment_refs": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ori:comment:"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "clock": {
+      "type": "object",
+      "required": [
+        "type",
+        "parameters_source",
+        "duration_days",
+        "day_basis",
+        "deemed_outcome",
+        "state"
+      ],
+      "properties": {
+        "type": {
+          "const": "StatutoryClock"
+        },
+        "parameters_source": {
+          "type": "object",
+          "required": [
+            "profile_ref"
+          ],
+          "properties": {
+            "profile_ref": {
+              "anyOf": [
+                {
+                  "type": "string",
+                  "pattern": "^(urn:ori:profile:|profiles/)"
+                },
+                {
+                  "const": "unknown"
+                }
+              ]
+            },
+            "legal_basis": {
+              "type": "string",
+              "maxLength": 200
+            },
+            "source_url": {
+              "type": "string",
+              "format": "uri"
+            }
+          },
+          "additionalProperties": false
+        },
+        "duration_days": {
+          "anyOf": [
+            {
+              "type": "number",
+              "exclusiveMinimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "day_basis": {
+          "enum": [
+            "calendar",
+            "business",
+            "unknown"
+          ]
+        },
+        "deemed_outcome": {
+          "enum": [
+            "deemed_approved",
+            "deemed_denied",
+            "none",
+            "unknown"
+          ]
+        },
+        "state": {
+          "enum": [
+            "not_started",
+            "running",
+            "paused",
+            "stopped",
+            "deemed",
+            "unknown"
+          ]
+        },
+        "elapsed_days": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

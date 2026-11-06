@@ -1,0 +1,30 @@
+{
+  "id": "ori:test:positive:review-comment-answer-reply",
+  "rule": "review-comment-record",
+  "expected": "pass",
+  "description": "An applicant answer replying to a correction. Synthetic test data (#140 draft, review comment v0.2).",
+  "objects": [
+    {
+      "record_profile": "ori-review-comment-0.2",
+      "id": "urn:ori:comment:sh2-0005",
+      "type": "ReviewComment",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "kind": "answer",
+      "formal": false,
+      "application_ref": "urn:ori:application:sh2-example",
+      "anchors": [
+        {
+          "anchor_type": "discipline",
+          "discipline": "structural"
+        }
+      ],
+      "in_reply_to": "urn:ori:comment:sh2-0001",
+      "author_role": "applicant",
+      "status": "answered",
+      "resubmittal_round": 1,
+      "note": "Bracing lengths added to sheet S-101 in this round.",
+      "created_at": "2026-10-30T16:00:00Z"
+    }
+  ]
+}

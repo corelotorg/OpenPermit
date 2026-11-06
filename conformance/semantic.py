@@ -422,6 +422,21 @@ def _plan_overlay_training_gate(case: dict[str, Any]) -> list[str]:
     return errors
 
 
+def _records_140():
+    spec = importlib.util.spec_from_file_location("ori_records_140", Path(__file__).resolve().parent / "records_140.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod
+
+
+def _review_comment_record(case: dict[str, Any]) -> list[str]:
+    return _records_140().review_comment_record(case)
+
+
+def _status_clock_record(case: dict[str, Any]) -> list[str]:
+    return _records_140().status_clock_record(case)
+
+
 RULES = {
     "plan-overlay-training-gate": _plan_overlay_training_gate,
     "open-corpora-manifest": _open_corpora_manifest,
@@ -436,6 +451,8 @@ RULES = {
     "guidance-not-requirement": _guidance_not_requirement,
     "challenge-target-immutable": _challenge_target_immutable,
     "precedence-graph-acyclic": _precedence_graph_acyclic,
+    "review-comment-record": _review_comment_record,
+    "status-clock-record": _status_clock_record,
 }
 
 
