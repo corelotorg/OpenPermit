@@ -1,0 +1,764 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json",
+  "title": "ORI Review Comment v0.2 Draft",
+  "description": "DRAFT (issue #140, item A2). One review conversation item: a formal correction, or a suggestion, recommendation, question, discussion, answer or live model-navigation pointer. It can be anchored to model elements, a place in model space, a sheet or page, a discipline, a code section reference, or a saved model view, in any combination. A comment points at a requirement by reference; it never states a requirement in its own words. Not approval. Carried as the data of a CloudEvents 1.0 event (see ori-review-comment-event-0.2.schema.json).",
+  "type": "object",
+  "required": [
+    "record_profile",
+    "id",
+    "type",
+    "label",
+    "is_approval",
+    "kind",
+    "application_ref",
+    "anchors",
+    "author_role",
+    "status",
+    "resubmittal_round",
+    "created_at"
+  ],
+  "properties": {
+    "record_profile": {
+      "const": "ori-review-comment-0.2"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ori:comment:"
+    },
+    "type": {
+      "const": "ReviewComment"
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "kind": {
+      "description": "What sort of conversation item this is. Only 'correction' is a formal comment that can hold up a review. Names starting with 'x-' are open extension kinds so the conversation is not limited to this list; a receiver that does not know an x- kind treats it as 'discussion'.",
+      "anyOf": [
+        {
+          "enum": [
+            "correction",
+            "suggestion",
+            "recommendation",
+            "question",
+            "discussion",
+            "answer",
+            "navigation"
+          ]
+        },
+        {
+          "type": "string",
+          "pattern": "^x-[a-z0-9][a-z0-9-]{1,40}$"
+        }
+      ]
+    },
+    "formal": {
+      "type": "boolean",
+      "description": "True only for kind 'correction'. Informal items never pause or block a review and never need a rule unit."
+    },
+    "application_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:application:"
+    },
+    "model_version": {
+      "$ref": "#/$defs/modelVersion"
+    },
+    "anchors": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 32,
+      "items": {
+        "$ref": "#/$defs/anchor"
+      }
+    },
+    "rule_unit_ref": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^urn:ori:rule-unit:"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "author_role": {
+      "$ref": "#/$defs/role"
+    },
+    "status": {
+      "enum": [
+        "open",
+        "answered",
+        "resolved",
+        "withdrawn",
+        "closed"
+      ]
+    },
+    "resubmittal_round": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "thread_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:thread:"
+    },
+    "in_reply_to": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^urn:ori:comment:"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ori:comment:"
+      },
+      "uniqueItems": true
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "The conversation text. For a correction, up to 280 characters naming what is missing. Never a restated requirement or code text, in any kind."
+    },
+    "suggested_change": {
+      "type": "object",
+      "description": "Optional for suggestion and recommendation kinds: a proposed change to one model property, by reference. Not binding.",
+      "required": [
+        "target",
+        "property"
+      ],
+      "properties": {
+        "target": {
+          "$ref": "#/$defs/elementAnchor"
+        },
+        "property": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "proposed_value": {
+          "type": [
+            "string",
+            "number",
+            "boolean"
+          ]
+        },
+        "unit": {
+          "type": "string",
+          "maxLength": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "resolution": {
+      "type": "object",
+      "required": [
+        "by_role",
+        "at",
+        "model_version"
+      ],
+      "properties": {
+        "by_role": {
+          "$ref": "#/$defs/role"
+        },
+        "at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "model_version": {
+          "$ref": "#/$defs/modelVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "modelVersion": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "additionalProperties": false
+    },
+    "point3": {
+      "type": "array",
+      "items": {
+        "type": "number"
+      },
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "elementAnchor": {
+      "type": "object",
+      "required": [
+        "anchor_type"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "element"
+        },
+        "ifc_global_id": {
+          "type": "string",
+          "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+          "description": " Canonical IFC compressed GlobalId (first character in 0-3)."
+        },
+        "element_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._:-]{1,120}$"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "ifc_global_id"
+          ]
+        },
+        {
+          "required": [
+            "element_key"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "spatialAnchor": {
+      "type": "object",
+      "description": "A place in model space, in the model's own project coordinates and length unit.",
+      "required": [
+        "anchor_type",
+        "length_unit"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "spatial"
+        },
+        "length_unit": {
+          "enum": [
+            "m",
+            "mm",
+            "ft",
+            "in"
+          ]
+        },
+        "point": {
+          "$ref": "#/$defs/point3"
+        },
+        "box": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "$ref": "#/$defs/point3"
+            },
+            "max": {
+              "$ref": "#/$defs/point3"
+            }
+          },
+          "additionalProperties": false
+        },
+        "storey_key": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9._:-]{1,120}$"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "point"
+          ]
+        },
+        {
+          "required": [
+            "box"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "sheetAnchor": {
+      "type": "object",
+      "description": "A sheet or page in a submitted document, optionally a region on it (fractions of page width and height, origin top-left).",
+      "required": [
+        "anchor_type",
+        "document_sha256",
+        "page"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "sheet"
+        },
+        "document_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "page": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "sheet_id": {
+          "type": "string",
+          "maxLength": 20
+        },
+        "region": {
+          "type": "object",
+          "required": [
+            "x",
+            "y",
+            "w",
+            "h"
+          ],
+          "properties": {
+            "x": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "y": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "w": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            },
+            "h": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "disciplineAnchor": {
+      "type": "object",
+      "required": [
+        "anchor_type",
+        "discipline"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "discipline"
+        },
+        "discipline": {
+          "anyOf": [
+            {
+              "enum": [
+                "building",
+                "structural",
+                "energy",
+                "mechanical",
+                "plumbing",
+                "electrical",
+                "fire",
+                "zoning",
+                "site",
+                "accessibility"
+              ]
+            },
+            {
+              "type": "string",
+              "pattern": "^x-[a-z0-9][a-z0-9-]{1,40}$"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "codeSectionAnchor": {
+      "type": "object",
+      "description": "A code section by number only: edition id plus section number, or an ORI rule unit. Never code text, headings or titles.",
+      "required": [
+        "anchor_type"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "code_section"
+        },
+        "rule_unit_ref": {
+          "type": "string",
+          "pattern": "^urn:ori:rule-unit:"
+        },
+        "edition": {
+          "type": "string",
+          "pattern": "^[a-z0-9][a-z0-9.-]{1,40}$"
+        },
+        "section": {
+          "type": "string",
+          "pattern": "^[A-Z]{0,3}[0-9][0-9A-Za-z.()-]{0,30}$"
+        },
+        "source_url": {
+          "type": "string",
+          "format": "uri"
+        }
+      },
+      "anyOf": [
+        {
+          "required": [
+            "rule_unit_ref"
+          ]
+        },
+        {
+          "required": [
+            "edition",
+            "section"
+          ]
+        }
+      ],
+      "additionalProperties": false
+    },
+    "viewAnchor": {
+      "type": "object",
+      "description": "A saved camera view for live navigation of the hosted model, close in spirit to a BCF viewpoint. Opening the comment takes the viewer here.",
+      "required": [
+        "anchor_type",
+        "camera"
+      ],
+      "properties": {
+        "anchor_type": {
+          "const": "view"
+        },
+        "camera": {
+          "type": "object",
+          "required": [
+            "position",
+            "direction",
+            "up",
+            "projection"
+          ],
+          "properties": {
+            "position": {
+              "$ref": "#/$defs/point3"
+            },
+            "direction": {
+              "$ref": "#/$defs/point3"
+            },
+            "up": {
+              "$ref": "#/$defs/point3"
+            },
+            "projection": {
+              "enum": [
+                "perspective",
+                "orthographic"
+              ]
+            },
+            "field_of_view_deg": {
+              "type": "number",
+              "exclusiveMinimum": 0,
+              "maximum": 180
+            },
+            "view_to_world_scale": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
+          },
+          "additionalProperties": false
+        },
+        "isolate": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/elementAnchor"
+          },
+          "maxItems": 256
+        },
+        "section_box": {
+          "type": "object",
+          "required": [
+            "min",
+            "max"
+          ],
+          "properties": {
+            "min": {
+              "$ref": "#/$defs/point3"
+            },
+            "max": {
+              "$ref": "#/$defs/point3"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false
+    },
+    "anchor": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/elementAnchor"
+        },
+        {
+          "$ref": "#/$defs/spatialAnchor"
+        },
+        {
+          "$ref": "#/$defs/sheetAnchor"
+        },
+        {
+          "$ref": "#/$defs/disciplineAnchor"
+        },
+        {
+          "$ref": "#/$defs/codeSectionAnchor"
+        },
+        {
+          "$ref": "#/$defs/viewAnchor"
+        }
+      ]
+    },
+    "role": {
+      "description": "Shared role list for comment authors and resolvers. A role, never a personal name. Kept identical to ROLES in conformance/records_140.py.",
+      "enum": [
+        "plan_reviewer",
+        "building_official",
+        "fire_reviewer",
+        "zoning_reviewer",
+        "third_party_reviewer",
+        "inspector",
+        "applicant",
+        "design_professional",
+        "other"
+      ]
+    },
+    "specificAnchor": {
+      "description": "An anchor specific enough for a formal correction: a model element, a model-space point or box, a sheet region, or a code section reference. A whole sheet, a discipline or a view alone is not enough.",
+      "anyOf": [
+        {
+          "properties": {
+            "anchor_type": {
+              "enum": [
+                "element",
+                "spatial",
+                "code_section"
+              ]
+            }
+          },
+          "required": [
+            "anchor_type"
+          ]
+        },
+        {
+          "properties": {
+            "anchor_type": {
+              "const": "sheet"
+            }
+          },
+          "required": [
+            "anchor_type",
+            "region"
+          ]
+        }
+      ]
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "resolved"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "resolution"
+        ]
+      }
+    },
+    {
+      "description": "Resolving a comment needs a real rule unit, not 'unknown'.",
+      "if": {
+        "properties": {
+          "status": {
+            "const": "resolved"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "rule_unit_ref"
+        ],
+        "properties": {
+          "rule_unit_ref": {
+            "type": "string",
+            "pattern": "^urn:ori:rule-unit:"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "correction"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "rule_unit_ref",
+          "model_version"
+        ],
+        "properties": {
+          "formal": {
+            "const": true
+          },
+          "note": {
+            "maxLength": 280
+          },
+          "anchors": {
+            "contains": {
+              "$ref": "#/$defs/specificAnchor"
+            }
+          }
+        }
+      },
+      "else": {
+        "properties": {
+          "formal": {
+            "const": false
+          },
+          "status": {
+            "not": {
+              "const": "resolved"
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "anchors": {
+            "contains": {
+              "properties": {
+                "anchor_type": {
+                  "enum": [
+                    "element",
+                    "spatial",
+                    "view"
+                  ]
+                }
+              },
+              "required": [
+                "anchor_type"
+              ]
+            }
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "model_version"
+        ]
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "navigation"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "properties": {
+          "anchors": {
+            "contains": {
+              "properties": {
+                "anchor_type": {
+                  "const": "view"
+                }
+              },
+              "required": [
+                "anchor_type"
+              ]
+            }
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "answer"
+          }
+        },
+        "required": [
+          "kind"
+        ]
+      },
+      "then": {
+        "required": [
+          "in_reply_to"
+        ],
+        "properties": {
+          "in_reply_to": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    {
+      "if": {
+        "required": [
+          "suggested_change"
+        ]
+      },
+      "then": {
+        "properties": {
+          "kind": {
+            "enum": [
+              "suggestion",
+              "recommendation"
+            ]
+          }
+        }
+      }
+    }
+  ]
+}

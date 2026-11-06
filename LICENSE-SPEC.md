@@ -44,7 +44,7 @@ Patterns use `*` for one path segment and `**` for any depth. The first matching
 | `verification/examples/ifc/**`, `verification/examples/pdf/**`, `verification/examples/declared/**`, `verification/examples/reports/**` | CC BY-SA 4.0 | public benchmark cases: synthetic inputs and expected outcomes |
 | `research/data/*.json` | CC0-1.0 | machine-readable research records (licence and citation facts, counts) |
 | `.github/PULL_REQUEST_TEMPLATE.md`, `.gitignore`, `.nojekyll`, `.gitleaks.toml`, `**/requirements*.txt` | CC0-1.0 | templates and configuration |
-| everything else (`NOTICE.md`, `CREDITS.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `docs/**`, `spec/interpretability-0.1-draft.md`, `spec/rule-unit-0.1-draft.md`, `rules/README.md`, `verification/*.md`, `adapters/blds/*.md`, `research/licenses/*.md`) | CC BY-SA 4.0 | prose specifications, documentation and attribution material |
+| everything else (`NOTICE.md`, `CREDITS.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `docs/**`, `spec/interpretability-0.1-draft.md`, `spec/rule-unit-0.1-draft.md`, `spec/review-comment-0.2-draft.md`, `spec/status-clock-0.1-draft.md`, `spec/pre-reviewed-design-0.1-draft.md`, `spec/transmission-envelope-0.1-draft.md`, `spec/completeness-report-0.1-draft.md`, `spec/limited-change-record-0.1-draft.md`, `spec/decision-record-0.1-draft.md`, `rules/README.md`, `verification/*.md`, `adapters/blds/*.md`, `research/licenses/*.md`) | CC BY-SA 4.0 | prose specifications, documentation and attribution material |
 
 Attribution for CC BY-SA 4.0 material: "Open Regulatory Infrastructure (ORI), OpenPermit project,
 https://github.com/corelotorg/OpenPermit, CC BY-SA 4.0", with a note of any changes.
