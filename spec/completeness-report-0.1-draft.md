@@ -19,11 +19,13 @@ Aggregation, computed by the checker and compared with the record:
 1. Schema valid; pinned context; `is_approval` false everywhere; unique item IDs that name a listed requirement set.
 2. A non-observed basis gives `unknown`; a fail cites evidence.
 3. `overall`, `blocking_status` and the item lists match the aggregation above.
-4. Acceptance needs an identified intake actor, a known time and `blocking_status: satisfied`. Blocking uncertainty prevents acceptance, so it prevents the clock start.
+4. Acceptance needs an identified intake actor, a known time and `blocking_status: satisfied`. It derives from resolved blocking coverage plus that explicit intake act, not from the overall aggregate (advisory unknowns must not change acceptance eligibility). Blocking uncertainty prevents acceptance, so it prevents the clock start.
 5. If the linked status record is in the case, it starts the clock only after such an acceptance.
 6. Element and other model anchors carry a known model version.
 
 ## To finish
 
 - An association ledger from status-record events to reports (status-clock events stay closed).
-- Proof that indeterminate uncertainty is only advisory before an intake actor may accept it.
+- Requirement-set `artifact_ref` is omitted when unknown (`artifact_ref_status`); known refs stay IRI-coerced.
+- Pinned `required_item_ids` must appear when coverage is complete.
+- Proof that adding an advisory unknown does not change acceptance eligibility when blockers are satisfied.

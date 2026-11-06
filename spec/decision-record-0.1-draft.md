@@ -21,3 +21,6 @@ A Decision records a disposition made by a human building official: subject, out
 
 - Signature format and trust-source verification are not selected.
 - Full pre-review resolver (subject, authority, model and rule-set matching across records).
+
+
+`pre_reviewed_design_ref` is required only when `pre_review_link_role` is `reuse_evidence` or `establishes_pre_review` (omit when `none`). Verified validity rejects unknown `signer_ref` / `signed_artifact_ref` / `signature_ref`. A deny must not establish a current pre-review. Supersession is checked for cycles over all resolved edges; unresolved predecessors are reported separately.

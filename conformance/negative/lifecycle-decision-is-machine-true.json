@@ -189,9 +189,53 @@
           "@id": "dev.openpermit:verified_scope",
           "@container": "@set"
         },
+        "verified_differences": {
+          "@id": "dev.openpermit:verified_differences",
+          "@container": "@set"
+        },
+        "dependency_scope": {
+          "@id": "dev.openpermit:dependency_scope",
+          "@container": "@set"
+        },
+        "required_item_ids": {
+          "@id": "dev.openpermit:required_item_ids",
+          "@container": "@set"
+        },
         "classifications": {
           "@id": "dev.openpermit:classifications",
           "@container": "@set"
+        },
+        "receipt_ref": {
+          "@id": "dev.openpermit:receipt_ref",
+          "@type": "@id"
+        },
+        "point": {
+          "@id": "dev.openpermit:point",
+          "@container": "@list"
+        },
+        "min": {
+          "@id": "dev.openpermit:min",
+          "@container": "@list"
+        },
+        "max": {
+          "@id": "dev.openpermit:max",
+          "@container": "@list"
+        },
+        "eye": {
+          "@id": "dev.openpermit:eye",
+          "@container": "@list"
+        },
+        "target": {
+          "@id": "dev.openpermit:target",
+          "@container": "@list"
+        },
+        "up": {
+          "@id": "dev.openpermit:up",
+          "@container": "@list"
+        },
+        "coordinates": {
+          "@id": "dev.openpermit:coordinates",
+          "@container": "@list"
         }
       },
       "draft_status": "DRAFT",

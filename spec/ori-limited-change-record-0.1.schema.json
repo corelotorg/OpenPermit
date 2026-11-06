@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://openpermit.dev/spec/ori-limited-change-record-0.1.schema.json",
   "title": "ORI Limited Change Record v0.1 Draft",
-  "description": "Applicant declaration of limited element changes from a pinned parent revision to an intended child. Declared scope is kept apart from verified scope; dependencies may extend review beyond the declaration. Carry-forward is an applicant assertion, not approval or waiver. See spec/limited-change-record-0.1-draft.md.",
+  "description": "Applicant declaration of limited element changes from a pinned parent revision to an intended child. Declared scope is kept apart from verified differences and dependency-only scope; dependencies may extend review beyond the declaration. Carry-forward is an applicant assertion, not approval or waiver. See spec/limited-change-record-0.1-draft.md.",
   "type": "object",
   "required": [
     "@context",
@@ -221,6 +221,8 @@
         "declared_scope",
         "verified_scope",
         "verified_scope_status",
+        "verified_differences",
+        "dependency_scope",
         "comparison_state",
         "context_scope"
       ],
@@ -235,7 +237,23 @@
             "$ref": "#/$defs/globalId"
           },
           "uniqueItems": true,
-          "description": "GlobalIds found different by a comparison; empty and meaningless while verified_scope_status is unknown."
+          "description": "Union of verified_differences and dependency_scope after a complete comparison; empty while verified_scope_status is unknown."
+        },
+        "verified_differences": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/globalId"
+          },
+          "uniqueItems": true,
+          "description": "GlobalIds whose bytes actually differ. Carry-forward verified requires this set \u2286 touched_elements."
+        },
+        "dependency_scope": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/globalId"
+          },
+          "uniqueItems": true,
+          "description": "Dependency-only GlobalIds found by comparison; not differences. Kept separate from verified_differences."
         },
         "verified_scope_status": {
           "enum": [
@@ -311,7 +329,8 @@
     },
     "globalId": {
       "type": "string",
-      "pattern": "^[0-9A-Za-z_$]{22}$"
+      "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+      "description": "Canonical IFC compressed GlobalId (22 chars; first character in 0-3)."
     },
     "modelVersion": {
       "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
@@ -355,7 +374,7 @@
         "status"
       ],
       "additionalProperties": false,
-      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure.",
+      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure. status=verified requires an edition-specific verification receipt (checked semantically).",
       "properties": {
         "scheme": {
           "enum": [
@@ -380,6 +399,9 @@
             "verified",
             "unknown"
           ]
+        },
+        "verification_receipt_ref": {
+          "$ref": "#/$defs/iri"
         }
       }
     },

@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://openpermit.dev/spec/ori-completeness-report-0.1.schema.json",
   "title": "ORI Completeness Report v0.1 Draft",
-  "description": "Checks one exact transmitted package against identified information expectations. Missing information is unknown, never fail; the intake act that accepts is separate and is the only thing that may start a review clock. Describes information fitness for intake, not engineering compliance. See spec/completeness-report-0.1-draft.md.",
+  "description": "Checks one exact transmitted package against identified information expectations. Missing information is unknown, never fail; the intake act that accepts is separate and is the only thing that may start a review clock. Acceptance derives from resolved blocking coverage plus an explicit intake act, not from the overall aggregate. See spec/completeness-report-0.1-draft.md.",
   "type": "object",
   "required": [
     "@context",
@@ -109,7 +109,7 @@
         "type": "object",
         "required": [
           "requirement_set_ref",
-          "artifact_ref",
+          "artifact_ref_status",
           "sha256",
           "format",
           "version",
@@ -121,8 +121,15 @@
           "requirement_set_ref": {
             "$ref": "#/$defs/iri"
           },
+          "artifact_ref_status": {
+            "enum": [
+              "known",
+              "unknown"
+            ]
+          },
           "artifact_ref": {
-            "$ref": "#/$defs/iriOrUnknown"
+            "$ref": "#/$defs/iri",
+            "description": "Present only when artifact_ref_status is known. Do not write the literal unknown (JSON-LD would coerce it to an IRI)."
           },
           "sha256": {
             "$ref": "#/$defs/sha256OrUnknown"
@@ -145,6 +152,14 @@
           "ids_schema_version": {
             "type": "string",
             "maxLength": 20
+          },
+          "required_item_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9._-]{0,80}$"
+            },
+            "uniqueItems": true
           }
         }
       }
@@ -339,7 +354,8 @@
     },
     "globalId": {
       "type": "string",
-      "pattern": "^[0-9A-Za-z_$]{22}$"
+      "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+      "description": "Canonical IFC compressed GlobalId (22 chars; first character in 0-3)."
     },
     "modelVersion": {
       "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
@@ -383,7 +399,7 @@
         "status"
       ],
       "additionalProperties": false,
-      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure.",
+      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure. status=verified requires an edition-specific verification receipt (checked semantically).",
       "properties": {
         "scheme": {
           "enum": [
@@ -408,6 +424,9 @@
             "verified",
             "unknown"
           ]
+        },
+        "verification_receipt_ref": {
+          "$ref": "#/$defs/iri"
         }
       }
     },

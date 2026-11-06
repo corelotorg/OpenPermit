@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://openpermit.dev/spec/ori-decision-record-0.1.schema.json",
   "title": "ORI Decision Record v0.1 Draft",
-  "description": "A human building official's recorded disposition on a subject, with authority, attestation, validity, referenced conditions and evidence. is_machine is always false and is_approval stays false: the record is evidence of a human act, never a machine approval. See spec/decision-record-0.1-draft.md.",
+  "description": "A human building official's recorded disposition on a subject, with authority, attestation, validity, referenced conditions and evidence. is_machine is always false and is_approval stays false: the record is evidence of a human act, never a machine approval. pre_reviewed_design_ref is required only when pre_review_link_role is reuse_evidence or establishes_pre_review. See spec/decision-record-0.1-draft.md.",
   "type": "object",
   "required": [
     "@context",
@@ -30,7 +30,6 @@
     "conditions",
     "condition_records",
     "evidence_refs",
-    "pre_reviewed_design_ref",
     "pre_review_link_role",
     "pre_review_status",
     "supersedes",
@@ -221,7 +220,8 @@
     "pre_review_link_role": {
       "enum": [
         "reuse_evidence",
-        "establishes_pre_review"
+        "establishes_pre_review",
+        "none"
       ]
     },
     "pre_review_status": {
@@ -287,7 +287,8 @@
     },
     "globalId": {
       "type": "string",
-      "pattern": "^[0-9A-Za-z_$]{22}$"
+      "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+      "description": "Canonical IFC compressed GlobalId (22 chars; first character in 0-3)."
     },
     "modelVersion": {
       "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
@@ -331,7 +332,7 @@
         "status"
       ],
       "additionalProperties": false,
-      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure.",
+      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure. status=verified requires an edition-specific verification receipt (checked semantically).",
       "properties": {
         "scheme": {
           "enum": [
@@ -356,6 +357,9 @@
             "verified",
             "unknown"
           ]
+        },
+        "verification_receipt_ref": {
+          "$ref": "#/$defs/iri"
         }
       }
     },

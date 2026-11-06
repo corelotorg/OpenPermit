@@ -11,12 +11,13 @@ An applicant declares that a resubmittal changes only some elements of a pinned 
 | `parent_revision_ref`, `child_revision_ref`, `parent_model`, `child_model` | the two revisions and their hashed models; the child may be unrebuilt |
 | `touched_elements` | map keyed by 22-character IFC GlobalId; each item repeats its `ifc_global_id` |
 | `carry_forward` | applicant assertion that untouched elements carry forward from the parent; `verification` verified or unknown |
-| `reviewer_scope` | `declared_scope: listed_elements_only`, plus `verified_scope` (GlobalIds) with its own `verified_scope_status`, `comparison_state`, `context_scope` |
+| `reviewer_scope` | `declared_scope: listed_elements_only`, plus `verified_differences` (actual diffs), `dependency_scope` (dependency-only), `verified_scope` (their union), `verified_scope_status`, `comparison_state`, `context_scope` |
 | `answers_comment_refs` | review comments this change answers |
 
 ## Rules checked
 
-1. Schema valid; pinned context; `is_approval` false; every key a 22-character GlobalId equal to its item's `ifc_global_id`.
+1. Schema valid; pinned context; `is_approval` false; every key a canonical IFC GlobalId (`^[0-3][0-9A-Za-z_$]{21}$`) equal to its item's `ifc_global_id`.
+1b. Verified carry-forward needs a complete comparison, `verified_scope_status: verified`, and no `verified_differences` outside the touched set; dependency-only IDs stay in `dependency_scope`.
 2. An unrebuilt child carries unknown hashes, no after anchors, no after model version and unknown binding.
 3. Added elements have no parent anchors; removed elements have no child anchors; model versions match the parent and child.
 4. Declared scope is kept apart from verified scope: a verified scope or verified carry-forward needs a comparison of verified parent and child bytes; a verified scope cannot drop declared elements.
