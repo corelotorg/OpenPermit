@@ -16,7 +16,7 @@ Then inspect:
 - MCP: `http://127.0.0.1:8000/mcp`
 - Health: `http://127.0.0.1:8000/health`
 - Discovery: `http://127.0.0.1:8000/.well-known/ori.json`
-- State: append-only challenge/disposition events at `reference-node/state/events.jsonl`
+- State: existing challenge/disposition events may be read from `reference-node/state/events.jsonl`; reference mode creates no event log and cannot append events.
 
 ## Run with Docker
 
@@ -49,8 +49,8 @@ The source and smoke test currently enforce this exact tool surface:
 - `ori_provenance` — source, jurisdiction, version and lineage context.
 - `ori_verify` — structural schema verification; never legal approval by protocol.
 - `ori_analyze_precedence` — DAG validation, topological order, float and critical path.
-- `ori_challenge` — append a first-class challenge without editing the target.
-- `ori_resolve_challenge` — append a disposition without deleting challenge history.
+- `ori_challenge` — returns `write_disabled`; challenge creation is unavailable in reference mode.
+- `ori_resolve_challenge` — returns `write_disabled`; disposition writes are unavailable in reference mode.
 - `ori_list_profiles` — list published guidance profiles exposed by the reference node.
 
 The node indexes machine-readable public profiles, jurisdiction inventories and conformance fixtures from the repository for `ori_get`/traversal. `ori_list_profiles` is intentionally narrower today and lists guidance profiles; inventory discovery is also available through the static corpus.
