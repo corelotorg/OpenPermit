@@ -1,0 +1,359 @@
+{
+  "id": "ori:test:negative:lifecycle-change-carry-forward-verified-uncompared",
+  "rule": "limited-change-record",
+  "expected": "fail",
+  "description": "Carry-forward marked verified without a comparison. Synthetic test data (lifecycle records v0.1 draft); fictional identities, not a real review or disposition.",
+  "objects": [
+    {
+      "@context": {
+        "@version": 1.1,
+        "@vocab": "https://openpermit.dev/ns/",
+        "dev.openpermit": "https://openpermit.dev/ns/",
+        "prov": "http://www.w3.org/ns/prov#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "title": "dcterms:title",
+        "description": "dcterms:description",
+        "license": "dcterms:license",
+        "created_at": {
+          "@id": "dcterms:created",
+          "@type": "xsd:dateTime"
+        },
+        "wasGeneratedBy": {
+          "@id": "prov:wasGeneratedBy",
+          "@type": "@id"
+        },
+        "wasDerivedFrom": {
+          "@id": "prov:wasDerivedFrom",
+          "@type": "@id"
+        },
+        "wasAttributedTo": {
+          "@id": "prov:wasAttributedTo",
+          "@type": "@id"
+        },
+        "used": {
+          "@id": "prov:used",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "wasAssociatedWith": {
+          "@id": "prov:wasAssociatedWith",
+          "@type": "@id"
+        },
+        "touched_elements": {
+          "@id": "dev.openpermit:touched_elements",
+          "@container": "@index"
+        },
+        "application_ref": {
+          "@id": "dev.openpermit:application_ref",
+          "@type": "@id"
+        },
+        "envelope_ref": {
+          "@id": "dev.openpermit:envelope_ref",
+          "@type": "@id"
+        },
+        "change_record_ref": {
+          "@id": "dev.openpermit:change_record_ref",
+          "@type": "@id"
+        },
+        "pre_reviewed_design_ref": {
+          "@id": "dev.openpermit:pre_reviewed_design_ref",
+          "@type": "@id"
+        },
+        "authority": {
+          "@id": "dev.openpermit:authority",
+          "@type": "@id"
+        },
+        "subject": {
+          "@id": "dev.openpermit:subject",
+          "@type": "@id"
+        },
+        "decided_by": {
+          "@id": "dev.openpermit:decided_by",
+          "@type": "@id"
+        },
+        "agent_ref": {
+          "@id": "dev.openpermit:agent_ref",
+          "@type": "@id"
+        },
+        "requirement_set_ref": {
+          "@id": "dev.openpermit:requirement_set_ref",
+          "@type": "@id"
+        },
+        "requirement_ref": {
+          "@id": "dev.openpermit:requirement_ref",
+          "@type": "@id"
+        },
+        "comment_refs": {
+          "@id": "dev.openpermit:comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "answers_comment_refs": {
+          "@id": "dev.openpermit:answers_comment_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "parent_revision_ref": {
+          "@id": "dev.openpermit:parent_revision_ref",
+          "@type": "@id"
+        },
+        "child_revision_ref": {
+          "@id": "dev.openpermit:child_revision_ref",
+          "@type": "@id"
+        },
+        "revision_ref": {
+          "@id": "dev.openpermit:revision_ref",
+          "@type": "@id"
+        },
+        "source_ifc_ref": {
+          "@id": "dev.openpermit:source_ifc_ref",
+          "@type": "@id"
+        },
+        "geometry_map_ref": {
+          "@id": "dev.openpermit:geometry_map_ref",
+          "@type": "@id"
+        },
+        "artifact_ref": {
+          "@id": "dev.openpermit:artifact_ref",
+          "@type": "@id"
+        },
+        "status_record_ref": {
+          "@id": "dev.openpermit:status_record_ref",
+          "@type": "@id"
+        },
+        "evidence_refs": {
+          "@id": "dev.openpermit:evidence_refs",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supersedes": {
+          "@id": "dev.openpermit:supersedes",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "manifest": {
+          "@id": "dev.openpermit:manifest",
+          "@container": "@set"
+        },
+        "requirement_sets": {
+          "@id": "dev.openpermit:requirement_sets",
+          "@container": "@set"
+        },
+        "items": {
+          "@id": "dev.openpermit:items",
+          "@container": "@set"
+        },
+        "blocking_items": {
+          "@id": "dev.openpermit:blocking_items",
+          "@container": "@set"
+        },
+        "advisory_items": {
+          "@id": "dev.openpermit:advisory_items",
+          "@container": "@set"
+        },
+        "anchors": {
+          "@id": "dev.openpermit:anchors",
+          "@container": "@set"
+        },
+        "before_anchors": {
+          "@id": "dev.openpermit:before_anchors",
+          "@container": "@set"
+        },
+        "after_anchors": {
+          "@id": "dev.openpermit:after_anchors",
+          "@container": "@set"
+        },
+        "conditions": {
+          "@id": "dev.openpermit:conditions",
+          "@type": "@id",
+          "@container": "@set"
+        },
+        "supported_media_types": {
+          "@id": "dev.openpermit:supported_media_types",
+          "@container": "@set"
+        },
+        "basis_revision_ref": {
+          "@id": "dev.openpermit:basis_revision_ref",
+          "@type": "@id"
+        },
+        "child_views": {
+          "@id": "dev.openpermit:child_views",
+          "@container": "@set"
+        },
+        "condition_records": {
+          "@id": "dev.openpermit:condition_records",
+          "@container": "@set"
+        },
+        "verified_scope": {
+          "@id": "dev.openpermit:verified_scope",
+          "@container": "@set"
+        },
+        "verified_differences": {
+          "@id": "dev.openpermit:verified_differences",
+          "@container": "@set"
+        },
+        "dependency_scope": {
+          "@id": "dev.openpermit:dependency_scope",
+          "@container": "@set"
+        },
+        "required_item_ids": {
+          "@id": "dev.openpermit:required_item_ids",
+          "@container": "@set"
+        },
+        "classifications": {
+          "@id": "dev.openpermit:classifications",
+          "@container": "@set"
+        },
+        "receipt_ref": {
+          "@id": "dev.openpermit:receipt_ref",
+          "@type": "@id"
+        },
+        "point": {
+          "@id": "dev.openpermit:point",
+          "@container": "@list"
+        },
+        "min": {
+          "@id": "dev.openpermit:min",
+          "@container": "@list"
+        },
+        "max": {
+          "@id": "dev.openpermit:max",
+          "@container": "@list"
+        },
+        "eye": {
+          "@id": "dev.openpermit:eye",
+          "@container": "@list"
+        },
+        "target": {
+          "@id": "dev.openpermit:target",
+          "@container": "@list"
+        },
+        "up": {
+          "@id": "dev.openpermit:up",
+          "@container": "@list"
+        },
+        "coordinates": {
+          "@id": "dev.openpermit:coordinates",
+          "@container": "@list"
+        }
+      },
+      "draft_status": "DRAFT",
+      "license": "CC0-1.0",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "simulation": true,
+      "description": "DRAFT fictional design example only; unwired; not a real permit review or disposition.",
+      "application_ref": "urn:ori:application:sim-synthetic-county:sh2-reve-2026-11-05",
+      "created_at": "2026-11-05T18:42:00-05:00",
+      "@id": "urn:ori:change:draft-design:sh2-r1",
+      "@type": "LimitedChangeRecord",
+      "record_profile": "ori-limited-change-record-0.1",
+      "envelope_ref": "urn:ori:submission:draft-design:sh2-r1",
+      "parent_revision_ref": "urn:ori:model-revision:draft-design:A",
+      "child_revision_ref": "urn:ori:model-revision:draft-design:B",
+      "parent_model": {
+        "artifact_ref": "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+        "media_type": "application/x-step",
+        "sha256": "8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+        "artifact_state": "available",
+        "hash_status": "verified"
+      },
+      "child_model": {
+        "artifact_ref": "urn:ori:artifact:draft-design:B-ifc-unbuilt",
+        "media_type": "application/x-step",
+        "sha256": "unknown",
+        "artifact_state": "unrebuilt",
+        "hash_status": "unknown"
+      },
+      "child_views": [
+        {
+          "artifact_ref": "urn:ori:artifact:draft-design:B-glb-unbuilt",
+          "media_type": "model/gltf-binary",
+          "sha256": "unknown",
+          "artifact_state": "unrebuilt",
+          "hash_status": "unknown",
+          "source_ifc_ref": "urn:ori:artifact:draft-design:B-ifc-unbuilt",
+          "geometry_map_status": "unknown"
+        }
+      ],
+      "touched_elements": {
+        "27AF6bt5nOSfxkQ_WXbKKd": {
+          "ifc_global_id": "27AF6bt5nOSfxkQ_WXbKKd",
+          "operation": "changed",
+          "change_basis": "declared",
+          "before_anchors": [
+            {
+              "anchor_type": "element",
+              "ifc_global_id": "27AF6bt5nOSfxkQ_WXbKKd"
+            }
+          ],
+          "before_model_version": {
+            "sha256": "8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+            "artifact_id": "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+            "label": "Synthetic model A"
+          },
+          "after_anchors": [],
+          "after_anchor_status": "unknown",
+          "answers_comment_refs": [
+            "urn:ori:comment:sim-sh2-reve-0001"
+          ],
+          "description": "Applicant-declared limited change; child model not rebuilt or compared."
+        },
+        "2mwbPMiB5Uo9BQkkudheJg": {
+          "ifc_global_id": "2mwbPMiB5Uo9BQkkudheJg",
+          "operation": "changed",
+          "change_basis": "declared",
+          "before_anchors": [
+            {
+              "anchor_type": "element",
+              "ifc_global_id": "2mwbPMiB5Uo9BQkkudheJg"
+            }
+          ],
+          "before_model_version": {
+            "sha256": "8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+            "artifact_id": "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0",
+            "label": "Synthetic model A"
+          },
+          "after_anchors": [],
+          "after_anchor_status": "unknown",
+          "answers_comment_refs": [
+            "urn:ori:comment:sim-sh2-reve-0002"
+          ],
+          "description": "Applicant-declared limited change; child model not rebuilt or compared."
+        }
+      },
+      "carry_forward": {
+        "declaration": "untouched_elements_carry_forward",
+        "basis_revision_ref": "urn:ori:model-revision:draft-design:A",
+        "scope": "elements_not_in_touched_set",
+        "attested_by_role": "applicant",
+        "verification": "verified"
+      },
+      "reviewer_scope": {
+        "declared_scope": "listed_elements_only",
+        "context_scope": "dependencies_may_extend_scope",
+        "verified_scope": [],
+        "comparison_state": "unknown",
+        "description": "Show both declared IDs and any dependency/context differences; no implicit reviewer waiver.",
+        "verified_scope_status": "unknown",
+        "verified_differences": [],
+        "dependency_scope": []
+      },
+      "answers_comment_refs": [
+        "urn:ori:comment:sim-sh2-reve-0001",
+        "urn:ori:comment:sim-sh2-reve-0002"
+      ],
+      "resubmittal_round": 1,
+      "wasDerivedFrom": "urn:ori:model-revision:draft-design:A",
+      "wasGeneratedBy": {
+        "@id": "urn:ori:activity:draft-design:declare-change-r1",
+        "@type": "prov:Activity",
+        "used": [
+          "urn:ori:artifact:sha256:8a4e4e68937e4d8f7d80c26ab48fbd192a6a3aa689a0e6f934beabd16da7a9b0"
+        ],
+        "wasAssociatedWith": "urn:ori:agent:draft-design:applicant-placeholder"
+      }
+    }
+  ]
+}

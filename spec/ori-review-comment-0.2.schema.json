@@ -226,7 +226,8 @@
         },
         "ifc_global_id": {
           "type": "string",
-          "pattern": "^[0-9A-Za-z_$]{22}$"
+          "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+          "description": " Canonical IFC compressed GlobalId (first character in 0-3)."
         },
         "element_key": {
           "type": "string",

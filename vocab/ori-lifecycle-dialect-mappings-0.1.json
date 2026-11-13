@@ -1,0 +1,134 @@
+{
+ "mapping_set_id": "ori-lifecycle-dialect-mappings-0.1",
+ "status": "DRAFT",
+ "license": "CC0-1.0",
+ "notice": "Dialect mappings are non-executable related_pending_review assertions for human review. They never auto-apply. Classification is separate from party role. NAICS status=verified requires an edition-specific verification receipt. Acceptable/not acceptable is never a Decision outcome. Source names are attribution only; no affiliation or endorsement is implied.",
+ "mapping_types": [
+  "related_pending_review",
+  "no_neutral_target"
+ ],
+ "dialects": [
+  {
+   "dialect_id": "hud-single-family-forms",
+   "source": "U.S. Department of Housing and Urban Development (HUD) single-family FHA forms",
+   "source_url": "https://www.hud.gov/program_offices/administration/hudclips/forms",
+   "source_status": "UNVERIFIED: form PDFs were not fetched in this session; form numbers and field concepts are from ORI working knowledge and must be checked against the current form editions before use.",
+   "rights_note": "US government works; cite and paraphrase, do not copy form text or layout.",
+   "forms": [
+    {
+     "form": "HUD-92541",
+     "ori_description": "builder certification of plans, specifications and site",
+     "fields": [
+      {
+       "source_label": "builder name",
+       "record": "ori-transmission-envelope-0.1",
+       "target": "/sender/agent_ref",
+       "mapping_type": "related_pending_review",
+       "note": "Builder is a party; role maps to applicant only after local confirmation."
+      },
+      {
+       "source_label": "property address",
+       "record": "ori-transmission-envelope-0.1",
+       "target": "/application_ref",
+       "mapping_type": "related_pending_review",
+       "note": "Address identifies the application; ORI carries an application IRI, not the address."
+      },
+      {
+       "source_label": "builder signature, date",
+       "record": "ori-transmission-envelope-0.1",
+       "target": "/submitted_at",
+       "mapping_type": "related_pending_review",
+       "note": "A signature date is the sender's assertion time, not receipt."
+      },
+      {
+       "source_label": "site condition items",
+       "record": "ori-completeness-report-0.1",
+       "target": "/items",
+       "mapping_type": "related_pending_review",
+       "note": "Each certified item becomes an information item; an unanswered item is unknown, never fail."
+      }
+     ]
+    },
+    {
+     "form": "HUD-92544",
+     "ori_description": "builder one-year warranty",
+     "fields": [
+      {
+       "source_label": "warranty",
+       "record": null,
+       "target": null,
+       "mapping_type": "no_neutral_target",
+       "note": "Warranty terms are outside the four records; future work."
+      }
+     ]
+    },
+    {
+     "form": "HUD-92051",
+     "ori_description": "compliance inspection report",
+     "fields": [
+      {
+       "source_label": "inspector",
+       "record": "ori-completeness-report-0.1",
+       "target": "/actor_role",
+       "mapping_type": "related_pending_review",
+       "note": "Inspection is a separate future record; nearest neutral role only."
+      },
+      {
+       "source_label": "acceptable / not acceptable",
+       "record": null,
+       "target": null,
+       "mapping_type": "no_neutral_target",
+       "note": "Never a Decision outcome. Acceptable/not acceptable stays source-native wording; a human Decision is still required and is not auto-mapped."
+      }
+     ]
+    }
+   ],
+   "future_work": [
+    "HUD-92900-B (identity and disclosure, not a design record)",
+    "HUD-92800.5B (conditional commitment, financing scope)",
+    "inspection record profile for compliance inspections"
+   ]
+  },
+  {
+   "dialect_id": "example-county-contractor-categories",
+   "source": "Fictional example jurisdiction; NAICS-based contractor categories for illustration only",
+   "classification_source": {
+    "scheme": "naics",
+    "version": "2022",
+    "source_url": "https://www.census.gov/naics/",
+    "publisher": "U.S. Census Bureau",
+    "source_status": "UNVERIFIED: code numbers cited from ORI working knowledge, not fetched this session; titles not reproduced."
+   },
+   "categories": [
+    {
+     "source_label": "new home builder",
+     "naics_code": "236115",
+     "record": "ori-transmission-envelope-0.1",
+     "target": "/sender/classifications",
+     "mapping_type": "related_pending_review",
+     "suggested_party_role_pending_review": "applicant",
+     "note": " Classification is separate from party role; role suggestion is pending review only. status=verified requires an edition-specific verification_receipt_ref."
+    },
+    {
+     "source_label": "for-sale builder",
+     "naics_code": "236117",
+     "record": "ori-transmission-envelope-0.1",
+     "target": "/sender/classifications",
+     "mapping_type": "related_pending_review",
+     "suggested_party_role_pending_review": "applicant",
+     "note": " Classification is separate from party role; role suggestion is pending review only. status=verified requires an edition-specific verification_receipt_ref."
+    },
+    {
+     "source_label": "design firm",
+     "naics_code": "541310",
+     "record": "ori-transmission-envelope-0.1",
+     "target": "/sender/classifications",
+     "mapping_type": "related_pending_review",
+     "suggested_party_role_pending_review": "design_professional",
+     "note": " Classification is separate from party role; role suggestion is pending review only. status=verified requires an edition-specific verification_receipt_ref."
+    }
+   ],
+   "note": "A NAICS code describes an economic activity. It is not a licence, does not prove a party's role, and never grants authority."
+  }
+ ]
+}

@@ -1,0 +1,558 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-completeness-report-0.1.schema.json",
+  "title": "ORI Completeness Report v0.1 Draft",
+  "description": "Checks one exact transmitted package against identified information expectations. Missing information is unknown, never fail; the intake act that accepts is separate and is the only thing that may start a review clock. Acceptance derives from resolved blocking coverage plus an explicit intake act, not from the overall aggregate. See spec/completeness-report-0.1-draft.md.",
+  "type": "object",
+  "required": [
+    "@context",
+    "@id",
+    "@type",
+    "record_profile",
+    "draft_status",
+    "is_approval",
+    "label",
+    "application_ref",
+    "created_at",
+    "license",
+    "description",
+    "envelope_ref",
+    "checked_at",
+    "actor_role",
+    "requirement_sets",
+    "items",
+    "blocking_items",
+    "advisory_items",
+    "overall",
+    "blocking_status",
+    "acceptance"
+  ],
+  "properties": {
+    "@context": {
+      "type": "object",
+      "description": "Must equal the pinned context vocab/ori-lifecycle-records-0.1.context.json (checked semantically)."
+    },
+    "@id": {
+      "type": "string",
+      "pattern": "^urn:ori:completeness:\\S+$"
+    },
+    "@type": {
+      "const": "CompletenessReport"
+    },
+    "record_profile": {
+      "const": "ori-completeness-report-0.1"
+    },
+    "draft_status": {
+      "const": "DRAFT"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "application_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:application:\\S+$"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "license": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 40
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 120
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 300
+    },
+    "simulation": {
+      "type": "boolean"
+    },
+    "wasGeneratedBy": {
+      "$ref": "#/$defs/activity"
+    },
+    "wasDerivedFrom": {
+      "$ref": "#/$defs/iri"
+    },
+    "wasAttributedTo": {
+      "$ref": "#/$defs/iri"
+    },
+    "envelope_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:submission:\\S+$"
+    },
+    "model_version": {
+      "$ref": "#/$defs/modelVersion"
+    },
+    "checked_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "actor_role": {
+      "enum": [
+        "system",
+        "intake",
+        "plan_reviewer"
+      ]
+    },
+    "requirement_sets": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "requirement_set_ref",
+          "artifact_ref_status",
+          "sha256",
+          "format",
+          "version",
+          "coverage",
+          "ids_schema_version"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "requirement_set_ref": {
+            "$ref": "#/$defs/iri"
+          },
+          "artifact_ref_status": {
+            "enum": [
+              "known",
+              "unknown"
+            ]
+          },
+          "artifact_ref": {
+            "$ref": "#/$defs/iri",
+            "description": "Present only when artifact_ref_status is known. Do not write the literal unknown (JSON-LD would coerce it to an IRI)."
+          },
+          "sha256": {
+            "$ref": "#/$defs/sha256OrUnknown"
+          },
+          "format": {
+            "type": "string",
+            "maxLength": 60
+          },
+          "version": {
+            "type": "string",
+            "maxLength": 40
+          },
+          "coverage": {
+            "enum": [
+              "complete",
+              "partial",
+              "unknown"
+            ]
+          },
+          "ids_schema_version": {
+            "type": "string",
+            "maxLength": 20
+          },
+          "required_item_ids": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^[a-z0-9][a-z0-9._-]{0,80}$"
+            },
+            "uniqueItems": true
+          }
+        }
+      }
+    },
+    "items": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "item_id",
+          "requirement_ref",
+          "requirement_set_ref",
+          "result",
+          "effect",
+          "basis",
+          "anchors"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "item_id": {
+            "type": "string",
+            "pattern": "^[a-z0-9][a-z0-9._-]{0,80}$"
+          },
+          "requirement_ref": {
+            "$ref": "#/$defs/iri"
+          },
+          "requirement_set_ref": {
+            "$ref": "#/$defs/iri"
+          },
+          "result": {
+            "enum": [
+              "pass",
+              "fail",
+              "unknown"
+            ]
+          },
+          "effect": {
+            "enum": [
+              "blocking",
+              "advisory",
+              "unknown"
+            ]
+          },
+          "basis": {
+            "enum": [
+              "observed",
+              "missing_information",
+              "unsupported",
+              "unverifiable",
+              "applicability_unknown"
+            ]
+          },
+          "anchors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/anchor"
+            }
+          },
+          "model_version": {
+            "$ref": "#/$defs/modelVersion"
+          },
+          "evidence_refs": {
+            "type": "array",
+            "items": {
+              "$ref": "#/$defs/iri"
+            },
+            "uniqueItems": true
+          },
+          "comment_refs": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "pattern": "^urn:ori:comment:\\S+$"
+            },
+            "uniqueItems": true
+          },
+          "description": {
+            "type": "string",
+            "maxLength": 300
+          }
+        }
+      }
+    },
+    "blocking_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "advisory_items": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "uniqueItems": true
+    },
+    "overall": {
+      "enum": [
+        "complete",
+        "incomplete",
+        "indeterminate"
+      ]
+    },
+    "blocking_status": {
+      "enum": [
+        "satisfied",
+        "unsatisfied",
+        "unknown"
+      ]
+    },
+    "acceptance": {
+      "type": "object",
+      "required": [
+        "state",
+        "actor_role",
+        "actor_ref",
+        "accepted_at",
+        "basis",
+        "transition_event_ref"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "state": {
+          "enum": [
+            "accepted",
+            "not_accepted",
+            "unknown"
+          ]
+        },
+        "actor_role": {
+          "const": "intake"
+        },
+        "actor_ref": {
+          "$ref": "#/$defs/iriOrUnknown"
+        },
+        "accepted_at": {
+          "$ref": "#/$defs/dateTimeOrUnknown"
+        },
+        "basis": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "transition_event_ref": {
+          "$ref": "#/$defs/iriOrUnknown"
+        }
+      }
+    },
+    "status_record_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:status:\\S+$"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "iri": {
+      "type": "string",
+      "pattern": "^(urn:[a-z0-9-]+:|https?://)\\S+$"
+    },
+    "iriOrUnknown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/iri"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "sha256OrUnknown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "dateTimeOrUnknown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "globalId": {
+      "type": "string",
+      "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+      "description": "Canonical IFC compressed GlobalId (22 chars; first character in 0-3)."
+    },
+    "modelVersion": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+    },
+    "anchor": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/anchor"
+    },
+    "activity": {
+      "type": "object",
+      "required": [
+        "@id",
+        "@type"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "@id": {
+          "$ref": "#/$defs/iri"
+        },
+        "@type": {
+          "const": "prov:Activity"
+        },
+        "used": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/iri"
+          },
+          "uniqueItems": true
+        },
+        "wasAssociatedWith": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "required": [
+        "scheme",
+        "version",
+        "code",
+        "source_url",
+        "status"
+      ],
+      "additionalProperties": false,
+      "description": "External code-list reference (e.g. NAICS). Code only; titles and tables are not reproduced. Classification is descriptive and never grants authority or licensure. status=verified requires an edition-specific verification receipt (checked semantically).",
+      "properties": {
+        "scheme": {
+          "enum": [
+            "naics"
+          ]
+        },
+        "version": {
+          "type": "string",
+          "pattern": "^[0-9]{4}$"
+        },
+        "code": {
+          "type": "string",
+          "pattern": "^[0-9]{2,6}$"
+        },
+        "source_url": {
+          "type": "string",
+          "pattern": "^https://"
+        },
+        "status": {
+          "enum": [
+            "declared",
+            "verified",
+            "unknown"
+          ]
+        },
+        "verification_receipt_ref": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    },
+    "hashRef": {
+      "type": "object",
+      "required": [
+        "artifact_ref",
+        "media_type",
+        "sha256",
+        "artifact_state",
+        "hash_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256OrUnknown"
+        },
+        "artifact_state": {
+          "enum": [
+            "available",
+            "unrebuilt",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "hash_status": {
+          "enum": [
+            "verified",
+            "declared",
+            "unknown"
+          ]
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]{1,200}$"
+        }
+      },
+      "description": "Hash reference to complete saved file bytes. Unrebuilt means no bytes yet: hash unknown, never a content-addressed ID (checked semantically)."
+    },
+    "viewHashRef": {
+      "type": "object",
+      "required": [
+        "artifact_ref",
+        "media_type",
+        "sha256",
+        "artifact_state",
+        "hash_status",
+        "source_ifc_ref",
+        "geometry_map_status"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "artifact_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "media_type": {
+          "type": "string",
+          "pattern": "^[a-z0-9.+-]+/[a-z0-9.+-]+$"
+        },
+        "sha256": {
+          "$ref": "#/$defs/sha256OrUnknown"
+        },
+        "artifact_state": {
+          "enum": [
+            "available",
+            "unrebuilt",
+            "unavailable",
+            "unknown"
+          ]
+        },
+        "hash_status": {
+          "enum": [
+            "verified",
+            "declared",
+            "unknown"
+          ]
+        },
+        "bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^(?!/)(?!.*\\.\\.)[A-Za-z0-9._/-]{1,200}$"
+        },
+        "source_ifc_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "geometry_map_status": {
+          "enum": [
+            "bound",
+            "unknown"
+          ]
+        },
+        "geometry_map_ref": {
+          "$ref": "#/$defs/iri"
+        },
+        "wasDerivedFrom": {
+          "$ref": "#/$defs/iri"
+        }
+      }
+    }
+  }
+}

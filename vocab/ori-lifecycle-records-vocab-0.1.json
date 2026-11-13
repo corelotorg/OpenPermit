@@ -1,0 +1,295 @@
+{
+ "vocabulary_id": "ori-lifecycle-records-vocab-0.1",
+ "status": "DRAFT",
+ "license": "CC0-1.0",
+ "namespace": "https://openpermit.dev/ns/",
+ "namespace_note": "Proposed namespace; no claim that the endpoint is published. Context is inline-pinned; no remote context fetch.",
+ "context": "vocab/ori-lifecycle-records-0.1.context.json",
+ "notice": "Reviewer evidence, not approval. Every record has is_approval false; missing information is unknown, never fail. A Decision records a human act and is never made by machine.",
+ "types": [
+  {
+   "term": "TransmissionEnvelope",
+   "profile": "ori-transmission-envelope-0.1",
+   "schema": "spec/ori-transmission-envelope-0.1.schema.json",
+   "definition": "An immutable, application-bound statement of the payloads sent, by whom, to whom, and for what purpose; its receipt is delivery evidence only."
+  },
+  {
+   "term": "CompletenessReport",
+   "profile": "ori-completeness-report-0.1",
+   "schema": "spec/ori-completeness-report-0.1.schema.json",
+   "definition": "A check of one exact package against identified information expectations, kept separate from the intake act that may accept it."
+  },
+  {
+   "term": "LimitedChangeRecord",
+   "profile": "ori-limited-change-record-0.1",
+   "schema": "spec/ori-limited-change-record-0.1.schema.json",
+   "definition": "An applicant's declaration of limited element changes between a pinned parent and an intended child revision, shown apart from verified differences."
+  },
+  {
+   "term": "Decision",
+   "profile": "ori-decision-record-0.1",
+   "schema": "spec/ori-decision-record-0.1.schema.json",
+   "definition": "A human building official's recorded disposition, with authority, attestation, validity, conditions and evidence; the core Decision type."
+  },
+  {
+   "term": "Condition",
+   "profile": null,
+   "schema": "spec/ori-decision-record-0.1.schema.json#/$defs/conditionRecord",
+   "definition": "A separately identified, anchored case note referenced by a Decision's conditions; it points at a basis and never restates a requirement."
+  }
+ ],
+ "iri_terms": [
+  "agent_ref",
+  "answers_comment_refs",
+  "application_ref",
+  "artifact_ref",
+  "authority",
+  "basis_revision_ref",
+  "change_record_ref",
+  "child_revision_ref",
+  "comment_refs",
+  "conditions",
+  "decided_by",
+  "envelope_ref",
+  "evidence_refs",
+  "geometry_map_ref",
+  "parent_revision_ref",
+  "pre_reviewed_design_ref",
+  "receipt_ref",
+  "requirement_ref",
+  "requirement_set_ref",
+  "revision_ref",
+  "source_ifc_ref",
+  "status_record_ref",
+  "subject",
+  "supersedes",
+  "used",
+  "wasAssociatedWith",
+  "wasAttributedTo",
+  "wasDerivedFrom",
+  "wasGeneratedBy"
+ ],
+ "list_terms": [
+  "coordinates",
+  "eye",
+  "max",
+  "min",
+  "point",
+  "target",
+  "up"
+ ],
+ "iri_or_unknown_terms": {
+  "note": "Values are an IRI or the literal unknown. They are deliberately not @id-coerced so unknown is never turned into an invented IRI. Prefer omit-when-unknown plus an explicit status for optional links that are also @id terms (artifact_ref, receipt_ref, pre_reviewed_design_ref).",
+  "terms": [
+   "actor_ref",
+   "transition_event_ref",
+   "signer_ref",
+   "signed_artifact_ref",
+   "signature_ref",
+   "retention_ref"
+  ]
+ },
+ "omit_when_unknown_iri_terms": {
+  "note": "These terms are @id-coerced. When the value would be unknown, omit the property and set the sibling status to unknown.",
+  "terms": {
+   "artifact_ref": "artifact_ref_status",
+   "receipt_ref": "receipt_ref_status",
+   "pre_reviewed_design_ref": "pre_review_link_role"
+  }
+ },
+ "enums": {
+  "party_role": [
+   "applicant",
+   "design_professional",
+   "intake",
+   "authority",
+   "system",
+   "other"
+  ],
+  "purpose": [
+   "initial_submission",
+   "resubmittal",
+   "evidence_transfer"
+  ],
+  "manifest_role": [
+   "source_model",
+   "view_model",
+   "document",
+   "requirement_set",
+   "evidence",
+   "change_record"
+  ],
+  "artifact_state": [
+   "available",
+   "unrebuilt",
+   "unavailable",
+   "unknown"
+  ],
+  "hash_status": [
+   "verified",
+   "declared",
+   "unknown"
+  ],
+  "privacy_classification": [
+   "public",
+   "restricted",
+   "unknown"
+  ],
+  "privacy_handling": [
+   "preserve_declared_controls",
+   "restricted_pending_classification"
+  ],
+  "redaction_status": [
+   "declared_redacted",
+   "not_redacted",
+   "unknown"
+  ],
+  "receipt_state": [
+   "received",
+   "unknown"
+  ],
+  "manifest_verification": [
+   "verified",
+   "mismatch",
+   "unknown"
+  ],
+  "application_intake_status": [
+   "pending",
+   "unknown"
+  ],
+  "item_result": [
+   "pass",
+   "fail",
+   "unknown"
+  ],
+  "item_effect": [
+   "blocking",
+   "advisory",
+   "unknown"
+  ],
+  "item_basis": [
+   "observed",
+   "missing_information",
+   "unsupported",
+   "unverifiable",
+   "applicability_unknown"
+  ],
+  "coverage": [
+   "complete",
+   "partial",
+   "unknown"
+  ],
+  "overall": [
+   "complete",
+   "incomplete",
+   "indeterminate"
+  ],
+  "blocking_status": [
+   "satisfied",
+   "unsatisfied",
+   "unknown"
+  ],
+  "acceptance_state": [
+   "accepted",
+   "not_accepted",
+   "unknown"
+  ],
+  "operation": [
+   "added",
+   "removed",
+   "changed"
+  ],
+  "change_basis": [
+   "declared",
+   "compared"
+  ],
+  "comparison_state": [
+   "compared",
+   "unknown"
+  ],
+  "decision_type": [
+   "permit_disposition",
+   "pre_review_disposition"
+  ],
+  "outcome": [
+   "approve",
+   "approve_with_conditions",
+   "deny",
+   "withdraw"
+  ],
+  "identity_status": [
+   "verified",
+   "unknown"
+  ],
+  "signature_status": [
+   "verified",
+   "unsigned",
+   "unknown"
+  ],
+  "validity_status": [
+   "verified",
+   "unknown"
+  ],
+  "pre_review_link_role": [
+   "reuse_evidence",
+   "establishes_pre_review",
+   "none"
+  ],
+  "condition_status": [
+   "open",
+   "met",
+   "unknown"
+  ],
+  "ref_status": [
+   "known",
+   "unknown"
+  ]
+ },
+ "global_id_pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+ "global_id_note": "Canonical IFC compressed GlobalId (first character encodes two bits, so 0-3). Shared with seg1 review-comment element anchors for consistency.",
+ "context_fixes": [
+  {
+   "id": "decision-conditions-iri",
+   "date": "2026-11-05",
+   "finding": "Design CHECKS.md: Decision conditions were reference strings but the inline context gave only an @set container, so they expanded as literals.",
+   "fix": "conditions is coerced with @type @id; regression test verification/tests/test_lifecycle_records.py."
+  },
+  {
+   "id": "basis-revision-iri",
+   "date": "2026-11-05",
+   "finding": "carry_forward.basis_revision_ref expanded as a literal.",
+   "fix": "coerced with @type @id."
+  },
+  {
+   "id": "set-containers",
+   "date": "2026-11-05",
+   "finding": "child_views, condition_records and verified_scope had no @set container; one-member arrays compacted to bare objects and failed the round-trip test.",
+   "fix": "@container @set added; test asserts every array-valued key is a @set or @list term."
+  },
+  {
+   "id": "no-id-type-aliases",
+   "date": "2026-11-05",
+   "finding": "id/type aliases next to @id/@type made compaction rewrite keys, so records did not round-trip.",
+   "fix": "aliases removed; records use @id/@type only."
+  },
+  {
+   "id": "f1-omit-unknown-artifact-ref",
+   "date": "2026-11-05",
+   "finding": "ChatGPT review F1: requirement_sets[].artifact_ref accepted unknown but context coerced it to an IRI.",
+   "fix": "omit artifact_ref when unknown; sibling artifact_ref_status; known refs stay @id-coerced. receipt_ref also @id-coerced."
+  },
+  {
+   "id": "interop-spatial-list",
+   "date": "2026-11-05",
+   "finding": "ChatGPT review interop: ordered spatial coordinates need list semantics not set.",
+   "fix": "point/min/max/eye/target/up/coordinates use @container @list."
+  },
+  {
+   "id": "f2-differences-vs-dependencies",
+   "date": "2026-11-05",
+   "finding": "ChatGPT review F2: verified carry-forward contradicted comparison scope.",
+   "fix": "verified_differences vs dependency_scope; carry-forward verified needs complete comparison and no difference outside touched."
+  }
+ ],
+ "sources": "Term shapes follow W3C PROV-O and Dublin Core Terms by reference only (attribution, no affiliation). No specification text is reproduced."
+}

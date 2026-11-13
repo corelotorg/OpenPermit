@@ -4,6 +4,8 @@ ifcopenshell==0.8.5
 ifctester==0.8.5
 pypdf>=6.21.4,<7
 jsonschema>=4.23,<5
+# PyLD BSD-3-Clause: JSON-LD expansion/compaction round-trip tests for the lifecycle records.
+PyLD>=2.0.4,<3
 # CVE-2025-71176 fixed in pytest>=9.0.3 (tmpdir handling on UNIX).
 pytest>=9.0.3,<10
 # ori_takeoff (plan takeoff DRAFT): pdfplumber MIT (pdfminer.six MIT, pypdfium2 Apache-2.0/BSD-3-Clause),
