@@ -16,6 +16,8 @@ def publish(check=False):
     spec.loader.exec_module(builder)
     routes = json.loads((ROOT / "site/routes.json").read_text())["routes"]
     paths = [r["path"] + "index.html" for r in routes] + ["robots.txt", "sitemap.xml"]
+    paths += ["model-verification/review/" + name for name in
+              ("index.html", "report.json", "baseline.html", "baseline.json", "changed.html", "changed.json")]
     stale = []
     with tempfile.TemporaryDirectory() as tmp:
         output = Path(tmp)

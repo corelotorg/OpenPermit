@@ -31,7 +31,7 @@ def check(root):
         if not (root / route["path"] / "index.html").is_file():
             errors.append(f'missing route: {route["path"]}')
     for path in root.rglob("*.html"):
-        for href in Page(path.read_text()).links:
+        for href in Page(path.read_text(encoding="utf-8")).links:
             url = urlsplit(href)
             if url.scheme or url.netloc:
                 if url.netloc == "github.com" and any(x in url.path.lower() for x in ["/sheetpros/openpermit", "/jeremiahhorstick/openpermit"]):
@@ -48,7 +48,7 @@ def check(root):
                 target /= "index.html"
             if not target.is_file():
                 errors.append(f"missing target in {path.relative_to(root)}: {href}")
-            elif url.fragment and target.suffix == ".html" and unquote(url.fragment) not in Page(target.read_text()).ids:
+            elif url.fragment and target.suffix == ".html" and unquote(url.fragment) not in Page(target.read_text(encoding="utf-8")).ids:
                 errors.append(f"missing fragment: {href}")
     return errors
 

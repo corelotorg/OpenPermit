@@ -1,0 +1,43 @@
+{
+  "recorded_at": "2026-10-13T16:18:14.350475+00:00",
+  "source_base_commit": "706ae53d9d2163626f6ff7d0caad7bb6813bbe41",
+  "viewer_sha256": "8c6ee0b6e0216e669100d549471852cba2b7928a2938f205f701edeb6467a55a",
+  "capture_method": "Codex browser screenshot API, full page; unmodified JPEG output",
+  "scope": "Actual browser renders of generated local review cases, not a deployed merged update",
+  "reviewer_decision": null,
+  "approval_inferred": false,
+  "captures": [
+    {
+      "file": "screenshots/checked-baseline-2d.jpg",
+      "sha256": "a5941bbbb524531c725b10d560d1688be49cabfc01300e86ffdc8c0417cda7b4",
+      "url": "http://127.0.0.1:8765/model-verification/review/baseline.html",
+      "case_page_sha256": "59eb401a8a8cadb182ce7dcde6071f3d3ed1c95ffc79234c43764503eb08c011",
+      "progress": 0,
+      "revision": "reference-wall-r1"
+    },
+    {
+      "file": "screenshots/checked-baseline-3d.jpg",
+      "sha256": "22a0f870bb6d26bc60e76a3f4b9066dcdb0d7b268d6fe9ff1364ebd88d9b6b19",
+      "url": "http://127.0.0.1:8765/model-verification/review/baseline.html",
+      "case_page_sha256": "59eb401a8a8cadb182ce7dcde6071f3d3ed1c95ffc79234c43764503eb08c011",
+      "progress": 100,
+      "revision": "reference-wall-r1"
+    },
+    {
+      "file": "screenshots/checked-changed-2d.jpg",
+      "sha256": "23e5026fe0ead099639baebfffb6ae7759b842ad759a8a274a67b27e1d7b4e82",
+      "url": "http://127.0.0.1:8765/model-verification/review/changed.html",
+      "case_page_sha256": "0f30b6655bb8c3e8ebf10c9e3c5558771433d21cdc0f525b37cbdd18e13fda4e",
+      "progress": 0,
+      "revision": "reference-wall-r1-change-120x108"
+    },
+    {
+      "file": "screenshots/checked-changed-3d.jpg",
+      "sha256": "b74a47f4580ce16b3deb74c546dba610af49f35f326df2678bf4d3227e05676e",
+      "url": "http://127.0.0.1:8765/model-verification/review/changed.html",
+      "case_page_sha256": "0f30b6655bb8c3e8ebf10c9e3c5558771433d21cdc0f525b37cbdd18e13fda4e",
+      "progress": 100,
+      "revision": "reference-wall-r1-change-120x108"
+    }
+  ]
+}

@@ -1,0 +1,261 @@
+<!doctype html>
+<!-- SPDX-License-Identifier: Apache-2.0 -->
+<!-- Original OpenPermit prototype. Synthetic demo, not a building-code check or an IFC fidelity claim. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reference wall · OpenPermit Model Verification</title>
+<style>
+:root{color-scheme:dark;font:15px/1.45 system-ui,sans-serif;background:#0c131a;color:#e8eef4}
+*{box-sizing:border-box}body{margin:0}a{color:#8ed7ec}button,input{font:inherit}
+header{padding:16px 24px;border-bottom:1px solid #31414c;display:flex;gap:14px;align-items:center;justify-content:space-between;flex-wrap:wrap}
+header strong{font-size:1.08rem}header small{color:#a7b6c0}
+main{max-width:1400px;margin:0 auto;padding:20px;display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:20px}
+.panel{background:#131f29;border:1px solid #30404c;border-radius:14px;overflow:hidden}
+.toolbar{padding:14px 18px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;border-bottom:1px solid #30404c}
+.toolbar label{display:inline-flex;gap:7px;align-items:center}.toolbar input[type=range]{width:min(35vw,245px);accent-color:#7fd2e0}
+button{background:#263844;color:#e8eef4;border:1px solid #5b7685;border-radius:8px;padding:7px 12px;cursor:pointer}
+button:hover,button:focus-visible{background:#355567}button:focus-visible,input:focus-visible{outline:2px solid #a4e7ef;outline-offset:2px}
+#stage{position:relative;background:radial-gradient(ellipse at 50% 30%,#203341,#0b1219 75%);min-height:480px}
+#drawing{width:100%;height:540px;display:block}#drawing polygon,#drawing circle{cursor:pointer}
+.axis{position:absolute;left:18px;bottom:14px;color:#b2c2cc;font-size:.84rem;background:#101b24d8;padding:7px 10px;border-radius:7px;pointer-events:none}
+footer{padding:12px 18px;color:#aebdc8;border-top:1px solid #30404c}
+h1,h2,h3,p{margin-top:0}h1{font-size:1.3rem;margin:0}h2{font-size:1.04rem}h3{font-size:.92rem}
+.side{padding:18px} .side section+section{border-top:1px solid #30404c;margin-top:16px;padding-top:16px}
+.note{color:#b4c2cc;font-size:.88rem}.risk{color:#ffd590}
+.stat{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #253641}.stat strong{font-variant-numeric:tabular-nums}
+#parts{max-height:228px;overflow-y:auto;margin:8px 0}#parts button{display:block;width:100%;text-align:left;border:0;border-radius:4px;background:transparent;font-size:.86rem;padding:6px 8px}
+#parts button:hover,#parts button[aria-pressed=true]{background:#385262}
+#detail{white-space:pre-wrap;overflow-wrap:anywhere;font:12px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;background:#0a141b;border:1px solid #2a3a45;padding:11px;border-radius:8px;max-height:320px;overflow:auto}
+.check{margin:6px 0;padding:7px 9px;border-left:3px solid #d6b16d;background:#1d2c37;font-size:.85rem}
+@media(max-width:870px){main{display:block;padding:12px}.panel{margin-bottom:14px}#stage{min-height:310px}#drawing{height:360px}.toolbar input[type=range]{width:135px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+<header><div><a href="../../">OpenPermit</a> / Model Verification <small id="revision">· synthetic reference wall v0.1</small></div><strong>ONE MODEL · MULTIPLE VIEWS</strong></header>
+<main>
+<div class="panel">
+<div class="toolbar">
+  <label for="progress">2D elevation → 3D isometric <input id="progress" type="range" min="0" max="100" value="0" aria-label="Transition between elevation and isometric views"></label>
+  <output id="percentage" for="progress">0%</output>
+  <button id="play" type="button">Animate</button>
+  <button id="reset" type="button">Reset</button>
+  <button id="export" type="button">Export assembly JSON</button>
+</div>
+<div class="toolbar" role="group" aria-label="Visible layers">
+  <label><input id="framing" type="checkbox" checked> Framing</label>
+  <label><input id="sheathing" type="checkbox" checked> Sheathing</label>
+  <label><input id="fasteners" type="checkbox"> Fasteners (illustrative)</label>
+</div>
+<div id="stage"><svg id="drawing" viewBox="-20 -115 140 145" role="img" aria-label="Selectable synthetic stud wall projected from the same 3D assembly into elevation and isometric views"></svg>
+ <div class="axis" id="viewname">FRONT ELEVATION · 96 in × 96 in</div>
+</div>
+<footer>Every selectable part has one stable ID. Changing the view changes only the projection, never the underlying assembly. Dimensions are modeled assumptions, not field measurements.</footer>
+</div>
+<aside class="panel side">
+  <h1>Reference wall</h1>
+  <p class="note" id="summary">Synthetic benchmark concept · 8 ft × 8 ft. No external viewer library, source geometry, or textures.</p>
+  <div id="counts" aria-live="polite"></div>
+  <section><h2>Elements</h2><p class="note">Select a part here or in the illustration.</p><div id="parts"></div></section>
+  <section><h2>Selected element</h2><pre id="detail" aria-live="polite">Select an element.</pre></section>
+  <section><h2>Evidence gates</h2>
+    <div class="check"><strong>UNKNOWN</strong> · Independent counts and dimensions not yet attested</div>
+    <div class="check"><strong>UNKNOWN</strong> · Sheathing and fastener attachment requirements not verified</div>
+    <div class="check"><strong>UNKNOWN</strong> · IFC/STEP exchange fidelity and code applicability not checked</div>
+    <p class="note risk">A viewer render is not an inspection, code approval, or construction authorization.</p>
+    <p class="note"><a href="../../docs/MODEL-VERIFICATION.md">Model Verification contract</a> · <a href="https://github.com/corelotorg/OpenPermit/issues/132">Acceptance tracker</a></p>
+  </section>
+</aside>
+</main>
+<script type="application/json" id="assembly">
+{
+  "profile": "ori-model-verification-synthetic-0.1",
+  "revision": "reference-wall-r1",
+  "origin": "OpenPermit-authored synthetic demonstration",
+  "units": "in",
+  "wall": {
+    "width": 96,
+    "height": 96,
+    "depth": 3.5
+  },
+  "framing": {
+    "stud_width": 1.5,
+    "stud_centers": [
+      0.75,
+      16,
+      32,
+      48,
+      64,
+      80,
+      95.25
+    ],
+    "bottom_plate_height": 1.5,
+    "top_plate_count": 2,
+    "top_plate_height": 1.5
+  },
+  "sheathing": {
+    "panels": 2,
+    "width": 48,
+    "height": 96,
+    "thickness": 0.4375
+  },
+  "fasteners": {
+    "row_heights": [
+      10,
+      22,
+      34,
+      46,
+      58,
+      70,
+      82,
+      90
+    ],
+    "purpose": "illustrative markers only; not a fastening schedule"
+  },
+  "verification": {
+    "status": "unknown",
+    "reason": "No independent validation, code applicability or exchange evidence supplied"
+  },
+  "reviewer_decision": null
+}
+</script>
+<script>
+"use strict";
+const model = JSON.parse(document.getElementById("assembly").textContent);
+const revision = model.revision;
+const w = model.wall.width, h = model.wall.height, d = model.wall.depth;
+document.getElementById("revision").textContent="· "+revision;
+document.getElementById("summary").textContent="Synthetic benchmark concept · "+w+" in × "+h+" in. No external viewer library, source geometry, or textures.";
+const fw = model.framing.stud_width, bh = model.framing.bottom_plate_height;
+const th = model.framing.top_plate_height, nTop = model.framing.top_plate_count;
+const studs = model.framing.stud_centers;
+const elements = [];
+function add(id, group, label, box, note) {
+  elements.push({id:"urn:ori:synthetic:"+revision+":"+id,group:group,label:label,geometry:box,
+    provenance:"synthetic parameters / "+revision,verification:"unknown",note:note || "Geometry only; independently unverified"});
+}
+function box(x,y,z,width,height,depth){return {x:x,y:y,z:z,width:width,height:height,depth:depth};}
+add("plate-bottom","framing","Bottom plate",box(0,0,0,w,bh,d));
+for(let i=0;i<nTop;i++) add("plate-top-"+(i+1),"framing","Top plate "+(i+1),
+  box(0,h-(i+1)*th,0,w,th,d));
+studs.forEach(function(center,i){
+  add("stud-"+String(i+1).padStart(2,"0"),"framing","Stud "+(i+1),
+    box(center-fw/2,bh,0,fw,h-bh-nTop*th,d),i===studs.length-1 ? "Terminal stud center is inset; on-center spacing is not uniform at the end." : "Synthetic framing center; independently unverified");
+});
+for(let i=0;i<model.sheathing.panels;i++) add("sheathing-"+(i+1),"sheathing","Sheathing panel "+(i+1),
+  box(i*model.sheathing.width,0,d,model.sheathing.width,model.sheathing.height,model.sheathing.thickness));
+studs.forEach(function(center,i){
+  model.fasteners.row_heights.forEach(function(y,j){
+    add("fastener-"+(i+1)+"-"+(j+1),"fasteners","Illustrative fastener "+(i+1)+"."+(j+1),
+      box(center-.16,y-.16,d+model.sheathing.thickness,.32,.32,.08),
+      "Illustrative location only. Attachment pattern, spacing, penetration and count NOT verified.");
+  });
+});
+const svg = document.getElementById("drawing"), list = document.getElementById("parts");
+const detail = document.getElementById("detail"), range = document.getElementById("progress");
+const visible = {framing:true,sheathing:true,fasteners:false};
+const ns = "http://www.w3.org/2000/svg";
+let transition=0, selected=null, animationToken=0;
+const colors={framing:"#d4aa71",sheathing:"#6ea8b2",fasteners:"#ffe4a2"};
+function project(x,y,z){
+  const a=[x,-y], b=[x*.92-z*.68,-y*.88+x*.20+z*.44];
+  return [a[0]+transition*(b[0]-a[0]),a[1]+transition*(b[1]-a[1])];
+}
+function corners(b){
+  const x=b.x, y=b.y, z=b.z, X=x+b.width,Y=y+b.height,Z=z+b.depth;
+  return [[x,y,z],[X,y,z],[X,Y,z],[x,Y,z],[x,y,Z],[X,y,Z],[X,Y,Z],[x,Y,Z]];
+}
+function points(indices,c){return indices.map(function(i){const p=c[i];return project(p[0],p[1],p[2]).join(",");}).join(" ");}
+function paint(){
+  svg.replaceChildren();
+  const items=elements.filter(function(e){return visible[e.group]});
+  const projected=items.flatMap(function(e){return corners(e.geometry).map(function(p){return project(p[0],p[1],p[2]);});});
+  const xs=projected.map(p=>p[0]), ys=projected.map(p=>p[1]);
+  const minX=xs.length?Math.min(...xs)-10:-15,maxX=xs.length?Math.max(...xs)+10:115;
+  const minY=ys.length?Math.min(...ys)-10:-112,maxY=ys.length?Math.max(...ys)+10:24;
+  svg.setAttribute("viewBox",[minX,minY,maxX-minX,maxY-minY].join(" "));
+  const layers=items.filter(e=>e.group!=="fasteners").sort(function(a,b){return a.geometry.z-b.geometry.z});
+  layers.forEach(function(e){
+    const b=e.geometry,c=corners(b),chosen=e.id===selected;
+    const faces=[[0,1,5,4],[3,2,6,7],[1,2,6,5],[4,5,6,7]];
+    faces.forEach(function(face,ix){
+      if(transition===0 && ix<3) return;
+      const p=document.createElementNS(ns,"polygon");
+      p.setAttribute("points",points(face,c));p.setAttribute("fill",colors[e.group]);
+      p.setAttribute("fill-opacity", e.group==="sheathing" ? (ix===3?.30:.19) : (ix===3?.96:.65));
+      p.setAttribute("stroke",chosen?"#fff19a":"#0c171e");
+      p.setAttribute("stroke-width",chosen?"1.1":".23");
+      if(chosen)p.setAttribute("stroke-dasharray","1.7 1.1");
+      p.addEventListener("click",function(){select(e.id)});
+      const title=document.createElementNS(ns,"title");title.textContent=e.label+" · "+e.id;p.append(title);
+      svg.append(p);
+    });
+  });
+  items.filter(e=>e.group==="fasteners").forEach(function(e){
+    const b=e.geometry,p=project(b.x+b.width/2,b.y+b.height/2,b.z+b.depth);
+    const circle=document.createElementNS(ns,"circle");
+    circle.setAttribute("cx",p[0]);circle.setAttribute("cy",p[1]);circle.setAttribute("r",e.id===selected?".9":".38");
+    circle.setAttribute("fill",colors.fasteners);circle.setAttribute("stroke","#1c2832");
+    circle.setAttribute("stroke-width",".12");circle.addEventListener("click",function(){select(e.id)});
+    const title=document.createElementNS(ns,"title");title.textContent=e.label+" · illustrative";circle.append(title);svg.append(circle);
+  });
+  const text=document.createElementNS(ns,"text");
+  const mark=project(w/2,-9,0);text.setAttribute("x",mark[0]);text.setAttribute("y",mark[1]);
+  text.setAttribute("text-anchor","middle");text.setAttribute("font-size","3.7");
+  text.setAttribute("fill","#abc6d2");text.textContent=w+" in modeled width";svg.append(text);
+  document.getElementById("viewname").textContent=transition<.01?"FRONT ELEVATION · "+w+" in × "+h+" in":transition>.99?"ISOMETRIC · SYNTHETIC":"MODEL TRANSITION · "+Math.round(transition*100)+"%";
+  document.getElementById("percentage").textContent=Math.round(transition*100)+"%";
+}
+function select(id){
+  selected=id;
+  const e=elements.find(e=>e.id===id);
+  detail.textContent=e?JSON.stringify({
+    id:e.id,type:e.group,label:e.label,geometry_in:e.geometry,
+    assembly_revision:revision,provenance:e.provenance,verification:e.verification,
+    evidence:[],reviewer_decision:null,limitations:e.note
+  },null,2):"Select an element.";
+  Array.from(list.children).forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.id===id)));
+  paint();
+}
+function setTransition(value){transition=Math.max(0,Math.min(1,value));range.value=Math.round(100*transition);paint();}
+range.addEventListener("input",function(){animationToken++;setTransition(Number(range.value)/100)});
+document.getElementById("reset").addEventListener("click",function(){animationToken++;setTransition(0);select(null)});
+document.getElementById("play").addEventListener("click",function(){
+  const token=++animationToken,start=performance.now(),from=transition;
+  const to=from>.98?0:1,duration=1100;
+  if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){setTransition(to);return;}
+  function step(now){
+    if(token!==animationToken)return;
+    const t=Math.min(1,(now-start)/duration),smooth=t*t*(3-2*t);
+    setTransition(from+(to-from)*smooth);
+    if(t<1)requestAnimationFrame(step);
+  }requestAnimationFrame(step);
+});
+Object.keys(visible).forEach(function(group){
+  document.getElementById(group).addEventListener("change",function(e){visible[group]=e.target.checked;paint()});
+});
+document.getElementById("export").addEventListener("click",function(){
+  const artifact={source:model,elements:elements,export_status:"synthetic_unverified"};
+  const url=URL.createObjectURL(new Blob([JSON.stringify(artifact,null,2)],{type:"application/json"}));
+  const a=document.createElement("a");a.href=url;a.download="openpermit-reference-wall-r1.json";a.click();
+  setTimeout(function(){URL.revokeObjectURL(url)},0);
+});
+const counts=elements.reduce(function(acc,e){acc[e.group]=(acc[e.group]||0)+1;return acc},{});
+document.getElementById("counts").innerHTML=
+  '<div class="stat"><span>Studs</span><strong>'+studs.length+'</strong></div>'+
+  '<div class="stat"><span>Plates</span><strong>'+(nTop+1)+'</strong></div>'+
+  '<div class="stat"><span>Sheathing panels</span><strong>'+model.sheathing.panels+'</strong></div>'+
+  '<div class="stat"><span>Illustrative fasteners</span><strong>'+counts.fasteners+'</strong></div>'+
+  '<div class="stat"><span>Verification</span><strong class="risk">UNKNOWN</strong></div>';
+elements.forEach(function(e){
+  const b=document.createElement("button");b.type="button";b.textContent=e.label;b.dataset.id=e.id;
+  b.setAttribute("aria-pressed","false");
+  b.addEventListener("click",function(){if(!visible[e.group]){visible[e.group]=true;document.getElementById(e.group).checked=true;}select(e.id)});
+  list.append(b);
+});
+paint();
+</script>
+</body>
+</html>
