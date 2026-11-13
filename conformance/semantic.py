@@ -464,6 +464,13 @@ def _decision_record(case: dict[str, Any]) -> list[str]:
     return _records_lifecycle().decision_record(case)
 
 
+def _evidence_attestation_record(case: dict[str, Any]) -> list[str]:
+    spec = importlib.util.spec_from_file_location("ori_records_evidence", Path(__file__).resolve().parent / "records_evidence.py")
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    return mod.evidence_attestation_record(case)
+
+
 RULES = {
     "plan-overlay-training-gate": _plan_overlay_training_gate,
     "open-corpora-manifest": _open_corpora_manifest,
@@ -485,6 +492,7 @@ RULES = {
     "completeness-report-record": _completeness_report_record,
     "limited-change-record": _limited_change_record,
     "decision-record": _decision_record,
+    "evidence-attestation-record": _evidence_attestation_record,
 }
 
 

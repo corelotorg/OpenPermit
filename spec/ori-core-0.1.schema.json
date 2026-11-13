@@ -146,7 +146,21 @@
         "artifact": {"type": ["string", "null"]},
         "captured_by": {"type": ["string", "null"]},
         "captured_at": {"type": ["string", "null"], "format": "date-time"},
-        "spatial_anchor": {"type": ["string", "null"]},
+        "spatial_anchor": {
+          "description": "A typed anchor (type plus value) as defined in spec/evidence-attestation-0.1-draft.md; the full per-type value rules are in spec/ori-evidence-attestation-0.1.schema.json. A plain string or null is still accepted here as an opaque legacy reference.",
+          "anyOf": [
+            {"type": ["string", "null"]},
+            {
+              "type": "object",
+              "required": ["type", "value"],
+              "properties": {
+                "type": {"enum": ["parcel", "address", "world_point", "ifc_element", "model_object", "document_page", "region", "route", "view"]},
+                "value": {}
+              },
+              "additionalProperties": false
+            }
+          ]
+        },
         "integrity": {"type": "object", "additionalProperties": true}
       }
     },

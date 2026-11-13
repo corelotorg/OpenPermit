@@ -1,0 +1,61 @@
+{
+  "id": "ori:test:positive:evidence-world-point-no-match",
+  "rule": "evidence-attestation-record",
+  "expected": "pass",
+  "description": "Geo-attested photo anchored to a world point with an unknown CRS and no element match. Synthetic test data (evidence-attestation and model-georeference v0.1 drafts): fictional model, CRS identifier and coordinates; not a real site, survey, EPSG code or inspection.",
+  "objects": [
+    {
+      "record_profile": "ori-evidence-attestation-0.1",
+      "id": "urn:ori:evidence:synthetic-photo-1",
+      "type": "Evidence",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "artifact": "urn:ori:artifact:sha256:3a387fbcd4967e2df0bfc2bb56efdbbda6fe5d7ff307ad0bc701e005d8fd243b",
+      "captured_at": "2026-11-12T15:30:00-05:00",
+      "captured_by": "urn:ori:device:synthetic-camera-1",
+      "spatial_anchor": {
+        "type": "world_point",
+        "value": {
+          "coordinates": [
+            5012.6,
+            7003.0
+          ],
+          "crs": "unknown"
+        }
+      },
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "3a387fbcd4967e2df0bfc2bb56efdbbda6fe5d7ff307ad0bc701e005d8fd243b"
+      },
+      "provenance": {
+        "software": "synthetic-capture-app 0.1",
+        "acquisition_method": "photo",
+        "transformation_chain": []
+      },
+      "attestations": [
+        "urn:ori:attestation:synthetic-capture-sig-1"
+      ],
+      "geo_attestation": {
+        "claimed_location": {
+          "coordinates": [
+            5012.4,
+            7003.1
+          ]
+        },
+        "observed_location": {
+          "coordinates": [
+            5012.6,
+            7003.0,
+            101.2
+          ]
+        },
+        "crs": "unknown",
+        "horizontal_accuracy_m": "unknown",
+        "vertical_accuracy_m": "unknown",
+        "location_source": "unknown",
+        "time_source": "unknown",
+        "resolved_parcel_ref": "unknown"
+      }
+    }
+  ]
+}
