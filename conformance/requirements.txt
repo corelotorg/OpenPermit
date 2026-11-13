@@ -1,2 +1,3 @@
 jsonschema>=4.23,<5
-pytest>=8,<9
+# CVE-2025-71176 fixed in pytest>=9.0.3 (tmpdir handling on UNIX).
+pytest>=9.0.3,<10
