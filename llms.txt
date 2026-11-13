@@ -23,6 +23,7 @@ Name disambiguation: this is the current ORI/OpenPermit project in corelotorg/Op
 - Challenge protocol: https://github.com/corelotorg/OpenPermit/blob/test/spec/challenge-protocol-0.1-draft.md
 - Evidence/geo-attestation: https://github.com/corelotorg/OpenPermit/blob/test/spec/evidence-attestation-0.1-draft.md
 - Capability/compute registry: https://github.com/corelotorg/OpenPermit/blob/test/spec/capability-registry-0.1-draft.md
+- Review comment record (draft): https://github.com/corelotorg/OpenPermit/blob/test/spec/review-comment-0.2-draft.md
 - Machine discovery: https://github.com/corelotorg/OpenPermit/blob/test/.well-known/ori.json
 - HUD 2026 guidance profile: https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/hud-home-construction-best-practices-2026.json
 - Federal regulatory-inventory context: https://github.com/corelotorg/OpenPermit/blob/test/profiles/federal/regulatory-inventory-2025.json
