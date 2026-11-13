@@ -1,0 +1,5638 @@
+{
+  "report_type": "ori-verification-run",
+  "report_version": "0.1-draft",
+  "label": "Reviewer evidence, not approval",
+  "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+  "is_approval": false,
+  "run_id": "eeefd935cbe008b8",
+  "jurisdiction": "urn:ori:jurisdiction:us-va",
+  "validator": "urn:ori:validator:ori-verify",
+  "validator_version": "0.1.0",
+  "executed_at": "2026-09-27T12:00:00Z",
+  "artifact": {
+    "artifact_id": "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36",
+    "media_type": "application/x-step",
+    "schema": "IFC4",
+    "filename": "ori-ch06-fail.ifc",
+    "sha256": "b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36",
+    "size_bytes": 16355
+  },
+  "counts": {
+    "pass": 4,
+    "fail": 14,
+    "unknown": 20,
+    "not_applicable": 11
+  },
+  "evidence": [
+    {
+      "id": "urn:ori:evidence:eeefd935cbe008b8:input",
+      "type": "Evidence",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [],
+      "source": [],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "artifact": {
+          "artifact_id": "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36",
+          "media_type": "application/x-step",
+          "schema": "IFC4",
+          "filename": "ori-ch06-fail.ifc",
+          "sha256": "b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36",
+          "size_bytes": 16355
+        }
+      },
+      "evidence_type": "ifc_model",
+      "artifact": "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36",
+      "captured_by": "urn:ori:validator:ori-verify",
+      "captured_at": "2026-09-27T12:00:00Z",
+      "spatial_anchor": null,
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      }
+    }
+  ],
+  "records": [
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0001",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud spacing: 24 in on center; this would not meet <= 16 in, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud spacing",
+        "rule_unit_title": "Stud size and spacing for what the wall supports",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_spacing": 24.0,
+          "unit": "in",
+          "stud_size": "2x6",
+          "floors_supported": 2
+        },
+        "required": [
+          {
+            "parameter": "max_stud_spacing_2x6_two_floors",
+            "comparator": "<=",
+            "value": 16,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "stud_size == 2x6 and floors_supported == 2"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_size": {
+            "value": "2x6",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudNominalSize"
+          },
+          "floors_supported": {
+            "value": 2,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.FloorsSupported"
+          },
+          "stud_spacing": {
+            "value": 24.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudSpacing"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:stud-spacing-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0002",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud spacing: 24 in on center; this would not meet <= 16 in, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud spacing",
+        "rule_unit_title": "Stud size and spacing for what the wall supports",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_spacing": 24.0,
+          "unit": "in",
+          "stud_size": "2x6",
+          "floors_supported": 2
+        },
+        "required": [
+          {
+            "parameter": "max_stud_spacing_2x6_two_floors",
+            "comparator": "<=",
+            "value": 16,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "stud_size == 2x6 and floors_supported == 2"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_size": {
+            "value": "2x6",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudNominalSize"
+          },
+          "floors_supported": {
+            "value": 2,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.FloorsSupported"
+          },
+          "stud_spacing": {
+            "value": 24.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudSpacing"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:stud-spacing-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0003",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud spacing: 24 in on center; this would not meet <= 16 in, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud spacing",
+        "rule_unit_title": "Stud size and spacing for what the wall supports",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_spacing": 24.0,
+          "unit": "in",
+          "stud_size": "2x6",
+          "floors_supported": 2
+        },
+        "required": [
+          {
+            "parameter": "max_stud_spacing_2x6_two_floors",
+            "comparator": "<=",
+            "value": 16,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "stud_size == 2x6 and floors_supported == 2"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_size": {
+            "value": "2x6",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudNominalSize"
+          },
+          "floors_supported": {
+            "value": 2,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.FloorsSupported"
+          },
+          "stud_spacing": {
+            "value": 24.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudSpacing"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:stud-spacing-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0004",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud spacing: 24 in on center; this would not meet <= 16 in, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud spacing",
+        "rule_unit_title": "Stud size and spacing for what the wall supports",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_spacing": 24.0,
+          "unit": "in",
+          "stud_size": "2x6",
+          "floors_supported": 2
+        },
+        "required": [
+          {
+            "parameter": "max_stud_spacing_2x6_two_floors",
+            "comparator": "<=",
+            "value": 16,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "stud_size == 2x6 and floors_supported == 2"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_size": {
+            "value": "2x6",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudNominalSize"
+          },
+          "floors_supported": {
+            "value": 2,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.FloorsSupported"
+          },
+          "stud_spacing": {
+            "value": 24.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudSpacing"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:stud-spacing-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0005",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bearing stud height: 130 in (10.83 ft); this would not meet <= 10 ft, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud height",
+        "rule_unit_title": "Laterally unsupported height of bearing studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_height_in": 130.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_bearing_stud_height",
+            "comparator": "<=",
+            "value": 10,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_height": {
+            "value": 130.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:bearing-stud-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0006",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bearing stud height: 130 in (10.83 ft); this would not meet <= 10 ft, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud height",
+        "rule_unit_title": "Laterally unsupported height of bearing studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_height_in": 130.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_bearing_stud_height",
+            "comparator": "<=",
+            "value": 10,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_height": {
+            "value": 130.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:bearing-stud-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0007",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bearing stud height: 130 in (10.83 ft); this would not meet <= 10 ft, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud height",
+        "rule_unit_title": "Laterally unsupported height of bearing studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_height_in": 130.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_bearing_stud_height",
+            "comparator": "<=",
+            "value": 10,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_height": {
+            "value": 130.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:bearing-stud-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0008",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bearing stud height: 130 in (10.83 ft); this would not meet <= 10 ft, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.1",
+        "subsection_part": "stud height",
+        "rule_unit_title": "Laterally unsupported height of bearing studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "stud_height_in": 130.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "max_bearing_stud_height",
+            "comparator": "<=",
+            "value": 10,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_height": {
+            "value": 130.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.StudHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.1:bearing-stud-height-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0009",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Top plates: 1 top plate(s); this would not meet >= 2 count, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.2",
+        "subsection_part": "plate count",
+        "rule_unit_title": "Double top plate on bearing walls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "top_plate_count": 1
+        },
+        "required": [
+          {
+            "parameter": "min_top_plate_count",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "count",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:icc:irc-2021"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "top_plate_count": {
+            "value": 1,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.TopPlateCount"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-count-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0010",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Top plates: 1 top plate(s); this would not meet >= 2 count, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.2",
+        "subsection_part": "plate count",
+        "rule_unit_title": "Double top plate on bearing walls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "top_plate_count": 1
+        },
+        "required": [
+          {
+            "parameter": "min_top_plate_count",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "count",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:icc:irc-2021"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "top_plate_count": {
+            "value": 1,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.TopPlateCount"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-count-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0011",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Top plates: 1 top plate(s); this would not meet >= 2 count, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.2",
+        "subsection_part": "plate count",
+        "rule_unit_title": "Double top plate on bearing walls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "top_plate_count": 1
+        },
+        "required": [
+          {
+            "parameter": "min_top_plate_count",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "count",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:icc:irc-2021"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "top_plate_count": {
+            "value": 1,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.TopPlateCount"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-count-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0012",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Top plates: 1 top plate(s); this would not meet >= 2 count, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.3.2",
+        "subsection_part": "plate count",
+        "rule_unit_title": "Double top plate on bearing walls",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "top_plate_count": 1
+        },
+        "required": [
+          {
+            "parameter": "min_top_plate_count",
+            "comparator": ">=",
+            "value": 2,
+            "unit": "count",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:icc:irc-2021"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "top_plate_count": {
+            "value": 1,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.TopPlateCount"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-count-min"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0013",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "single_top_plate",
+        "message": "Single top plate; splice offset between plates does not arise.",
+        "section": "R602.3.2",
+        "subsection_part": "splice offset",
+        "rule_unit_title": "Top plate end joints offset and lapped",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-splice-offset-min"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0014",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "single_top_plate",
+        "message": "Single top plate; splice offset between plates does not arise.",
+        "section": "R602.3.2",
+        "subsection_part": "splice offset",
+        "rule_unit_title": "Top plate end joints offset and lapped",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-splice-offset-min"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0015",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "single_top_plate",
+        "message": "Single top plate; splice offset between plates does not arise.",
+        "section": "R602.3.2",
+        "subsection_part": "splice offset",
+        "rule_unit_title": "Top plate end joints offset and lapped",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-splice-offset-min"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0016",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "single_top_plate",
+        "message": "Single top plate; splice offset between plates does not arise.",
+        "section": "R602.3.2",
+        "subsection_part": "splice offset",
+        "rule_unit_title": "Top plate end joints offset and lapped",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.3.2:top-plate-splice-offset-min"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0017",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bored hole: 3 in of 5.5 in stud depth (ratio 0.545); this would not meet <= 0.4 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "bored holes",
+        "rule_unit_title": "Bored hole size limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_bored_hole_diameter": 3.0,
+          "stud_depth": 5.5,
+          "ratio": 0.545455
+        },
+        "required": [
+          {
+            "parameter": "max_bored_hole_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.4,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true and stud_doubled == false"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_bored_hole_diameter": {
+            "value": 3.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxBoredHoleDiameter"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:bored-hole-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0018",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bored hole: 3 in of 5.5 in stud depth (ratio 0.545); this would not meet <= 0.4 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "bored holes",
+        "rule_unit_title": "Bored hole size limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_bored_hole_diameter": 3.0,
+          "stud_depth": 5.5,
+          "ratio": 0.545455
+        },
+        "required": [
+          {
+            "parameter": "max_bored_hole_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.4,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true and stud_doubled == false"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_bored_hole_diameter": {
+            "value": 3.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxBoredHoleDiameter"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:bored-hole-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0019",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bored hole: 3 in of 5.5 in stud depth (ratio 0.545); this would not meet <= 0.4 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "bored holes",
+        "rule_unit_title": "Bored hole size limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_bored_hole_diameter": 3.0,
+          "stud_depth": 5.5,
+          "ratio": 0.545455
+        },
+        "required": [
+          {
+            "parameter": "max_bored_hole_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.4,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true and stud_doubled == false"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_bored_hole_diameter": {
+            "value": 3.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxBoredHoleDiameter"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:bored-hole-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0020",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Bored hole: 3 in of 5.5 in stud depth (ratio 0.545); this would not meet <= 0.4 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "bored holes",
+        "rule_unit_title": "Bored hole size limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_bored_hole_diameter": 3.0,
+          "stud_depth": 5.5,
+          "ratio": 0.545455
+        },
+        "required": [
+          {
+            "parameter": "max_bored_hole_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.4,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true and stud_doubled == false"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_bored_hole_diameter": {
+            "value": 3.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxBoredHoleDiameter"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:bored-hole-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0021",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud notch: 2 in of 5.5 in stud depth (ratio 0.364); this would not meet <= 0.25 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "notches",
+        "rule_unit_title": "Notch depth limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:2lzt6Ub3H1TusZHOaPVArp",
+          "label": "South wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+            "ifc_class": "IfcWall",
+            "name": "South wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              0.06985,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_notch_depth": 2.0,
+          "stud_depth": 5.5,
+          "ratio": 0.363636
+        },
+        "required": [
+          {
+            "parameter": "max_notch_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.25,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_notch_depth": {
+            "value": 2.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "2lzt6Ub3H1TusZHOaPVArp",
+              "ifc_class": "IfcWall",
+              "name": "South wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                0.06985,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxNotchDepth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:notch-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0022",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud notch: 2 in of 5.5 in stud depth (ratio 0.364); this would not meet <= 0.25 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "notches",
+        "rule_unit_title": "Notch depth limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3w5YVxCJr6HAZfjz_lBKzL",
+          "label": "North wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+            "ifc_class": "IfcWall",
+            "name": "North wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              13.716,
+              7.55015,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_notch_depth": 2.0,
+          "stud_depth": 5.5,
+          "ratio": 0.363636
+        },
+        "required": [
+          {
+            "parameter": "max_notch_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.25,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_notch_depth": {
+            "value": 2.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3w5YVxCJr6HAZfjz_lBKzL",
+              "ifc_class": "IfcWall",
+              "name": "North wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                13.716,
+                7.55015,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxNotchDepth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:notch-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0023",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud notch: 2 in of 5.5 in stud depth (ratio 0.364); this would not meet <= 0.25 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "notches",
+        "rule_unit_title": "Notch depth limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3OuvppXKT50O0M$elGRC2S",
+          "label": "West wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+            "ifc_class": "IfcWall",
+            "name": "West wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.06985,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_notch_depth": 2.0,
+          "stud_depth": 5.5,
+          "ratio": 0.363636
+        },
+        "required": [
+          {
+            "parameter": "max_notch_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.25,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_notch_depth": {
+            "value": 2.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3OuvppXKT50O0M$elGRC2S",
+              "ifc_class": "IfcWall",
+              "name": "West wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.06985,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxNotchDepth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:notch-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0024",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:icc:irc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "unknown",
+        "reason_code": "threshold_unverified",
+        "message": "Stud notch: 2 in of 5.5 in stud depth (ratio 0.364); this would not meet <= 0.25 ratio, but that value is UNVERIFIED (not yet checked against the official 2021 text). Reviewer to confirm.",
+        "section": "R602.6",
+        "subsection_part": "notches",
+        "rule_unit_title": "Notch depth limits in studs",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "framed_wall",
+          "id": "ifc:3qrrxNFa5CjP20MxS1BTd8",
+          "label": "East wall",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+            "ifc_class": "IfcWall",
+            "name": "East wall",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              27.36215,
+              3.81,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "max_notch_depth": 2.0,
+          "stud_depth": 5.5,
+          "ratio": 0.363636
+        },
+        "required": [
+          {
+            "parameter": "max_notch_ratio_bearing",
+            "comparator": "<=",
+            "value": 0.25,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "estimate",
+            "source": "source:secondary:louisa-2018-vrc-ch6-handout",
+            "applies_when": "bearing == true"
+          }
+        ],
+        "facts_used": {
+          "bearing": {
+            "value": true,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_WallCommon.LoadBearing"
+          },
+          "stud_depth": {
+            "value": 5.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "dressed depth for the declared nominal size"
+          },
+          "max_notch_depth": {
+            "value": 2.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3qrrxNFa5CjP20MxS1BTd8",
+              "ifc_class": "IfcWall",
+              "name": "East wall",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                27.36215,
+                3.81,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_Framing.MaxNotchDepth"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.6:notch-ratio-max"
+      ],
+      "outcome": "indeterminate",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0025",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "pass",
+        "reason_code": "threshold_met",
+        "message": "Bracing sheathing thickness: 0.4375 in wood_structural_panel >= 0.4375 in.",
+        "section": "R602.12.1",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: sheathing materials and thickness",
+        "check_class": "data_check",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3FgSNa_ZL59RCRXUq5qBCL",
+          "label": "S1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+            "ifc_class": "IfcPlate",
+            "name": "S1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.254,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "sheathing_thickness": 0.4375,
+          "unit": "in",
+          "sheathing_material": "wood_structural_panel"
+        },
+        "required": [
+          {
+            "parameter": "min_thickness_wood_structural_panel",
+            "comparator": ">=",
+            "value": 0.4375,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "sheathing_material == wood_structural_panel"
+          }
+        ],
+        "facts_used": {
+          "sheathing_material": {
+            "value": "wood_structural_panel",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingMaterial"
+          },
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "sheathing_thickness": {
+            "value": 0.4375,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingThickness"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.1:practical-bracing-sheathing"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0026",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Bracing sheathing thickness: 0.375 in wood_structural_panel does not satisfy >= 0.4375 in.",
+        "section": "R602.12.1",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: sheathing materials and thickness",
+        "check_class": "data_check",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:0cA7Q0OPn23BUUS67A8jc6",
+          "label": "S2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+            "ifc_class": "IfcPlate",
+            "name": "S2",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              9.7536,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "sheathing_thickness": 0.375,
+          "unit": "in",
+          "sheathing_material": "wood_structural_panel"
+        },
+        "required": [
+          {
+            "parameter": "min_thickness_wood_structural_panel",
+            "comparator": ">=",
+            "value": 0.4375,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "sheathing_material == wood_structural_panel"
+          }
+        ],
+        "facts_used": {
+          "sheathing_material": {
+            "value": "wood_structural_panel",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingMaterial"
+          },
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "sheathing_thickness": {
+            "value": 0.375,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingThickness"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.1:practical-bracing-sheathing"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0027",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "material_not_permitted",
+        "message": "Gypsum board counts as practical bracing on interior walls only; this panel is exterior.",
+        "section": "R602.12.1",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: sheathing materials and thickness",
+        "check_class": "data_check",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3vAXYkLjzFzvPkPEuZu$gs",
+          "label": "S3",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+            "ifc_class": "IfcPlate",
+            "name": "S3",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              11.1252,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "sheathing_material": "gypsum_board",
+          "panel_location": "exterior"
+        },
+        "required": [],
+        "facts_used": {
+          "sheathing_material": {
+            "value": "gypsum_board",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingMaterial"
+          },
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.1:practical-bracing-sheathing"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0028",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "pass",
+        "reason_code": "threshold_met",
+        "message": "Bracing sheathing thickness: 0.5 in gypsum_board >= 0.5 in.",
+        "section": "R602.12.1",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: sheathing materials and thickness",
+        "check_class": "data_check",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3VdcgTdSj3FQb4MaMcReyh",
+          "label": "I1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+            "ifc_class": "IfcPlate",
+            "name": "I1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              3.5052,
+              3.05435,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "sheathing_thickness": 0.5,
+          "unit": "in",
+          "sheathing_material": "gypsum_board"
+        },
+        "required": [
+          {
+            "parameter": "min_thickness_gypsum_board",
+            "comparator": ">=",
+            "value": 0.5,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "sheathing_material == gypsum_board and location == interior"
+          }
+        ],
+        "facts_used": {
+          "sheathing_material": {
+            "value": "gypsum_board",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+              "ifc_class": "IfcPlate",
+              "name": "I1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                3.5052,
+                3.05435,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingMaterial"
+          },
+          "panel_location": {
+            "value": "interior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+              "ifc_class": "IfcPlate",
+              "name": "I1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                3.5052,
+                3.05435,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "sheathing_thickness": {
+            "value": 0.5,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+              "ifc_class": "IfcPlate",
+              "name": "I1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                3.5052,
+                3.05435,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.SheathingThickness"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.1:practical-bracing-sheathing"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0029",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Exterior braced panel length: 20 in does not satisfy >= 27 in.",
+        "section": "R602.12.2",
+        "subsection_part": "exterior panel length",
+        "rule_unit_title": "Practical bracing: exterior panel length by opening height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3FgSNa_ZL59RCRXUq5qBCL",
+          "label": "S1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+            "ifc_class": "IfcPlate",
+            "name": "S1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.254,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "panel_length": 20.0,
+          "unit": "in",
+          "wall_height_ft": 8.0
+        },
+        "required": [
+          {
+            "parameter": "min_panel_length_8ft_opening_le_72",
+            "comparator": ">=",
+            "value": 27,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "wall_height_ft == 8 and 64 < opening_clear_height_in <= 72"
+          }
+        ],
+        "facts_used": {
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "panel_length": {
+            "value": 20.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body extent along its long plan axis"
+          },
+          "wall_height": {
+            "value": 96.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body vertical extent (full-height panel)"
+          },
+          "adjacent_opening_clear_height": {
+            "value": 70.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+              "ifc_class": "IfcPlate",
+              "name": "S1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                0.254,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.AdjacentOpeningClearHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-exterior-panel-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0030",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "pass",
+        "reason_code": "threshold_met",
+        "message": "Exterior braced panel length: 48 in >= 24 in.",
+        "section": "R602.12.2",
+        "subsection_part": "exterior panel length",
+        "rule_unit_title": "Practical bracing: exterior panel length by opening height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:0cA7Q0OPn23BUUS67A8jc6",
+          "label": "S2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+            "ifc_class": "IfcPlate",
+            "name": "S2",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              9.7536,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "panel_length": 48.0,
+          "unit": "in",
+          "wall_height_ft": 8.0
+        },
+        "required": [
+          {
+            "parameter": "min_panel_length_8ft_opening_le_64",
+            "comparator": ">=",
+            "value": 24,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "wall_height_ft == 8 and opening_clear_height_in <= 64"
+          }
+        ],
+        "facts_used": {
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "panel_length": {
+            "value": 48.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body extent along its long plan axis"
+          },
+          "wall_height": {
+            "value": 96.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body vertical extent (full-height panel)"
+          },
+          "adjacent_opening_clear_height": {
+            "value": 60.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+              "ifc_class": "IfcPlate",
+              "name": "S2",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                9.7536,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.AdjacentOpeningClearHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-exterior-panel-length"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0031",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "pass",
+        "reason_code": "threshold_met",
+        "message": "Exterior braced panel length: 48 in >= 24 in.",
+        "section": "R602.12.2",
+        "subsection_part": "exterior panel length",
+        "rule_unit_title": "Practical bracing: exterior panel length by opening height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3vAXYkLjzFzvPkPEuZu$gs",
+          "label": "S3",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+            "ifc_class": "IfcPlate",
+            "name": "S3",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              11.1252,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "panel_length": 48.0,
+          "unit": "in",
+          "wall_height_ft": 8.0
+        },
+        "required": [
+          {
+            "parameter": "min_panel_length_8ft_opening_le_64",
+            "comparator": ">=",
+            "value": 24,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "wall_height_ft == 8 and opening_clear_height_in <= 64"
+          }
+        ],
+        "facts_used": {
+          "panel_location": {
+            "value": "exterior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "panel_length": {
+            "value": 48.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body extent along its long plan axis"
+          },
+          "wall_height": {
+            "value": 96.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "panel body vertical extent (full-height panel)"
+          },
+          "adjacent_opening_clear_height": {
+            "value": 60.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+              "ifc_class": "IfcPlate",
+              "name": "S3",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                11.1252,
+                0.00635,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.AdjacentOpeningClearHeight"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-exterior-panel-length"
+      ],
+      "outcome": "pass",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0032",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "interior_panel",
+        "message": "Interior panel; the exterior panel-length table does not apply.",
+        "section": "R602.12.2",
+        "subsection_part": "exterior panel length",
+        "rule_unit_title": "Practical bracing: exterior panel length by opening height",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3VdcgTdSj3FQb4MaMcReyh",
+          "label": "I1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+            "ifc_class": "IfcPlate",
+            "name": "I1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              3.5052,
+              3.05435,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-exterior-panel-length"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0033",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "exterior_panel",
+        "message": "Exterior panel; the interior minimum does not apply.",
+        "section": "R602.12.2",
+        "subsection_part": "interior panel length",
+        "rule_unit_title": "Practical bracing: interior panel minimum length",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3FgSNa_ZL59RCRXUq5qBCL",
+          "label": "S1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+            "ifc_class": "IfcPlate",
+            "name": "S1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              0.254,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-interior-panel-length"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0034",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "exterior_panel",
+        "message": "Exterior panel; the interior minimum does not apply.",
+        "section": "R602.12.2",
+        "subsection_part": "interior panel length",
+        "rule_unit_title": "Practical bracing: interior panel minimum length",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:0cA7Q0OPn23BUUS67A8jc6",
+          "label": "S2",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+            "ifc_class": "IfcPlate",
+            "name": "S2",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              9.7536,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-interior-panel-length"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0035",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "exterior_panel",
+        "message": "Exterior panel; the interior minimum does not apply.",
+        "section": "R602.12.2",
+        "subsection_part": "interior panel length",
+        "rule_unit_title": "Practical bracing: interior panel minimum length",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3vAXYkLjzFzvPkPEuZu$gs",
+          "label": "S3",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+            "ifc_class": "IfcPlate",
+            "name": "S3",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              11.1252,
+              0.00635,
+              1.2192
+            ]
+          }
+        },
+        "measured": {},
+        "required": [],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-interior-panel-length"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0036",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Interior braced panel length: 36 in does not satisfy >= 48 in.",
+        "section": "R602.12.2",
+        "subsection_part": "interior panel length",
+        "rule_unit_title": "Practical bracing: interior panel minimum length",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "braced_wall_panel",
+          "id": "ifc:3VdcgTdSj3FQb4MaMcReyh",
+          "label": "I1",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+            "ifc_class": "IfcPlate",
+            "name": "I1",
+            "model": "ori-ch06-fail.ifc",
+            "centroid_m": [
+              3.5052,
+              3.05435,
+              1.2192
+            ]
+          }
+        },
+        "measured": {
+          "panel_length": 36.0,
+          "unit": "in"
+        },
+        "required": [
+          {
+            "parameter": "min_interior_panel_length",
+            "comparator": ">=",
+            "value": 48,
+            "unit": "in",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          }
+        ],
+        "facts_used": {
+          "panel_location": {
+            "value": "interior",
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+              "ifc_class": "IfcPlate",
+              "name": "I1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                3.5052,
+                3.05435,
+                1.2192
+              ]
+            },
+            "note": "Pset_ORI_BracedWallPanel.Location"
+          },
+          "panel_length": {
+            "value": 36.0,
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "3VdcgTdSj3FQb4MaMcReyh",
+              "ifc_class": "IfcPlate",
+              "name": "I1",
+              "model": "ori-ch06-fail.ifc",
+              "centroid_m": [
+                3.5052,
+                3.05435,
+                1.2192
+              ]
+            },
+            "note": "panel body extent along its long plan axis"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-interior-panel-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0037",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Rectangle 90 x 25 ft: longest side 90 ft > 80 ft; aspect ratio 3.60 > 3.",
+        "section": "R602.12.3",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: circumscribed rectangle limits",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst",
+          "label": "Bracing rectangle B",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc"
+          }
+        },
+        "measured": {
+          "sides_ft": [
+            90.0,
+            25.0
+          ],
+          "longest_ft": 90.0,
+          "aspect_ratio": 3.6
+        },
+        "required": [
+          {
+            "parameter": "max_rectangle_side",
+            "comparator": "<=",
+            "value": 80,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          },
+          {
+            "parameter": "max_rectangle_aspect_ratio",
+            "comparator": "<=",
+            "value": 3,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "rectangle_sides": {
+            "value": [
+              90.0,
+              25.0
+            ],
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "Pset_ORI_BracingRectangle.LengthX / LengthY (ft)"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.3:practical-bracing-rectangle-limits"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0038",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Contributing bracing 9.67 ft < required 20.00 ft.",
+        "section": "R602.12.4.2",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: contributing length meets required",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#south",
+          "label": "Bracing rectangle B south side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "south"
+          }
+        },
+        "measured": {
+          "contributing_ft": 9.666667,
+          "required_ft": 20.0,
+          "counted": [
+            {
+              "panel": "S1",
+              "contributes_ft": 1.666667
+            },
+            {
+              "panel": "S2",
+              "contributes_ft": 4.0
+            },
+            {
+              "panel": "S3",
+              "contributes_ft": 4.0
+            }
+          ],
+          "excluded_beyond_4ft": []
+        },
+        "required": [
+          {
+            "parameter": "exterior_panel_contribution",
+            "comparator": "==",
+            "value": 1.0,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == exterior"
+          },
+          {
+            "parameter": "interior_panel_contribution",
+            "comparator": "==",
+            "value": 0.5,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          },
+          {
+            "parameter": "max_interior_panel_assignment_distance",
+            "comparator": "<=",
+            "value": 4,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          }
+        ],
+        "facts_used": {
+          "required_bracing_length": {
+            "value": 20.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "Pset_ORI_BracingRectangle.RequiredBracingAlongX (applicant's table lookup, ft)"
+          },
+          "assigned_panels": {
+            "value": [
+              {
+                "panel": "S1",
+                "ifc_guid": "3FgSNa_ZL59RCRXUq5qBCL",
+                "location": "exterior",
+                "length_ft": 1.666667,
+                "start_ft": 0.0,
+                "end_ft": 1.666667,
+                "distance_from_side_ft": 0.020833
+              },
+              {
+                "panel": "S2",
+                "ifc_guid": "0cA7Q0OPn23BUUS67A8jc6",
+                "location": "exterior",
+                "length_ft": 4.0,
+                "start_ft": 30.0,
+                "end_ft": 34.0,
+                "distance_from_side_ft": 0.020833
+              },
+              {
+                "panel": "S3",
+                "ifc_guid": "3vAXYkLjzFzvPkPEuZu$gs",
+                "location": "exterior",
+                "length_ft": 4.0,
+                "start_ft": 34.5,
+                "end_ft": 38.5,
+                "distance_from_side_ft": 0.020833
+              }
+            ],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "braced wall panels parallel to and on (or, if interior, near) this side"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.4.2:practical-bracing-contributing-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0039",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Contributing bracing 0.00 ft < required 20.00 ft.",
+        "section": "R602.12.4.2",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: contributing length meets required",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#north",
+          "label": "Bracing rectangle B north side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "north"
+          }
+        },
+        "measured": {
+          "contributing_ft": 0.0,
+          "required_ft": 20.0,
+          "counted": [],
+          "excluded_beyond_4ft": []
+        },
+        "required": [
+          {
+            "parameter": "exterior_panel_contribution",
+            "comparator": "==",
+            "value": 1.0,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == exterior"
+          },
+          {
+            "parameter": "interior_panel_contribution",
+            "comparator": "==",
+            "value": 0.5,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          },
+          {
+            "parameter": "max_interior_panel_assignment_distance",
+            "comparator": "<=",
+            "value": 4,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          }
+        ],
+        "facts_used": {
+          "required_bracing_length": {
+            "value": 20.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "Pset_ORI_BracingRectangle.RequiredBracingAlongX (applicant's table lookup, ft)"
+          },
+          "assigned_panels": {
+            "value": [],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "braced wall panels parallel to and on (or, if interior, near) this side"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.4.2:practical-bracing-contributing-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0040",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Contributing bracing 0.00 ft < required 8.00 ft.",
+        "section": "R602.12.4.2",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: contributing length meets required",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#west",
+          "label": "Bracing rectangle B west side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "west"
+          }
+        },
+        "measured": {
+          "contributing_ft": 0.0,
+          "required_ft": 8.0,
+          "counted": [],
+          "excluded_beyond_4ft": []
+        },
+        "required": [
+          {
+            "parameter": "exterior_panel_contribution",
+            "comparator": "==",
+            "value": 1.0,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == exterior"
+          },
+          {
+            "parameter": "interior_panel_contribution",
+            "comparator": "==",
+            "value": 0.5,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          },
+          {
+            "parameter": "max_interior_panel_assignment_distance",
+            "comparator": "<=",
+            "value": 4,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          }
+        ],
+        "facts_used": {
+          "required_bracing_length": {
+            "value": 8.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "Pset_ORI_BracingRectangle.RequiredBracingAlongY (applicant's table lookup, ft)"
+          },
+          "assigned_panels": {
+            "value": [],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "braced wall panels parallel to and on (or, if interior, near) this side"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.4.2:practical-bracing-contributing-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0041",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Contributing bracing 0.00 ft < required 8.00 ft.",
+        "section": "R602.12.4.2",
+        "subsection_part": null,
+        "rule_unit_title": "Practical bracing: contributing length meets required",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#east",
+          "label": "Bracing rectangle B east side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "east"
+          }
+        },
+        "measured": {
+          "contributing_ft": 0.0,
+          "required_ft": 8.0,
+          "counted": [],
+          "excluded_beyond_4ft": []
+        },
+        "required": [
+          {
+            "parameter": "exterior_panel_contribution",
+            "comparator": "==",
+            "value": 1.0,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == exterior"
+          },
+          {
+            "parameter": "interior_panel_contribution",
+            "comparator": "==",
+            "value": 0.5,
+            "unit": "ratio",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          },
+          {
+            "parameter": "max_interior_panel_assignment_distance",
+            "comparator": "<=",
+            "value": 4,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210",
+            "applies_when": "location == interior"
+          }
+        ],
+        "facts_used": {
+          "required_bracing_length": {
+            "value": 8.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "Pset_ORI_BracingRectangle.RequiredBracingAlongY (applicant's table lookup, ft)"
+          },
+          "assigned_panels": {
+            "value": [],
+            "origin": "ifc_geometry",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "braced wall panels parallel to and on (or, if interior, near) this side"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.4.2:practical-bracing-contributing-length"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0042",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Nearest panel edge is 51.50 ft from a rectangle corner (> 12 ft).",
+        "section": "R602.12.6",
+        "subsection_part": "corner distance",
+        "rule_unit_title": "Practical bracing: panel near each corner",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#south",
+          "label": "Bracing rectangle B south side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "south"
+          }
+        },
+        "measured": {
+          "side_length_ft": 90.0,
+          "edge_to_start_corner_ft": 0.0,
+          "edge_to_end_corner_ft": 51.5
+        },
+        "required": [
+          {
+            "parameter": "max_panel_edge_to_corner",
+            "comparator": "<=",
+            "value": 12,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "side_length": {
+            "value": 90.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "rectangle side length (ft)"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-corner-distance"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0043",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "No exterior braced panel on this 90 ft side, so no panel edge is within 12 ft of its corners.",
+        "section": "R602.12.6",
+        "subsection_part": "corner distance",
+        "rule_unit_title": "Practical bracing: panel near each corner",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#north",
+          "label": "Bracing rectangle B north side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "north"
+          }
+        },
+        "measured": {
+          "side_length_ft": 90.0,
+          "panels": 0
+        },
+        "required": [
+          {
+            "parameter": "max_panel_edge_to_corner",
+            "comparator": "<=",
+            "value": 12,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "side_length": {
+            "value": 90.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "rectangle side length (ft)"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-corner-distance"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0044",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "No exterior braced panel on this 25 ft side, so no panel edge is within 12 ft of its corners.",
+        "section": "R602.12.6",
+        "subsection_part": "corner distance",
+        "rule_unit_title": "Practical bracing: panel near each corner",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#west",
+          "label": "Bracing rectangle B west side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "west"
+          }
+        },
+        "measured": {
+          "side_length_ft": 25.0,
+          "panels": 0
+        },
+        "required": [
+          {
+            "parameter": "max_panel_edge_to_corner",
+            "comparator": "<=",
+            "value": 12,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "side_length": {
+            "value": 25.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "rectangle side length (ft)"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-corner-distance"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0045",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "No exterior braced panel on this 25 ft side, so no panel edge is within 12 ft of its corners.",
+        "section": "R602.12.6",
+        "subsection_part": "corner distance",
+        "rule_unit_title": "Practical bracing: panel near each corner",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#east",
+          "label": "Bracing rectangle B east side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "east"
+          }
+        },
+        "measured": {
+          "side_length_ft": 25.0,
+          "panels": 0
+        },
+        "required": [
+          {
+            "parameter": "max_panel_edge_to_corner",
+            "comparator": "<=",
+            "value": 12,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {
+          "side_length": {
+            "value": 25.0,
+            "origin": "ifc_property",
+            "anchor": {
+              "type": "ifc_element",
+              "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+              "ifc_class": "IfcAnnotation",
+              "name": "Bracing rectangle B",
+              "model": "ori-ch06-fail.ifc"
+            },
+            "note": "rectangle side length (ft)"
+          }
+        },
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-corner-distance"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0046",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "fail",
+        "reason_code": "threshold_not_met",
+        "message": "Gap of 28.33 ft between adjacent panel edges exceeds 20 ft.",
+        "section": "R602.12.6",
+        "subsection_part": "panel gap",
+        "rule_unit_title": "Practical bracing: gap between adjacent panels",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#south",
+          "label": "Bracing rectangle B south side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "south"
+          }
+        },
+        "measured": {
+          "gaps_ft": [
+            28.333333,
+            0.5
+          ],
+          "worst_ft": 28.333333
+        },
+        "required": [
+          {
+            "parameter": "max_panel_edge_gap",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-panel-gap"
+      ],
+      "outcome": "fail",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0047",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "fewer_than_two_panels",
+        "message": "Fewer than two exterior panels on this side; the corner-distance unit governs.",
+        "section": "R602.12.6",
+        "subsection_part": "panel gap",
+        "rule_unit_title": "Practical bracing: gap between adjacent panels",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#north",
+          "label": "Bracing rectangle B north side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "north"
+          }
+        },
+        "measured": {},
+        "required": [
+          {
+            "parameter": "max_panel_edge_gap",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-panel-gap"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0048",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "fewer_than_two_panels",
+        "message": "Fewer than two exterior panels on this side; the corner-distance unit governs.",
+        "section": "R602.12.6",
+        "subsection_part": "panel gap",
+        "rule_unit_title": "Practical bracing: gap between adjacent panels",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#west",
+          "label": "Bracing rectangle B west side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "west"
+          }
+        },
+        "measured": {},
+        "required": [
+          {
+            "parameter": "max_panel_edge_gap",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-panel-gap"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    },
+    {
+      "id": "urn:ori:verification:eeefd935cbe008b8:0049",
+      "type": "Verification",
+      "version": "1",
+      "effective_from": null,
+      "effective_to": null,
+      "jurisdiction": [
+        "urn:ori:jurisdiction:us-va"
+      ],
+      "source": [
+        "source:icc:vrc-2021",
+        "source:va:13vac5-63-210",
+        "source:va:codes-2021-effective"
+      ],
+      "derived_from": [],
+      "supersedes": [],
+      "metadata": {
+        "label": "Reviewer evidence, not approval",
+        "legal_boundary": "Machine verification output is reviewer evidence. It is not a permit decision, not approval, and not a statement of the law. The adopted code (here the 2021 Virginia Residential Code under the USBC) and the building official govern.",
+        "is_approval": false,
+        "result_state": "not_applicable",
+        "reason_code": "fewer_than_two_panels",
+        "message": "Fewer than two exterior panels on this side; the corner-distance unit governs.",
+        "section": "R602.12.6",
+        "subsection_part": "panel gap",
+        "rule_unit_title": "Practical bracing: gap between adjacent panels",
+        "check_class": "geometric_deterministic",
+        "subject": {
+          "kind": "bracing_rectangle_side",
+          "id": "ifc:0Wn2wxZUP2EBeJqwyZIwst#east",
+          "label": "Bracing rectangle B east side",
+          "anchor": {
+            "type": "ifc_element",
+            "ifc_guid": "0Wn2wxZUP2EBeJqwyZIwst",
+            "ifc_class": "IfcAnnotation",
+            "name": "Bracing rectangle B",
+            "model": "ori-ch06-fail.ifc",
+            "side": "east"
+          }
+        },
+        "measured": {},
+        "required": [
+          {
+            "parameter": "max_panel_edge_gap",
+            "comparator": "<=",
+            "value": 20,
+            "unit": "ft",
+            "layer": "us-va:vrc-2021",
+            "value_status": "sourced_primary",
+            "source": "source:va:13vac5-63-210"
+          }
+        ],
+        "facts_used": {},
+        "layers_applied": [
+          "base:irc-2021",
+          "us-va:vrc-2021"
+        ],
+        "run_id": "eeefd935cbe008b8"
+      },
+      "validator": "urn:ori:validator:ori-verify",
+      "validator_version": "0.1.0",
+      "inputs": [
+        "urn:ori:artifact:sha256:b6fb8e9156a79e2b8fcf5d1505e3e99fa67de515e6c45a3b474b92804abf9a36"
+      ],
+      "requirements": [
+        "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-panel-gap"
+      ],
+      "outcome": "not-applicable",
+      "evidence": [
+        "urn:ori:evidence:eeefd935cbe008b8:input"
+      ],
+      "executed_at": "2026-09-27T12:00:00Z",
+      "determinism": "deterministic"
+    }
+  ]
+}

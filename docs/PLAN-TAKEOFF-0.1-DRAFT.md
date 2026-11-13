@@ -107,7 +107,7 @@ replaces). Confidences are **uncalibrated heuristic scores**, not probabilities.
 |---|---|---|
 | Vector PDF | pdfplumber (MIT): lines, rects, curves with path commands, characters | Bézier runs are fitted to circles (door swings). Characters are grouped into text runs along their writing direction, so rotated dimension text works |
 | DXF | ezdxf (MIT): LINE, LWPOLYLINE, POLYLINE, ARC, TEXT, MTEXT, DIMENSION, INSERT (exploded) | Units from `$INSUNITS`. Layer names matching `WALL` mark wall candidates |
-| Raster PDF / images | none | Page `kind: raster`, `status: needs_tracing`, no elements. Out of scope for v0.1 |
+| Raster PDF / images | none | Page `kind: raster`, `status: needs_tracing`, no elements. A separate recognition track (unverified output, never IFC) is in [`RASTER-TAKEOFF-0.1-DRAFT.md`](RASTER-TAKEOFF-0.1-DRAFT.md) |
 | DWG | none | Needs a converter; the common one is proprietary (survey §6) |
 
 PyMuPDF (AGPL) is not used. No GPL floor-plan code and no NonCommercial data is used.
@@ -284,3 +284,14 @@ Third-party candidate plan sources are tracked outside this repository. None was
   `conformance/negative/plan-overlay-noncommercial-license.json`, `conformance/negative/plan-overlay-unreviewed-unlicensed.json`
 * `verification/examples/takeoff/` (sample plan, ground truth, overlays, previews, accuracy, IFC, check reports, COCO, GeoJSON)
 * `docs/PLAN-TRAINING-SET-WORKFLOW-DRAFT.md`
+
+## Provenance policy (2026-10-12)
+
+**Provenance policy lives in the extractor (2026-10-12).** `ori_verify.ifc_extract.IfcFacts._takeoff_policy`
+reads `Pset_ORI_Takeoff` on every subject: placeholder heights (`HeightSource=placeholder_not_from_plan`)
+are removed, so height rules give `unknown`; elements whose `ReviewStatus` is not reviewed/accepted/
+corrected/confirmed (missing or unrecognised values included, fail closed) have their facts relabelled
+`vector_extracted_unconfirmed`, so rules give `unknown`. Authored ground-truth IFCs stay usable.
+`ori_verify.cli ifc` and `ori_takeoff ifc --check` now give the same counts. `ori_verify.cli ifc` exits 2
+(strict, default; `--no-strict` to disable) if a pass ever rests on unconfirmed takeoff facts.
+`ori_takeoff gate` (training-set admission) already exits 1 on unreviewed labels and is unchanged.

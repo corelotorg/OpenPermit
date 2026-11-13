@@ -1,0 +1,15 @@
+{
+  "rubric_version": "ori-interpretability-0.1",
+  "scored_at": "2026-10-12",
+  "scoring_status_default": "estimate",
+  "pre_scorer": "ORI automated drafting agent (pre-score; not a human review)",
+  "scored_text_source": "source:va:13vac5-63-210",
+  "note": "Pre-scores only for Virginia units whose text ORI fetched (13VAC5-63-210 items 62-64). No determinations were searched for Chapter 6; evidence_strength is none_found by construction. Two independent human reviewers are needed.",
+  "scores": {
+    "urn:ori:rule-unit:irc2021-va:R602.10": {"score": "intent_dependent", "rationale": "The official may require braced wall lines and analysis on the drawings; when that power is used, and what analysis suffices, is left to the official.", "intent_questions": ["What bracing documentation triggers the official's request?"]},
+    "urn:ori:rule-unit:irc2021-va:R602.12.2:practical-bracing-exterior-panel-length": {"score": "clear", "rationale": "Numeric minimum lengths keyed to wall height and opening height; interpolation is permitted between listed values."},
+    "urn:ori:rule-unit:irc2021-va:R602.12.3:practical-bracing-rectangle-limits": {"score": "ambiguous_term", "rationale": "The numeric limits are clear, but which projections a rectangle must enclose depends on terms such as partial height projections.", "ambiguous_terms": [{"term": "partial height projections", "defined_in_code": false, "issue": "Which projections count as partial height is not measured; a reviewer decides whether a bay or porch is inside the rectangle."}]},
+    "urn:ori:rule-unit:irc2021-va:R602.12.6:practical-bracing-corner-distance": {"score": "clear", "rationale": "A single numeric limit measured from building or rectangle corners."},
+    "urn:ori:rule-unit:irc2021-va:R602.12.4.2:practical-bracing-contributing-length": {"score": "clear", "rationale": "Exterior panels count at actual length and interior panels at half; the required length comes from the applicant's table lookup."}
+  }
+}

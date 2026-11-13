@@ -19,7 +19,7 @@ from pathlib import Path
 HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(HERE.parent))
 
-from ori_verify import bcf, cli, ifc_fixtures, pdf_extract, pdf_manifest  # noqa: E402
+from ori_verify import bcf, cli, framing_fixtures, ifc_fixtures, pdf_extract, pdf_manifest  # noqa: E402
 from ori_verify.records import dumps  # noqa: E402
 from ori_verify.synthetic_pdf import make_text_pdf  # noqa: E402
 
@@ -74,6 +74,17 @@ def main(regen_ifc: bool = False) -> None:
         report["artifact"]["filename"] = p.name
         (rep_dir / f"ifc-{name}.report.json").write_text(dumps(report), encoding="utf-8")
     bcf.write_bcf(json.loads((rep_dir / "ifc-fail.report.json").read_text()), rep_dir / "ifc-fail.bcf")
+
+    # Chapter 6 framing and bracing fixtures (SYNTHETIC; CC0, see LICENSE-SPEC.md).
+    ch06_dir = HERE / "ch06"
+    ch06_dir.mkdir(parents=True, exist_ok=True)
+    for name, fn in framing_fixtures.MODELS.items():
+        p = ch06_dir / f"ori-ch06-{name}.ifc"
+        if regen_ifc or not p.exists():
+            framing_fixtures.write(fn(), p, f"ORI synthetic framing fixture ({name})")
+        report = cli.run_ifc(p, executed_at=FIXED_TIME)
+        report["artifact"]["filename"] = p.name
+        (rep_dir / f"ifc-ch06-{name}.report.json").write_text(dumps(report), encoding="utf-8")
 
     v1 = make_text_pdf(pdf_dir / "synthetic-plans-v1.pdf", PAGES_V1, pdfa_claim=(2, "B"), page_labels=["A-101", "A-301"])
     v2 = make_text_pdf(pdf_dir / "synthetic-plans-v2.pdf", PAGES_V2, page_labels=["A-101", "A-301"])
