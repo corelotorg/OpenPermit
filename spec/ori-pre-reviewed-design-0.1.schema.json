@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-pre-reviewed-design-0.1.schema.json",
+  "title": "ORI Pre-Reviewed Design Record v0.1 Draft",
+  "description": "Records that an authority reviewed a design in advance, under which rule set and editions, for how long, and which site-specific review still remains. Bound to one model version and linked to the authority's core Decision. The record is evidence; the linked Decision is the authority's act. See spec/pre-reviewed-design-0.1-draft.md.",
+  "type": "object",
+  "required": [
+    "record_profile",
+    "id",
+    "type",
+    "label",
+    "is_approval",
+    "design",
+    "reviewed_by_authority",
+    "decision_ref",
+    "rule_set",
+    "validity",
+    "site_specific_review_remaining",
+    "status",
+    "as_of"
+  ],
+  "properties": {
+    "record_profile": {
+      "const": "ori-pre-reviewed-design-0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ori:prereviewed:"
+    },
+    "type": {
+      "const": "PreReviewedDesign"
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "design": {
+      "type": "object",
+      "required": [
+        "title",
+        "model_version"
+      ],
+      "properties": {
+        "title": {
+          "type": "string",
+          "maxLength": 120
+        },
+        "model_version": {
+          "$ref": "#/$defs/modelVersion"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewed_by_authority": {
+      "type": "string",
+      "pattern": "^urn:ori:authority:"
+    },
+    "decision_ref": {
+      "type": "string",
+      "pattern": "^urn:ori:decision:"
+    },
+    "rule_set": {
+      "type": "object",
+      "required": [
+        "jurisdiction",
+        "editions"
+      ],
+      "properties": {
+        "jurisdiction": {
+          "type": "string",
+          "pattern": "^urn:ori:jurisdiction:"
+        },
+        "editions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "source",
+              "edition"
+            ],
+            "properties": {
+              "source": {
+                "type": "string"
+              },
+              "edition": {
+                "type": "string"
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "local_amendments": {
+          "anyOf": [
+            {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "validity": {
+      "type": "object",
+      "required": [
+        "valid_from",
+        "valid_until"
+      ],
+      "properties": {
+        "valid_from": {
+          "type": "string",
+          "format": "date"
+        },
+        "valid_until": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date"
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "site_specific_review_remaining": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "siting_and_setbacks",
+          "foundation_and_soils",
+          "utility_connections",
+          "flood_and_drainage",
+          "wind_snow_seismic_exposure",
+          "fire_access",
+          "zoning_conformance",
+          "local_amendments",
+          "energy_climate_zone",
+          "unknown"
+        ]
+      }
+    },
+    "status": {
+      "enum": [
+        "current",
+        "expired",
+        "withdrawn",
+        "superseded",
+        "unknown"
+      ]
+    },
+    "as_of": {
+      "type": "string",
+      "format": "date"
+    },
+    "supersedes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^urn:ori:prereviewed:"
+      }
+    },
+    "uses": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "application_ref",
+          "model_version"
+        ],
+        "properties": {
+          "application_ref": {
+            "type": "string",
+            "pattern": "^urn:ori:application:"
+          },
+          "model_version": {
+            "$ref": "#/$defs/modelVersion"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "modelVersion": {
+      "type": "object",
+      "required": [
+        "sha256"
+      ],
+      "properties": {
+        "artifact_id": {
+          "type": "string",
+          "pattern": "^urn:ori:artifact:sha256:[0-9a-f]{64}$"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "label": {
+          "type": "string",
+          "maxLength": 80
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

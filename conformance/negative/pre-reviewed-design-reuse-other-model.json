@@ -1,0 +1,52 @@
+{
+  "id": "ori:test:negative:pre-reviewed-design-reuse-other-model",
+  "rule": "pre-reviewed-design-record",
+  "expected": "fail",
+  "description": "Reuse cites a different model version; pre-review does not carry over. Synthetic test data (#140 draft).",
+  "objects": [
+    {
+      "record_profile": "ori-pre-reviewed-design-0.1",
+      "id": "urn:ori:prereviewed:test-plan-a",
+      "type": "PreReviewedDesign",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "design": {
+        "title": "Synthetic two-bedroom plan A",
+        "model_version": {
+          "sha256": "af57acaef9d61cca0948397d59a90552c85f39a936b489332520b0eb37a60628"
+        }
+      },
+      "reviewed_by_authority": "urn:ori:authority:example-county",
+      "decision_ref": "urn:ori:decision:example-county:prd-1",
+      "rule_set": {
+        "jurisdiction": "urn:ori:jurisdiction:example-county",
+        "editions": [
+          {
+            "source": "source:example:residential-code",
+            "edition": "2021"
+          }
+        ],
+        "local_amendments": "unknown"
+      },
+      "validity": {
+        "valid_from": "2026-01-01",
+        "valid_until": "2028-12-31"
+      },
+      "site_specific_review_remaining": [
+        "siting_and_setbacks",
+        "foundation_and_soils",
+        "utility_connections"
+      ],
+      "status": "current",
+      "as_of": "2026-10-26",
+      "uses": [
+        {
+          "application_ref": "urn:ori:application:test-lot-7",
+          "model_version": {
+            "sha256": "df47ffaaf6036304b161def9f0fc30d35cdd14822fe0ebaeae1779d170be4518"
+          }
+        }
+      ]
+    }
+  ]
+}
