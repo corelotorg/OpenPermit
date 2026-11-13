@@ -1,0 +1,33 @@
+{
+  "id": "ori:test:negative:evidence-georeference-identified-without-tie",
+  "rule": "evidence-attestation-record",
+  "expected": "fail",
+  "description": "Georeference claims crs_identified with no conversion from model coordinates. Synthetic test data (evidence-attestation and model-georeference v0.1 drafts): fictional model, CRS identifier and coordinates; not a real site, survey, EPSG code or inspection.",
+  "objects": [
+    {
+      "record_profile": "ori-model-georeference-0.1",
+      "id": "urn:ori:model-georeference:synthetic-a",
+      "type": "ModelGeoreference",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "model_version": {
+        "sha256": "8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3",
+        "artifact_id": "urn:ori:artifact:sha256:8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3"
+      },
+      "status": "crs_identified",
+      "source": "hosted_model_record",
+      "source_ref": "urn:ori:artifact:synthetic-control-record-1",
+      "crs": {
+        "identifier": "urn:ori:example:crs:synthetic-projected-a",
+        "geodetic_datum": "synthetic-datum-a",
+        "vertical_datum": "unknown"
+      },
+      "map_conversion": "unknown",
+      "horizontal_accuracy_m": 0.05,
+      "vertical_accuracy_m": "unknown",
+      "verification_status": "declared",
+      "established_by_role": "design_professional",
+      "established_at": "2026-11-12T20:00:00-05:00"
+    }
+  ]
+}

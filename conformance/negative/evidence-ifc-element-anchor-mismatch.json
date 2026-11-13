@@ -1,0 +1,110 @@
+{
+  "id": "ori:test:negative:evidence-ifc-element-anchor-mismatch",
+  "rule": "evidence-attestation-record",
+  "expected": "fail",
+  "description": "Match names a different element than the ifc_element anchor. Synthetic test data (evidence-attestation and model-georeference v0.1 drafts): fictional model, CRS identifier and coordinates; not a real site, survey, EPSG code or inspection.",
+  "objects": [
+    {
+      "record_profile": "ori-model-georeference-0.1",
+      "id": "urn:ori:model-georeference:synthetic-a",
+      "type": "ModelGeoreference",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "model_version": {
+        "sha256": "8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3",
+        "artifact_id": "urn:ori:artifact:sha256:8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3"
+      },
+      "status": "crs_identified",
+      "source": "hosted_model_record",
+      "source_ref": "urn:ori:artifact:synthetic-control-record-1",
+      "crs": {
+        "identifier": "urn:ori:example:crs:synthetic-projected-a",
+        "geodetic_datum": "synthetic-datum-a",
+        "vertical_datum": "unknown"
+      },
+      "map_conversion": {
+        "eastings": 5000.0,
+        "northings": 7000.0,
+        "orthogonal_height": 100.0,
+        "x_axis_abscissa": 1.0,
+        "x_axis_ordinate": 0.0,
+        "scale": 1.0,
+        "model_length_unit": "m"
+      },
+      "horizontal_accuracy_m": 0.05,
+      "vertical_accuracy_m": "unknown",
+      "verification_status": "declared",
+      "established_by_role": "design_professional",
+      "established_at": "2026-11-12T20:00:00-05:00"
+    },
+    {
+      "record_profile": "ori-evidence-attestation-0.1",
+      "id": "urn:ori:evidence:synthetic-photo-1",
+      "type": "Evidence",
+      "label": "Reviewer evidence, not approval",
+      "is_approval": false,
+      "artifact": "urn:ori:artifact:sha256:3a387fbcd4967e2df0bfc2bb56efdbbda6fe5d7ff307ad0bc701e005d8fd243b",
+      "captured_at": "2026-11-12T15:30:00-05:00",
+      "captured_by": "urn:ori:device:synthetic-camera-1",
+      "spatial_anchor": {
+        "type": "ifc_element",
+        "value": {
+          "ifc_global_id": "0SynthWallElement00001",
+          "model_version": {
+            "sha256": "8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3"
+          }
+        }
+      },
+      "integrity": {
+        "algorithm": "sha256",
+        "digest": "3a387fbcd4967e2df0bfc2bb56efdbbda6fe5d7ff307ad0bc701e005d8fd243b"
+      },
+      "provenance": {
+        "software": "synthetic-capture-app 0.1",
+        "acquisition_method": "photo",
+        "transformation_chain": []
+      },
+      "attestations": [
+        "urn:ori:attestation:synthetic-capture-sig-1"
+      ],
+      "geo_attestation": {
+        "claimed_location": {
+          "coordinates": [
+            5012.4,
+            7003.1
+          ]
+        },
+        "observed_location": {
+          "coordinates": [
+            5012.6,
+            7003.0,
+            101.2
+          ]
+        },
+        "crs": "urn:ori:example:crs:synthetic-projected-a",
+        "horizontal_accuracy_m": 0.5,
+        "vertical_accuracy_m": "unknown",
+        "location_source": "os",
+        "time_source": "network",
+        "resolved_parcel_ref": "unknown"
+      },
+      "element_location_match": {
+        "ifc_global_id": "1SynthWallElement00002",
+        "model_version": {
+          "sha256": "8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3"
+        },
+        "model_georeference": {
+          "ref": "urn:ori:model-georeference:synthetic-a",
+          "status": "crs_identified",
+          "model_version": {
+            "sha256": "8c2bcb507cbdf9ddc7996b33f6aca50facfd5d8f9a095979de6352f25d8f68f3"
+          }
+        },
+        "location_used": "observed_location",
+        "tolerance_m": 1.0,
+        "method": "computed",
+        "match": "consistent"
+      }
+    }
+  ]
+}
