@@ -1,0 +1,15 @@
+{
+  "profile": "ori-inspection-request-0.1",
+  "kind": "InspectionEvent",
+  "event_id": "urn:ori:inspection-event:example-city:2026-000123:footing:1:result",
+  "request_id": "urn:ori:inspection-request:example-city:2026-000123:footing:1",
+  "authority_inspection_id": "INSP-55501",
+  "status": "completed",
+  "native_status": {"code": "RESULTED", "label": "Resulted"},
+  "occurred_at": "2026-11-06T10:40:00Z",
+  "recorded_by": {"id": "urn:ori:jurisdiction:example-city"},
+  "inspector": {"name": "Example Inspector"},
+  "result": "disapproved",
+  "native_result": {"code": "FAIL", "label": "Failed - Reinspection Required"},
+  "corrections": ["Rebar clearance to soil below the specified minimum at the north wall."]
+}

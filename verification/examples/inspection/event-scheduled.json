@@ -1,0 +1,12 @@
+{
+  "profile": "ori-inspection-request-0.1",
+  "kind": "InspectionEvent",
+  "event_id": "urn:ori:inspection-event:example-city:2026-000123:footing:1:scheduled",
+  "request_id": "urn:ori:inspection-request:example-city:2026-000123:footing:1",
+  "authority_inspection_id": "INSP-55501",
+  "status": "scheduled",
+  "native_status": {"code": "SCHED", "label": "Scheduled"},
+  "occurred_at": "2026-11-04T16:20:00Z",
+  "recorded_by": {"id": "urn:ori:jurisdiction:example-city"},
+  "scheduled_window": {"date": "2026-11-06", "start_time": "08:00", "end_time": "12:00"}
+}
