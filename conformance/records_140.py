@@ -1,10 +1,11 @@
-"""Draft semantic checks for the review-comment record (issue #140; review comment v0.2). Each check validates
-the record schema, then the invariants the schema alone cannot express. A review comment is reviewer evidence,
-not an approval."""
+"""Draft semantic checks for the review-comment and status-and-clock records (issue #140; review comment v0.2,
+status clock v0.1). Each check validates the record schema, then the invariants the schema alone cannot express.
+Both records are reviewer evidence; neither is an approval."""
 from __future__ import annotations
 
 import json
 import re
+from datetime import datetime
 from pathlib import Path
 from typing import Any
 
@@ -15,6 +16,7 @@ ROOT = Path(__file__).resolve().parents[1]
 _SCHEMAS = {
     "ori-review-comment-0.2": ROOT / "spec" / "ori-review-comment-0.2.schema.json",
     "ori-review-comment-event-0.2": ROOT / "spec" / "ori-review-comment-event-0.2.schema.json",
+    "ori-status-clock-0.1": ROOT / "spec" / "ori-status-clock-0.1.schema.json",
 }
 _validators: dict[str, Draft202012Validator] = {}
 
@@ -27,6 +29,7 @@ ROLES = ("plan_reviewer", "building_official", "fire_reviewer", "zoning_reviewer
          "inspector", "applicant", "design_professional", "other")
 _REVIEWER_ROLES = {"plan_reviewer", "building_official", "fire_reviewer", "zoning_reviewer", "third_party_reviewer"}
 _SPECIFIC_ANCHORS = {"element", "spatial", "code_section"}
+_AUTHORITY_ROLES = {"building_official", "authority"}
 
 
 def _registry() -> Registry:
@@ -107,5 +110,70 @@ def review_comment_record(case: dict[str, Any]) -> list[str]:
                 errors.append(f"{cid}: only a reviewer role can resolve a comment; the applicant answers")
             if res.get("model_version", {}).get("sha256") == (c.get("model_version") or {}).get("sha256"):
                 errors.append(f"{cid}: resolution must cite the resubmitted model version, not the one commented on")
+    return errors
+
+
+_CLOCK_NEXT = {
+    "clock_started": {"not_started"},
+    "clock_paused": {"running"},
+    "clock_resumed": {"paused"},
+    "clock_stopped": {"running", "paused"},
+    "clock_deemed": {"running"},
+}
+_CLOCK_STATE = {"clock_started": "running", "clock_paused": "paused", "clock_resumed": "running",
+                "clock_stopped": "stopped", "clock_deemed": "deemed"}
+
+
+def _dt(s: str) -> datetime | None:
+    try:
+        return datetime.fromisoformat(s.replace("Z", "+00:00"))
+    except (TypeError, ValueError):
+        return None
+
+
+def status_clock_record(case: dict[str, Any]) -> list[str]:
+    recs = _of(case, "ori-status-clock-0.1")
+    if not recs:
+        return ["no ori-status-clock-0.1 objects in case"]
+    errors: list[str] = []
+    for r in recs:
+        schema = _schema_errors(r, "ori-status-clock-0.1")
+        errors += schema
+        if schema:
+            continue
+        rid, events, clock = r["id"], r["events"], r["clock"]
+        if [e["seq"] for e in events] != list(range(1, len(events) + 1)):
+            errors.append(f"{rid}: event seq must run 1..n with no gaps or reordering (append-only)")
+        times = [_dt(e["at"]) for e in events]
+        if any(a and b and b < a for a, b in zip(times, times[1:])):
+            errors.append(f"{rid}: event times go backwards; history is append-only")
+        state = "not_started"
+        for e in events:
+            et = e["event_type"]
+            if et in _CLOCK_NEXT:
+                if state not in _CLOCK_NEXT[et]:
+                    errors.append(f"{rid}: seq {e['seq']}: {et} not allowed while clock is {state}")
+                state = _CLOCK_STATE[et]
+            if et == "clock_paused" and e.get("reason") in (None, "none"):
+                errors.append(f"{rid}: seq {e['seq']}: a pause must give a reason (or 'unknown')")
+            if et == "decision_recorded":
+                if not e.get("decision_ref"):
+                    errors.append(f"{rid}: seq {e['seq']}: decision_recorded must link a core Decision")
+                if e["actor_role"] not in _AUTHORITY_ROLES:
+                    errors.append(f"{rid}: seq {e['seq']}: only the authority records a Decision")
+            elif e.get("decision_ref"):
+                errors.append(f"{rid}: seq {e['seq']}: only decision_recorded may carry a decision_ref")
+            if et == "clock_deemed" and e["actor_role"] != "system" and e["actor_role"] not in _AUTHORITY_ROLES:
+                errors.append(f"{rid}: seq {e['seq']}: clock_deemed is recorded by the system or the authority")
+        profile_known = clock["parameters_source"]["profile_ref"] != "unknown"
+        if not profile_known:
+            for k in ("duration_days", "day_basis", "deemed_outcome"):
+                if clock[k] != "unknown":
+                    errors.append(f"{rid}: clock.{k} given without a jurisdiction profile; must be 'unknown'")
+        if clock["state"] == "deemed" or state == "deemed":
+            if not profile_known or clock["deemed_outcome"] in ("none", "unknown") or clock["duration_days"] == "unknown":
+                errors.append(f"{rid}: clock cannot be deemed without known profile parameters and a deemed outcome")
+        if clock["state"] != "unknown" and clock["state"] != state:
+            errors.append(f"{rid}: clock.state {clock['state']!r} does not match event history ({state!r})")
     return errors
 

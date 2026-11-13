@@ -433,6 +433,10 @@ def _review_comment_record(case: dict[str, Any]) -> list[str]:
     return _records_140().review_comment_record(case)
 
 
+def _status_clock_record(case: dict[str, Any]) -> list[str]:
+    return _records_140().status_clock_record(case)
+
+
 RULES = {
     "plan-overlay-training-gate": _plan_overlay_training_gate,
     "open-corpora-manifest": _open_corpora_manifest,
@@ -448,6 +452,7 @@ RULES = {
     "challenge-target-immutable": _challenge_target_immutable,
     "precedence-graph-acyclic": _precedence_graph_acyclic,
     "review-comment-record": _review_comment_record,
+    "status-clock-record": _status_clock_record,
 }
 
 
