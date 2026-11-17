@@ -35,6 +35,21 @@ Append a response/disposition to a Challenge while preserving the target, origin
 ### `ori.list_profiles`
 List available jurisdiction, regulatory, guidance, conformance and interoperability profiles with status, source authority and versions. Implementations may expose jurisdiction inventories through this operation or through separately discoverable inventory collections, but discovery behavior must be explicit.
 
+## Hosted model georeference (optional, read-only)
+
+An implementation that hosts model versions for review MAY describe how each version ties to the world with a `ModelGeoreference` record (`spec/ori-model-georeference-0.1.schema.json`, DRAFT). This adds no new operation: the record is an ordinary addressable object (`urn:ori:model-georeference:...`) returned by `ori.get`, and `ori.capabilities` states whether the implementation publishes such records. Nothing here lets a client change a model or its georeference.
+
+One record describes one hosted model version, named by `model_version.sha256`. It carries:
+
+- `status`: `crs_identified` (an identified world CRS plus a conversion from model coordinates), `local_only` (only a project-local engineering system, a system without an authority identifier, or no conversion to it), `none`, or `unknown`;
+- `source`: `model_file` when the model file itself states an identified CRS (for IFC, a map conversion to a projected CRS that carries an authority identifier), `hosted_model_record` when the tie is kept beside the model, for example from a site survey, or `unknown`;
+- `crs.identifier`, `crs.geodetic_datum`, `crs.vertical_datum`, each exactly as the source states it, or `unknown`;
+- `map_conversion`: eastings, northings, orthogonal height, x-axis abscissa and ordinate, scale, and the model length unit, using IFC's attribute names only, or `unknown`;
+- optional `native_crs_name`, the model's own name for a local system, which is never treated as an identifier;
+- accuracy, `verification_status` (`declared`, `verified` or `unknown`), the establishing role, and a `source_ref`.
+
+The georeference belongs to the hosted model, whatever the exporter wrote. A model file that carries only a project-local system can still be reviewed with a `hosted_model_record` georeference, as long as that record is sourced. When no identified tie exists, the status stays `local_only`, `none` or `unknown`, and any world-location to element match in evidence stays `unknown` (`spec/evidence-attestation-0.1-draft.md`). An implementation MUST NOT fill in a CRS, datum or origin it was not given, MUST NOT rewrite a native identifier into another code, and MUST NOT carry a georeference from one model version to another without a new record. A georeference is reviewer evidence, never approval.
+
 ## Response envelope
 
 Model-facing operations SHOULD return a compact envelope:

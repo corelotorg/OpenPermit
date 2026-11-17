@@ -1,0 +1,317 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-model-georeference-0.1.schema.json",
+  "title": "ORI Model Georeference v0.1 Draft",
+  "description": "DRAFT. A read-only description of how one hosted model version, identified by its SHA-256, ties to the world: an identified coordinate reference system, its datums, and the conversion from the model's own coordinates. It belongs to the hosted model for review, whether it came from the model file itself or from a separate hosted-model record. If the tie is missing or only project-local, a world location cannot be matched to a model element and the match is unknown, never a failure. Not approval. See spec/model-interface-0.1-draft.md (Hosted model georeference) and spec/evidence-attestation-0.1-draft.md.",
+  "type": "object",
+  "required": [
+    "record_profile",
+    "id",
+    "type",
+    "label",
+    "is_approval",
+    "model_version",
+    "status",
+    "source",
+    "crs",
+    "map_conversion",
+    "verification_status"
+  ],
+  "properties": {
+    "record_profile": {
+      "const": "ori-model-georeference-0.1"
+    },
+    "id": {
+      "type": "string",
+      "pattern": "^urn:ori:model-georeference:[A-Za-z0-9._:-]{1,120}$"
+    },
+    "type": {
+      "const": "ModelGeoreference"
+    },
+    "label": {
+      "const": "Reviewer evidence, not approval"
+    },
+    "is_approval": {
+      "const": false
+    },
+    "model_version": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion",
+      "description": "The hosted model version this georeference describes. A georeference never carries over to another version by itself."
+    },
+    "status": {
+      "$ref": "#/$defs/georeferenceStatus"
+    },
+    "source": {
+      "description": "Where the georeference came from. 'model_file': the model file itself states an identified system (for IFC, a map conversion to a projected system that carries an authority identifier). 'hosted_model_record': a separate record kept with the hosted model, for example from a site survey, used when the file is only project-local. 'unknown': not stated.",
+      "enum": [
+        "model_file",
+        "hosted_model_record",
+        "unknown"
+      ]
+    },
+    "source_ref": {
+      "$ref": "#/$defs/iri",
+      "description": "Optional pointer to the document or artifact the georeference was taken from (a survey, a control-point record, the model file)."
+    },
+    "crs": {
+      "description": "The world system the model is tied to, or unknown.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/crs"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "map_conversion": {
+      "description": "The conversion from model coordinates to the world system, in the attribute names IFC uses for a map conversion, or unknown.",
+      "anyOf": [
+        {
+          "$ref": "#/$defs/mapConversion"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "native_crs_name": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Optional name of the model's own coordinate system exactly as the file states it, for example a project-local system named after the project. Never treated as an identifier."
+    },
+    "horizontal_accuracy_m": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "vertical_accuracy_m": {
+      "anyOf": [
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "verification_status": {
+      "description": "'declared': stated by the model author or host. 'verified': checked against an independent control record by a named role. Neither is approval. 'unknown': not stated.",
+      "enum": [
+        "declared",
+        "verified",
+        "unknown"
+      ]
+    },
+    "established_by_role": {
+      "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/role"
+    },
+    "established_at": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "note": {
+      "type": "string",
+      "maxLength": 500
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "crs_identified"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "crs": {
+            "$ref": "#/$defs/crs",
+            "properties": {
+              "identifier": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 300,
+                "pattern": "^\\S+$",
+                "description": "A coordinate reference system identifier exactly as the source states it, for example an authority code or a URI. Preserved as given: a receiver never rewrites it into a different authority, code or form, and two different strings are never treated as the same system without a stated transformation.",
+                "not": {
+                  "const": "unknown"
+                }
+              }
+            }
+          },
+          "map_conversion": {
+            "$ref": "#/$defs/mapConversion"
+          }
+        }
+      },
+      "description": "crs_identified needs an identified system and a conversion from model coordinates."
+    },
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "enum": [
+              "none",
+              "unknown"
+            ]
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "properties": {
+          "crs": {
+            "const": "unknown"
+          },
+          "map_conversion": {
+            "const": "unknown"
+          }
+        }
+      },
+      "description": "With no georeference, or an undetermined one, no world system or conversion is asserted."
+    },
+    {
+      "if": {
+        "properties": {
+          "verification_status": {
+            "const": "verified"
+          }
+        },
+        "required": [
+          "verification_status"
+        ]
+      },
+      "then": {
+        "required": [
+          "established_by_role",
+          "source_ref"
+        ]
+      }
+    }
+  ],
+  "$defs": {
+    "iri": {
+      "type": "string",
+      "pattern": "^(urn:[a-z0-9-]+:|https?://)\\S+$"
+    },
+    "georeferenceStatus": {
+      "description": "'crs_identified': an identified world system and a conversion from model coordinates are both present. 'local_only': the model has only a project-local engineering system, or a system without an authority identifier, or no conversion to it. 'none': no georeference is stated anywhere. 'unknown': not determined. Only crs_identified can support a world-location to element match; every other status leaves that match unknown.",
+      "enum": [
+        "crs_identified",
+        "local_only",
+        "none",
+        "unknown"
+      ]
+    },
+    "crs": {
+      "type": "object",
+      "required": [
+        "identifier"
+      ],
+      "properties": {
+        "identifier": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 300,
+              "pattern": "^\\S+$",
+              "description": "A coordinate reference system identifier exactly as the source states it, for example an authority code or a URI. Preserved as given: a receiver never rewrites it into a different authority, code or form, and two different strings are never treated as the same system without a stated transformation."
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "geodetic_datum": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "const": "unknown"
+            }
+          ],
+          "description": "Horizontal datum as the source names it, or unknown. Not derived by ORI from the identifier."
+        },
+        "vertical_datum": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "const": "unknown"
+            }
+          ],
+          "description": "Vertical datum as the source names it, or unknown."
+        }
+      },
+      "additionalProperties": false
+    },
+    "mapConversion": {
+      "type": "object",
+      "required": [
+        "eastings",
+        "northings",
+        "orthogonal_height",
+        "model_length_unit"
+      ],
+      "properties": {
+        "eastings": {
+          "type": "number"
+        },
+        "northings": {
+          "type": "number"
+        },
+        "orthogonal_height": {
+          "type": "number"
+        },
+        "x_axis_abscissa": {
+          "type": "number"
+        },
+        "x_axis_ordinate": {
+          "type": "number"
+        },
+        "scale": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "model_length_unit": {
+          "enum": [
+            "m",
+            "mm",
+            "ft",
+            "in"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

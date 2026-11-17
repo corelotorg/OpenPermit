@@ -1,0 +1,987 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://openpermit.dev/spec/ori-evidence-attestation-0.1.schema.json",
+  "title": "ORI Evidence and Attestation v0.1 Draft",
+  "description": "DRAFT. Machine schema for spec/evidence-attestation-0.1-draft.md: the Evidence envelope (with a typed spatial anchor, optional geo-attestation fields and an optional world-location to model-element match) and the Attestation object. Signatures, locations and credentials are separately verifiable properties, not trust by themselves. A world location is matched to a model element only through an identified georeference of that same hosted model version (spec/ori-model-georeference-0.1.schema.json); otherwise the match is unknown, never a failure. No vendor, device, secure element or model exporter is required. Not approval.",
+  "oneOf": [
+    {
+      "$ref": "#/$defs/evidence"
+    },
+    {
+      "$ref": "#/$defs/attestation"
+    }
+  ],
+  "$defs": {
+    "iri": {
+      "type": "string",
+      "pattern": "^(urn:[a-z0-9-]+:|https?://)\\S+$"
+    },
+    "iriOrUnknown": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/iri"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "dateTimeOrUnknown": {
+      "anyOf": [
+        {
+          "type": "string",
+          "format": "date-time"
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "globalId": {
+      "type": "string",
+      "pattern": "^[0-3][0-9A-Za-z_$]{21}$",
+      "description": "Canonical IFC compressed GlobalId (22 characters; first character in 0-3). Same pattern as the review-comment and lifecycle records."
+    },
+    "crsIdOrUnknown": {
+      "description": "A coordinate reference system identifier exactly as the capturing system or source states it, or unknown. Preserved as given; never rewritten into another code or form.",
+      "anyOf": [
+        {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 300,
+          "pattern": "^\\S+$",
+          "not": {
+            "const": "unknown"
+          }
+        },
+        {
+          "const": "unknown"
+        }
+      ]
+    },
+    "coordinates": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 3,
+      "items": {
+        "type": "number"
+      },
+      "description": "Coordinates in the axis order of the stated CRS, as captured. Not reordered or reprojected by ORI."
+    },
+    "location": {
+      "type": "object",
+      "required": [
+        "coordinates"
+      ],
+      "properties": {
+        "coordinates": {
+          "$ref": "#/$defs/coordinates"
+        }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "type": "object",
+      "required": [
+        "record_profile",
+        "id",
+        "type",
+        "label",
+        "is_approval",
+        "artifact",
+        "captured_at",
+        "captured_by",
+        "spatial_anchor",
+        "integrity"
+      ],
+      "properties": {
+        "record_profile": {
+          "const": "ori-evidence-attestation-0.1"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^urn:ori:evidence:[A-Za-z0-9._:-]{1,120}$"
+        },
+        "type": {
+          "const": "Evidence"
+        },
+        "label": {
+          "const": "Reviewer evidence, not approval"
+        },
+        "is_approval": {
+          "const": false
+        },
+        "artifact": {
+          "$ref": "#/$defs/iriOrUnknown"
+        },
+        "captured_at": {
+          "$ref": "#/$defs/dateTimeOrUnknown"
+        },
+        "captured_by": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 200
+            },
+            {
+              "const": "unknown"
+            }
+          ],
+          "description": "Actor, device or system identifier. Never a personal name in a public record."
+        },
+        "spatial_anchor": {
+          "$ref": "#/$defs/spatialAnchor"
+        },
+        "integrity": {
+          "$ref": "#/$defs/integrity"
+        },
+        "provenance": {
+          "$ref": "#/$defs/provenance"
+        },
+        "attestations": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^urn:ori:attestation:"
+          }
+        },
+        "source": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "geo_attestation": {
+          "$ref": "#/$defs/geoAttestation"
+        },
+        "element_location_match": {
+          "$ref": "#/$defs/elementLocationMatch"
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "required": [
+              "element_location_match"
+            ]
+          },
+          "then": {
+            "required": [
+              "geo_attestation"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "geo_attestation",
+              "element_location_match"
+            ],
+            "properties": {
+              "geo_attestation": {
+                "properties": {
+                  "crs": {
+                    "const": "unknown"
+                  }
+                },
+                "required": [
+                  "crs"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "element_location_match": {
+                "properties": {
+                  "match": {
+                    "const": "unknown"
+                  }
+                }
+              }
+            }
+          },
+          "description": "A location with an unknown CRS cannot be matched to a model element."
+        },
+        {
+          "if": {
+            "required": [
+              "geo_attestation",
+              "element_location_match"
+            ],
+            "properties": {
+              "geo_attestation": {
+                "properties": {
+                  "horizontal_accuracy_m": {
+                    "const": "unknown"
+                  }
+                },
+                "required": [
+                  "horizontal_accuracy_m"
+                ]
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "element_location_match": {
+                "properties": {
+                  "match": {
+                    "const": "unknown"
+                  }
+                }
+              }
+            }
+          },
+          "description": "A location of unknown accuracy is not treated as exact, so it cannot be matched to a model element."
+        }
+      ]
+    },
+    "spatialAnchor": {
+      "type": "object",
+      "required": [
+        "type",
+        "value"
+      ],
+      "properties": {
+        "type": {
+          "enum": [
+            "parcel",
+            "address",
+            "world_point",
+            "ifc_element",
+            "model_object",
+            "document_page",
+            "region",
+            "route",
+            "view"
+          ]
+        },
+        "value": {}
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "ifc_element"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "ifc_global_id",
+                  "model_version"
+                ],
+                "properties": {
+                  "ifc_global_id": {
+                    "$ref": "#/$defs/globalId"
+                  },
+                  "model_version": {
+                    "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "world_point"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "coordinates",
+                  "crs"
+                ],
+                "properties": {
+                  "coordinates": {
+                    "$ref": "#/$defs/coordinates"
+                  },
+                  "crs": {
+                    "$ref": "#/$defs/crsIdOrUnknown"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "model_object"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "object_ref",
+                  "model_version"
+                ],
+                "properties": {
+                  "object_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 200
+                  },
+                  "model_version": {
+                    "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "view"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "view_ref",
+                  "model_version"
+                ],
+                "properties": {
+                  "view_ref": {
+                    "$ref": "#/$defs/iri"
+                  },
+                  "model_version": {
+                    "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "document_page"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "artifact_ref",
+                  "page"
+                ],
+                "properties": {
+                  "artifact_ref": {
+                    "$ref": "#/$defs/iri"
+                  },
+                  "page": {
+                    "type": "integer",
+                    "minimum": 1
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "parcel"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "parcel_ref"
+                ],
+                "properties": {
+                  "parcel_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 120,
+                    "description": "Parcel identifier exactly as the jurisdiction states it."
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "address"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "required": [
+                  "address_ref"
+                ],
+                "properties": {
+                  "address_ref": {
+                    "type": "string",
+                    "minLength": 1,
+                    "maxLength": 300
+                  }
+                },
+                "additionalProperties": false
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "region"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "minProperties": 1,
+                "description": "Profile-defined."
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "route"
+              }
+            },
+            "required": [
+              "type"
+            ]
+          },
+          "then": {
+            "properties": {
+              "value": {
+                "type": "object",
+                "minProperties": 1,
+                "description": "Profile-defined."
+              }
+            }
+          }
+        }
+      ]
+    },
+    "integrity": {
+      "type": "object",
+      "required": [
+        "algorithm",
+        "digest"
+      ],
+      "properties": {
+        "algorithm": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 40
+        },
+        "digest": {
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "algorithm": {
+                "const": "sha256"
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "digest": {
+                "anyOf": [
+                  {
+                    "pattern": "^[0-9a-f]{64}$"
+                  },
+                  {
+                    "const": "unknown"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      ]
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "device": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "software": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "sensor": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "acquisition_method": {
+          "enum": [
+            "photo",
+            "scan",
+            "measurement",
+            "model",
+            "document",
+            "attestation",
+            "other"
+          ]
+        },
+        "transformation_chain": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "geoAttestation": {
+      "type": "object",
+      "description": "Where the evidence says it was captured, kept apart from where a device observed it, with the CRS, accuracy and sources stated. All coordinates are kept exactly as captured.",
+      "required": [
+        "crs",
+        "horizontal_accuracy_m",
+        "location_source",
+        "time_source"
+      ],
+      "properties": {
+        "claimed_location": {
+          "$ref": "#/$defs/location"
+        },
+        "observed_location": {
+          "$ref": "#/$defs/location"
+        },
+        "crs": {
+          "$ref": "#/$defs/crsIdOrUnknown"
+        },
+        "horizontal_accuracy_m": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "vertical_accuracy_m": {
+          "anyOf": [
+            {
+              "type": "number",
+              "minimum": 0
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        },
+        "location_source": {
+          "enum": [
+            "trusted_hardware",
+            "os",
+            "network",
+            "user_entry",
+            "unknown"
+          ]
+        },
+        "time_source": {
+          "enum": [
+            "trusted_hardware",
+            "gnss",
+            "network",
+            "os",
+            "user_entry",
+            "unknown"
+          ]
+        },
+        "resolved_parcel_ref": {
+          "anyOf": [
+            {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 120,
+              "not": {
+                "const": "unknown"
+              }
+            },
+            {
+              "const": "unknown"
+            }
+          ]
+        }
+      },
+      "additionalProperties": false,
+      "anyOf": [
+        {
+          "required": [
+            "claimed_location"
+          ]
+        },
+        {
+          "required": [
+            "observed_location"
+          ]
+        }
+      ]
+    },
+    "elementLocationMatch": {
+      "type": "object",
+      "description": "Whether the captured world location is consistent with one model element of one hosted model version. Computed only through that version's identified georeference. Evidence for a reviewer: 'inconsistent' is not a failure and 'consistent' is not approval.",
+      "required": [
+        "ifc_global_id",
+        "model_version",
+        "location_used",
+        "method",
+        "match"
+      ],
+      "properties": {
+        "ifc_global_id": {
+          "$ref": "#/$defs/globalId"
+        },
+        "model_version": {
+          "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+        },
+        "model_georeference": {
+          "type": "object",
+          "required": [
+            "status",
+            "model_version"
+          ],
+          "properties": {
+            "ref": {
+              "type": "string",
+              "pattern": "^urn:ori:model-georeference:"
+            },
+            "status": {
+              "$ref": "https://openpermit.dev/spec/ori-model-georeference-0.1.schema.json#/$defs/georeferenceStatus"
+            },
+            "model_version": {
+              "$ref": "https://openpermit.dev/spec/ori-review-comment-0.2.schema.json#/$defs/modelVersion"
+            }
+          },
+          "additionalProperties": false
+        },
+        "location_used": {
+          "enum": [
+            "observed_location",
+            "claimed_location",
+            "unknown"
+          ]
+        },
+        "crs_transformation_ref": {
+          "$ref": "#/$defs/iri",
+          "description": "Required for a computed match when the evidence CRS and the model georeference CRS are not the same identifier string."
+        },
+        "tolerance_m": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "method": {
+          "enum": [
+            "computed",
+            "not_attempted"
+          ]
+        },
+        "match": {
+          "enum": [
+            "consistent",
+            "inconsistent",
+            "unknown"
+          ]
+        },
+        "basis": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "enum": [
+              "model_georeference_missing",
+              "model_georeference_local_only",
+              "model_georeference_none",
+              "model_georeference_unknown",
+              "evidence_crs_unknown",
+              "accuracy_unknown",
+              "location_missing",
+              "crs_differs_no_transformation",
+              "not_attempted"
+            ]
+          }
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": {
+            "not": {
+              "required": [
+                "model_georeference"
+              ]
+            }
+          },
+          "then": {
+            "properties": {
+              "match": {
+                "const": "unknown"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "model_georeference"
+            ],
+            "properties": {
+              "model_georeference": {
+                "properties": {
+                  "status": {
+                    "not": {
+                      "const": "crs_identified"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "then": {
+            "properties": {
+              "match": {
+                "const": "unknown"
+              },
+              "method": {
+                "const": "not_attempted"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "match": {
+                "const": "unknown"
+              }
+            },
+            "required": [
+              "match"
+            ]
+          },
+          "then": {
+            "required": [
+              "basis"
+            ]
+          },
+          "else": {
+            "required": [
+              "model_georeference",
+              "tolerance_m"
+            ],
+            "properties": {
+              "method": {
+                "const": "computed"
+              },
+              "location_used": {
+                "not": {
+                  "const": "unknown"
+                }
+              }
+            },
+            "not": {
+              "required": [
+                "basis"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "attestation": {
+      "type": "object",
+      "required": [
+        "record_profile",
+        "id",
+        "type",
+        "label",
+        "is_approval",
+        "subject",
+        "attested_by",
+        "claim",
+        "method",
+        "issued_at",
+        "status"
+      ],
+      "properties": {
+        "record_profile": {
+          "const": "ori-evidence-attestation-0.1"
+        },
+        "id": {
+          "type": "string",
+          "pattern": "^urn:ori:attestation:[A-Za-z0-9._:-]{1,120}$"
+        },
+        "type": {
+          "const": "Attestation"
+        },
+        "label": {
+          "const": "Reviewer evidence, not approval"
+        },
+        "is_approval": {
+          "const": false
+        },
+        "subject": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "attested_by": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 200
+        },
+        "claim": {
+          "type": "object",
+          "required": [
+            "claim_type"
+          ],
+          "properties": {
+            "claim_type": {
+              "type": "string",
+              "pattern": "^[a-z][a-z0-9_]{1,60}$"
+            },
+            "value": {
+              "type": [
+                "string",
+                "number",
+                "boolean"
+              ]
+            }
+          },
+          "additionalProperties": false
+        },
+        "method": {
+          "enum": [
+            "signature",
+            "certificate",
+            "measurement",
+            "witness",
+            "professional_seal",
+            "other"
+          ]
+        },
+        "issued_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "expires_at": {
+          "anyOf": [
+            {
+              "type": "string",
+              "format": "date-time"
+            },
+            {
+              "type": "null"
+            }
+          ]
+        },
+        "evidence": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verification_method": {
+          "type": "string",
+          "maxLength": 200
+        },
+        "status": {
+          "enum": [
+            "valid",
+            "invalid",
+            "expired",
+            "revoked",
+            "unverified"
+          ]
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}
