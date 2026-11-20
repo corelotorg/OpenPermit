@@ -1,10 +1,10 @@
 name: Public site release artifact
 on:
   pull_request:
-    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
+    paths: ["site/**", "model-verification/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
   push:
     branches: [test, "release/**"]
-    paths: ["site/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
+    paths: ["site/**", "model-verification/**", "docs/**", "spec/**", "profiles/**", "verification/**", "index.html", "*/index.html", "robots.txt", "sitemap.xml", "*.md", ".well-known/**", ".github/workflows/public-site.yml"]
   workflow_dispatch:
 permissions:
   contents: read

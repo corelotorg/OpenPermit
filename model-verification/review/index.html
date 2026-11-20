@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Reference wall verification review</title><style>body{background:#10151b;color:#e8edf2;font:18px/1.6 system-ui;max-width:960px;margin:4vh auto;padding:24px}a{color:#8dccff}table{border-collapse:collapse;width:100%}td,th{padding:12px;border:1px solid #456}code{overflow-wrap:anywhere}</style>
+<a href="../stud-wall.html">Reference wall viewer</a><h1>Reference wall verification review</h1>
+<p>1182 numerical and behavior checks passed across two synthetic cases. This is software geometry evidence. Human review is pending.</p>
+<table><tr><th>Case</th><th>Modeled size</th><th>Studs / plates / panels / markers</th><th>Inspect</th></tr>
+<tr><td>Baseline</td><td>96 × 96 in</td><td>7 / 3 / 2 / 56</td><td><a href="baseline.html">Open viewer</a> · <a href="baseline.json">Parameters</a></td></tr>
+<tr><td>Controlled change</td><td>120 × 108 in</td><td>6 / 3 / 3 / 48</td><td><a href="changed.html">Open viewer</a> · <a href="changed.json">Parameters</a></td></tr></table>
+<p><a href="report.json">Every expected/actual comparison and source hashes</a></p>
+<p>Browser captures: <a href="screenshots/checked-baseline-2d.jpg">baseline 2D</a> · <a href="screenshots/checked-baseline-3d.jpg">baseline 3D</a> · <a href="screenshots/checked-changed-2d.jpg">changed 2D</a> · <a href="screenshots/checked-changed-3d.jpg">changed 3D</a>. <a href="browser-evidence.json">Capture provenance</a>. Captures are dated observations; compare their source hashes before applying them to another revision.</p>
+<h2>Visual review</h2><p>In each viewer, move the slider from 0% to 100%. Inspect a stud, plate, panel and illustrative fastener. Toggle layers. Compare the visible layout with the dimensions and counts above. Note any discrepancy and the case/revision.</p>
+<p>The controlled change uses six stud centers at 0.75, 24, 48, 72, 96 and 119.25 in, and three 40 in panels. Stud length grows from 91.5 to 103.5 in. The layout is a test fixture, not a code-compliant design claim.</p>
+<p>Viewer SHA-256: <code>8c6ee0b6e0216e669100d549471852cba2b7928a2938f205f701edeb6467a55a</code></p>
+<p>Verification in the assembly remains UNKNOWN; reviewer decision remains empty. Fastening specification, IFC/STEP fidelity and code applicability are outstanding. No permit approval or construction authorization is established.</p>
+<p><a href="https://github.com/corelotorg/OpenPermit/issues/132">Acceptance tracker #132</a></p></html>

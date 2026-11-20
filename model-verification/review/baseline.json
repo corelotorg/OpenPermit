@@ -1,0 +1,50 @@
+{
+  "profile": "ori-model-verification-synthetic-0.1",
+  "revision": "reference-wall-r1",
+  "origin": "OpenPermit-authored synthetic demonstration",
+  "units": "in",
+  "wall": {
+    "width": 96,
+    "height": 96,
+    "depth": 3.5
+  },
+  "framing": {
+    "stud_width": 1.5,
+    "stud_centers": [
+      0.75,
+      16,
+      32,
+      48,
+      64,
+      80,
+      95.25
+    ],
+    "bottom_plate_height": 1.5,
+    "top_plate_count": 2,
+    "top_plate_height": 1.5
+  },
+  "sheathing": {
+    "panels": 2,
+    "width": 48,
+    "height": 96,
+    "thickness": 0.4375
+  },
+  "fasteners": {
+    "row_heights": [
+      10,
+      22,
+      34,
+      46,
+      58,
+      70,
+      82,
+      90
+    ],
+    "purpose": "illustrative markers only; not a fastening schedule"
+  },
+  "verification": {
+    "status": "unknown",
+    "reason": "No independent validation, code applicability or exchange evidence supplied"
+  },
+  "reviewer_decision": null
+}
